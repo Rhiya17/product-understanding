@@ -54,11 +54,28 @@ We wrote very careful instructions: *"keep the camera still, use one hand, push 
 
 **Why it failed:** It was a disaster! The stroller didn't fold. Instead, Higgsfield morphed it into a totally different stroller. Fake red buttons appeared, the person used *both* hands instead of one, and the camera swooped all over the place. We found out Higgsfield's server had secretly rewritten our instructions and added the camera swoop behind our backs!
 
-### The Corrected Test (Still Failed ❌)
-We turned off Higgsfield's sneaky settings, locked the camera in place, and ran the test 3 times to be fair. 
-* 🖼️ [See the breakdown of all 3 tries](../poc-higgsfield-one-hand-fold/out/corrected-three-contact-sheets.png)
+### The Corrected Test — Our Best, Fairest Try (Still Failed ❌)
+This was our cleanest experiment of the whole day, so its result matters the most. We gave Higgsfield every possible advantage:
 
-**Why it failed:** 0 out of 3 videos worked. Even with perfect instructions, Higgsfield just changed the small stroller into a bigger stroller that stayed completely open. It never folded.
+* We turned **off** the sneaky instruction-rewriter (and the server confirmed our exact words went through unchanged).
+* We set the camera swoop to **zero** strength.
+* We used the **best quality tier** the live API would accept (`dop-preview` — it rejected the even higher tier the docs mention).
+* We used the real official Graco photo and the exact fold instructions from the manual.
+* We ran it **3 times** with pre-chosen seeds, and checked before each run that the server received exactly what we sent.
+
+**The result: 0 out of 3. The stroller never folded. Not even once.**
+
+In every single run, Higgsfield ignored the actual instructions:
+
+* ❌ It never showed the thumb switch being slid.
+* ❌ It never showed the lever under the handle being squeezed.
+* ❌ It never showed any fold at all — not even a wrong one.
+* ❌ Instead, all 3 videos slowly morphed our compact stroller into a **bigger, different, fully open stroller** — the canopy, seat, handle, and wheels all changed.
+
+* 🖼️ [See the breakdown of all 3 tries](../poc-higgsfield-one-hand-fold/out/corrected-three-contact-sheets.png)
+* 📄 [The full detailed report](../poc-higgsfield-one-hand-fold/corrected-results.md)
+
+**Why this test is the important one:** the first try could be blamed on the sneaky default settings. This test can't. Everything was controlled and double-checked, and Higgsfield still couldn't do it — three times in a row, failing the exact same way. That tells us the problem isn't our settings or our wording. Higgsfield simply doesn't know how *this* stroller's mechanism works, and no amount of careful asking can teach it.
 
 **The Lesson:** Higgsfield has watched millions of stroller videos, but it doesn't know how the hidden gears and buttons on *this specific stroller* work. Words are too vague. If you ask Higgsfield to show a mechanical action, it will just guess—and it will usually guess wrong. For things like this, we should just show the user real, recorded videos instead of letting Higgsfield guess!
 
