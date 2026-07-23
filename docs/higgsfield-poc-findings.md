@@ -1,9 +1,9 @@
-# Higgsfield Video Experiments: Can We Trust This Robot to Make Videos?
+# Higgsfield Video Experiments: Can We Trust It to Make Our Videos?
 
 ## Why are we doing this?
 Imagine you have a question about a product, like "Will this stroller fit in my car?" or "How do I fold this stroller with one hand?" Instead of reading a long, boring manual, our app wants to show you a **short, helpful video**. 
 
-Sometimes, that video doesn't exist yet, so we use an AI (a smart robot) called **Higgsfield** to generate the video on the spot. 
+Sometimes, that video doesn't exist yet, so we use an AI video generator called **Higgsfield** to create the video on the spot. 
 
 **But there's a big problem:** Higgsfield loves to use its imagination. If you ask Higgsfield to show a stroller folding, it might invent fake buttons or change the stroller entirely. If the video lies to you, you might break your stroller or buy one that doesn't fit in your car! 
 
@@ -47,7 +47,7 @@ Imagine trying to teach someone a magic trick by sending them a picture of you h
 In this experiment, we wanted to see if we could give Higgsfield one real photo of a stroller and written instructions on how to fold it with one hand. We wanted to see if Higgsfield could figure out the mechanics and create a truthful video of the stroller folding.
 * 🖼️ [Our starting photo (The Input)](../poc-higgsfield-one-hand-fold/references/start-frame.png)
 
-### The First Try (The Sneaky Robot ❌)
+### The First Try (Sneaky Settings ❌)
 We wrote very careful instructions: *"keep the camera still, use one hand, push the thumb switch, squeeze the lever."*
 * 🎥 **Watch the video:** [ready2jet-one-hand-fold.mp4](../poc-higgsfield-one-hand-fold/out/ready2jet-one-hand-fold.mp4)
 * 🖼️ [See the breakdown step-by-step](../poc-higgsfield-one-hand-fold/out/contact-sheet.png)
