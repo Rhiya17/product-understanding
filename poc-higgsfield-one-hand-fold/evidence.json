@@ -1,0 +1,40 @@
+{
+  "retrieved_on": "2026-07-22",
+  "product": {
+    "brand": "Graco",
+    "name": "Ready2Jet Stroller",
+    "model_number": "2212125",
+    "selected_color": "Splatter Art",
+    "official_product_url": "https://www.gracobaby.com/shop/strollers/compact-lightweight-strollers/ready2jet-stroller/SAP_2212125.html"
+  },
+  "official_claim": {
+    "summary": "Graco says the Ready2Jet automatically folds to a compact size with one-hand activation.",
+    "source": "https://www.gracobaby.com/shop/strollers/compact-lightweight-strollers/ready2jet-stroller/SAP_2212125.html"
+  },
+  "manual": {
+    "url": "https://newellbrands.imgix.net/baef6d42-74d8-3238-a241-b88c8b8bfb18/baef6d42-74d8-3238-a241-b88c8b8bfb18.pdf",
+    "document_id": "NWL0001636434D 12/24",
+    "before_folding": [
+      "Remove the infant car seat if it is in use.",
+      "Unlock the brakes.",
+      "Fold the canopy."
+    ],
+    "activation": [
+      "Slide the thumb switch.",
+      "Squeeze the handle lever."
+    ],
+    "after_folding": [
+      "Check that the stroller is secure.",
+      "Carry by the belly bar."
+    ]
+  },
+  "official_images": {
+    "open_and_folded": "https://newellbrands.imgix.net/fb46b241-5862-3370-8ed0-718387b02157/fb46b241-5862-3370-8ed0-718387b02157.jpg?auto=format,compress&w=1188",
+    "fold_sequence": "https://newellbrands.imgix.net/13f546fb-a043-300c-82ce-43db1392fe58/13f546fb-a043-300c-82ce-43db1392fe58.jpg?auto=format,compress&w=1188",
+    "lifestyle": "https://newellbrands.imgix.net/c780a677-e024-3087-83ab-29ce2c3d80c4/c780a677-e024-3087-83ab-29ce2c3d80c4.jpg?auto=format,compress&w=1188",
+    "poc_start_frame": "https://newellbrands.imgix.net/13f546fb-a043-300c-82ce-43db1392fe58/13f546fb-a043-300c-82ce-43db1392fe58.jpg?auto=format,compress&rect=0,350,1120,1900&w=720",
+    "poc_end_reference": "https://newellbrands.imgix.net/13f546fb-a043-300c-82ce-43db1392fe58/13f546fb-a043-300c-82ce-43db1392fe58.jpg?auto=format,compress&rect=2150,350,850,1900&w=720"
+  },
+  "poc_scope": "Test whether Higgsfield can preserve exact product identity and depict the official one-hand activation and automatic fold. Manufacturer evidence, not the generated video, remains the source of truth."
+}
+
