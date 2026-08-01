@@ -1,0 +1,61 @@
+{
+  "_comment": "All references are local files; run_seedance.py uploads them to fal storage at submit time (cached by content hash in out/upload-cache.json). No external hosting needed.",
+  "images": {
+    "start_frame": {
+      "local": "../references/open-product-only.png",
+      "source": "Crop (left region) of official-open-and-folded.png studio shot; person-free. fal/ByteDance rejects images containing real-person likenesses."
+    },
+    "end_frame": {
+      "local": "../references/folded-product-only.png",
+      "source": "Crop (right inset) of official-open-and-folded.png studio shot; person-free."
+    },
+    "start_frame_with_person": {
+      "local": "../../poc-higgsfield-one-hand-fold/references/start-frame.png",
+      "source": "UNUSABLE as Seedance input (real-person likeness, content_policy_violation). Kept for provenance."
+    },
+    "end_frame_with_person": {
+      "local": "../../poc-higgsfield-one-hand-fold/references/end-frame.png",
+      "source": "UNUSABLE as Seedance input (real-person likeness, content_policy_violation). Kept for provenance."
+    },
+    "fold_sequence": {
+      "local": "../../poc-higgsfield-one-hand-fold/references/official-fold-sequence.png",
+      "source": "Official Graco marketing image: open -> mid-fold -> folded, same shoot as start/end frames"
+    },
+    "manual_fold_page": {
+      "local": "../../poc-higgsfield-one-hand-fold/references/manual-fold-page-34.png",
+      "source": "Official Graco Ready2Jet manual, page 34: prep steps + thumb switch / handle lever diagrams"
+    }
+  },
+  "videos": {
+    "similar_fold_clip": {
+      "local": "",
+      "source": "Condition C only; no rights-cleared clip sourced yet. Leave empty unless running the stretch condition."
+    }
+  },
+  "conditions": {
+    "a": {
+      "mode": "first_last_frames",
+      "prompt_file": "condition-a-prompt.txt",
+      "image_keys": ["start_frame", "end_frame"],
+      "video_keys": []
+    },
+    "b": {
+      "mode": "omni_reference",
+      "prompt_file": "condition-b-prompt.txt",
+      "image_keys": ["start_frame", "end_frame", "fold_sequence", "manual_fold_page"],
+      "video_keys": []
+    },
+    "c": {
+      "mode": "omni_reference",
+      "prompt_file": "condition-b-prompt.txt",
+      "image_keys": ["start_frame", "end_frame", "fold_sequence", "manual_fold_page"],
+      "video_keys": ["similar_fold_clip"]
+    }
+  },
+  "generation": {
+    "duration_seconds": 8,
+    "aspect_ratio": "9:16",
+    "resolution": "720p",
+    "generate_audio": false
+  }
+}

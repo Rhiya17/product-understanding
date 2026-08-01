@@ -1,0 +1,32 @@
+{
+  "submitted_at": "2026-07-31T23:44:21.753757+00:00",
+  "condition": "a",
+  "tier": "fast",
+  "endpoint": "bytedance/seedance-2.0/fast/image-to-video",
+  "seed": 42001,
+  "arguments": {
+    "prompt": "Product demonstration of the exact Graco Ready2Jet stroller shown in the first frame, self-folding until it matches the last frame exactly. No people appear in the video.\n\nThe camera is completely static for the entire video. The stroller is empty and stands on a plain studio background. Its handle safety switch releases and the stroller automatically collapses forward and downward through its existing hinges: the handle drops toward the seat, the frame compresses, and it finishes compact, upright, folded, and self-standing, exactly as shown in the last frame.\n\nPreserve the source stroller exactly throughout: the same four wheels, handle, seat, canopy with speckled print, cup holder, belly bar, basket, frame, hinges, fabric, colors, proportions, and product identity. Normal demonstration speed, neutral studio lighting, no cuts, no audio narration.\n\nNo hands or people. No camera movement. No invented controls or parts. No product redesign, morphing, text, or logo changes.",
+    "resolution": "720p",
+    "duration": "8",
+    "aspect_ratio": "9:16",
+    "generate_audio": false,
+    "seed": 42001,
+    "image_url": "https://v3b.fal.media/files/b/0aa48522/AH2ekyXqiEjKSjPl1NoaO_open-product-only.png",
+    "end_image_url": "https://v3b.fal.media/files/b/0aa48522/PGq0AIraaOXVseuV9M2ZY_folded-product-only.png"
+  },
+  "image_refs": [
+    {
+      "key": "start_frame",
+      "local": "/Users/ramyamanchikanti/workplace/product-understanding/poc-seedance-keyframe-fold/references/open-product-only.png",
+      "sha256": "7532e526ee2e91bff0a1095d9760d7a2bf91aef7257526035a823147f7d2669b",
+      "url": "https://v3b.fal.media/files/b/0aa48522/AH2ekyXqiEjKSjPl1NoaO_open-product-only.png"
+    },
+    {
+      "key": "end_frame",
+      "local": "/Users/ramyamanchikanti/workplace/product-understanding/poc-seedance-keyframe-fold/references/folded-product-only.png",
+      "sha256": "6b37b1a702a90dce520aaeb3d99b49fd59a2459c621c10b45e4e6c2a5de5f77c",
+      "url": "https://v3b.fal.media/files/b/0aa48522/PGq0AIraaOXVseuV9M2ZY_folded-product-only.png"
+    }
+  ],
+  "video_refs": []
+}
