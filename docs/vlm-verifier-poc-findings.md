@@ -15,8 +15,14 @@ eyes and found:
 * ✅ Good: same stroller the whole time, and it really folds.
 * ❌ Bad #1: it folds the **wrong way** (the top flops *backward*; the real
   stroller drops its handle *forward*).
-* ❌ Bad #2: the stroller **slowly rotates**, even though we asked for a
-  still camera.
+* ❌ Bad #2: the **view slowly turns**. Our instructions told the AI:
+  film this like a phone on a tripod — one fixed viewpoint, no moving
+  around. (There is no real camera in an AI video, so "camera" just means
+  the viewpoint the AI draws the scene from.) Instead, the stroller
+  gradually turns to a different angle: the video starts showing it from
+  the front-left and ends showing it from the side. That breaks a direct
+  instruction, and a turning view makes a how-to video harder to follow —
+  you can't tell "a part moved" from "the view moved."
 
 Our master plan says a human should not have to watch every AI video. We want
 a cheap "AI judge" that watches first and throws out the bad ones. So the
