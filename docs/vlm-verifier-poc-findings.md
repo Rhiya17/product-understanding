@@ -1,187 +1,172 @@
-# Robot Judge Experiment: Can an AI Watch Our Video and Spot the Mistakes?
+# AI Video Verifier POC: Can It Catch Video Errors?
 
-*Written 2026-08-05. First result from the VLM-verifier probe in
-[`poc-seedance-keyframe-fold/verify_with_vlm.py`](../poc-seedance-keyframe-fold/verify_with_vlm.py).
-One run per judge so far — a very promising start, but not yet a full pass.*
+*Written 2026-08-05. First result from the VLM verifier in
+[`verify_with_vlm.py`](../poc-seedance-keyframe-fold/verify_with_vlm.py).
+This is an early result based on one run per model.*
 
----
+## Executive summary
 
-## Why are we doing this? 🤔
+We tested whether a vision-language model (VLM)—an AI that can inspect
+images—could find errors in an AI-generated stroller video without being told
+what was wrong.
 
-Last week, Seedance made a video of our Graco Ready2Jet stroller folding
-itself ([full story](./seedance-poc-findings.md)). We watched it with our own
-eyes and found:
+The result was promising:
 
-* ✅ Good: same stroller the whole time, and it really folds.
-* ❌ Bad #1: it folds the **wrong way** (the top flops *backward*; the real
-  stroller drops its handle *forward*).
-* ❌ Bad #2: the **view slowly turns**. Our instructions told the AI:
-  film this like a phone on a tripod — one fixed viewpoint, no moving
-  around. (There is no real camera in an AI video, so "camera" just means
-  the viewpoint the AI draws the scene from.) Instead, the stroller
-  gradually turns to a different angle: the video starts showing it from
-  the front-left and ends showing it from the side. That breaks a direct
-  instruction, and a turning view makes a how-to video harder to follow —
-  you can't tell "a part moved" from "the view moved."
+- **Qwen3-VL matched the human review on all six checks**, including the most
+  important error: the stroller folds in the wrong direction.
+- **Claude Sonnet 4.5 matched the human review on five of six checks.** It
+  correctly rejected the video, but it missed the incorrect folding motion.
+- **Both models agreed the video is not safe to use as instructions.**
 
-Our master plan says a human should not have to watch every AI video. We want
-a cheap "AI judge" that watches first and throws out the bad ones. So the
-question for this experiment was:
+This supports using a VLM verifier as an automated first check. It does not yet
+support removing human review: we tested only one bad video, with one run per
+model.
 
-> **If we show an AI judge the video and the official Graco evidence — but
-> tell it NOTHING about the mistakes we found — will it find the same
-> mistakes on its own?**
+## What we tested
 
-We tested two judges on the exact same questions:
+The video came from the earlier
+[Seedance folding POC](./seedance-poc-findings.md). Human review had already
+found two major problems:
 
-1. **Qwen3-VL** (a big open model, 235B size) — the judge we planned to use.
-2. **Claude Sonnet 4.5** — a well-known paid model, as a comparison.
+1. **The stroller folds the wrong way.** The real stroller's handle moves
+   forward toward the front wheels. In the generated video, the handle and
+   canopy move backward first.
+2. **The viewpoint changes.** The video begins at a front-left angle and ends
+   at a side angle, even though the prompt required a fixed view.
 
-No new accounts were needed. Both judges run through fal.ai, where we already
-have a key from the Seedance experiment.
+We wanted to know whether a VLM could find these problems on its own. We tested:
 
----
+- **Qwen3-VL-235B**, the model planned for the verifier.
+- **Claude Sonnet 4.5**, as a comparison.
 
-## Exactly what we fed the judges (the inputs) 📥
+Each model received the same images and questions. We did not tell either model
+what the human review had found.
 
-Every input is a real file in this repo. The judges saw pictures only — never
-our opinions.
+Each check took 12–25 seconds. Both models ran through the existing fal.ai
+setup, and each check cost only pennies.
 
-**The video being judged** (turned into 12 still pictures, in time order):
+## Test design
 
-* 🎥 The video: [`out/a-probe/video.mp4`](../poc-seedance-keyframe-fold/out/a-probe/video.mp4)
-* 🖼️ The 12 frames: [`out/a-probe/frames/`](../poc-seedance-keyframe-fold/out/a-probe/frames/)
-* 🖼️ All 12 on one sheet: [`out/a-probe/contact-sheet.png`](../poc-seedance-keyframe-fold/out/a-probe/contact-sheet.png)
+We split the review into two checks. Both used the same 12 snapshots in the
+same order. Only the official reference images changed.
 
-**Test 1 — "Basic honesty check."** We gave each judge:
+### What are the 12 video frames?
 
-1. The official photo of the OPEN stroller:
-   [`references/open-product-only.png`](../poc-seedance-keyframe-fold/references/open-product-only.png)
-2. The official photo of the FOLDED stroller:
-   [`references/folded-product-only.png`](../poc-seedance-keyframe-fold/references/folded-product-only.png)
-3. The 12 video frames.
+The judges did not receive the 8-second video file. The AI service we used
+accepts images, not video files, so our script saved **12 evenly spaced
+snapshots** from the video—like a comic-strip version of it:
 
-Then we asked: Is it the same stroller the whole time? Does it really fold?
-Does it end like the official folded photo? Does the camera stay still? Do
-any parts appear or disappear?
+- Frame 1 shows the stroller open at the start.
+- Frames 2–11 show the fold in progress.
+- Frame 12 shows the stroller folded at the end.
 
-**Test 2 — "Did it fold the RIGHT way?"** We gave each judge:
+The [12 frame files](../poc-seedance-keyframe-fold/out/a-probe/frames/) are
+named `frame-01.png` through `frame-12.png`. The
+[contact sheet](../poc-seedance-keyframe-fold/out/a-probe/contact-sheet.png)
+shows all 12 together on one page.
 
-1. Graco's official fold-sequence picture (it shows a real halfway-folded
-   state):
-   [`official-fold-sequence.png`](../poc-higgsfield-one-hand-fold/references/official-fold-sequence.png)
-2. Page 34 of the official manual (it shows the fold buttons and steps):
-   [`manual-fold-page-34.png`](../poc-higgsfield-one-hand-fold/references/manual-fold-page-34.png)
-3. The same 12 video frames.
+### Check 1: Product and video consistency
 
-Then we asked: How does the real fold work, according to the manual? What
-happens in the video? Do the middle steps match? Would this video teach a
-person the right way to fold?
+Each judge received:
 
-The exact question wording is saved in
-[`verify_with_vlm.py`](../poc-seedance-keyframe-fold/verify_with_vlm.py), so
-anyone can check that we never leaked the answers.
+- The official [open stroller photo](../poc-seedance-keyframe-fold/references/open-product-only.png)
+- The official [folded stroller photo](../poc-seedance-keyframe-fold/references/folded-product-only.png)
+- [12 frames from the generated video](../poc-seedance-keyframe-fold/out/a-probe/frames/)
 
----
+We asked whether the video:
 
-## What the judges said (the outputs) 📤
+- Keeps the same stroller throughout
+- Shows a real fold
+- Ends in the correct folded state
+- Keeps the viewpoint fixed
+- Adds or removes any parts
 
-The judges' full answers are saved word-for-word here:
+### Check 2: Folding accuracy
 
-| Judge | Test 1 answer | Test 2 answer |
-|---|---|---|
-| Qwen3-VL-235B | [`qwen...check1.json`](../poc-seedance-keyframe-fold/out/a-probe/verification/qwen-qwen3-vl-235b-a22b-instruct-check1.json) | [`qwen...check2.json`](../poc-seedance-keyframe-fold/out/a-probe/verification/qwen-qwen3-vl-235b-a22b-instruct-check2.json) |
-| Claude Sonnet 4.5 | [`anthropic...check1.json`](../poc-seedance-keyframe-fold/out/a-probe/verification/anthropic-claude-sonnet-4.5-check1.json) | [`anthropic...check2.json`](../poc-seedance-keyframe-fold/out/a-probe/verification/anthropic-claude-sonnet-4.5-check2.json) |
+Each judge received:
 
-Each test took 12–25 seconds and cost only pennies.
+- The official [fold sequence](../poc-higgsfield-one-hand-fold/references/official-fold-sequence.png)
+- [Page 34 of the product manual](../poc-higgsfield-one-hand-fold/references/manual-fold-page-34.png)
+- The same 12 video frames
 
----
+We asked whether the video shows the correct controls, motion, and intermediate
+folding states, and whether it is safe to use as instructions.
 
-## The scoreboard 🏆
+The exact prompts are in
+[`verify_with_vlm.py`](../poc-seedance-keyframe-fold/verify_with_vlm.py).
 
-We compare each judge against what we humans found by watching the video:
+## Results
 
-| What we humans found | Qwen3-VL | Claude Sonnet 4.5 |
-|---|---|---|
-| Same stroller the whole time ✅ | ✅ agreed | ✅ agreed |
-| It really folds, ends correctly ✅ | ✅ agreed | ✅ agreed |
-| The stroller rotates (camera not still) ❌ | ✅ caught it | ✅ caught it |
-| **It folds the WRONG WAY** ❌ | ✅ **caught it** | ❌ **missed it** |
-| The fold buttons are never shown ❌ | ✅ caught it | ✅ caught it |
-| Final verdict: not safe as instructions | ✅ said "no" | ✅ said "no" |
+| Expected result from human review | Qwen3-VL | Claude Sonnet 4.5 |
+|---|:---:|:---:|
+| Same stroller throughout | Correct | Correct |
+| Stroller folds and reaches the correct end state | Correct | Correct |
+| Viewpoint changes despite the fixed-camera instruction | Correct | Correct |
+| **Folding motion is wrong** | **Correct** | **Missed** |
+| Required fold controls are not shown | Correct | Correct |
+| Video is not safe as instructions | Correct | Correct |
+| **Total** | **6/6** | **5/6** |
 
-**Qwen3-VL: 6 out of 6. Claude Sonnet 4.5: 5 out of 6.**
+Both models rejected the video. The important difference was *why*.
 
----
+### Qwen3-VL caught the wrong folding motion
 
-## Exactly how Qwen3 did better 🔍
+Qwen first identified the official motion: the handle should move toward the
+front wheels while the seat folds down. It then compared that motion with the
+video and found that the handle tilts back while the canopy folds over the
+seat.
 
-The wrong-way fold was the hardest mistake to catch. To catch it, a judge had
-to do three things in a row: read the manual page, understand the official
-halfway picture, and compare both against the video frames.
+That matches the human review. Qwen rejected the video because both the folding
+motion and the user controls were wrong or missing.
 
-**Qwen3-VL did all three.** In its own words:
+### Claude missed the main motion error
 
-> Official mechanism: *"...the handle moving toward the front wheels and the
-> seat folding down."* ← correct, straight from the manual.
->
-> The video: *"...the handle already tilted far back and the canopy folding
-> over the seat, which is a different sequence and geometry than the official
-> guide."* ← this is exactly the backward-flop we saw with our own eyes.
+Claude said the video's intermediate states matched the official sequence. It
+also described part of the official motion backward.
 
-**Claude Sonnet missed this.** It said the middle of the video *"matches the
-documented fold progression"* — in other words, it approved the wrong-way
-fold. It even described the official mechanism partly backward (*"the handle
-rotates backward/upward"*). Sonnet still voted "not safe as instructions,"
-but only because the video never shows the fold buttons — not because the
-motion was wrong.
+Claude still rejected the video because it did not show the thumb switch and
+handle lever required to start the fold. It also identified the viewpoint
+change more precisely, placing the largest shift between frames 11 and 12.
 
-Why this matters: a wrong motion that *looks* right is the sneakiest kind of
-mistake in our whole project. Our safety rules exist because of it. In this
-one test, the open model we can run cheaply at scale caught it, and the
-famous paid model did not.
+## What this means
 
-(To be fair: Sonnet was better at one small thing — it pinpointed the camera
-jump to exactly frames 11→12, while Qwen described the rotation more
-loosely.)
+This run gives us three useful signals:
 
----
+1. **An evidence-based AI judge can catch meaningful video errors.** Qwen found
+   the subtle wrong-way fold without being given the answer.
+2. **The reference evidence matters.** The manual page and official fold image
+   gave the judges a product-specific standard. Without them, a model could
+   only judge whether the motion looked plausible.
+3. **Qwen3-VL is the stronger verifier candidate from this run.** It found every
+   expected result and is already available through the fal.ai setup used for
+   the Seedance experiment.
 
-## What did we learn? 🧠
+## Limitations
 
-1. **The "AI judge" idea from our plan works.** A judge that sees the
-   official evidence can catch real mistakes — even the sneaky wrong-way
-   fold — without any hints from us.
-2. **Evidence is the secret ingredient.** The judge only caught the wrong-way
-   fold because we handed it the manual page and the official fold-sequence
-   picture. A judge with no evidence can only catch obvious mistakes.
-3. **Qwen3-VL is a serious candidate for the job.** It won this round 6/6,
-   it is open (Apache 2.0, fine for commercial use), and it runs through the
-   fal.ai key we already have.
+This is an early signal, not a final evaluation.
 
----
+- **Only one run per model:** We do not yet know whether the answers are stable.
+- **Only one video:** The test used a known bad video. We also need a correct
+  video to measure false rejections.
+- **Frame sampling:** The judges saw 12 still frames, not the full video. They
+  could miss errors between frames.
+- **Human review is still required:** For exact operating instructions, the AI
+  judge should filter candidates before a person performs the final check.
 
-## Be careful: what this does NOT prove yet ⚠️
+## Next steps
 
-* **One run per judge is not proof.** We ran each judge once. We need
-  repeats to know the answers are stable.
-* **We only tested a BAD video.** A good judge must also say "yes" to a
-  correct video. We have not measured how often these judges cry wolf.
-* **12 frames is not the full video.** Something between frames could be
-  missed.
-* **A "6/6" judge is still not a human.** Our safety rule stands: for exact
-  operating instructions, the AI judge filters first, and a human still does
-  the final check.
+1. **Test known failures:** Run both judges on the three failed
+   [Higgsfield videos](./higgsfield-poc-findings.md). They should reject all
+   three.
+2. **Test stability:** Repeat this evaluation three times per judge.
+3. **Measure false rejections:** Test a correct folding video and confirm that
+   the judges accept it.
+4. **Add the first gate:** If the results remain stable, use the verifier as the
+   automated first check for Seedance Condition B.
 
----
+## Experiment artifacts
 
-## What's next 🔜
-
-1. **Calibration check:** run the same judges on the three failed Higgsfield
-   videos ([findings](./higgsfield-poc-findings.md)). They should fail all
-   three easily.
-2. **Stability check:** repeat this exact test 3 times per judge.
-3. **False-alarm check:** find or film a CORRECT fold video and make sure the
-   judges pass it.
-4. **Wire it in:** use the judge as the automatic first gate when we run
-   Seedance Condition B (endpoints + manual pages).
+- [Generated video](../poc-seedance-keyframe-fold/out/a-probe/video.mp4)
+- [12-frame contact sheet](../poc-seedance-keyframe-fold/out/a-probe/contact-sheet.png)
+- Qwen results: [check 1](../poc-seedance-keyframe-fold/out/a-probe/verification/qwen-qwen3-vl-235b-a22b-instruct-check1.json), [check 2](../poc-seedance-keyframe-fold/out/a-probe/verification/qwen-qwen3-vl-235b-a22b-instruct-check2.json)
+- Claude results: [check 1](../poc-seedance-keyframe-fold/out/a-probe/verification/anthropic-claude-sonnet-4.5-check1.json), [check 2](../poc-seedance-keyframe-fold/out/a-probe/verification/anthropic-claude-sonnet-4.5-check2.json)
