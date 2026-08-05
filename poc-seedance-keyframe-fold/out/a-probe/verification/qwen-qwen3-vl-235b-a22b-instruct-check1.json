@@ -1,0 +1,27 @@
+{
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "check": "check1-gross",
+  "elapsed_s": 12.0,
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa523f3/p4dhsI8me6i1U5ot_elnJ_open-product-only.png",
+    "https://v3b.fal.media/files/b/0aa523f3/sACWL6SbwMH47bqESLZG__folded-product-only.png",
+    "https://v3b.fal.media/files/b/0aa523f2/SbIVPl90yACprimnxe6q4_frame-01.png",
+    "https://v3b.fal.media/files/b/0aa523f3/3D5maAtS76m6X_DZ4lH4K_frame-02.png",
+    "https://v3b.fal.media/files/b/0aa523f3/FZpfk7qrzxmNfn2YaaT3s_frame-03.png",
+    "https://v3b.fal.media/files/b/0aa523f3/DcvKaIfVisit9WlIcYNp9_frame-04.png",
+    "https://v3b.fal.media/files/b/0aa523f3/LekRMi444BgUDqvzkwd8k_frame-05.png",
+    "https://v3b.fal.media/files/b/0aa523f3/hAJyaeQDnylIH5g7Pkn9H_frame-06.png",
+    "https://v3b.fal.media/files/b/0aa523f3/CEJ2fSjCgisyz2r3Qv147_frame-07.png",
+    "https://v3b.fal.media/files/b/0aa523f3/y_XnteVy0B4DsjZ1nPKWs_frame-08.png",
+    "https://v3b.fal.media/files/b/0aa523f3/LFB5ApkB1YRrxffNaYsIH_frame-09.png",
+    "https://v3b.fal.media/files/b/0aa523f3/9LUVXXT1J9qDbDn_mNypI_frame-10.png",
+    "https://v3b.fal.media/files/b/0aa523f3/y1IrXmlvv27xCpMjA8q5b_frame-11.png",
+    "https://v3b.fal.media/files/b/0aa523f3/QurG4s0UlCBaUGhoMl5EJ_frame-12.png"
+  ],
+  "result": {
+    "output": "{\n  \"same_product\": {\n    \"answer\": \"yes\",\n    \"evidence\": \"All visible features (canopy pattern, wheel design, frame color, basket, cup holder) remain consistent with the official open and folded photos across all frames. No drift is observed.\"\n  },\n  \"fold_occurs\": {\n    \"answer\": \"yes\",\n    \"evidence\": \"The stroller transitions from a fully open state in early frames to a fully collapsed state in later frames, showing continuous mechanical folding motion without interruption.\"\n  },\n  \"end_state_matches_official_folded_photo\": {\n    \"answer\": \"yes\",\n    \"evidence\": \"The final frame (frame 12) shows the stroller in a compact, vertically folded configuration that matches the orientation, shape, and visible components of the official folded photo (Image 2).\"\n  },\n  \"camera_and_object_orientation_fixed\": {\n    \"answer\": \"no\",\n    \"evidence\": \"The camera viewpoint changes: it starts with a front-three-quarter view and rotates around the stroller to end with a side profile view in the folded state. The object\u2019s orientation relative to the camera is not fixed.\"\n  },\n  \"invented_or_vanishing_parts\": {\n    \"answer\": \"no\",\n    \"evidence\": \"No parts appear or disappear unexpectedly. All components visible in the start and end states are present throughout the sequence and fold logically into place.\"\n  },\n  \"verdict\": \"fail\",\n  \"verdict_reason\": \"The camera viewpoint is not fixed; it rotates around the stroller during the folding sequence, violating the requirement for a fixed camera and object orientation.\"\n}",
+    "reasoning": null,
+    "partial": false,
+    "error": null
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "model": "anthropic/claude-sonnet-4.5",
+  "check": "check1-gross",
+  "elapsed_s": 20.6,
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa523f3/p4dhsI8me6i1U5ot_elnJ_open-product-only.png",
+    "https://v3b.fal.media/files/b/0aa523f3/sACWL6SbwMH47bqESLZG__folded-product-only.png",
+    "https://v3b.fal.media/files/b/0aa523f2/SbIVPl90yACprimnxe6q4_frame-01.png",
+    "https://v3b.fal.media/files/b/0aa523f3/3D5maAtS76m6X_DZ4lH4K_frame-02.png",
+    "https://v3b.fal.media/files/b/0aa523f3/FZpfk7qrzxmNfn2YaaT3s_frame-03.png",
+    "https://v3b.fal.media/files/b/0aa523f3/DcvKaIfVisit9WlIcYNp9_frame-04.png",
+    "https://v3b.fal.media/files/b/0aa523f3/LekRMi444BgUDqvzkwd8k_frame-05.png",
+    "https://v3b.fal.media/files/b/0aa523f3/hAJyaeQDnylIH5g7Pkn9H_frame-06.png",
+    "https://v3b.fal.media/files/b/0aa523f3/CEJ2fSjCgisyz2r3Qv147_frame-07.png",
+    "https://v3b.fal.media/files/b/0aa523f3/y_XnteVy0B4DsjZ1nPKWs_frame-08.png",
+    "https://v3b.fal.media/files/b/0aa523f3/LFB5ApkB1YRrxffNaYsIH_frame-09.png",
+    "https://v3b.fal.media/files/b/0aa523f3/9LUVXXT1J9qDbDn_mNypI_frame-10.png",
+    "https://v3b.fal.media/files/b/0aa523f3/y1IrXmlvv27xCpMjA8q5b_frame-11.png",
+    "https://v3b.fal.media/files/b/0aa523f3/QurG4s0UlCBaUGhoMl5EJ_frame-12.png"
+  ],
+  "result": {
+    "output": "```json\n{\n  \"same_product\": {\n    \"answer\": \"yes\",\n    \"evidence\": \"The canopy fabric maintains the distinctive dark speckled pattern with yellow-green and teal clusters throughout all frames. The black frame, tri-spoke wheel design with white outlines, Graco branding, gray mesh basket, and black cup holder remain consistent from the official photos through all video frames.\"\n  },\n  \"fold_occurs\": {\n    \"answer\": \"yes\",\n    \"evidence\": \"Frame 1 shows the stroller fully open in upright position. Frames 2-7 show progressive folding: the canopy begins collapsing, handlebar rotates forward, and the frame structure compresses. Frames 8-12 show the stroller in increasingly compact folded states, with the final frames showing it standing on its wheels in a narrow, vertical folded configuration.\"\n  },\n  \"end_state_matches_official_folded_photo\": {\n    \"answer\": \"yes\",\n    \"evidence\": \"Frame 12 matches Image 2's folded state: stroller stands vertically on rear wheels, canopy fabric bundled on the left side, handlebar curves upward, frame collapsed into narrow profile, cup holder visible on left side, and overall compact vertical orientation identical to the official folded photo.\"\n  },\n  \"camera_and_object_orientation_fixed\": {\n    \"answer\": \"no\",\n    \"evidence\": \"Significant camera rotation occurs between frames 11 and 12. Frames 1-11 show a consistent three-quarter front-left view. Frame 12 abruptly shifts to a side profile view from the right, showing the stroller from a completely different angle. This represents a camera pan/rotation rather than just the folding motion.\"\n  },\n  \"invented_or_vanishing_parts\": {\n    \"answer\": \"no\",\n    \"evidence\": \"All components present in the official photos remain visible and accounted for throughout the sequence. The canopy, frame, wheels, basket, cup holder, and harness straps all persist through the folding motion without disappearing or new parts appearing.\"\n  },\n  \"verdict\": \"fail\",\n  \"verdict_reason\": \"Camera orientation is not fixed. While the product identity is maintained and the folding action occurs correctly, there is a clear camera angle change between frame 11 and frame 12, shifting from a three-quarter view to a side profile view. This violates the requirement for fixed camera and object orientation.\"\n}\n```",
+    "reasoning": null,
+    "partial": false,
+    "error": null
+  }
+}
