@@ -33,13 +33,31 @@ checker, and its first result was promising.
 RLDX-1 is an AI model from the robotics company RLWRLD. It was released in May
 2026. Think of it as part of the brain for a robot hand.
 
-It works in three steps:
+### How an instruction becomes robot movement
 
-1. It looks through the robot's cameras.
-2. It reads a command, such as “pick up the cup.”
-3. It sends movement commands to the robot's motors.
+The instruction comes from a person or the software running the robot. Qwen3-VL
+does not create the instruction.
 
-Its final answer is a set of robot movements—not a picture, video, or review.
+For example, a person or app may give RLDX-1 this goal:
+
+> Pick up the red cup.
+
+Then this happens:
+
+1. **The person or app gives the instruction:** “Pick up the red cup.”
+2. **The robot cameras capture the scene:** A table with a red cup, plate, and
+   spoon.
+3. **Qwen3-VL reads the instruction and camera images together:** It understands
+   which object is the red cup and what “pick up” means.
+4. **RLDX-1's action model plans the movement:** Move the arm forward, open the
+   fingers, grip the cup, and lift it.
+5. **The robot motors perform the movement.**
+6. **The cameras capture the new position.** RLDX-1 checks the updated scene and
+   decides the next movement. This loop continues until the task is complete.
+
+In short, the instruction says **what to do**, Qwen3-VL connects that instruction
+to **what the camera shows**, and RLDX-1 decides **how the robot should move**.
+Its output is robot movement commands—not a picture, video, or review.
 
 ## Why it does not fit
 
