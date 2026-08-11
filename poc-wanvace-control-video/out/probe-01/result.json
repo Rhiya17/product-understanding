@@ -1,0 +1,16 @@
+{
+  "video": {
+    "url": "https://v3b.fal.media/files/b/0aa52d90/xDPryC77D_bHXgMNVjaxT_u9Jvv5Wv.mp4",
+    "content_type": "video/mp4",
+    "file_name": "xDPryC77D_bHXgMNVjaxT_u9Jvv5Wv.mp4",
+    "file_size": 429492,
+    "width": 864,
+    "height": 480,
+    "fps": 30.0,
+    "duration": 3.366667,
+    "num_frames": 101
+  },
+  "prompt": "A professional studio product demonstration video of the exact Graco Ready2Jet compact stroller shown in the reference image. The stroller self-folds: the handlebar drops forward toward the front wheels, the frame compresses downward, and it finishes compact, upright, and self-standing on its wheels. A woman in dark jeans stands behind the stroller; her hand releases the handlebar as the fold begins. The stroller keeps its exact identity throughout: black frame, dark gray fabric, tan leather handle grip, cup holder, mesh basket, four wheels. Bright neutral lighting, pale blue wall with tall windows, light wooden floor. Fixed camera, no cuts, no text, no logos.",
+  "seed": 42001,
+  "frames_zip": null
+}

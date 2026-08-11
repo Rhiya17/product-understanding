@@ -1,0 +1,26 @@
+{
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "check": "check1-gross",
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa52d9a/GH3fX0PW6Rpqh1w4WtfII_openfold.png",
+    "https://v3b.fal.media/files/b/0aa52d9a/UDtjJ4ZeWtKk0vsrdNJBm_closedfold.png",
+    "https://v3b.fal.media/files/b/0aa52d99/3WA6wJjossst_-vD30ENl_frame-01.png",
+    "https://v3b.fal.media/files/b/0aa52d99/z1nVxy7q2O72ClU1qApW3_frame-02.png",
+    "https://v3b.fal.media/files/b/0aa52d99/3z8kDWIt_l8VjOS6dqzcF_frame-03.png",
+    "https://v3b.fal.media/files/b/0aa52d99/CsoHmh1ryDM9dmtH-wJlU_frame-04.png",
+    "https://v3b.fal.media/files/b/0aa52d99/wsOT4PFmu7V_yqHt5kZW6_frame-05.png",
+    "https://v3b.fal.media/files/b/0aa52d99/dn0rW2BNkkfgPC1S1xSVd_frame-06.png",
+    "https://v3b.fal.media/files/b/0aa52d99/NGEOVi2vsj3vRmqNuncb-_frame-07.png",
+    "https://v3b.fal.media/files/b/0aa52d99/ad7XK9BYzBcBlzPDhSCNP_frame-08.png",
+    "https://v3b.fal.media/files/b/0aa52d99/DVGQbESNQAsGezQGFfZaq_frame-09.png",
+    "https://v3b.fal.media/files/b/0aa52d99/k4NNyaBtvKgabng8iKR7R_frame-10.png",
+    "https://v3b.fal.media/files/b/0aa52d99/onyCLeLCVYUfjInxOZ3xl_frame-11.png",
+    "https://v3b.fal.media/files/b/0aa52d99/DEcOERYXXDJzIbL_LKkzl_frame-12.png"
+  ],
+  "result": {
+    "output": "{\n  \"same_product\": {\"answer\": \"yes\", \"evidence\": \"The stroller in frames 3-14 matches the start and end state images in frame count, wheel design, handle shape, and overall structure. The grey fabric seat and wooden handle accent are consistent across all images.\"},\n  \"reaches_end_state\": {\"answer\": \"yes\", \"evidence\": \"Frame 5 and all subsequent frames show the stroller fully collapsed into the compact, upright position identical to Image 2 (end state).\"},\n  \"camera_and_object_orientation_fixed\": {\"answer\": \"no\", \"evidence\": \"The camera angle changes between Image 1 (side profile) and Image 2 (rear three-quarter view). In frames 3-14, the camera is at a front-three-quarter angle, different from both reference images. The stroller also rotates during collapse, changing its orientation relative to the camera.\"},\n  \"stays_grounded\": {\"answer\": \"yes\", \"evidence\": \"In all frames 3-14, the stroller\u2019s wheels remain in continuous contact with the wooden floor. No floating, sinking, or sliding is visible.\"},\n  \"invented_or_vanishing_parts\": {\"answer\": \"no\", \"evidence\": \"No parts appear or disappear during the folding sequence. All components visible in the start state are accounted for in the end state, and no new elements are introduced.\"},\n  \"physically_impossible_motion\": {\"answer\": \"no\", \"evidence\": \"The folding motion is mechanical and plausible. Parts move along hinges and joints without intersecting or teleporting. The motion is smooth and consistent with real-world mechanics.\"},\n  \"verdict\": \"fail\",\n  \"verdict_reason\": \"The video fails because the camera and object orientation are not fixed as required. The camera angle differs from the reference start and end images, and the stroller rotates during the sequence, violating the constraint of a fixed viewing angle and object orientation.\"\n}",
+    "reasoning": null,
+    "partial": false,
+    "error": null
+  }
+}

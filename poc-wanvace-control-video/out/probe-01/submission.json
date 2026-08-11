@@ -1,0 +1,30 @@
+{
+  "submitted_at": "2026-08-05T23:29:36.756848+00:00",
+  "endpoint": "fal-ai/wan-vace-14b/depth",
+  "arguments": {
+    "prompt": "A professional studio product demonstration video of the exact Graco Ready2Jet compact stroller shown in the reference image. The stroller self-folds: the handlebar drops forward toward the front wheels, the frame compresses downward, and it finishes compact, upright, and self-standing on its wheels. A woman in dark jeans stands behind the stroller; her hand releases the handlebar as the fold begins. The stroller keeps its exact identity throughout: black frame, dark gray fabric, tan leather handle grip, cup holder, mesh basket, four wheels. Bright neutral lighting, pale blue wall with tall windows, light wooden floor. Fixed camera, no cuts, no text, no logos.",
+    "negative_prompt": "morphing, warping, extra wheels, extra parts, distorted hands, text, watermark, cartoon",
+    "video_url": "https://v3b.fal.media/files/b/0aa52d89/JvuNYM2Cr97NUrQQvEkRu_fold-control-clip.mp4",
+    "ref_image_urls": [
+      "https://v3b.fal.media/files/b/0aa52d89/QTY3be6HMcJJeRapTEWTm_openfold.png"
+    ],
+    "preprocess": true,
+    "match_input_num_frames": true,
+    "match_input_frames_per_second": true,
+    "resolution": "480p",
+    "num_inference_steps": 30,
+    "seed": 42001
+  },
+  "inputs": {
+    "control_clip": {
+      "path": "/Users/ramyamanchikanti/workplace/product-understanding/poc-wanvace-control-video/references/fold-control-clip.mp4",
+      "sha256": "0a95220734c7f179621fcbdc6a5e277963c26c6ae8fba8528d89092a4c350174",
+      "provenance": "user-provided official Graco 'Ready2Jet: How to Fold and Unfold' video; trimmed 38.65s-42.0s (continuous wide-shot fold take)"
+    },
+    "ref_image": {
+      "path": "/Users/ramyamanchikanti/workplace/product-understanding/poc-seedance-keyframe-fold/references/openfold.png",
+      "sha256": "16d1a8f8e277b00d2be1e421b345236453bae40e02b96023ca8e3a5240cd272a",
+      "provenance": "person-removed crop of official fold-sequence panel 1 (same colorway as source video)"
+    }
+  }
+}
