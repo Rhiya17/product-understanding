@@ -24,6 +24,18 @@
     "manual_fold_page": {
       "local": "../../poc-higgsfield-one-hand-fold/references/manual-fold-page-34.png",
       "source": "Official Graco Ready2Jet manual, page 34: prep steps + thumb switch / handle lever diagrams"
+    },
+    "seg_open": {
+      "local": "../references/openfold-canvas.png",
+      "source": "Panel 1 of official-fold-sequence.png: person removed by image editor (openfold.png), then padded to a 720x1280 canvas at common scale. Pose verified against the original in cleaning-comparison-sheet.png."
+    },
+    "seg_mid": {
+      "local": "../references/midfold-canvas.png",
+      "source": "Panel 2 (genuine mid-fold state) of official-fold-sequence.png: person removed (midfold.png), padded to 720x1280 at common scale."
+    },
+    "seg_closed": {
+      "local": "../references/closedfold-canvas.png",
+      "source": "Panel 3 of official-fold-sequence.png: person removed (closedfold.png), padded to 720x1280 at common scale."
     }
   },
   "videos": {
@@ -50,6 +62,20 @@
       "prompt_file": "condition-b-prompt.txt",
       "image_keys": ["start_frame", "end_frame", "fold_sequence", "manual_fold_page"],
       "video_keys": ["similar_fold_clip"]
+    },
+    "seg1": {
+      "mode": "first_last_frames",
+      "prompt_file": "condition-seg1-prompt.txt",
+      "image_keys": ["seg_open", "seg_mid"],
+      "video_keys": [],
+      "generation": {"duration_seconds": 4}
+    },
+    "seg2": {
+      "mode": "first_last_frames",
+      "prompt_file": "condition-seg2-prompt.txt",
+      "image_keys": ["seg_mid", "seg_closed"],
+      "video_keys": [],
+      "generation": {"duration_seconds": 4}
     }
   },
   "generation": {

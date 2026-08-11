@@ -1,0 +1,26 @@
+{
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "check": "check1-gross",
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa526ab/f3U96MHFLM4xFfY97CjaS_openfold-canvas.png",
+    "https://v3b.fal.media/files/b/0aa526ad/H7LKNYbXRJ3vVGe1iGq4q_closedfold-canvas.png",
+    "https://v3b.fal.media/files/b/0aa526b5/LMfspQjya1K71Yr8qWIlG_frame-01.png",
+    "https://v3b.fal.media/files/b/0aa526b5/N7Fh2lxzhuYb1EUE4yTq1_frame-02.png",
+    "https://v3b.fal.media/files/b/0aa526b5/g7VkF7ZjkxRwLyk9nmEck_frame-03.png",
+    "https://v3b.fal.media/files/b/0aa526b5/rtFduiaiyhdYb5ReC2kBy_frame-04.png",
+    "https://v3b.fal.media/files/b/0aa526b5/aKWyuimzAz5UNGKhT7iD2_frame-05.png",
+    "https://v3b.fal.media/files/b/0aa526b5/whY6oMi4Q91649EXe8ly-_frame-06.png",
+    "https://v3b.fal.media/files/b/0aa526b5/W5yqP_ZOfk_nBttZeYnmr_frame-07.png",
+    "https://v3b.fal.media/files/b/0aa526b5/6kPiU56E2hzIj27tsZl4W_frame-08.png",
+    "https://v3b.fal.media/files/b/0aa526b5/emkFzfC6Insfh9QVLkeb7_frame-09.png",
+    "https://v3b.fal.media/files/b/0aa526b5/nd5w88I9npT8TwTgPRyD-_frame-10.png",
+    "https://v3b.fal.media/files/b/0aa526b5/0w-TkLue4eWwIs6rw22e-_frame-11.png",
+    "https://v3b.fal.media/files/b/0aa526b5/aGQRhJWCre_jcRxcprUYg_frame-12.png"
+  ],
+  "result": {
+    "output": "{\n  \"same_product\": {\"answer\": \"yes\", \"evidence\": \"The stroller in all frames, including the start and end reference images, has identical features: black frame, four wheels with a specific spoke design, a cup holder on the left side of the handle, and grey fabric. No model or color discrepancies are visible.\"},\n  \"reaches_end_state\": {\"answer\": \"yes\", \"evidence\": \"The final frames (12-14) show the stroller fully collapsed into the compact, upright position seen in Image 2. The seat is folded down, the frame is condensed, and the overall shape matches the verified end state exactly.\"},\n  \"camera_and_object_orientation_fixed\": {\"answer\": \"no\", \"evidence\": \"The camera angle is not fixed. While the background remains static, the stroller itself rotates significantly during the sequence. It begins at an angle, then tilts backward and folds inward, changing its orientation relative to the camera. This violates the requirement for a fixed object orientation.\"},\n  \"stays_grounded\": {\"answer\": \"no\", \"evidence\": \"The stroller is visibly floating against a white background in every single frame from 3 to 14. There is no ground plane, shadow, or any indication of contact with a surface. It levitates throughout the entire motion.\"},\n  \"invented_or_vanishing_parts\": {\"answer\": \"no\", \"evidence\": \"No parts appear or disappear during the folding process. All components visible in the start state (wheels, frame, seat, cup holder) are present and accounted for in the end state, just reconfigured.\"},\n  \"physically_impossible_motion\": {\"answer\": \"yes\", \"evidence\": \"The stroller's motion is physically impossible because it occurs while the object is floating in mid-air with no ground contact or external force applied. A real stroller cannot fold itself without being manipulated by a person or mechanism, nor can it remain suspended while doing so. This violates basic physics.\"},\n  \"verdict\": \"fail\",\n  \"verdict_reason\": \"The video fails because the stroller does not stay grounded (it floats), the object's orientation is not fixed (it rotates), and its motion is physically impossible (self-folding while levitating). These violations are clear and unambiguous based on visual evidence.\"\n}",
+    "reasoning": null,
+    "partial": false,
+    "error": null
+  }
+}

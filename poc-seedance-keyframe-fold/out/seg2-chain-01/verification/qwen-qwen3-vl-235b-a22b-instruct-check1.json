@@ -1,0 +1,20 @@
+{
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "check": "check1-gross",
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa526ab/U_ZsGxzbf0HT3DS1oB8I3_midfold-canvas.png",
+    "https://v3b.fal.media/files/b/0aa526ad/H7LKNYbXRJ3vVGe1iGq4q_closedfold-canvas.png",
+    "https://v3b.fal.media/files/b/0aa526ad/kgSxRiaz3N7tvCcVlWzs-_frame-01.png",
+    "https://v3b.fal.media/files/b/0aa526ad/deQFWDivq42XFmzvamEkL_frame-02.png",
+    "https://v3b.fal.media/files/b/0aa526ad/b9TjqfO7BVJv60NN2Gy5f_frame-03.png",
+    "https://v3b.fal.media/files/b/0aa526ad/VBegjQiAMvXVms3lTfOXB_frame-04.png",
+    "https://v3b.fal.media/files/b/0aa526ad/g6HF471kZqn2Ev0pX4okj_frame-05.png",
+    "https://v3b.fal.media/files/b/0aa526ad/9ZG6b7f3ahiz75rXbWhZS_frame-06.png"
+  ],
+  "result": {
+    "output": "{\n  \"same_product\": {\"answer\": \"yes\", \"evidence\": \"All frames show a stroller with identical black frame, wheel design, grey fabric, and cup holder, matching both the start and end state images.\"},\n  \"reaches_end_state\": {\"answer\": \"yes\", \"evidence\": \"The final frame (frame 6) matches Image 2 exactly: the stroller is fully folded, compact, and viewed from the same rear-three-quarter angle.\"},\n  \"camera_and_object_orientation_fixed\": {\"answer\": \"no\", \"evidence\": \"The camera or object rotates. The stroller starts at an angle in Image 1 and Frame 1, then rotates toward a side/rear view by Frame 3, and ends in a nearly straight rear view in Frame 6, which does not match the fixed orientation requirement.\"},\n  \"stays_grounded\": {\"answer\": \"no\", \"evidence\": \"The stroller is floating against a white background in all frames. No ground plane is visible, and no wheels make contact with any surface, violating the 'staying in place on the ground' rule.\"},\n  \"invented_or_vanishing_parts\": {\"answer\": \"no\", \"evidence\": \"No parts appear or disappear. All components remain consistent across all frames and match the start/end images.\"},\n  \"physically_impossible_motion\": {\"answer\": \"yes\", \"evidence\": \"The stroller folds while levitating without any ground contact or human interaction, which is physically impossible for a real-world object under gravity without support.\"},\n  \"verdict\": \"fail\",\n  \"verdict_reason\": \"The video fails because the stroller does not stay grounded (it floats), the camera/object orientation is not fixed (rotation occurs), and the motion is physically impossible (folding while levitating).\"\n}",
+    "reasoning": null,
+    "partial": false,
+    "error": null
+  }
+}

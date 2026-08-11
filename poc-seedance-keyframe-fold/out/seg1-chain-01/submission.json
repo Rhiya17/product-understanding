@@ -1,0 +1,32 @@
+{
+  "submitted_at": "2026-08-05T18:31:23.107750+00:00",
+  "condition": "seg1",
+  "tier": "fast",
+  "endpoint": "bytedance/seedance-2.0/fast/image-to-video",
+  "seed": 42001,
+  "arguments": {
+    "prompt": "Product demonstration of the exact Graco Ready2Jet stroller shown in the first frame, self-folding partway until it matches the last frame exactly. No people appear in the video.\n\nThe camera is completely static for the entire video. The stroller is empty, in side view, and stands on a plain pale studio background. Its handle safety switch releases and the fold begins through its existing hinges only: the handlebar drops forward toward the front wheels, the seat and canopy lower together, and the frame compresses downward. The video ends with the stroller half-folded, resting on all four wheels, in exactly the pose of the last frame. The fold does not complete in this clip.\n\nPreserve the source stroller exactly throughout: the same four wheels, black frame, dark gray fabric, tan leather handle grip, cup holder, basket, hinges, proportions, and product identity. The stroller stays in the same place on the ground and does not rotate, slide, or turn. Normal demonstration speed, neutral studio lighting, no cuts, no audio.\n\nNo hands or people. No camera movement, panning, zooming, or orbiting. No invented controls or parts. No product redesign, morphing, text, or logo changes.",
+    "resolution": "720p",
+    "duration": "4",
+    "aspect_ratio": "9:16",
+    "generate_audio": false,
+    "seed": 42001,
+    "image_url": "https://v3b.fal.media/files/b/0aa5268c/BSYyWSAalMhGwPooPp3JQ_openfold-canvas.png",
+    "end_image_url": "https://v3b.fal.media/files/b/0aa5268c/ErunKtYEwD8Zb_WySiqcX_midfold-canvas.png"
+  },
+  "image_refs": [
+    {
+      "key": "seg_open",
+      "local": "/Users/ramyamanchikanti/workplace/product-understanding/poc-seedance-keyframe-fold/references/openfold-canvas.png",
+      "sha256": "2d56c2da83146ec7e730023bd699a612a167194f19c512aaeaa3ab81a9acc7c3",
+      "url": "https://v3b.fal.media/files/b/0aa5268c/BSYyWSAalMhGwPooPp3JQ_openfold-canvas.png"
+    },
+    {
+      "key": "seg_mid",
+      "local": "/Users/ramyamanchikanti/workplace/product-understanding/poc-seedance-keyframe-fold/references/midfold-canvas.png",
+      "sha256": "71108943059c1704c90b7521a6b4b23ba2c3f38df7e66a601a7a3fa79fc4da32",
+      "url": "https://v3b.fal.media/files/b/0aa5268c/ErunKtYEwD8Zb_WySiqcX_midfold-canvas.png"
+    }
+  ],
+  "video_refs": []
+}

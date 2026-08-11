@@ -1,0 +1,20 @@
+{
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "check": "check1-gross",
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa526ab/f3U96MHFLM4xFfY97CjaS_openfold-canvas.png",
+    "https://v3b.fal.media/files/b/0aa526ab/U_ZsGxzbf0HT3DS1oB8I3_midfold-canvas.png",
+    "https://v3b.fal.media/files/b/0aa526aa/raleKudGKFBY8g_vnVty6_frame-01.png",
+    "https://v3b.fal.media/files/b/0aa526aa/tmXbqh-XWHoAOEpd0HBLZ_frame-02.png",
+    "https://v3b.fal.media/files/b/0aa526aa/cHk51aud6bBtFRpub5Gub_frame-03.png",
+    "https://v3b.fal.media/files/b/0aa526aa/xq4sCqgUYtYMcU_Umw6Qv_frame-04.png",
+    "https://v3b.fal.media/files/b/0aa526aa/gXeGPhArsgzp5Qg1m4APX_frame-05.png",
+    "https://v3b.fal.media/files/b/0aa526aa/jGKluzYqRwDrYBJswsBjS_frame-06.png"
+  ],
+  "result": {
+    "output": "{\n  \"same_product\": {\"answer\": \"yes\", \"evidence\": \"The stroller in all frames matches the start and end state images in frame count, color, structure, and visible components like the cup holder and mesh basket.\"},\n  \"reaches_end_state\": {\"answer\": \"yes\", \"evidence\": \"Frame 7 and Frame 8 show the stroller fully collapsed, matching the end state image exactly in orientation and configuration.\"},\n  \"camera_and_object_orientation_fixed\": {\"answer\": \"no\", \"evidence\": \"The camera angle is not fixed; it rotates around the stroller. The stroller appears to tilt backward in frames 3-6 compared to the start state, and the perspective shifts as if the camera is moving or rotating, violating the fixed camera requirement.\"},\n  \"stays_grounded\": {\"answer\": \"no\", \"evidence\": \"The stroller does not maintain ground contact. In all frames (including start and end), it is suspended against a blank background with no visible surface or shadow indicating it is on the ground. It appears to float throughout.\"},\n  \"invented_or_vanishing_parts\": {\"answer\": \"no\", \"evidence\": \"No parts are invented or vanish. All visible components remain consistent across frames, with only articulation of existing joints during folding.\"},\n  \"physically_impossible_motion\": {\"answer\": \"no\", \"evidence\": \"The folding motion is mechanically plausible. No parts pass through each other, stretch unnaturally, or teleport. The motion follows a logical sequence from open to folded state.\"},\n  \"verdict\": \"fail\",\n  \"verdict_reason\": \"The video fails because the camera is not fixed \u2014 it rotates around the stroller \u2014 and the stroller does not stay grounded; it floats against a blank background throughout, violating two core requirements.\"\n}",
+    "reasoning": null,
+    "partial": false,
+    "error": null
+  }
+}

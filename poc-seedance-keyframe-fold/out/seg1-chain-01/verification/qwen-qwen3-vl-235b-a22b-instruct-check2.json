@@ -1,0 +1,20 @@
+{
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "check": "check2-mechanism",
+  "image_urls": [
+    "https://v3b.fal.media/files/b/0aa523f3/EJhRe4-w7zEJq4yCJN9s8_official-fold-sequence.png",
+    "https://v3b.fal.media/files/b/0aa523f3/QMwf1XpWqQw4ThVIRn0Bn_manual-fold-page-34.png",
+    "https://v3b.fal.media/files/b/0aa526aa/raleKudGKFBY8g_vnVty6_frame-01.png",
+    "https://v3b.fal.media/files/b/0aa526aa/tmXbqh-XWHoAOEpd0HBLZ_frame-02.png",
+    "https://v3b.fal.media/files/b/0aa526aa/cHk51aud6bBtFRpub5Gub_frame-03.png",
+    "https://v3b.fal.media/files/b/0aa526aa/xq4sCqgUYtYMcU_Umw6Qv_frame-04.png",
+    "https://v3b.fal.media/files/b/0aa526aa/gXeGPhArsgzp5Qg1m4APX_frame-05.png",
+    "https://v3b.fal.media/files/b/0aa526aa/jGKluzYqRwDrYBJswsBjS_frame-06.png"
+  ],
+  "result": {
+    "output": "{\n  \"official_mechanism\": \"According to the manual, folding is initiated by sliding a thumb switch and squeezing a handle lever. This action causes the stroller's frame to pivot and collapse inward, with the seat and chassis moving towards each other in a controlled, articulated motion.\",\n  \"candidate_motion\": \"The candidate clip shows the stroller beginning in an open state and progressively collapsing. The seatback tilts forward and down while the chassis folds upward from the rear, resulting in a compact, self-contained unit. The motion appears smooth and continuous.\",\n  \"motion_direction_matches_official\": {\n    \"answer\": \"yes\",\n    \"evidence\": \"The direction of movement in the candidate frames\u2014seat folding forward and chassis rising from the back\u2014is consistent with the articulated collapse shown in the official diagram on page 34.\"\n  },\n  \"intermediate_states_plausible\": {\n    \"answer\": \"yes\",\n    \"evidence\": \"Each intermediate frame displays a physically coherent configuration of the stroller\u2019s joints and components, showing no impossible distortions or unnatural poses that would suggest AI artifacting or incorrect mechanics.\"\n  },\n  \"safe_as_instruction_segment\": \"yes\",\n  \"reason\": \"The visible motion accurately reflects the manufacturer\u2019s specified folding mechanism and sequence. All intermediate states are plausible and mechanically consistent, making this segment suitable for use as part of official folding instructions.\"\n}",
+    "reasoning": null,
+    "partial": false,
+    "error": null
+  }
+}

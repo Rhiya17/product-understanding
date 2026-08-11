@@ -52,7 +52,8 @@ def load_condition(condition: str) -> tuple[dict, dict, dict]:
     cond = manifest["conditions"].get(condition)
     if cond is None:
         sys.exit(f"Unknown condition {condition!r}; expected one of {sorted(manifest['conditions'])}.")
-    return manifest, cond, manifest["generation"]
+    gen = {**manifest["generation"], **cond.get("generation", {})}
+    return manifest, cond, gen
 
 
 def upload_refs(manifest: dict, keys: list[str], kind: str) -> list[dict]:
@@ -167,7 +168,7 @@ def run_once(condition: str, label: str, tier: str, seed: int) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--condition", required=True, choices=["a", "b", "c"])
+    parser.add_argument("--condition", required=True, choices=["a", "b", "c", "seg1", "seg2"])
     parser.add_argument("--runs", type=int, default=1, help="Number of runs (uses pre-declared seeds).")
     parser.add_argument("--run-label", default=None, help="Label for a single run (default run-01…).")
     parser.add_argument("--seed", type=int, default=None, help="Seed override for a single run.")
