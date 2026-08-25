@@ -1,0 +1,250 @@
+{
+  "product_id": "prod_graco_snugride_lite_lx",
+  "identity": {
+    "brand": "Graco",
+    "model": "SnugRide 35 Lite LX",
+    "model_number": "2110186",
+    "legacy_model_number": "2106696",
+    "market": "US",
+    "category": "infant_car_seat",
+    "consequence_domain": "C3_child_restraint",
+    "naming_note": "Current gracobaby.com listing sells this seat as 'SnugRide Lite LX' (4-30 lb, model 2110186, Studio). The requested 'SnugRide 35 Lite LX' (4-35 lb, legacy model 2106696) no longer has its own page; Graco reuses the same product imagery (asset names still say 'snugride35litelx')."
+  },
+  "sources": [
+    {
+      "source_id": "src_snugride_manual_en_v1",
+      "type": "MANUAL_PDF",
+      "local_path": "manuals/snugride-lite-lx-instruction-manual-en.pdf",
+      "origin_url": "https://newellbrands.imgix.net/1c2ec179-474c-361c-8324-cf41d2122fcf/1c2ec179-474c-361c-8324-cf41d2122fcf.pdf",
+      "sha256": "86f8e623a8724a4eba9d2da22485f4a596cfb38b97e0417b42f52a0823a138ac",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "English instruction manual linked from the gracobaby.com PDP 'Product Instructions' section. Internal title 'SNUGRIDE LITE LX'; states rear-facing 4-30 lb (1.8-13.6 kg), 32 in (81 cm) or less. 10.0 MB, PDF 1.4."
+    },
+    {
+      "source_id": "src_snugride_manual_es_v1",
+      "type": "MANUAL_PDF",
+      "local_path": "manuals/snugride-lite-lx-instruction-manual-es.pdf",
+      "origin_url": "https://newellbrands.imgix.net/9ddd2985-5500-31ac-b8a7-7b4dc20836c5/9ddd2985-5500-31ac-b8a7-7b4dc20836c5.pdf",
+      "sha256": "b28d6a6d41b9b06131b4c7826283041d9433ac097b91b497a464dfa237ca0e47",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Spanish instruction manual linked from the same PDP section. 9.5 MB, PDF 1.4."
+    },
+    {
+      "source_id": "src_compatibility_chart_apr2026",
+      "type": "SPEC_DOC_PDF",
+      "local_path": "specs/graco-stroller-carseat-base-compatibility-apr2026.pdf",
+      "origin_url": "https://newellbrands.imgix.net/a16c8b23-4777-3064-8bee-ed9dd3ae762d/a16c8b23-4777-3064-8bee-ed9dd3ae762d.pdf",
+      "sha256": "5024daba06d28d382e46615734d5f641fccd0de9a7cd8944441c6bf0b7e4c375",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official 'Graco Strollers & Infant Car Seats Compatibility List' + 'Infant Car Seats & Base Compatibility List' (APR 2026), linked from PDP via gracobaby.com/compatibility-charts.html. 3 pages, 445 KB. Authoritative for which Graco strollers/bases accept the SnugRide Lite family."
+    },
+    {
+      "source_id": "src_pdp_specs_page",
+      "type": "SPEC_PAGE",
+      "local_path": "specs/specs.md",
+      "origin_url": "https://www.gracobaby.com/shop/car-seats/infant-car-seats/snugride-lite-lx-infant-car-seat/SAP_2110186.html",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Facts transcribed from manufacturer page; internal research use",
+      "notes": "Key specs transcribed from the live PDP (price $139.99, model 2110186, 4-30 lb / 32 in, 12.3 lb with base, 7.5 lb carrier, dimensions 15.5 x 27.4 x 18.07 in). Canonical short URL: .../SP_281940.html."
+    },
+    {
+      "source_id": "src_img_front_3q_seat_in_base",
+      "type": "IMAGE",
+      "local_path": "images/front-3q-seat-in-base.jpg",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/8bs01_studio_snugride_lite_35_lx_atf1?wid=2500&fmt=jpeg&qlt=95",
+      "sha256": "2a5ce5c5d7e4a7cc073ff9496d05dcbc90c18faae500be364df2f3aba36bb731",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "PDP gallery hero: front three-quarter studio shot, carrier clicked into base, handle up, Studio (black) colorway. 2500 px."
+    },
+    {
+      "source_id": "src_img_in_car_installed",
+      "type": "IMAGE",
+      "local_path": "images/in-car-installed-baby-harness.jpg",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/8bs01_studio_snugride_lite_35_lx_atf2?wid=2500&fmt=jpeg&qlt=95",
+      "sha256": "4f4c1c853746186ed18adc4240739151ff3af0a57fb437ea3fc7e53c1350b0aa",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Seat installed rear-facing in vehicle with infant buckled in 5-point harness. Text overlay still claims '4-35 lb and up to 32 in' (legacy 35 Lite LX rating)."
+    },
+    {
+      "source_id": "src_img_base_alone",
+      "type": "IMAGE",
+      "local_path": "images/base-alone-latch-install.jpg",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/8bs01_studio_snugride_lite_35_lx_atf3?wid=2500&fmt=jpeg&qlt=95",
+      "sha256": "3b3647978c5db9de43f287ac55ea96fac4fc3699e37541dbce1ae49dcc1974de",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Base alone on vehicle seat ('4-position adjustable base with level indicator' overlay); shows base without carrier."
+    },
+    {
+      "source_id": "src_img_carry_handle_up",
+      "type": "IMAGE",
+      "local_path": "images/carry-handle-up-lifestyle.jpg",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/8bs01_studio_snugride_lite_35_lx_atf4?wid=2500&fmt=jpeg&qlt=95",
+      "sha256": "ca1227fe52efd06ae9dd4d35a5b52240d9540ac63bffe37d55cc2e580df7c28e",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Carrier being carried without base, handle in full-up carry position, canopy open ('Lightweight, easy to carry' overlay)."
+    },
+    {
+      "source_id": "src_img_harness_support_detail",
+      "type": "IMAGE",
+      "local_path": "images/harness-infant-support-detail.jpg",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/8bs01_studio_snugride_lite_35_lx_atf5?wid=2500&fmt=jpeg&qlt=95",
+      "sha256": "45585147ef0a1069fc5ee429ef75e13735be6a710d3b098b6786a3a70aa8d8e4",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Close-up of 2-piece infant head/body support with chest clip and harness on infant."
+    },
+    {
+      "source_id": "src_img_feature_callouts",
+      "type": "IMAGE",
+      "local_path": "images/feature-callouts-front.jpg",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/8bs01_studio_snugride_lite_35_lx_atf6?wid=2500&fmt=jpeg&qlt=95",
+      "sha256": "0f6d5ca06f405cb3266a774100793bfec682e918ca706c568e57b6f3936e3db5",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Annotated front view naming: infant head/body support, rotating canopy, 5-point front-adjust harness, ProtectPlus Engineered, 4-position adjustable base, LATCH equipped."
+    },
+    {
+      "source_id": "src_img_in_car_installed_alt",
+      "type": "IMAGE",
+      "local_path": "images/in-car-installed-alt.jpg",
+      "origin_url": "https://newellbrands.imgix.net/adb63ab0-e649-300c-bd8a-9449f5f41df3/adb63ab0-e649-300c-bd8a-9449f5f41df3.jpeg",
+      "sha256": "aa2fc3a2f06844713f469059ae73c83b38f7d1b32b99d7e62fb51640d3f89ed1",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "'Ready to ride from day one' marketing shot: seat installed in car with infant, caregiver adjusting harness. 3000x3000 px original."
+    },
+    {
+      "source_id": "src_img_carry_alt",
+      "type": "IMAGE",
+      "local_path": "images/carry-handle-up-alt.jpg",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/boem0073_2106696_glbl99_8bs01_snugride35litelx_atf3?wid=2500&fmt=jpeg&qlt=95",
+      "sha256": "10de12fd5335296a8f2d24502a11fadad869c24441758a99a1dbdaba4f114c53",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "'Ultra-lightweight' lifestyle: carrier held without base, handle up, infant inside. Asset name carries legacy model 2106696."
+    },
+    {
+      "source_id": "src_img_front_canopy_protectplus",
+      "type": "IMAGE",
+      "local_path": "images/front-canopy-protectplus.jpg",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/boem0073_2106696_glbl99_8bs01_snugride35litelx_atf4?wid=2500&fmt=jpeg&qlt=95",
+      "sha256": "c16be23488aea944a2e3daeb7e9d07e6c4fa7ab8679be69601343e098211e945",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "'Ride safe & secure' ProtectPlus graphic: straight-on front view of seat in base, canopy open, crash-mode icons."
+    },
+    {
+      "source_id": "src_img_support_detail_alt",
+      "type": "IMAGE",
+      "local_path": "images/infant-support-detail-alt.jpg",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/boem0073_2106696_glbl99_8bs01_snugride35litelx_atf5?wid=2500&fmt=jpeg&qlt=95",
+      "sha256": "c3eb83a911326702ce43b55f309f95e19d2f43e61952a986c1d111ea5e7a980f",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "'Keep your cutie comfy' close-up of infant supports, harness and chest clip, canopy interior."
+    },
+    {
+      "source_id": "src_img_side_recline",
+      "type": "IMAGE",
+      "local_path": "images/side-3q-recline-adjust.jpg",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/boem0073_2106696_glbl99_8bs01_snugride35litelx_atf6?wid=2500&fmt=jpeg&qlt=95",
+      "sha256": "729e93ae1c783a9f319451a2147f70ae2304f791079c8ef2df2863f4e2792811",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "'Reclines for a perfect fit': side three-quarter view of seat in base, hand operating base recline foot — best side-profile view in the official set."
+    },
+    {
+      "source_id": "src_img_feature_callouts_alt",
+      "type": "IMAGE",
+      "local_path": "images/feature-callouts-front-alt.jpg",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/266648424_2110186_us_image-7?wid=2500&fmt=jpeg&qlt=95",
+      "sha256": "bf18082c53a5f89d438ed9661cbefb0f525cf62e12b36efce179c72fafd74279",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Second annotated feature diagram (blue background), asset named with current model 2110186; callouts include 5-point front-adjust harness and 4-position recline."
+    },
+    {
+      "source_id": "src_video_install_seatbelt",
+      "type": "VIDEO_URL",
+      "local_path": "videos/video-sources.md",
+      "origin_url": "https://www.youtube.com/watch?v=9oHlclZMYmE",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "Official Graco YouTube channel: 'How to Install SnugRide 35 Lite/LX Infant Carseat Using Vehicle Seatbelt' (baseless install)."
+    },
+    {
+      "source_id": "src_video_install_latch",
+      "type": "VIDEO_URL",
+      "local_path": "videos/video-sources.md",
+      "origin_url": "https://www.youtube.com/watch?v=5fMo1pe7IE8",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "Official Graco YouTube channel: 'How to Install the SnugRide 35 Lite/LX Infant Car Seat with LATCH' (base install + click-in)."
+    },
+    {
+      "source_id": "src_video_harness_position",
+      "type": "VIDEO_URL",
+      "local_path": "videos/video-sources.md",
+      "origin_url": "https://www.youtube.com/watch?v=LrYNp3l9qd8",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "Official Graco YouTube channel: 'How to Properly Position Harness - Infant Car Seats' (harness height/chest clip, applies to SnugRide family)."
+    }
+  ],
+  "spin_360": {
+    "present": false,
+    "type": null,
+    "checked_at": [
+      "https://www.gracobaby.com/shop/car-seats/infant-car-seats/snugride-lite-lx-infant-car-seat/SAP_2110186.html",
+      "https://www.amazon.com/dp/B07Y5S4VWT"
+    ],
+    "notes": "Graco PDP gallery is a flat image carousel (no video or spin elements in DOM). Amazon listing's ImageBlockATF data contains no spin/360 fields and no 360 badge."
+  },
+  "collection_gaps": [
+    "SUBSTITUTION: exact 'SnugRide 35 Lite LX' (4-35 lb, legacy model 2106696) is no longer sold on gracobaby.com; collected the current renamed variant 'SnugRide Lite LX' (4-30 lb, model 2110186, Studio) which shares the same product imagery. The weight-rating difference (30 vs 35 lb) is material for a child-restraint domain.",
+    "Legacy 4-35 lb '35 Lite LX' manual exists only on third-party ManualsLib (manualslib.com/manual/1858019); not downloaded per official-sources-only rule.",
+    "No separate quick-start or base-only installation PDF is published on the PDP — only the full EN/ES instruction manuals (base install is covered inside them).",
+    "FAA/aircraft certification not stated on the product page and not found via crude text extraction of the manual PDF; unverified.",
+    "Official image set lacks a clean studio shot of the carrier alone (without base), a true rear view, and intermediate carry-handle positions; only handle-up is shown.",
+    "No official Graco-channel video specifically showing the one-step stroller click-in for this seat was found after 3 search approaches.",
+    "Compatibility chart per-cell check/dash markers are graphics; row-level compatibility transcribed to specs.md but per-cell marks must be read from the PDF."
+  ],
+  "curation_log": [
+    {
+      "date": "2026-08-24",
+      "by": "vijayp.cmu@gmail.com",
+      "action": "product_id renamed prod_graco_snugride_35_lite_lx -> prod_graco_snugride_lite_lx",
+      "reason": "Fix dangling identifier: catalog.json products list, the extraction work order, and all 90 claims already use prod_graco_snugride_lite_lx (the product was renamed by Graco from '35 Lite LX' to 'Lite LX'); this manifest and the catalog compatibility_pairs were the last two places carrying the old id. Directory name unchanged."
+    }
+  ]
+}

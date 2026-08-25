@@ -1,0 +1,64 @@
+{
+  "catalog_version": "1.0",
+  "created_at": "2026-08-20",
+  "market": "US",
+  "products": [
+    {
+      "product_id": "prod_graco_ready2jet",
+      "dir": "graco-ready2jet-2212125",
+      "brand": "Graco",
+      "model": "Ready2Jet",
+      "category": "stroller",
+      "tier_hypothesis": "hero",
+      "selection_rationale": "Existing pilot; complex articulated fold mechanism; all POC history; hero-twin candidate; travel-system pair with SnugRide."
+    },
+    {
+      "product_id": "prod_graco_snugride_lite_lx",
+      "dir": "graco-snugride-35-lite-lx",
+      "brand": "Graco",
+      "model": "SnugRide Lite LX",
+      "model_number": "2110186",
+      "category": "infant_car_seat",
+      "tier_hypothesis": "mid",
+      "selection_rationale": "C3 safety-critical domain (child restraint, harness, installation); real compatibility pair with Ready2Jet for cross-product COMPATIBILITY claims.",
+      "identity_notes": "Renamed from 'SnugRide 35 Lite LX' (legacy 2106696); weight rating changed 4-35 lb to 4-30 lb in the rename, and one official gallery image still claims 4-35 lb — a live conflicting-sources case. Official compatibility chart lists Ready2Jet (2025+), so compatibility with our 2024-revision pilot is revision-dependent. Directory name retains the legacy slug."
+    },
+    {
+      "product_id": "prod_bose_qc_ultra_headphones",
+      "dir": "bose-qc-ultra-headphones",
+      "brand": "Bose",
+      "model": "QuietComfort Ultra Headphones",
+      "category": "headphones",
+      "tier_hypothesis": "mid",
+      "selection_rationale": "Digital/on-screen pairing procedures; physical controls; the docs' running example; compatibility pair with MacBook Air."
+    },
+    {
+      "product_id": "prod_apple_macbook_air_13_m3",
+      "dir": "apple-macbook-air-13-m3",
+      "brand": "Apple",
+      "model": "MacBook Air 13-inch (M3)",
+      "category": "laptop",
+      "tier_hypothesis": "tail",
+      "selection_rationale": "Port-location and Bluetooth-flow questions; compatibility pair with Bose QC Ultra; tests the no-classic-manual ingestion case (HTML guides instead of PDF)."
+    },
+    {
+      "product_id": "prod_levoit_core_300s",
+      "dir": "levoit-core-300s",
+      "brand": "Levoit",
+      "model": "Core 300S",
+      "category": "air_purifier",
+      "tier_hypothesis": "mid",
+      "selection_rationale": "Rigid control product for 3D-twin tool testing (digital-twin plan D1/D8); filter-reset and filter-replacement procedures; app pairing."
+    }
+  ],
+  "compatibility_pairs": [
+    [
+      "prod_graco_ready2jet",
+      "prod_graco_snugride_lite_lx"
+    ],
+    [
+      "prod_bose_qc_ultra_headphones",
+      "prod_apple_macbook_air_13_m3"
+    ]
+  ]
+}

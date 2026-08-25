@@ -1,0 +1,272 @@
+{
+  "product_id": "prod_apple_macbook_air_13_m3",
+  "identity": {
+    "brand": "Apple",
+    "model": "MacBook Air 13-inch (M3, 2024)",
+    "model_identifier": "Mac15,12",
+    "market": "US",
+    "category": "laptop",
+    "consequence_domain": "C0_C1_consumer_electronics"
+  },
+  "sources": [
+    {
+      "source_id": "src_tech_specs_page",
+      "type": "SPEC_PAGE",
+      "local_path": "manuals/tech-specs.md",
+      "origin_url": "https://support.apple.com/en-us/118551",
+      "sha256": "48630f18d279cf14321ab18fc0e8e26e5b4805c240cf668f44f759681c891c9e",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official Apple tech specs for MacBook Air (13-inch, M3, 2024). HTML page captured as markdown. Bluetooth 5.3, Wi-Fi 6E, ports, dimensions, audio. Page's base 16GB memory reflects Apple's 2025 update; launch base was 8GB."
+    },
+    {
+      "source_id": "src_ports_guide_tour",
+      "type": "GUIDE",
+      "local_path": "manuals/ports-guide.md",
+      "origin_url": "https://support.apple.com/guide/macbook-air/take-a-tour-of-macbook-air-apd7e765329d/2024/mac/14.3",
+      "sha256": "cd68b1502012402cbaa7756496541e87e08436c3d07b6cefa8e08aff6dcc7536",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "M3-era (2024, macOS 14.3) archived version of MacBook Air Essentials 'Take a tour' page. Documents port sides: MagSafe 3 + 2x Thunderbolt/USB 4 on LEFT, 3.5mm headphone jack on RIGHT."
+    },
+    {
+      "source_id": "src_identify_page",
+      "type": "SUPPORT_PAGE",
+      "local_path": "manuals/identify-macbook-air.md",
+      "origin_url": "https://support.apple.com/en-us/102869",
+      "sha256": "da173c7468a7293d0fea491a142d3c8c562886fc65bf978ecd2bfd35a8048158",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "'Identify your MacBook Air model' entry. Confirms Model Identifier Mac15,12, part numbers MRXN3xx/A etc., colors, newest compatible OS macOS Tahoe 26."
+    },
+    {
+      "source_id": "src_essentials_guide_note",
+      "type": "GUIDE",
+      "local_path": "manuals/essentials-guide-note.md",
+      "origin_url": "https://support.apple.com/guide/macbook-air/welcome/mac",
+      "sha256": "d0704cee0d82ce9a2d7f800095605121bca8ba38a21ea66e82d23532e9742cc5",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Availability note: MacBook Air Essentials is a web guide (current URL shows M4 generation); no classic PDF manual exists. Points to M3-era archived guide URL."
+    },
+    {
+      "source_id": "src_environmental_report_pdf",
+      "type": "GUIDE",
+      "local_path": "manuals/M3-MacBook-Air-Product-Environmental-Report.pdf",
+      "origin_url": "https://www.apple.com/environment/pdf/products/notebooks/M3_MacBook_Air_PER_March2024.pdf",
+      "sha256": "c001b2bba4c6150cb458d844122681590c6f07c402b11f0ba10b52d30a7e226c",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Only Apple-published downloadable PDF for this product line (PDF title verified: 'MacBook Air with M3 chip Product Environmental Report'). Covers 13-inch and 15-inch M3. Linked from official tech specs page. 9.5MB."
+    },
+    {
+      "source_id": "src_specs_summary",
+      "type": "SPEC_PAGE",
+      "local_path": "specs/specs.md",
+      "origin_url": "https://support.apple.com/en-us/118551",
+      "sha256": "18f4c4f414adad237a4bdaeb446b0245a17299fa84f4677f142698ae5f2f1d04",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Curated spec summary compiled from official tech specs + guide (port sides) + newsroom (launch data)."
+    },
+    {
+      "source_id": "src_img_guide_left_side",
+      "type": "IMAGE",
+      "local_path": "images/guide-left-side-magsafe-thunderbolt-ports.png",
+      "origin_url": "https://help.apple.com/assets/656F5187C78760B7A301D631/656F518AB828D2E11F0D8D96/en_US/25bada79ed0a3c6b87a12286db8b5f12.png",
+      "sha256": "ce9223456435cefc0858bc45a491e37e0c4acdfec5f0c26a7e8785e6740efdda",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official guide diagram, LEFT side profile with callouts: MagSafe 3 and two Thunderbolt / USB 4 ports. PNG 932x174, verified image. CGI render."
+    },
+    {
+      "source_id": "src_img_guide_right_side",
+      "type": "IMAGE",
+      "local_path": "images/guide-right-side-headphone-jack.png",
+      "origin_url": "https://help.apple.com/assets/656F5187C78760B7A301D631/656F518AB828D2E11F0D8D96/en_US/41e9724da5d3c75505916b0651c1f8da.png",
+      "sha256": "b8680a9cd16337fb3fc0f1d717afe90bad1dd441f9526f876413bfe575f50006",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official guide diagram, RIGHT side profile with callout: 3.5 mm headphone jack. PNG 932x110, verified image. CGI render."
+    },
+    {
+      "source_id": "src_img_guide_top_open",
+      "type": "IMAGE",
+      "local_path": "images/guide-top-open-camera-touchid-trackpad.png",
+      "origin_url": "https://help.apple.com/assets/656F5187C78760B7A301D631/656F518AB828D2E11F0D8D96/en_US/05f72416c96f666dbb09d6b11e5430ec.png",
+      "sha256": "d92f62623ef5153d0a8c23f11bab23a87837a1cc6f5920ed33d963de0e86799b",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official guide diagram, open top view with callouts: FaceTime HD camera, microphones, Touch ID, Force Touch trackpad. PNG 1068x814, verified image."
+    },
+    {
+      "source_id": "src_img_newsroom_hero",
+      "type": "IMAGE",
+      "local_path": "images/newsroom-hero-13-and-15-open-front.jpg",
+      "origin_url": "https://www.apple.com/newsroom/images/2024/03/apple-unveils-the-new-13-and-15-inch-macbook-air-with-the-powerful-m3-chip/article/Apple-MacBook-Air-2-up-hero-240304_big.jpg.large_2x.jpg",
+      "sha256": "d7cff09a18f50b95e28cc115966db1c1242300c09e94d2535ab4a9ec7f73b9c1",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Apple Newsroom hero, 13-inch and 15-inch M3 MacBook Air, open front views. JPEG 1960x1102, verified image."
+    },
+    {
+      "source_id": "src_img_newsroom_front",
+      "type": "IMAGE",
+      "local_path": "images/newsroom-13-and-15-open-front-angled.jpg",
+      "origin_url": "https://www.apple.com/newsroom/images/2024/03/apple-unveils-the-new-13-and-15-inch-macbook-air-with-the-powerful-m3-chip/article/Apple-MacBook-Air-2-up-front-240304_big.jpg.large_2x.jpg",
+      "sha256": "62c58dd463243e4a292df48c3f392c55e3ddea9d99d5a541f91de41a34ac123b",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Apple Newsroom, both M3 sizes, open angled front view. JPEG 1960x1102, verified image."
+    },
+    {
+      "source_id": "src_img_newsroom_keyboard",
+      "type": "IMAGE",
+      "local_path": "images/newsroom-keyboard-top-view.jpg",
+      "origin_url": "https://www.apple.com/newsroom/images/2024/03/apple-unveils-the-new-13-and-15-inch-macbook-air-with-the-powerful-m3-chip/article/Apple-MacBook-Air-keyboard-240304_big.jpg.large_2x.jpg",
+      "sha256": "200ea119f48493938840087637ccd0cc987afc54505137a5286873edb8c2327c",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Apple Newsroom, top-down keyboard/trackpad view (Magic Keyboard, Touch ID). JPEG 1960x1102, verified image."
+    },
+    {
+      "source_id": "src_img_newsroom_display",
+      "type": "IMAGE",
+      "local_path": "images/newsroom-liquid-retina-display.jpg",
+      "origin_url": "https://www.apple.com/newsroom/images/2024/03/apple-unveils-the-new-13-and-15-inch-macbook-air-with-the-powerful-m3-chip/article/Apple-MacBook-Air-Liquid-Retina-Display-240304_big.jpg.large_2x.jpg",
+      "sha256": "d347e9f4c35d77d018f502275c60b578450d0109db5c540c9a422005370bd0d9",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Apple Newsroom, Liquid Retina display feature shot. JPEG 1960x1102, verified image."
+    },
+    {
+      "source_id": "src_img_store_midnight",
+      "type": "IMAGE",
+      "local_path": "images/store-color-midnight.jpg",
+      "origin_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba13-midnight-select-202402?wid=1200&hei=1200&fmt=jpeg&qlt=90",
+      "sha256": "b1d1b0ca6f97ed74faaa780f16759ad49d8a6c6ce89ec925113d9a00f58d1032",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Apple Store product image (asset code mba13-*-select-202402 = 13-inch M3, Feb 2024 asset set), Midnight, open front view. JPEG 1200x1200, visually verified (M3 launch wallpaper). CGI render."
+    },
+    {
+      "source_id": "src_img_store_starlight",
+      "type": "IMAGE",
+      "local_path": "images/store-color-starlight.jpg",
+      "origin_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba13-starlight-select-202402?wid=1200&hei=1200&fmt=jpeg&qlt=90",
+      "sha256": "ee6b9cb5b0f5e399e34c14720c889baf52945e751b24c060763c0917e5cd66ad",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Apple Store product image, Starlight, open front view. JPEG 1200x1200, verified image. CGI render."
+    },
+    {
+      "source_id": "src_img_store_silver",
+      "type": "IMAGE",
+      "local_path": "images/store-color-silver.jpg",
+      "origin_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba13-silver-select-202402?wid=1200&hei=1200&fmt=jpeg&qlt=90",
+      "sha256": "abab14fffe2d69b446da9fed150704c2cad79bb36efa3146bc6e501154f29357",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Apple Store product image, Silver, open front view. JPEG 1200x1200, verified image. CGI render."
+    },
+    {
+      "source_id": "src_img_store_space_gray",
+      "type": "IMAGE",
+      "local_path": "images/store-color-space-gray.jpg",
+      "origin_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba13-spacegray-select-202402?wid=1200&hei=1200&fmt=jpeg&qlt=90",
+      "sha256": "6608d6a10e81593fb9df30079206fc3c6002a8b4abbefbb1554bc74bd4817dc4",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Apple Store product image, Space Gray, open front view. JPEG 1200x1200, verified image. CGI render."
+    },
+    {
+      "source_id": "src_img_store_closed_top",
+      "type": "IMAGE",
+      "local_path": "images/store-closed-top-view-midnight.jpg",
+      "origin_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba13-midnight-witb-202402?wid=1200&hei=1200&fmt=jpeg&qlt=90",
+      "sha256": "0b49ba80de043f1a2f8adb7f9e6067f5839843522178900efc738d3109b57852",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Apple Store 'what's in the box' image: closed lid, top-down view (partial), Midnight. JPEG 1200x1200, visually verified. CGI render."
+    },
+    {
+      "source_id": "src_img_identify_colors",
+      "type": "IMAGE",
+      "local_path": "images/identify-13in-m3-all-colors.png",
+      "origin_url": "https://cdsassets.apple.com/live/7WUAS350/images/macbook-air/2024-macbook-air-13in-m3-colors.png",
+      "sha256": "8574e6fb2628197fd087ff117979fb753b57a6fd0070c7e031b48b0dd2656a68",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official image from Apple's 'Identify your MacBook Air model' page: 13-inch M3 in all four colors. PNG 1944x660, verified image."
+    },
+    {
+      "source_id": "src_video_list",
+      "type": "VIDEO_URL",
+      "local_path": "videos/video-sources.md",
+      "origin_url": "https://www.youtube.com/@AppleSupport",
+      "sha256": "33abe9e6e073915ab67bd402d08ecd522c58d673d6432ed18866a4612995a334",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "URL list of official Apple Support YouTube Mac how-tos (channel-verified). No dedicated Apple video for Bluetooth pairing on Mac exists; HTML guide URL recorded instead. Videos not downloaded."
+    },
+    {
+      "source_id": "src_newsroom_article",
+      "type": "SUPPORT_PAGE",
+      "local_path": null,
+      "origin_url": "https://www.apple.com/newsroom/2024/03/apple-unveils-the-new-13-and-15-inch-macbook-air-with-the-powerful-m3-chip/",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Launch announcement (March 4, 2024): pricing $1,099 US, availability March 8, 2024. Source of newsroom images."
+    },
+    {
+      "source_id": "src_bluetooth_pairing_guide",
+      "type": "SUPPORT_PAGE",
+      "local_path": null,
+      "origin_url": "https://support.apple.com/guide/mac-help/blth1004/mac",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "'Connect Bluetooth devices to your Mac' — Apple's official Bluetooth pairing documentation (HTML guide; no official video exists)."
+    }
+  ],
+  "spin_360": {
+    "present": false,
+    "type": "cgi",
+    "checked_at": [
+      "https://www.apple.com/macbook-air/",
+      "https://www.apple.com/newsroom/2024/03/apple-unveils-the-new-13-and-15-inch-macbook-air-with-the-powerful-m3-chip/"
+    ],
+    "notes": "Apple does not use an interactive 360 photo-spin viewer for MacBook Air. The product page uses scroll-driven CGI animation sequences, and offers AR Quick Look .usdz 3D models (CGI, rotatable on iOS only, e.g. /105/media/us/macbook-air/2025/.../ar/macbook-air-13in-midnight.usdz). All Apple product imagery for this product is CGI rendering, not photography."
+  },
+  "collection_gaps": [
+    "No classic user manual PDF exists for MacBook Air; MacBook Air Essentials is web/Apple Books only. Substituted: markdown captures of the guide's key hardware page (M3-era archived URL) plus the official Product Environmental Report PDF.",
+    "The M3-specific apple.com product page has been superseded by the M4 lineup at apple.com/macbook-air; no live M3 marketing page remains, so product-page video URLs specific to the M3 could not be recorded. Newsroom article (still live) substituted for launch-era marketing content.",
+    "Apple has published no official YouTube how-to for pairing generic Bluetooth accessories on a Mac (Apple Support channel searched: 'bluetooth mac', 'connect bluetooth', 'macbook air'). Official HTML guide URL recorded instead.",
+    "Store gallery side-view photos of the M3 Air (ports visible in marketing render) were not retrievable — gallery asset URL patterns 404 (3 patterns tried). Official guide port diagrams (left/right side with callouts) substituted; they show port positions authoritatively.",
+    "Newsroom hero images depict both 13-inch and 15-inch models together; Apple did not publish 13-inch-only newsroom shots for M3.",
+    "Tech specs page (en-us/118551) has been updated by Apple since launch (base memory now listed as 16GB; footnotes reference 2025/2026 software); launch-day base config (8GB) noted in tech-specs.md."
+  ]
+}

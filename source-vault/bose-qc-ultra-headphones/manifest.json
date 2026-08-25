@@ -1,0 +1,305 @@
+{
+  "product_id": "prod_bose_qc_ultra_headphones",
+  "identity": {
+    "brand": "Bose",
+    "model": "QuietComfort Ultra Headphones (2nd Gen)",
+    "model_number": "QCUH2-HEADPHONEARN",
+    "generation": "2nd generation (2025)",
+    "market": "US",
+    "category": "headphones",
+    "consequence_domain": "C0_C1_consumer_electronics"
+  },
+  "sources": [
+    {
+      "source_id": "src_owners_guide_en",
+      "type": "MANUAL_PDF",
+      "local_path": "manuals/qc-ultra-headphones-2nd-gen-owners-guide-en.pdf",
+      "origin_url": "https://assets.bosecreative.com/m/25e14a61f0feef02/original/897194_OG_QCUH2-HEADPHONEARN_EN.pdf",
+      "sha256": "5aa0385cd0d40601e3c7c99ce3f83ee0c4e6f258845953f3380170973a9b1f20",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Owner's Guide, English, 50 pages, 1.5 MB, doc 897194. Also published at assets.bose.com/content/dam/Bose_DAM/Web/consumer_electronics/global/products/headphones/qcuh2-headphonearn/pdfs/897194_OG_QCUH2-HEADPHONEARN_EN.pdf (that host presented an expired TLS certificate on 2026-08-20, so the bosecreative.com mirror linked from the official support page was used)."
+    },
+    {
+      "source_id": "src_safety_instructions_ml",
+      "type": "MANUAL_PDF",
+      "local_path": "manuals/qc-ultra-headphones-2nd-gen-safety-instructions-ml.pdf",
+      "origin_url": "https://assets.bosecreative.com/asset/5e24eef1-8214-4e2b-ad0e-de489eff04e5/897316_SI_QCUH2-HEADPHONEARN_ml.pdf",
+      "sha256": "fb5c02516a68b4d91f2a11ea0ed0cc763a67e8e895ed862695e8e90a67c31f61",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Important Safety Instructions, multilingual, 4.5 MB, doc 897316. Linked from official support page."
+    },
+    {
+      "source_id": "src_power_user_gestures",
+      "type": "MANUAL_PDF",
+      "local_path": "manuals/qc-ultra-headphones-2nd-gen-power-user-gestures-carton.pdf",
+      "origin_url": "https://assets.bosecreative.com/m/2c763f6c91978d08/original/QCU2_POWER_USER_GESTURES_ON-_CARTON.pdf",
+      "sha256": "ab81047c99f1a6f32889104cade8ace3ff75f01ff476d3c43e17db2b549edace",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "In-box 'Power User Gestures' carton insert (quick-reference for controls); linked from the official product page. Bose publishes no separate quick-start-guide PDF for this model."
+    },
+    {
+      "source_id": "src_product_page",
+      "type": "SPEC_PAGE",
+      "local_path": null,
+      "origin_url": "https://www.bose.com/p/headphones/bose-quietcomfort-ultra-headphones-2nd-gen/QCUH2-HEADPHONEARN.html",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official US product page: price ($399, list $449), tech specs, colorways, gallery, USB-C audio claims, 360 'Interactive view'. Data captured in specs/specs.md."
+    },
+    {
+      "source_id": "src_specifications_article",
+      "type": "SPEC_PAGE",
+      "local_path": null,
+      "origin_url": "https://support.bose.com/s/article/quietcomfort-ultra-headphones-2nd-gen-specifications?language=en_US",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official specifications article: Bluetooth 5.4, A2DP/BLE/HFP, 33 ft range, battery/charge figures, replaceable Li-ion battery, materials. Data captured in specs/specs.md."
+    },
+    {
+      "source_id": "src_support_product_page",
+      "type": "SUPPORT_PAGE",
+      "local_path": null,
+      "origin_url": "https://support.bose.com/s/product/bose-quietcomfort-ultra-headphones-2nd-gen/01tPb00000DNPKnIAP?language=en_US",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official support hub (support.bose.com/qcu2): manuals, help articles, and embedded how-to videos (see videos/video-sources.md)."
+    },
+    {
+      "source_id": "src_img_black_three_quarter",
+      "type": "IMAGE",
+      "local_path": "images/black-three-quarter-view.png",
+      "origin_url": "https://assets.bosecreative.com/transform/dbd0f72b-d68f-4bef-9d38-88132ffa0048/QCUHII26-BoseBlack_SF_PDP_E-Comm_Gallery_1_1500x1120",
+      "sha256": "d0eb14ea6c21ad3e2ba7a4008f026462db651a72cb131da9ef43c5ce74f55c71",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Gallery 1: three-quarter product view, Black, 1632x1224 PNG."
+    },
+    {
+      "source_id": "src_img_lifestyle_club",
+      "type": "IMAGE",
+      "local_path": "images/lifestyle-on-head-club.jpg",
+      "origin_url": "https://assets.bosecreative.com/transform/b00f3267-506a-4b63-888c-71305f418a9c/QCUHII26-BoseBlack_SF_PDP_E-Comm_Gallery_2_1500x1120",
+      "sha256": "cd6f1378baeff2e23b7d5c3e09fd611af63b0f76192fe1a2b1cfa23157313066",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Gallery 2: lifestyle shot, worn on head (club setting), 1501x1120 JPEG."
+    },
+    {
+      "source_id": "src_img_lifestyle_rear",
+      "type": "IMAGE",
+      "local_path": "images/lifestyle-rear-side-on-head.jpg",
+      "origin_url": "https://assets.bosecreative.com/transform/4e8ead6d-416a-468c-ac85-8b63d7e67a78/QCUHII26-BoseBlack_SF_PDP_E-Comm_Gallery_3_1500x1120",
+      "sha256": "73344b6e9a21b563f500e1e03c6fbae94ff276fbcdc8c97a1aae4d8d7c8e0d84",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Gallery 3: lifestyle shot, rear/side on head, 1501x1120 JPEG."
+    },
+    {
+      "source_id": "src_img_black_front",
+      "type": "IMAGE",
+      "local_path": "images/black-front-view.png",
+      "origin_url": "https://assets.bosecreative.com/transform/22d17fdb-3928-4a0d-bc12-4d5574123f40/QCUHII26-BoseBlack_SF_PDP_E-Comm_Gallery_4_1500x1120",
+      "sha256": "c8706c2b262f3b8b18f750582a090c3b4496d02f543ff2b6f3797292a49af990",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Gallery 4: front view, both earcups, Black, 1632x1224 PNG."
+    },
+    {
+      "source_id": "src_img_black_controls",
+      "type": "IMAGE",
+      "local_path": "images/black-earcup-controls-wired-35mm.png",
+      "origin_url": "https://assets.bosecreative.com/transform/93473bcb-31ad-4682-b4b3-f4ec9b9e2114/QCUHII26-BoseBlack_SF_PDP_E-Comm_Gallery_5_1500x1120",
+      "sha256": "3805cc02fd26c24a2f1898068b2beaa5ca85a471ed65847676fffa4d61b86f67",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Gallery 5: top-front view showing right-earcup Multi-function button, volume strip, Bluetooth/Power button, and attached 2.5mm aux cable. Closest official controls shot; not a macro close-up."
+    },
+    {
+      "source_id": "src_img_black_side",
+      "type": "IMAGE",
+      "local_path": "images/black-side-view.png",
+      "origin_url": "https://assets.bosecreative.com/transform/74176b2d-0bf0-4273-ab21-a4de9ad99e61/QCUHII26-BoseBlack_SF_PDP_E-Comm_Gallery_6_1500x1120",
+      "sha256": "2a0fc8126f75e7b6e0bc755bdbb4ca7bec47e733d5366270782ef28b07d9034a",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Gallery 6: side profile view, Black, 1632x1224 PNG."
+    },
+    {
+      "source_id": "src_img_black_folded",
+      "type": "IMAGE",
+      "local_path": "images/black-folded-flat.png",
+      "origin_url": "https://assets.bosecreative.com/transform/963dc2d1-079b-4a06-8baf-6a60919fd195/QCUHII26-BoseBlack_SF_PDP_E-Comm_Gallery_7_1500x1120",
+      "sha256": "d5488ec4382be6d2ca73818c90c835fc464f4741db911f4e64bb0643ee7a0bdb",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Gallery 7: earcups rotated flat (folded-flat/case orientation), top view, 1500x1120 PNG."
+    },
+    {
+      "source_id": "src_img_black_case",
+      "type": "IMAGE",
+      "local_path": "images/black-carry-case.png",
+      "origin_url": "https://assets.bosecreative.com/transform/2566e6ba-0143-46bf-b5cd-11a9d031ae28/QCUHII26-BoseBlack_SF_PDP_E-Comm_Gallery_8_1500x1120",
+      "sha256": "aa4880fc3abe0a628b5726e8874ab539a841cf497ff6382801469a852c527cf6",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Gallery 8: zippered carry case, closed, 1632x1224 PNG."
+    },
+    {
+      "source_id": "src_img_white_smoke",
+      "type": "IMAGE",
+      "local_path": "images/white-smoke-three-quarter-view.png",
+      "origin_url": "https://assets.bosecreative.com/transform/5ae776b9-6b6e-42f4-a584-46668a93cd20/QCUHII26-WhiteSmoke_SF_PDP_E-Comm_Gallery_1_1500x1120",
+      "sha256": "09d5e46b69f86e5b9869a3ac7eab14de613ba19c2ed3725917271da9bfd1e821",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "White Smoke colorway, gallery 1 three-quarter view, 1632x1224 PNG."
+    },
+    {
+      "source_id": "src_img_driftwood_sand",
+      "type": "IMAGE",
+      "local_path": "images/driftwood-sand-three-quarter-view.png",
+      "origin_url": "https://assets.bosecreative.com/transform/2ac16f2b-7abd-49a1-9a26-f68ab5d78469/QCUHIILE26-DriftwoodSand_E-Comm_Gallery_1_1632x1224",
+      "sha256": "c0322d981ec60039cacd0075cc4c9aabaac6eb93a2528196fc495570f3fa6e82",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Driftwood Sand colorway, gallery 1 three-quarter view, 1632x1224 PNG."
+    },
+    {
+      "source_id": "src_img_midnight_violet",
+      "type": "IMAGE",
+      "local_path": "images/midnight-violet-three-quarter-view.png",
+      "origin_url": "https://assets.bosecreative.com/transform/e6ff1700-4749-4770-a02e-aff3a922475e/QCUHIILE26-MidnightViolet_E-Comm_Gallery_1_1632x1224",
+      "sha256": "e4b590785ac0f575c93e92000430b4c670bb2660d132ded599a351b2943cc37e",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Midnight Violet colorway, gallery 1 three-quarter view, 1632x1224 PNG."
+    },
+    {
+      "source_id": "src_img_desert_gold",
+      "type": "IMAGE",
+      "local_path": "images/desert-gold-three-quarter-view.png",
+      "origin_url": "https://assets.bosecreative.com/transform/667a70bc-3053-4cab-a083-832458ef1769/QCUHIILE26-DesertGold_SF_PDP_E-Comm-Gallery_1_1632x1224",
+      "sha256": "f4b06e3d0bed81ddf689154055d3f77414604d88c588527d3e15e28b8d9c4eb2",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Desert Gold colorway, gallery 1 three-quarter view, 1632x1224 PNG."
+    },
+    {
+      "source_id": "src_video_unboxing_setup",
+      "type": "VIDEO_URL",
+      "local_path": null,
+      "origin_url": "https://players.brightcove.net/1239686373001/GhxO5lUjE_default/index.html?videoId=6379046007112",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "'Unboxing and Setup – Bose QuietComfort Ultra Headphones (2nd Gen)', 2:52, Bose Brightcove account, embedded on official support page. Demonstrates box contents, first power-on, app setup, pairing."
+    },
+    {
+      "source_id": "src_video_controls_overview",
+      "type": "VIDEO_URL",
+      "local_path": null,
+      "origin_url": "https://players.brightcove.net/1239686373001/GhxO5lUjE_default/index.html?videoId=6379045339112",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "'Controls Overview – Bose QuietComfort Ultra Headphones (2nd Gen)', 4:37, embedded on official support page. Demonstrates buttons, volume strip, shortcut, mode switching."
+    },
+    {
+      "source_id": "src_video_voice_prompts_switching",
+      "type": "VIDEO_URL",
+      "local_path": null,
+      "origin_url": "https://players.brightcove.net/1239686373001/GhxO5lUjE_default/index.html?videoId=blt7a1f679774025336",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "'Changes to Voice Prompts & Device Switching', embedded on official support page. Embed uses a CMS reference id (blt...) not resolvable via the Brightcove Playback API; URL recorded exactly as embedded."
+    },
+    {
+      "source_id": "src_video_index",
+      "type": "VIDEO_URL",
+      "local_path": "videos/video-sources.md",
+      "origin_url": "https://support.bose.com/s/product/bose-quietcomfort-ultra-headphones-2nd-gen/01tPb00000DNPKnIAP?language=en_US",
+      "sha256": "80e067534b975113015d7f763ea9dc7135b24a61e091f06fe688b9899289c673",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Index document authored in-house; referenced videos are manufacturer copyright",
+      "notes": "Curated list of the official Bose support-video URLs, titles, durations, demonstrations, and the unresolved CMS-reference limitation."
+    },
+    {
+      "source_id": "src_specs_curated_v1",
+      "type": "SPEC_PAGE",
+      "local_path": "specs/specs.md",
+      "origin_url": "https://support.bose.com/s/article/quietcomfort-ultra-headphones-2nd-gen-specifications?language=en_US",
+      "sha256": "082a11f2e97577138bcc57b5816d13434ccf356eae098d5bce797832997592cd",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Curated transcription of manufacturer pages; internal research use",
+      "notes": "Curated transcription of the product page + support specifications article + owner's guide, written at collection time (2026-08-20) but never registered in this manifest — registered 2026-08-24 when the omission was discovered during gap closure. SECONDARY authority: a transcription, not a raw capture. Known transcription artifact: its pairing procedure says the connected light glows 5 seconds where the owner's guide p28 says 10 seconds (see rev_bqcu2_connected_light_* reviews for the event scoping)."
+    },
+    {
+      "source_id": "src_product_page_capture_v1",
+      "type": "SPEC_PAGE",
+      "local_path": "specs/bose-product-page-capture-20260824.html",
+      "origin_url": "https://www.bose.com/p/headphones/bose-quietcomfort-ultra-headphones-2nd-gen/QCUH2-HEADPHONEARN.html",
+      "sha256": "e1ef0c4e8ba8e00e077c2ef18fbbfff478eff9e1ecbb9db2a33f1146c712b72e",
+      "acquired_at": "2026-08-24",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Static HTML capture of the official product page (curl, desktop UA, 562 KB). Contains weight/dimensions and the USB-C 16-bit/44.1-48kHz audio FAQ in static markup; JS-rendered sections absent. The support specifications article was ALSO attempted 2026-08-24 but returns only a JavaScript application shell with no content over HTTP — a raw capture of it needs a browser session (recorded as gap_spec_article_raw_capture_1 in the evidence pack)."
+    }
+  ],
+  "spin_360": {
+    "present": true,
+    "type": "cgi",
+    "checked_at": [
+      "https://www.bose.com/p/headphones/bose-quietcomfort-ultra-headphones-2nd-gen/QCUH2-HEADPHONEARN.html",
+      "https://360-viewer.bose.com/en-US?product=qcuhp2"
+    ],
+    "notes": "Product page embeds an 'Interactive view' (via experience-loader-bose.vercel.app) pointing to Bose's 360 viewer at 360-viewer.bose.com?product=qcuhp2. The viewer is a Three.js/react-three-fiber WebGL app loading .glb 3D models with HDR environment lighting (bundle references qcuhp assets, shadow .glb files, .hdr maps) - CGI 3D model, not photographic frames."
+  },
+  "collection_gaps": [
+    "1st-gen (2023) QuietComfort Ultra Headphones (QCUH-HEADPHONEARN) not collected; its owner's guide exists at https://assets.bose.com/content/dam/Bose_DAM/Web/consumer_electronics/global/products/headphones/QCUH-HEADPHONEARN/pdf/884885_OG_QCUH-HEADPHONEARN_en.pdf and support page at https://support.bose.com/s/product/bose-quietcomfort-ultra-headphones/01t8c00000QEpaxAAD.",
+    "No separate quick-start-guide PDF is published for the 2nd gen; the in-box 'Power User Gestures' carton insert PDF was collected as the closest equivalent.",
+    "Bluetooth codec list beyond aptX Adaptive (Snapdragon Sound) is not explicitly enumerated on official pages checked; SBC/AAC support not officially confirmed in collected sources.",
+    "Bose does not publish minimum iOS/Android versions for the Bose app on the support article checked.",
+    "No official macro close-up of earcup controls in the product gallery; Gallery 5 (top-front view with aux cable) is the closest official shot.",
+    "assets.bose.com presented an expired TLS certificate (CN www.bose.com, expired 2026-06-05) on 2026-08-20; equivalent official files were retrieved from assets.bosecreative.com as linked by the official support page.",
+    "Third support video ('Changes to Voice Prompts & Device Switching') has an unresolvable CMS-style videoId in its embed; player URL recorded as embedded but title/duration could not be verified via the Brightcove API.",
+    "Only the Gallery 1 hero image was collected for non-Black colorways; full 8-image galleries exist per colorway on the product page if needed later."
+  ],
+  "curation_log": [
+    {
+      "date": "2026-08-25",
+      "by": "system:codex",
+      "action": "REGISTERED src_video_index for videos/video-sources.md",
+      "reason": "The curated video index was collected with the other four products and is referenced by the Bose support-page source notes, but its local copy was omitted from the Bose manifest. Registering the existing file resolves the orphan without changing its contents."
+    }
+  ]
+}

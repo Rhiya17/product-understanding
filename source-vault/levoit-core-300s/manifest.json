@@ -1,0 +1,249 @@
+{
+  "product_id": "prod_levoit_core_300s",
+  "identity": {
+    "brand": "Levoit",
+    "model": "Core 300S",
+    "model_number": "Core 300S-P (SKU HEAPAPLVSUS0073A) — current retail revision, canonical per latest-revision-only policy 2026-08-24; original Core 300S was SKU HEAPAPLVSUS0073",
+    "market": "US",
+    "category": "air_purifier",
+    "consequence_domain": "C0_C2_home_appliance",
+    "twin_role": "rigid_control_product"
+  },
+  "sources": [
+    {
+      "source_id": "src_manual_core300sp_us",
+      "type": "MANUAL_PDF",
+      "local_path": "manuals/levoit-core-300s-p-user-manual-us.pdf",
+      "origin_url": "https://levoit.com/cdn/shop/files/HEAPAPLVSUS0073A_Core_300S-P_Smart_Air_Purifier_manual_US_A2-240918_4855d907-1d27-4231-ad1c-82899f56e370.pdf",
+      "sha256": "2752c03598913c9906b82ae5f3f4616644b1bfd448023ced281694f659068b88",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Current Core 300S-P manual (rev A2, 2024-09-18), linked from the live levoit.com user-manuals page. 1.9 MB, verified PDF."
+    },
+    {
+      "source_id": "src_spec_page_core300s",
+      "type": "SPEC_PAGE",
+      "local_path": "specs/specs.md",
+      "origin_url": "https://levoit.com/products/core-300s-p-smart-air-purifier",
+      "sha256": "ccaf6aba7f441283dff1fde961a02d32733646eb65fe2557aa01a6d3896c0bde",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Facts transcribed from manufacturer page; internal research use; generate_from NOT cleared",
+      "notes": "Spec table transcription. Original Core 300S URL redirects here; page spec table lists Model: Core 300S. Supplemented by VeSync store filter page for filter compatibility."
+    },
+    {
+      "source_id": "src_support_vesync_filter_page",
+      "type": "SUPPORT_PAGE",
+      "local_path": null,
+      "origin_url": "https://us.vesync.com/product-detail/levoit-core-300-or-300s-replacement-filter-406",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official VeSync store page for the Core 300/300S replacement filter (Core 300-RF family). Confirms compatibility (Core 300/300-P/300S/300S-P/P350/P350-P), 6-8 month lifespan, filter variants."
+    },
+    {
+      "source_id": "src_img_front_hero_2048",
+      "type": "IMAGE",
+      "local_path": "images/levoit-core-300s-front-hero-app-2048.jpg",
+      "origin_url": "https://levoit.com/cdn/shop/products/levoit-core-300s-smart-air-purifier-238182.jpg",
+      "sha256": "07d466b14e382156da4d78a4883ef6f7cb2611477555eb6ca232c2503b38fea6",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Front view of original Core 300S with VeSync app phone, 2048x2048, white background. Downloaded live from Levoit CDN."
+    },
+    {
+      "source_id": "src_img_front_hero_3000",
+      "type": "IMAGE",
+      "local_path": "images/levoit-core-300s-front-hero-app-3000.png",
+      "origin_url": "https://levoit.com/cdn/shop/products/01.01_OA1_Core300S_01_a0a27430-d3fb-4db1-857f-47757b449f92.png",
+      "sha256": "161cc28ac471ba05799783dafda9a4c860022070306d6cfb5605120e00868446",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Front hero, 3000x3000 PNG (transparent background). Original file removed from live CDN; retrieved from Wayback Machine snapshot of the official levoit.com URL (web.archive.org/web/2023id_/<origin_url>)."
+    },
+    {
+      "source_id": "src_img_top_panel_2048",
+      "type": "IMAGE",
+      "local_path": "images/levoit-core-300s-top-control-panel-2048.jpg",
+      "origin_url": "https://cdn.shopify.com/s/files/1/0497/0273/1927/products/levoit-core-300s-smart-air-purifier-770838.jpg",
+      "sha256": "c686a971dfc488d24605a5e3b5c28be24635e4555d2cdc1cad8be5dfec4b7e7c",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Top-down control panel view, 2048x2048; clearly shows all touch controls and the 'RESET FILTER (3S)' label under the Sleep Mode button. Listed in the live product page's Shopify media."
+    },
+    {
+      "source_id": "src_img_top_panel_3000",
+      "type": "IMAGE",
+      "local_path": "images/levoit-core-300s-top-control-panel-3000.png",
+      "origin_url": "https://levoit.com/cdn/shop/products/01.01_OA1_Core300S_03.png",
+      "sha256": "d1252b1db5c2831cb77974734b1a814cf441ec94714f4fd592578ecb2bc40b3d",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Top-down control panel, 3000x3000 PNG (transparent background). Retrieved via Wayback Machine copy of the official levoit.com URL."
+    },
+    {
+      "source_id": "src_img_three_quarter_2048",
+      "type": "IMAGE",
+      "local_path": "images/levoit-core-300s-three-quarter-view-2048.jpg",
+      "origin_url": "https://cdn.shopify.com/s/files/1/0497/0273/1927/products/levoit-core-300s-smart-air-purifier-345534.jpg",
+      "sha256": "a3f54690554821e65693702f1406f1fd85a95a89880401bd12a9320dd0cdf075",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Three-quarter angled view, 2048x2048, showing top grille, logo face and perforated intake."
+    },
+    {
+      "source_id": "src_img_three_quarter_elevated_3000",
+      "type": "IMAGE",
+      "local_path": "images/levoit-core-300s-three-quarter-elevated-base-3000.png",
+      "origin_url": "https://levoit.com/cdn/shop/products/01.01_OA1_Core300S_04.png",
+      "sha256": "1dfdd4f159478221eca5016a3335c7bb72528c2cd432d0777493b36e2704a976",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Elevated three-quarter view, 3000x3000 PNG, shows lower intake and dark base ring (bottom filter cover edge). Retrieved via Wayback Machine copy of the official levoit.com URL."
+    },
+    {
+      "source_id": "src_img_300sp_hero_800",
+      "type": "IMAGE",
+      "local_path": "images/levoit-core-300s-p-front-hero-800.jpg",
+      "origin_url": "https://cdn.shopify.com/s/files/1/0497/0273/1927/files/levoit-core-300s-p-smart-air-purifier-9557708.jpg",
+      "sha256": "1532696f52cb7d92c8c11967c7734290f506f2e60f2d92b251268c893b7e5c25",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Current Core 300S-P hero image, 800x800 (largest served). Kept to document the current retail revision's appearance (visually identical shell)."
+    },
+    {
+      "source_id": "src_img_filter_standalone",
+      "type": "IMAGE",
+      "local_path": "images/levoit-core-300-rf-filter-standalone.jpg",
+      "origin_url": "https://cdn.shopify.com/s/files/1/0497/0273/1927/files/levoit-core-300-original-filter-871182.jpg",
+      "sha256": "c7f267a5522ef9f645487b8d732ff0db227d9c189ddf42292bc64764491d9524",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "The Core 300-RF 3-stage cylindrical filter cartridge alone (pre-filter wrap, HEPA pleats, carbon core visible in bore). From the official Levoit replacement filter product page."
+    },
+    {
+      "source_id": "src_img_filter_beside_unit",
+      "type": "IMAGE",
+      "local_path": "images/levoit-core-300s-with-filter-removed-beside-unit.jpg",
+      "origin_url": "https://cdn.shopify.com/s/files/1/0497/0273/1927/files/levoit-core-300-original-filter-227395.jpg",
+      "sha256": "8f6be5dfe4f2b44d3f3588f2005318330a268dcceecb382ab96b4c37a4617cb5",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Purifier standing with the filter cartridge removed and placed beside it — closest official image to the filter-compartment/replacement context."
+    },
+    {
+      "source_id": "src_img_filter_detail_collage",
+      "type": "IMAGE",
+      "local_path": "images/levoit-core-300-rf-filter-detail-collage.jpg",
+      "origin_url": "https://cdn.shopify.com/s/files/1/0497/0273/1927/files/levoit-core-300-original-filter-562939.jpg",
+      "sha256": "c8499ffbea62d296f8524cbb0fff7e593a1065a9d3db2ef0d7d129c3594912c8",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official close-up collage of the filter: seal foam ring, carbon bore, pleat texture ('Perfect Fit / Advanced Sealing / High-Efficiency Filtration Materials')."
+    },
+    {
+      "source_id": "src_img_aq_indicator_table",
+      "type": "IMAGE",
+      "local_path": "images/levoit-core-300s-air-quality-indicator-table.webp",
+      "origin_url": "https://levoit.com/cdn/shop/files/assets_5c5a2dfbd0b84138938c43351f003dd8_c97a456032534eec82fda496b0d72654.webp",
+      "sha256": "6ec66e3daed0f3e3fb3be39acacb98256593b3b81849af9fd216a213fb01a9f9",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official 'Air Quality Indicator Color Table' graphic (indicator ring color vs air quality vs Auto Mode fan speed) from the product page marketing section."
+    },
+    {
+      "source_id": "src_img_lifestyle_nightstand",
+      "type": "IMAGE",
+      "local_path": "images/levoit-core-300s-bedroom-nightstand-lifestyle.jpg",
+      "origin_url": "https://levoit.com/cdn/shop/files/preview_images/8856d7f533d44f6fa8f4fcd3cd35120f.thumbnail.0000000000.jpg",
+      "sha256": "5f46e35c50d45bbcfca7154abe9ce8c1eaa454912f360f62fb6da94b0e1538c5",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official Sleep Mode video poster frame, 1920x1080: unit on a bedside table next to a bed and potted plant — serves as the size-context shot."
+    },
+    {
+      "source_id": "src_video_lifestyle_voice",
+      "type": "VIDEO_URL",
+      "local_path": null,
+      "origin_url": "https://cdn.shopify.com/videos/c/vp/7b383e8ade664772ae099a0294d751f4/7b383e8ade664772ae099a0294d751f4.HD-1080p-2.5Mbps-16562578.mp4",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official Levoit product video: smart/voice control lifestyle (embedded on live levoit.com product page)."
+    },
+    {
+      "source_id": "src_video_sleep_mode",
+      "type": "VIDEO_URL",
+      "local_path": null,
+      "origin_url": "https://cdn.shopify.com/videos/c/vp/8856d7f533d44f6fa8f4fcd3cd35120f/8856d7f533d44f6fa8f4fcd3cd35120f.HD-1080p-2.5Mbps-16568087.mp4",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official Levoit product video: Sleep Mode / 24 dB quiet-operation demo."
+    },
+    {
+      "source_id": "src_video_vesync_app_flow",
+      "type": "VIDEO_URL",
+      "local_path": null,
+      "origin_url": "https://cdn.shopify.com/videos/c/vp/b43e561997aa417f9311d02d0639a579/b43e561997aa417f9311d02d0639a579.HD-720p-1.6Mbps-16567868.mp4",
+      "sha256": null,
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official Levoit video: VeSync app walkthrough including Filter Life screen and 'Replacing Your Filter' flow — relevant to the filter replacement procedure."
+    },
+    {
+      "source_id": "src_video_index",
+      "type": "VIDEO_URL",
+      "local_path": "videos/video-sources.md",
+      "origin_url": "https://levoit.com/products/core-300s-p-smart-air-purifier",
+      "sha256": "18165e83e738f40594c4c2ff16c9ec64b092d6d4d2b3325c89f58a2797a25526",
+      "acquired_at": "2026-08-20",
+      "authority": "MANUFACTURER",
+      "rights_note": "Index document authored in-house; referenced videos are manufacturer copyright",
+      "notes": "Curated list of official video URLs with titles and exclusion notes for third-party videos."
+    }
+  ],
+  "spin_360": {
+    "present": false,
+    "type": null,
+    "checked_at": [
+      "https://levoit.com/products/core-300s-p-smart-air-purifier",
+      "https://www.amazon.com/dp/B0G19ZCNP9"
+    ],
+    "notes": "Levoit product page has no 360 viewer (only CSS loading-spinner classes). Amazon current Core 300S-P listing (B0G19ZCNP9) image data contains 18 flat gallery images and zero spin/360 entries; the 'ImageBlockImmersiveView360' string on the page is a generic feature-name list, not active spin data."
+  },
+  "collection_gaps": [
+    "No separate quick-start guide PDF is published for the US Core 300S; the user manual serves as the setup guide (levoit.com user-manuals page lists only the full manual; Wayback CDX shows no 300S QSG on the Levoit CDN).",
+    "No official photo of the bottom filter compartment with the cover twisted open; closest official images are the filter-beside-unit shot and the manual's line diagrams (see manuals/). The VeSync app video (src_video_vesync_app_flow) shows the replacement flow as an illustration.",
+    "No true rear/back or straight side official photo published (product is cylindrical and near-rotationally symmetric, so front/three-quarter/top coverage is effectively complete).",
+    "No Core 300S-specific video found on the official Levoit or VeSync YouTube channels; only third-party how-to videos exist on YouTube (excluded).",
+    "support.levoit.com help center requires login (Salesforce 401/redirect); its articles could not be captured.",
+    "The 3000x3000 PNGs (front, top panel, elevated three-quarter) were recovered via Wayback Machine snapshots of official levoit.com CDN URLs because Levoit removed the originals when the 300S page was replaced by the 300S-P page; provenance remains manufacturer but retrieval path is archive.org.",
+    "Regulatory/label model number (LAP-C301S-xxx style) could not be confirmed from an official US source; official spec table states Model: 'Core 300S' and the manuals are CID-encoded PDFs whose text could not be extracted programmatically."
+  ],
+  "curation_log": [
+    {
+      "date": "2026-08-24",
+      "by": "vijayp.cmu@gmail.com",
+      "action": "REMOVED src_manual_core300s_us and src_manual_core300s_vesync (original Core 300S manuals, rev A3-210708)",
+      "reason": "Latest-revision-only policy: the Core 300S-P is the current retail revision and its manual (src_manual_core300sp_us) officially covers both series. Maintaining two manuals for one retail listing is confusing. The removed PDFs also had no machine-readable text layer (zero claims ever bound to them). Origin URLs retained here for provenance; re-collectable if ever needed."
+    }
+  ]
+}

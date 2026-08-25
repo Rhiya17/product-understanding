@@ -1,0 +1,140 @@
+{
+  "product_id": "prod_graco_ready2jet",
+  "identity": {
+    "brand": "Graco",
+    "model": "Ready2Jet",
+    "model_number": "2212125",
+    "market": "US",
+    "category": "stroller",
+    "consequence_domain": "C1_C3_baby_gear",
+    "twin_role": "hero_twin_candidate"
+  },
+  "sources": [
+    {
+      "source_id": "src_r2j_manual_v1",
+      "type": "MANUAL_PDF",
+      "local_path": "manuals/graco-ready2jet-manual.pdf",
+      "origin_url": null,
+      "sha256": "224558e74a2dc2eb95cbb730d807152dfc5b8bcdf748fe3de267b3348b959105",
+      "acquired_at": "2026-07-22",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official instruction manual; fold procedure on pages 33-35. Copied from poc-higgsfield-one-hand-fold/references/. Origin URL to be backfilled from POC records."
+    },
+    {
+      "source_id": "src_r2j_fold_sequence_v1",
+      "type": "IMAGE",
+      "local_path": "images/official-fold-sequence.png",
+      "origin_url": null,
+      "sha256": "7640d335525423aa0f6d4a40ab806fdcbb47b358374925d31c649c29b6c097c6",
+      "acquired_at": "2026-07-22",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official multi-state fold sequence (open / mid-fold / folded). Source of the three keyframe pins used by the Seedance chain POC."
+    },
+    {
+      "source_id": "src_r2j_open_folded_v1",
+      "type": "IMAGE",
+      "local_path": "images/official-open-and-folded.png",
+      "origin_url": null,
+      "sha256": "65e80435bc25ea36221eec2f4ab35268a944f506a040c88a14387ab6658868b9",
+      "acquired_at": "2026-07-22",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official studio image: open stroller with folded inset. Parent of the open/folded crops in poc-seedance-keyframe-fold/references/."
+    },
+    {
+      "source_id": "src_r2j_lifestyle_v1",
+      "type": "IMAGE",
+      "local_path": "images/official-lifestyle.png",
+      "origin_url": null,
+      "sha256": "5d802ac6b1b22e7159ed42028fe9fed827cd6b5196cedc9f05e12ffe6263c091",
+      "acquired_at": "2026-07-22",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared; contains a person — unusable as generation input (provider likeness filters)",
+      "notes": "Official lifestyle photo with demonstrator."
+    },
+    {
+      "source_id": "src_r2j_view_front3q_v1",
+      "type": "IMAGE",
+      "local_path": "images/view-01-front-3q.png",
+      "origin_url": null,
+      "sha256": "2480f81d2987d6c4b7026c6fd024772066b5307d4568d3740ca435c2dafed8c9",
+      "acquired_at": "2026-08-11",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Curated PDP gallery view (front three-quarter), POC 5 input set. See docs/pocs/ready2jet-reference-image-curation.md."
+    },
+    {
+      "source_id": "src_r2j_view_top3q_v1",
+      "type": "IMAGE",
+      "local_path": "images/view-02-top-3q.png",
+      "origin_url": null,
+      "sha256": "bf47113925b2d303f60e1df3b9c281352b07133158927a3d329d0f27579f4663",
+      "acquired_at": "2026-08-11",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Curated PDP gallery view (top three-quarter), POC 5 input set."
+    },
+    {
+      "source_id": "src_r2j_view_undercarriage_v1",
+      "type": "IMAGE",
+      "local_path": "images/view-03-undercarriage.png",
+      "origin_url": null,
+      "sha256": "495bf3a519573f68e6128af566c18ad5bb0f6068f3280285adc9baef63aa4891",
+      "acquired_at": "2026-08-11",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Curated PDP gallery view (undercarriage), POC 5 input set."
+    },
+    {
+      "source_id": "src_r2j_view_side_v1",
+      "type": "IMAGE",
+      "local_path": "images/view-04-side-profile.png",
+      "origin_url": null,
+      "sha256": "16d1a8f8e277b00d2be1e421b345236453bae40e02b96023ca8e3a5240cd272a",
+      "acquired_at": "2026-08-11",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Curated PDP gallery view (side profile), POC 5 input set; held-out validation view."
+    },
+    {
+      "source_id": "src_r2j_folded_side_v1",
+      "type": "IMAGE",
+      "local_path": "images/folded-01-side.png",
+      "origin_url": null,
+      "sha256": "d039fe3fcc3bc464fb059a5e7bebac7136ec45a157714d28a9cc1a427525f42d",
+      "acquired_at": "2026-08-11",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Folded-state side view, POC 5 folded-state input."
+    },
+    {
+      "source_id": "src_r2j_fold_video_v1",
+      "type": "VIDEO",
+      "local_path": "videos/official-fold-video.mp4",
+      "origin_url": null,
+      "sha256": "9b1af25362a0b78187c6a4ced7228abcbbf5886e3617356277958392233af0fa",
+      "acquired_at": "2026-08-11",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official fold demonstration video; source of the WAN VACE control clip. Known coverage gap per POC review: does not clearly show the thumb-switch actuation."
+    }
+  ],
+  "derivatives_elsewhere_in_repo": [
+    "poc-seedance-keyframe-fold/references/ (person-removed and canvas-mounted state crops)",
+    "poc-higgsfield-one-hand-fold/references/manual-fold-page-33..35.png (manual page rasters)",
+    "poc-wanvace-control-video/references/fold-control-clip.mp4 (trimmed control clip)"
+  ],
+  "spin_360": {
+    "present": null,
+    "type": null,
+    "checked_at": [],
+    "notes": "Not yet verified — Decision 8 action item (D8a)."
+  },
+  "collection_gaps": [
+    "origin_url fields for pre-existing assets need backfilling from POC acquisition records",
+    "no official image shows the thumb switch and handle lever at macro detail (Decision 2 buy-and-capture exists to close this)",
+    "360 spin availability unchecked (D8a)"
+  ]
+}
