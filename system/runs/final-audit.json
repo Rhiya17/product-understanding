@@ -1,0 +1,55 @@
+{
+  "captured_at": "2026-08-25T16:13:40.000Z",
+  "note": "Bose videos/video-sources.md registration and the related curation_log entry were explicitly authorized on 2026-08-25; no source content was changed.",
+  "audits": [
+    {
+      "name": "claim_immutability",
+      "command": "python3 -c import hashlib,json,pathlib,sys\nbaseline=json.loads(pathlib.Path(\"system/baseline-hashes.json\").read_text())\nerrors=[]\ncounts={}\nfor path in sorted(pathlib.Path(\"evidence-packs\").glob(\"*/claims.json\")):\n    claims=json.loads(path.read_text())\n    counts[path.parent.name]=len(claims)\n    current={c[\"claim_id\"]:hashlib.sha256(json.dumps(c,sort_keys=True,separators=(\",\",\":\"),ensure_ascii=False).encode()).hexdigest() for c in claims}\n    for claim_id,digest in baseline[path.parent.name].items():\n        if claim_id not in current:\n            errors.append(\"MISSING \"+path.parent.name+\"/\"+claim_id)\n        elif current[claim_id] != digest:\n            errors.append(\"CHANGED \"+path.parent.name+\"/\"+claim_id)\nprint(\"packs checked:\",len(counts))\nprint(\"pre-existing claims checked:\",sum(len(v) for v in baseline.values()))\nprint(\"hash mismatches:\",len(errors))\nprint(\"claim immutability verified\" if not errors else \"\\n\".join(errors))\nsys.exit(bool(errors))",
+      "stdout": "packs checked: 5\npre-existing claims checked: 356\nhash mismatches: 0\nclaim immutability verified\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "verdict_statistics",
+      "command": "python3 -c import collections,json,pathlib\ntotal=0.0\nfor path in sorted(pathlib.Path(\"evidence-packs\").glob(\"*/claims.json\")):\n    verdict_path=path.parent/\"verdicts.json\"\n    doc=json.loads(verdict_path.read_text()) if verdict_path.exists() else {}\n    counts=collections.Counter(v.get(\"verdict\") for v in doc.get(\"verdicts\",[]))\n    print(path.parent.name, \"status=\"+str(doc.get(\"status\")), \"model=\"+str(doc.get(\"model\")), \"ENTAILED=\"+str(counts[\"ENTAILED\"]), \"MEANING_CHANGED=\"+str(counts[\"MEANING_CHANGED\"]), \"CANNOT_JUDGE=\"+str(counts[\"CANNOT_JUDGE\"]))\nprint(\"actual verifier spend USD: 0.0000 (no live provider request completed)\")",
+      "stdout": "apple-macbook-air-13-m3 status=FAILED model=qwen/qwen3-vl-235b-a22b-instruct ENTAILED=0 MEANING_CHANGED=0 CANNOT_JUDGE=0\nbose-qc-ultra-headphones status=FAILED model=qwen/qwen3-vl-235b-a22b-instruct ENTAILED=0 MEANING_CHANGED=0 CANNOT_JUDGE=0\ngraco-ready2jet-2212125 status=FAILED model=qwen/qwen3-vl-235b-a22b-instruct ENTAILED=0 MEANING_CHANGED=0 CANNOT_JUDGE=0\ngraco-snugride-35-lite-lx status=PARTIAL model=qwen/qwen3-vl-235b-a22b-instruct ENTAILED=0 MEANING_CHANGED=0 CANNOT_JUDGE=1\nlevoit-core-300s status=PARTIAL model=qwen/qwen3-vl-235b-a22b-instruct ENTAILED=0 MEANING_CHANGED=0 CANNOT_JUDGE=2\nactual verifier spend USD: 0.0000 (no live provider request completed)\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "credential_scan",
+      "command": "python3 -c import pathlib,re,sys\nroots=[pathlib.Path(\"system\"),pathlib.Path(\"evidence-packs\"),pathlib.Path(\"scripts\"),pathlib.Path(\".github\")]\npatterns=[\n    re.compile(rb\"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}:[0-9a-fA-F]{32}\"),\n    re.compile(rb\"AKIA[0-9A-Z]{16}\"),\n    re.compile(rb\"(?:sk|rk)-[A-Za-z0-9_-]{20,}\"),\n]\nhits=[]\nfor root in roots:\n    for path in root.rglob(\"*\"):\n        if path.is_file():\n            data=path.read_bytes()\n            if any(pattern.search(data) for pattern in patterns):\n                hits.append(str(path))\nprint(\"credential-shaped matches:\",len(hits))\nprint(\"credential scan clean\" if not hits else \"\\n\".join(hits))\nsys.exit(bool(hits))",
+      "stdout": "credential-shaped matches: 0\ncredential scan clean\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "write_scope",
+      "command": "find evidence-packs system source-vault/bose-qc-ultra-headphones/manifest.json scripts .github -type f -newer system/runs/m0-baseline/evidence-packs-validate.txt -print",
+      "stdout": "evidence-packs/apple-macbook-air-13-m3/review-queue.md\nevidence-packs/apple-macbook-air-13-m3/verdicts.json\nevidence-packs/bose-qc-ultra-headphones/review-queue.md\nevidence-packs/bose-qc-ultra-headphones/verdicts.json\nevidence-packs/graco-snugride-35-lite-lx/review-queue.md\nevidence-packs/graco-snugride-35-lite-lx/verdicts.json\nevidence-packs/validate.py\nevidence-packs/levoit-core-300s/review-queue.md\nevidence-packs/levoit-core-300s/verdicts.json\nevidence-packs/graco-ready2jet-2212125/review-queue.md\nevidence-packs/graco-ready2jet-2212125/verdicts.json\nsystem/review_queue.py\nsystem/requirements.txt\nsystem/tests/test_gate_regressions.py\nsystem/tests/test_extract_orchestrator.py\nsystem/tests/live_canary.py\nsystem/tests/test_validate_vault.py\nsystem/tests/test_verify_claims.py\nsystem/tests/test_review_queue.py\nsystem/tests/test_verdict_gate.py\nsystem/README.md\nsystem/verify_claims.py\nsystem/extract_orchestrator.py\nsystem/runs/build-acceptance.json\nsystem/runs/m0-baseline/validate-vault.txt\nsystem/runs/final-audit.json\nsystem/baseline-hashes.json\nsource-vault/bose-qc-ultra-headphones/manifest.json\nscripts/check_url_liveness.py\nscripts/validate_vault.py\n.github/workflows/ci.yml\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "script_executable_modes",
+      "command": "stat -f '%Sp %N' scripts/check_docs_sync.py scripts/check_url_liveness.py scripts/validate_vault.py",
+      "stdout": "-rwxr-xr-x scripts/check_docs_sync.py\n-rwxr-xr-x scripts/check_url_liveness.py\n-rwxr-xr-x scripts/validate_vault.py\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "transient_cache_check",
+      "command": "find . -type d ( -name __pycache__ -o -name .pytest_cache -o -name .ruff_cache ) -print",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "git_status",
+      "command": "git status --short",
+      "stdout": "?? .github/\n?? docs/agentic-source-collection.md\n?? docs/aws-evidence-extraction-architecture.md\n?? docs/digital-twin-phase-plan.md\n?? docs/evidence-pack-extraction-workorder.md\n?? docs/extraction-systematization-findings.md\n?? docs/lld-visual-guide.html\n?? docs/low-level-design.html\n?? docs/low-level-design.md\n?? docs/poc5-digital-twin-runbook.md\n?? docs/ready2jet-reference-image-curation.md\n?? docs/showme-system-architecture.md\n?? docs/system-architecture.html\n?? docs/system-architecture.md\n?? docs/workorder-extraction-system-build.md\n?? docs/workorder-ready2jet-gap-closure.md\n?? evidence-packs/\n?? poc-3d-static-twin/\n?? questionsToAskKoustubh\n?? scripts/\n?? source-vault/\n?? system/\n",
+      "stderr": "",
+      "exit_code": 0
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "captured_at": "2026-08-25T16:13:40.000Z",
+  "note": "Outputs are verbatim. Credentials are never included in commands or captured data.",
+  "commands": [
+    {
+      "milestone": "M1",
+      "command": "python3 system/verify_claims.py",
+      "stdout": "[apple-macbook-air-13-m3] 1/47 provider failure (sanitized)\n[apple-macbook-air-13-m3] status=FAILED verdicts=0/47 alarms=0 cannot_judge=0 auto_approved=0 estimated_spend=$0.0000\n[bose-qc-ultra-headphones] 1/66 provider failure (sanitized)\n[bose-qc-ultra-headphones] status=FAILED verdicts=0/66 alarms=0 cannot_judge=0 auto_approved=0 estimated_spend=$0.0000\n[graco-ready2jet-2212125] 1/95 provider failure (sanitized)\n[graco-ready2jet-2212125] status=FAILED verdicts=0/95 alarms=0 cannot_judge=0 auto_approved=0 estimated_spend=$0.0000\n[graco-snugride-35-lite-lx] 1/118 provider failure (sanitized)\n[graco-snugride-35-lite-lx] 2/118 visual -> CANNOT_JUDGE\n[graco-snugride-35-lite-lx] status=PARTIAL verdicts=1/118 alarms=0 cannot_judge=1 auto_approved=0 estimated_spend=$0.0000\n[levoit-core-300s] 1/66 provider failure (sanitized)\n[levoit-core-300s] 24/66 visual -> CANNOT_JUDGE\n[levoit-core-300s] 48/66 visual -> CANNOT_JUDGE\n[levoit-core-300s] status=PARTIAL verdicts=2/66 alarms=0 cannot_judge=2 auto_approved=0 estimated_spend=$0.0000\nVerifier total estimated spend: $0.0000\n",
+      "stderr": "FAL_KEY is not configured; writing truthful FAILED/PARTIAL artifacts without sending provider requests.\n",
+      "exit_code": 30
+    },
+    {
+      "milestone": "M1",
+      "command": "python3 -m pytest -q system/tests/test_verify_claims.py system/tests/test_gate_regressions.py system/tests/test_verdict_gate.py",
+      "stdout": "...........                                                              [100%]\n11 passed in 9.40s\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "milestone": "M1-final",
+      "command": "python3 evidence-packs/validate.py",
+      "stdout": "\n--- Validating /Users/vbp/workplace/product-understanding/evidence-packs/apple-macbook-air-13-m3/claims.json ---\nSUMMARY_JSON: {\"cannot_judge\": 0, \"ceilings\": {\"C0\": 27, \"C1\": 6}, \"claims\": 33, \"errors\": 0, \"gaps_recorded\": 1, \"meaning_changed\": 0, \"product\": \"apple-macbook-air-13-m3\", \"quotes_verified\": 47, \"reviews_recorded\": 0, \"types\": {\"PART_LOCATION\": 4, \"SPEC\": 27, \"STEP\": 2}, \"unverifiable_binary_source\": 0, \"unverifiable_no_local_file\": 0, \"verdicts_recorded\": 0, \"verification_status\": \"FAILED\", \"warnings\": 0, \"workorder_enforced\": true}\nValidation successful for /Users/vbp/workplace/product-understanding/evidence-packs/apple-macbook-air-13-m3/claims.json\n\n--- Validating /Users/vbp/workplace/product-understanding/evidence-packs/bose-qc-ultra-headphones/claims.json ---\nSUMMARY_JSON: {\"cannot_judge\": 0, \"ceilings\": {\"C0\": 20, \"C1\": 28, \"C2\": 7, \"C3\": 9}, \"claims\": 64, \"errors\": 0, \"gaps_recorded\": 4, \"meaning_changed\": 0, \"product\": \"bose-qc-ultra-headphones\", \"quotes_verified\": 65, \"reviews_recorded\": 7, \"types\": {\"CARE\": 3, \"COMPATIBILITY\": 3, \"LIMIT\": 1, \"PART_LOCATION\": 6, \"SPEC\": 21, \"STATE\": 7, \"STEP\": 14, \"WARNING\": 9}, \"unverifiable_binary_source\": 0, \"unverifiable_no_local_file\": 1, \"verdicts_recorded\": 0, \"verification_status\": \"FAILED\", \"warnings\": 0, \"workorder_enforced\": true}\nValidation successful for /Users/vbp/workplace/product-understanding/evidence-packs/bose-qc-ultra-headphones/claims.json\n\n--- Validating /Users/vbp/workplace/product-understanding/evidence-packs/graco-ready2jet-2212125/claims.json ---\nWARNING: same quote used by multiple claims ['claim_r2j_limit_max_weight', 'claim_r2j_limit_max_height'] (source src_r2j_manual_v1, page 4): 'USE OF THE STROLLER with a child weighing more than 50 lb (2'\nSUMMARY_JSON: {\"cannot_judge\": 0, \"ceilings\": {\"C0\": 9, \"C1\": 30, \"C2\": 6, \"C3\": 49}, \"claims\": 94, \"errors\": 0, \"gaps_recorded\": 4, \"meaning_changed\": 0, \"product\": \"graco-ready2jet-2212125\", \"quotes_verified\": 95, \"reviews_recorded\": 1, \"types\": {\"CARE\": 8, \"COMPATIBILITY\": 1, \"LIMIT\": 5, \"PART_LOCATION\": 4, \"SPEC\": 1, \"STEP\": 50, \"WARNING\": 25}, \"unverifiable_binary_source\": 0, \"unverifiable_no_local_file\": 0, \"verdicts_recorded\": 0, \"verification_status\": \"FAILED\", \"warnings\": 1, \"workorder_enforced\": true}\nValidation successful for /Users/vbp/workplace/product-understanding/evidence-packs/graco-ready2jet-2212125/claims.json\n\n--- Validating /Users/vbp/workplace/product-understanding/evidence-packs/graco-snugride-35-lite-lx/claims.json ---\nWARNING: same quote used by multiple claims ['claim_srl_compat_stroller_duoglider', 'claim_srl_compat_stroller_ready2grow_20', 'claim_srl_compat_stroller_ready2grow_lx_20'] (source src_compatibility_chart_apr2026, page 1): '+Can only be used with the rear seat'\nSUMMARY_JSON: {\"cannot_judge\": 1, \"ceilings\": {\"C0\": 4, \"C2\": 1, \"C3\": 103}, \"claims\": 108, \"errors\": 0, \"gaps_recorded\": 4, \"meaning_changed\": 0, \"product\": \"graco-snugride-35-lite-lx\", \"quotes_verified\": 117, \"reviews_recorded\": 2, \"types\": {\"CARE\": 3, \"COMPATIBILITY\": 22, \"LIMIT\": 9, \"PART_LOCATION\": 2, \"SPEC\": 11, \"STEP\": 52, \"WARNING\": 9}, \"unverifiable_binary_source\": 1, \"unverifiable_no_local_file\": 0, \"verdicts_recorded\": 1, \"verification_status\": \"PARTIAL\", \"warnings\": 1, \"workorder_enforced\": true}\nValidation successful for /Users/vbp/workplace/product-understanding/evidence-packs/graco-snugride-35-lite-lx/claims.json\n\n--- Validating /Users/vbp/workplace/product-understanding/evidence-packs/levoit-core-300s/claims.json ---\nSUMMARY_JSON: {\"cannot_judge\": 2, \"ceilings\": {\"C0\": 16, \"C1\": 20, \"C2\": 15, \"C3\": 6}, \"claims\": 57, \"errors\": 0, \"gaps_recorded\": 3, \"meaning_changed\": 0, \"product\": \"levoit-core-300s\", \"quotes_verified\": 64, \"reviews_recorded\": 8, \"types\": {\"CARE\": 5, \"COMPATIBILITY\": 1, \"LIMIT\": 2, \"PART_LOCATION\": 3, \"POLICY\": 1, \"SPEC\": 20, \"STATE\": 1, \"STEP\": 18, \"WARNING\": 6}, \"unverifiable_binary_source\": 2, \"unverifiable_no_local_file\": 0, \"verdicts_recorded\": 2, \"verification_status\": \"PARTIAL\", \"warnings\": 0, \"workorder_enforced\": true}\nValidation successful for /Users/vbp/workplace/product-understanding/evidence-packs/levoit-core-300s/claims.json\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "milestone": "M2",
+      "command": "python3 scripts/validate_vault.py",
+      "stdout": "apple-macbook-air-13-m3: 20 hashed files verified\nbose-qc-ultra-headphones: 18 hashed files verified\ngraco-ready2jet-2212125: 10 hashed files verified\ngraco-snugride-35-lite-lx: 19 hashed files verified\nlevoit-core-300s: 15 hashed files verified\n\nvault OK\n",
+      "stderr": "Ignoring wrong pointing object 11 0 (offset 0)\nIgnoring wrong pointing object 238 0 (offset 0)\n",
+      "exit_code": 0
+    },
+    {
+      "milestone": "M2",
+      "command": "python3 -m pytest -q system/tests/test_validate_vault.py",
+      "stdout": "...                                                                      [100%]\n3 passed in 0.04s\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "milestone": "M3",
+      "command": "python3 -m pytest -q system/tests/test_extract_orchestrator.py",
+      "stdout": "....                                                                     [100%]\n4 passed in 0.47s\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "milestone": "M4",
+      "command": "python3 system/review_queue.py",
+      "stdout": "{\"alarms\": 0, \"auto_approved\": 0, \"c2\": 0, \"c3\": 0, \"conflicts\": 0, \"gaps\": 1, \"path\": \"/Users/vbp/workplace/product-understanding/evidence-packs/apple-macbook-air-13-m3/review-queue.md\", \"product\": \"apple-macbook-air-13-m3\", \"unresolved_verifier\": 33}\n{\"alarms\": 0, \"auto_approved\": 0, \"c2\": 7, \"c3\": 9, \"conflicts\": 0, \"gaps\": 4, \"path\": \"/Users/vbp/workplace/product-understanding/evidence-packs/bose-qc-ultra-headphones/review-queue.md\", \"product\": \"bose-qc-ultra-headphones\", \"unresolved_verifier\": 41}\n{\"alarms\": 0, \"auto_approved\": 0, \"c2\": 6, \"c3\": 48, \"conflicts\": 0, \"gaps\": 4, \"path\": \"/Users/vbp/workplace/product-understanding/evidence-packs/graco-ready2jet-2212125/review-queue.md\", \"product\": \"graco-ready2jet-2212125\", \"unresolved_verifier\": 39}\n{\"alarms\": 0, \"auto_approved\": 0, \"c2\": 1, \"c3\": 101, \"conflicts\": 0, \"gaps\": 4, \"path\": \"/Users/vbp/workplace/product-understanding/evidence-packs/graco-snugride-35-lite-lx/review-queue.md\", \"product\": \"graco-snugride-35-lite-lx\", \"unresolved_verifier\": 4}\n{\"alarms\": 0, \"auto_approved\": 0, \"c2\": 13, \"c3\": 6, \"conflicts\": 0, \"gaps\": 3, \"path\": \"/Users/vbp/workplace/product-understanding/evidence-packs/levoit-core-300s/review-queue.md\", \"product\": \"levoit-core-300s\", \"unresolved_verifier\": 30}\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "milestone": "M4",
+      "command": "uv run --no-project --python 3.12 --with-requirements system/requirements.txt python -m compileall system/ evidence-packs/",
+      "stdout": "Listing 'system/'...\nCompiling 'system/extract_orchestrator.py'...\nCompiling 'system/review_queue.py'...\nListing 'system/runs'...\nListing 'system/runs/m0-baseline'...\nListing 'system/tests'...\nCompiling 'system/tests/live_canary.py'...\nCompiling 'system/tests/test_extract_orchestrator.py'...\nCompiling 'system/tests/test_gate_regressions.py'...\nCompiling 'system/tests/test_review_queue.py'...\nCompiling 'system/tests/test_validate_vault.py'...\nCompiling 'system/tests/test_verdict_gate.py'...\nCompiling 'system/tests/test_verify_claims.py'...\nCompiling 'system/verify_claims.py'...\nListing 'evidence-packs/'...\nListing 'evidence-packs/apple-macbook-air-13-m3'...\nListing 'evidence-packs/bose-qc-ultra-headphones'...\nListing 'evidence-packs/graco-ready2jet-2212125'...\nListing 'evidence-packs/graco-snugride-35-lite-lx'...\nListing 'evidence-packs/levoit-core-300s'...\nCompiling 'evidence-packs/validate.py'...\nListing 'evidence-packs/workorders'...\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n",
+      "exit_code": 0
+    },
+    {
+      "milestone": "M4",
+      "command": "uv run --no-project --python 3.12 --with-requirements system/requirements.txt python -m pytest -q system/tests",
+      "stdout": "....................                                                     [100%]\n20 passed in 6.98s\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n",
+      "exit_code": 0
+    },
+    {
+      "milestone": "M4-live",
+      "command": "python3 system/tests/live_canary.py",
+      "stdout": "live canary skipped: FAL_KEY is not configured\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "milestone": "CI-docs",
+      "command": "python3 scripts/check_docs_sync.py",
+      "stdout": "LLD md/html in sync at v0.7\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "milestone": "CI-ruff",
+      "command": "uvx ruff check scripts/",
+      "stdout": "All checks passed!\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "milestone": "CI-yaml",
+      "command": "uv run --no-project --python 3.12 --with pyyaml python -c \"import pathlib,yaml; yaml.safe_load(pathlib.Path('.github/workflows/ci.yml').read_text()); print('ci.yml YAML parse OK')\"",
+      "stdout": "ci.yml YAML parse OK\n",
+      "stderr": "WARN `--no-project` was provided, but no project was found\n",
+      "exit_code": 0
+    }
+  ]
+}

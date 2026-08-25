@@ -1,0 +1,14 @@
+command: python3 scripts/validate_vault.py
+stdout:
+apple-macbook-air-13-m3: 20 hashed files verified
+bose-qc-ultra-headphones: 17 hashed files verified
+graco-ready2jet-2212125: 10 hashed files verified
+graco-snugride-35-lite-lx: 19 hashed files verified
+levoit-core-300s: 15 hashed files verified
+
+vault OK
+
+stderr:
+
+exit_code: 0
+
