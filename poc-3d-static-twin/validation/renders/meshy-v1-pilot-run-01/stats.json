@@ -1,0 +1,23 @@
+{
+  "blender_version": "5.2.0 LTS",
+  "glb": "runs/meshy-run-01/model/model.glb",
+  "mesh_objects": 1,
+  "total_vertices": 82093,
+  "total_polygons": 100964,
+  "world_bbox_min": [
+    -0.8015940189361572,
+    -0.4663649797439575,
+    -0.9498232007026672
+  ],
+  "world_bbox_max": [
+    0.7977880239486694,
+    0.4680171608924866,
+    0.9482021331787109
+  ],
+  "world_bbox_size_xyz": [
+    1.5993820428848267,
+    0.9343821406364441,
+    1.8980252742767334
+  ],
+  "note": "Blender is Z-up; glTF importer maps glTF +Y (up) to Blender +Z."
+}

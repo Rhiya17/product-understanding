@@ -1,0 +1,86 @@
+{
+  "_comment": "POC 5 input pack for the open-state static twin. See docs/pocs/poc5-digital-twin-runbook.md Stage 1. Product: Graco Ready2Jet Kingston. One state per job: all input views show the OPEN stroller; the folded-state image feeds a separate future job.",
+  "pack_version": "v1",
+  "pack_status": "RETIRED 2026-08-14 after the meshy-v1-pilot-run-01 FAIL. Known defects: three conflicting canopy states, no rear view, close-up held-out (silhouette IoU unsatisfiable), view-02 SKU unconfirmed. Pack v2 requirements are listed in evaluation/scorecard-meshy-v1-pilot-run-01.md; v2 must bump pack_version, and every v2 frame must be verified against Kingston 2209064 with the same canopy/seat state and same accessories. Runner records pack_version + pack_hash in every submission.",
+  "product": {
+    "brand": "Graco",
+    "name": "Ready2Jet Stroller",
+    "model_number": "2209064",
+    "colorway": "Kingston — gray fabric / black frame / tan leather handle grip",
+    "colorway_note": "Corrected 2026-08-14: the collected images are the Kingston gray/tan colorway, i.e. model 2209064 — NOT Splatter Art 2212125 (the model used by the earlier Higgsfield/Seedance POCs). The experiment follows the images. Published dimensions match across both SKUs, but exact-SKU provenance still matters; do not mix assets across the two."
+  },
+  "verified_dimensions": {
+    "status": "RECORDED 2026-08-14 from the official Graco specification (identical for 2209064 Kingston and 2212125 Splatter Art).",
+    "open_in": {"W": 20.5, "D": 27.0, "H": 43.0},
+    "open_cm": {"W": 52.07, "D": 68.58, "H": 109.22},
+    "folded_cm": null,
+    "source_url": "Official Graco product specification (Ready2Jet); folded dimensions still to be recorded."
+  },
+  "images": {
+    "view-01-front-3q.png": {
+      "role": "input",
+      "state": "open, canopy fully extended",
+      "viewpoint": "front three-quarter, eye level",
+      "sha256": "2480f81d2987d6c4b7026c6fd024772066b5307d4568d3740ca435c2dafed8c9",
+      "origin": "user-curated 2026-08-13 (curated_7/01_front_3q_unfolded_canopy_open.png); official studio asset",
+      "source_url": "UNKNOWN — recover from curation session if possible",
+      "notes": "Anchor view. Cleanest full-product image in the set."
+    },
+    "view-02-top-3q.png": {
+      "role": "input",
+      "state": "open, canopy scrunched back (state conflict with view-01, accepted risk)",
+      "viewpoint": "elevated front three-quarter / top-down",
+      "sha256": "bf47113925b2d303f60e1df3b9c281352b07133158927a3d329d0f27579f4663",
+      "origin": "user-curated 2026-08-13 (curated_7/04_top_down_seat_and_canopy.png); real-world phone photo",
+      "source_url": "UNKNOWN — recover from curation session if possible",
+      "notes": "FLAG: seat inlay appears two-tone vs view-01 uniform gray — possible liner or colorway variant. SKU/colorway confirmation pending; if it fails, swap for held-out image and re-run."
+    },
+    "view-03-undercarriage.png": {
+      "role": "input",
+      "state": "open",
+      "viewpoint": "low front close-up of chassis, wheels, basket",
+      "sha256": "495bf3a519573f68e6128af566c18ad5bb0f6068f3280285adc9baef63aa4891",
+      "origin": "user-curated 2026-08-13 (curated_7/06_wheels_suspension_basket_closeup.png); official studio asset",
+      "source_url": "UNKNOWN — recover from curation session if possible",
+      "notes": "Partial view (crop). Accepted risk: close-ups can confuse multi-view pose estimation, but this is the only clean undercarriage evidence."
+    },
+    "view-04-side-profile.png": {
+      "role": "input",
+      "state": "open, canopy collapsed (pre-fold prep; third canopy configuration, accepted risk)",
+      "viewpoint": "near-pure side profile",
+      "sha256": "16d1a8f8e277b00d2be1e421b345236453bae40e02b96023ca8e3a5240cd272a",
+      "origin": "derived: person removed by image editor from panel 1 of official-fold-sequence.png (Graco marketing asset). Same file as poc-seedance-keyframe-fold/references/openfold.png; pose verified against original in cleaning-comparison-sheet.png.",
+      "source_url": "https://newellbrands.imgix.net/13f546fb-a043-300c-82ce-43db1392fe58/13f546fb-a043-300c-82ce-43db1392fe58.jpg",
+      "notes": "Fills the side-view gap with matching colorway. Marked derived, not observed."
+    },
+    "heldout-01-seat-bellybar.png": {
+      "role": "held-out",
+      "state": "open, canopy extended",
+      "viewpoint": "close-up of seat, harness, belly bar",
+      "sha256": "63666025a85915efa1c68981c230dca32b255e359795b6ebc3cee27be19bd63c",
+      "origin": "user-curated 2026-08-13 (curated_7/05_belly_bar_carry_handle_closeup.png); official studio asset",
+      "source_url": "UNKNOWN — recover from curation session if possible",
+      "notes": "NEVER upload to any tool. LIMITATION (recorded 2026-08-14): this is a close-up, so it can validate local seat/belly-bar geometry only — it CANNOT support the runbook's whole-product silhouette IoU test, which requires an independent global three-quarter view. The global silhouette check is unsatisfiable with the current input pack; resolve by sourcing one more clean global view (PDP scrape or Decision 2 self-capture) before scoring silhouette."
+    },
+    "folded-01-side.png": {
+      "role": "future-job (folded-state twin for the fit engine)",
+      "state": "folded, self-standing",
+      "viewpoint": "side, slightly rear",
+      "sha256": "d039fe3fcc3bc464fb059a5e7bebac7136ec45a157714d28a9cc1a427525f42d",
+      "origin": "user-curated 2026-08-13 (curated_7/07_folded_self_standing_crucial.png); official studio asset",
+      "source_url": "UNKNOWN — recover from curation session if possible",
+      "notes": "Excluded from the open-state job. Single view only — folded job needs more views or self-captured scan (Decision 2)."
+    }
+  },
+  "excluded": {
+    "curated_7/02_side_profile_recline_reference.png": "People in frame; child in seat (occupied geometry != empty geometry); heavy occlusion. Qualitative sanity check only.",
+    "curated_7/03_rear_handle_and_wheels.png": "Child in seat; aftermarket clamp-on cup holder low on frame; occlusion. Qualitative sanity check only.",
+    "poc-seedance-keyframe-fold/references/open-product-only.png": "Splatter Art colorway — would poison identity of the gray/tan job."
+  },
+  "known_accepted_risks": [
+    "Three different canopy configurations across the four input views (extended / scrunched / collapsed). Canopy region expected to be the messiest; rigid frame is consistent and is what POC 6 needs.",
+    "No true rear view — rear geometry is inferred by definition; check 4d watches for hallucinated rear detail.",
+    "view-03 is a partial crop.",
+    "view-02 SKU/colorway confirmation pending."
+  ]
+}

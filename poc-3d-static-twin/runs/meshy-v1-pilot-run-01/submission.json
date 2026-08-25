@@ -1,0 +1,42 @@
+{
+  "submitted_at": "2026-08-14T00:57:43.743732+00:00",
+  "endpoint": "fal-ai/meshy/v6/multi-image-to-3d",
+  "arguments": {
+    "topology": "triangle",
+    "target_polycount": 100000,
+    "symmetry_mode": "off",
+    "should_remesh": true,
+    "should_texture": true,
+    "enable_pbr": true,
+    "enable_rigging": false,
+    "enable_animation": false,
+    "image_urls": [
+      "https://v3b.fal.media/files/b/0aa63d9a/V90eOAQRS8xck7SJHkqvc_view-01-front-3q.png",
+      "https://v3b.fal.media/files/b/0aa63d9a/-gCr6q4W4khbT7J0SKoGk_view-02-top-3q.png",
+      "https://v3b.fal.media/files/b/0aa63d9a/TeJl-vCeWFV8o3VJhKQpQ_view-03-undercarriage.png",
+      "https://v3b.fal.media/files/b/0aa63d9a/dawGE4giCNm_EwiuhrBsW_view-04-side-profile.png"
+    ]
+  },
+  "image_refs": [
+    {
+      "file": "view-01-front-3q.png",
+      "sha256": "2480f81d2987d6c4b7026c6fd024772066b5307d4568d3740ca435c2dafed8c9",
+      "url": "https://v3b.fal.media/files/b/0aa63d9a/V90eOAQRS8xck7SJHkqvc_view-01-front-3q.png"
+    },
+    {
+      "file": "view-02-top-3q.png",
+      "sha256": "bf47113925b2d303f60e1df3b9c281352b07133158927a3d329d0f27579f4663",
+      "url": "https://v3b.fal.media/files/b/0aa63d9a/-gCr6q4W4khbT7J0SKoGk_view-02-top-3q.png"
+    },
+    {
+      "file": "view-03-undercarriage.png",
+      "sha256": "495bf3a519573f68e6128af566c18ad5bb0f6068f3280285adc9baef63aa4891",
+      "url": "https://v3b.fal.media/files/b/0aa63d9a/TeJl-vCeWFV8o3VJhKQpQ_view-03-undercarriage.png"
+    },
+    {
+      "file": "view-04-side-profile.png",
+      "sha256": "16d1a8f8e277b00d2be1e421b345236453bae40e02b96023ca8e3a5240cd272a",
+      "url": "https://v3b.fal.media/files/b/0aa63d9a/dawGE4giCNm_EwiuhrBsW_view-04-side-profile.png"
+    }
+  ]
+}
