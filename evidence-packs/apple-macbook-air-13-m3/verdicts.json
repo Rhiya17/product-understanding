@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "prompt_version": "v1",
+  "date": "2026-08-24",
+  "status": "FAILED",
+  "reason": "Provider verification was unavailable; no bindings were verified.",
+  "verdicts": [],
+  "conflict_triage": []
+}

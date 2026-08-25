@@ -1,0 +1,40 @@
+{
+  "workorder_id": "wo_extract_bose_v1",
+  "product_dir": "bose-qc-ultra-headphones",
+  "product_id": "prod_bose_qc_ultra_headphones",
+  "source": "docs/workorders/evidence-pack-extraction-workorder.md §6.3",
+  "expected_total": {
+    "min": 25,
+    "max": 70
+  },
+  "required_types": {
+    "SPEC": 5,
+    "STEP": 3,
+    "PART_LOCATION": 2,
+    "WARNING": 1
+  },
+  "required_conflicts": [],
+  "checklist": [
+    {
+      "id": "specs_core",
+      "desc": "Specs: battery, Bluetooth version/codecs, multipoint, weight, wired options (3.5mm aux, USB-C lossless), included cables."
+    },
+    {
+      "id": "pairing_procedure",
+      "desc": "Pairing procedure from the owner's guide as STEP claims."
+    },
+    {
+      "id": "bt_device_name",
+      "desc": "The Bluetooth device name ('BOSE QC ULTRA 2 HP') as a SPEC claim."
+    },
+    {
+      "id": "controls_layout",
+      "desc": "Controls layout as PART_LOCATION claims."
+    },
+    {
+      "id": "macbook_compatibility",
+      "desc": "COMPATIBILITY claims for MacBook pairing (wired via 3.5mm; Bluetooth) ONLY if a source on either side states it; otherwise record as a gap with kind UNDERIVABLE — that is an acceptable, important finding."
+    }
+  ],
+  "revision_note": "max raised 60->70 on 2026-08-24: gap-closure top-up added 5 SPEC claims (bluetooth version, weight, USB audio format, cable length, 33 ft range) after specs.md was registered and the product page captured."
+}

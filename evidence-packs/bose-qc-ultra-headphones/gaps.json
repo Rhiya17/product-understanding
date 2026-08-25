@@ -1,0 +1,68 @@
+{
+  "coverage": {
+    "specs_core": [
+      "claim_bqcu2_battery_life_anc_on_1",
+      "claim_bqcu2_battery_life_anc_immersive_on_1",
+      "claim_bqcu2_battery_life_all_off_1",
+      "claim_bqcu2_full_charge_time_1",
+      "claim_bqcu2_quick_charge_playback_1",
+      "claim_bqcu2_quick_charge_playback_2",
+      "claim_bqcu2_bluetooth_version_1",
+      "claim_bqcu2_bluetooth_range_1",
+      "claim_bqcu2_aptx_adaptive_codec_1",
+      "claim_bqcu2_multipoint_max_active_1",
+      "claim_bqcu2_device_list_capacity_1",
+      "claim_bqcu2_aux_cable_spec_1",
+      "claim_bqcu2_usb_audio_support_1",
+      "claim_bqcu2_box_contents_1"
+    ],
+    "pairing_procedure": [
+      "claim_bqcu2_step_pairing_1",
+      "claim_bqcu2_step_pairing_2",
+      "claim_bqcu2_step_pairing_3"
+    ],
+    "bt_device_name": [
+      "claim_bqcu2_bluetooth_device_name_1"
+    ],
+    "controls_layout": [
+      "claim_bqcu2_part_controls_1",
+      "claim_bqcu2_part_status_light_1",
+      "claim_bqcu2_part_usb_c_port_1",
+      "claim_bqcu2_part_aux_port_1",
+      "claim_bqcu2_part_call_microphones_1"
+    ],
+    "macbook_compatibility": []
+  },
+  "gaps": [
+    {
+      "gap_id": "gap_macbook_1",
+      "kind": "UNDERIVABLE",
+      "waives": [
+        "checklist:macbook_compatibility"
+      ],
+      "reason": "No collected source on either side states MacBook pairing or wired compatibility. The owner's guide mentions 'a computer' only as a USB-C power source for charging/USB audio and never names MacBook; the aux instructions name only a generic 'source device'. The spec-page sources (src_product_page, src_specifications_article, src_support_product_page) have no local capture, and their manifest notes record no MacBook statement. Cross-product compatibility is underivable from this vault.",
+      "closes_when": "An official Bose or Apple source explicitly stating QC Ultra Headphones (2nd Gen) compatibility with MacBook (Bluetooth and/or 3.5 mm wired) is added to the vault — e.g. the Apple-side pairing guide in the apple-macbook-air-13-m3 vault, if it names third-party headphones, or a captured Bose support article."
+    },
+    {
+      "gap_id": "gap_codecs_1",
+      "kind": "UNDERIVABLE",
+      "waives": [],
+      "reason": "The full Bluetooth codec list (e.g. SBC/AAC) is not enumerated in any collected source. The owner's guide documents only aptX Adaptive via Snapdragon Sound (claimed). The manifest's own collection_gaps confirms: 'Bluetooth codec list beyond aptX Adaptive (Snapdragon Sound) is not explicitly enumerated on official pages checked; SBC/AAC support not officially confirmed in collected sources.'",
+      "closes_when": "An official Bose source enumerating supported Bluetooth codecs is found and added to the vault."
+    },
+    {
+      "gap_id": "gap_included_cable_lengths_1",
+      "kind": "UNDERIVABLE",
+      "waives": [],
+      "reason": "NARROWED 2026-08-24: USB-C cable length now claimed (39 in, claim_bqcu2_spec_usbc_cable_length_1); only the 3.5 mm-to-2.5 mm aux cable length remains unpublished in any source.",
+      "closes_when": "Bose publishes the aux cable length, or it is measured on a physical unit."
+    },
+    {
+      "gap_id": "gap_spec_article_raw_capture_1",
+      "kind": "SOURCE_MISSING",
+      "waives": [],
+      "reason": "The support specifications article cannot be captured over HTTP (returns a JavaScript application shell with no content — attempted 2026-08-24). Bluetooth 5.4 and the 33 ft range currently rest on the registered curated transcription (src_specs_curated_v1).",
+      "closes_when": "The article is captured via a browser session and registered; then rebind claim_bqcu2_bluetooth_version_2 and claim_bqcu2_bluetooth_range_33ft_1 to the raw capture."
+    }
+  ]
+}

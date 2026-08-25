@@ -1,0 +1,150 @@
+{
+  "coverage": {
+    "specs_limits": [
+      "claim_srl_limit_max_weight_current",
+      "claim_srl_limit_max_weight_legacy_img",
+      "claim_srl_limit_min_weight",
+      "claim_srl_limit_max_height",
+      "claim_srl_limit_head_clearance",
+      "claim_srl_limit_body_support_max_weight",
+      "claim_srl_limit_base_80pct",
+      "claim_srl_spec_model_number",
+      "claim_srl_spec_dimensions",
+      "claim_srl_spec_weight_with_base",
+      "claim_srl_spec_carrier_weight",
+      "claim_srl_spec_harness_type",
+      "claim_srl_spec_fmvss213",
+      "claim_srl_spec_aircraft_certified",
+      "claim_srl_spec_handle_positions"
+    ],
+    "compatibility_chart": [
+      "claim_srl_compat_stroller_modes",
+      "claim_srl_compat_stroller_duoglider",
+      "claim_srl_compat_stroller_fastaction_se_20",
+      "claim_srl_compat_stroller_fastaction_fold_jogger",
+      "claim_srl_compat_stroller_fastaction_jogger_lx",
+      "claim_srl_compat_stroller_gomax",
+      "claim_srl_compat_stroller_graco_merge",
+      "claim_srl_compat_stroller_graco_premier_merge",
+      "claim_srl_compat_stroller_outpace_lx",
+      "claim_srl_compat_stroller_ready2grow_20",
+      "claim_srl_compat_stroller_ready2grow_lx_20",
+      "claim_srl_compat_stroller_ready2jet",
+      "claim_srl_compat_stroller_ready2roll_wagon",
+      "claim_srl_compat_stroller_snugrider_elite",
+      "claim_srl_compat_stroller_verb",
+      "claim_srl_compat_base_gomax",
+      "claim_srl_compat_base_graco_premier",
+      "claim_srl_compat_base_snuglock_load_leg",
+      "claim_srl_compat_base_snugride_lite",
+      "claim_srl_compat_base_snugride_snugfit",
+      "claim_srl_compat_base_snugride_snuglock"
+    ],
+    "harness_steps": [
+      "claim_srl_step_secure_1",
+      "claim_srl_step_secure_2",
+      "claim_srl_step_secure_3",
+      "claim_srl_step_secure_4",
+      "claim_srl_step_secure_5",
+      "claim_srl_step_secure_6",
+      "claim_srl_step_secure_7",
+      "claim_srl_step_removechild_1",
+      "claim_srl_step_removechild_2",
+      "claim_srl_step_removechild_3",
+      "claim_srl_limit_head_clearance",
+      "claim_srl_spec_harness_type",
+      "claim_srl_step_harnessfit_1",
+      "claim_srl_step_harnessfit_2",
+      "claim_srl_step_harnessfit_3",
+      "claim_srl_step_harnessfit_4",
+      "claim_srl_step_harnessfit_5",
+      "claim_srl_step_harnessfit_6",
+      "claim_srl_step_harnessfit_7",
+      "claim_srl_step_harnessfit_8",
+      "claim_srl_step_harnessfit_9",
+      "claim_srl_step_harnessfit_10",
+      "claim_srl_step_harnessfit_11",
+      "claim_srl_step_harnessfit_12",
+      "claim_srl_step_bucklefit_1",
+      "claim_srl_step_bucklefit_2",
+      "claim_srl_step_bucklefit_3",
+      "claim_srl_step_bucklefit_4",
+      "claim_srl_step_shortenbuckle_1",
+      "claim_srl_limit_harness_strap_height"
+    ],
+    "install_steps": [
+      "claim_srl_step_latch_1",
+      "claim_srl_step_latch_2",
+      "claim_srl_step_latch_3",
+      "claim_srl_step_latch_4",
+      "claim_srl_step_latch_5",
+      "claim_srl_step_latch_6",
+      "claim_srl_step_latch_7",
+      "claim_srl_step_latch_8",
+      "claim_srl_step_latch_9",
+      "claim_srl_step_latch_10",
+      "claim_srl_step_beltbase_1",
+      "claim_srl_step_beltbase_2",
+      "claim_srl_step_beltbase_3",
+      "claim_srl_step_beltbase_4",
+      "claim_srl_step_beltbase_5",
+      "claim_srl_step_beltbase_6",
+      "claim_srl_step_beltbase_7",
+      "claim_srl_step_beltbase_8",
+      "claim_srl_step_beltbase_9",
+      "claim_srl_step_baseless_1",
+      "claim_srl_step_baseless_2",
+      "claim_srl_step_baseless_3",
+      "claim_srl_step_baseless_4",
+      "claim_srl_step_baseless_5",
+      "claim_srl_step_baseless_6"
+    ],
+    "expiration_7yr": [
+      "claim_srl_limit_expiration_7yr"
+    ],
+    "base_latch_facts": [
+      "claim_srl_spec_base_features",
+      "claim_srl_spec_install_methods",
+      "claim_srl_spec_base_recline_positions",
+      "claim_srl_limit_base_80pct",
+      "claim_srl_warning_no_dual_install",
+      "claim_srl_step_latch_1",
+      "claim_srl_step_latch_6"
+    ],
+    "care_rules": [
+      "claim_srl_care_seat_pad",
+      "claim_srl_care_buckle",
+      "claim_srl_care_harness"
+    ]
+  },
+  "gaps": [
+    {
+      "gap_id": "gap_legacy_manual_1",
+      "kind": "SOURCE_MISSING",
+      "waives": [],
+      "reason": "The legacy 4-35 lb 'SnugRide 35 Lite LX' manual (model 2106696) is not in the vault (exists only on third-party ManualsLib, excluded by the official-sources-only rule). The 35 lb side of the mandated maximum_child_weight conflict is therefore bound only to the official PDP gallery image (src_img_in_car_installed), whose text overlay is mechanically unverifiable. The conflict pair itself is fully recorded; this gap notes the weaker binding.",
+      "closes_when": "An official legacy manual or archived gracobaby.com page stating 4-35 lb is added to the vault."
+    },
+    {
+      "gap_id": "gap_chart_cell_marks_1",
+      "kind": "UNDERIVABLE",
+      "waives": [],
+      "reason": "The compatibility chart's per-cell check/dash marks and footnote-marker placement are graphical; pypdf text extraction interleaves them ambiguously (e.g. whether the '(Stroller frame & rear facing use mode only)' criteria attaches to the Modes row's SnugRide column or the GoMax column cannot be derived mechanically from the text layer). Row-level compatibility for the SnugRide column is recorded; ambiguous criteria are flagged in extraction_notes on the affected claims.",
+      "closes_when": "A human reviewer (or vision pass) reads the chart PDF visually and confirms per-cell marks and footnote attachment."
+    },
+    {
+      "gap_id": "gap_video_transcripts_1",
+      "kind": "SOURCE_MISSING",
+      "waives": [],
+      "reason": "The three official Graco installation/harness videos are URL references only (videos/video-sources.md); no downloaded media or transcript exists in the vault, so no claims are bound to them.",
+      "closes_when": "Video transcripts or downloaded media are added to the vault."
+    },
+    {
+      "gap_id": "gap_spanish_manual_1",
+      "kind": "NOT_EXTRACTED",
+      "waives": [],
+      "reason": "The Spanish manual (src_snugride_manual_es_v1) duplicates the English manual's content; extracting it would double claims without adding facts. English manual used as the sole manual source.",
+      "closes_when": "A market/language-specific extraction pass is requested."
+    }
+  ]
+}

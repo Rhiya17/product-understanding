@@ -1,0 +1,22 @@
+{
+  "reviews": [
+    {
+      "review_id": "rev_srl_max_weight_conflict_1",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:maximum_child_weight",
+      "claim_id": "claim_srl_limit_max_weight_current",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Human review decision: the current manual (30 lb, 4-30 lb range) is authoritative over the legacy gallery-image overlay. Manual is the primary safety authority for a child-restraint limit."
+    },
+    {
+      "review_id": "rev_srl_max_weight_conflict_2",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:maximum_child_weight",
+      "claim_id": "claim_srl_limit_max_weight_legacy_img",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "The 35 lb figure comes from a legacy official gallery image predating the product rename (35 Lite LX -> Lite LX, limit changed 35->30 lb). Kept as CANDIDATE record documenting live conflicting official sources; must never be served as an answer. Closes only if Graco corrects or removes the gallery image (see gap_legacy_manual_1). TRANSCRIPTION VERIFIED by human review 2026-08-24: the quoted overlay text is actually present on the image — the extraction read it correctly; the rejection is about which source wins, not about extraction accuracy."
+    }
+  ]
+}

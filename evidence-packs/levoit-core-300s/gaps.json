@@ -1,0 +1,72 @@
+{
+  "coverage": {
+    "specs_core": [
+      "claim_c300s_spec_dimensions",
+      "claim_c300s_spec_weight_300s",
+      "claim_c300s_spec_weight_300sp",
+      "claim_c300s_spec_cadr",
+      "claim_c300s_spec_coverage",
+      "claim_c300s_spec_noise_300s",
+      "claim_c300s_spec_noise_300sp",
+      "claim_c300s_spec_rated_power_300s",
+      "claim_c300s_spec_rated_power_300sp",
+      "claim_c300s_spec_power_supply",
+      "claim_c300s_spec_standby_power",
+      "claim_c300s_spec_operating_conditions",
+      "claim_c300s_spec_model_name",
+      "claim_c300s_spec_filtration_stages",
+      "claim_c300s_spec_filter_model_300s",
+      "claim_c300s_spec_filter_model_300sp",
+      "claim_c300s_limit_room_size"
+    ],
+    "filter_replacement": [
+      "claim_c300s_step_replace_filter_1",
+      "claim_c300s_step_replace_filter_2",
+      "claim_c300s_step_replace_filter_3",
+      "claim_c300s_step_replace_filter_4",
+      "claim_c300s_step_replace_filter_5",
+      "claim_c300s_step_replace_filter_6",
+      "claim_c300s_step_initial_setup_1",
+      "claim_c300s_step_initial_setup_2",
+      "claim_c300s_step_initial_setup_3",
+      "claim_c300s_care_filter_lifespan"
+    ],
+    "filter_reset_button": [
+      "claim_c300s_part_filter_reset_button",
+      "claim_c300s_step_reset_filter_1",
+      "claim_c300s_step_reset_filter_2",
+      "claim_c300s_step_reset_filter_3",
+      "claim_c300s_step_reset_filter_4"
+    ],
+    "app_wifi_setup": [
+      "claim_c300s_step_app_setup_1",
+      "claim_c300s_step_app_setup_2",
+      "claim_c300s_step_app_setup_3",
+      "claim_c300s_step_wifi_reset_1",
+      "claim_c300s_spec_wifi_band"
+    ]
+  },
+  "gaps": [
+    {
+      "gap_id": "gap_300s_manual_binding_1",
+      "kind": "NOT_EXTRACTED",
+      "waives": [],
+      "reason": "The primary source src_manual_core300s_us (and its byte-near-identical copy src_manual_core300s_vesync) has no machine-readable text layer: pypdf and pdfminer.six both extract zero characters from all 24 pages (CID-encoded fonts without usable ToUnicode maps). Every fact was read visually from rendered page images and cross-checked, but a quote bound to these source_ids can never pass the validator's mechanical anti-fabrication gate. Claims are therefore bound to src_manual_core300sp_us (whose cover states 'Product Series: Core 300S series, Core 300S-P Series' — it is the official manual for both series) and to src_spec_page_core300s, with the corresponding src_manual_core300s_us page numbers preserved in extraction_notes. No checklist item or floor is left unmet by this substitution, so nothing is waived; this gap documents why the nominal primary source carries no bindings.",
+      "closes_when": "An OCR text layer is added to the vault copy of the 300S manual (without altering the original artifact's hash record), or the validator gains a mode for verifying quotes against rendered page images."
+    },
+    {
+      "gap_id": "gap_hepa_efficiency_1",
+      "kind": "UNDERIVABLE",
+      "waives": [],
+      "reason": "The HEPA efficiency figure ('H13 True HEPA Filter ... Captures at least 99.97% of airborne particles 0.3 microns (um) in size', 300S manual page 11, visually verified) appears only in src_manual_core300s_us, which has no bindable text layer. The 300S-P manual drops the True HEPA/H13 wording entirely, and specs.md says only 'True HEPA main filter' with no efficiency number. No mechanically verifiable source in the vault states the 99.97% / 0.3 micron figure, so no claim was written for it.",
+      "closes_when": "OCR text layer for the 300S manual, or a captured official spec page stating the filtration efficiency."
+    },
+    {
+      "gap_id": "gap_support_page_capture_1",
+      "kind": "SOURCE_MISSING",
+      "waives": [],
+      "reason": "src_support_vesync_filter_page (official VeSync store filter page confirming Core 300-RF compatibility and 6-8 month lifespan) has local_path null - no captured file exists in the vault. Claims that rely on its facts (claim_c300s_compat_filter_models, part of claim_c300s_care_filter_lifespan) bind instead to the specs.md transcription, which attributes those facts to the VeSync store.",
+      "closes_when": "An HTML or text capture of the VeSync filter page is added to the vault with a local_path."
+    }
+  ]
+}

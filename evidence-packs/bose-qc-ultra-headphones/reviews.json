@@ -1,0 +1,67 @@
+{
+  "reviews": [
+    {
+      "review_id": "rev_bqcu2_quick_charge_conflict_1",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:quick_charge_playback_time",
+      "claim_id": "claim_bqcu2_quick_charge_playback_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Human review decision: serve the owner's-guide body text — 15 minutes of charging gives up to 3 hours of battery life. This is the figure Bose presents as the product statement."
+    },
+    {
+      "review_id": "rev_bqcu2_quick_charge_conflict_2",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:quick_charge_playback_time",
+      "claim_id": "claim_bqcu2_quick_charge_playback_2",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "The 2.5-hour figure is the testing footnote's measured condition on the same page (36), not the headline product statement. Kept as CANDIDATE record of the intra-source discrepancy; not to be served as the answer."
+    },
+    {
+      "review_id": "rev_bqcu2_connected_light_1",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:bluetooth_connected_indicator",
+      "claim_id": "claim_bqcu2_state_connected_light_10s_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "FALSE CONFLICT — resolved on review: the two claims describe different trigger events, both true. This one is the connection event: page 28, right after a device connects, the light glows solid blue for 10 seconds. Serve for questions about pairing/connecting."
+    },
+    {
+      "review_id": "rev_bqcu2_connected_light_2",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:bluetooth_connected_indicator",
+      "claim_id": "claim_bqcu2_state_connected_light_5s_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "FALSE CONFLICT — resolved on review: this is the status-check display, not the connection event. Page 37's preamble scopes the whole table: on don/doff (or button press) the status light shows headphone status for 5 seconds; 'Solid blue (5 seconds) = Connected' is what a status check shows on an already-connected headset. Serve for questions about checking status. Both claims approved; the answer system should pick by the user's activity (connecting vs checking)."
+    },
+    {
+      "review_id": "rev_bqcu2_bluetooth_version_1",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "unverifiable_binding:bluetooth_version",
+      "claim_id": "claim_bqcu2_bluetooth_version_1",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "The only support is the vault manifest's own notes about an uncaptured web page — no source document to verify the quote against. Manifest notes are not an authority. Demoted to gap_bluetooth_version_1: capture the specifications article locally, then re-extract with a verifiable binding."
+    },
+    {
+      "review_id": "rev_bqcu2_bt_range_conflict_1",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:bluetooth_range",
+      "claim_id": "claim_bqcu2_bluetooth_range_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Human review decision: favor the owner's manual — 30 ft (9 m). The manual is the primary product authority for operating range."
+    },
+    {
+      "review_id": "rev_bqcu2_bt_range_conflict_2",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:bluetooth_range",
+      "claim_id": "claim_bqcu2_bluetooth_range_33ft_1",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "The 33 ft figure comes from Bose's support specifications article (via the curated spec transcription) — an official but secondary source, and almost certainly the same spec rounded to 10 m instead of 9 m. Manual wins per the reviewer's authority ruling. Kept as CANDIDATE record of the cross-document discrepancy."
+    }
+  ]
+}

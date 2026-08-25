@@ -1,0 +1,22 @@
+{
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "prompt_version": "v1",
+  "date": "2026-08-24",
+  "status": "PARTIAL",
+  "reason": "One or more provider requests failed; some bindings have no verdict.",
+  "verdicts": [
+    {
+      "claim_id": "claim_c300s_spec_aq_indicator",
+      "binding_index": 1,
+      "verdict": "CANNOT_JUDGE",
+      "note": "Visual binding; text-only verification is unavailable."
+    },
+    {
+      "claim_id": "claim_c300s_part_filter_reset_button",
+      "binding_index": 2,
+      "verdict": "CANNOT_JUDGE",
+      "note": "Visual binding; text-only verification is unavailable."
+    }
+  ],
+  "conflict_triage": []
+}

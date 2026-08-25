@@ -1,0 +1,66 @@
+{
+  "workorder_id": "wo_extract_r2j_v1",
+  "product_dir": "graco-ready2jet-2212125",
+  "product_id": "prod_graco_ready2jet",
+  "source": "docs/workorders/evidence-pack-extraction-workorder.md §6.1",
+  "expected_total": {
+    "min": 40,
+    "max": 110
+  },
+  "required_types": {
+    "SPEC": 1,
+    "LIMIT": 2,
+    "STEP": 10,
+    "WARNING": 4,
+    "PART_LOCATION": 2,
+    "CARE": 2
+  },
+  "required_conflicts": [],
+  "checklist": [
+    {
+      "id": "specs_limits",
+      "desc": "All specs and limits: product weight, child weight/height limits, folded and open dimensions, box contents, warranty (manual + any spec source)."
+    },
+    {
+      "id": "fold_procedure",
+      "desc": "Complete fold procedure from manual pages 33-35, one STEP claim per action, with thumb switch and handle lever as PART_LOCATION claims bound to manual diagrams."
+    },
+    {
+      "id": "unfold_procedure",
+      "desc": "Unfold procedure as STEP claims."
+    },
+    {
+      "id": "recline",
+      "desc": "Seat recline operation."
+    },
+    {
+      "id": "canopy",
+      "desc": "Canopy operation."
+    },
+    {
+      "id": "brake",
+      "desc": "Brake operation."
+    },
+    {
+      "id": "wheel_removal",
+      "desc": "Wheel removal/replacement."
+    },
+    {
+      "id": "fabric_care",
+      "desc": "Fabric and frame care rules."
+    },
+    {
+      "id": "safety_warnings",
+      "desc": "All safety warnings in the manual, each a WARNING claim at C3."
+    },
+    {
+      "id": "harness",
+      "desc": "Harness procedures: securing child (5-point), 5-point to 3-point conversion, harness height adjustment. Added 2026-08-24 under the procedures-are-never-skippable policy."
+    },
+    {
+      "id": "footrest_cup_holder",
+      "desc": "Footrest adjustment and cup holder attachment/use. Added 2026-08-24 under the procedures-are-never-skippable policy."
+    }
+  ],
+  "revision_note": "max raised on 2026-08-24: procedures-are-never-skippable policy — deferred procedures (harness height / footrest, cup holder, 3-point conversion) must be extracted; band ceiling must never cause omission."
+}

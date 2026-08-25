@@ -1,0 +1,76 @@
+{
+  "reviews": [
+    {
+      "review_id": "rev_c300s_revision_policy_weight_p",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:product_weight",
+      "claim_id": "claim_c300s_spec_weight_300sp",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Latest-revision-only policy: the Core 300S-P is the current retail revision and is canonical. Serve its figures."
+    },
+    {
+      "review_id": "rev_c300s_revision_policy_weight_old",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:product_weight",
+      "claim_id": "claim_c300s_spec_weight_300s",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Original Core 300S revision retired under the latest-revision-only policy (2026-08-24). Kept as CANDIDATE record; source is Levoit's live spec page, which still carries original-revision values."
+    },
+    {
+      "review_id": "rev_c300s_revision_policy_power_p",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:rated_power",
+      "claim_id": "claim_c300s_spec_rated_power_300sp",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Latest-revision-only policy: Core 300S-P canonical."
+    },
+    {
+      "review_id": "rev_c300s_revision_policy_power_old",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:rated_power",
+      "claim_id": "claim_c300s_spec_rated_power_300s",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Original revision retired under the latest-revision-only policy (2026-08-24)."
+    },
+    {
+      "review_id": "rev_c300s_revision_policy_noise_p",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:noise_level",
+      "claim_id": "claim_c300s_spec_noise_300sp",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Latest-revision-only policy: Core 300S-P canonical."
+    },
+    {
+      "review_id": "rev_c300s_revision_policy_noise_old",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:noise_level",
+      "claim_id": "claim_c300s_spec_noise_300s",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Original revision retired under the latest-revision-only policy (2026-08-24)."
+    },
+    {
+      "review_id": "rev_c300s_revision_policy_filter_p",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:replacement_filter_model",
+      "claim_id": "claim_c300s_spec_filter_model_300sp",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Latest-revision-only policy: serve Core 300-P-RF as the replacement filter."
+    },
+    {
+      "review_id": "rev_c300s_revision_policy_filter_old",
+      "date": "2026-08-24",
+      "reviewer": "vijayp.cmu@gmail.com",
+      "scope": "conflict:replacement_filter_model",
+      "claim_id": "claim_c300s_spec_filter_model_300s",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Original revision retired under the latest-revision-only policy (2026-08-24). CAVEAT recorded at review time: owners of original Core 300S units need Core 300-RF, not Core 300-P-RF — if the answer system ever serves owned-device support for older units, this decision must be revisited."
+    }
+  ]
+}

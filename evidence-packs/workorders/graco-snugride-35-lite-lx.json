@@ -1,0 +1,55 @@
+{
+  "workorder_id": "wo_extract_snugride_v1",
+  "product_dir": "graco-snugride-35-lite-lx",
+  "product_id": "prod_graco_snugride_lite_lx",
+  "source": "docs/workorders/evidence-pack-extraction-workorder.md §6.2",
+  "expected_total": {
+    "min": 40,
+    "max": 120
+  },
+  "required_types": {
+    "SPEC": 3,
+    "LIMIT": 2,
+    "STEP": 6,
+    "WARNING": 3,
+    "COMPATIBILITY": 5,
+    "CARE": 1
+  },
+  "required_conflicts": [
+    {
+      "predicate": "maximum_child_weight",
+      "note": "Current manual/product page says 4-30 lb; one official gallery image still says 4-35 lb. BOTH claims must exist, each with its own binding, cross-referenced via extraction_notes 'CONFLICT: contradicts claim_<id>'."
+    }
+  ],
+  "checklist": [
+    {
+      "id": "specs_limits",
+      "desc": "Specs and limits including the 30 lb / 35 lb conflict recorded as two conflicting claims."
+    },
+    {
+      "id": "compatibility_chart",
+      "desc": "Every row of the official compatibility chart PDF as a COMPATIBILITY claim; note the chart's '(2025+)' qualifier on Ready2Jet in applicability.revision."
+    },
+    {
+      "id": "harness_steps",
+      "desc": "Harness steps as STEP claims, all C3."
+    },
+    {
+      "id": "install_steps",
+      "desc": "Installation steps (base/LATCH/seat belt) as STEP claims, all C3."
+    },
+    {
+      "id": "expiration_7yr",
+      "desc": "7-year expiration."
+    },
+    {
+      "id": "base_latch_facts",
+      "desc": "Base and LATCH facts."
+    },
+    {
+      "id": "care_rules",
+      "desc": "Care rules."
+    }
+  ],
+  "revision_note": "max raised on 2026-08-24: procedures-are-never-skippable policy — deferred procedures (harness height / footrest, cup holder, 3-point conversion) must be extracted; band ceiling must never cause omission."
+}

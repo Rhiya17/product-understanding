@@ -1,0 +1,36 @@
+{
+  "workorder_id": "wo_extract_levoit_v1",
+  "product_dir": "levoit-core-300s",
+  "product_id": "prod_levoit_core_300s",
+  "source": "docs/workorders/evidence-pack-extraction-workorder.md §6.5",
+  "expected_total": {
+    "min": 25,
+    "max": 60
+  },
+  "required_types": {
+    "SPEC": 5,
+    "STEP": 4,
+    "PART_LOCATION": 1,
+    "CARE": 1,
+    "WARNING": 1
+  },
+  "required_conflicts": [],
+  "checklist": [
+    {
+      "id": "specs_core",
+      "desc": "Specs: dimensions, weight, CADR, coverage, noise, filter model (Core 300-P-RF; current 300S-P revision is canonical per latest-revision-only policy 2026-08-24)."
+    },
+    {
+      "id": "filter_replacement",
+      "desc": "Filter replacement procedure as STEP claims (manual diagrams as bindings), C2."
+    },
+    {
+      "id": "filter_reset_button",
+      "desc": "Filter reset button as PART_LOCATION (bound to the control-panel image), C1."
+    },
+    {
+      "id": "app_wifi_setup",
+      "desc": "App/WiFi setup steps, C1."
+    }
+  ]
+}

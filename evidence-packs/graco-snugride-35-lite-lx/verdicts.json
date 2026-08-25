@@ -1,0 +1,16 @@
+{
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "prompt_version": "v1",
+  "date": "2026-08-24",
+  "status": "PARTIAL",
+  "reason": "One or more provider requests failed; some bindings have no verdict.",
+  "verdicts": [
+    {
+      "claim_id": "claim_srl_limit_max_weight_legacy_img",
+      "binding_index": 0,
+      "verdict": "CANNOT_JUDGE",
+      "note": "Visual binding; text-only verification is unavailable."
+    }
+  ],
+  "conflict_triage": []
+}

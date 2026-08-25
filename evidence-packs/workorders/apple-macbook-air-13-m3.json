@@ -1,0 +1,14 @@
+{
+  "workorder_id": "wo_extract_macbook_v1",
+  "product_dir": "apple-macbook-air-13-m3",
+  "product_id": "prod_apple_macbook_air_13_m3",
+  "source": "docs/workorders/evidence-pack-extraction-workorder.md §6.4",
+  "expected_total": {"min": 25, "max": 60},
+  "required_types": {"SPEC": 6, "PART_LOCATION": 3, "STEP": 2},
+  "required_conflicts": [],
+  "checklist": [
+    {"id": "ports_inventory", "desc": "Port inventory as PART_LOCATION claims with sides: MagSafe 3 + 2x Thunderbolt on the LEFT, 3.5mm headphone jack on the RIGHT, bound to the port-guide captures in manuals/."},
+    {"id": "specs_core", "desc": "Specs: dimensions, weight, Bluetooth 5.3, Wi-Fi 6E, audio capabilities, colors, model identifier Mac15,12."},
+    {"id": "bt_pairing_steps", "desc": "Bluetooth pairing procedure from the captured Apple guide as STEP claims; note OS applicability if the guide states it."}
+  ]
+}

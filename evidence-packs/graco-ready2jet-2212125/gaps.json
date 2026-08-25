@@ -1,0 +1,141 @@
+{
+  "coverage": {
+    "specs_limits": [
+      "claim_r2j_limit_max_weight",
+      "claim_r2j_limit_max_height",
+      "claim_r2j_dimension_basket_capacity",
+      "claim_r2j_limit_cup_holder_weight",
+      "claim_r2j_limit_single_occupant",
+      "claim_r2j_spec_assembly_no_tools"
+    ],
+    "fold_procedure": [
+      "claim_r2j_step_fold_1",
+      "claim_r2j_step_fold_2",
+      "claim_r2j_step_fold_3",
+      "claim_r2j_step_fold_4",
+      "claim_r2j_step_fold_5",
+      "claim_r2j_step_fold_6",
+      "claim_r2j_step_fold_7",
+      "claim_r2j_step_fold_tips_1",
+      "claim_r2j_step_fold_tips_2",
+      "claim_r2j_part_thumb_switch",
+      "claim_r2j_part_handle_lever"
+    ],
+    "unfold_procedure": [
+      "claim_r2j_step_unfold_1",
+      "claim_r2j_step_unfold_2",
+      "claim_r2j_step_unfold_3",
+      "claim_r2j_step_unfold_4"
+    ],
+    "recline": [
+      "claim_r2j_step_recline_1",
+      "claim_r2j_step_recline_2",
+      "claim_r2j_warning_recline_clearance"
+    ],
+    "canopy": [
+      "claim_r2j_step_canopy_1",
+      "claim_r2j_step_canopy_2",
+      "claim_r2j_step_canopy_3"
+    ],
+    "brake": [
+      "claim_r2j_step_brake_1",
+      "claim_r2j_step_brake_2",
+      "claim_r2j_warning_apply_both_brakes",
+      "claim_r2j_warning_brakes_loading"
+    ],
+    "wheel_removal": [
+      "claim_r2j_step_wheel_removal_1",
+      "claim_r2j_step_rear_wheels_1",
+      "claim_r2j_step_rear_wheels_2",
+      "claim_r2j_step_front_wheels_1",
+      "claim_r2j_step_front_wheels_2",
+      "claim_r2j_care_beach_cleaning"
+    ],
+    "fabric_care": [
+      "claim_r2j_care_seat",
+      "claim_r2j_care_frame",
+      "claim_r2j_care_wheel_oil",
+      "claim_r2j_care_inspection",
+      "claim_r2j_care_sun_exposure",
+      "claim_r2j_care_wet_drying",
+      "claim_r2j_care_beach_cleaning",
+      "claim_r2j_care_cup_holder"
+    ],
+    "safety_warnings": [
+      "claim_r2j_warning_unattended",
+      "claim_r2j_warning_seat_belt",
+      "claim_r2j_warning_brakes_loading",
+      "claim_r2j_warning_basket_overload",
+      "claim_r2j_warning_finger_entrapment",
+      "claim_r2j_warning_strangulation",
+      "claim_r2j_warning_stairs",
+      "claim_r2j_warning_walking_speed",
+      "claim_r2j_warning_tipping_handle_canopy",
+      "claim_r2j_warning_hot_liquids",
+      "claim_r2j_warning_basket_not_carrier",
+      "claim_r2j_warning_basket_standing",
+      "claim_r2j_warning_head_toward_footrest",
+      "claim_r2j_warning_not_a_toy",
+      "claim_r2j_warning_damaged_discontinue",
+      "claim_r2j_warning_caregiver_assist",
+      "claim_r2j_warning_adult_assembly",
+      "claim_r2j_warning_car_seat_other_brands",
+      "claim_r2j_warning_car_seat_fall_hazard",
+      "claim_r2j_warning_car_seat_harness",
+      "claim_r2j_warning_car_seat_read_manual",
+      "claim_r2j_warning_zip_tie",
+      "claim_r2j_warning_belly_bar_not_restraint",
+      "claim_r2j_warning_apply_both_brakes",
+      "claim_r2j_warning_recline_clearance"
+    ],
+    "harness": [
+      "claim_r2j_step_harness_3pt_1",
+      "claim_r2j_step_harness_3pt_2",
+      "claim_r2j_step_harness_3pt_3",
+      "claim_r2j_step_harness_3pt_4",
+      "claim_r2j_step_harness_3pt_5",
+      "claim_r2j_step_harness_3pt_6",
+      "claim_r2j_step_harness_3",
+      "claim_r2j_step_harness_height_1",
+      "claim_r2j_step_harness_height_2",
+      "claim_r2j_step_harness_height_3"
+    ],
+    "footrest_cup_holder": [
+      "claim_r2j_step_footrest_1",
+      "claim_r2j_step_footrest_2",
+      "claim_r2j_step_cup_holder_1",
+      "claim_r2j_step_cup_holder_2",
+      "claim_r2j_step_cup_holder_3"
+    ]
+  },
+  "gaps": [
+    {
+      "gap_id": "gap_specs_1",
+      "kind": "SOURCE_MISSING",
+      "waives": [],
+      "reason": "The manual (src_r2j_manual_v1), the only text source in this product's vault, states no product empty weight, no open or folded dimensions, no enumerated box contents (the page 10 parts list is diagram-only; the text only says to check that all parts are present), and no warranty terms (page 40 gives only contact channels for warranty information). The single spec-type fact literally stated in the text is 'No tools required.' (page 10), extracted as claim_r2j_spec_assembly_no_tools; it satisfies the SPEC floor but not the intent of the specs_limits checklist item. The remaining core specs cannot be extracted without fabrication.",
+      "closes_when": "docs/workorders/workorder-ready2jet-gap-closure.md Task 1 lands source-vault/graco-ready2jet-2212125/specs/specs.md (official PDP spec transcription: product weight, open/folded dimensions, box contents, warranty), after which SPEC claims for those facts can be extracted."
+    },
+    {
+      "gap_id": "gap_fold_visual_1",
+      "kind": "UNDERIVABLE",
+      "waives": [],
+      "reason": "The manual's fold-page text (pages 33-35) ends at 'squeeze handle lever' followed by 'CHECK that the stroller is secure.' The physical frame-collapse motion between those two states is shown only in diagrams and is not stated in text, so no STEP claim for it was written (no inventing steps from diagrams).",
+      "closes_when": "A measured visual annotation pass over the page 34-35 diagrams or the official fold video (src_r2j_fold_video_v1), or a manufacturer text source describing the collapse motion; see also the manifest collection_gaps entry on thumb-switch/handle-lever macro imagery."
+    },
+    {
+      "gap_id": "gap_compat_chart_1",
+      "kind": "SOURCE_MISSING",
+      "waives": [],
+      "reason": "The manual states only a generic compatibility claim ('COMPATIBLE WITH MOST GRACO® INFANT CAR SEATS', extracted as claim_r2j_compat_graco_infant_car_seats) and directs users to customer service or a QR code for specifics. No per-model compatibility chart exists in this product's vault, so per-counterpart COMPATIBILITY claims cannot be extracted here.",
+      "closes_when": "The official compatibility chart PDF (held in the SnugRide product's vault per docs/workorders/evidence-pack-extraction-workorder.md §6.2) is cross-referenced during review, or a Ready2Jet-side compatibility source is added to this vault."
+    },
+    {
+      "gap_id": "gap_harness_reconvert_1",
+      "kind": "UNDERIVABLE",
+      "waives": [],
+      "reason": "The manual documents converting the 5-point harness to 3-point (pages 24-25) but states no dedicated reverse (3-point back to 5-point) sequence, in text or diagrams (pages 23-27 checked). Reattachment of the shoulder straps appears only implicitly, via the 5-point close step ('To close, slide shoulder strap connectors onto waist straps and insert into buckle.', page 23, claim_r2j_step_harness_2) and the harness-height loop insertion (page 27, claim_r2j_step_harness_height_1), so no convert_back procedure could be extracted without inventing a sequence.",
+      "closes_when": "A manufacturer text source stating the 3-point-to-5-point reconversion sequence, or a reviewer decision that the page 23 close step plus the page 27 height-adjustment steps constitute the documented reverse path."
+    }
+  ]
+}
