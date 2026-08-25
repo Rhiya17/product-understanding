@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Wan VACE depth-control probe: reskin the official Ready2Jet fold clip.
 
-Option 2 from docs/video-generation-alternatives.md ("make the AI trace a
+Option 2 from docs/pocs/video-generation-alternatives.md ("make the AI trace a
 skeleton"), using the real fold motion from the official Graco how-to video
 as the skeleton. The fal endpoint computes the depth control internally
 (preprocess=true); we supply the trimmed source clip plus a product-only

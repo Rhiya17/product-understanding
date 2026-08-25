@@ -1,7 +1,7 @@
 # POC: Keyframe-Pinned Fold Video with Seedance 2.0 (Option 1)
 
 *Written 2026-07-31. This is the POC for Option 1 in
-[video-generation-alternatives.md](../docs/video-generation-alternatives.md):
+[video-generation-alternatives.md](../docs/pocs/video-generation-alternatives.md):
 pin the video down with more real photos. It reuses the evidence pack and the
 test protocol from the
 [Higgsfield one-hand-fold POC](../poc-higgsfield-one-hand-fold/), whose
@@ -34,7 +34,7 @@ the intermediate evidence, so it has as little room to guess as possible.
 
 ## What we already know (do not re-learn this)
 
-From the [Higgsfield findings](../docs/higgsfield-poc-findings.md):
+From the [Higgsfield findings](../docs/pocs/higgsfield-poc-findings.md):
 
 1. Text descriptions of mechanics are ignored; the model guesses and guesses
    wrong. Baseline control: 0/3, no fold shown, product morphed.
@@ -113,7 +113,7 @@ prep action still counts as an invented action (hard failure).
 
 ## Protocol
 
-Follows the [common test protocol](../docs/product-page-video-poc-plan.md):
+Follows the [common test protocol](../docs/pocs/product-page-video-poc-plan.md):
 three pre-declared seeds, exact request/response capture, contact sheets,
 score before looking at cost. Specifics for this POC:
 
@@ -131,7 +131,7 @@ score before looking at cost. Specifics for this POC:
 
 ## Scoring
 
-Use the [shared scorecard](../docs/product-page-video-poc-plan.md#shared-scorecard)
+Use the [shared scorecard](../docs/pocs/product-page-video-poc-plan.md#shared-scorecard)
 (0–2 on SKU identity, component integrity, state accuracy, motion accuracy,
 temporal stability, instruction completeness, camera discipline, source
 traceability). Hard failures apply — inventing or relocating a control, model

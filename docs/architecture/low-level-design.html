@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShowMe Low-Level Design</title>
+<style>
+  :root{
+    --bg:#f7f7f4; --panel:#ffffff; --ink:#1c2433; --muted:#5b6472;
+    --line:#d9dce3; --accent:#2563eb; --accent-soft:#eaf1fe;
+    --ok:#15803d; --ok-soft:#e8f5ec;
+    --warn:#b45309; --warn-soft:#fdf3e3;
+    --bad:#b91c1c; --bad-soft:#fdecec;
+    --chip:#eef0f4; --code:#f1f3f7;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#12151c; --panel:#1a1f29; --ink:#e6e9ef; --muted:#9aa3b2;
+      --line:#323a48; --accent:#7aa5f8; --accent-soft:#1d2a45;
+      --ok:#5fc888; --ok-soft:#173325;
+      --warn:#e8a75a; --warn-soft:#3a2c14;
+      --bad:#f08a8a; --bad-soft:#3d1c1c;
+      --chip:#252c39; --code:#232935;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:0.86em}
+  code{background:var(--code); padding:1px 5px; border-radius:4px}
+  pre{background:var(--code); border:1px solid var(--line); border-radius:8px; padding:14px 16px; overflow-x:auto; line-height:1.5}
+  pre code{background:none; padding:0}
+
+  .layout{display:grid; grid-template-columns:250px minmax(0,1fr); max-width:1240px; margin:0 auto; gap:0 40px; padding:0 24px}
+  @media (max-width:960px){ .layout{grid-template-columns:minmax(0,1fr)} nav.toc{display:none} }
+
+  nav.toc{position:sticky; top:0; align-self:start; height:100vh; overflow-y:auto; padding:28px 0 40px; font-size:13.5px}
+  nav.toc .toc-title{font-weight:700; text-transform:uppercase; letter-spacing:.06em; font-size:11px; color:var(--muted); margin:14px 0 6px}
+  nav.toc a{display:block; padding:3px 10px; color:var(--muted); border-left:2px solid transparent; border-radius:0 6px 6px 0}
+  nav.toc a:hover{color:var(--ink); background:var(--chip); text-decoration:none}
+
+  main{padding:28px 0 90px; min-width:0}
+  header.hero{border-bottom:1px solid var(--line); padding-bottom:26px; margin-bottom:34px}
+  .meta-chips{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 0}
+  .chip{background:var(--chip); border:1px solid var(--line); color:var(--muted); font-size:12.5px; padding:3px 10px; border-radius:99px; white-space:nowrap}
+  .chip strong{color:var(--ink); font-weight:600}
+  h1{font-size:34px; line-height:1.2; margin:10px 0 8px; letter-spacing:-0.5px}
+  .subtitle{font-size:18px; color:var(--muted); max-width:62ch}
+
+  section{margin:0 0 58px}
+  .sec-head{display:flex; align-items:baseline; gap:12px; border-bottom:1px solid var(--line); padding-bottom:8px; margin-bottom:6px}
+  .sec-num{flex:none; font-weight:800; font-size:13px; color:var(--accent); background:var(--accent-soft); border-radius:6px; padding:2px 8px; letter-spacing:.03em}
+  h2{font-size:24px; margin:0; letter-spacing:-0.3px}
+  h3{font-size:18px; margin:28px 0 8px}
+  h4{font-size:15.5px; margin:20px 0 6px}
+  .sec-sub{color:var(--muted); margin:6px 0 18px; font-size:15px}
+
+  .plain{background:var(--accent-soft); border:1px solid color-mix(in srgb, var(--accent) 25%, transparent); border-radius:10px; padding:12px 16px; margin:14px 0 20px; font-size:15.5px}
+  .plain .tag{font-weight:700; color:var(--accent); font-size:12px; text-transform:uppercase; letter-spacing:.05em; display:block; margin-bottom:2px}
+
+  figure{margin:22px 0; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px 18px 10px; overflow-x:auto}
+  figure svg{display:block; max-width:100%; height:auto; margin:0 auto; color:var(--ink)}
+  figcaption{font-size:13.5px; color:var(--muted); padding:10px 4px 6px; border-top:1px dashed var(--line); margin-top:12px}
+
+  .cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; margin:18px 0}
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px 16px}
+  .card h4{margin:0 0 4px; font-size:15px}
+  .card p{margin:0; font-size:14px; color:var(--muted)}
+  .card .fine{display:block; margin-top:8px; font-size:12.5px; color:var(--muted); border-top:1px dashed var(--line); padding-top:7px}
+  .card .num{display:inline-block; width:22px; height:22px; border-radius:50%; background:var(--accent); color:#fff; font-size:12px; font-weight:700; text-align:center; line-height:22px; margin-right:7px}
+
+  .tablewrap{overflow-x:auto; margin:16px 0; border:1px solid var(--line); border-radius:10px; background:var(--panel)}
+  table{border-collapse:collapse; width:100%; font-size:14px}
+  th,td{padding:9px 13px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line)}
+  th{background:var(--chip); font-size:12.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  td:first-child{font-weight:600; white-space:nowrap}
+  @media (max-width:700px){ td:first-child{white-space:normal} }
+
+  .pill{display:inline-block; font-size:12px; font-weight:700; border-radius:99px; padding:1px 9px; white-space:nowrap}
+  .pill.ok{background:var(--ok-soft); color:var(--ok)}
+  .pill.warn{background:var(--warn-soft); color:var(--warn)}
+  .pill.bad{background:var(--bad-soft); color:var(--bad)}
+  .pill.mut{background:var(--chip); color:var(--muted)}
+
+  dl.vocab{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:10px 22px; margin:16px 0}
+  dl.vocab div{background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:10px 13px}
+  dl.vocab dt{font-weight:700; font-size:14px}
+  dl.vocab dd{margin:2px 0 0; font-size:13.5px; color:var(--muted)}
+
+  ul.tight{margin:8px 0; padding-left:22px}
+  ul.tight li{margin:4px 0}
+  .phase{display:flex; gap:14px; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:10px 0}
+  .phase .pnum{flex:none; width:38px; height:38px; border-radius:10px; background:var(--accent-soft); color:var(--accent); font-weight:800; display:flex; align-items:center; justify-content:center; font-size:16px}
+  .phase h4{margin:0 0 3px}
+  .phase p{margin:0; font-size:14px; color:var(--muted)}
+  .phase .exit{margin-top:6px; font-size:13px}
+  .phase .exit strong{color:var(--ok)}
+  .backtotop{font-size:13px}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<nav class="toc" aria-label="Table of contents">
+  <div class="toc-title">ShowMe LLD v0.7</div>
+  <a href="#scope">1 · What this system does</a>
+  <a href="#vocab">2 · Words you need</a>
+  <a href="#rules">3 · The ten unbreakable rules</a>
+  <div class="toc-title">The machine</div>
+  <a href="#big-map">4 · The big map</a>
+  <a href="#answer-pipeline">5 · Answering, step by step</a>
+  <a href="#delivery-gate">6 · The Delivery Gate</a>
+  <a href="#deferred">7 · “We’re making your video”</a>
+  <div class="toc-title">The factory</div>
+  <a href="#evidence">8 · From manual to fact</a>
+  <a href="#asset-factory">9 · Making pictures &amp; videos</a>
+  <a href="#verification">10 · Humans in the loop</a>
+  <div class="toc-title">Keeping it true</div>
+  <a href="#lifecycle">11 · Life story of a fact</a>
+  <a href="#jobs">12 · Jobs &amp; notifications</a>
+  <a href="#session">13 · Remembering the chat</a>
+  <a href="#data">14 · Who owns which data</a>
+  <div class="toc-title">Operations</div>
+  <a href="#apis">15 · The doors (APIs)</a>
+  <a href="#security">16 · Safety, rights, privacy</a>
+  <a href="#failures">17 · When things break</a>
+  <a href="#performance">18 · How fast</a>
+  <a href="#testing">19 · Proving it works</a>
+  <div class="toc-title">Road ahead</div>
+  <a href="#phases">20 · Build order</a>
+  <a href="#geometry">21 · Future: exact fit &amp; 3D</a>
+  <a href="#open">22 · Still to decide</a>
+</nav>
+
+<main>
+
+<header class="hero">
+  <h1>ShowMe — Low-Level Design</h1>
+  <p class="subtitle">How ShowMe answers product questions with text, pictures, and video — and why (with one deliberate, labeled MVP exception) it never shows you something it hasn’t verified.</p>
+  <div class="meta-chips">
+    <span class="chip"><strong>Version</strong> 0.7</span>
+    <span class="chip"><strong>Date</strong> 2026-08-20</span>
+    <span class="chip"><strong>Status</strong> Draft for implementation review</span>
+    <span class="chip"><strong>Scope</strong> P0 — Text, Image &amp; Video answers</span>
+    <span class="chip">Full contract: <a href="./low-level-design.md">low-level-design.md</a></span>
+  </div>
+</header>
+
+<!-- ============================== 1 SCOPE ============================== -->
+<section id="scope">
+  <div class="sec-head"><span class="sec-num">1</span><h2>What this system does (and refuses to do)</h2></div>
+  <p class="sec-sub">Maps to LLD §1 — purpose, scope, and document hierarchy.</p>
+
+  <div class="plain"><span class="tag">In plain words</span>
+    ShowMe is like a very careful product expert. You ask a question about a product — “How do I fold this stroller?” —
+    and it answers with text, a labeled photo, step cards, or a video. The twist: <strong>it is only allowed to say or show
+    things it has already proven from real sources</strong> (the manual, the maker’s website, official videos). If it can’t prove
+    something, it says so instead of guessing.
+  </div>
+
+  <h3>In scope for P0 (the first version)</h3>
+  <ul class="tight">
+    <li>Knowing <em>exactly</em> which product and variant you mean.</li>
+    <li>Verified factual text answers, exact product photos with callouts, illustrated step sequences.</li>
+    <li>Retrieved verified video segments, plus purpose-built video that is prepared and checked <em>offline</em> first.</li>
+    <li>Follow-up questions, compound questions (“can I… and where… and show me how”), mixed-format answers.</li>
+    <li>Assisted human review of content, and full traceability: every answer can be traced back to its sources.</li>
+    <li>Honest partial answers: “here’s what we know; the rest is being prepared / not supported / needs an expert.”</li>
+  </ul>
+
+  <h3>Deliberately <em>not</em> in P0</h3>
+  <ul class="tight">
+    <li>Generating a how-to video live, while you wait. (Generation itself always happens offline. <strong>MVP exception, LLD §1.3:</strong> during the MVP, the freshly generated video is shown to the asker as soon as it exists — clearly labeled as unverified — and verification runs <em>after</em> serving instead of before. C3 safety-critical procedures are excluded, and the exception sunsets once the automated VLM check runs inline.)</li>
+    <li>Showing invented, “plausible-looking” motion as if it were a real instruction.</li>
+    <li>Exact 3D answers: fit, clearance, collision, physics simulation. (Reserved for a later phase — <a href="#geometry">§21</a>.)</li>
+  </ul>
+
+  <p>Document hierarchy: product requirements say <em>what</em> ShowMe must do;
+  <a href="./system-architecture.md">system-architecture.md</a> and <a href="./showme-system-architecture.md">showme-system-architecture.md</a>
+  give the high-level picture; <strong>this LLD defines the component boundaries, contracts, states, and failure behavior</strong>.
+  Where documents disagree, the LLD governs.</p>
+</section>
+
+<!-- ============================== 2 VOCAB ============================== -->
+<section id="vocab">
+  <div class="sec-head"><span class="sec-num">2</span><h2>Eight words you need first</h2></div>
+  <p class="sec-sub">Every diagram below uses these terms.</p>
+  <dl class="vocab">
+    <div><dt>Source</dt><dd>An original artifact we ingested: a manual PDF, an official product page, a manufacturer video. Stored forever, never edited.</dd></div>
+    <div><dt>Claim</dt><dd>One small proven fact card extracted from a source: “max child weight = 50&nbsp;lb”, “step 2: squeeze the handle lever”. Each claim points at the exact page/region/timestamp it came from.</dd></div>
+    <div><dt>Asset</dt><dd>A piece of media we can show: a photo with a callout, a step-card sequence, a video clip. Every asset is bound to the claims it demonstrates.</dd></div>
+    <div><dt>Candidate vs. Published</dt><dd>Anything newly extracted or newly generated is a <em>candidate</em> — invisible to users. Only after verification does it become <em>published</em> and servable. (MVP-only: a generated video candidate may be served in a labeled <code>CANDIDATE_PROVISIONAL</code> state — see §1.3 exception.)</dd></div>
+    <div><dt>Consequence level (C0–C3)</dt><dd>How much harm a wrong answer could cause. C0/C1 ≈ harmless-to-annoying (color, warranty length). C2 ≈ could waste money or damage the product. C3 ≈ could hurt a person (car-seat installation). Higher level ⇒ stricter rules and human approval.</dd></div>
+    <div><dt>Answer IR</dt><dd>“Intermediate Representation” — the answer as structured, typed data (operators, values, claim IDs) <em>before</em> it is turned into sentences. Machines can check it; prose can’t sneak facts in.</dd></div>
+    <div><dt>Answer Manifest</dt><dd>The permanent receipt for every delivered answer: exactly which claim versions, asset versions, and policy versions produced it. Makes every answer auditable and correctable later.</dd></div>
+    <div><dt>Lane</dt><dd>A production line in the Asset Factory. Lanes A–E make different kinds of media (exact photo callout, purpose-built visual, step cards, procedural video, labeled transition).</dd></div>
+  </dl>
+</section>
+
+<!-- ============================== 3 RULES ============================== -->
+<section id="rules">
+  <div class="sec-head"><span class="sec-num">3</span><h2>The ten unbreakable rules</h2></div>
+  <p class="sec-sub">Maps to LLD §1.2 — non-negotiable implementation rules. Every component below exists to enforce one or more of these.</p>
+
+  <div class="cards">
+    <div class="card"><h4><span class="num">1</span>A source is not a claim</h4>
+      <p>Having the manual in storage proves nothing. A fact only counts after it’s extracted, checked, and published as a claim.</p></div>
+    <div class="card"><h4><span class="num">2</span>Generated ≠ published</h4>
+      <p>A freshly generated image or video is just a candidate. Users never see it until verification publishes it. <em>(Suspended for MVP by §1.3: the asker sees the labeled candidate immediately; verification runs afterward.)</em></p></div>
+    <div class="card"><h4><span class="num">3</span>Match before rank</h4>
+      <p>Retrieved media must match the exact product, revision, rights, and freshness <em>before</em> we even ask “is it relevant?”. A similar-looking sibling product never sneaks in.</p></div>
+    <div class="card"><h4><span class="num">4</span>Every claim gets its own route</h4>
+      <p>A question is split into its material claims. Each claim is routed and risk-rated separately — one hard part can’t hide behind an easy part.</p></div>
+    <div class="card"><h4><span class="num">5</span>No live generated video</h4>
+      <p>A generated procedural video never enters an answer until it has finished offline verification and publication. <em>(Suspended for MVP by §1.3, except C3 safety-critical procedures, which always stay behind verification.)</em></p></div>
+    <div class="card"><h4><span class="num">6</span>Generation presents, never invents</h4>
+      <p>A purpose-built visual may re-express a proven fact in a new medium, but generation can never supply a missing fact or pass off invented motion as product behavior. Illustrative motion only appears in an explicitly labeled non-instructional transition.</p></div>
+    <div class="card"><h4><span class="num">7</span>Words come from typed data</h4>
+      <p>Final language is realized from a gated, typed Answer IR — never accepted as free-form model prose about the product.</p></div>
+    <div class="card"><h4><span class="num">8</span>Every answer leaves a receipt</h4>
+      <p>Each delivered answer writes a durable, version-pinned Answer Manifest. Privacy erasure is itself a recorded lifecycle event.</p></div>
+    <div class="card"><h4><span class="num">9</span>Changes propagate</h4>
+      <p>Every publish, stale, retire, and delete transition flows to everything that depends on it. A corrected manual invalidates the claims and assets built on it.</p></div>
+    <div class="card"><h4><span class="num">10</span>Real video first, untouched</h4>
+      <p>Existing video may be returned as-is or trimmed when it completely answers the question. Painting overlays onto source footage is not the primary strategy.</p></div>
+  </div>
+
+  <div class="plain"><span class="tag">MVP exception (LLD §1.3)</span>
+    For the MVP, rules 2 and 5 are deliberately suspended on the video-miss path: when no published video exists, the freshly
+    generated clip is shown to the asker as soon as generation finishes — <strong>before</strong> any verification — carrying a
+    non-removable “AI-generated, not yet checked against the manual” label, always alongside the verified written steps.
+    It is stored as <code>CANDIDATE_PROVISIONAL</code> and may be re-served in that labeled state until offline verification
+    completes: pass ⇒ published (label removed); fail ⇒ quarantined and every user who saw it is notified. C3 safety-critical
+    procedures (car-seat installation, harness threading) are excluded. The exception sunsets when the automated VLM check
+    runs inline in the generation job, or at Phase 4 scale — whichever comes first.
+  </div>
+</section>
+
+<!-- ============================== 4 BIG MAP ============================== -->
+<section id="big-map">
+  <div class="sec-head"><span class="sec-num">4</span><h2>The big map: two worlds, one shelf</h2></div>
+  <p class="sec-sub">Maps to LLD §2 — high-level component map, and §4 — initial deployables.</p>
+
+  <div class="plain"><span class="tag">In plain words</span>
+    ShowMe is two worlds. The <strong>Online Answer System</strong> is fast — it must reply in seconds, so it is only allowed to
+    <em>read from the shelf</em> of already-published facts and media. The <strong>Offline Product Factory</strong> is slow and careful —
+    it reads manuals, extracts facts, makes media, verifies everything, and <em>stocks the shelf</em>. The two worlds never hand
+    each other raw material directly; everything passes through the published data stores.
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 960 600" role="img" aria-label="ShowMe system map: the client sends questions to the fast online answer system, which reads only published data from the stores; the slow offline factory writes verified facts and media into those stores and notifies the user when deferred assets are ready; a future geometry system is a dashed extension.">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+      <!-- CLIENT zone -->
+      <rect x="20" y="40" width="195" height="150" rx="10" fill="var(--chip)" stroke="var(--line)"/>
+      <text x="117" y="64" text-anchor="middle" font-size="12" font-weight="700" fill="var(--muted)" letter-spacing="1">CLIENT</text>
+      <rect x="34" y="78" width="167" height="44" rx="7" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.5"/>
+      <text x="117" y="96" text-anchor="middle" font-size="12.5" fill="currentColor">You — ask a question,</text>
+      <text x="117" y="112" text-anchor="middle" font-size="12.5" fill="currentColor">pick your product</text>
+      <rect x="34" y="132" width="167" height="44" rx="7" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.5"/>
+      <text x="117" y="150" text-anchor="middle" font-size="12.5" fill="currentColor">App: chat surface +</text>
+      <text x="117" y="166" text-anchor="middle" font-size="12.5" fill="currentColor">image / step / video player</text>
+
+      <!-- ONLINE zone -->
+      <rect x="255" y="30" width="440" height="180" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-opacity="0.6"/>
+      <text x="475" y="54" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent)" letter-spacing="1">ONLINE ANSWER SYSTEM — seconds</text>
+      <rect x="270" y="72" width="96" height="52" rx="7" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.5"/>
+      <text x="318" y="93" text-anchor="middle" font-size="12" fill="currentColor">Understand</text>
+      <text x="318" y="109" text-anchor="middle" font-size="12" fill="currentColor">the question</text>
+      <rect x="376" y="72" width="96" height="52" rx="7" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.5"/>
+      <text x="424" y="93" text-anchor="middle" font-size="12" fill="currentColor">Gather proven</text>
+      <text x="424" y="109" text-anchor="middle" font-size="12" fill="currentColor">facts &amp; media</text>
+      <rect x="482" y="72" width="96" height="52" rx="7" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.5"/>
+      <text x="530" y="93" text-anchor="middle" font-size="12" fill="currentColor">Check at the</text>
+      <text x="530" y="109" text-anchor="middle" font-size="12" fill="currentColor">Delivery Gate</text>
+      <rect x="588" y="72" width="92" height="52" rx="7" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.5"/>
+      <text x="634" y="93" text-anchor="middle" font-size="12" fill="currentColor">Reply +</text>
+      <text x="634" y="109" text-anchor="middle" font-size="12" fill="currentColor">save receipt</text>
+      <line x1="366" y1="98" x2="374" y2="98" stroke="currentColor" marker-end="url(#arr)"/>
+      <line x1="472" y1="98" x2="480" y2="98" stroke="currentColor" marker-end="url(#arr)"/>
+      <line x1="578" y1="98" x2="586" y2="98" stroke="currentColor" marker-end="url(#arr)"/>
+      <text x="475" y="160" text-anchor="middle" font-size="12" fill="var(--muted)">Stateless, horizontally scaled (`showme-api`).</text>
+      <text x="475" y="178" text-anchor="middle" font-size="12" fill="var(--muted)">Reads the shelf; never creates product facts.</text>
+
+      <!-- DATA stores band -->
+      <rect x="255" y="270" width="440" height="110" rx="10" fill="var(--chip)" stroke="var(--line)"/>
+      <text x="475" y="292" text-anchor="middle" font-size="12" font-weight="700" fill="var(--muted)" letter-spacing="1">THE SHELF — DATA STORES</text>
+      <g stroke="currentColor" stroke-opacity="0.55" fill="var(--panel)">
+        <path d="M272 316 h92 v40 a46 8 0 0 1 -92 0 z"/><ellipse cx="318" cy="316" rx="46" ry="8"/>
+        <path d="M378 316 h92 v40 a46 8 0 0 1 -92 0 z"/><ellipse cx="424" cy="316" rx="46" ry="8"/>
+        <path d="M484 316 h92 v40 a46 8 0 0 1 -92 0 z"/><ellipse cx="530" cy="316" rx="46" ry="8"/>
+        <path d="M590 316 h92 v40 a46 8 0 0 1 -92 0 z"/><ellipse cx="636" cy="316" rx="46" ry="8"/>
+      </g>
+      <text x="318" y="342" text-anchor="middle" font-size="11.5" fill="currentColor">Source Vault</text>
+      <text x="424" y="342" text-anchor="middle" font-size="11.5" fill="currentColor">Claim Store</text>
+      <text x="530" y="342" text-anchor="middle" font-size="11.5" fill="currentColor">Asset Library</text>
+      <text x="636" y="342" text-anchor="middle" font-size="11.5" fill="currentColor">Manifests</text>
+
+      <!-- OFFLINE zone -->
+      <rect x="255" y="430" width="440" height="150" rx="10" fill="var(--warn-soft)" stroke="var(--warn)" stroke-opacity="0.55"/>
+      <text x="475" y="454" text-anchor="middle" font-size="12" font-weight="700" fill="var(--warn)" letter-spacing="1">OFFLINE PRODUCT FACTORY — minutes to days</text>
+      <rect x="270" y="472" width="96" height="52" rx="7" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.5"/>
+      <text x="318" y="493" text-anchor="middle" font-size="12" fill="currentColor">Read manuals,</text>
+      <text x="318" y="509" text-anchor="middle" font-size="12" fill="currentColor">pages, videos</text>
+      <rect x="376" y="472" width="96" height="52" rx="7" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.5"/>
+      <text x="424" y="493" text-anchor="middle" font-size="12" fill="currentColor">Extract &amp;</text>
+      <text x="424" y="509" text-anchor="middle" font-size="12" fill="currentColor">validate claims</text>
+      <rect x="482" y="472" width="96" height="52" rx="7" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.5"/>
+      <text x="530" y="493" text-anchor="middle" font-size="12" fill="currentColor">Make media</text>
+      <text x="530" y="509" text-anchor="middle" font-size="12" fill="currentColor">(Lanes A–E)</text>
+      <rect x="588" y="472" width="92" height="52" rx="7" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.5"/>
+      <text x="634" y="493" text-anchor="middle" font-size="12" fill="currentColor">Verify, then</text>
+      <text x="634" y="509" text-anchor="middle" font-size="12" fill="currentColor">publish</text>
+      <line x1="366" y1="498" x2="374" y2="498" stroke="currentColor" marker-end="url(#arr)"/>
+      <line x1="472" y1="498" x2="480" y2="498" stroke="currentColor" marker-end="url(#arr)"/>
+      <line x1="578" y1="498" x2="586" y2="498" stroke="currentColor" marker-end="url(#arr)"/>
+      <text x="475" y="552" text-anchor="middle" font-size="12" fill="var(--muted)">Queue-driven workers (`showme-worker`) + review console (`showme-ops`)</text>
+
+      <!-- GEOMETRY future -->
+      <rect x="720" y="270" width="220" height="310" rx="10" fill="none" stroke="var(--muted)" stroke-dasharray="6 5"/>
+      <text x="830" y="294" text-anchor="middle" font-size="12" font-weight="700" fill="var(--muted)" letter-spacing="1">LATER PHASE</text>
+      <text x="830" y="314" text-anchor="middle" font-size="12.5" fill="var(--muted)">Geometry System</text>
+      <text x="830" y="338" text-anchor="middle" font-size="12" fill="var(--muted)">exact fit, clearance,</text>
+      <text x="830" y="354" text-anchor="middle" font-size="12" fill="var(--muted)">certified 3D — see §21</text>
+
+      <!-- arrows between zones -->
+      <line x1="215" y1="92" x2="253" y2="92" stroke="currentColor" marker-end="url(#arr)"/>
+      <text x="234" y="82" text-anchor="middle" font-size="11.5" fill="var(--muted)">question</text>
+      <line x1="253" y1="140" x2="215" y2="140" stroke="var(--ok)" stroke-width="1.6" marker-end="url(#arr)"/>
+      <text x="234" y="160" text-anchor="middle" font-size="11.5" fill="var(--ok)">verified</text>
+      <text x="234" y="174" text-anchor="middle" font-size="11.5" fill="var(--ok)">answer</text>
+
+      <line x1="424" y1="268" x2="424" y2="212" stroke="currentColor" marker-end="url(#arr)"/>
+      <text x="416" y="244" text-anchor="end" font-size="11.5" fill="var(--muted)">reads only PUBLISHED</text>
+      <line x1="530" y1="430" x2="530" y2="382" stroke="currentColor" marker-end="url(#arr)"/>
+      <text x="540" y="410" font-size="11.5" fill="var(--muted)">writes only after verification</text>
+
+      <path d="M660 212 C 705 240, 705 400, 660 428" fill="none" stroke="currentColor" marker-end="url(#arr)"/>
+      <text x="712" y="240" font-size="11.5" fill="var(--muted)" text-anchor="start">job: “please make this asset”</text>
+
+      <path d="M253 505 L 117 505 L 117 194" fill="none" stroke="currentColor" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+      <text x="182" y="466" font-size="11.5" fill="var(--muted)" text-anchor="middle">“your video</text>
+      <text x="182" y="481" font-size="11.5" fill="var(--muted)" text-anchor="middle">is ready”</text>
+    </svg>
+    <figcaption>The online system and the offline factory only meet through published data. The online path answers in seconds from the shelf; the factory restocks the shelf offline and notifies the user when a deferred asset becomes available.</figcaption>
+  </figure>
+
+  <h3>How this deploys (without 15 microservices)</h3>
+  <p>The boxes above are <em>logical</em> boundaries. P0 packs them into a few deployables and only splits further for a concrete reason (independent scaling, security isolation, latency isolation, team ownership):</p>
+  <div class="tablewrap"><table>
+    <tr><th>Deployable</th><th>What lives inside</th><th>Scaling</th></tr>
+    <tr><td><code>showme-api</code></td><td>The entire online path: gateway, coordinator, identity, policy scan, planner, completeness validator, route planner, evidence query, derivation, retrieval, IR builder, Delivery Gate, eligibility resolver, realizer, session API</td><td>Stateless, horizontal; session data external</td></tr>
+    <tr><td><code>showme-worker</code></td><td>Source processing, extraction, media analysis, asset preparation, verification automation, lifecycle propagation, deletion jobs</td><td>Queue-driven pools per workload class</td></tr>
+    <tr><td><code>showme-ops</code></td><td>Claim review, conflict resolution, coverage review, asset approval, staleness/recall review</td><td>Internal authenticated web app</td></tr>
+    <tr><td><code>showme-notify</code></td><td>Deferred-answer notifications and status updates</td><td>Event-driven; may start as a module of <code>showme-api</code></td></tr>
+    <tr><td>Data plane</td><td>Relational/graph data, object storage, search index, session store, queues, CDN</td><td>Managed services where appropriate</td></tr>
+  </table></div>
+
+  <p>The client itself is not a dumb chat window: it renders claim-level states without hiding partial or unsupported parts, tracks the active product/step/viewpoint, shows deferred-job status honestly (never an infinite spinner), provides accessible media controls (pause, seek, captions, transcript, step navigation), and lets users report wrong answers with the exact <code>answer_id</code>.</p>
+</section>
+
+<!-- ============================== 5 PIPELINE ============================== -->
+<section id="answer-pipeline">
+  <div class="sec-head"><span class="sec-num">5</span><h2>Answering a question, step by step</h2></div>
+  <p class="sec-sub">Maps to LLD §3.2 and §5 — the Online Answer System.</p>
+
+  <div class="plain"><span class="tag">In plain words</span>
+    Think of an assembly line with 12 stations. Your question enters at one end; a checked, receipt-backed answer comes out the other.
+    No station may skip ahead, and the second-to-last station — the <a href="#delivery-gate">Delivery Gate</a> — can stop everything.
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 980 470" role="img" aria-label="Twelve-station answer pipeline. Row one: gateway, safety scan, product identity, claim planner, completeness validator, policy engine. Row two runs right to left: route planner, evidence and asset fetch, answer IR builder, delivery gate, realizer, send plus manifest. Exits: unclear identity asks the user a question; a gate failure leads to repair, a partial answer, or a safe refusal.">
+      <defs>
+        <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+      <!-- top exit pill -->
+      <rect x="266" y="16" width="280" height="40" rx="20" fill="var(--warn-soft)" stroke="var(--warn)" stroke-opacity="0.6"/>
+      <text x="406" y="41" text-anchor="middle" font-size="12.5" fill="var(--warn)">Not sure which product? → ask the user back</text>
+
+      <!-- row 1 -->
+      <g>
+        <rect x="20" y="110" width="140" height="72" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+        <circle cx="36" cy="126" r="10" fill="var(--accent)"/><text x="36" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">1</text>
+        <text x="90" y="146" text-anchor="middle" font-size="12.5" fill="currentColor">Front door</text>
+        <text x="90" y="162" text-anchor="middle" font-size="11.5" fill="var(--muted)">auth, limits, IDs</text>
+
+        <rect x="178" y="110" width="140" height="72" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+        <circle cx="194" cy="126" r="10" fill="var(--accent)"/><text x="194" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">2</text>
+        <text x="248" y="146" text-anchor="middle" font-size="12.5" fill="currentColor">Safety scan</text>
+        <text x="248" y="162" text-anchor="middle" font-size="11.5" fill="var(--muted)">raw text → risk floor</text>
+
+        <rect x="336" y="110" width="140" height="72" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+        <circle cx="352" cy="126" r="10" fill="var(--accent)"/><text x="352" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">3</text>
+        <text x="406" y="146" text-anchor="middle" font-size="12.5" fill="currentColor">Which product?</text>
+        <text x="406" y="162" text-anchor="middle" font-size="11.5" fill="var(--muted)">SKU, revision, market</text>
+
+        <rect x="494" y="110" width="140" height="72" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+        <circle cx="510" cy="126" r="10" fill="var(--accent)"/><text x="510" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">4</text>
+        <text x="564" y="146" text-anchor="middle" font-size="12.5" fill="currentColor">Split into claims</text>
+        <text x="564" y="162" text-anchor="middle" font-size="11.5" fill="var(--muted)">Claim Planner</text>
+
+        <rect x="652" y="110" width="140" height="72" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+        <circle cx="668" cy="126" r="10" fill="var(--accent)"/><text x="668" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">5</text>
+        <text x="722" y="146" text-anchor="middle" font-size="12.5" fill="currentColor">Anything missed?</text>
+        <text x="722" y="162" text-anchor="middle" font-size="11.5" fill="var(--muted)">completeness check</text>
+
+        <rect x="810" y="110" width="140" height="72" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+        <circle cx="826" cy="126" r="10" fill="var(--accent)"/><text x="826" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">6</text>
+        <text x="880" y="146" text-anchor="middle" font-size="12.5" fill="currentColor">How strict?</text>
+        <text x="880" y="162" text-anchor="middle" font-size="11.5" fill="var(--muted)">consequence policy</text>
+      </g>
+      <line x1="160" y1="146" x2="176" y2="146" stroke="currentColor" marker-end="url(#arr2)"/>
+      <line x1="318" y1="146" x2="334" y2="146" stroke="currentColor" marker-end="url(#arr2)"/>
+      <line x1="476" y1="146" x2="492" y2="146" stroke="currentColor" marker-end="url(#arr2)"/>
+      <line x1="634" y1="146" x2="650" y2="146" stroke="currentColor" marker-end="url(#arr2)"/>
+      <line x1="792" y1="146" x2="808" y2="146" stroke="currentColor" marker-end="url(#arr2)"/>
+      <!-- clarify exit -->
+      <line x1="406" y1="108" x2="406" y2="60" stroke="var(--warn)" stroke-dasharray="5 4" marker-end="url(#arr2)"/>
+
+      <!-- connector to row 2 -->
+      <line x1="880" y1="184" x2="880" y2="268" stroke="currentColor" marker-end="url(#arr2)"/>
+
+      <!-- row 2 (right to left) -->
+      <g>
+        <rect x="810" y="270" width="140" height="72" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+        <circle cx="826" cy="286" r="10" fill="var(--accent)"/><text x="826" y="290" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">7</text>
+        <text x="880" y="306" text-anchor="middle" font-size="12.5" fill="currentColor">Route each claim</text>
+        <text x="880" y="322" text-anchor="middle" font-size="11.5" fill="var(--muted)">text / image / video</text>
+
+        <rect x="652" y="270" width="140" height="72" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+        <circle cx="668" cy="286" r="10" fill="var(--accent)"/><text x="668" y="290" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">8</text>
+        <text x="722" y="306" text-anchor="middle" font-size="12.5" fill="currentColor">Fetch the proof</text>
+        <text x="722" y="322" text-anchor="middle" font-size="11.5" fill="var(--muted)">claims, assets, math</text>
+
+        <rect x="494" y="270" width="140" height="72" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+        <circle cx="510" cy="286" r="10" fill="var(--accent)"/><text x="510" y="290" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">9</text>
+        <text x="564" y="306" text-anchor="middle" font-size="12.5" fill="currentColor">Build typed answer</text>
+        <text x="564" y="322" text-anchor="middle" font-size="11.5" fill="var(--muted)">Answer IR, no prose</text>
+
+        <rect x="336" y="270" width="140" height="72" rx="8" fill="var(--accent-soft)" stroke="var(--accent)"/>
+        <circle cx="352" cy="286" r="10" fill="var(--accent)"/><text x="352" y="290" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">10</text>
+        <text x="406" y="306" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor">DELIVERY GATE</text>
+        <text x="406" y="322" text-anchor="middle" font-size="11.5" fill="var(--muted)">deterministic checks</text>
+
+        <rect x="178" y="270" width="140" height="72" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+        <circle cx="194" cy="286" r="10" fill="var(--accent)"/><text x="194" y="290" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">11</text>
+        <text x="248" y="306" text-anchor="middle" font-size="12.5" fill="currentColor">Careful writer</text>
+        <text x="248" y="322" text-anchor="middle" font-size="11.5" fill="var(--muted)">Controlled Realizer</text>
+
+        <rect x="20" y="270" width="140" height="72" rx="8" fill="var(--ok-soft)" stroke="var(--ok)" stroke-opacity="0.7"/>
+        <circle cx="36" cy="286" r="10" fill="var(--ok)"/><text x="36" y="290" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">12</text>
+        <text x="90" y="306" text-anchor="middle" font-size="12.5" fill="currentColor">Send answer</text>
+        <text x="90" y="322" text-anchor="middle" font-size="11.5" fill="var(--muted)">+ save the manifest</text>
+      </g>
+      <line x1="808" y1="306" x2="794" y2="306" stroke="currentColor" marker-end="url(#arr2)"/>
+      <line x1="650" y1="306" x2="636" y2="306" stroke="currentColor" marker-end="url(#arr2)"/>
+      <line x1="492" y1="306" x2="478" y2="306" stroke="currentColor" marker-end="url(#arr2)"/>
+      <line x1="334" y1="306" x2="320" y2="306" stroke="currentColor" marker-end="url(#arr2)"/>
+      <line x1="176" y1="306" x2="162" y2="306" stroke="currentColor" marker-end="url(#arr2)"/>
+
+      <!-- gate failure exit -->
+      <line x1="406" y1="344" x2="406" y2="392" stroke="var(--bad)" stroke-dasharray="5 4" marker-end="url(#arr2)"/>
+      <rect x="216" y="394" width="380" height="44" rx="22" fill="var(--bad-soft)" stroke="var(--bad)" stroke-opacity="0.55"/>
+      <text x="406" y="415" text-anchor="middle" font-size="12.5" fill="var(--bad)">Gate fails → repair the answer, drop the bad part,</text>
+      <text x="406" y="430" text-anchor="middle" font-size="12.5" fill="var(--bad)">or return a safe partial / refusal — never bypass</text>
+    </svg>
+    <figcaption>The online pipeline. Stations 1–6 understand the question and set the safety bar; stations 7–12 assemble, check, and deliver the answer. The only two ways out early are an honest clarifying question or a gate-controlled safe response.</figcaption>
+  </figure>
+
+  <h3>What each station does</h3>
+  <div class="cards">
+    <div class="card"><h4><span class="num">1</span>Front door — API Gateway</h4><p>Checks who you are, what you may access, request size and rate limits; assigns <code>request_id</code>, <code>trace_id</code>, idempotency key; rejects unsafe file types. Nothing inside runs if this fails.</p></div>
+    <div class="card"><h4><span class="num">2</span>Safety scan — Raw Request Policy Scan</h4><p>Reads the <em>raw</em> question before anything else and answers: which domains does this touch (e.g. child restraints)? What is the minimum risk floor? What identity details are mandatory? What warnings must appear? A planner can’t “forget” a hazard it never got to hide.</p></div>
+    <div class="card"><h4><span class="num">3</span>Which product? — Identity Resolver</h4><p>Pins down product, SKU, revision, market to the confidence the risk floor demands. Explicit selection beats visual similarity; look-alike siblings are never substituted. Unclear → ask the user, don’t guess.</p></div>
+    <div class="card"><h4><span class="num">4</span>Split into claims — Claim Planner</h4><p>Turns “Can I use these headphones with this laptop, where’s the port, and show me how?” into three separate claims (compatibility, part location, procedure) with dependencies. It decides <em>what to check</em>, never <em>what is true</em>.</p></div>
+    <div class="card"><h4><span class="num">5</span>Anything missed? — Completeness Validator</h4><p>An independent double-checker with two layers: deterministic rules (every quantity, negation, condition, and safety phrase must map to a claim) plus a separately-configured semantic pass. Neither can waive the other’s failure; disagreement on a C2/C3 obligation forces a clarification or the stricter route.</p></div>
+    <div class="card"><h4><span class="num">6</span>How strict? — Consequence Policy Engine</h4><p>Deterministic, versioned. <code>effective = max(raw floor, per-claim floor, planner request)</code> — the level can be raised, never lowered. It dictates required validation states, warnings, human-approval needs, and allowed answer modes.</p></div>
+    <div class="card"><h4><span class="num">7</span>Route each claim — Route Planner</h4><p>Picks the best format <em>per claim</em> using the route table below — and defines the honest fallback when the ideal media doesn’t exist yet.</p></div>
+    <div class="card"><h4><span class="num">8</span>Fetch the proof — Evidence + Retrieval + Derivation</h4><p>Evidence Query returns only servable claim versions with exact source bindings. Asset Retrieval filters by identity, lifecycle, rights, and freshness <em>before</em> ranking by relevance. The Deterministic Derivation Service may compute new values — but only with an allow-listed formula over published operands, with units, uncertainty, and the formula version recorded. It never estimates an unknown fact.</p></div>
+    <div class="card"><h4><span class="num">9</span>Build typed answer — Answer IR Builder</h4><p>Assembles per-claim results into structured data: operators, values, certainty, sources, warnings, media bindings. <code>response_state</code> is a closed enum: <code>ANSWERED · PARTIAL · CLARIFICATION · DEFERRED · UNSUPPORTED · ESCALATION · TEMPORARY_FAILURE</code>.</p></div>
+    <div class="card"><h4><span class="num">10</span>Delivery Gate</h4><p>The final inspector. Big enough to get its own section — <a href="#delivery-gate">§6</a>.</p></div>
+    <div class="card"><h4><span class="num">11</span>Careful writer — Controlled Realizer</h4><p>Turns the <em>gated</em> IR into sentences. Prose may improve readability but may not add product claims. High-consequence answers use constrained templates; critical warnings are always in text, never only in audio/motion/color; every video comes with a transcript or equivalent step list. Streaming only ever starts from an already-gated IR.</p></div>
+    <div class="card"><h4><span class="num">12</span>Send + receipt — Answer Manifest</h4><p>The realized response (or its hash) plus every pinned version — claims, assets, policies, planner, gate, schema — is durably written before the user gets the answer. Every answer is auditable forever.</p></div>
+  </div>
+
+  <h3>The fast lane (with the same guards)</h3>
+  <p>A simple question (“what’s the max weight?”) may skip the model-based planner and semantic completeness pass — but <strong>only</strong> when identity is already explicit, the request matches a versioned deterministic intent grammar as a single direct fact, the safety scan says C0/C1 with no mandatory clarification, and a published claim matches exactly. Fast-path answers still pass the policy engine, the Delivery Gate, and the realizer, and their manifests record <code>fast_path: true</code>. Any uncertainty falls back to the full pipeline.</p>
+
+  <h3>The route table: which format for which claim</h3>
+
+  <div class="plain"><span class="tag">Video-first for actions (decision 2026-08-20)</span>
+    “Least complex format first” applies only to pure facts. Anything the user has to <em>do</em> — a physical or on-screen
+    action, however small — targets <strong>video</strong> as its ideal format, even when a single sentence would technically answer
+    (“plug into the headphone jack” is a video; “how much does it weigh” is not). The text/step equivalent always ships
+    alongside, and evidence requirements are unchanged — this changes what we aim to show, not what we’re allowed to show.
+  </div>
+
+  <div class="plain"><span class="tag">Ask before we generate (LLD §5.16)</span>
+    Vague action questions (“connect Bose headphones to Mac” — which headphones? which Mac? wired or Bluetooth?) trigger
+    <strong>one multiple-choice clarification</strong> before any generation job is enqueued. Options come from typed catalog data, so a tap
+    binds directly to the generation spec — no guessing, no free-text parsing. If the user doesn’t answer: for C0/C1 the system
+    picks a default deterministically and <em>declares it</em> (“Showing: QC Ultra → MacBook Air M3, Bluetooth — tap to change”),
+    recording the assumption in the manifest; for C2/C3 it never assumes and stays in clarification. Session-known attributes
+    are never re-asked, and clarifying narrows the spec — it never downgrades an action back to text.
+  </div>
+
+  <div class="tablewrap"><table>
+    <tr><th>You asked about…</th><th>Ideal answer</th><th>Only if we have…</th><th>If we don’t</th></tr>
+    <tr><td>A direct fact</td><td>Text</td><td>A published applicable claim</td><td>“Unsupported” or clarify</td></tr>
+    <tr><td>A calculation</td><td>Text / hybrid</td><td>Published operands + approved formula</td><td>Ask for missing inputs, or unsupported</td></tr>
+    <tr><td>Where a part is</td><td>Exact photo + callout</td><td>Location claim + eligible observed photo</td><td>Text location now; if a manual diagram proves the spot, defer a diagram-grounded visual; otherwise clarify</td></tr>
+    <tr><td>Appearance / state</td><td>Exact or purpose-built visual</td><td>Published appearance claims at required fidelity</td><td>Text now; defer a new visual if useful</td></tr>
+    <tr><td>Discrete ordered steps</td><td>Verified video (video-first); step cards serve immediately</td><td>Published ordered steps + part locations; video also needs Lane D evidence</td><td>Steps/text now; defer the video</td></tr>
+    <tr><td>Continuous physical action</td><td>Verified video</td><td>Steps <em>plus</em> evidence for every depicted action, direction, control, state change</td><td>Illustrated steps now; defer the video</td></tr>
+    <tr><td>On-screen / digital steps</td><td>Screen video (video-first); steps serve immediately</td><td>Steps + matching software/firmware/UI state</td><td>Text/steps now; defer video</td></tr>
+    <tr><td>A visual transition</td><td>Labeled transition clip</td><td>Validated endpoints; label mandatory</td><td>Static endpoint images</td></tr>
+    <tr><td>Compatibility</td><td>Text / hybrid</td><td>Published compatibility claim for the exact identities</td><td>Clarify or unsupported</td></tr>
+    <tr><td>A comparison</td><td>Text / table</td><td>Comparable claims under matched conditions</td><td>Partial comparison, gaps shown</td></tr>
+    <tr><td>“What’s wrong with it?”</td><td>Clarification tree</td><td>Published symptom checks + safe actions</td><td>Escalate or unsupported</td></tr>
+    <tr><td>Several things at once</td><td>Hybrid</td><td>Assessed per claim</td><td>Partial answer, unresolved parts visible</td></tr>
+    <tr><td>Will it fit? (geometry)</td><td><em>Reserved route</em></td><td>Certified geometry (later phase)</td><td>Say exact fit isn’t available in P0</td></tr>
+  </table></div>
+</section>
+
+<!-- ============================== 6 DELIVERY GATE ============================== -->
+<section id="delivery-gate">
+  <div class="sec-head"><span class="sec-num">6</span><h2>The Delivery Gate: the last inspector</h2></div>
+  <p class="sec-sub">Maps to LLD §5.13 — the component that makes “never show unverified content” an enforced property instead of a hope.</p>
+
+  <div class="plain"><span class="tag">In plain words</span>
+    Imagine a security guard at the exit of the factory shop. <em>Every single answer</em> — even a “sorry, could you clarify?” — must pass this guard.
+    The guard doesn’t use judgment or vibes: they run a fixed, versioned checklist against the structured answer. If anything on the checklist
+    fails, the answer either gets repaired, loses its broken part, or is replaced by a safe honest response. There is no side door.
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 900 400" role="img" aria-label="The typed Answer IR enters the Delivery Gate, which runs a deterministic checklist and one batched eligibility check against the authoritative registries, then returns PASS to the realizer, REPAIRABLE back to the coordinator, or HARD FAILURE to a safe response.">
+      <defs>
+        <marker id="arr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+      <rect x="20" y="120" width="180" height="76" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="110" y="150" text-anchor="middle" font-size="13" fill="currentColor">Typed Answer IR</text>
+      <text x="110" y="168" text-anchor="middle" font-size="11.5" fill="var(--muted)">structured data,</text>
+      <text x="110" y="183" text-anchor="middle" font-size="11.5" fill="var(--muted)">no prose, no URLs yet</text>
+      <line x1="200" y1="158" x2="248" y2="158" stroke="currentColor" marker-end="url(#arr3)"/>
+
+      <rect x="250" y="30" width="360" height="266" rx="10" fill="var(--accent-soft)" stroke="var(--accent)"/>
+      <text x="430" y="56" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">DELIVERY GATE — fixed checklist</text>
+      <g font-size="12" fill="currentColor">
+        <text x="270" y="82">✓ completeness check passed; risk floors applied</text>
+        <text x="270" y="102">✓ every claim version is currently servable</text>
+        <text x="270" y="122">✓ identity &amp; applicability line up exactly</text>
+        <text x="270" y="142">✓ required citations, warnings, approvals present</text>
+        <text x="270" y="162">✓ media bindings published, eligible, rights-clear</text>
+        <text x="270" y="182">✓ media actually covers the claims/steps it’s bound to</text>
+        <text x="270" y="202">✓ transition / illustrative labels where required</text>
+        <text x="270" y="222">✓ unsupported &amp; deferred parts stay visible</text>
+        <text x="270" y="242">✓ derived values cite formula version + operands</text>
+        <text x="270" y="262">✓ realization template approved for this risk level</text>
+      </g>
+
+      <!-- registry batch check -->
+      <path d="M430 296 v34" stroke="currentColor" marker-end="url(#arr3)"/>
+      <path d="M410 330 v-30" stroke="currentColor" marker-end="url(#arr3)" transform="translate(40,0)"/>
+      <rect x="280" y="332" width="300" height="50" rx="8" fill="var(--chip)" stroke="var(--line)"/>
+      <text x="430" y="352" text-anchor="middle" font-size="12" fill="currentColor">Authoritative registries (claims · assets · rights)</text>
+      <text x="430" y="369" text-anchor="middle" font-size="11.5" fill="var(--muted)">ONE batched eligibility check — fails closed</text>
+
+      <!-- outputs -->
+      <line x1="610" y1="90" x2="668" y2="72" stroke="var(--ok)" stroke-width="1.6" marker-end="url(#arr3)"/>
+      <rect x="670" y="46" width="210" height="54" rx="10" fill="var(--ok-soft)" stroke="var(--ok)" stroke-opacity="0.7"/>
+      <text x="775" y="68" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ok)">PASS</text>
+      <text x="775" y="86" text-anchor="middle" font-size="11.5" fill="currentColor">words + media URLs released</text>
+
+      <line x1="610" y1="163" x2="668" y2="163" stroke="var(--warn)" stroke-width="1.6" marker-end="url(#arr3)"/>
+      <rect x="670" y="136" width="210" height="54" rx="10" fill="var(--warn-soft)" stroke="var(--warn)" stroke-opacity="0.7"/>
+      <text x="775" y="158" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--warn)">REPAIRABLE</text>
+      <text x="775" y="176" text-anchor="middle" font-size="11.5" fill="currentColor">fix or drop that part, re-check</text>
+
+      <line x1="610" y1="236" x2="668" y2="254" stroke="var(--bad)" stroke-width="1.6" marker-end="url(#arr3)"/>
+      <rect x="670" y="228" width="210" height="54" rx="10" fill="var(--bad-soft)" stroke="var(--bad)" stroke-opacity="0.7"/>
+      <text x="775" y="250" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--bad)">HARD FAILURE</text>
+      <text x="775" y="268" text-anchor="middle" font-size="11.5" fill="currentColor">safe partial / refusal / escalation</text>
+    </svg>
+    <figcaption>The gate validates the structured answer before any language or media URL is released. Its three outcomes are machine-readable; “bypass” is not one of them.</figcaption>
+  </figure>
+
+  <h3>The one batched freshness check</h3>
+  <p>Before running its rules, the gate issues a single logical <code>BatchResolveEligibility</code> request carrying <em>every</em> pinned claim and asset version, the tenant/rights context, and one <code>as_of</code> timestamp. The Lifecycle Eligibility Resolver reads all authoritative registries in parallel and returns lifecycle, applicability, rights, freshness, consequence ceiling, and per-registry watermarks. Rules:</p>
+  <ul class="tight">
+    <li>Sequential per-item lookups are prohibited on the normal path — one batch, set-oriented reads.</li>
+    <li>A cache may accelerate this <em>only</em> with push-based invalidation, a bounded maximum age, and authoritative fallback. A cache can never turn “unknown” into “eligible”.</li>
+    <li>If the batch check is unavailable or a watermark is too stale, the gate <strong>fails closed</strong>.</li>
+  </ul>
+
+  <h3>Even the “sorry” is gated</h3>
+  <p>Clarifications, deferred-status updates, and terminal-failure messages pass a reduced gate profile too: mandatory safety warnings present, no unbound product claims, approved templates only — and each one writes a lightweight manifest recording what was asked and why.</p>
+</section>
+
+<!-- ============================== 7 DEFERRED ============================== -->
+<section id="deferred">
+  <div class="sec-head"><span class="sec-num">7</span><h2>“We’re preparing your video” — the deferred path</h2></div>
+  <p class="sec-sub">Maps to LLD §3.3 and §7.3 — retrieval miss, bounded budgets, and fallbacks.</p>
+
+  <div class="plain"><span class="tag">In plain words</span>
+    Sometimes the facts are proven but the perfect video doesn’t exist yet. ShowMe never makes you wait for generation:
+    it answers <em>right now</em> with the best verified thing it has (usually illustrated steps or text) and tells you a video is
+    being prepared. <strong>MVP behavior (§1.3):</strong> the moment generation finishes (typically 3–7 minutes), you’re shown the clip —
+    clearly labeled as AI-generated and not yet checked — while verification runs afterward; if it later fails, the clip is pulled and
+    you’re notified. <strong>Target behavior (post-MVP):</strong> the clip stays invisible until it passes verification, and only then do you
+    get the “it’s ready!” notification. Either way, if generation keeps failing the job doesn’t spin forever — it falls back or fails
+    honestly, with an owner and a deadline.
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 940 440" role="img" aria-label="Deferred asset flow: reply immediately with a verified fallback, queue an idempotent job, the factory produces a candidate, verification either publishes and notifies, or feeds failure reasons into a bounded retry; when the budget is gone the job either publishes a verified illustrated fallback or ends in an owned failure state.">
+      <defs>
+        <marker id="arr4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+      <rect x="20" y="120" width="200" height="80" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="120" y="150" text-anchor="middle" font-size="12.5" fill="currentColor">Claim is supported…</text>
+      <text x="120" y="168" text-anchor="middle" font-size="12.5" fill="currentColor">but the right video</text>
+      <text x="120" y="186" text-anchor="middle" font-size="12.5" fill="currentColor">isn’t published yet</text>
+
+      <path d="M220 140 L 276 92" fill="none" stroke="var(--ok)" stroke-width="1.6" marker-end="url(#arr4)"/>
+      <rect x="280" y="40" width="310" height="70" rx="8" fill="var(--ok-soft)" stroke="var(--ok)" stroke-opacity="0.7"/>
+      <text x="435" y="66" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ok)">Reply NOW</text>
+      <text x="435" y="84" text-anchor="middle" font-size="12" fill="currentColor">verified text / illustrated steps</text>
+      <text x="435" y="100" text-anchor="middle" font-size="12" fill="currentColor">+ “your video is being prepared”</text>
+
+      <path d="M220 180 L 276 200" fill="none" stroke="currentColor" marker-end="url(#arr4)"/>
+      <rect x="280" y="180" width="170" height="60" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="365" y="205" text-anchor="middle" font-size="12.5" fill="currentColor">Queue job</text>
+      <text x="365" y="222" text-anchor="middle" font-size="11.5" fill="var(--muted)">idempotent, budgeted</text>
+
+      <line x1="450" y1="210" x2="498" y2="210" stroke="currentColor" marker-end="url(#arr4)"/>
+      <rect x="500" y="180" width="180" height="60" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="590" y="205" text-anchor="middle" font-size="12.5" fill="currentColor">Factory builds a</text>
+      <text x="590" y="222" text-anchor="middle" font-size="12.5" fill="currentColor">candidate (offline)</text>
+
+      <line x1="680" y1="210" x2="728" y2="210" stroke="currentColor" marker-end="url(#arr4)"/>
+      <rect x="730" y="180" width="180" height="60" rx="8" fill="var(--accent-soft)" stroke="var(--accent)"/>
+      <text x="820" y="205" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor">Verification</text>
+      <text x="820" y="222" text-anchor="middle" font-size="11.5" fill="var(--muted)">machine + human checks</text>
+
+      <line x1="820" y1="178" x2="820" y2="126" stroke="var(--ok)" stroke-width="1.6" marker-end="url(#arr4)"/>
+      <text x="832" y="156" font-size="11.5" fill="var(--ok)">passes</text>
+      <rect x="700" y="60" width="220" height="64" rx="8" fill="var(--ok-soft)" stroke="var(--ok)" stroke-opacity="0.7"/>
+      <text x="810" y="86" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ok)">Publish immutable version</text>
+      <text x="810" y="104" text-anchor="middle" font-size="12" fill="currentColor">→ notify: “your video is ready”</text>
+
+      <line x1="820" y1="242" x2="820" y2="286" stroke="var(--bad)" marker-end="url(#arr4)"/>
+      <text x="832" y="268" font-size="11.5" fill="var(--bad)">fails</text>
+      <rect x="700" y="288" width="230" height="64" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="815" y="311" text-anchor="middle" font-size="12" fill="currentColor">Structured failure reasons</text>
+      <text x="815" y="328" text-anchor="middle" font-size="11.5" fill="var(--muted)">wrong control · missing state ·</text>
+      <text x="815" y="343" text-anchor="middle" font-size="11.5" fill="var(--muted)">identity drift · absent label</text>
+
+      <path d="M700 310 C 630 300, 620 260, 600 242" fill="none" stroke="currentColor" stroke-dasharray="5 4" marker-end="url(#arr4)"/>
+      <text x="580" y="302" font-size="11.5" fill="var(--muted)" text-anchor="middle">budget left →</text>
+      <text x="580" y="317" font-size="11.5" fill="var(--muted)" text-anchor="middle">corrected retry</text>
+
+      <path d="M700 340 L 600 366" fill="none" stroke="currentColor" marker-end="url(#arr4)"/>
+      <rect x="300" y="352" width="295" height="72" rx="8" fill="var(--warn-soft)" stroke="var(--warn)" stroke-opacity="0.7"/>
+      <text x="447" y="374" text-anchor="middle" font-size="12" fill="currentColor">Budget gone, steps exist →</text>
+      <text x="447" y="391" text-anchor="middle" font-size="12" fill="currentColor">verify an illustrated fallback →</text>
+      <text x="447" y="410" text-anchor="middle" font-size="12" font-weight="700" fill="var(--warn)">AVAILABLE_WITH_FALLBACK</text>
+
+      <path d="M298 388 L 262 388" fill="none" stroke="currentColor" marker-end="url(#arr4)"/>
+      <text x="280" y="378" text-anchor="middle" font-size="11" fill="var(--muted)">none</text>
+      <rect x="20" y="352" width="240" height="72" rx="8" fill="var(--bad-soft)" stroke="var(--bad)" stroke-opacity="0.6"/>
+      <text x="140" y="374" text-anchor="middle" font-size="12" fill="currentColor">No publishable fallback →</text>
+      <text x="140" y="391" text-anchor="middle" font-size="12" font-weight="700" fill="var(--bad)">FAILED / NEEDS_REVIEW</text>
+      <text x="140" y="410" text-anchor="middle" font-size="11.5" fill="currentColor">with an owner and a deadline</text>
+    </svg>
+    <figcaption>The user is never blocked and never shown a draft. Failure reasons feed the next attempt’s specification; a corrected candidate is a new immutable version and always re-enters verification. Budgets (attempts, cost, deadline) guarantee the job ends somewhere honest.</figcaption>
+  </figure>
+
+  <ul class="tight">
+    <li><strong>No candidate video ever ships straight from the factory.</strong> Publication happens only through verification.</li>
+    <li><strong>Idempotency:</strong> the job key is a SHA-256 over tenant, exact identity, asset type, pinned claim versions, coverage, consequence, and rights — so a republished claim creates a <em>new</em> job rather than silently reusing output built on superseded facts.</li>
+    <li><strong>Corrections never edit in place:</strong> a human may trim, re-label, or fix the spec, but the result is always a new candidate version that re-enters verification.</li>
+  </ul>
+</section>
+
+<!-- ============================== 8 EVIDENCE ============================== -->
+<section id="evidence">
+  <div class="sec-head"><span class="sec-num">8</span><h2>From manual to fact: the evidence pipeline</h2></div>
+  <p class="sec-sub">Maps to LLD §3.1 and §6 — Source Intake, Vault, processors, extraction, validation.</p>
+
+  <div class="plain"><span class="tag">In plain words</span>
+    Before ShowMe can answer anything about a product, the factory reads that product’s official material and turns it into small,
+    checkable fact cards (claims). Each card remembers <em>exactly</em> where it came from — down to the page region or video timestamp —
+    so any answer can be traced back to its source, and any source correction can find every card it affects.
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 940 320" role="img" aria-label="Evidence pipeline: source intake stores the immutable original in the vault, processors normalize it, the extractor produces candidate claims, and the validator routes each candidate either through the narrow auto-publish path or through human review before it lands in the published claim store.">
+      <defs>
+        <marker id="arr5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+      <rect x="20" y="30" width="170" height="70" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="105" y="56" text-anchor="middle" font-size="12.5" fill="currentColor">Source Intake</text>
+      <text x="105" y="74" text-anchor="middle" font-size="11.5" fill="var(--muted)">rights, identity, hash,</text>
+      <text x="105" y="89" text-anchor="middle" font-size="11.5" fill="var(--muted)">duplicate checks</text>
+      <line x1="190" y1="65" x2="238" y2="65" stroke="currentColor" marker-end="url(#arr5)"/>
+
+      <path d="M240 42 h150 v42 a75 9 0 0 1 -150 0 z" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <ellipse cx="315" cy="42" rx="75" ry="9" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="315" y="68" text-anchor="middle" font-size="12.5" fill="currentColor">Source Vault</text>
+      <text x="315" y="85" text-anchor="middle" font-size="11.5" fill="var(--muted)">immutable originals</text>
+      <line x1="390" y1="65" x2="438" y2="65" stroke="currentColor" marker-end="url(#arr5)"/>
+
+      <rect x="440" y="30" width="170" height="70" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="525" y="56" text-anchor="middle" font-size="12.5" fill="currentColor">Processors</text>
+      <text x="525" y="74" text-anchor="middle" font-size="11.5" fill="var(--muted)">OCR, tables, video scenes,</text>
+      <text x="525" y="89" text-anchor="middle" font-size="11.5" fill="var(--muted)">transcripts — sandboxed</text>
+      <line x1="610" y1="65" x2="658" y2="65" stroke="currentColor" marker-end="url(#arr5)"/>
+
+      <rect x="660" y="30" width="170" height="70" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="745" y="56" text-anchor="middle" font-size="12.5" fill="currentColor">Claim Extractor</text>
+      <text x="745" y="74" text-anchor="middle" font-size="11.5" fill="var(--muted)">candidate fact cards +</text>
+      <text x="745" y="89" text-anchor="middle" font-size="11.5" fill="var(--muted)">exact source spans</text>
+
+      <line x1="745" y1="100" x2="745" y2="146" stroke="currentColor" marker-end="url(#arr5)"/>
+      <rect x="640" y="148" width="210" height="70" rx="8" fill="var(--accent-soft)" stroke="var(--accent)"/>
+      <text x="745" y="174" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor">Claim Validator</text>
+      <text x="745" y="192" text-anchor="middle" font-size="11.5" fill="var(--muted)">schema, units, applicability,</text>
+      <text x="745" y="207" text-anchor="middle" font-size="11.5" fill="var(--muted)">conflicts, consequence floor</text>
+
+      <path d="M640 170 L 566 150" fill="none" stroke="currentColor" marker-end="url(#arr5)"/>
+      <rect x="356" y="128" width="208" height="62" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="460" y="150" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">Auto-publish (narrow lane)</text>
+      <text x="460" y="167" text-anchor="middle" font-size="11.5" fill="var(--muted)">only simple low-risk facts,</text>
+      <text x="460" y="182" text-anchor="middle" font-size="11.5" fill="var(--muted)">first-party source, double-read</text>
+
+      <path d="M640 205 L 566 240" fill="none" stroke="currentColor" marker-end="url(#arr5)"/>
+      <rect x="356" y="228" width="208" height="62" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="460" y="250" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">Human review</text>
+      <text x="460" y="267" text-anchor="middle" font-size="11.5" fill="var(--muted)">approve · correct ·</text>
+      <text x="460" y="282" text-anchor="middle" font-size="11.5" fill="var(--muted)">quarantine · reject</text>
+
+      <path d="M356 165 L 282 192" fill="none" stroke="var(--ok)" stroke-width="1.6" marker-end="url(#arr5)"/>
+      <path d="M356 252 L 282 228" fill="none" stroke="var(--ok)" stroke-width="1.6" marker-end="url(#arr5)"/>
+      <path d="M110 178 h150 v50 a75 10 0 0 1 -150 0 z" fill="var(--ok-soft)" stroke="var(--ok)" stroke-opacity="0.7"/>
+      <ellipse cx="185" cy="178" rx="75" ry="10" fill="var(--ok-soft)" stroke="var(--ok)" stroke-opacity="0.7"/>
+      <text x="185" y="207" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ok)">Claim Store</text>
+      <text x="185" y="224" text-anchor="middle" font-size="11.5" fill="currentColor">immutable PUBLISHED versions</text>
+    </svg>
+    <figcaption>Sources become immutable vault artifacts, then candidate claims, then — via the narrow auto-publish lane or human review — published, versioned facts. Only published versions are visible to online answering.</figcaption>
+  </figure>
+
+  <h3>The auto-publish lane is deliberately tiny</h3>
+  <p>A claim may publish without a human <em>only</em> when <strong>all</strong> of these hold (LLD §6.5):</p>
+  <ul class="tight">
+    <li>It’s C0/C1 <em>and</em> its claim type is explicitly allow-listed by a versioned policy.</li>
+    <li>The source is an allow-listed first-party authority (official product page, manufacturer spec table).</li>
+    <li>Product, variant, revision, market, and effective dates match exactly (or are explicitly source-wide).</li>
+    <li>The value has an exact source span and passes a deterministic type/unit/range parser.</li>
+    <li>Two independently configured extraction passes agree — or one agrees with a deterministic table parser. (This checks <em>transcription</em>, not truth; it never resolves a source conflict.)</li>
+    <li>No conflicting source, warning, recall, or unresolved applicability exists.</li>
+    <li>The claim is directly stated — never inferred, calculated, or copied from a sibling product.</li>
+    <li>It is <em>not</em> a compatibility relationship, procedure, safety warning/limit, diagnosis, or a dimension meant for fit.</li>
+  </ul>
+  <p>Everything else — and every C2/C3 claim — goes to human review. Every auto-published claim records the policy version, both extraction results, and reason codes.</p>
+
+  <h3>What a published claim looks like</h3>
+  <pre><code>{
+  "claim_id": "claim_weight_limit_123",   "version": 2,
+  "type": "LIMIT",
+  "subject": "prod_graco_ready2jet",
+  "predicate": "maximum_child_weight",
+  "object": { "value": 50, "unit": "lb" },
+  "applicability": { "sku": "2212125", "revision": "2024_rev2", "market": "US" },
+  "source_bindings": [ { "source_id": "src_manual_2024", "page": 5, "region": [0.12, 0.41, 0.78, 0.52] } ],
+  "authority": "MANUFACTURER_MANUAL",
+  "consequence_ceiling": "C3",
+  "status": "PUBLISHED"
+}</code></pre>
+  <p>Immutable, versioned, and pointing at the exact rectangle on page 5 it came from.</p>
+</section>
+
+<!-- ============================== 9 ASSET FACTORY ============================== -->
+<section id="asset-factory">
+  <div class="sec-head"><span class="sec-num">9</span><h2>Making pictures and videos: Lanes A–E</h2></div>
+  <p class="sec-sub">Maps to LLD §7 — Media Coverage Analyzer, generation specs, and factory lanes.</p>
+
+  <div class="plain"><span class="tag">In plain words</span>
+    The factory has five production lines. Each makes a different kind of media, but they all follow the same law:
+    <strong>the media may only show what the published claims already prove.</strong> A lane can change <em>how</em> a fact looks,
+    never <em>what</em> is true. And every lane’s output is a locked “candidate” that must survive verification before anyone sees it.
+  </div>
+
+  <div class="tablewrap"><table>
+    <tr><th>Lane</th><th>Makes</th><th>The one rule that defines it</th></tr>
+    <tr><td>A — Exact static visual</td><td>Crop/callout on a real observed photo</td><td>Uses a validated part region; never infers an unobserved location</td></tr>
+    <tr><td>B — Purpose-built visual</td><td>New static composition of a proven fact</td><td>The depicted fact must come from a published claim (e.g. a manual diagram region — output labeled “diagram-derived”, not passed off as a photo). No claim-backed evidence → refuse, don’t approximate. Visual plausibility never establishes compatibility, geometry, or behavior.</td></tr>
+    <tr><td>C — Illustrated steps</td><td>One card per action/state from published ordered steps</td><td>Communicates discrete steps without inventing continuous motion</td></tr>
+    <tr><td>D — Procedural video</td><td>Retrieved verified segment, or purpose-built video prepared offline</td><td>Every depicted control, direction, motion path, and state change must be established by approved evidence; partial evidence yields steps or a labeled transition — never a plausible instruction. Digital procedures also pin OS/app/firmware/locale/starting screen.</td></tr>
+    <tr><td>E — Labeled transition</td><td>Motion between two validated endpoints</td><td>Always labeled as illustrative; never bound to a procedural claim; never implies skipped actions are unnecessary</td></tr>
+  </table></div>
+
+  <p>These are internal production sub-lanes of the three user-facing formats (Text / Image / Video) from the architecture docs — they add no new user-facing modality.</p>
+
+  <figure>
+    <svg viewBox="0 0 920 130" role="img" aria-label="Shared lane pipeline: validate request and rights, compile an evidence-bound specification, run the lane executor or provider adapter, package the output, lock it as an immutable candidate, and send it to verification.">
+      <defs>
+        <marker id="arr6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+      <g>
+        <rect x="15" y="30" width="130" height="64" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+        <text x="80" y="56" text-anchor="middle" font-size="12" fill="currentColor">Validate request</text>
+        <text x="80" y="72" text-anchor="middle" font-size="11.5" fill="var(--muted)">+ rights</text>
+        <rect x="165" y="30" width="130" height="64" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+        <text x="230" y="56" text-anchor="middle" font-size="12" fill="currentColor">Evidence-bound</text>
+        <text x="230" y="72" text-anchor="middle" font-size="12" fill="currentColor">specification</text>
+        <rect x="315" y="30" width="130" height="64" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+        <text x="380" y="56" text-anchor="middle" font-size="12" fill="currentColor">Lane executor /</text>
+        <text x="380" y="72" text-anchor="middle" font-size="12" fill="currentColor">provider adapter</text>
+        <rect x="465" y="30" width="130" height="64" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+        <text x="530" y="56" text-anchor="middle" font-size="12" fill="currentColor">Normalize +</text>
+        <text x="530" y="72" text-anchor="middle" font-size="12" fill="currentColor">package</text>
+        <rect x="615" y="30" width="130" height="64" rx="8" fill="var(--warn-soft)" stroke="var(--warn)" stroke-opacity="0.7"/>
+        <text x="680" y="56" text-anchor="middle" font-size="12" font-weight="700" fill="var(--warn)">CANDIDATE</text>
+        <text x="680" y="72" text-anchor="middle" font-size="11.5" fill="currentColor">locked + traceable</text>
+        <rect x="765" y="30" width="140" height="64" rx="8" fill="var(--accent-soft)" stroke="var(--accent)"/>
+        <text x="835" y="56" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">Verification</text>
+        <text x="835" y="72" text-anchor="middle" font-size="11.5" fill="var(--muted)">the only exit → publish</text>
+      </g>
+      <line x1="145" y1="62" x2="163" y2="62" stroke="currentColor" marker-end="url(#arr6)"/>
+      <line x1="295" y1="62" x2="313" y2="62" stroke="currentColor" marker-end="url(#arr6)"/>
+      <line x1="445" y1="62" x2="463" y2="62" stroke="currentColor" marker-end="url(#arr6)"/>
+      <line x1="595" y1="62" x2="613" y2="62" stroke="currentColor" marker-end="url(#arr6)"/>
+      <line x1="745" y1="62" x2="763" y2="62" stroke="currentColor" marker-end="url(#arr6)"/>
+      <text x="460" y="118" text-anchor="middle" font-size="11.5" fill="var(--muted)">Every lane, same pipeline — presentation may vary, support may not.</text>
+    </svg>
+    <figcaption>The shared lane pipeline. The evidence-bound <code>AssetGenerationSpec</code> is the contract; executors and external providers are untrusted labor.</figcaption>
+  </figure>
+
+  <h3>The generation spec, in one breath</h3>
+  <p>Every attempt compiles a provider-neutral, immutable <code>AssetGenerationSpec</code>: identity, bound claim versions, input assets by registry reference (never durable provider URLs), required states, motion constraints per claim, presentation limits, <em>prohibited content</em> (<code>NEW_CONTROLS</code>, <code>OMITTED_REQUIRED_ACTIONS</code>, <code>IDENTITY_CHANGE</code>), the verification policy to face, an execution budget (max attempts / cost / deadline), and the fallback lanes. Adapters implement a fixed contract — <code>GetCapabilities · ValidateSpec · SubmitAttempt · GetAttempt · CancelAttempt · CollectCandidate</code> — and everything a provider returns is treated as untrusted input, with full audit of settings, hashes, timing, and cost.</p>
+
+  <div class="plain"><span class="tag">The factory learns (LLD §7.8, decision 2026-08-20)</span>
+    Every verification verdict — pass <em>and</em> fail — is reusable learning signal, not just a per-attempt retry hint. Each spec pins a
+    versioned <code>recipe_id</code> (pin configuration, prompt template, camera policy, provider + tier); an offline job aggregates verdicts
+    into pass-rate tables per lane and product category, and the winning recipe is promoted as a <em>versioned policy change</em>, never a
+    silent prompt edit. Guard rail: a verifier signal may drive automated promotion only after it’s benchmarked against human labels —
+    otherwise we’d train ourselves to fool the judge. Rejected candidates are kept as a hard-negative library: a forever regression
+    suite for the verifier, and “not like this” exemplars for prompts. Fine-tuning the generator itself is out of P0 — re-evaluated
+    only if the digital-twin path leaves generation owning motion (see <em>digital-twin-phase-plan.md</em>, Decision 9).
+  </div>
+
+  <h3>What a published asset remembers</h3>
+  <p>An asset record pins its exact identity, its claim bindings <em>with time ranges</em> (this second of video demonstrates step 2), versioned caption/transcript assets, step markers for player navigation, its consequence ceiling, rights, and the verification approvals that let it publish. Step markers are player metadata — not text burned onto source footage. If a video has no meaningful audio, an equivalent verified step sequence may stand in for the transcript, but critical actions must always exist outside motion alone.</p>
+</section>
+
+<!-- ============================== 10 VERIFICATION ============================== -->
+<section id="verification">
+  <div class="sec-head"><span class="sec-num">10</span><h2>Humans in the loop: verification &amp; Content-Ops</h2></div>
+  <p class="sec-sub">Maps to LLD §7.5 and §8 — asset verification layers and the review workbench.</p>
+
+  <div class="plain"><span class="tag">In plain words</span>
+    Machines check the checkable; humans judge the judgeable. Every generated asset passes automated checks first, and anything
+    that <em>instructs</em> a person — or could hurt one — additionally requires a qualified human to approve it before it publishes.
+  </div>
+
+  <h3>The four verification layers</h3>
+  <ol class="tight" style="padding-left:22px">
+    <li><strong>Deterministic checks</strong> — identity, rights, file integrity, duration, required labels, claim/step bindings.</li>
+    <li><strong>Automated content checks</strong> — product consistency, part/control visibility, ordered coverage, state consistency.</li>
+    <li><strong>Operator review</strong> — as required by consequence and instruction policy. <em>Any instruction requires human approval in P0.</em> C2/C3 assets require consequence-appropriate approval even when non-instructional.</li>
+    <li><strong>Publish transaction</strong> — only after all required approvals pass.</li>
+  </ol>
+
+  <h3>The review workbench</h3>
+  <p>Reviewers work queues (claim conflicts, low-confidence identity, C2/C3 approvals, procedure steps, media coverage, generated assets, stale/recall remediation, exhausted jobs). For each item the workbench shows the candidate, the exact product identity, the precise source page/region/timestamp, conflicting sources, the applicable policy, and a hard-failure checklist — with approve / correct / quarantine / reject / stale / retire actions and an immutable review history.</p>
+  <ul class="tight">
+    <li>A reviewer’s role caps the consequence level they may approve; C3 may require dual or specially qualified review.</li>
+    <li>Reviewers can’t approve outside their tenant/catalog scope.</li>
+    <li>Every decision records reviewer, timestamp, policy version, and rationale.</li>
+  </ul>
+</section>
+
+<!-- ============================== 11 LIFECYCLE ============================== -->
+<section id="lifecycle">
+  <div class="sec-head"><span class="sec-num">11</span><h2>The life story of a fact (or asset)</h2></div>
+  <p class="sec-sub">Maps to LLD §9.2 and §3.4 — lifecycle states, invalidation, and the one carefully-bounded grace period.</p>
+
+  <div class="plain"><span class="tag">In plain words</span>
+    Every claim and asset lives in exactly one state, and only one state is visible to users: <strong>PUBLISHED</strong>.
+    If anything about a fact might have changed — the manual was corrected, a recall happened, rights expired — it is
+    <em>immediately</em> pulled from view (quarantined) and reviewed. Content is never edited in place; corrections create new versions.
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 900 400" role="img" aria-label="Lifecycle states: draft or candidate goes to in-review then published, the only servable state. Published can become stale, quarantined, retired, or deleted. A narrow amber loop, published-revalidating, allows low-risk content up to 48 hours of shadow revalidation after a non-semantic tooling change; failure or expiry quarantines it.">
+      <defs>
+        <marker id="arr7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+      <rect x="30" y="50" width="170" height="54" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="115" y="73" text-anchor="middle" font-size="12.5" fill="currentColor">DRAFT / CANDIDATE</text>
+      <text x="115" y="91" text-anchor="middle" font-size="11.5" fill="var(--muted)">extracted or generated</text>
+      <line x1="200" y1="77" x2="248" y2="77" stroke="currentColor" marker-end="url(#arr7)"/>
+
+      <rect x="250" y="50" width="140" height="54" rx="8" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="320" y="73" text-anchor="middle" font-size="12.5" fill="currentColor">IN_REVIEW</text>
+      <text x="320" y="91" text-anchor="middle" font-size="11.5" fill="var(--muted)">awaiting approval</text>
+      <line x1="390" y1="77" x2="438" y2="77" stroke="var(--ok)" stroke-width="1.6" marker-end="url(#arr7)"/>
+      <text x="414" y="66" text-anchor="middle" font-size="11" fill="var(--ok)">approved</text>
+
+      <rect x="440" y="42" width="180" height="70" rx="10" fill="var(--ok-soft)" stroke="var(--ok)" stroke-width="1.5"/>
+      <text x="530" y="70" text-anchor="middle" font-size="14" font-weight="800" fill="var(--ok)">PUBLISHED</text>
+      <text x="530" y="90" text-anchor="middle" font-size="11.5" fill="currentColor">the ONLY user-visible state</text>
+
+      <!-- revalidating loop -->
+      <path d="M440 100 C 380 130, 330 150, 300 168" fill="none" stroke="var(--warn)" marker-end="url(#arr7)"/>
+      <rect x="105" y="170" width="280" height="66" rx="10" fill="var(--warn-soft)" stroke="var(--warn)" stroke-opacity="0.8"/>
+      <text x="245" y="193" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--warn)">PUBLISHED_REVALIDATING</text>
+      <text x="245" y="210" text-anchor="middle" font-size="11.5" fill="currentColor">C0/C1 only · non-semantic tooling change</text>
+      <text x="245" y="226" text-anchor="middle" font-size="11.5" fill="currentColor">grace ≤ 48 h · still servable meanwhile</text>
+      <path d="M385 180 C 425 160, 440 140, 460 116" fill="none" stroke="var(--ok)" marker-end="url(#arr7)"/>
+      <text x="452" y="150" font-size="11" fill="var(--ok)">re-check passes</text>
+      <path d="M320 236 C 380 285, 520 275, 596 200" fill="none" stroke="var(--bad)" marker-end="url(#arr7)"/>
+      <text x="420" y="292" font-size="11" fill="var(--bad)">fails or expires</text>
+
+      <!-- exits from published -->
+      <line x1="620" y1="66" x2="688" y2="66" stroke="currentColor" marker-end="url(#arr7)"/>
+      <rect x="690" y="42" width="185" height="48" rx="8" fill="var(--chip)" stroke="var(--line)"/>
+      <text x="782" y="62" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">STALE</text>
+      <text x="782" y="79" text-anchor="middle" font-size="11" fill="var(--muted)">superseded / freshness failed</text>
+
+      <path d="M600 112 L 664 158" fill="none" stroke="var(--bad)" stroke-width="1.5" marker-end="url(#arr7)"/>
+      <rect x="600" y="160" width="275" height="60" rx="8" fill="var(--bad-soft)" stroke="var(--bad)" stroke-opacity="0.6"/>
+      <text x="737" y="183" text-anchor="middle" font-size="12" font-weight="700" fill="var(--bad)">QUARANTINED — blocked NOW</text>
+      <text x="737" y="201" text-anchor="middle" font-size="11" fill="currentColor">truth, rights, safety, or verification</text>
+      <text x="737" y="215" text-anchor="middle" font-size="11" fill="currentColor">may have changed → review</text>
+
+      <line x1="737" y1="222" x2="737" y2="262" stroke="currentColor" marker-end="url(#arr7)"/>
+      <rect x="600" y="264" width="275" height="44" rx="8" fill="var(--chip)" stroke="var(--line)"/>
+      <text x="737" y="283" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">RETIRED</text>
+      <text x="737" y="299" text-anchor="middle" font-size="11" fill="var(--muted)">withdrawn on purpose, kept for audit</text>
+
+      <line x1="737" y1="310" x2="737" y2="348" stroke="currentColor" marker-end="url(#arr7)"/>
+      <rect x="600" y="350" width="275" height="44" rx="8" fill="var(--chip)" stroke="var(--line)"/>
+      <text x="737" y="369" text-anchor="middle" font-size="12" font-weight="600" fill="currentColor">DELETED</text>
+      <text x="737" y="385" text-anchor="middle" font-size="11" fill="var(--muted)">privacy/rights removal — tombstone only</text>
+
+      <text x="130" y="330" font-size="12" fill="var(--muted)">Legend:</text>
+      <rect x="185" y="318" width="16" height="16" rx="4" fill="var(--ok-soft)" stroke="var(--ok)"/>
+      <text x="208" y="331" font-size="12" fill="var(--muted)">servable to users</text>
+      <rect x="330" y="318" width="16" height="16" rx="4" fill="var(--chip)" stroke="var(--line)"/>
+      <text x="353" y="331" font-size="12" fill="var(--muted)">hidden from users</text>
+    </svg>
+    <figcaption>Claim and asset lifecycle. Green is the only door to the user; the amber loop is the single, tightly-bounded exception that keeps tooling migrations from taking the whole catalog offline.</figcaption>
+  </figure>
+
+  <h3>When a source changes</h3>
+  <p>A change is <strong>substantive</strong> when it may alter answer truth or permitted use — source bytes, product revision, applicability, authority, recall, correction, rights, safety policy, or verification outcome. Substantive or uncertain ⇒ affected claims and assets are <strong>quarantined immediately</strong>, removed from retrieval, and their delivery URLs revoked; affected Answer Manifests are identified and, where required, users are notified.</p>
+  <p>The only softer path is <code>PUBLISHED_REVALIDATING</code>: a C0/C1 item after a <em>non-semantic tooling change</em> (same source hash, identity, rights, policy outcome, and prior verification evidence) may keep serving for a policy-bounded grace period of at most 48 hours while shadow revalidation runs. Pass ⇒ republish; fail or expire ⇒ quarantine. C2/C3 content never uses this state.</p>
+
+  <h3>User reports</h3>
+  <p>A user report (“wrong product / wrong step / unsafe”) loads the Answer Manifest with its exact versions, is triaged — potentially-unsafe or systemic issues can quarantine content immediately — and then resolves through the same versioned correction → revalidation → republication → invalidation machinery as every other change. Reports never modify published content directly.</p>
+</section>
+
+<!-- ============================== 12 JOBS ============================== -->
+<section id="jobs">
+  <div class="sec-head"><span class="sec-num">12</span><h2>Jobs, events, and notifications</h2></div>
+  <p class="sec-sub">Maps to LLD §9 — job states, core events, and the Notification Service.</p>
+
+  <div class="plain"><span class="tag">In plain words</span>
+    Background work (like preparing a video) is a job with a strict life story and a budget. A job can retry, fall back,
+    or fail — but it can never hang forever, and whatever it shows the user is always an honest state, never an endless spinner.
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 900 330" role="img" aria-label="Job state machine: queued to running to succeeded; failures retry while budget remains, then enter fallback evaluation, which leads to a fallback run ending in succeeded-with-fallback or needs-review, or directly to terminal failure when no fallback is supported.">
+      <defs>
+        <marker id="arr8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+      <rect x="30" y="40" width="130" height="48" rx="24" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="95" y="69" text-anchor="middle" font-size="12.5" fill="currentColor">QUEUED</text>
+      <line x1="160" y1="64" x2="208" y2="64" stroke="currentColor" marker-end="url(#arr8)"/>
+      <rect x="210" y="40" width="130" height="48" rx="24" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="275" y="69" text-anchor="middle" font-size="12.5" fill="currentColor">RUNNING</text>
+      <line x1="340" y1="64" x2="398" y2="64" stroke="var(--ok)" stroke-width="1.6" marker-end="url(#arr8)"/>
+      <rect x="400" y="40" width="160" height="48" rx="24" fill="var(--ok-soft)" stroke="var(--ok)" stroke-opacity="0.8"/>
+      <text x="480" y="69" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ok)">SUCCEEDED</text>
+
+      <line x1="275" y1="88" x2="275" y2="136" stroke="var(--bad)" marker-end="url(#arr8)"/>
+      <text x="287" y="116" font-size="11" fill="var(--bad)">fails</text>
+      <rect x="180" y="138" width="190" height="48" rx="10" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="275" y="167" text-anchor="middle" font-size="12" fill="currentColor">RETRYABLE_FAILED</text>
+      <path d="M180 158 C 110 150, 90 110, 92 90" fill="none" stroke="currentColor" stroke-dasharray="5 4" marker-end="url(#arr8)"/>
+      <text x="95" y="130" font-size="11" fill="var(--muted)">retry (budget left)</text>
+
+      <line x1="370" y1="162" x2="438" y2="162" stroke="currentColor" marker-end="url(#arr8)"/>
+      <text x="404" y="151" text-anchor="middle" font-size="11" fill="var(--muted)">budget gone</text>
+      <rect x="440" y="138" width="210" height="48" rx="10" fill="var(--warn-soft)" stroke="var(--warn)" stroke-opacity="0.8"/>
+      <text x="545" y="167" text-anchor="middle" font-size="12" font-weight="700" fill="var(--warn)">FALLBACK_EVALUATION</text>
+
+      <path d="M500 186 L 420 232" fill="none" stroke="currentColor" marker-end="url(#arr8)"/>
+      <text x="415" y="205" font-size="11" fill="var(--muted)">fallback exists</text>
+      <rect x="240" y="234" width="185" height="48" rx="10" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="332" y="263" text-anchor="middle" font-size="12" fill="currentColor">FALLBACK_RUNNING</text>
+      <path d="M240 258 L 40 258 L 40 240" fill="none" stroke="var(--ok)" stroke-width="1.4" marker-end="url(#arr8)"/>
+      <rect x="12" y="188" width="180" height="50" rx="10" fill="var(--ok-soft)" stroke="var(--ok)" stroke-opacity="0.8"/>
+      <text x="102" y="209" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--ok)">SUCCEEDED_WITH_</text>
+      <text x="102" y="225" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--ok)">FALLBACK</text>
+
+      <line x1="425" y1="263" x2="498" y2="263" stroke="currentColor" marker-end="url(#arr8)"/>
+      <rect x="500" y="234" width="165" height="48" rx="10" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.55"/>
+      <text x="582" y="257" text-anchor="middle" font-size="12" fill="currentColor">NEEDS_REVIEW</text>
+      <text x="582" y="273" text-anchor="middle" font-size="10.5" fill="var(--muted)">owner + SLA, may re-queue</text>
+
+      <path d="M650 186 L 722 228" fill="none" stroke="var(--bad)" marker-end="url(#arr8)"/>
+      <text x="712" y="205" font-size="11" fill="var(--bad)">no fallback</text>
+      <line x1="665" y1="263" x2="718" y2="263" stroke="var(--bad)" marker-end="url(#arr8)"/>
+      <text x="692" y="251" text-anchor="middle" font-size="10.5" fill="var(--muted)">SLA ends</text>
+      <rect x="720" y="234" width="165" height="48" rx="10" fill="var(--bad-soft)" stroke="var(--bad)" stroke-opacity="0.7"/>
+      <text x="802" y="263" text-anchor="middle" font-size="12" font-weight="700" fill="var(--bad)">FAILED_TERMINAL</text>
+
+      <text x="450" y="316" text-anchor="middle" font-size="11.5" fill="var(--muted)">QUEUED and RUNNING can also be CANCELLED (e.g. a bound claim was quarantined). Every parked state has an owner and an SLA.</text>
+    </svg>
+    <figcaption>The job state machine. Budgets force every job to a terminal, user-visible truth: available, available-with-fallback, needs-review, failed, or cancelled.</figcaption>
+  </figure>
+
+  <p>User-visible states are <code>QUEUED · PREPARING · REVIEWING · AVAILABLE · AVAILABLE_WITH_FALLBACK · NEEDS_REVIEW · FAILED · CANCELLED</code>.</p>
+
+  <h3>Events glue the two worlds together</h3>
+  <p>Everything that matters emits an event — <code>source.ingested</code>, <code>claim.published</code>, <code>claim.stale</code> (which also cancels or parks in-flight asset jobs bound to that claim), <code>asset.published</code>, <code>answer.delivered</code>, <code>user_data.delete_requested</code>, and so on. Event rules: at-least-once delivery, idempotent consumers, immutable event IDs, tenant + trace context, schema versions, bounded retries with dead-lettering, and no raw user media in payloads.</p>
+
+  <h3>Notifications don’t get special trust</h3>
+  <ul class="tight">
+    <li>The payload references the answer/job — it never embeds licensed source content.</li>
+    <li>Opening a notification starts a <em>fresh</em> retrieval and Delivery Gate check; the historic payload is never trusted as current truth.</li>
+    <li>Notification failure never changes publication state; duplicates collapse on an idempotency key.</li>
+  </ul>
+</section>
+
+<!-- ============================== 13 SESSION ============================== -->
+<section id="session">
+  <div class="sec-head"><span class="sec-num">13</span><h2>Remembering the conversation</h2></div>
+  <p class="sec-sub">Maps to LLD §5.15 — the Session Service and entity bindings.</p>
+
+  <div class="plain"><span class="tag">In plain words</span>
+    When you say “what about <em>the other latch</em>?”, the system doesn’t vaguely guess from chat history. The session keeps a typed
+    stack of what “this”, “that latch”, and “there” currently point to — real entity IDs bound to the product graph. If a reference
+    could mean two things, it asks; it never picks one arbitrarily.
+  </div>
+
+  <p>The session stores the active product/revision, user constraints, current answer and claim references, active procedure step, pending deferred jobs, and an <strong>entity-binding stack</strong>: each binding records the entity, where it came from (a tapped image region, a step, a prior answer), and its confidence. Resolution precedence: explicit user correction → direct UI selection → current procedure/visual binding → recency-scored conversational binding. “The other one” resolves only inside a typed candidate set with exactly one member left. Every resolution is recorded in the new Answer Manifest, and any follow-up that changes identity, state, or constraints invalidates affected prior results.</p>
+</section>
+
+<!-- ============================== 14 DATA ============================== -->
+<section id="data">
+  <div class="sec-head"><span class="sec-num">14</span><h2>Who owns which data</h2></div>
+  <p class="sec-sub">Maps to LLD §11 — systems of record, the publish rule, and version pinning.</p>
+
+  <div class="tablewrap"><table>
+    <tr><th>Data</th><th>System of record</th><th>Consistency rule</th></tr>
+    <tr><td>Source metadata &amp; rights</td><td>Source Vault</td><td>Immutable versions; a rights change is a new effective version</td></tr>
+    <tr><td>Claims</td><td>Claim Registry / Evidence Store</td><td>Only immutable, servable versions may be returned</td></tr>
+    <tr><td>Assets</td><td>Asset Registry</td><td>Bytes immutable per version; lifecycle stored transactionally</td></tr>
+    <tr><td>Search / vector docs</td><td>Retrieval Index</td><td>Derived and rebuildable — <strong>never authoritative</strong></td></tr>
+    <tr><td>Answer IR &amp; manifests</td><td>Manifest Store</td><td>Append-only, subject to privacy retention/redaction</td></tr>
+    <tr><td>Sessions</td><td>Session Store</td><td>Ephemeral with explicit TTL</td></tr>
+    <tr><td>Jobs</td><td>Workflow Store</td><td>Transitions via compare-and-set / optimistic concurrency</td></tr>
+  </table></div>
+
+  <h3>MVP storage stack (LLD §11.1, decision 2026-08-20)</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Logical store (LLD)</th><th>What it needs</th><th>MVP choice</th><th>Scale-up / alternatives</th></tr>
+    <tr><td>Source Vault (immutable originals)</td><td>Cheap durable blobs, versioning, hash-addressable</td><td>S3 with versioning + object lock (or GCS)</td><td>Cloudflare R2 (no egress fees), Backblaze B2</td></tr>
+    <tr><td>Evidence Graph / Claim Registry</td><td>Transactions, versioned rows, lifecycle states, relational queries (SKU→revision→claims)</td><td>PostgreSQL (RDS/Aurora) — claims as versioned rows; the “graph” is FKs + a few join tables</td><td>Neo4j only if traversal queries dominate (they won’t in P0)</td></tr>
+    <tr><td>Asset Registry (metadata) + asset bytes</td><td>Transactions for publish + outbox; bytes elsewhere</td><td>Same Postgres for records; S3 for bytes</td><td>One DB for registry+claims gives the §7.7 publish transaction for free</td></tr>
+    <tr><td>Search / Vector Index</td><td>Semantic + keyword retrieval; derived, rebuildable</td><td>pgvector in the same Postgres + full-text</td><td>OpenSearch/Elasticsearch for hybrid search; Qdrant/Weaviate/Pinecone past ~10M vectors</td></tr>
+    <tr><td>Answer Manifest Store (append-only receipts)</td><td>Durable append, read-by-id, retention/redaction</td><td>Postgres table (append-only discipline), archived to S3 after N days</td><td>DynamoDB at volume; S3 + Athena archive tier</td></tr>
+    <tr><td>Session Store</td><td>Fast KV, TTL</td><td>Redis (ElastiCache/Valkey)</td><td>Even Postgres works at MVP traffic</td></tr>
+    <tr><td>Workflow Queues</td><td>At-least-once jobs, retries, DLQ</td><td>SQS + worker loop, or Postgres <code>FOR UPDATE SKIP LOCKED</code> at MVP scale</td><td>Temporal when generation-job orchestration gets complex; Kafka only at volume</td></tr>
+    <tr><td>Events / outbox</td><td>Transactional outbox → consumers</td><td>Outbox table in Postgres + relay to SQS/SNS</td><td>EventBridge, Kafka later</td></tr>
+    <tr><td>Media delivery (published serving copies)</td><td>Signed URLs, revocable, fast start</td><td>CloudFront over S3 with signed URLs</td><td>Any CDN (Fastly, Cloudflare); Mux for per-title packaging/ABR</td></tr>
+  </table></div>
+
+  <div class="plain"><span class="tag">Why co-location is the design</span>
+    The publish transaction needs claims, assets, and outbox in one database; the Delivery Gate’s batch eligibility check
+    becomes a single-snapshot query; and the vector index sitting beside the registry rows it points to makes
+    “never authoritative” structurally cheap to enforce. Scale-up paths swap services without touching contracts.
+  </div>
+
+  <div class="plain"><span class="tag">The publish rule</span>
+    Being in object storage or a search index makes nothing user-visible. Eligibility comes from the authoritative registry’s
+    lifecycle state — and the Delivery Gate re-checks it at the moment of delivery. Publication itself uses an immutable version + a transactional
+    outbox: the publish transaction re-verifies every bound claim is still servable, writes the version and the <code>asset.published</code> event
+    together, and indexers merely follow along.
+  </div>
+
+  <p><strong>Version pinning:</strong> every Answer Manifest pins claim versions, asset versions, the identity result, all policy versions (raw-request, per-claim), planner/validator versions, calculation versions, the IR schema version, gate and realization-policy versions, and the delivery timestamp. Given a manifest, you can reconstruct exactly why the system said what it said.</p>
+</section>
+
+<!-- ============================== 15 APIS ============================== -->
+<section id="apis">
+  <div class="sec-head"><span class="sec-num">15</span><h2>The doors: public and internal APIs</h2></div>
+  <p class="sec-sub">Maps to LLD §10.</p>
+
+  <h3>Public</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Method</th><th>Path</th><th>Purpose</th></tr>
+    <tr><td><code>POST</code></td><td><code>/v1/answers</code></td><td>Start an answer request (accepts an idempotency key — same tenant+user+key returns the same result)</td></tr>
+    <tr><td><code>GET</code></td><td><code>/v1/answers/{answer_id}</code></td><td>Read status and current result</td></tr>
+    <tr><td><code>POST</code></td><td><code>/v1/answers/{answer_id}/follow-ups</code></td><td>Ask a contextual follow-up</td></tr>
+    <tr><td><code>GET</code></td><td><code>/v1/jobs/{job_id}</code></td><td>Read deferred preparation status</td></tr>
+    <tr><td><code>POST</code></td><td><code>/v1/reports</code></td><td>Report a wrong product, claim, step, media, or safety concern</td></tr>
+    <tr><td><code>DELETE</code></td><td><code>/v1/user-data/{root_id}</code></td><td>Request deletion of user-provided data and derivatives</td></tr>
+  </table></div>
+
+  <h3>Internal commands</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Command</th><th>Purpose</th></tr>
+    <tr><td><code>RegisterSource</code></td><td>Create source metadata + processing job</td></tr>
+    <tr><td><code>PublishClaimVersion</code></td><td>Publish an approved immutable claim version</td></tr>
+    <tr><td><code>SubmitAssetPreparation</code></td><td>Create an idempotent asset job</td></tr>
+    <tr><td><code>PublishAssetVersion</code></td><td>Publish an approved immutable asset version</td></tr>
+    <tr><td><code>BatchResolveEligibility</code></td><td>The gate’s one-shot eligibility read across all pinned versions</td></tr>
+    <tr><td><code>MarkDependencyStale</code></td><td>Begin dependency invalidation</td></tr>
+    <tr><td><code>BeginShadowRevalidation</code></td><td>Enter bounded <code>PUBLISHED_REVALIDATING</code> (policy-gated)</td></tr>
+    <tr><td><code>RecordReviewDecision</code></td><td>Store an immutable operator decision</td></tr>
+    <tr><td><code>RequestUserDataDeletion</code></td><td>Start the deletion workflow</td></tr>
+  </table></div>
+  <p>All internal calls are service-authenticated and tenant-authorized. Writes use optimistic version checks and audit logging; eligibility reads return registry watermarks and fail closed on missing references or excessive lag.</p>
+</section>
+
+<!-- ============================== 16 SECURITY ============================== -->
+<section id="security">
+  <div class="sec-head"><span class="sec-num">16</span><h2>Safety, rights, and privacy</h2></div>
+  <p class="sec-sub">Maps to LLD §12.</p>
+
+  <div class="plain"><span class="tag">In plain words</span>
+    Three separate protections: <strong>security</strong> (nobody touches what they shouldn’t), <strong>rights</strong> (we only use content
+    the way its owner allowed), and <strong>privacy</strong> (your uploads are yours — kept minimal, deletable everywhere).
+  </div>
+
+  <h3>Rights travel with content</h3>
+  <p>Every source and asset carries a rights vector — may we store it, transform it, send it to a provider, generate from it, display it publicly, until when, with attribution? When an asset combines sources, its effective rights are the <strong>intersection</strong> of all source rights plus any derivative restriction. The Delivery Gate checks rights per display context at delivery time.</p>
+
+  <h3>Security boundaries</h3>
+  <ul class="tight">
+    <li>Everything authenticated and authorized; tenant ID on every data-access path.</li>
+    <li>Parsers and media decoders run sandboxed; source content is <em>data</em>, never planner instructions (prompt-injection defense at the boundary).</li>
+    <li>Remote URL fetches are allow-listed and SSRF-protected; provider responses are untrusted candidate data.</li>
+    <li>Secrets never live in job payloads or logs; delivery uses expiring signed URLs where required.</li>
+    <li>Audit logs cover publishing, approvals, gate decisions, rights denials, and deletion.</li>
+  </ul>
+
+  <h3>Privacy</h3>
+  <ul class="tight">
+    <li>User media is stored apart from catalog data, with explicit minimal retention; it is never reused to build catalog assets without separate consent.</li>
+    <li>Every derivative remembers its user-data root ID, so deletion can chase it through objects, indexes, caches, sessions, logs, manifests, and review artifacts (subject to legal retention) — ending in a written deletion receipt.</li>
+    <li>Evaluation datasets require an explicit inclusion policy and de-identification.</li>
+  </ul>
+</section>
+
+<!-- ============================== 17 FAILURES ============================== -->
+<section id="failures">
+  <div class="sec-head"><span class="sec-num">17</span><h2>When things break</h2></div>
+  <p class="sec-sub">Maps to LLD §13 — every failure has a required behavior, and the theme is always <em>fail closed, stay honest</em>.</p>
+
+  <div class="tablewrap"><table>
+    <tr><th>What broke</th><th>What the system must do</th></tr>
+    <tr><td>Can’t resolve identity</td><td>Ask a focused clarifying question; never retrieve sibling-product assets</td></tr>
+    <tr><td>Planner times out</td><td>Safe clarification, or a deterministic fast-path fact if one applies</td></tr>
+    <tr><td>Policy service down</td><td>Fail closed to stricter consequence handling</td></tr>
+    <tr><td>Claim store down</td><td>Temporary failure — never answer from an unverified cache</td></tr>
+    <tr><td>Search index down</td><td>Exact registry lookup; otherwise text-only / temporary fallback</td></tr>
+    <tr><td>Asset object missing</td><td>Drop the media component; return the supported remaining claims</td></tr>
+    <tr><td>Delivery Gate fails an answer</td><td>Repair, degrade, defer, or reject — never bypass</td></tr>
+    <tr><td>Batch eligibility check down</td><td>Gate fails closed; index state never substitutes for authoritative eligibility</td></tr>
+    <tr><td>Manifest store down</td><td>No new answer unless its manifest can be durably recorded (or queued via an approved transactional fallback)</td></tr>
+    <tr><td>Generator keeps failing</td><td>Consume the bounded budget → verified fallback → <code>AVAILABLE_WITH_FALLBACK</code>, <code>NEEDS_REVIEW</code>, or terminal <code>FAILED</code>; never pend forever</td></tr>
+    <tr><td>Verification down</td><td>Candidates simply stay unpublished</td></tr>
+    <tr><td>Notification fails</td><td>Asset stays published; notification retries independently</td></tr>
+    <tr><td>Lifecycle propagation lags</td><td>The gate’s authoritative re-check still blocks stale content</td></tr>
+    <tr><td>Grace period expires mid-revalidation</td><td>Quarantine the version and its dependents before further delivery</td></tr>
+    <tr><td>Queues saturate</td><td>Prioritize user-requested work; suspend speculative preparation</td></tr>
+  </table></div>
+  <p>All failures emit structured reason codes with trace context. Observability (LLD §14) ties it together: shared IDs (<code>trace_id</code>, <code>answer_id</code>, claim/asset versions, policy versions) across online and offline work; metrics on latency by stage, gate pass/repair/fail rates, retrieval eligibility rejections, verification pass rates, cost per published asset, invalidation propagation time; and structured logs with reason codes — never raw user media, never hidden chain-of-thought.</p>
+</section>
+
+<!-- ============================== 18 PERFORMANCE ============================== -->
+<section id="performance">
+  <div class="sec-head"><span class="sec-num">18</span><h2>How fast it has to be</h2></div>
+  <p class="sec-sub">Maps to LLD §15 — provisional until PR-N01 is ratified and measured.</p>
+
+  <div class="tablewrap"><table>
+    <tr><th>Moment</th><th>Target</th><th>Note</th></tr>
+    <tr><td>Request acknowledged</td><td>&lt; 300 ms</td><td>Client-visible state change</td></tr>
+    <tr><td>Exact deterministic fact</td><td>&lt; 1.5 s p95</td><td>Fast-path-eligible requests only (§5); includes auth → gate → realization</td></tr>
+    <tr><td>Standard retrieved answer</td><td>&lt; 5 s p95</td><td>Full planner + mixed-format retrieval</td></tr>
+    <tr><td>Gate batch eligibility read</td><td>&lt; 25 ms p95</td><td>Up to 25 pinned versions, same region; provisional budget</td></tr>
+    <tr><td>Media playback starts</td><td>&lt; 2 s p95</td><td>Published, CDN-hosted assets</td></tr>
+    <tr><td>Deferred job acknowledged</td><td>&lt; 2 s p95</td><td>Preparation time is not part of this</td></tr>
+  </table></div>
+  <p>The key structural guarantee behind these numbers: <strong>no unverified media generation is ever awaited inside an online budget.</strong></p>
+</section>
+
+<!-- ============================== 19 TESTING ============================== -->
+<section id="testing">
+  <div class="sec-head"><span class="sec-num">19</span><h2>Proving it works</h2></div>
+  <p class="sec-sub">Maps to LLD §16 — unit, contract, golden-scenario, and end-to-end tests, plus release gates.</p>
+
+  <div class="plain"><span class="tag">In plain words</span>
+    The safety rules aren’t vibes — they’re executable. Every “never” in this document has a test that tries to make the system do it anyway,
+    and the release is blocked until the system refuses correctly.
+  </div>
+
+  <h3>Golden scenarios (a taste of the ~30 in §16.3)</h3>
+  <ul class="tight">
+    <li>A wrong-SKU asset is rejected despite high semantic similarity.</li>
+    <li>A generated candidate can never be retrieved; a stale asset is rejected <em>after</em> retrieval but <em>before</em> delivery.</li>
+    <li>A transition clip is never accepted as an instruction; realization can’t invert a typed conclusion.</li>
+    <li>A planner omission is caught by the completeness validator — and the semantic layer cannot waive a deterministic failure.</li>
+    <li>An exhausted video budget produces a verified illustrated fallback and an honest terminal status.</li>
+    <li>“The other latch”, when ambiguous, causes a clarification instead of an arbitrary pick.</li>
+    <li>A C3 request gets the deterministic floor and human-approved content only.</li>
+    <li>User-data deletion reaches every derivative; every delivered video has its accessible alternative.</li>
+  </ul>
+
+  <h3>Release gates</h3>
+  <ul class="tight">
+    <li>No P0/C3 production answer without required human approval.</li>
+    <li>Zero wrong-SKU results in the release identity/retrieval suite.</li>
+    <li>Zero delivery of candidate, stale, or retired assets; zero unbound product claims in realized responses.</li>
+    <li>All golden scenarios pass; security and privacy checks pass for enabled input modes.</li>
+  </ul>
+</section>
+
+<!-- ============================== 20 PHASES ============================== -->
+<section id="phases">
+  <div class="sec-head"><span class="sec-num">20</span><h2>Build order</h2></div>
+  <p class="sec-sub">Maps to LLD §17 — each phase has a concrete exit test.</p>
+
+  <div class="phase"><div class="pnum">0</div><div>
+    <h4>Contracts &amp; executable rulebook</h4>
+    <p>Finalize all schemas (AnswerRequest, ClaimPlan, ClaimRecord, AssetRecord, Answer IR, Manifest, events); implement policy floors, completeness fixtures, and delivery-gate rules <em>as tests</em>; define review policy and repo module boundaries.</p>
+    <p class="exit"><strong>Exit:</strong> the golden routing + gate suite passes with no external AI and no media generation at all.</p>
+  </div></div>
+  <div class="phase"><div class="pnum">1</div><div>
+    <h4>Verified text spine</h4>
+    <p>Intake → vault → extraction → validation → published Evidence Query; identity for one explicit catalog SKU; IR → gate → realizer → manifest.</p>
+    <p class="exit"><strong>Exit:</strong> one product answers approved factual questions with full provenance — and rejects unsupported or mismatched ones.</p>
+  </div></div>
+  <div class="phase"><div class="pnum">2</div><div>
+    <h4>Exact static &amp; illustrated answers</h4>
+    <p>Media processing, exact static lane (A), illustrated steps lane (C), asset registry + verification + retrieval + URL delivery, hybrid answers, persistent sessions.</p>
+    <p class="exit"><strong>Exit:</strong> part-location and discrete-step questions are served from published assets with correct claim bindings.</p>
+  </div></div>
+  <div class="phase"><div class="pnum">3</div><div>
+    <h4>Retrieved &amp; purpose-built video</h4>
+    <p>Video segmentation and coverage, complete existing-video retrieval, deferred video jobs (D/E), video verification with operator approval, notifications.</p>
+    <p class="exit"><strong>Exit:</strong> no procedural video without complete step coverage and required approval; every miss returns an immediate supported fallback.</p>
+  </div></div>
+  <div class="phase"><div class="pnum">4</div><div>
+    <h4>Catalog &amp; operational scale</h4>
+    <p>Multi-tenant controls, review capacity management, invalidation and deletion at scale, quotas, backpressure, DR, cost dashboards.</p>
+    <p class="exit"><strong>Exit:</strong> 10+ products within agreed quality, latency, cost, and review-SLA targets.</p>
+  </div></div>
+  <div class="phase"><div class="pnum">5</div><div>
+    <h4>Geometry &amp; interactive extension</h4>
+    <p>Environment evidence schema, certified geometry records, uncertainty-aware fit calculation, interactive answer bindings. Requires its own component LLD first.</p>
+    <p class="exit"><strong>Exit:</strong> defined in <code>geometry-and-fit-lld.md</code>.</p>
+  </div></div>
+</section>
+
+<!-- ============================== 21 GEOMETRY ============================== -->
+<section id="geometry">
+  <div class="sec-head"><span class="sec-num">21</span><h2>The future: “will it fit?” done right</h2></div>
+  <p class="sec-sub">Maps to LLD §18 — the geometry extension boundary.</p>
+
+  <div class="plain"><span class="tag">In plain words</span>
+    Today, if you ask “will this stroller fit in my trunk?”, ShowMe says exact fit isn’t available yet — because answering honestly requires
+    real certified measurements of <em>both</em> the product and your trunk, not a good-looking 3D model. The plan: measurements go in,
+    a <strong>certified representation</strong> (checked against reality, with a declared capability envelope) is published like any other claim,
+    a <strong>deterministic engine</strong> — not an AI guess — computes fit/clearance/paths within that envelope, uncertainty is propagated,
+    and the result flows through the <em>same</em> Answer IR and Delivery Gate as everything else. The 3D rendering only <em>communicates</em>
+    the conclusion; it never <em>establishes</em> it.
+  </div>
+
+  <p>Key boundary: certification is capability-specific. A model certified for external dimensions is not thereby valid for collision, folding kinematics, required force, stability, or electrical behavior. And exact fit needs the <em>user’s</em> environment too: openings, orientation, maneuver path, closure state, agreed tolerance. Until all of that exists, the geometry route stays a typed extension point (reserved in the route table), and the honest answer is “not yet”.</p>
+</section>
+
+<!-- ============================== 22 OPEN ============================== -->
+<section id="open">
+  <div class="sec-head"><span class="sec-num">22</span><h2>Still to decide</h2></div>
+  <p class="sec-sub">Maps to LLD §19–20 — required follow-on designs and open implementation choices.</p>
+
+  <h3>Component LLDs required before building each subsystem</h3>
+  <p><code>answer-orchestration-lld.md</code> · <code>claim-and-evidence-lld.md</code> · <code>asset-factory-and-verification-lld.md</code> · <code>content-ops-lld.md</code> · <code>workflow-and-invalidation-lld.md</code> · <code>security-rights-privacy-lld.md</code> · <code>geometry-and-fit-lld.md</code> (before Phase 5). Each must include APIs, schemas, algorithms or decision tables, state transitions, failure behavior, observability, tests, and runbooks.</p>
+
+  <h3>Open implementation decisions</h3>
+  <p>Primary relational/graph technology · queue/workflow engine · search &amp; vector stack · OCR/processing libraries · model/provider choices for extraction, planning, media analysis, and generation · tenant/catalog model for launch · identity confidence thresholds · source-authority precedence · the exact consequence-floor table · reviewer qualification and dual-review rules · notification channels · initial product-identification input modes · purpose-built video presentation policy (narration, callouts, motion alone) · languages/localization · retention and residency values · final SLO/RPO/RTO and cost ceilings.</p>
+  <p>These choices may change the technology — they may not change the component contracts in this document.</p>
+
+  <p class="backtotop"><a href="#scope">↑ Back to top</a> · Full normative text: <a href="./low-level-design.md">low-level-design.md</a> (v0.7, 2026-08-20)</p>
+</section>
+
+</main>
+</div>
+</body>
+</html>
