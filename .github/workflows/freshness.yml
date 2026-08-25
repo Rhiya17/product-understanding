@@ -1,0 +1,22 @@
+name: Source freshness (weekly)
+
+# Advisory watchdog for the "link rot" risk of URL-only sources
+# (recorded video URLs, origin pages). A red run here means a recorded
+# source went dead or moved — feed it into the invalidation flow (LLD §3.4).
+# It never blocks merges; it runs on a schedule.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  url-liveness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check recorded source URLs still resolve
+        run: python scripts/check_url_liveness.py

@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  data-integrity:
+    name: Vault & evidence-pack integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned evidence-system dependencies
+        run: python -m pip install --quiet -r system/requirements.txt
+      - name: Validate source vault (manifests, hashes, PDFs)
+        run: python scripts/validate_vault.py
+      - name: Validate evidence packs (if present)
+        run: |
+          if [ -f evidence-packs/validate.py ]; then
+            python evidence-packs/validate.py
+          else
+            echo "evidence-packs/ not created yet — skipping"
+          fi
+
+  docs-consistency:
+    name: Docs consistency
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: LLD md/html version sync
+        run: python scripts/check_docs_sync.py
+
+  python-checks:
+    name: Python lint & tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned evidence-system dependencies
+        run: python -m pip install --quiet -r system/requirements.txt
+      - name: Syntax-check all Python
+        run: |
+          python -m compileall system/ evidence-packs/
+          python -m compileall -q scripts/ $(ls -d poc-*/ 2>/dev/null || true)
+      - name: Ruff lint (scripts only, advisory on POCs)
+        run: |
+          pip install --quiet ruff
+          ruff check scripts/
+          ruff check poc-*/ --exit-zero
+      - name: Tests (when they exist)
+        run: |
+          python -m pytest -q system/tests
+          if ls tests/test_*.py >/dev/null 2>&1; then
+            python -m pytest -q
+          else
+            echo "no tests/ yet — skipping"
+          fi
+
+  verifier-live-canary:
+    name: Qwen verifier live canary (secret-gated)
+    runs-on: ubuntu-latest
+    env:
+      FAL_KEY: ${{ secrets.FAL_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Skip cleanly without FAL credentials
+        if: env.FAL_KEY == ''
+        run: echo "FAL_KEY absent; live verifier canary skipped"
+      - name: Install pinned evidence-system dependencies
+        if: env.FAL_KEY != ''
+        run: python -m pip install --quiet -r system/requirements.txt
+      - name: Run live Qwen canary
+        if: env.FAL_KEY != ''
+        run: python system/tests/live_canary.py
