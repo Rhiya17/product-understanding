@@ -1,16 +1,727 @@
 {
   "model": "qwen/qwen3-vl-235b-a22b-instruct",
   "prompt_version": "v1",
-  "date": "2026-08-24",
-  "status": "PARTIAL",
-  "reason": "One or more provider requests failed; some bindings have no verdict.",
+  "date": "2026-08-26",
+  "status": "COMPLETE",
   "verdicts": [
+    {
+      "claim_id": "claim_srl_limit_max_weight_current",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits the minimum weight (4 lb) and the height restriction (32” or less), reducing the constraint to only maximum weight. This drops critical conditions, altering the safety scope of the restraint’s use."
+    },
     {
       "claim_id": "claim_srl_limit_max_weight_legacy_img",
       "binding_index": 0,
       "verdict": "CANNOT_JUDGE",
       "note": "Visual binding; text-only verification is unavailable."
+    },
+    {
+      "claim_id": "claim_srl_limit_min_weight",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation only states the minimum child weight (4 lb) but omits the maximum weight (30 lb) and the height limit (32\" or less), altering the full meaning of the safety constraint."
+    },
+    {
+      "claim_id": "claim_srl_limit_max_height",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote specifies a maximum height of 32” (81 cm) for rear-facing use, but the translation incorrectly labels it as 'maximum_child_height' without specifying that this limit applies only to rear-facing configuration; also, the quote includes weight limits (4-30 lb) which the translation omits entirely, altering scope and conditions."
+    },
+    {
+      "claim_id": "claim_srl_limit_head_clearance",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'child's' before 'head', which is not in the original quote and introduces an assumption about the subject that may not be intended (e.g., could apply to a dummy or other object)."
+    },
+    {
+      "claim_id": "claim_srl_limit_body_support_max_weight",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits the critical qualifier 'ONLY' and the metric equivalent '5 kg', reducing the constraint to a mere maximum weight limit without emphasizing exclusivity or providing dual units, thus altering the original meaning."
+    },
+    {
+      "claim_id": "claim_srl_limit_expiration_7yr",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds information not in the quote: 'date label is on back of car seat.' The original quote does not specify where the date of manufacture is located, so this addition changes the meaning by introducing an unstated detail."
+    },
+    {
+      "claim_id": "claim_srl_limit_base_80pct",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation incorrectly implies the base must provide 80% support on the vehicle seat, while the quote only requires the base to occupy a minimum of 80% of the vehicle seat’s surface — a spatial requirement, not a functional support claim."
+    },
+    {
+      "claim_id": "claim_srl_spec_model_number",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately extracts the model number '2110186' from the quote without adding, dropping, or altering any qualifiers, units, or conditions."
+    },
+    {
+      "claim_id": "claim_srl_spec_dimensions",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds depth (18.07 in) and height (27.4 in) dimensions not mentioned in the quote, which only specifies width (15.5 in). Adding unmentioned attributes changes the meaning."
+    },
+    {
+      "claim_id": "claim_srl_spec_dimensions",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds depth and width dimensions not present in the quote, which only specifies height; this introduces new information and alters the meaning."
+    },
+    {
+      "claim_id": "claim_srl_spec_dimensions",
+      "binding_index": 2,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds height (27.4 in) and width (15.5 in) dimensions not present in the quote, which only specifies depth (18.07 in). Adding unmentioned attributes constitutes a meaning change."
+    },
+    {
+      "claim_id": "claim_srl_spec_weight_with_base",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the value (12.3), unit (lb), and condition (with base) from the exact quote without adding, dropping, or altering any semantic element."
+    },
+    {
+      "claim_id": "claim_srl_spec_carrier_weight",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits the marketing claim of '7.2 lb', which is explicitly present in the quote and creates a discrepancy with the spec table's 7.5 lb. This omission changes the meaning by erasing a key contrast the source highlights."
+    },
+    {
+      "claim_id": "claim_srl_spec_harness_type",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation drops the critical qualifier 'per official feature-callout gallery image', which limits the claim to a visual reference rather than asserting it as a factual specification. This omission changes the meaning by presenting the harness type as a direct product spec rather than an observation from an image."
+    },
+    {
+      "claim_id": "claim_srl_spec_base_features",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation incorrectly implies that all listed features are independently included, while the quote specifies that only the 'LATCH-equipped stay-in-car base' is included, and the other features describe that base."
+    },
+    {
+      "claim_id": "claim_srl_spec_install_methods",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "Translation adds unmentioned restriction: 'carrier without base installs with vehicle seat belt only,' which is not in the quote and alters the scope of installation instructions."
+    },
+    {
+      "claim_id": "claim_srl_spec_install_methods",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation incorrectly implies that 'lower anchor attachment (LATCH)' is a valid installation method with a restriction ('Do not use both at the same time'), while the quote explicitly states lower anchor attachment is 'not available' — meaning it cannot be used at all."
+    },
+    {
+      "claim_id": "claim_srl_spec_fmvss213",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation reduces the claim to a certification against FMVSS 213, omitting the critical qualifier 'meets or exceeds all applicable requirements' and dropping the context of 'for use in motor vehicles'. This removes the comparative strength ('or exceeds') and the specific application domain, altering the scope and assurance level of the original statement."
+    },
+    {
+      "claim_id": "claim_srl_spec_aircraft_certified",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'follow vehicle installation instructions (sections 3-C, 3-D, 6-D lap belt installation)' which is not mentioned in the original quote. This introduces new conditions and references to vehicle-specific instructions not present in the source, altering the meaning."
+    },
+    {
+      "claim_id": "claim_srl_spec_base_recline_positions",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits the instruction to 'squeeze the base recline lever and lift the base to extend the foot,' which is a critical operational step. The quote describes both a feature (4 positions) and an action required to use it; the translation only captures the feature, thereby changing the meaning by dropping essential procedural context."
+    },
+    {
+      "claim_id": "claim_srl_spec_handle_positions",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds specific conditions (upright in position A when carrying, any locked position in vehicle) and assigns a rule not present in the quote; the quote only states 4 locked positions exist without specifying usage context or orientation."
+    },
+    {
+      "claim_id": "claim_srl_spec_handle_positions",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits the imperative 'MUST' for the first condition, replacing it with a weaker 'must', and drops the explicit distinction that the handle 'can be in any locked position' only 'when used in the vehicle' — instead implying 'any locked position is allowed in the vehicle' without specifying the context of use. This softens the requirement and removes the conditional scope, altering the meaning."
+    },
+    {
+      "claim_id": "claim_srl_part_harness_release_lever",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds specific operational detail ('pressed down to loosen harness straps') and precise location ('at the front of the carrier') not present in the source, which only states 'Under Pad' without direction or function."
+    },
+    {
+      "claim_id": "claim_srl_part_rearfacing_belt_path",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'marked with a blue label' and 'on the carrier', which are not present in the exact quote; it also reifies the concept as a 'PART_LOCATION' with structured metadata not implied by the source."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_modes",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote merely lists 'Graco® Modes® Strollers' with checkmarks, implying compatibility or inclusion without specifying conditions; the translation adds a detailed qualifier excluding two specific models and defines a precise relationship (infant car seat clicks into stroller), which is not stated or implied in the original."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_modes",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the phrase '(criteria key *)' not present in the quote, implying a metadata or indexing system that the original does not state, thus altering meaning."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_duoglider",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote 'DuoGlider ✓ ✓' is ambiguous and minimal, offering no information about compatibility, seat position, travel system function, or counterpart type; the translation invents specific technical details not present in the source."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_duoglider",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'infant car seat clicks into stroller (travel system)' and specifies 'DuoGlider' as the counterpart, neither of which is stated in the exact quote; it also misrepresents the condition as a compatibility predicate rather than a usage restriction."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_fastaction_se_20",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote merely states 'FastAction SE 2.0 ✓ ✓' with no explicit claim about compatibility, infant car seat integration, or travel system functionality; the translation invents a detailed compatibility relationship not present in the source."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_fastaction_fold_jogger",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote only states 'FastAction Fold Jogger ✓ ✓' with no mention of compatibility, infant car seats, or travel systems; the translation invents a detailed compatibility claim not present in the source."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_fastaction_jogger_lx",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote only states 'FastAction Jogger LX ✓ ✓' with no mention of compatibility, infant car seats, travel systems, or stroller type — the translation invents specific functional relationships and object attributes not present in the source."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_gomax",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote 'GoMax ✓ ✓' provides no information about compatibility, infant car seats, travel systems, or strollers; the translation invents a detailed functional relationship not present in the source."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_graco_merge",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote 'Graco Merge ✓ ✓' is ambiguous and does not specify compatibility, counterpart type, relationship, or predicate; the translation adds detailed structured claims not present in the source."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_graco_premier_merge",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote is a fragment with no predicate or object, only a product name and a checkmark; the translation invents a full compatibility relationship with specific attributes not present in the source."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_outpace_lx",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote 'Outpace® LX ✓ -' contains no information about compatibility, infant car seats, travel systems, or strollers; the translation fabricates a detailed compatibility claim not present in the source."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_ready2grow_20",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote only states 'Ready2Grow 2.0 ✓ ✓' with no context, while the translation adds specific compatibility details (e.g., 'can only be used with the rear seat', 'infant car seat clicks into stroller'), which are not present or implied in the original."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_ready2grow_20",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds specific product names ('Ready2Grow 2.0'), relationship details ('infant car seat clicks into stroller'), and a structured compatibility predicate not present in the quote, which only states a generic restriction: 'Can only be used with the rear seat'."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_ready2grow_lx_20",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote only states 'Ready2Grow LX 2.0 ✓ ✓' with no context, while the translation adds specific compatibility details (e.g., 'infant car seat clicks into stroller', 'rear seat only', 'travel system') not present in the original, altering the meaning."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_ready2grow_lx_20",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds specific product names ('Ready2Grow LX 2.0') and a functional relationship ('infant car seat clicks into stroller') not present in the quote, which only states a positional constraint ('Can only be used with the rear seat')."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_ready2jet",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the predicate 'infant car seat clicks into stroller (travel system)' and object type 'stroller', which are not mentioned in the quote; the quote only states compatibility conditionally for 2025+ models without specifying function or product type."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_ready2roll_wagon",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote merely states 'Ready2Roll Wagon ✓ ✓' with no mention of compatibility, infant car seats, travel systems, or strollers; the translation invents a detailed compatibility relationship not present in the source."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_snugrider_elite",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote only states 'SnugRider® Elite ✓ ✓' with no context, while the translation adds specific claims about compatibility, relationship to a stroller, and function as a travel system — none of which are present or implied in the original."
+    },
+    {
+      "claim_id": "claim_srl_compat_stroller_verb",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote 'Verb® ✓ ✓' provides no information about compatibility, strollers, infant car seats, or travel systems; the translation invents a detailed compatibility relationship not present in the source."
+    },
+    {
+      "claim_id": "claim_srl_compat_base_gomax",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote simply states 'GoMax Infant Car Seat Base - ✓', implying compatibility or approval, while the translation falsely asserts 'incompatible_with_gomax_base', directly contradicting the original meaning."
+    },
+    {
+      "claim_id": "claim_srl_compat_base_graco_premier",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the qualifier that 'Graco Premier car seats are sold with bases that are not sold separately (criteria key *)', which is not stated in the exact quote and introduces a new condition about sales packaging not present in the source."
+    },
+    {
+      "claim_id": "claim_srl_compat_base_graco_premier",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'compatible_with_graco_premier_base' and implies functional compatibility, while the quote only states that bases are included with car seats and not sold separately — no claim of compatibility or click-in functionality is made."
+    },
+    {
+      "claim_id": "claim_srl_compat_base_snuglock_load_leg",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'carrier clicks into stay-in-car base' and 'compatible_with_snuglock_load_leg_base' which are not stated in the quote; the quote only names the product and includes a checkmark, implying a feature, not compatibility or installation behavior."
+    },
+    {
+      "claim_id": "claim_srl_compat_base_snugride_lite",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote only names the product 'SnugRide® Lite Infant Car Seat Base' without stating any compatibility or functional relationship; the translation adds unmentioned claims about 'carrier clicks into stay-in-car base' and 'compatible_with_snugride_lite_base', altering meaning."
+    },
+    {
+      "claim_id": "claim_srl_compat_base_snugride_snugfit",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote only states the product name 'SnugRide® SnugFit Infant Car Seat Base' with a checkmark, implying availability or inclusion, but the translation adds specific functional claims (e.g., 'carrier clicks into stay-in-car base') and a compatibility predicate not present in the source."
+    },
+    {
+      "claim_id": "claim_srl_compat_base_snugride_snuglock",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote merely names a product ('SnugRide® SnugLock® Infant Car Seat Base') with a checkmark, implying availability or inclusion, while the translation falsely asserts a compatibility relationship ('carrier clicks into stay-in-car base') and invents functional behavior not stated in the source."
+    },
+    {
+      "claim_id": "claim_srl_compat_click_connect_requirement",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds a restriction not in the quote: 'Never use with any other manufacturer's strollers,' which introduces a new prohibition not stated in the original."
+    },
+    {
+      "claim_id": "claim_srl_step_latch_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'their' and rephrases 'Unhook the Lower anchor attachment connectors and remove from storage position' as a single action 'Remove...from their storage position,' omitting the explicit instruction to 'Unhook' first, which is a procedural step change."
+    },
+    {
+      "claim_id": "claim_srl_step_latch_2",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully reproduces the exact quote without adding, dropping, or altering any factual elements, qualifiers, or conditions."
+    },
+    {
+      "claim_id": "claim_srl_step_latch_3",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the action, method, and step number from the exact quote without adding, dropping, or altering any qualifiers, actors, or conditions."
+    },
+    {
+      "claim_id": "claim_srl_step_latch_4",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits 'Lower anchor attachment' before 'anchors', which changes the specificity of the anchors being referenced. The original specifies 'lower Lower anchor attachment anchors' — a precise technical term — while the translation simplifies to 'lower anchors', potentially misleading the user about which anchors are meant."
+    },
+    {
+      "claim_id": "claim_srl_step_latch_5",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the phrase 'install_base_lower_anchor' as a procedure, which is not mentioned or implied in the exact quote. This introduces new information not present in the source, altering the meaning by associating the step with a specific procedure that the original text does not specify."
+    },
+    {
+      "claim_id": "claim_srl_step_latch_6",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'hooks must not be attached upside down,' which is not mentioned in the original quote. This introduces a new condition not present in the source, altering the meaning."
+    },
+    {
+      "claim_id": "claim_srl_step_latch_7",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, type) not present in the quote, which changes meaning by implying a formal procedure schema the original does not state."
+    },
+    {
+      "claim_id": "claim_srl_step_latch_8",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds a quantitative requirement ('it must move less than 1 in (2.5 cm)') not present in the original quote, which only instructs to push and pull the base without specifying any acceptable movement threshold."
+    },
+    {
+      "claim_id": "claim_srl_step_latch_9",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'pull up on the front corners to confirm attachment,' which is not mentioned in the original quote. This introduces a new action and verification step not present in the source, altering the procedure's meaning."
+    },
+    {
+      "claim_id": "claim_srl_step_latch_10",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'Re-check', implying a prior check occurred, which the original does not state. Also, it reorders and merges instructions into a single clause, altering the procedural emphasis and potentially omitting the distinct requirement to first ensure the vehicle is level before checking the indicator."
+    },
+    {
+      "claim_id": "claim_srl_step_beltbase_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation changes 'Attach the Lower anchor attachment connectors to the plastic bars' to 'Store the lower anchor attachment connectors on the plastic bars', replacing the action 'attach' with 'store', which alters the intended procedure."
+    },
+    {
+      "claim_id": "claim_srl_step_beltbase_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'seat belt' to the procedure name ('install_base_seat_belt'), which is not mentioned in the original quote. The quote only describes placing the base on the back seat and pushing it back — no reference to seat belts or their use is made. This addition introduces new information not present in the source, altering the meaning."
+    },
+    {
+      "claim_id": "claim_srl_step_beltbase_3",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully reproduces the exact instruction from the quote: 'Check the Level Indicator Vehicle MUST be level with the ground.' The semicolon and capitalization are stylistic; the core meaning — checking the level indicator under the condition that the vehicle must be level with the ground — is preserved without addition, omission, or alteration of any factual element."
+    },
+    {
+      "claim_id": "claim_srl_step_beltbase_4",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately captures the core instructions: threading the belt through the rear-facing path (blue label), buckling it, and ensuring it lies flat and untwisted. No meaning-altering changes in actor, action, condition, or qualifier."
+    },
+    {
+      "claim_id": "claim_srl_step_beltbase_5",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'pull to confirm it is locked,' which is not mentioned in the original quote. The quote only describes pulling the belt out and letting it retract, with a clicking sound indicating lock; no confirmation pull is stated."
+    },
+    {
+      "claim_id": "claim_srl_step_beltbase_6",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation merges two distinct actions ('Press down firmly in the center of the base' and 'Pull on the shoulder belt...') into a single compound action without preserving the sequential or conditional relationship implied in the original. The original implies these are separate steps or simultaneous but distinct actions; the translation presents them as a single fused action, altering the procedural meaning."
+    },
+    {
+      "claim_id": "claim_srl_step_beltbase_7",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds a quantitative requirement ('it must move less than 1 in (2.5 cm)') not present in the original quote, which only instructs to push and pull the base without specifying any measurement or tolerance."
+    },
+    {
+      "claim_id": "claim_srl_step_beltbase_8",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'pull up on the front corners to confirm attachment,' which is not mentioned in the original quote. This introduces a new action and verification step not present in the source, altering the meaning."
+    },
+    {
+      "claim_id": "claim_srl_step_beltbase_9",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'Re-check', implying a repeated action not stated in the original. The original says 'Check' (first-time action), while 'Re-check' suggests a prior check occurred, altering the procedural meaning."
+    },
+    {
+      "claim_id": "claim_srl_step_baseless_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation incorrectly combines 'Back Seat of the Vehicle' into 'vehicle back seat', which may imply a specific part (e.g., rear bench) rather than the general rear seating area. Also, the original specifies placing the car seat on 'the vehicle seat' (any seat in the back), while the translation implies placement directly on 'the vehicle back seat' as a single unit, potentially altering the intended scope of acceptable placement."
+    },
+    {
+      "claim_id": "claim_srl_step_baseless_2",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the core instruction: threading the seat belt through the rear-facing path (blue label), buckling it, and ensuring it is not twisted. The step number and procedure context are added for structure but do not alter the factual meaning of the original quote."
+    },
+    {
+      "claim_id": "claim_srl_step_baseless_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'pull to confirm it is locked,' which is not mentioned in the original quote. The original only describes pulling the belt out and letting it retract, with a clicking sound indicating lock; no confirmation step is stated."
+    },
+    {
+      "claim_id": "claim_srl_step_baseless_4",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the actions, sequence, and intent of the original quote: laying the forearm, pushing down, pulling the shoulder belt, and feeding slack back into the retractor. No added, dropped, or altered qualifiers, numbers, units, or actors. The structure is rephrased as a procedure step but does not change meaning."
+    },
+    {
+      "claim_id": "claim_srl_step_baseless_5",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds a quantitative requirement ('it must move less than 1 in (2.5 cm)') not present in the original quote, which only instructs to push and pull the car seat without specifying any acceptable movement threshold."
+    },
+    {
+      "claim_id": "claim_srl_step_baseless_6",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'checked with the child in the restraint,' which is not mentioned in the original quote. This introduces a new condition (child must be present during check) that alters the meaning and scope of the instruction."
+    },
+    {
+      "claim_id": "claim_srl_step_secure_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully restates the exact instruction from the quote without adding, dropping, or altering any semantic element. The action, object, and step number match precisely."
+    },
+    {
+      "claim_id": "claim_srl_step_secure_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'the harness' and 'secure_child_in_car_seat' which are not mentioned in the quote; it also rephrases 'buckle tongues are securely attached' as 'buckle tongues attach' (present tense, implying action rather than state), and omits the imperative 'You will hear' in favor of 'listen for', changing the actor and instruction tone."
+    },
+    {
+      "claim_id": "claim_srl_step_secure_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'listen for a click' as an explicit instruction, while the original only states 'You will hear a “click”' — implying passive observation, not active listening. This changes the actor’s required behavior and adds an imperative not present in the source."
+    },
+    {
+      "claim_id": "claim_srl_step_secure_4",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation restructures the instruction into a single concatenated sentence without preserving the imperative tone or the explicit 'Do this to both sides' as a separate directive. It also adds 'secure_child_in_car_seat' and 'step_number:4' which are not present in the original quote, introducing metadata not stated in the source. These additions alter the meaning by implying context and structure not originally provided."
+    },
+    {
+      "claim_id": "claim_srl_step_secure_5",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits the conditional clause 'When you are not able to pinch any of the harness webbing at your child’s shoulder, the harness is tight enough,' replacing it with an imperative 'until no harness webbing can be pinched,' which changes the meaning from a verification condition to a continuous action directive."
+    },
+    {
+      "claim_id": "claim_srl_step_secure_6",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the instruction: 'Raise the chest clip to the child's armpit level' matches the quote exactly in action, object, and condition. No meaning change detected."
+    },
+    {
+      "claim_id": "claim_srl_step_secure_7",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'again' to 'Check tightness', implying a repeated action not stated in the original quote. The original only says 'Check Tightness' without suggesting it is a repeat step."
+    },
+    {
+      "claim_id": "claim_srl_step_removechild_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds a 'procedure' field ('remove_child') and 'step_number' not present in the quote, which introduces unverified context and alters meaning by implying a specific use case not stated."
+    },
+    {
+      "claim_id": "claim_srl_step_removechild_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (e.g., 'procedure':'remove_child', 'step_number':2) not present in the original quote, which alters meaning by implying context and intent not stated. Also, wrapping the instruction in an object with keys like 'action' and 'predicate' imposes a semantic structure absent in the source."
+    },
+    {
+      "claim_id": "claim_srl_step_removechild_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation rephrases 'Unbuckle Your Child' as 'Unbuckle the child', which changes the imperative address from the user ('Your') to a generic object ('the'), subtly altering the instructional tone and ownership. Also, the translation merges three distinct actions into a single run-on sentence without preserving the original step structure, potentially obscuring the sequence or emphasis. Though minor, these changes affect instructional clarity and user direction, which matters under strict auditing."
+    },
+    {
+      "claim_id": "claim_srl_warning_airbag",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds a causal explanation ('An inflating air bag can hit the child and car seat with great force and cause serious injury or death') not present in the exact quote, which only states a prohibition without elaborating on consequences."
+    },
+    {
+      "claim_id": "claim_srl_warning_crash_replace",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "Translation omits the explicit warning 'DO NOT use it again!' and the consequence 'could result in serious injury or death,' which are critical to the original warning's severity and intent."
+    },
+    {
+      "claim_id": "claim_srl_warning_unattended",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'a child' as the subject of the hazard clause, implying a general risk to any child, while the original quote uses 'Child' (capitalized, singular) which may refer to the specific child in context. Also, the translation rephrases the original into a semicolon-separated compound sentence, altering the syntactic structure and potentially implying a stronger causal link than the original's simple period separation. These changes, though subtle, alter the grammatical actor and sentence structure, which can affect interpretation in safety contexts."
+    },
+    {
+      "claim_id": "claim_srl_warning_no_dual_install",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully reproduces the exact quote without adding, dropping, or altering any factual elements, conditions, or qualifiers. The predicate and object merely repackage the same prohibition without changing meaning."
+    },
+    {
+      "claim_id": "claim_srl_warning_bulky_clothing",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds instructions not in the quote: 'Buckle the child first, then place a blanket over them or the coat on backwards.' The original only warns against bulky clothing and explains why; it does not prescribe any alternative action."
+    },
+    {
+      "claim_id": "claim_srl_warning_suffocation_soft_surface",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully preserves the original warning’s meaning: suffocation hazard due to carrier rolling over on soft surfaces, and prohibition of placing it on beds, sofas, or other soft surfaces. No added, dropped, or altered qualifiers, numbers, units, actors, or conditions."
+    },
+    {
+      "claim_id": "claim_srl_warning_fall_elevated",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the meaning of the original quote: it conveys the fall hazard due to child movement, the prohibition against placing the carrier on elevated surfaces, and correctly identifies the hazard type and predicate without adding, dropping, or altering any critical detail."
+    },
+    {
+      "claim_id": "claim_srl_warning_strings_cords",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'hang strings on the carrier, or attach strings to toys' which are not mentioned in the original quote. The original only warns against placing the carrier near windows with blind/drape cords; it does not prohibit hanging strings on the carrier or attaching strings to toys."
+    },
+    {
+      "claim_id": "claim_srl_warning_other_strollers",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds a structured object with 'hazard_type': 'attachment_hazard', which is not stated or implied in the original quote. The original only warns against using non-Graco strollers and mentions injury/death risk, but does not classify or label the hazard type. This addition introduces new information not present in the source."
+    },
+    {
+      "claim_id": "claim_srl_care_seat_pad",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately captures all key elements: machine wash, cold water, delicate cycle, drip-dry, and prohibition of bleach; no meaning is added, dropped, or altered."
+    },
+    {
+      "claim_id": "claim_srl_care_buckle",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "Translation adds 'air dry' and 'repeat until it fastens with a click', which are not in the quote; also adds restrictions ('do not submerge the buckle strap', 'no soaps...') not mentioned; alters method by implying a multi-step process beyond the quote's scope."
+    },
+    {
+      "claim_id": "claim_srl_care_buckle",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds specific cleaning instructions (e.g., 'place in a cup of warm water', 'press the red button', 'repeat until it fastens with a click') not present in the original quote, which only states prohibitions. This constitutes an unauthorized addition of procedural detail, altering the meaning."
+    },
+    {
+      "claim_id": "claim_srl_care_harness",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation merges 'harness straps' and 'lower anchor attachment strap' into a single object 'harness_and_lower_anchor_strap_cleaning', implying they are a single unit or subject to identical care rules, whereas the original quote treats them as separate items with distinct restrictions. Also, the translation drops the causal warning 'Doing so may weaken the straps' as a separate consequence, embedding it as part of the restriction clause, which alters the emphasis and structure of the warning."
+    },
+    {
+      "claim_id": "claim_srl_step_harnessfit_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'adjust_harness_to_fit_child' as a procedure, which is not stated in the quote; the quote only describes a mechanical action without specifying the purpose or context of fitting a child."
+    },
+    {
+      "claim_id": "claim_srl_step_harnessfit_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, type, predicate) not present in the quote, which alters the meaning by implying a formal procedure context and categorization the original text does not state."
+    },
+    {
+      "claim_id": "claim_srl_step_harnessfit_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the phrase 'adjust_harness_to_fit_child' as a procedure, which is not mentioned or implied in the original quote. The original only describes the mechanical action of unbuckling and positioning straps, without specifying intent or context such as fitting a child. This addition alters the meaning by introducing an unstated purpose."
+    },
+    {
+      "claim_id": "claim_srl_step_harnessfit_4",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'adjust_harness_to_fit_child' as a procedure, which is not mentioned or implied in the exact quote. The quote only instructs to place the child and ensure their back is flat against the seat back; it does not mention harness adjustment at all."
+    },
+    {
+      "claim_id": "claim_srl_step_harnessfit_5",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the phrase 'adjust_harness_to_fit_child' as a procedure, which is not mentioned or implied in the original quote. The original only instructs to place straps over shoulders; it does not specify adjusting for fit, thus introducing new procedural intent."
+    },
+    {
+      "claim_id": "claim_srl_step_harnessfit_6",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the procedure 'adjust_harness_to_fit_child' and step_number 6, which are not stated in the exact quote. The quote only instructs to check the harness height condition; it does not prescribe an adjustment action or assign a step number."
+    },
+    {
+      "claim_id": "claim_srl_step_harnessfit_7",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'the child's' before 'head', which is not in the original quote and introduces an assumption about the subject that may not be universally valid (e.g., could apply to a dummy or test object)."
+    },
+    {
+      "claim_id": "claim_srl_step_harnessfit_8",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the procedure label 'adjust_harness_to_fit_child' and step_number:8, which are not present in the original quote. The original only states the action without assigning it to a specific child-fitting context or numbering it as step 8 within a larger procedure — this addition changes the meaning by implying intent and structure not stated."
+    },
+    {
+      "claim_id": "claim_srl_step_harnessfit_9",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the purpose 'adjust_harness_to_fit_child' and labels it as a 'procedure_step', which are not stated in the original quote. The original is a bare imperative instruction without context or intent, while the translation implies a procedural step within a larger child-fitting process."
+    },
+    {
+      "claim_id": "claim_srl_step_harnessfit_10",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'slot' to 'new location', implying a specific hardware feature (slots) not mentioned in the original quote, which could mislead users into expecting a physical slot rather than a general location. This is an unwarranted addition that changes meaning."
+    },
+    {
+      "claim_id": "claim_srl_step_harnessfit_11",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves all key elements: condition (smaller baby, shoulders at/above lowest 2 slots), action (use upper loops, thread onto splitter plate), and verification (straps on top and completely on). No numbers, units, actors, conditions, or qualifiers are added, dropped, or altered. The procedural framing as 'adjust_harness_to_fit_child' is a valid abstraction consistent with the quote’s intent."
+    },
+    {
+      "claim_id": "claim_srl_step_harnessfit_12",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves all key elements: condition (larger baby, shoulders at/above upper 2 slots), action (use lower loops, thread onto splitter plate), and requirement (straps completely on splitter plate). No numbers, units, actors, conditions, or qualifiers are added, dropped, or altered. The procedural framing as 'adjust_harness_to_fit_child' is a valid abstraction consistent with the quote’s intent."
+    },
+    {
+      "claim_id": "claim_srl_step_bucklefit_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'adjust_buckle_to_fit_child' as a procedure, which is not mentioned or implied in the original quote. The quote only instructs to check the buckle position, not to perform an adjustment. This addition introduces a new action not present in the source, altering the meaning."
+    },
+    {
+      "claim_id": "claim_srl_step_bucklefit_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'then' and 'adjust_buckle_to_fit_child' which are not in the original; 'then' implies a strict sequence not stated, and 'adjust_buckle_to_fit_child' adds a purpose not mentioned in the quote."
+    },
+    {
+      "claim_id": "claim_srl_step_bucklefit_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'adjust_buckle_to_fit_child' as a procedure, which is not mentioned in the quote. The quote only describes a mechanical action (inserting a clip) without specifying the purpose or context of fitting a child, thus altering the meaning by introducing unmentioned intent."
+    },
+    {
+      "claim_id": "claim_srl_step_bucklefit_4",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the phrase 'making sure' which implies an ongoing or continuous action, whereas the original quote uses 'Make sure' as a discrete imperative instruction. This subtle shift alters the procedural tone and could imply a different level of attention or duration required."
+    },
+    {
+      "claim_id": "claim_srl_step_shortenbuckle_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully reproduces the exact quote without adding, dropping, or altering any factual detail, condition, direction, or qualifier. All elements — including weight specification, clip placement, and orientation — are preserved verbatim in meaning."
+    },
+    {
+      "claim_id": "claim_srl_limit_harness_strap_height",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the condition 'For rear-facing use,' which is not present in the original quote. This introduces a contextual restriction not stated in the source, altering the scope and applicability of the rule."
     }
   ],
-  "conflict_triage": []
+  "conflict_triage": [
+    {
+      "pair": [
+        "claim_srl_limit_max_weight_current",
+        "claim_srl_limit_max_weight_legacy_img"
+      ],
+      "result": "GENUINE_CONFLICT",
+      "note": "The two claims directly contradict each other on the maximum weight limit for the child restraint: Claim A specifies 30 lb (13.6 kg), while Claim B states 35 lb, with no indication in the provided context that these refer to different models, revisions, or usage scenarios.",
+      "context_sha256": "5e90bd6a2ee200bdbb501fae0628070fd2976a8347c9af9afa2bd83fb9ae0466"
+    }
+  ]
 }

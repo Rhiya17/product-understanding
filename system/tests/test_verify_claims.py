@@ -86,11 +86,7 @@ def test_faithful_routing_visual_skip_and_prompt_blindness(tmp_path):
         assert "claim_c0" not in arguments["prompt"]
         assert "claim_c3" not in arguments["prompt"]
 
-    reviews = json.loads((pack / "reviews.json").read_text())["reviews"]
-    assert [entry["claim_id"] for entry in reviews] == ["claim_c0"]
-    assert reviews[0]["reviewer"] == verifier.AUTO_REVIEWER
-    assert reviews[0]["scope"] == "verifier_auto"
-    assert all(entry["claim_id"] != "claim_c3" for entry in reviews)
+    assert not (pack / "reviews.json").exists()
 
     document = json.loads((pack / "verdicts.json").read_text())
     assert document["status"] == "COMPLETE"
@@ -118,7 +114,7 @@ def test_warm_cache_misses_when_translation_changes(tmp_path):
     assert verdict["verdict"] == "MEANING_CHANGED"
 
 
-def test_human_review_precedence_survives_repeated_runs(tmp_path):
+def test_verifier_never_mutates_human_reviews(tmp_path):
     human = {
         "review_id": "rev_human",
         "date": "2026-08-24",
@@ -138,8 +134,8 @@ def test_human_review_precedence_survives_repeated_runs(tmp_path):
     second = verifier.verify_pack(pack, vault_root=vault, cache_path=cache,
                                   provider=provider, date="2026-08-24")
 
-    assert first["auto_approvals"]["human_precedence"] == 1
-    assert second["auto_approvals"]["human_precedence"] == 1
+    assert first["status"] == "COMPLETE"
+    assert second["status"] == "COMPLETE"
     assert (pack / "reviews.json").read_bytes() == before
     reviews = json.loads(before)["reviews"]
     assert reviews == [human]
@@ -180,6 +176,7 @@ def test_provider_failure_is_sanitized_and_writes_failed_artifact(tmp_path):
 def test_model_positive_allowlist():
     assert verifier.MODEL_ID.startswith("qwen/")
     assert verifier.MODEL_ID == "qwen/qwen3-vl-235b-a22b-instruct"
+    assert verifier.ENDPOINT == "openrouter/router/vision"
 
 
 def test_conflict_triage_parses_caches_and_writes_artifact(tmp_path):

@@ -69,6 +69,11 @@ def write_verdicts(pack, document):
         json.dumps(document, indent=2) + "\n", encoding="utf-8")
 
 
+def write_reviews(pack, reviews):
+    (pack / "reviews.json").write_text(
+        json.dumps({"reviews": reviews}, indent=2) + "\n", encoding="utf-8")
+
+
 def test_valid_verdicts_are_counted_in_summary(tmp_path):
     pack = make_gate_pack(tmp_path)
     entry = {
@@ -115,3 +120,27 @@ def test_partial_and_failed_documents_require_reason(tmp_path):
         [], status="FAILED", reason="Provider credentials unavailable."))
     result = run_gate(pack)
     assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_reviews_require_human_traceability_and_one_current_disposition(tmp_path):
+    pack = make_gate_pack(tmp_path)
+    base = {
+        "review_id": "rev_one",
+        "date": "2026-08-26",
+        "reviewer": "system:qwen-verifier-v1",
+        "scope": "verifier_auto",
+        "claim_id": "claim_one",
+        "disposition": "APPROVED_FOR_PUBLISH",
+        "rationale": "Automated approval.",
+    }
+    write_reviews(pack, [base])
+    result = run_gate(pack)
+    assert result.returncode != 0
+    assert "publication dispositions require explicit human confirmation" in result.stdout
+
+    human = dict(base, reviewer="owner@example.com", scope="manual")
+    duplicate = dict(human, review_id="rev_two")
+    write_reviews(pack, [human, duplicate])
+    result = run_gate(pack)
+    assert result.returncode != 0
+    assert "multiple current dispositions for claim_one" in result.stdout

@@ -1,9 +1,579 @@
 {
   "model": "qwen/qwen3-vl-235b-a22b-instruct",
   "prompt_version": "v1",
-  "date": "2026-08-24",
-  "status": "FAILED",
-  "reason": "Provider verification was unavailable; no bindings were verified.",
-  "verdicts": [],
+  "date": "2026-08-26",
+  "status": "COMPLETE",
+  "verdicts": [
+    {
+      "claim_id": "claim_r2j_limit_max_weight",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation reduces the warning to a single limit (maximum_child_weight: 50 lb) but omits the height restriction (taller than 45 in.) and the consequence (excessive wear and stress on the stroller), which are critical parts of the original meaning."
+    },
+    {
+      "claim_id": "claim_r2j_limit_max_height",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation presents 'maximum_child_height' as a hard limit, while the quote states exceeding 45 in. causes excessive wear and stress — implying risk or degradation, not a strict boundary. The quote also includes weight (50 lb) as a parallel condition, which the translation omits entirely."
+    },
+    {
+      "claim_id": "claim_r2j_warning_unattended",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'requires_child_supervision' as a predicate, which is not stated in the quote; the quote only gives a direct instruction ('NEVER LEAVE CHILD UNATTENDED...') without labeling it as a requirement or using that specific terminology."
+    },
+    {
+      "claim_id": "claim_r2j_warning_seat_belt",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'hazard_type':'falling_hazard' and 'predicate':'requires_harness_use', which are not stated in the quote. The quote mentions 'seat belt', not 'harness', and does not classify the hazard type. These additions change the meaning by introducing unmentioned concepts."
+    },
+    {
+      "claim_id": "claim_r2j_warning_brakes_loading",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation preserves the exact meaning of the quote: the caregiver must always ensure brakes are engaged during child placement. No added, dropped, or altered qualifiers, actors, conditions, or units. The hazard_type and predicate are metadata not altering the core instruction."
+    },
+    {
+      "claim_id": "claim_r2j_part_belly_bar",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'across the front of the stroller seat' and implies a specific spatial location not stated in the quote; the quote only instructs to attach the belly bar to the mounts without specifying orientation or position relative to the stroller seat."
+    },
+    {
+      "claim_id": "claim_r2j_part_thumb_switch",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote 'slide thumb switch' describes an action or feature (sliding), while the translation describes a static location ('Located on the top center of the stroller handle'), omitting the action and adding spatial detail not present in the original."
+    },
+    {
+      "claim_id": "claim_r2j_part_handle_lever",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote 'squeeze handle lever' is a simple imperative action, while the translation adds specific spatial and procedural details (underside of stroller handle, after sliding thumb switch) not present in the original, altering meaning."
+    },
+    {
+      "claim_id": "claim_r2j_step_fold_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata not present in the quote, such as 'initial_state', 'resulting_state', 'step_number', and 'target_parts', which alter the meaning by implying a formal state machine or procedural framework not stated in the original. The quote is a simple imperative; the translation encodes it as a structured step with side effects and state transitions."
+    },
+    {
+      "claim_id": "claim_r2j_step_fold_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (initial_state, resulting_state, step_number, target_parts, procedure) not present in the source quote, which only states '(b) unlock brakes' — a simple imperative. These additions imply context and state transitions the original does not specify."
+    },
+    {
+      "claim_id": "claim_r2j_step_fold_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds procedural context (step number, initial/resulting states, target parts, procedure name) not present in the source quote, which only states 'fold the canopy' without any conditions, sequence, or state changes."
+    },
+    {
+      "claim_id": "claim_r2j_step_fold_4",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'initial_state: OPEN_CANOPY_FOLDED' and 'resulting_state: FOLD_SWITCH_SLID', which are not mentioned in the quote. The quote only states to slide the thumb switch as part of folding the stroller, without specifying any state before or after. These added states constitute an unwarranted expansion of meaning."
+    },
+    {
+      "claim_id": "claim_r2j_step_fold_5",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds procedural context (step number, initial/resulting states, target parts, procedure name) not present in the exact quote 'squeeze handle lever', which is a bare imperative. The quote does not specify any state transitions, step ordering, or system-specific identifiers like 'FOLD_SWITCH_SLID' or 'FOLD_LEVER_SQUEEZED'."
+    },
+    {
+      "claim_id": "claim_r2j_step_fold_6",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds procedural context (fold_stroller, step_number 6, initial_state, resulting_state, target_parts) not present in the quote, which only states a generic instruction to check stroller security without specifying conditions, steps, or parts."
+    },
+    {
+      "claim_id": "claim_r2j_step_fold_7",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds procedural context (e.g., 'FOLDED_SECURED', 'fold_stroller', 'step_number:7') and state transitions not present in the original quote, which only states 'Carry by belly bar.' without any conditions, steps, or target part specifications."
+    },
+    {
+      "claim_id": "claim_r2j_step_fold_tips_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation wraps the exact quote into a structured object with added metadata (procedure, step_number, type, predicate) not present in the source. This adds procedural context and categorization the original quote does not contain, altering its meaning by implying it is a formal step in a stroller-folding procedure, which the source does not specify."
+    },
+    {
+      "claim_id": "claim_r2j_step_fold_tips_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation wraps the exact quote inside a structured object with added metadata (procedure, step_number, type, predicate) that is not present in the source. This adds information and context not stated in the original quote, altering its meaning by implying a procedural structure and categorization the source does not provide."
+    },
+    {
+      "claim_id": "claim_r2j_step_unfold_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'initial_state':'FOLDED' and 'resulting_state':'UNFOLD_SWITCH_SLID', which are not mentioned in the source quote; it also implies a state transition not stated, thereby altering the meaning."
+    },
+    {
+      "claim_id": "claim_r2j_step_unfold_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (initial_state, procedure, resulting_state, step_number, target_parts) not present in the quote, which alters the meaning by implying context and structure the original does not provide."
+    },
+    {
+      "claim_id": "claim_r2j_step_unfold_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds procedural context (e.g., 'UNFOLDING', 'OPEN_LATCH_STATUS_UNVERIFIED', 'step_number': 3, 'target_parts') and structure not present in the source quote '(c) lift up handle', which is a simple imperative instruction without any state, step number, or system status."
+    },
+    {
+      "claim_id": "claim_r2j_step_unfold_4",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (e.g., 'initial_state', 'resulting_state', 'step_number', 'target_parts') not present in the original quote, which alters the meaning by implying a formal procedure state machine and part targeting not stated in the source."
+    },
+    {
+      "claim_id": "claim_r2j_dimension_basket_capacity",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits the metric equivalent (4.5 kg) and the imperative 'Do not', reducing a safety warning to a neutral limit statement, which alters the directive nature and completeness of the original."
+    },
+    {
+      "claim_id": "claim_r2j_warning_basket_overload",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'the basket' as the specific object being overloaded, which is not mentioned in the original quote. The original refers generically to 'EXCESSIVE WEIGHT' without specifying what is being overloaded, while the translation narrows it to 'basket', introducing a specific context not present in the source."
+    },
+    {
+      "claim_id": "claim_r2j_care_seat",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation incorrectly assigns 'mild soap' as an agent rather than a cleaning agent/tool; 'agents' implies active doers, which misrepresents the source. Also, 'wipe_only' is not explicitly stated — the quote says 'should only be wiped', which is a recommendation, not an exclusive method. The structure implies the restrictions are properties of the method, but the quote lists them as separate imperative instructions."
+    },
+    {
+      "claim_id": "claim_r2j_care_frame",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation incorrectly implies that 'household soap' and 'warm water' are agents performing the cleaning, rather than materials to be used. The original quote does not assign agency to these items; it prescribes their use as tools or substances. This misattribution of actor changes the meaning."
+    },
+    {
+      "claim_id": "claim_r2j_care_wheel_oil",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits the conditional 'IF WHEEL SQUEAKS', making the instruction unconditional, which changes the meaning. It also drops the instruction to 'get the oil into... as illustrated', removing the visual guidance and procedural nuance."
+    },
+    {
+      "claim_id": "claim_r2j_spec_assembly_no_tools",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'to assemble the stroller,' which specifies a context (assembly of a stroller) not present in the original quote. The original is a general statement with no subject or action限定, while the translation implies a specific use case, altering the scope and meaning."
+    },
+    {
+      "claim_id": "claim_r2j_limit_cup_holder_weight",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits the stroller storage basket limit (10 lb / 4.5 kg) and only reports the cup holder limit (1 lb / 0.45 kg), thereby dropping critical information and altering the scope of the original warning."
+    },
+    {
+      "claim_id": "claim_r2j_limit_single_occupant",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote specifies 'only one child at a time' as a usage rule, implying exclusivity and safety constraint. The translation reifies this as a 'maximum_occupants' limit of 1, which structurally implies a capacity ceiling but omits the temporal restriction ('at a time') and the imperative tone ('Use... with only...'). This could mislead into thinking multiple children are allowed if not simultaneously, or that it’s merely a recommendation rather than a requirement."
+    },
+    {
+      "claim_id": "claim_r2j_warning_finger_entrapment",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation incorrectly assigns the predicate 'finger_entrapment_hazard' to the entire instruction, while the quote only warns to 'AVOID FINGER ENTRAPMENT' as a header — the actual instruction is about safe folding/unfolding and ensuring the stroller is fully erected and latched. The translation falsely implies the hazard type applies to the action described, rather than being a general warning header. Also, 'the child' is used instead of 'your child', subtly altering the actor's relationship to the child."
+    },
+    {
+      "claim_id": "claim_r2j_warning_strangulation",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation drops the imperative 'AVOID STRANGULATION:' and the directive 'DO NOT', replacing them with a passive description. This removes the direct command and urgency, altering the tone and legal/functional intent of the warning. Also, 'your child’s neck' becomes 'the child's neck', which removes the personal address to the caregiver, potentially reducing perceived responsibility."
+    },
+    {
+      "claim_id": "claim_r2j_warning_stairs",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits the explicit warning about losing control of the stroller or the child falling out, which is a critical hazard explanation in the original. It also collapses two distinct instructions (prohibition on stairs/escalators + caution on steps/curbs) into a single concatenated sentence, potentially diluting the severity of the prohibition. The original emphasizes 'NEVER USE' as a hard rule with consequences; the translation softens it to a general caution without conveying the risk of injury."
+    },
+    {
+      "claim_id": "claim_r2j_warning_walking_speed",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the core restriction: use only at walking speed and not for jogging, skating, etc. No numerical, directional, conditional, or actor changes; no added or dropped qualifiers. The structured format does not alter meaning."
+    },
+    {
+      "claim_id": "claim_r2j_warning_tipping_handle_canopy",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation replaces 'accessory items (other than approved Graco stroller bags)' with 'non-approved accessory items', which omits the explicit reference to 'Graco stroller bags' and implies a broader category of disallowed items. This changes the scope of the restriction and removes brand-specific approval context, altering the meaning."
+    },
+    {
+      "claim_id": "claim_r2j_warning_hot_liquids",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'hazard_type': 'burn_hazard' and a structured predicate 'burn_hazard_cup_holder', which are not present in the original quote. The original is a general safety warning; the translation imposes a specific hazard classification and structured predicate not stated in the source, altering the meaning by adding unmentioned metadata."
+    },
+    {
+      "claim_id": "claim_r2j_warning_basket_not_carrier",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully restates the exact warning without adding, dropping, or altering any condition, actor, or qualifier. The object description mirrors the quote verbatim, and the predicate and type are metadata not altering the core meaning."
+    },
+    {
+      "claim_id": "claim_r2j_warning_basket_standing",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully preserves the core warning: prohibiting a child from standing on the basket due to risk of collapse and injury. The structured format (type, predicate, object) does not alter meaning — it merely reorganizes the same content without adding, dropping, or changing any factual element, qualifier, or condition."
+    },
+    {
+      "claim_id": "claim_r2j_warning_head_toward_footrest",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully reproduces the exact instruction from the quote without adding, omitting, or altering any condition, actor, direction, or qualifier. The object description mirrors the quote verbatim, and the predicate and type are metadata not present in the quote but do not alter the meaning of the extracted fact."
+    },
+    {
+      "claim_id": "claim_r2j_warning_not_a_toy",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'hazard_type': 'general_safety' and 'type': 'WARNING', which are not present in the quote. The quote is a direct instruction, not explicitly labeled as a 'WARNING' or categorized by hazard type. Also, the predicate 'not_a_toy' is a reification not found in the original text, which simply prohibits using the stroller as a toy without asserting a categorical property."
+    },
+    {
+      "claim_id": "claim_r2j_warning_damaged_discontinue",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the core instruction: discontinue use if the stroller becomes damaged or broken. No numbers, units, directions, actors, conditions, or qualifiers are altered or added. The hazard_type and predicate are metadata for categorization and do not alter the meaning of the original quote."
+    },
+    {
+      "claim_id": "claim_r2j_warning_caregiver_assist",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully preserves the core requirement: the caregiver must always assist the child with entering and exiting the stroller. No meaning-altering changes in actor, action, condition, or qualifier are present."
+    },
+    {
+      "claim_id": "claim_r2j_warning_adult_assembly",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (hazard_type: 'general_safety', type: 'WARNING') not present in the original quote, which only states 'ADULT ASSEMBLY REQUIRED.' without any classification or hazard context. This constitutes an addition of information that changes the meaning by implying a safety warning category not stated in the source."
+    },
+    {
+      "claim_id": "claim_r2j_warning_car_seat_other_brands",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'hazard_type': 'child_restraint_hazard' and 'type': 'WARNING', which are not present in the original quote. These additions introduce new categorical and typological information not stated in the source, altering the meaning by implying a formal hazard classification and warning type that the original text does not specify."
+    },
+    {
+      "claim_id": "claim_r2j_warning_car_seat_fall_hazard",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully preserves the exact instruction and hazard type from the quote without adding, dropping, or altering any condition, actor, direction, or qualifier."
+    },
+    {
+      "claim_id": "claim_r2j_warning_car_seat_harness",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately captures the core instruction from the quote: securing the child with the car seat harness when using the car seat in the stroller. The added 'hazard_type' and 'type' fields are metadata for classification and do not alter the meaning of the instruction itself. No factual, numerical, directional, or conditional changes are present."
+    },
+    {
+      "claim_id": "claim_r2j_warning_car_seat_read_manual",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'see the car seat owner's manual for maximum child size,' which is not mentioned in the exact quote. This introduces new information not present in the source, altering the meaning."
+    },
+    {
+      "claim_id": "claim_r2j_warning_car_seat_read_manual",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the instruction to 'read the manual... before using it with the stroller,' which is not mentioned in the quote. The quote only directs users to see the manual for the maximum child size; it does not mention strollers or pre-use reading requirements."
+    },
+    {
+      "claim_id": "claim_r2j_warning_zip_tie",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'shipped with the product,' which is not in the original quote and introduces an unverified condition about the zip tie's origin."
+    },
+    {
+      "claim_id": "claim_r2j_warning_belly_bar_not_restraint",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation merges three distinct instructions into a single compound sentence, implying they are equally weighted or causally linked, whereas the original separates them for emphasis. The original explicitly commands to 'Always secure your child with the seat belt' as a primary directive, then states 'The belly bar is not a restraint device' as a standalone warning, and finally adds a conditional caution about installation. The translation collapses these into a single clause, potentially diminishing the imperative force of the seat belt instruction and conflating the warning about the belly bar’s non-restraint status with the installation caution. This restructuring alters the emphasis and hierarchical intent of the original safety instructions."
+    },
+    {
+      "claim_id": "claim_r2j_warning_apply_both_brakes",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'hazard_type':'rolling_hazard', which is not stated or implied in the exact quote. The quote is a procedural warning, not a classified hazard type; adding this qualifier changes the meaning by introducing a categorization not present in the source."
+    },
+    {
+      "claim_id": "claim_r2j_warning_recline_clearance",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the core instruction: ensuring the child’s head, arms, and legs are clear of moving parts during seat adjustment. The added 'hazard_type' and 'predicate' are metadata, not part of the translated meaning, and do not alter the factual content of the quote."
+    },
+    {
+      "claim_id": "claim_r2j_compat_graco_infant_car_seats",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds a verification instruction (calling customer service or scanning a code) not present in the quote, which changes the meaning by implying an action required to confirm compatibility, whereas the quote simply states compatibility without any condition or verification step."
+    },
+    {
+      "claim_id": "claim_r2j_part_click_connect_mounts",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation describes the location and function of the Click Connect™ mounts but omits the critical action 'push down on car seat until the latches snap' — a procedural instruction essential to the original meaning. The translation also adds 'In the stroller seat' and 'infant car seat latches', which are not in the quote, implying context not stated. This alters the directive nature of the original and adds unverified details."
+    },
+    {
+      "claim_id": "claim_r2j_step_canopy_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (type, predicate, object with fields like 'step_number', 'target_parts') not present in the original quote. The original is a simple imperative instruction; the translation reifies it as a formal procedure step with attributes, which changes the meaning by implying structure, context, and metadata the source does not contain."
+    },
+    {
+      "claim_id": "claim_r2j_step_canopy_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (e.g., 'step_number': 2, 'target_parts': ['canopy']) not present in the original quote. The original is a simple imperative instruction; the translation implies a procedural step with numbered sequence and part targeting, which alters meaning by introducing unverified context."
+    },
+    {
+      "claim_id": "claim_r2j_step_canopy_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation reformats the instruction as a structured procedure step with metadata (e.g., 'step_number': 3, 'target_parts': ['canopy_visor']), which is not present in the original quote. The original is a simple imperative sentence without any procedural numbering or part labeling. Adding such structure implies a context and organization not stated, thus changing the meaning."
+    },
+    {
+      "claim_id": "claim_r2j_step_brake_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (type, predicate, object with step_number, target_parts) not present in the original quote. The original is a simple imperative instruction; the translation reifies it as a formal procedure step with attributes like 'step_number':1 and 'target_parts':['brakes'], which are not stated or implied in the source. This constitutes an addition of information and structural interpretation beyond the quote’s scope."
+    },
+    {
+      "claim_id": "claim_r2j_step_brake_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (e.g., 'procedure', 'step_number', 'target_parts') not present in the original quote. The original is a simple imperative instruction; the translation frames it as a formal procedure step with numbered context and part references, which alters the meaning by implying structure and context the source does not provide."
+    },
+    {
+      "claim_id": "claim_r2j_step_recline_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation preserves the exact procedural instruction from the quote without adding, dropping, or altering any action, direction, actor, or condition. The structure is reformatted as metadata but does not change the meaning."
+    },
+    {
+      "claim_id": "claim_r2j_step_recline_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which changes the meaning by implying context and structure the original does not state."
+    },
+    {
+      "claim_id": "claim_r2j_step_rear_wheels_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately captures all actions, objects, and sequence from the quote without adding, omitting, or altering any detail. The structure is reorganized for machine readability but preserves the original meaning."
+    },
+    {
+      "claim_id": "claim_r2j_step_rear_wheels_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds specific procedural context ('attach_rear_wheels', 'step_number': 2, 'target_parts': ['rear_wheels']) not present in the quote, which generically refers to 'wheels' without specifying rear wheels or step number, thus altering the scope and meaning."
+    },
+    {
+      "claim_id": "claim_r2j_step_front_wheels_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (step_number: 1, procedure: 'attach_front_wheels', target_parts: ['front_wheels']) not present in the quote, which implies a specific procedural context and part list the original does not state."
+    },
+    {
+      "claim_id": "claim_r2j_step_front_wheels_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which changes the meaning by implying context and specificity the original does not state."
+    },
+    {
+      "claim_id": "claim_r2j_step_wheel_removal_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters the meaning by implying a formalized procedure with numbered steps and specific part identifiers, whereas the quote is a simple imperative instruction."
+    },
+    {
+      "claim_id": "claim_r2j_step_car_seat_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure: 'attach_car_seat', step_number: 1, target_parts: ['seat','canopy']) not present in the original quote. The original is a simple imperative instruction without any procedural context, step numbering, or part labeling — adding these constitutes a meaning change."
+    },
+    {
+      "claim_id": "claim_r2j_step_car_seat_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote. The quote is a simple imperative; the translation implies a specific procedure context and part names, altering the meaning by introducing unstated conditions and scope."
+    },
+    {
+      "claim_id": "claim_r2j_step_car_seat_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation drops the trademark symbol '™' from 'Click Connect™ mounts', which may imply a generic term rather than a branded, proprietary system, potentially altering legal or technical specificity."
+    },
+    {
+      "claim_id": "claim_r2j_step_car_seat_4",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters the meaning by implying a formal procedure context the original does not state."
+    },
+    {
+      "claim_id": "claim_r2j_step_car_seat_5",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters meaning by implying a formalized procedure step with identifiers and context not stated in the original."
+    },
+    {
+      "claim_id": "claim_r2j_step_belly_bar_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation merges two distinct instructions — 'Attach...' and 'CHECK...' — into a single action ('Attach...; check...'), implying they are part of one continuous step without emphasizing the CHECK as a separate verification step. The original explicitly uses 'CHECK' in all caps, signaling a mandatory verification, which the translation downgrades to a casual conjunction. This alters the procedural emphasis and intent."
+    },
+    {
+      "claim_id": "claim_r2j_step_belly_bar_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters the meaning by implying a formal procedure step with numbered sequence and part references, whereas the quote is a simple imperative instruction without any such context."
+    },
+    {
+      "claim_id": "claim_r2j_step_belly_bar_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (type, predicate, object with step_number, target_parts) not present in the quote, which alters the meaning by implying a formal procedure step with identifiers the source does not state."
+    },
+    {
+      "claim_id": "claim_r2j_step_harness_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters the meaning by implying a formalized procedure with numbered steps and specific components, whereas the quote is a simple imperative instruction without any procedural context or part labeling."
+    },
+    {
+      "claim_id": "claim_r2j_step_harness_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters meaning by implying context and structure the original does not state."
+    },
+    {
+      "claim_id": "claim_r2j_care_inspection",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits the imperative instruction to 'Replace or repair the parts as needed,' which is a critical action directive in the original. It also restructures the content into a schema that implies a static 'method' and 'restrictions' rather than conveying the active, conditional guidance of the source. This alters the operational meaning and removes user agency implied by 'as needed.'"
+    },
+    {
+      "claim_id": "claim_r2j_care_sun_exposure",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds a prescriptive restriction 'avoid excessive exposure to sun or heat' which is not stated in the original quote. The original only describes a potential consequence ('could cause'), not a directive or care instruction. This addition changes the meaning from a warning to a command."
+    },
+    {
+      "claim_id": "claim_r2j_care_wet_drying",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation replaces 'allow to dry thoroughly' with 'air dry thoroughly', which adds the specific method 'air' not present in the original. The original permits any drying method (e.g., towel, fan, sun) as long as it's thorough; the translation restricts it to air drying, altering the meaning."
+    },
+    {
+      "claim_id": "claim_r2j_care_beach_cleaning",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'method':'complete cleaning after beach use', which implies a specific procedure not stated in the quote; the quote only says 'completely clean your stroller afterward' without specifying it as a 'method' or labeling it as 'after beach use' as a standalone category. Also, 'beach_cleaning' as predicate overgeneralizes the context — the quote is a conditional instruction ('WHEN USING...'), not a standalone category."
+    },
+    {
+      "claim_id": "claim_r2j_care_cup_holder",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately captures the core meaning: the cup holder can be cleaned in a dishwasher with the restriction of top rack only. The structured format does not add or omit any factual conditions from the quote."
+    },
+    {
+      "claim_id": "claim_r2j_step_footrest_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the original quote, which alters the meaning by implying a formalized procedure with numbered steps and specific parts — information not stated or implied in the source."
+    },
+    {
+      "claim_id": "claim_r2j_step_footrest_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation incorrectly treats the entire quote as an 'action' field within an object, while the quote is a procedural instruction. The original does not specify step number, procedure name, or target parts — these are added by the translation, which alters meaning by imposing structure and metadata not present in the source."
+    },
+    {
+      "claim_id": "claim_r2j_step_cup_holder_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which changes the meaning by implying a formalized, numbered procedure with identified parts — information not stated or implied in the original instruction."
+    },
+    {
+      "claim_id": "claim_r2j_step_cup_holder_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters the meaning by implying a formalized procedure with numbered steps and part identifiers that the original does not state."
+    },
+    {
+      "claim_id": "claim_r2j_step_cup_holder_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (e.g., 'procedure', 'step_number', 'target_parts') not present in the source quote, which alters the meaning by implying a formal procedure step with numbered sequence and part references that the original does not state."
+    },
+    {
+      "claim_id": "claim_r2j_step_harness_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the original quote, which alters the meaning by implying a formalized procedure step with specific identifiers and targets, whereas the original is a plain instructional sentence without such categorization or enumeration."
+    },
+    {
+      "claim_id": "claim_r2j_step_harness_3pt_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters the meaning by implying a specific context (convert_to_3pt_harness) and step order that the original does not state."
+    },
+    {
+      "claim_id": "claim_r2j_step_harness_3pt_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters the meaning by implying context and structure the original does not state."
+    },
+    {
+      "claim_id": "claim_r2j_step_harness_3pt_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds procedural context ('procedure':'convert_to_3pt_harness', 'step_number':3) and structure ('target_parts') not present in the original quote, which is a simple imperative instruction without any step number, procedure name, or part list. This constitutes an addition of information that changes the meaning."
+    },
+    {
+      "claim_id": "claim_r2j_step_harness_3pt_4",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters the meaning by implying a specific context (3pt harness conversion, step 4) not stated in the original."
+    },
+    {
+      "claim_id": "claim_r2j_step_harness_3pt_5",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds procedural context ('procedure':'convert_to_3pt_harness', 'step_number':5, 'target_parts':['slide_adjuster','waist_straps']) not present in the source quote, which only states a general instruction without specifying a procedure, step number, or target parts."
+    },
+    {
+      "claim_id": "claim_r2j_step_harness_3pt_6",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters the meaning by implying a specific context (3pt harness conversion) and step sequence that the original quote does not state."
+    },
+    {
+      "claim_id": "claim_r2j_step_harness_height_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation preserves the exact instruction from the quote without adding, dropping, or altering any factual element; it merely structures the same content into a procedural format."
+    },
+    {
+      "claim_id": "claim_r2j_step_harness_height_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters meaning by implying context and structure the original does not state."
+    },
+    {
+      "claim_id": "claim_r2j_step_harness_height_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which implies specific system context and part names (e.g., 'adjust_harness_height', 'shoulder_straps', 'waist_straps') that are not stated or implied in the original text. This constitutes an addition of information and reinterpretation beyond the source."
+    }
+  ],
   "conflict_triage": []
 }

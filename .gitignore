@@ -5,3 +5,4 @@ graco_stroller_folding/
 .env
 .claude/
 system/staging/
+system/cache/

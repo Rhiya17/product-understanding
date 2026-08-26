@@ -38,10 +38,10 @@ def test_queue_ordering_unresolved_bucket_fences_and_human_skip(tmp_path):
     c2 = make_claim("claim_c2", "C2")
     unresolved_c0 = make_claim("claim_unresolved_c0", "C0")
     missing_c1 = make_claim("claim_missing_c1", "C1")
-    auto = make_claim("claim_auto", "C0")
+    eligible = make_claim("claim_eligible", "C0")
     human = make_claim("claim_human", "C3")
     claims = [alarm, conflict_a, conflict_b, c3, c2, unresolved_c0,
-              missing_c1, auto, human]
+              missing_c1, eligible, human]
     (pack / "claims.json").write_text(json.dumps(claims), encoding="utf-8")
     (pack / "gaps.json").write_text(json.dumps({
         "gaps": [{
@@ -54,7 +54,7 @@ def test_queue_ordering_unresolved_bucket_fences_and_human_skip(tmp_path):
         verdict("claim_conflict_a"), verdict("claim_conflict_b"),
         verdict("claim_c3"), verdict("claim_c2"),
         verdict("claim_unresolved_c0", "CANNOT_JUDGE", "unclear"),
-        verdict("claim_auto"), verdict("claim_human"),
+        verdict("claim_eligible"), verdict("claim_human"),
     ]
     (pack / "verdicts.json").write_text(json.dumps({
         "model": "qwen/qwen3-vl-235b-a22b-instruct",
@@ -68,8 +68,6 @@ def test_queue_ordering_unresolved_bucket_fences_and_human_skip(tmp_path):
     }), encoding="utf-8")
     (pack / "reviews.json").write_text(json.dumps({
         "reviews": [
-            {"claim_id": "claim_auto", "reviewer": "system:qwen-verifier-v1",
-             "scope": "verifier_auto", "disposition": "APPROVED_FOR_PUBLISH"},
             {"claim_id": "claim_human", "reviewer": "human@example.com",
              "scope": "manual", "disposition": "NEEDS_RECHECK"},
         ]
@@ -81,14 +79,14 @@ def test_queue_ordering_unresolved_bucket_fences_and_human_skip(tmp_path):
     assert result == {
         "product": "test-product", "alarms": 1, "conflicts": 1,
         "c3": 1, "c2": 1, "unresolved_verifier": 2,
-        "gaps": 1, "auto_approved": 1,
+        "gaps": 1, "batch_eligible": 1, "spot_audit_sample": 1,
         "path": str(pack / "review-queue.md"),
     }
     headings = [
         "## 1. MEANING_CHANGED alarms", "## 2. Unresolved conflict pairs",
         "## 3. C3 claims", "## 4. C2 claims",
         "## 5. Unresolved verifier — C0/C1", "## 6. Open gaps",
-        "## 7. Auto-approved spot-audit",
+        "## 7. Batch-eligible C0/C1 spot-audit",
     ]
     positions = [text.index(heading) for heading in headings]
     assert positions == sorted(positions)
@@ -96,6 +94,8 @@ def test_queue_ordering_unresolved_bucket_fences_and_human_skip(tmp_path):
     assert "claim_missing_c1" in text
     assert "one or more binding verdicts are missing" in text
     assert "claim_human" not in text
+    assert "claim_eligible" in text
+    assert "Spot-audit sample: `1` of `1` eligible claims." in text
     assert "```text\nA | B\nsecond line\n```" in text
     assert "```json" in text
 
@@ -115,3 +115,14 @@ def test_partial_status_routes_all_unreviewed_c0_c1_to_unresolved(tmp_path):
     text = (pack / "review-queue.md").read_text()
     assert result["unresolved_verifier"] == 2
     assert text.count("document status is PARTIAL") == 2
+
+
+def test_spot_audit_sample_is_stable_and_limited_to_five():
+    claims = [make_claim(f"claim_{index}", "C0") for index in range(12)]
+    first = review_queue.spot_audit_sample("test-product", claims)
+    second = review_queue.spot_audit_sample("test-product", list(reversed(claims)))
+
+    assert len(first) == 5
+    assert [claim["claim_id"] for claim in first] == [
+        claim["claim_id"] for claim in second
+    ]

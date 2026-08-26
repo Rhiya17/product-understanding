@@ -1,9 +1,433 @@
 {
   "model": "qwen/qwen3-vl-235b-a22b-instruct",
   "prompt_version": "v1",
-  "date": "2026-08-24",
-  "status": "FAILED",
-  "reason": "Provider verification was unavailable; no bindings were verified.",
-  "verdicts": [],
-  "conflict_triage": []
+  "date": "2026-08-26",
+  "status": "COMPLETE",
+  "verdicts": [
+    {
+      "claim_id": "claim_bqcu2_battery_life_anc_on_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately captures the exact conditions (noise cancellation On, immersive audio Off), unit (hours), and value (30) from the quote without adding, dropping, or altering any meaning."
+    },
+    {
+      "claim_id": "claim_bqcu2_battery_life_anc_immersive_on_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately reflects the exact quote: 23 hours battery life under the specified conditions (noise cancellation On, immersive audio On), with no added, dropped, or altered meaning."
+    },
+    {
+      "claim_id": "claim_bqcu2_battery_life_all_off_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately reflects the exact quote: 45 hours with both noise cancellation and immersive audio set to Off, matching the conditions, unit, and value without adding or omitting any qualifiers."
+    },
+    {
+      "claim_id": "claim_bqcu2_full_charge_time_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the qualifier 'charging is slower while headphones are in use', which is not mentioned in the original quote. This introduces new conditional information not present in the source, altering the meaning."
+    },
+    {
+      "claim_id": "claim_bqcu2_quick_charge_playback_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully captures all key elements: 15-minute charge, low battery condition, noise cancellation On, immersive audio Off, and 3 hours playback — matching the quote exactly without adding or omitting qualifiers, units, or conditions."
+    },
+    {
+      "claim_id": "claim_bqcu2_quick_charge_playback_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "Translation adds 'per Bose April 2025 test footnote' which is not in the original quote; also restructures conditions into a single string, potentially altering emphasis or omitting explicit sequencing (e.g., 'resuming audio playback' after charge); original specifies '3-band EQ set to zero' which is dropped in translation."
+    },
+    {
+      "claim_id": "claim_bqcu2_bluetooth_device_name_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'replaced by any name set in the Bose app', which is not stated in the quote. The quote only says the default name appears if no name is set — it does not mention the Bose app or replacement behavior."
+    },
+    {
+      "claim_id": "claim_bqcu2_bluetooth_range_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation reduces the original conditional requirement ('must be within range and powered on') to only 'bluetooth_range', omitting the critical condition that devices must also be 'powered on'."
+    },
+    {
+      "claim_id": "claim_bqcu2_multipoint_max_active_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits 'by default' and 'at a time', implying the limit is absolute rather than the default behavior, and drops the temporal qualifier 'at a time', which may imply concurrency — altering the condition under which the specification applies."
+    },
+    {
+      "claim_id": "claim_bqcu2_device_list_capacity_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits the critical detail that headphones can be actively connected to up to two devices at a time (multi-point connection), reducing the specification to only storage capacity. This drops a key functional constraint and misrepresents the product’s behavior."
+    },
+    {
+      "claim_id": "claim_bqcu2_box_contents_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation drops the registered trademark symbol '®' from 'USB-C®', altering the legal and branding specificity of the original quote."
+    },
+    {
+      "claim_id": "claim_bqcu2_aux_cable_spec_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'aux_cable_type' as a predicate and 'SPEC' as type, which are not in the quote; it also rephrases 'listen to audio from your source device' as 'wired listening', which is a generalization not present in the original and may imply broader usage than stated."
+    },
+    {
+      "claim_id": "claim_bqcu2_usb_audio_support_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately reflects that the headphones support USB-C audio, with no added, dropped, or altered qualifiers, numbers, units, or conditions."
+    },
+    {
+      "claim_id": "claim_bqcu2_custom_modes_max_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately reflects the exact quote: four pre-configured modes are listed, and up to seven custom modes can be created."
+    },
+    {
+      "claim_id": "claim_bqcu2_aptx_adaptive_codec_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds a condition ('when connected to a Snapdragon Sound-certified device') not present in the quote, which restricts the behavior to a specific device type, whereas the quote states the behavior occurs automatically upon connecting headphones without any such qualification."
+    },
+    {
+      "claim_id": "claim_bqcu2_bluetooth_version_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately captures the exact version number '5.4' and correctly identifies it as a Bluetooth specification without adding, dropping, or altering any meaning."
+    },
+    {
+      "claim_id": "claim_bqcu2_step_pairing_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds '(pairing mode)' which is not mentioned in the original quote; this implies a specific functional state not stated in the source, altering the meaning."
+    },
+    {
+      "claim_id": "claim_bqcu2_step_pairing_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'source device' which is not in the original quote; the original says 'your device', which is generic and does not specify 'source' as a role in a pairing context. This introduces a new qualifier that changes the meaning."
+    },
+    {
+      "claim_id": "claim_bqcu2_step_pairing_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds specific product names (BOSE QC ULTRA 2 HP) and mentions the Bose app, which are not present in the original quote. It also adds procedural context (bluetooth_pairing, step_number, target_parts) not stated in the source, altering the meaning by introducing unverified details."
+    },
+    {
+      "claim_id": "claim_bqcu2_step_store_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds specific target parts ('left_earcup', 'right_earcup') and procedural context ('store_headphones', 'step_number':1) not present in the original quote, which only generically instructs to 'Place your hands around each earcup' without specifying which earcup or for what procedure."
+    },
+    {
+      "claim_id": "claim_bqcu2_step_store_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote. The quote is a simple imperative instruction; the translation frames it as a formal procedure step with identifiers and parts, which changes its meaning by implying context, structure, and purpose not stated."
+    },
+    {
+      "claim_id": "claim_bqcu2_step_store_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters the meaning by implying a formal procedure context the original does not state."
+    },
+    {
+      "claim_id": "claim_bqcu2_step_store_4",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully preserves the exact instruction from the quote without adding, dropping, or altering any detail; the structured format does not change the meaning."
+    },
+    {
+      "claim_id": "claim_bqcu2_step_clearlist_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters meaning by implying context and structure the original does not specify."
+    },
+    {
+      "claim_id": "claim_bqcu2_step_clearlist_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation incorrectly states 'Delete the headphones from the Bluetooth list on each previously-connected device,' implying the headphones are deleted from the list on those other devices. The original quote instructs to delete the headphones from the Bluetooth list on 'your device' and to repeat this action for each previously-connected device — meaning the user's own device, not the other devices. This misattributes the location of the deletion action, changing the meaning."
+    },
+    {
+      "claim_id": "claim_bqcu2_step_aux_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'audio' to 'cable', specifying a type not present in the original quote, which simply says 'cable'. This introduces an unwarranted qualifier that changes the meaning by implying a specific cable type."
+    },
+    {
+      "claim_id": "claim_bqcu2_step_aux_2",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation drops 'your' before 'source device', which changes the meaning by removing the possessive qualifier that implies the device belongs to the user. This is a subtle but meaningful change in instruction context."
+    },
+    {
+      "claim_id": "claim_bqcu2_step_usbaudio_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully preserves the exact instruction from the quote without adding, dropping, or altering any detail such as actor, object, direction, or condition."
+    },
+    {
+      "claim_id": "claim_bqcu2_step_usbaudio_2",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully preserves the exact wording and meaning of the quote, including all actors, actions, objects, and examples without adding, dropping, or altering any qualifiers, numbers, units, or conditions."
+    },
+    {
+      "claim_id": "claim_bqcu2_step_usbaudio_3",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds specific procedural details (connect_usb_audio, step_number: 3, target_parts: bluetooth_power_button) not present in the source quote, which only generically instructs to 'Power on the headphones (see page 14)'. These additions alter the meaning by implying a specific method, sequence, and component, which the source does not specify."
+    },
+    {
+      "claim_id": "claim_bqcu2_part_controls_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds specific details (Bluetooth/Power button, Multi-function button, volume strip) not present in the original quote, which only generically refers to 'headphone controls' without specifying their types or functions."
+    },
+    {
+      "claim_id": "claim_bqcu2_part_status_light_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation 'The status light is on the left earcup.' faithfully conveys the meaning of the exact quote 'The status light is located on the left earcup.' — 'located on' and 'on' are semantically equivalent in this context, and no meaning-altering changes (e.g., number, unit, direction, actor, condition, qualifier) are present."
+    },
+    {
+      "claim_id": "claim_bqcu2_part_usb_c_port_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote instructs to connect a USB-C cable to the port on the left earcup, implying an action; the translation only states the port's location without mentioning the connection action, thus omitting a key directive."
+    },
+    {
+      "claim_id": "claim_bqcu2_part_aux_port_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds specific location details (left earcup, labeled in controls diagram, aux procedure connects cable) not present in the source quote, which only states '2.5 mm AUX audio port' without any spatial or procedural context."
+    },
+    {
+      "claim_id": "claim_bqcu2_part_call_microphones_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the number, location, and purpose of the microphones as stated in the exact quote: four microphones on the front, two per earcup, for phone calls. No meaning-altering changes are present."
+    },
+    {
+      "claim_id": "claim_bqcu2_part_serial_number_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds specific instructions ('under the inner fabric', 'ear cushion and fabric must be peeled back to view it') not present in the quote, which alters the meaning by implying a required action and location detail not stated."
+    },
+    {
+      "claim_id": "claim_bqcu2_warning_hearing_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the core warning about avoiding high volume to prevent hearing damage, the sequence of actions (turn down before placing, then raise gradually), and the target outcome (comfortable, moderate level). No meaning-altering changes in number, unit, direction, actor, condition, or qualifier are present."
+    },
+    {
+      "claim_id": "claim_bqcu2_warning_vehicle_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds a new instruction: 'stop use immediately if the headphones interfere with attentiveness or hearing alarms and warning signals,' which is not present in the original quote. The original only advises caution and following applicable laws, without specifying an immediate cessation condition."
+    },
+    {
+      "claim_id": "claim_bqcu2_warning_awareness_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "Translation drops 'to yourself or others' from the original, narrowing the scope of danger from including others to only situational awareness, which alters the intended safety warning."
+    },
+    {
+      "claim_id": "claim_bqcu2_warning_hinge_pinch_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation replaces 'placing the headphones in the case and removing from the case' with 'casing the headphones', which is ambiguous and omits the explicit instruction to handle removal. This drops a critical action (removal) and changes the scope of the directive, altering the meaning."
+    },
+    {
+      "claim_id": "claim_bqcu2_warning_not_for_children_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully preserves the core meaning of the quote: that the product is not intended for use by children. The added 'hazard_type' and 'type' fields are metadata for categorization and do not alter the factual claim. No number, unit, direction, actor, condition, or qualifier is changed or added that affects the original meaning."
+    },
+    {
+      "claim_id": "claim_bqcu2_warning_choking_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the meaning of the original quote: it conveys that the product contains small parts posing a choking hazard and is not suitable for children under 3. No numbers, units, actors, conditions, or qualifiers are altered or added. The structured format does not change the semantic content."
+    },
+    {
+      "claim_id": "claim_bqcu2_warning_magnetic_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "Translation drops the conditional 'whether this might affect' and replaces it with a direct instruction to 'consult a physician about effects', implying certainty of risk rather than possibility, altering the original cautionary nuance."
+    },
+    {
+      "claim_id": "claim_bqcu2_warning_battery_removal_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'removal must be done by a Bose retailer or other qualified professional,' which is not stated in the quote; the quote only says to 'Contact... for removal,' implying a request for service, not a mandatory assignment of the action to those parties."
+    },
+    {
+      "claim_id": "claim_bqcu2_warning_unusual_noise_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation merges the two separate instructions ('turn the headphones off' and 'contact Bose customer service') into a single compound sentence without preserving the conditional sequence: the original requires turning off ONLY if the noise happens, while the translation implies both actions follow the condition simultaneously without clarifying that turning off is the immediate response to the noise event. Also, the original uses 'Do NOT use' as a prohibition, while the translation softens it to 'Do not use', which may imply advisory rather than imperative tone — though minor, this affects compliance urgency in safety context."
+    },
+    {
+      "claim_id": "claim_bqcu2_care_clean_exterior_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation drops the conditional 'If...need to be cleaned', making the instruction unconditional, which changes the meaning by implying the action is always required rather than situational."
+    },
+    {
+      "claim_id": "claim_bqcu2_care_no_cleaning_products_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves all key instructions: use only water-dampened cloth, prohibit cleaning products, and prevent moisture entry via ports or earcups. No meaning-altering changes in actor, condition, direction, unit, or qualifier. The added semicolon and 'let' instead of 'allow' are stylistic and do not alter meaning."
+    },
+    {
+      "claim_id": "claim_bqcu2_care_firmware_update_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds information not in the quote: that updates can also be run from the Bose updater website (btu.Bose.com). The original quote only mentions automatic updates via the Bose app, with no reference to an alternative method."
+    },
+    {
+      "claim_id": "claim_bqcu2_state_connected_light_5s_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured fields ('light_activity', 'system_state') and a predicate ('bluetooth_connected_indicator') not present in the quote; the original is a simple status description, not a formal state object with typed predicates."
+    },
+    {
+      "claim_id": "claim_bqcu2_state_connected_light_10s_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation implies the light activity is specifically a 'bluetooth_connected_indicator', which is not stated in the quote. The quote only says 'Once connected' without specifying Bluetooth or any other connection type, thus adding unmentioned specificity."
+    },
+    {
+      "claim_id": "claim_bqcu2_state_pairing_light_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds structured fields ('light_activity', 'system_state', 'predicate', 'type') and implies a Bluetooth pairing context not present in the quote, which only states 'Pulsing blue Ready to connect' without specifying Bluetooth or system state semantics."
+    },
+    {
+      "claim_id": "claim_bqcu2_state_charging_light_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately reflects the original quote: the status light is solid amber during charging and solid white when fully charged, with no added, dropped, or altered details."
+    },
+    {
+      "claim_id": "claim_bqcu2_state_default_power_on_mode_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the condition 'after settings are changed, the headphones power on with the last settings used', which is not mentioned in the quote. The quote states a simple default behavior without any conditional or historical dependency."
+    },
+    {
+      "claim_id": "claim_bqcu2_state_lay_flat_disconnect_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds a condition not in the quote: 'in any other orientation they disconnect after 10 minutes.' The original only specifies disconnection after 3 seconds under two conditions (earcups laid flat or stored in case) and says nothing about other orientations or a 10-minute timeout."
+    },
+    {
+      "claim_id": "claim_bqcu2_state_auto_sleep_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "Translation adds 'wake by putting them on or pressing the Bluetooth/Power button,' which is not stated in the quote and introduces new behavioral information not present in the source."
+    },
+    {
+      "claim_id": "claim_bqcu2_limit_single_audio_stream_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'multi-point connection: two devices connected' which is not stated in the quote. The quote only restricts playing audio from one device at a time, without specifying that two devices are connected or that this is a multi-point scenario. This addition changes the meaning by implying a specific setup not mentioned in the source."
+    },
+    {
+      "claim_id": "claim_bqcu2_compat_fast_pair_android_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'with Bluetooth and Location features enabled' as a requirement, which is not stated in the original quote. The original only specifies Android 6.0 or higher; adding unmentioned conditions changes the meaning."
+    },
+    {
+      "claim_id": "claim_bqcu2_compat_snapdragon_sound_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'aptX Adaptive' as a feature under 'Snapdragon Sound', which is not mentioned in the source quote and introduces unverified technical specificity."
+    },
+    {
+      "claim_id": "claim_bqcu2_compat_bose_speakers_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'SimpleSync' as a feature and lists specific models not mentioned in the quote, implying a technical requirement or limitation absent from the original. The quote states general compatibility with any Bose Smart Speaker or Soundbar; the translation narrows it to devices supporting SimpleSync and enumerates models, altering scope and conditions."
+    },
+    {
+      "claim_id": "claim_bqcu2_bluetooth_version_2",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately captures the Bluetooth version as 5.4 without adding, dropping, or altering any qualifiers, numbers, units, or conditions."
+    },
+    {
+      "claim_id": "claim_bqcu2_spec_headphone_weight_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'headphones only, without case' and metric conversion (264g), which are not stated in the quote; the quote only gives dimensions and weight without specifying exclusion of case or providing metric equivalents."
+    },
+    {
+      "claim_id": "claim_bqcu2_spec_headphone_weight_1",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "Translation adds 'without case' which is not stated in the quote; quote only says 'Headphones only', which may or may not imply exclusion of case."
+    },
+    {
+      "claim_id": "claim_bqcu2_spec_usb_audio_format_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'USB-C' and 'lossless' which are not mentioned in the quote; the quote only states capability to receive audio signals at specified bit depth and sample rates from compatible source files, without specifying interface or quality type."
+    },
+    {
+      "claim_id": "claim_bqcu2_spec_usb_audio_format_1",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "Translation omits 'from compatible source files', implying the device always outputs lossless audio at those specs regardless of source, which contradicts the conditional in the quote."
+    },
+    {
+      "claim_id": "claim_bqcu2_spec_usbc_cable_length_1",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately reflects the exact quote: 'USB-C to USB-C cable (39 in)' is correctly parsed as an included cable with length 39 inches, matching the source without adding, dropping, or altering any meaning."
+    },
+    {
+      "claim_id": "claim_bqcu2_bluetooth_range_33ft_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The quote presents two conflicting values (~30 ft vs. up to 33 ft) from different sources, while the translation asserts only the 33 ft value with 'up to', ignoring the discrepancy and the approximate nature of the first value."
+    }
+  ],
+  "conflict_triage": [
+    {
+      "pair": [
+        "claim_bqcu2_bluetooth_range_1",
+        "claim_bqcu2_bluetooth_range_33ft_1"
+      ],
+      "result": "DIFFERENT_SCOPE_OR_EVENT",
+      "note": "Claim A refers to operational range for reconnection behavior in user instructions, while Claim B reports published specification ranges from product and support pages, which may reflect testing conditions or marketing phrasing rather than real-time usage constraints.",
+      "context_sha256": "8d6d7ab65631571901425fb3ee6018a732f2ea77447fb19fbd43fbecc7b084e5"
+    },
+    {
+      "pair": [
+        "claim_bqcu2_quick_charge_playback_1",
+        "claim_bqcu2_quick_charge_playback_2"
+      ],
+      "result": "GENUINE_CONFLICT",
+      "note": "Claim A states a 15-minute charge provides up to 3 hours of playback, while Claim B's detailed test notes the same 15-minute charge yields only up to 2.5 hours under identical conditions, creating a direct numerical contradiction.",
+      "context_sha256": "67c140daa1494b58bf6f17e92c30064732fa71958756d38d283fcefba1791e61"
+    },
+    {
+      "pair": [
+        "claim_bqcu2_state_connected_light_10s_1",
+        "claim_bqcu2_state_connected_light_5s_1"
+      ],
+      "result": "DIFFERENT_SCOPE_OR_EVENT",
+      "note": "Claim A describes the status light behavior immediately after a successful Bluetooth connection (10 seconds solid blue), while Claim B describes the general Bluetooth status indicator duration (5 seconds solid blue) when checking status, likely under different conditions or contexts.",
+      "context_sha256": "04ec0ebd23f3d6ecc418a9fc2cc1a1598c7087e0d3e15ed3eb17a87eb708c335"
+    }
+  ]
 }

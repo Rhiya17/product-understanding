@@ -1,9 +1,291 @@
 {
   "model": "qwen/qwen3-vl-235b-a22b-instruct",
   "prompt_version": "v1",
-  "date": "2026-08-24",
-  "status": "FAILED",
-  "reason": "Provider verification was unavailable; no bindings were verified.",
-  "verdicts": [],
+  "date": "2026-08-26",
+  "status": "COMPLETE",
+  "verdicts": [
+    {
+      "claim_id": "claim_mba_spec_height",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully preserves the height values in both inches (0.44) and centimeters (1.13) with correct units and no added, dropped, or altered qualifiers."
+    },
+    {
+      "claim_id": "claim_mba_spec_height",
+      "binding_index": 1,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully preserves the exact values and units from the quote: 0.44 in and 1.13 cm for height (closed), with no added, dropped, or altered qualifiers."
+    },
+    {
+      "claim_id": "claim_mba_spec_width",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the width values and units from the quote: 11.97 inches and 30.41 cm, with correct unit labels and no added or dropped qualifiers."
+    },
+    {
+      "claim_id": "claim_mba_spec_width",
+      "binding_index": 1,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the width values and units (11.97 in and 30.41 cm) without adding, dropping, or altering any qualifiers, numbers, or units from the source."
+    },
+    {
+      "claim_id": "claim_mba_spec_depth",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the depth value in both inches (8.46) and centimeters (21.5) as stated in the quote, with no added, dropped, or altered qualifiers, units, or values."
+    },
+    {
+      "claim_id": "claim_mba_spec_depth",
+      "binding_index": 1,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully preserves the depth value in both inches (8.46) and centimeters (21.5) as stated in the quote, with no added, dropped, or altered qualifiers, units, or values."
+    },
+    {
+      "claim_id": "claim_mba_spec_weight",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully preserves all elements: the weight values in both lb and kg, the note about variation by configuration, and the predicate 'product_weight'. No meaning is altered or added."
+    },
+    {
+      "claim_id": "claim_mba_spec_weight",
+      "binding_index": 1,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves all elements: both imperial and metric values (2.7 lb, 1.24 kg), the note 'varies by configuration', and the predicate 'product_weight'. No meaning is added, dropped, or altered."
+    },
+    {
+      "claim_id": "claim_mba_spec_bluetooth_version",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately reflects the exact quote 'Bluetooth 5.3' by encoding it as a specification with standard 'Bluetooth' and value '5.3', without adding, dropping, or altering any meaning."
+    },
+    {
+      "claim_id": "claim_mba_spec_bluetooth_version",
+      "binding_index": 1,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately reflects the exact quote 'Bluetooth 5.3' by structuring it as a specification with standard 'Bluetooth' and value '5.3', preserving the meaning without adding or omitting any information."
+    },
+    {
+      "claim_id": "claim_mba_spec_wifi_standard",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation reverses the relationship: it treats 'Wi-Fi 6E' as the value and '802.11ax' as the standard, implying Wi-Fi 6E is a value of the standard — but the quote presents them as synonymous identifiers, not a value-standard pair."
+    },
+    {
+      "claim_id": "claim_mba_spec_wifi_standard",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation reverses the relationship: it presents 'Wi-Fi 6E' as the value and '802.11ax' as the standard, implying Wi-Fi 6E is an instance or value of 802.11ax — but the quote treats them as synonymous labels for the same thing, not a value-standard pair."
+    },
+    {
+      "claim_id": "claim_mba_spec_colors",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately lists the exact color names from the quote as available colors without adding, dropping, or altering any meaning."
+    },
+    {
+      "claim_id": "claim_mba_spec_colors",
+      "binding_index": 1,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately reflects the exact colors listed in the quote without adding, dropping, or altering any details."
+    },
+    {
+      "claim_id": "claim_mba_spec_model_identifier",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the exact model identifier 'Mac15,12' and correctly labels it as a 'model_identifier' under 'SPEC' type, with no added, dropped, or altered information."
+    },
+    {
+      "claim_id": "claim_mba_spec_model_identifier",
+      "binding_index": 1,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the model identifier 'Mac15,12' as the object value with the predicate 'model_identifier', matching the exact quote without adding, dropping, or altering any detail."
+    },
+    {
+      "claim_id": "claim_mba_spec_speaker_system",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds specific speaker composition ('two tweeters, two woofers') not mentioned in the quote, which only states 'four-speaker sound system' without specifying types or configuration."
+    },
+    {
+      "claim_id": "claim_mba_spec_speaker_system",
+      "binding_index": 1,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately reflects the exact quote: it specifies the four-speaker system and breaks it down into two tweeters and two woofers, matching the source without adding, dropping, or altering any detail."
+    },
+    {
+      "claim_id": "claim_mba_spec_audio_playback_formats",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately lists the exact same audio formats as the quote without adding, dropping, or altering any values, qualifiers, or conditions."
+    },
+    {
+      "claim_id": "claim_mba_spec_headphone_jack_impedance",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation faithfully preserves the exact wording and meaning of the quote, including the specification of '3.5 mm headphone jack with advanced support for high-impedance headphones' without adding, dropping, or altering any detail."
+    },
+    {
+      "claim_id": "claim_mba_spec_headphone_jack_impedance",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds '3.5 mm headphone jack' and 'advanced support', which are not mentioned in the quote; the quote only states support for high-impedance headphones without specifying jack type or level of support."
+    },
+    {
+      "claim_id": "claim_mba_spec_microphone_array",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation incorrectly implies that 'directional beamforming', 'Voice Isolation', and 'Wide Spectrum' are features of the 'three-mic array' as separate attributes, whereas the quote presents them as modes or capabilities associated with the array — not distinct features owned by it. This misattributes structure and relationship, altering meaning."
+    },
+    {
+      "claim_id": "claim_mba_spec_spatial_audio",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'support' as a predicate and implies a boolean value 'true', which is not stated in the quote; the quote merely describes a feature context without asserting support or functionality."
+    },
+    {
+      "claim_id": "claim_mba_spec_display_type",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately captures all elements from the quote: 'Liquid Retina display' as the display type, '13.6-inch diagonal' as diagonal_in, 'LED-backlit' as backlight, and 'IPS technology' as panel. No meaning is added, dropped, or altered."
+    },
+    {
+      "claim_id": "claim_mba_spec_display_resolution",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the exact pixel dimensions (2560x1664) and ppi (224) from the quote without adding, dropping, or altering any qualifiers or values."
+    },
+    {
+      "claim_id": "claim_mba_spec_battery_capacity",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the chemistry (lithium-polymer), unit (Wh), and value (52.6) from the quote, and correctly labels it as battery capacity under SPEC type without adding or omitting any meaning."
+    },
+    {
+      "claim_id": "claim_mba_spec_battery_life",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation omits the critical qualifier 'up to', implying exact battery life values rather than maximum estimates, which alters the meaning."
+    },
+    {
+      "claim_id": "claim_mba_spec_fast_charge",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds '(optional)' to the 70W USB-C Power Adapter, which is not stated in the quote; the quote implies the adapter is required for fast charging, while the translation suggests it is optional."
+    },
+    {
+      "claim_id": "claim_mba_spec_fast_charge",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation implies the device inherently supports fast charging only if the optional adapter is used, while the quote states that fast charging (up to 50% in ~30 min) is achievable with the optional adapter — not that support depends on it. The quote does not claim the feature is conditional on the adapter; it merely specifies what adapter enables that performance. The translation misrepresents the dependency."
+    },
+    {
+      "claim_id": "claim_mba_spec_cpu",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately reflects the exact quote: 8 total cores, split into 4 performance and 4 efficiency cores, with no added, dropped, or altered details."
+    },
+    {
+      "claim_id": "claim_mba_spec_camera",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation drops the critical detail about the 'advanced image signal processor with computational video', reducing the specification to only the camera resolution and type, thereby omitting key technical capabilities described in the quote."
+    },
+    {
+      "claim_id": "claim_mba_spec_thunderbolt_capabilities",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately reflects the exact quote: two ports with identical listed capabilities, including charging, DisplayPort, Thunderbolt 3 (up to 40Gb/s), and USB 4 (up to 40Gb/s), without adding or omitting any qualifiers or details."
+    },
+    {
+      "claim_id": "claim_mba_spec_memory_options",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "Translation omits that the 8GB base config is configurable to 16GB or 24GB, and incorrectly implies 16GB is the base with only 24GB as configurable option, altering configuration scope."
+    },
+    {
+      "claim_id": "claim_mba_spec_storage_options",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the base storage (256GB SSD) and the configurable options (512GB, 1TB, 2TB) without adding, dropping, or altering any meaning."
+    },
+    {
+      "claim_id": "claim_mba_spec_newest_compatible_os",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds a specific date '2026-08-20' not present in the quote, which changes the meaning by implying a precise retrieval timestamp not stated in the original."
+    },
+    {
+      "claim_id": "claim_mba_spec_box_contents",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the word 'config' after GPU and storage specifications, which is not present in the original quote and implies a configurational context not stated."
+    },
+    {
+      "claim_id": "claim_mba_spec_operating_temperature",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately preserves the operating temperature range in both Fahrenheit and Celsius, with no added, dropped, or altered values or qualifiers."
+    },
+    {
+      "claim_id": "claim_mba_spec_launch_price",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately reflects the quote: orders began March 4, 2024; availability started March 8, 2024; launch price is $1,099 USD. No meaning change."
+    },
+    {
+      "claim_id": "claim_mba_part_magsafe_port",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'next to the two Thunderbolt / USB 4 ports,' which is not mentioned in the original quote and introduces new spatial information not present in the source."
+    },
+    {
+      "claim_id": "claim_mba_part_magsafe_port",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds specific spatial details (e.g., 'front-most position toward the hinge end', 'next to the two Thunderbolt / USB 4 ports') not present in the quote, which only states 'Left' as the side. This constitutes an unwarranted expansion of meaning."
+    },
+    {
+      "claim_id": "claim_mba_part_thunderbolt_ports",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'MagSafe 3 port' which is not specified in the quote; the original only says 'MagSafe', so specifying '3' introduces an unverified detail that changes the meaning."
+    },
+    {
+      "claim_id": "claim_mba_part_thunderbolt_ports",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'next to the MagSafe 3 port' which is not mentioned in the quote, introducing new spatial information not present in the source."
+    },
+    {
+      "claim_id": "claim_mba_part_headphone_jack",
+      "binding_index": 0,
+      "verdict": "ENTAILED",
+      "note": "The translation accurately reflects the quote: the 3.5 mm headphone jack is on the right side and is the only port there; no meaning change."
+    },
+    {
+      "claim_id": "claim_mba_part_headphone_jack",
+      "binding_index": 1,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds the claim that the headphone jack is 'the only port on that side,' which is not stated in the quote and introduces unsupported information."
+    },
+    {
+      "claim_id": "claim_mba_part_touch_id",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'the power button' as an appositive to 'Touch ID', implying Touch ID is the power button, while the quote only says 'Touch ID (power button)' — a label or identifier, not a definition. This rephrasing changes the semantic relationship and could mislead the reader into thinking Touch ID and the power button are the same physical component, which the original does not assert."
+    },
+    {
+      "claim_id": "claim_mba_step_charge_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'into the MagSafe 3 port', which is not mentioned in the original quote. The original only says 'Plug in the included USB-C Power Adapter' without specifying any port, so this addition changes the meaning by introducing an unsupported detail."
+    },
+    {
+      "claim_id": "claim_mba_step_power_on_1",
+      "binding_index": 0,
+      "verdict": "MEANING_CHANGED",
+      "note": "The translation adds 'Touch ID (power button)' and 'laptop', which are not mentioned in the quote. The quote only says 'top-right of keyboard' without specifying the button type or device type, so adding these details changes the meaning."
+    }
+  ],
   "conflict_triage": []
 }

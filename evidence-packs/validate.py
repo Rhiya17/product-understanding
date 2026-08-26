@@ -338,12 +338,27 @@ def validate_pack(claims_path):
     # ---- review layer (human decisions; claims themselves stay CANDIDATE) ----
     reviews_path = os.path.join(pack_dir, "reviews.json")
     review_count = 0
+    reviewed_claim_ids = set()
     if os.path.exists(reviews_path):
         for r in load_json(reviews_path).get("reviews", []):
             rid = r.get("review_id", "<unnamed review>")
-            if r.get("claim_id") not in seen_ids:
+            claim_id = r.get("claim_id")
+            if not r.get("review_id"):
+                errors.append("reviews.json: review missing review_id")
+            if not r.get("scope"):
+                errors.append(f"reviews.json: {rid} missing scope")
+            reviewer = r.get("reviewer")
+            if isinstance(reviewer, str) and reviewer.startswith("system:"):
+                errors.append(
+                    f"reviews.json: {rid} has system reviewer; publication "
+                    "dispositions require explicit human confirmation")
+            if claim_id in reviewed_claim_ids:
+                errors.append(
+                    f"reviews.json: multiple current dispositions for {claim_id}")
+            reviewed_claim_ids.add(claim_id)
+            if claim_id not in seen_ids:
                 errors.append(f"reviews.json: {rid} references unknown claim_id "
-                              f"{r.get('claim_id')}")
+                              f"{claim_id}")
             if r.get("disposition") not in ALLOWED_DISPOSITIONS:
                 errors.append(f"reviews.json: {rid} has invalid disposition "
                               f"{r.get('disposition')}")

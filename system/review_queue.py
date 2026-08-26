@@ -2,6 +2,7 @@
 """Render ordered, human-readable evidence-pack review queues."""
 
 import argparse
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -28,13 +29,18 @@ def human_reviewed_claims(reviews):
     }
 
 
-def auto_approvals(reviews):
-    return {
-        review.get("claim_id"): review for review in reviews
-        if review.get("reviewer") == "system:qwen-verifier-v1"
-        and review.get("scope") == "verifier_auto"
-        and review.get("disposition") == "APPROVED_FOR_PUBLISH"
-    }
+SPOT_AUDIT_SIZE = 5
+
+
+def spot_audit_sample(product, claims, size=SPOT_AUDIT_SIZE):
+    """Select a stable, auditable pseudo-random sample from eligible claims."""
+    ranked = sorted(
+        claims,
+        key=lambda claim: hashlib.sha256(
+            f"review-completion-v1\0{product}\0{claim['claim_id']}".encode()
+        ).hexdigest(),
+    )
+    return ranked[:size]
 
 
 def conflict_pairs(claims):
@@ -132,7 +138,6 @@ def render_pack(pack_dir):
     reviews_doc = load_json(pack_dir / "reviews.json", {"reviews": []})
     reviews = reviews_doc.get("reviews", [])
     human = human_reviewed_claims(reviews)
-    approved = auto_approvals(reviews)
     by_id = {claim["claim_id"]: claim for claim in claims}
 
     verdict_entries = verdicts_doc.get("verdicts", []) \
@@ -174,15 +179,25 @@ def render_pack(pack_dir):
         claim_id = claim["claim_id"]
         if claim.get("consequence_ceiling") not in {"C0", "C1"}:
             continue
-        if claim_id in human | alarm_ids | conflict_ids or claim_id in approved:
+        if claim_id in human | alarm_ids | conflict_ids:
             continue
         reason = unresolved_reason(
             claim, verification_status, verdicts_by_claim.get(claim_id, []))
         if reason:
             unresolved.append((claim, reason))
 
-    auto_claims = [by_id[claim_id] for claim_id in approved
-                   if claim_id in by_id and claim_id not in human]
+    batch_eligible = []
+    for claim in claims:
+        claim_id = claim["claim_id"]
+        if claim.get("consequence_ceiling") not in {"C0", "C1"}:
+            continue
+        if claim_id in human | alarm_ids | conflict_ids:
+            continue
+        if unresolved_reason(
+                claim, verification_status,
+                verdicts_by_claim.get(claim_id, [])) is None:
+            batch_eligible.append(claim)
+    audit_sample = spot_audit_sample(product, batch_eligible)
     open_gaps = gaps_doc.get("gaps", []) if isinstance(gaps_doc, dict) else []
 
     sections = []
@@ -192,7 +207,7 @@ def render_pack(pack_dir):
     sections.append(("4. C2 claims", c2))
     sections.append(("5. Unresolved verifier — C0/C1", unresolved))
     sections.append(("6. Open gaps", open_gaps))
-    sections.append(("7. Auto-approved spot-audit", auto_claims))
+    sections.append(("7. Batch-eligible C0/C1 spot-audit", audit_sample))
 
     lines = [
         f"# Review Queue — {product}",
@@ -204,7 +219,8 @@ def render_pack(pack_dir):
         "",
     ]
     for section_index, (title, items) in enumerate(sections, 1):
-        lines.extend([f"## {title} ({len(items)})", ""])
+        item_count = len(batch_eligible) if section_index == 7 else len(items)
+        lines.extend([f"## {title} ({item_count})", ""])
         if not items:
             lines.extend(["None.", ""])
             continue
@@ -230,6 +246,26 @@ def render_pack(pack_dir):
                     "Closes when: " + (gap.get("closes_when") or "Not recorded."),
                     "",
                 ])
+        elif section_index == 7:
+            lines.extend([
+                f"Spot-audit sample: `{len(audit_sample)}` of "
+                f"`{len(batch_eligible)}` eligible claims. The sample is the "
+                "five lowest SHA-256 ranks of "
+                "`review-completion-v1\\0<product>\\0<claim_id>`, so it is "
+                "stable and reproducible.",
+                "",
+                "A clean sample may be confirmed as one explicit human batch "
+                "decision. A failed sample removes batch eligibility; review "
+                "every batch member individually.",
+                "",
+                "Batch members",
+                "",
+            ])
+            lines.extend(f"- `{claim['claim_id']}`" for claim in batch_eligible)
+            lines.extend(["", "Sample details", ""])
+            for claim in items:
+                lines.extend(claim_block(
+                    claim, verdicts_by_claim.get(claim["claim_id"], [])))
         else:
             for claim in items:
                 lines.extend(claim_block(
@@ -245,7 +281,8 @@ def render_pack(pack_dir):
         "c2": len(c2),
         "unresolved_verifier": len(unresolved),
         "gaps": len(open_gaps),
-        "auto_approved": len(auto_claims),
+        "batch_eligible": len(batch_eligible),
+        "spot_audit_sample": len(audit_sample),
         "path": str(pack_dir / "review-queue.md"),
     }
 

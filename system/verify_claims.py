@@ -30,10 +30,8 @@ CACHE_PATH = REPO_ROOT / "system" / "cache" / "verifier-cache.json"
 
 # Policy constants: substitutions, if ever required, must remain exact qwen/* IDs.
 MODEL_ID = "qwen/qwen3-vl-235b-a22b-instruct"
-ENDPOINT = "fal-ai/any-llm/vision"
+ENDPOINT = "openrouter/router/vision"
 PROMPT_VERSION = "v1"
-AUTO_REVIEWER = "system:qwen-verifier-v1"
-
 VERDICTS = {"ENTAILED", "MEANING_CHANGED", "CANNOT_JUDGE"}
 TRIAGE_RESULTS = {"GENUINE_CONFLICT", "DIFFERENT_SCOPE_OR_EVENT", "CANNOT_JUDGE"}
 VISUAL_SOURCE_TYPES = {"IMAGE", "VIDEO", "VIDEO_URL"}
@@ -280,70 +278,6 @@ def _invoke_for_triage(prompt, provider):
     }, True, 2
 
 
-def _review_is_human(review):
-    reviewer = review.get("reviewer")
-    return isinstance(reviewer, str) and not reviewer.startswith("system:")
-
-
-def append_auto_approvals(pack_dir, claims, verdicts, verification_status, date):
-    if verification_status != "COMPLETE":
-        return {"appended": 0, "human_precedence": 0, "already_present": 0}
-
-    by_claim = {}
-    for verdict in verdicts:
-        by_claim.setdefault(verdict["claim_id"], []).append(verdict)
-
-    reviews_path = Path(pack_dir) / "reviews.json"
-    reviews_doc = load_json(reviews_path, {"reviews": []})
-    reviews = reviews_doc.get("reviews", [])
-    if not isinstance(reviews, list):
-        raise ValueError("reviews.json reviews must be a list")
-
-    appended = []
-    human_precedence = already_present = 0
-    for claim in claims:
-        if claim.get("consequence_ceiling") not in {"C0", "C1"}:
-            continue
-        expected = len(claim.get("source_bindings", []))
-        claim_verdicts = by_claim.get(claim.get("claim_id"), [])
-        indexes = {entry["binding_index"] for entry in claim_verdicts}
-        if (len(claim_verdicts) != expected
-                or indexes != set(range(expected))
-                or any(entry["verdict"] != "ENTAILED" for entry in claim_verdicts)):
-            continue
-
-        existing = [r for r in reviews if r.get("claim_id") == claim.get("claim_id")]
-        if any(_review_is_human(r) for r in existing):
-            human_precedence += 1
-            continue
-        if existing:
-            already_present += 1
-            continue
-
-        claim_id = claim["claim_id"]
-        safe_id = re.sub(r"[^a-zA-Z0-9_]+", "_", claim_id)
-        appended.append({
-            "review_id": f"rev_{safe_id}_qwen_verifier_v1",
-            "date": date,
-            "reviewer": AUTO_REVIEWER,
-            "scope": "verifier_auto",
-            "claim_id": claim_id,
-            "disposition": "APPROVED_FOR_PUBLISH",
-            "rationale": ("Verifier auto-approval: every source binding received "
-                          "an ENTAILED verdict from the pinned Qwen verifier."),
-        })
-
-    if appended:
-        reviews.extend(appended)
-        reviews_doc["reviews"] = reviews
-        atomic_write_json(reviews_path, reviews_doc)
-    return {
-        "appended": len(appended),
-        "human_precedence": human_precedence,
-        "already_present": already_present,
-    }
-
-
 def verify_pack(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
                 provider=call_provider, model_id=MODEL_ID, date=None):
     pack_dir = Path(pack_dir)
@@ -440,7 +374,6 @@ def verify_pack(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
     document["conflict_triage"] = conflict_triage
     atomic_write_json(pack_dir / "verdicts.json", document)
 
-    approvals = append_auto_approvals(pack_dir, claims, records, status, date)
     alarms = sum(v["verdict"] == "MEANING_CHANGED" for v in records)
     cannot_judge = sum(v["verdict"] == "CANNOT_JUDGE" for v in records)
 
@@ -457,12 +390,9 @@ def verify_pack(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
 
     if alarms:
         print(f"ALARM [{product}]: {alarms} MEANING_CHANGED binding(s)", file=sys.stderr)
-    if approvals["human_precedence"]:
-        print(f"[{product}] human precedence skipped "
-              f"{approvals['human_precedence']} auto-approval(s)")
     print(f"[{product}] status={status} verdicts={len(records)}/{total} "
           f"alarms={alarms} cannot_judge={cannot_judge} "
-          f"auto_approved={approvals['appended']} estimated_spend=${estimate:.4f}")
+          f"estimated_spend=${estimate:.4f}")
     return {
         "product": product,
         "status": status,
@@ -471,7 +401,6 @@ def verify_pack(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
         "alarms": alarms,
         "cannot_judge": cannot_judge,
         "estimated_spend_usd": estimate,
-        "auto_approvals": approvals,
     }
 
 

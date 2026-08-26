@@ -303,11 +303,25 @@ def prepare_attempt(repo_root, run_stage, attempt, product, topup):
     return attempt_root, pack_dir
 
 
-def run_gate(repo_root, claims_path):
-    process = subprocess.run(
-        [sys.executable, str(Path(repo_root) / "evidence-packs" / "validate.py"),
-         str(claims_path)],
-        cwd=repo_root, capture_output=True, text=True, check=False)
+def run_gate(repo_root, claims_path, ignore_stale_verdicts=False):
+    claims_path = Path(claims_path)
+    verdicts_path = claims_path.parent / "verdicts.json"
+    verdicts_bytes = None
+    if ignore_stale_verdicts and verdicts_path.exists():
+        # A top-up adds claims before the post-promotion verifier runs. The
+        # protected prior verdict document is necessarily incomplete for that
+        # staged claim set, so hide it only for the deterministic claim gate and
+        # restore it byte-for-byte immediately afterward.
+        verdicts_bytes = verdicts_path.read_bytes()
+        verdicts_path.unlink()
+    try:
+        process = subprocess.run(
+            [sys.executable, str(Path(repo_root) / "evidence-packs" / "validate.py"),
+             str(claims_path)],
+            cwd=repo_root, capture_output=True, text=True, check=False)
+    finally:
+        if verdicts_bytes is not None:
+            verdicts_path.write_bytes(verdicts_bytes)
     fail_lines = [line for line in process.stdout.splitlines()
                   if line.startswith("FAIL:")]
     summary = None
@@ -460,7 +474,8 @@ def orchestrate_product(product, topup=False, repo_root=REPO_ROOT,
                 states.append("gate_failed")
                 break
             states.append("extracted")
-            gate = run_gate(repo_root, claims_path)
+            gate = run_gate(
+                repo_root, claims_path, ignore_stale_verdicts=topup)
             record["gate_exit_code"] = gate["exit_code"]
             record["fail_lines"] = gate["fail_lines"]
             record["summary"] = gate["summary"]
