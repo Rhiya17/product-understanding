@@ -223,9 +223,12 @@ def claim_lines(claim, verdicts, section, triage_entries,
                     if entry.get("binding_index") == binding_index]
         if matching:
             entry = matching[0]
+            basis = (" (claim quote union)"
+                     if entry.get("basis") == "CLAIM_QUOTE_UNION" else "")
             lines.extend([
                 "",
-                f"Verifier: `{entry.get('verdict')}` — {entry.get('note')}",
+                f"Verifier{basis}: `{entry.get('verdict')}` — "
+                f"{entry.get('note')}",
             ])
         else:
             lines.extend(["", "Verifier: no verdict recorded."])

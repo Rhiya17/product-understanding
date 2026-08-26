@@ -11,32 +11,38 @@
 
 - Preflight audit completed. A bundled Python 3.12.13 runtime was used because
   `python3.12` is not installed on the host PATH.
-- Offline suite: **22 passed**. Evidence-pack and source-vault validators both
-  exit 0.
+- Verifier v2 preflight: **28 passed**. Compilation, all five evidence-pack
+  validations, and the source-vault validator exit 0.
 - The verifier was changed to advisory-only for this pass. It cannot write
   `reviews.json`; the queue derives batch eligibility from complete all-ENTAILED
   verdict sets and chooses a reproducible five-claim spot-audit sample.
-- Pre-call projection: **$0.0429** for 389 text-binding requests plus 8
-  conflict-triage requests, before any malformed-output retries. This is below
+- The v1 fleet result at checkpoint `0782751` is **invalidated for owner
+  review**. Its 303 `MEANING_CHANGED` binding alarms were dominated by schema
+  scaffolding, per-binding evaluation of multi-quote claims, and omission
+  pedantry. The generated v1 queues and proposals must not be actioned.
+- Prompt v2 now verifies the semantic projection once against the union of a
+  claim's quotes. It excludes procedure/step/target/state scaffolding, allows
+  faithful omission, and still treats dropped governing conditions or
+  unsupported additions as `MEANING_CHANGED`. Claim-level findings are
+  replicated to binding rows only for artifact compatibility and are labeled
+  `basis: CLAIM_QUOTE_UNION`.
+- The three genuine spot-check defects are live regression cases: Levoit room
+  size loses the “smaller than” direction, Bose Bluetooth range loses the
+  “powered on” condition, and the Bose SimpleSync claim adds unsupported
+  feature/model detail. Four known v1 noise cases are live regression cases as
+  well.
+- fal's compact queued vision response does not document a serving-model
+  field. V2 therefore uses fal's documented OpenAI-compatible OpenRouter chat
+  route and requires the returned `model` to equal
+  `qwen/qwen3-vl-235b-a22b-instruct`; mismatch or absence stops the run with
+  exit 50. Endpoint, serving model, and estimated/provider-reported spend are
+  recorded in `run_metadata`.
+- Fresh v2 projection: **$0.0500** for 355 claim-union requests plus eight
+  conflict requests; the all-calls-retry ceiling is **$0.1001**, well below
   the $9.99 ceiling.
-- `FAL_KEY` was supplied for an ephemeral process environment. The preflight
-  found that fal retired the configured `fal-ai/any-llm/vision` route (HTTP
-  422); the current documented `openrouter/router/vision` route passed a live
-  schema check. The pinned Qwen model and prompt remain unchanged.
-- Phase A completed: all **392 bindings** now have verdicts — 86 `ENTAILED`,
-  303 `MEANING_CHANGED`, and 3 expected visual `CANNOT_JUDGE`. Eight conflict
-  pairs were triaged (5 `GENUINE_CONFLICT`, 3 `DIFFERENT_SCOPE_OR_EVENT`).
-  Regenerated queues contain 268 alarm claims and 38 batch-eligible C0/C1
-  claims. This measured result supersedes the pre-run workload estimate below.
-- Phase B completed: five `review-proposals.md` files cover every one of the
-  **338 undecided claims exactly once**. Recommendations are 267
-  `NEEDS_RECHECK`, 1 `REJECTED_FOR_SERVING` under the latest-revision policy,
-  and 70 `APPROVED_FOR_PUBLISH` (38 batch-eligible C0/C1 plus 32 individually
-  reviewed C2/C3). The owner gate is 300 individual decisions plus five batch
-  confirmations after inspecting 19 designated sample claims.
-- Acceptance checks at the owner gate: compile, evidence validator, vault
-  validator, queue/proposal regeneration, and **23 offline tests** all pass.
-  Phase A/B checkpoint: `0782751`.
+- Live canary and fleet rerun are pending a rotated `FAL_KEY`. No key that
+  transited chat will be reused. No owner checkbox or `reviews.json` entry has
+  been changed.
 
 ---
 
@@ -76,7 +82,8 @@ read" to "spot-audit a sample, then explicitly confirm the clean batch."
 1. Preconditions: `FAL_KEY` in the process environment (never in files or
    argv); `python3.12 -m pytest -q system/tests` green before spending.
 2. Run per pack, checking exit codes (`0` complete, `10` semantic alarms,
-   `20` partial, `30` credentials, `40` malformed output):
+   `20` partial, `30` credentials, `40` malformed output, `50` serving-model
+   attestation failure):
 
    ```bash
    python3.12 system/verify_claims.py --product <product>

@@ -382,9 +382,11 @@ def validate_pack(claims_path):
             errors.append("verdicts.json: root must be an object")
         else:
             root_fields = {"model", "prompt_version", "date", "status", "reason",
-                           "verdicts", "conflict_triage"}
+                           "verdicts", "conflict_triage", "run_metadata"}
             required_root = {"model", "prompt_version", "date", "status",
                              "verdicts", "conflict_triage"}
+            if verdicts_doc.get("prompt_version") == "v2":
+                required_root.add("run_metadata")
             missing_root = sorted(required_root - set(verdicts_doc))
             unknown_root = sorted(set(verdicts_doc) - root_fields)
             if missing_root:
@@ -398,6 +400,56 @@ def validate_pack(claims_path):
             if not isinstance(verdicts_doc.get("prompt_version"), str) or not \
                     verdicts_doc.get("prompt_version", "").strip():
                 errors.append("verdicts.json: prompt_version must be nonempty")
+            prompt_version = verdicts_doc.get("prompt_version")
+            run_metadata = verdicts_doc.get("run_metadata")
+            if prompt_version == "v2":
+                if not isinstance(run_metadata, dict):
+                    errors.append("verdicts.json: v2 run_metadata must be an object")
+                    run_metadata = {}
+                metadata_fields = {
+                    "endpoint", "verification_scope", "model_attestation",
+                    "serving_models", "estimated_spend_usd",
+                    "provider_reported_spend_usd",
+                    "conflict_estimated_spend_usd",
+                    "conflict_provider_reported_spend_usd",
+                }
+                required_metadata = {
+                    "endpoint", "verification_scope", "model_attestation",
+                    "serving_models", "estimated_spend_usd",
+                    "provider_reported_spend_usd",
+                }
+                if isinstance(run_metadata, dict):
+                    missing_metadata = sorted(required_metadata - set(run_metadata))
+                    unknown_metadata = sorted(set(run_metadata) - metadata_fields)
+                    if missing_metadata:
+                        errors.append(
+                            f"verdicts.json: run_metadata missing {missing_metadata}")
+                    if unknown_metadata:
+                        errors.append(
+                            f"verdicts.json: run_metadata has unknown fields "
+                            f"{unknown_metadata}")
+                    if run_metadata.get("endpoint") != \
+                            "openrouter/router/openai/v1/chat/completions":
+                        errors.append("verdicts.json: v2 endpoint must be "
+                                      "openrouter/router/openai/v1/chat/completions")
+                    if run_metadata.get("verification_scope") != \
+                            "CLAIM_QUOTE_UNION":
+                        errors.append("verdicts.json: v2 verification_scope must be "
+                                      "CLAIM_QUOTE_UNION")
+                    serving_models = run_metadata.get("serving_models")
+                    if (not isinstance(serving_models, list)
+                            or any(not isinstance(item, str)
+                                   for item in serving_models)):
+                        errors.append("verdicts.json: serving_models must be a list "
+                                      "of model IDs")
+                    elif verdicts_doc.get("status") == "COMPLETE" and \
+                            serving_models != [model]:
+                        errors.append("verdicts.json: COMPLETE v2 run must attest "
+                                      "exactly the requested serving model")
+                    if verdicts_doc.get("status") == "COMPLETE" and \
+                            run_metadata.get("model_attestation") != "EXACT_MATCH":
+                        errors.append("verdicts.json: COMPLETE v2 run requires "
+                                      "EXACT_MATCH model attestation")
             try:
                 date.fromisoformat(verdicts_doc.get("date"))
             except (TypeError, ValueError):
@@ -425,14 +477,21 @@ def validate_pack(claims_path):
                     errors.append(f"{label} must be an object")
                     continue
                 entry_fields = {"claim_id", "binding_index", "verdict", "note"}
-                missing_fields = sorted(entry_fields - set(verdict))
-                unknown_fields = sorted(set(verdict) - entry_fields)
+                allowed_entry_fields = entry_fields | {"basis"}
+                required_entry_fields = (allowed_entry_fields
+                                         if prompt_version == "v2"
+                                         else entry_fields)
+                missing_fields = sorted(required_entry_fields - set(verdict))
+                unknown_fields = sorted(set(verdict) - allowed_entry_fields)
                 if missing_fields:
                     errors.append(f"{label} missing fields {missing_fields}")
                 if unknown_fields:
                     errors.append(f"{label} has unknown fields {unknown_fields}; "
                                   "model, prompt version, date, and status belong "
                                   "only at the document root")
+                if prompt_version == "v2" and verdict.get("basis") != \
+                        "CLAIM_QUOTE_UNION":
+                    errors.append(f"{label} basis must be CLAIM_QUOTE_UNION")
 
                 claim_id = verdict.get("claim_id")
                 binding_index = verdict.get("binding_index")

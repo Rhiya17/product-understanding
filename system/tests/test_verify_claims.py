@@ -58,7 +58,11 @@ class SemanticProvider:
             "note": ("The translation changes 30 lb to 35 lb."
                      if changed else "The translation faithfully states 30 lb."),
         }
-        return {"output": json.dumps(result)}
+        return {
+            "output": json.dumps(result),
+            "model": verifier.MODEL_ID,
+            "usage": {"cost": 0.0001},
+        }
 
 
 def test_faithful_routing_visual_skip_and_prompt_blindness(tmp_path):
@@ -91,6 +95,12 @@ def test_faithful_routing_visual_skip_and_prompt_blindness(tmp_path):
     document = json.loads((pack / "verdicts.json").read_text())
     assert document["status"] == "COMPLETE"
     assert len(document["verdicts"]) == 3
+    assert document["run_metadata"]["verification_scope"] == \
+        verifier.VERIFICATION_SCOPE
+    assert document["run_metadata"]["model_attestation"] == "EXACT_MATCH"
+    assert document["run_metadata"]["serving_models"] == [verifier.MODEL_ID]
+    assert all(entry["basis"] == verifier.VERIFICATION_SCOPE
+               for entry in document["verdicts"])
 
 
 def test_warm_cache_misses_when_translation_changes(tmp_path):
@@ -147,7 +157,7 @@ def test_malformed_response_retries_then_records_cannot_judge(tmp_path):
 
     def malformed(arguments):
         calls.append(arguments)
-        return {"output": "not json"}
+        return {"output": "not json", "model": verifier.MODEL_ID}
 
     run = verifier.verify_pack(pack, vault_root=vault, cache_path=cache,
                                provider=malformed, date="2026-08-24")
@@ -176,7 +186,10 @@ def test_provider_failure_is_sanitized_and_writes_failed_artifact(tmp_path):
 def test_model_positive_allowlist():
     assert verifier.MODEL_ID.startswith("qwen/")
     assert verifier.MODEL_ID == "qwen/qwen3-vl-235b-a22b-instruct"
-    assert verifier.ENDPOINT == "openrouter/router/vision"
+    assert verifier.ENDPOINT == \
+        "openrouter/router/openai/v1/chat/completions"
+    assert verifier.PROMPT_VERSION == "v2"
+    assert verifier.VERIFICATION_SCOPE == "CLAIM_QUOTE_UNION"
 
 
 def test_conflict_triage_parses_caches_and_writes_artifact(tmp_path):
@@ -196,7 +209,7 @@ def test_conflict_triage_parses_caches_and_writes_artifact(tmp_path):
         return {"output": json.dumps({
             "result": "DIFFERENT_SCOPE_OR_EVENT",
             "note": "The passages describe different operating events.",
-        })}
+        }), "model": verifier.MODEL_ID}
 
     first_run = verifier.triage_conflicts(
         pack, vault_root=vault, cache_path=cache, provider=triage)
@@ -210,3 +223,127 @@ def test_conflict_triage_parses_caches_and_writes_artifact(tmp_path):
     assert entry["pair"] == ["claim_a", "claim_b"]
     assert entry["result"] == "DIFFERENT_SCOPE_OR_EVENT"
     assert len(entry["context_sha256"]) == 64
+
+
+def test_v2_projection_strips_scaffolding_and_unions_quotes():
+    step = {
+        "type": "STEP",
+        "predicate": "procedure_step",
+        "object": {
+            "procedure": "fold_stroller", "step_number": 6,
+            "action": "Check that the stroller is secure.",
+            "target_parts": ["stroller_frame"],
+            "initial_state": "FOLD_LEVER_SQUEEZED",
+            "resulting_state": "FOLDED_SECURED",
+        },
+        "consequence_ceiling": "C3",
+        "source_bindings": [{
+            "source_id": "manual", "quote": "CHECK that the stroller is secure.",
+        }],
+    }
+    prompt = verifier.build_prompt(step)
+    assert "Check that the stroller is secure." in prompt
+    for scaffolding in ("fold_stroller", "step_number", "stroller_frame",
+                        "FOLD_LEVER_SQUEEZED", "FOLDED_SECURED"):
+        assert scaffolding not in prompt
+
+    dimensions = {
+        "type": "SPEC", "predicate": "dimensions",
+        "object": {"width": 15.5, "height": 27.4, "depth": 18.07,
+                   "unit": "in"},
+        "consequence_ceiling": "C1",
+        "source_bindings": [
+            {"source_id": "spec", "quote": "Product width 15.5 in"},
+            {"source_id": "spec", "quote": "Product height 27.4 in"},
+            {"source_id": "spec", "quote": "Product depth 18.07 in"},
+        ],
+    }
+    prompt = verifier.build_prompt(dimensions)
+    assert all(text in prompt for text in (
+        "Product width 15.5 in", "Product height 27.4 in",
+        "Product depth 18.07 in"))
+    assert "Judge the EXACT QUOTES AS A UNION" in prompt
+    assert "JSON field\nnames and structure are labels" in prompt
+
+
+def test_v2_prompt_preserves_three_known_genuine_catches():
+    cases = [
+        ({"value": 219, "unit": "ft²", "metric": "20 m²"},
+         "Make sure the room is smaller than 219 ft² / 20 m²."),
+        ({"value": 30, "unit": "ft", "value_metric": 9, "unit_metric": "m"},
+         "The devices must be within range (30 ft or 9 m) and powered on."),
+        ({"counterpart": "Bose Smart Speakers and Bose Smart Soundbars",
+          "feature": "SimpleSync",
+          "notes_list": ["Bose Smart Ultra Soundbar", "Bose Smart Soundbar"]},
+         "You can connect the headphones to any Bose Smart Speaker or Bose Smart Soundbar."),
+    ]
+    prompts = []
+    for index, (obj, quote_text) in enumerate(cases):
+        item = {
+            "type": "LIMIT" if index == 0 else "SPEC",
+            "predicate": f"catch_{index}", "object": obj,
+            "consequence_ceiling": "C2",
+            "source_bindings": [{"source_id": "src", "quote": quote_text}],
+        }
+        prompts.append(verifier.build_prompt(item))
+
+    assert "smaller than 219" in prompts[0]
+    assert "powered on" in prompts[1]
+    assert "SimpleSync" in prompts[2]
+    assert "Bose Smart Ultra Soundbar" in prompts[2]
+    for prompt in prompts:
+        assert "lost\ngoverning condition" in prompt
+        assert "assert something more broadly" in prompt
+
+
+def test_serving_model_mismatch_stops_and_records_failed_attestation(tmp_path):
+    pack, vault, cache = make_pack(tmp_path, [claim("claim_model", tier="C0")])
+
+    def wrong_model(_arguments):
+        return {
+            "output": json.dumps({"verdict": "ENTAILED", "note": "faithful"}),
+            "model": "qwen/a-different-model",
+        }
+
+    run = verifier.verify_pack(
+        pack, vault_root=vault, cache_path=cache, provider=wrong_model,
+        date="2026-08-26")
+    document = json.loads((pack / "verdicts.json").read_text())
+
+    assert run["exit_code"] == verifier.EXIT_MODEL_ATTESTATION
+    assert document["status"] == "FAILED"
+    assert document["run_metadata"]["model_attestation"] == "FAILED"
+    assert document["run_metadata"]["serving_models"] == [
+        "qwen/a-different-model"]
+
+
+def test_missing_serving_model_stops_and_chat_envelope_parses(tmp_path):
+    response = {
+        "choices": [{"message": {"content": json.dumps({
+            "verdict": "ENTAILED", "note": "faithful",
+        })}}],
+        "model": verifier.MODEL_ID,
+        "usage": {"cost": 0.0002},
+    }
+    parsed, serving_model, cost, malformed, calls = \
+        verifier._invoke_for_verdict("prompt", lambda _arguments: response)
+    assert parsed["verdict"] == "ENTAILED"
+    assert serving_model == verifier.MODEL_ID
+    assert cost == 0.0002
+    assert malformed is False
+    assert calls == 1
+
+    pack, vault, cache = make_pack(tmp_path, [claim("claim_no_model", tier="C0")])
+
+    def missing_model(_arguments):
+        return {"output": json.dumps({
+            "verdict": "ENTAILED", "note": "faithful",
+        })}
+
+    run = verifier.verify_pack(
+        pack, vault_root=vault, cache_path=cache, provider=missing_model,
+        date="2026-08-26")
+    document = json.loads((pack / "verdicts.json").read_text())
+    assert run["exit_code"] == verifier.EXIT_MODEL_ATTESTATION
+    assert document["run_metadata"]["model_attestation"] == "FAILED"
+    assert document["run_metadata"]["serving_models"] == []

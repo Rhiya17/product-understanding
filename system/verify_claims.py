@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Blind Qwen verification for evidence-pack claim translations.
 
-The verifier sees only a binding's quote, the claim translation, and the
-consequence tier.  It never receives extractor notes, neighboring claims, or
-prior verdicts.  Provider calls are isolated behind ``call_provider`` so the
-offline suite can exercise the complete pipeline with a deterministic mock.
+The verifier sees the union of a claim's exact quotes, a semantic-only
+projection of its object, and the consequence tier. It never receives claim
+IDs, extractor notes, neighboring claims, or prior verdicts. Provider calls
+are isolated behind ``call_provider`` so the offline suite can exercise the
+complete pipeline with a deterministic mock.
 """
 
 import argparse
@@ -15,6 +16,7 @@ import os
 import re
 import sys
 import tempfile
+import urllib.request
 from pathlib import Path
 
 try:
@@ -30,8 +32,10 @@ CACHE_PATH = REPO_ROOT / "system" / "cache" / "verifier-cache.json"
 
 # Policy constants: substitutions, if ever required, must remain exact qwen/* IDs.
 MODEL_ID = "qwen/qwen3-vl-235b-a22b-instruct"
-ENDPOINT = "openrouter/router/vision"
-PROMPT_VERSION = "v1"
+ENDPOINT = "openrouter/router/openai/v1/chat/completions"
+ENDPOINT_URL = f"https://fal.run/{ENDPOINT}"
+PROMPT_VERSION = "v2"
+VERIFICATION_SCOPE = "CLAIM_QUOTE_UNION"
 VERDICTS = {"ENTAILED", "MEANING_CHANGED", "CANNOT_JUDGE"}
 TRIAGE_RESULTS = {"GENUINE_CONFLICT", "DIFFERENT_SCOPE_OR_EVENT", "CANNOT_JUDGE"}
 VISUAL_SOURCE_TYPES = {"IMAGE", "VIDEO", "VIDEO_URL"}
@@ -41,6 +45,7 @@ EXIT_ALARM = 10
 EXIT_PARTIAL = 20
 EXIT_PROVIDER = 30
 EXIT_MALFORMED = 40
+EXIT_MODEL_ATTESTATION = 50
 
 # OpenRouter's published list prices as of 2026-08-24. fal may bill differently,
 # so this is explicitly an estimate rather than claimed provider spend.
@@ -49,18 +54,31 @@ OUTPUT_USD_PER_MILLION_TOKENS = 0.88
 ESTIMATED_OUTPUT_TOKENS = 60
 
 PROMPT_FRAME = """\
-You are a strict verifier auditing a fact extracted from a product manual.
-Below are the EXACT QUOTE from the source and the TRANSLATION a different
-system produced. Assume the translation changed the meaning and try to prove
-it. Small changes matter: a different number, unit, direction, actor,
-condition, or an added/dropped qualifier is a meaning change. If the
-translation adds information the quote does not state, that is a meaning
-change. The CONSEQUENCE TIER is context for how strict to be, not evidence.
+You are a strict verifier auditing one structured product claim. Try to find a
+real contradiction, scope broadening, wrong number/unit/direction/actor, lost
+governing condition, or other unsupported semantic addition.
 
-EXACT QUOTE:
-{quote_json}
+Judge the EXACT QUOTES AS A UNION: every semantic assertion may be supported by
+any quote in the set. Do not require every individual quote to entail the full
+claim.
 
-TRANSLATION (type, predicate, and object only):
+The SEMANTIC PROJECTION intentionally omits schema scaffolding. JSON field
+names and structure are labels, not extra factual assertions. Do not penalize
+procedure names, step numbers, target-part IDs, state IDs, diagram metadata,
+or a value and unit being stored in separate fields; those are not being
+asserted here. The projection itself is the complete text/value content to
+audit.
+
+Omission alone is not a meaning change: a claim may state a faithful subset of
+the source. But if dropping a condition or direction makes the projection
+assert something more broadly than the quotes support, that is an unsupported
+addition and is MEANING_CHANGED. Exact qualifiers, limits, conditions, and
+directions still matter. Keep an adversarial stance after applying these rules.
+
+EXACT QUOTES (union):
+{quotes_json}
+
+SEMANTIC PROJECTION:
 {translation_json}
 
 CONSEQUENCE TIER:
@@ -68,7 +86,7 @@ CONSEQUENCE TIER:
 
 Answer in JSON only:
 {{"verdict":"ENTAILED|MEANING_CHANGED|CANNOT_JUDGE",\
-"note":"one sentence: the discrepancy, or why it is faithful"}}
+"note":"one sentence: the semantic discrepancy, or why the quote union supports every assertion"}}
 """
 
 CONFLICT_PROMPT = """\
@@ -102,6 +120,14 @@ class ProviderFailure(Exception):
 
 class MalformedResponse(Exception):
     """The provider returned a response outside the required JSON schema."""
+
+
+class ModelAttestationFailure(Exception):
+    """The provider did not attest to the exact requested serving model."""
+
+    def __init__(self, serving_model):
+        super().__init__("provider serving-model attestation missing or mismatched")
+        self.serving_model = serving_model
 
 
 def canonical_json(value):
@@ -144,35 +170,53 @@ def load_cache(path):
     return data
 
 
-def cache_key(claim, binding_index, model_id=MODEL_ID):
-    binding = claim["source_bindings"][binding_index]
-    translation = {
-        "type": claim.get("type"),
-        "predicate": claim.get("predicate"),
-        "object": claim.get("object"),
+def semantic_projection(claim):
+    """Remove non-semantic claim-schema scaffolding before model review."""
+    obj = claim.get("object")
+    if not isinstance(obj, dict):
+        return obj
+    if claim.get("type") == "STEP" and isinstance(obj.get("action"), str):
+        return {"action": obj["action"]}
+    if (claim.get("type") == "PART_LOCATION"
+            and isinstance(obj.get("location_description"), str)):
+        return {"location_description": obj["location_description"]}
+    if claim.get("type") == "WARNING" and isinstance(obj.get("description"), str):
+        return {"warning": obj["description"]}
+    if claim.get("type") == "STATE" and isinstance(obj.get("description"), str):
+        return {"description": obj["description"]}
+    scaffolding = {
+        "procedure", "step_number", "target_parts", "initial_state",
+        "resulting_state", "diagram_binding", "part", "hazard_type",
     }
+    return {key: value for key, value in obj.items() if key not in scaffolding}
+
+
+def quote_union(claim):
+    return [
+        {"binding_index": index, "quote": binding.get("quote", "")}
+        for index, binding in enumerate(claim.get("source_bindings", []))
+    ]
+
+
+def cache_key(claim, model_id=MODEL_ID):
+    translation = semantic_projection(claim)
     components = [
         claim.get("claim_id"),
-        binding_index,
-        sha256_text(binding.get("quote", "")),
+        [sha256_text(item["quote"]) for item in quote_union(claim)],
         sha256_text(canonical_json(translation)),
         claim.get("consequence_ceiling"),
         model_id,
+        ENDPOINT,
         PROMPT_VERSION,
+        VERIFICATION_SCOPE,
     ]
     return sha256_text(canonical_json(components))
 
 
-def build_prompt(claim, binding_index):
-    binding = claim["source_bindings"][binding_index]
-    translation = {
-        "type": claim.get("type"),
-        "predicate": claim.get("predicate"),
-        "object": claim.get("object"),
-    }
+def build_prompt(claim):
     return PROMPT_FRAME.format(
-        quote_json=json.dumps(binding.get("quote", ""), ensure_ascii=False),
-        translation_json=canonical_json(translation),
+        quotes_json=json.dumps(quote_union(claim), ensure_ascii=False),
+        translation_json=canonical_json(semantic_projection(claim)),
         tier_json=json.dumps(claim.get("consequence_ceiling")),
     )
 
@@ -187,11 +231,30 @@ def provider_arguments(prompt, model_id=MODEL_ID):
 
 
 def call_provider(arguments):
-    """The sole fal.ai call site. Tests inject a callable with this signature."""
+    """The sole fal.ai call site. Tests inject a callable with this signature.
+
+    The OpenAI-compatible route is deliberate: unlike fal's compact queued
+    vision response, the chat-completion envelope reports the serving model.
+    """
     try:
-        import fal_client
-        handle = fal_client.submit(ENDPOINT, arguments=arguments)
-        return handle.get()
+        request_body = {
+            "model": arguments["model"],
+            "messages": [{"role": "user", "content": arguments["prompt"]}],
+            "temperature": arguments["temperature"],
+            "max_tokens": arguments["max_tokens"],
+        }
+        request = urllib.request.Request(
+            ENDPOINT_URL,
+            data=json.dumps(request_body).encode("utf-8"),
+            headers={
+                "Authorization": f"Key {os.environ['FAL_KEY']}",
+                "Content-Type": "application/json",
+                "X-OpenRouter-Metadata": "enabled",
+            },
+            method="POST",
+        )
+        with urllib.request.urlopen(request, timeout=180) as response:  # noqa: S310
+            return json.loads(response.read().decode("utf-8"))
     except Exception as exc:  # noqa: BLE001
         # Never include the provider's message: it may echo credentials or input.
         raise ProviderFailure(f"provider request failed ({type(exc).__name__})") from None
@@ -202,7 +265,38 @@ def _response_output(response):
         return response
     if isinstance(response, dict) and isinstance(response.get("output"), str):
         return response["output"]
+    if isinstance(response, dict):
+        choices = response.get("choices")
+        if isinstance(choices, list) and choices and isinstance(choices[0], dict):
+            message = choices[0].get("message")
+            if isinstance(message, dict) and isinstance(message.get("content"), str):
+                return message["content"]
     raise MalformedResponse("provider response has no string output")
+
+
+def response_serving_model(response):
+    """Read the serving-model attestation from known router response shapes."""
+    if not isinstance(response, dict):
+        return None
+    candidates = [
+        response.get("model"),
+        response.get("serving_model"),
+    ]
+    for container_name in ("usage", "metadata", "data"):
+        container = response.get(container_name)
+        if isinstance(container, dict):
+            candidates.extend((container.get("model"), container.get("serving_model")))
+    return next((value for value in candidates
+                 if isinstance(value, str) and value.strip()), None)
+
+
+def response_usage_cost(response):
+    if not isinstance(response, dict) or not isinstance(response.get("usage"), dict):
+        return 0.0
+    value = response["usage"].get("cost")
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        return float(value)
+    return 0.0
 
 
 def parse_verdict_response(response):
@@ -245,37 +339,53 @@ def estimated_cost(prompt):
             + ESTIMATED_OUTPUT_TOKENS * OUTPUT_USD_PER_MILLION_TOKENS) / 1_000_000
 
 
-def _valid_cached_verdict(value):
+def _valid_cached_verdict(value, model_id=MODEL_ID):
     return (isinstance(value, dict)
             and value.get("verdict") in VERDICTS
             and isinstance(value.get("note"), str)
-            and bool(value["note"].strip()))
+            and bool(value["note"].strip())
+            and value.get("serving_model") == model_id)
 
 
-def _invoke_for_verdict(prompt, provider):
+def _attest_response(response, model_id):
+    serving_model = response_serving_model(response)
+    if serving_model != model_id:
+        raise ModelAttestationFailure(serving_model)
+    return serving_model, response_usage_cost(response)
+
+
+def _invoke_for_verdict(prompt, provider, model_id=MODEL_ID):
+    total_usage_cost = 0.0
     for attempt in range(2):
-        response = provider(provider_arguments(prompt))
+        response = provider(provider_arguments(prompt, model_id))
+        serving_model, usage_cost = _attest_response(response, model_id)
+        total_usage_cost += usage_cost
         try:
-            return parse_verdict_response(response), False, attempt + 1
+            return (parse_verdict_response(response), serving_model, total_usage_cost,
+                    False, attempt + 1)
         except MalformedResponse:
             pass
-    return {
+    return ({
         "verdict": "CANNOT_JUDGE",
         "note": "Malformed provider output after one retry.",
-    }, True, 2
+    }, serving_model, total_usage_cost, True, 2)
 
 
-def _invoke_for_triage(prompt, provider):
+def _invoke_for_triage(prompt, provider, model_id=MODEL_ID):
+    total_usage_cost = 0.0
     for attempt in range(2):
-        response = provider(provider_arguments(prompt))
+        response = provider(provider_arguments(prompt, model_id))
+        serving_model, usage_cost = _attest_response(response, model_id)
+        total_usage_cost += usage_cost
         try:
-            return parse_triage_response(response), False, attempt + 1
+            return (parse_triage_response(response), serving_model, total_usage_cost,
+                    False, attempt + 1)
         except MalformedResponse:
             pass
-    return {
+    return ({
         "result": "CANNOT_JUDGE",
         "note": "Malformed provider output after one retry.",
-    }, True, 2
+    }, serving_model, total_usage_cost, True, 2)
 
 
 def verify_pack(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
@@ -290,64 +400,106 @@ def verify_pack(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
     types = source_types(vault_root, product)
     cache = load_cache(cache_path)
     original_conflicts = load_json(pack_dir / "verdicts.json", {}) or {}
-    conflict_triage = original_conflicts.get("conflict_triage", [])
+    conflict_triage = (original_conflicts.get("conflict_triage", [])
+                       if original_conflicts.get("prompt_version") == PROMPT_VERSION
+                       else [])
     if not isinstance(conflict_triage, list):
         conflict_triage = []
 
     total = sum(len(claim.get("source_bindings", [])) for claim in claims)
     records = []
-    provider_failed = malformed_seen = False
+    claim_results = {}
+    provider_failed = malformed_seen = attestation_failed = False
     provider_available = True
     cache_changed = False
     estimate = 0.0
-    processed = 0
+    actual_cost = 0.0
+    serving_models = set()
 
-    for claim in claims:
-        for binding_index, binding in enumerate(claim.get("source_bindings", [])):
-            processed += 1
-            source_type = types.get(binding.get("source_id"))
-            if source_type in VISUAL_SOURCE_TYPES:
+    for processed, claim in enumerate(claims, 1):
+        bindings = claim.get("source_bindings", [])
+        text_indexes = [
+            index for index, binding in enumerate(bindings)
+            if types.get(binding.get("source_id")) not in VISUAL_SOURCE_TYPES
+        ]
+        visual_indexes = set(range(len(bindings))) - set(text_indexes)
+        if not text_indexes:
+            result = {
+                "verdict": "CANNOT_JUDGE",
+                "note": "Claim has only visual bindings; text-only verification is unavailable.",
+            }
+            claim_results[claim["claim_id"]] = result
+            for binding_index in visual_indexes:
                 records.append({
                     "claim_id": claim["claim_id"],
                     "binding_index": binding_index,
                     "verdict": "CANNOT_JUDGE",
-                    "note": "Visual binding; text-only verification is unavailable.",
+                    "note": result["note"],
+                    "basis": VERIFICATION_SCOPE,
                 })
-                print(f"[{product}] {processed}/{total} visual -> CANNOT_JUDGE")
+            print(f"[{product}] claim {processed}/{len(claims)} visual-only "
+                  "-> CANNOT_JUDGE")
+            continue
+
+        key = cache_key(claim, model_id)
+        cached = cache.get(key)
+        if _valid_cached_verdict(cached, model_id):
+            result = {"verdict": cached["verdict"], "note": cached["note"]}
+            serving_model = cached["serving_model"]
+            serving_models.add(serving_model)
+            source = "cache"
+        else:
+            if not provider_available:
                 continue
+            prompt = build_prompt(claim)
+            try:
+                (result, serving_model, usage_cost, malformed,
+                 provider_calls) = _invoke_for_verdict(
+                    prompt, provider, model_id=model_id)
+            except ModelAttestationFailure as exc:
+                attestation_failed = True
+                provider_available = False
+                if exc.serving_model:
+                    serving_models.add(exc.serving_model)
+                print(f"[{product}] claim {processed}/{len(claims)} "
+                      "serving-model attestation failure")
+                continue
+            except ProviderFailure:
+                provider_failed = True
+                provider_available = False
+                print(f"[{product}] claim {processed}/{len(claims)} "
+                      "provider failure (sanitized)")
+                continue
+            estimate += estimated_cost(prompt) * provider_calls
+            actual_cost += usage_cost
+            serving_models.add(serving_model)
+            malformed_seen = malformed_seen or malformed
+            if not malformed:
+                cache[key] = {
+                    **result,
+                    "serving_model": serving_model,
+                }
+                cache_changed = True
+            source = "provider"
 
-            key = cache_key(claim, binding_index, model_id)
-            cached = cache.get(key)
-            if _valid_cached_verdict(cached):
-                result = {"verdict": cached["verdict"], "note": cached["note"]}
-                source = "cache"
+        claim_results[claim["claim_id"]] = result
+        for binding_index in range(len(bindings)):
+            if binding_index in visual_indexes:
+                verdict = "CANNOT_JUDGE"
+                note = ("Visual binding is not authenticated by text-only verification; "
+                        f"the claim quote union result was {result['verdict']}.")
             else:
-                if not provider_available:
-                    continue
-                prompt = build_prompt(claim, binding_index)
-                try:
-                    result, malformed, provider_calls = _invoke_for_verdict(
-                        prompt, provider)
-                except ProviderFailure:
-                    provider_failed = True
-                    provider_available = False
-                    print(f"[{product}] {processed}/{total} provider failure (sanitized)")
-                    continue
-                estimate += estimated_cost(prompt) * provider_calls
-                malformed_seen = malformed_seen or malformed
-                if not malformed:
-                    cache[key] = result
-                    cache_changed = True
-                source = "provider"
-
+                verdict = result["verdict"]
+                note = result["note"]
             records.append({
                 "claim_id": claim["claim_id"],
                 "binding_index": binding_index,
-                "verdict": result["verdict"],
-                "note": result["note"],
+                "verdict": verdict,
+                "note": note,
+                "basis": VERIFICATION_SCOPE,
             })
-            print(f"[{product}] {processed}/{total} {source} -> {result['verdict']} "
-                  f"(estimated spend ${estimate:.4f})")
+        print(f"[{product}] claim {processed}/{len(claims)} {source} "
+              f"-> {result['verdict']} (estimated spend ${estimate:.4f})")
 
     if cache_changed:
         atomic_write_json(cache_path, cache)
@@ -357,16 +509,29 @@ def verify_pack(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
         reason = None
     elif records:
         status = "PARTIAL"
-        reason = "One or more provider requests failed; some bindings have no verdict."
+        reason = ("Serving-model attestation failed; subsequent claims were not "
+                  "verified." if attestation_failed else
+                  "One or more provider requests failed; some bindings have no verdict.")
     else:
         status = "FAILED"
-        reason = "Provider verification was unavailable; no bindings were verified."
+        reason = ("Serving-model attestation failed; no claims were accepted."
+                  if attestation_failed else
+                  "Provider verification was unavailable; no bindings were verified.")
 
     document = {
         "model": model_id,
         "prompt_version": PROMPT_VERSION,
         "date": date,
         "status": status,
+        "run_metadata": {
+            "endpoint": ENDPOINT,
+            "verification_scope": VERIFICATION_SCOPE,
+            "model_attestation": ("FAILED" if attestation_failed
+                                  else "EXACT_MATCH"),
+            "serving_models": sorted(serving_models),
+            "estimated_spend_usd": round(estimate, 8),
+            "provider_reported_spend_usd": round(actual_cost, 8),
+        },
     }
     if reason:
         document["reason"] = reason
@@ -374,10 +539,13 @@ def verify_pack(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
     document["conflict_triage"] = conflict_triage
     atomic_write_json(pack_dir / "verdicts.json", document)
 
-    alarms = sum(v["verdict"] == "MEANING_CHANGED" for v in records)
+    alarms = sum(v["verdict"] == "MEANING_CHANGED"
+                 for v in claim_results.values())
     cannot_judge = sum(v["verdict"] == "CANNOT_JUDGE" for v in records)
 
-    if provider_failed:
+    if attestation_failed:
+        exit_code = EXIT_MODEL_ATTESTATION
+    elif provider_failed:
         exit_code = EXIT_PROVIDER
     elif malformed_seen:
         exit_code = EXIT_MALFORMED
@@ -389,10 +557,11 @@ def verify_pack(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
         exit_code = EXIT_OK
 
     if alarms:
-        print(f"ALARM [{product}]: {alarms} MEANING_CHANGED binding(s)", file=sys.stderr)
+        print(f"ALARM [{product}]: {alarms} MEANING_CHANGED claim(s)", file=sys.stderr)
     print(f"[{product}] status={status} verdicts={len(records)}/{total} "
-          f"alarms={alarms} cannot_judge={cannot_judge} "
-          f"estimated_spend=${estimate:.4f}")
+          f"alarm_claims={alarms} cannot_judge_bindings={cannot_judge} "
+          f"serving_models={sorted(serving_models)} "
+          f"estimated_spend=${estimate:.4f} provider_spend=${actual_cost:.4f}")
     return {
         "product": product,
         "status": status,
@@ -478,9 +647,11 @@ def triage_conflicts(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
         raise ValueError("run claim verification before conflict triage")
 
     cache = load_cache(cache_path)
-    cache_changed = malformed_seen = provider_failed = False
+    cache_changed = malformed_seen = provider_failed = attestation_failed = False
     results = []
     estimate = 0.0
+    actual_cost = 0.0
+    serving_models = set()
     pairs = conflict_pairs(claims)
     for index, pair in enumerate(pairs, 1):
         claim_a, claim_b = by_id[pair[0]], by_id[pair[1]]
@@ -495,12 +666,15 @@ def triage_conflicts(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
         ]))
         payload_hash = sha256_text(canonical_json(payload))
         key = sha256_text(canonical_json([
-            "conflict", list(pair), payload_hash, model_id, PROMPT_VERSION,
+            "conflict", list(pair), payload_hash, model_id, ENDPOINT,
+            PROMPT_VERSION,
         ]))
         cached = cache.get(key)
         if (isinstance(cached, dict) and cached.get("result") in TRIAGE_RESULTS
-                and isinstance(cached.get("note"), str) and cached["note"].strip()):
+                and isinstance(cached.get("note"), str) and cached["note"].strip()
+                and cached.get("serving_model") == model_id):
             result = {"result": cached["result"], "note": cached["note"]}
+            serving_models.add(cached["serving_model"])
             source = "cache"
         else:
             prompt = CONFLICT_PROMPT.format(
@@ -510,17 +684,27 @@ def triage_conflicts(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
                 context_b=payload["context_b"],
             )
             try:
-                result, malformed, provider_calls = _invoke_for_triage(
-                    prompt, provider)
+                (result, serving_model, usage_cost, malformed,
+                 provider_calls) = _invoke_for_triage(
+                    prompt, provider, model_id=model_id)
+            except ModelAttestationFailure as exc:
+                attestation_failed = True
+                if exc.serving_model:
+                    serving_models.add(exc.serving_model)
+                print(f"[{product}] conflict {index}/{len(pairs)} "
+                      "serving-model attestation failure")
+                break
             except ProviderFailure:
                 provider_failed = True
                 print(f"[{product}] conflict {index}/{len(pairs)} provider failure "
                       "(sanitized)")
                 continue
             estimate += estimated_cost(prompt) * provider_calls
+            actual_cost += usage_cost
+            serving_models.add(serving_model)
             malformed_seen = malformed_seen or malformed
             if not malformed:
-                cache[key] = result
+                cache[key] = {**result, "serving_model": serving_model}
                 cache_changed = True
             source = "provider"
         results.append({
@@ -533,11 +717,21 @@ def triage_conflicts(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
               f"{result['result']} (estimated spend ${estimate:.4f})")
 
     document["conflict_triage"] = results
+    run_metadata = document.setdefault("run_metadata", {})
+    existing_models = run_metadata.get("serving_models", [])
+    run_metadata["serving_models"] = sorted(
+        set(existing_models) | serving_models)
+    if attestation_failed:
+        run_metadata["model_attestation"] = "FAILED"
+    run_metadata["conflict_estimated_spend_usd"] = round(estimate, 8)
+    run_metadata["conflict_provider_reported_spend_usd"] = round(actual_cost, 8)
     atomic_write_json(pack_dir / "verdicts.json", document)
     if cache_changed:
         atomic_write_json(cache_path, cache)
 
-    if provider_failed:
+    if attestation_failed:
+        exit_code = EXIT_MODEL_ATTESTATION
+    elif provider_failed:
         exit_code = EXIT_PROVIDER
     elif malformed_seen:
         exit_code = EXIT_MALFORMED
@@ -546,11 +740,14 @@ def triage_conflicts(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
     else:
         exit_code = EXIT_OK
     return {"exit_code": exit_code, "results": results,
-            "estimated_spend_usd": estimate}
+            "estimated_spend_usd": estimate,
+            "provider_reported_spend_usd": actual_cost,
+            "serving_models": sorted(serving_models)}
 
 
 def combine_exit_codes(codes):
-    for code in (EXIT_MALFORMED, EXIT_PROVIDER, EXIT_PARTIAL, EXIT_ALARM):
+    for code in (EXIT_MODEL_ATTESTATION, EXIT_MALFORMED, EXIT_PROVIDER,
+                 EXIT_PARTIAL, EXIT_ALARM):
         if code in codes:
             return code
     return EXIT_OK

@@ -58,6 +58,22 @@ def verdict_document(entries, status="COMPLETE", reason=None):
     return document
 
 
+def v2_verdict_document(entries, serving_models=None):
+    document = verdict_document(entries)
+    document["prompt_version"] = "v2"
+    document["run_metadata"] = {
+        "endpoint": "openrouter/router/openai/v1/chat/completions",
+        "verification_scope": "CLAIM_QUOTE_UNION",
+        "model_attestation": "EXACT_MATCH",
+        "serving_models": serving_models or [document["model"]],
+        "estimated_spend_usd": 0.0001,
+        "provider_reported_spend_usd": 0.0001,
+    }
+    for entry in document["verdicts"]:
+        entry["basis"] = "CLAIM_QUOTE_UNION"
+    return document
+
+
 def run_gate(pack):
     return subprocess.run(
         [sys.executable, str(GATE), str(pack / "claims.json")],
@@ -144,3 +160,28 @@ def test_reviews_require_human_traceability_and_one_current_disposition(tmp_path
     result = run_gate(pack)
     assert result.returncode != 0
     assert "multiple current dispositions for claim_one" in result.stdout
+
+
+def test_v2_gate_requires_union_basis_and_exact_serving_model(tmp_path):
+    pack = make_gate_pack(tmp_path)
+    entry = {
+        "claim_id": "claim_one", "binding_index": 0,
+        "verdict": "ENTAILED", "note": "The claim quote union supports it.",
+    }
+    write_verdicts(pack, v2_verdict_document([entry]))
+    result = run_gate(pack)
+    assert result.returncode == 0, result.stdout + result.stderr
+
+    wrong_model = v2_verdict_document(
+        [dict(entry)], serving_models=["qwen/a-different-model"])
+    write_verdicts(pack, wrong_model)
+    result = run_gate(pack)
+    assert result.returncode != 0
+    assert "must attest exactly the requested serving model" in result.stdout
+
+    missing_basis = v2_verdict_document([dict(entry)])
+    del missing_basis["verdicts"][0]["basis"]
+    write_verdicts(pack, missing_basis)
+    result = run_gate(pack)
+    assert result.returncode != 0
+    assert "missing fields ['basis']" in result.stdout

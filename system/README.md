@@ -33,8 +33,18 @@ python3.12 scripts/validate_vault.py
 
 Stage 3 — Verifier. Set `FAL_KEY` in the process environment; never place it
 in repository files or command arguments. The pinned independent model is
-`qwen/qwen3-vl-235b-a22b-instruct` through `openrouter/router/vision`, prompt
-version `v1`. No Claude/Anthropic model is permitted for this stage.
+`qwen/qwen3-vl-235b-a22b-instruct` through fal's OpenAI-compatible
+`openrouter/router/openai/v1/chat/completions` route, prompt version `v2`.
+The response's serving-model field must exactly match the requested model or
+the run stops. No Claude/Anthropic model is permitted for this stage.
+
+Version 2 verifies each claim once against the union of its exact quotes. It
+projects away claim-schema scaffolding (for example procedure IDs, step
+numbers, target-part IDs, and state IDs) and audits only semantic content.
+Omission is allowed unless it drops a governing condition or direction and
+thereby broadens the assertion. The claim-level result is repeated on text
+binding rows for artifact compatibility; `basis: CLAIM_QUOTE_UNION` makes the
+scope explicit.
 
 ```bash
 python3.12 system/verify_claims.py
@@ -44,11 +54,15 @@ python3.12 system/verify_claims.py --product <product> --conflicts
 
 Exit codes are `0` complete, `10` complete with `MEANING_CHANGED` alarms,
 `20` partial, `30` provider/credential failure, and `40` malformed provider
-output after retry. Responses are cached under `system/cache/` using claim,
-binding, quote hash, translation hash, tier, model, and prompt version. The
-script reports an estimate using the documented model token prices; actual
-provider billing can differ. A five-pack run is expected to stay within
-single-digit dollars. Stop if projected spend would exceed that range.
+output after retry. Exit `50` means the serving-model attestation was missing
+or did not exactly match the pinned Qwen ID. Responses are cached under
+`system/cache/` using claim ID, the ordered quote-hash union, semantic
+projection hash, tier, model, endpoint, verification scope, and prompt
+version. `verdicts.json` records the endpoint, serving model, estimated spend,
+and provider-reported spend in `run_metadata`. The estimate uses the
+documented model token prices; actual provider billing can differ. A five-pack
+run is expected to stay within single-digit dollars. Stop if projected spend
+would exceed that range.
 
 Stage 4 — human queue:
 
@@ -74,7 +88,9 @@ python3.12 -m compileall system/ evidence-packs/
 python3.12 -m pytest -q system/tests
 ```
 
-With `FAL_KEY` configured, the small manual canary is:
+With a rotated `FAL_KEY` configured, the manual canary checks four known v1
+noise cases, the three genuine defects from the owner spot-check, and exact
+serving-model attestation:
 
 ```bash
 python3.12 system/tests/live_canary.py
