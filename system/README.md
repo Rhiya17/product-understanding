@@ -98,6 +98,25 @@ serving-model attestation:
 python3.12 system/tests/live_canary.py
 ```
 
+## Answer tool (serving preview)
+
+`system/answer.py` answers a product question from the packs with citations —
+purely lexical retrieval, no model calls, no network:
+
+```bash
+python3.12 system/answer.py "what is the max child weight for the snugride?"
+python3.12 system/answer.py "how do I fold the stroller?" --preview
+python3.12 system/answer.py "..." --product levoit-core-300s --top 5 --json
+```
+
+Serving policy: by default only `PUBLISHED` claims are answered — latest
+human disposition `APPROVED_FOR_PUBLISH` with no outstanding
+`MEANING_CHANGED` verdict. Approved claims under a live alarm are
+`SUSPENDED`; unreviewed claims are `CANDIDATE`; both are hidden by default
+and shown clearly labeled under `--preview`. `REJECTED_FOR_SERVING` claims
+are never served. The tool reads `claims.json`, `reviews.json`, and
+`verdicts.json` directly; the review pass immediately changes what it serves.
+
 Current repository note: the Bose curated video index is registered as
 `src_video_index`; the hardened vault validator is expected to pass all five
 packs.
