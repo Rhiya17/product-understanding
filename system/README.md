@@ -75,6 +75,8 @@ Queues are written as each pack's `review-queue.md`, ordered from semantic
 alarms through conflicts, C3/C2, unresolved C0/C1 verification, gaps, and
 C0/C1 batch-eligibility spot audits. The five-item sample is selected by a
 stable SHA-256 rank and the complete eligible batch is listed in the queue.
+Any new v2 `MEANING_CHANGED` alarm reopens an older human disposition and is
+shown explicitly; a prior decision never causes a fresh alarm to disappear.
 Humans record individual or explicitly confirmed batch decisions in
 `reviews.json`; they do not edit claims or verdicts.
 

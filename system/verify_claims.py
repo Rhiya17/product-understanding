@@ -72,8 +72,12 @@ audit.
 Omission alone is not a meaning change: a claim may state a faithful subset of
 the source. But if dropping a condition or direction makes the projection
 assert something more broadly than the quotes support, that is an unsupported
-addition and is MEANING_CHANGED. Exact qualifiers, limits, conditions, and
-directions still matter. Keep an adversarial stance after applying these rules.
+addition and is MEANING_CHANGED. In particular, a bare range or limit is read
+as unconditional: if a quote requires that range or limit together with an
+operating condition (for example, devices must be within range and powered
+on), omitting the condition wrongly implies the range alone is sufficient.
+Exact qualifiers, limits, conditions, and directions still matter. Keep an
+adversarial stance after applying these rules.
 
 EXACT QUOTES (union):
 {quotes_json}

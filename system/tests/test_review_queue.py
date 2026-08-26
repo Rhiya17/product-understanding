@@ -54,7 +54,8 @@ def test_queue_ordering_unresolved_bucket_fences_and_human_skip(tmp_path):
         verdict("claim_conflict_a"), verdict("claim_conflict_b"),
         verdict("claim_c3"), verdict("claim_c2"),
         verdict("claim_unresolved_c0", "CANNOT_JUDGE", "unclear"),
-        verdict("claim_eligible"), verdict("claim_human"),
+        verdict("claim_eligible"),
+        verdict("claim_human", "MEANING_CHANGED", "new v2 discrepancy"),
     ]
     (pack / "verdicts.json").write_text(json.dumps({
         "model": "qwen/qwen3-vl-235b-a22b-instruct",
@@ -77,7 +78,8 @@ def test_queue_ordering_unresolved_bucket_fences_and_human_skip(tmp_path):
     text = (pack / "review-queue.md").read_text()
 
     assert result == {
-        "product": "test-product", "alarms": 1, "conflicts": 1,
+        "product": "test-product", "alarms": 2, "reopened_alarms": 1,
+        "conflicts": 1,
         "c3": 1, "c2": 1, "unresolved_verifier": 2,
         "gaps": 1, "batch_eligible": 1, "spot_audit_sample": 1,
         "path": str(pack / "review-queue.md"),
@@ -93,7 +95,8 @@ def test_queue_ordering_unresolved_bucket_fences_and_human_skip(tmp_path):
     assert "Triage (advisory): `GENUINE_CONFLICT`" in text
     assert "claim_missing_c1" in text
     assert "one or more binding verdicts are missing" in text
-    assert "claim_human" not in text
+    assert "claim_human" in text
+    assert "REOPENED: v2 MEANING_CHANGED" in text
     assert "claim_eligible" in text
     assert "Spot-audit sample: `1` of `1` eligible claims." in text
     assert "```text\nA | B\nsecond line\n```" in text

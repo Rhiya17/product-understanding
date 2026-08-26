@@ -10,14 +10,16 @@ This is an advisory proposal document, not a publication record. Only the produc
 - Claims in pack: `108`
 - Existing human decisions: `2`
 - Undecided claims covered here: `106`
-- Proposed `NEEDS_RECHECK`: `89`
+- Existing decisions reopened by v2 alarms: `0`
+- Total owner action items: `106`
+- Proposed `NEEDS_RECHECK`: `39`
 - Proposed `REJECTED_FOR_SERVING`: `0`
-- Proposed `APPROVED_FOR_PUBLISH`: `17`
-- Batch-eligible C0/C1: `2`
+- Proposed `APPROVED_FOR_PUBLISH`: `67`
+- Batch-eligible C0/C1: `4`
 
 For C2/C3, mark every item individually. For section 7, inspect every designated sample item; then either confirm the batch statement or mark the sample as failed and decide every batch member individually.
 
-## 1. MEANING_CHANGED alarms (89)
+## 1. MEANING_CHANGED alarms (39)
 
 ### `claim_srl_care_buckle`
 
@@ -28,7 +30,7 @@ For C2/C3, mark every item individually. For section 7, inspect every designated
 - Source authority: `MANUFACTURER_MANUAL`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: Translation adds 'air dry' and 'repeat until it fastens with a click', which are not in the quote; also adds restrictions ('do not submerge the buckle strap', 'no soaps...') not mentioned; alters method by implying a multi-step process beyond the quote's scope. The translation adds specific cleaning instructions (e.g., 'place in a cup of warm water', 'press the red button', 'repeat until it fastens with a click') not present in the original quote, which only states prohibitions. This constitutes an unauthorized addition of procedural detail, altering the meaning.
+- Proposed rationale: Verifier found a meaning change: The projection adds 'air dry' and 'repeat until it fastens with a click', which are not mentioned in any quote; also, 'agitate_in_warm_water' implies a method not explicitly named, and the instruction to 'repeat' introduces an unbounded condition not supported by the source. The projection adds 'air dry' and 'repeat until it fastens with a click', which are not mentioned in any quote; also, 'agitate_in_warm_water' implies a method not explicitly named, and the instruction to 'repeat' introduces an unbounded condition not supported by the source.
 
 Applicability
 
@@ -65,7 +67,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `77`
 To clean, place in a cup of warm water and gently agitate the buckle. Press the red button several times while in the water.
 ```
 
-Verifier: `MEANING_CHANGED` — Translation adds 'air dry' and 'repeat until it fastens with a click', which are not in the quote; also adds restrictions ('do not submerge the buckle strap', 'no soaps...') not mentioned; alters method by implying a multi-step process beyond the quote's scope.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds 'air dry' and 'repeat until it fastens with a click', which are not mentioned in any quote; also, 'agitate_in_warm_water' implies a method not explicitly named, and the instruction to 'repeat' introduces an unbounded condition not supported by the source.
 
 Quote — binding 1, source `src_snugride_manual_en_v1`, page `77`
 
@@ -73,57 +75,9 @@ Quote — binding 1, source `src_snugride_manual_en_v1`, page `77`
 DO NOT SUBMERGE THE BUCKLE STRAP . DO NOT USE SOAPS, HOUSEHOLD DETERGENTS or LUBRICANTS.
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds specific cleaning instructions (e.g., 'place in a cup of warm water', 'press the red button', 'repeat until it fastens with a click') not present in the original quote, which only states prohibitions. This constitutes an unauthorized addition of procedural detail, altering the meaning.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds 'air dry' and 'repeat until it fastens with a click', which are not mentioned in any quote; also, 'agitate_in_warm_water' implies a method not explicitly named, and the instruction to 'repeat' introduces an unbounded condition not supported by the source.
 
 Extractor notes: Assigned C3 (higher of C2/C3): buckle cleaning directly affects harness latching; manual pairs it with a latching-failure warning on page 78.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_care_harness`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `CARE` / `harness_and_lower_anchor_strap_cleaning`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation merges 'harness straps' and 'lower anchor attachment strap' into a single object 'harness_and_lower_anchor_strap_cleaning', implying they are a single unit or subject to identical care rules, whereas the original quote treats them as separate items with distinct restrictions. Also, the translation drops the causal warning 'Doing so may weaken the straps' as a separate consequence, embedding it as part of the restriction clause, which alters the emphasis and structure of the warning.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "instructions": [
-    "mild soap and damp cloth"
-  ],
-  "method": "surface_wash_only",
-  "restrictions": [
-    "do not immerse harness straps or lower anchor attachment strap in water — may weaken straps"
-  ]
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `79`
-
-```text
-Surface wash only with mild soap and damp cloth. DO NOT IMMERSE THE HARNESS STRAPS or LOWER ANCHOR ATTACHMENT STRAP IN WATER. Doing so may weaken the straps.
-```
-
-Verifier: `MEANING_CHANGED` — The translation merges 'harness straps' and 'lower anchor attachment strap' into a single object 'harness_and_lower_anchor_strap_cleaning', implying they are a single unit or subject to identical care rules, whereas the original quote treats them as separate items with distinct restrictions. Also, the translation drops the causal warning 'Doing so may weaken the straps' as a separate consequence, embedding it as part of the restriction clause, which alters the emphasis and structure of the warning.
-
-Extractor notes: Assigned C3 (higher of C2/C3): improper harness cleaning can weaken restraint straps.
 
 Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
 
@@ -136,7 +90,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote simply states 'GoMax Infant Car Seat Base - ✓', implying compatibility or approval, while the translation falsely asserts 'incompatible_with_gomax_base', directly contradicting the original meaning.
+- Proposed rationale: Verifier found a meaning change: The quote only confirms the existence or compatibility of the GoMax Infant Car Seat Base with a checkmark, but the projection asserts a specific mechanical relationship ('carrier clicks into stay-in-car base') which is not stated or implied in the quote.
 
 Applicability
 
@@ -167,7 +121,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `3`
 GoMax Infant Car Seat Base - ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The quote simply states 'GoMax Infant Car Seat Base - ✓', implying compatibility or approval, while the translation falsely asserts 'incompatible_with_gomax_base', directly contradicting the original meaning.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote only confirms the existence or compatibility of the GoMax Infant Car Seat Base with a checkmark, but the projection asserts a specific mechanical relationship ('carrier clicks into stay-in-car base') which is not stated or implied in the quote.
 
 Extractor notes: Chart marks '-' in the SnugRide Infant Car Seats column for this base: NOT compatible. From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -182,7 +136,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds the qualifier that 'Graco Premier car seats are sold with bases that are not sold separately (criteria key *)', which is not stated in the exact quote and introduces a new condition about sales packaging not present in the source. The translation adds 'compatible_with_graco_premier_base' and implies functional compatibility, while the quote only states that bases are included with car seats and not sold separately — no claim of compatibility or click-in functionality is made.
+- Proposed rationale: Verifier found a meaning change: The projection asserts a functional relationship 'carrier clicks into stay-in-car base' which is not supported by any quote; the quotes only state that bases are included with car seats and not sold separately, without describing mechanical compatibility or usage. The projection asserts a functional relationship 'carrier clicks into stay-in-car base' which is not supported by any quote; the quotes only state that bases are included with car seats and not sold separately, without describing mechanical compatibility or usage.
 
 Applicability
 
@@ -214,7 +168,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `3`
 Graco Premier Infant Car Seat Bases* ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds the qualifier that 'Graco Premier car seats are sold with bases that are not sold separately (criteria key *)', which is not stated in the exact quote and introduces a new condition about sales packaging not present in the source.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection asserts a functional relationship 'carrier clicks into stay-in-car base' which is not supported by any quote; the quotes only state that bases are included with car seats and not sold separately, without describing mechanical compatibility or usage.
 
 Quote — binding 1, source `src_compatibility_chart_apr2026`, page `3`
 
@@ -222,7 +176,7 @@ Quote — binding 1, source `src_compatibility_chart_apr2026`, page `3`
 *Graco® Premier car seats are sold with bases that are not sold separately.
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds 'compatible_with_graco_premier_base' and implies functional compatibility, while the quote only states that bases are included with car seats and not sold separately — no claim of compatibility or click-in functionality is made.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection asserts a functional relationship 'carrier clicks into stay-in-car base' which is not supported by any quote; the quotes only state that bases are included with car seats and not sold separately, without describing mechanical compatibility or usage.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -237,7 +191,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'carrier clicks into stay-in-car base' and 'compatible_with_snuglock_load_leg_base' which are not stated in the quote; the quote only names the product and includes a checkmark, implying a feature, not compatibility or installation behavior.
+- Proposed rationale: Verifier found a meaning change: The quote only states the product name 'SnugLock® Infant Car Seat Base ft. Load Leg Technology' with a checkmark, implying existence or feature inclusion, but does not assert compatibility, a carrier-base clicking relationship, or any functional interaction — these are unsupported semantic additions.
 
 Applicability
 
@@ -268,7 +222,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `3`
 SnugLock® Infant Car Seat Base ft. Load Leg Technology ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds 'carrier clicks into stay-in-car base' and 'compatible_with_snuglock_load_leg_base' which are not stated in the quote; the quote only names the product and includes a checkmark, implying a feature, not compatibility or installation behavior.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote only states the product name 'SnugLock® Infant Car Seat Base ft. Load Leg Technology' with a checkmark, implying existence or feature inclusion, but does not assert compatibility, a carrier-base clicking relationship, or any functional interaction — these are unsupported semantic additions.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -283,7 +237,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote only names the product 'SnugRide® Lite Infant Car Seat Base' without stating any compatibility or functional relationship; the translation adds unmentioned claims about 'carrier clicks into stay-in-car base' and 'compatible_with_snugride_lite_base', altering meaning.
+- Proposed rationale: Verifier found a meaning change: The quote only confirms the existence of the 'SnugRide® Lite Infant Car Seat Base' but provides no information about compatibility, clicking mechanism, or relationship to a carrier; asserting 'carrier clicks into stay-in-car base' adds unsupported functional semantics.
 
 Applicability
 
@@ -314,99 +268,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `3`
 SnugRide® Lite Infant Car Seat Base ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The quote only names the product 'SnugRide® Lite Infant Car Seat Base' without stating any compatibility or functional relationship; the translation adds unmentioned claims about 'carrier clicks into stay-in-car base' and 'compatible_with_snugride_lite_base', altering meaning.
-
-Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_compat_base_snugride_snugfit`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `COMPATIBILITY` / `compatible_with_snugride_snugfit_base`
-- Source authority: `MANUFACTURER_SUPPORT_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote only states the product name 'SnugRide® SnugFit Infant Car Seat Base' with a checkmark, implying availability or inclusion, but the translation adds specific functional claims (e.g., 'carrier clicks into stay-in-car base') and a compatibility predicate not present in the source.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "compatible": true,
-  "counterpart": "SnugRide SnugFit Infant Car Seat Base",
-  "counterpart_name": "SnugRide SnugFit Infant Car Seat Base",
-  "counterpart_type": "infant_car_seat_base",
-  "relationship": "carrier clicks into stay-in-car base"
-}
-```
-
-Quote — binding 0, source `src_compatibility_chart_apr2026`, page `3`
-
-```text
-SnugRide® SnugFit Infant Car Seat Base ✓
-```
-
-Verifier: `MEANING_CHANGED` — The quote only states the product name 'SnugRide® SnugFit Infant Car Seat Base' with a checkmark, implying availability or inclusion, but the translation adds specific functional claims (e.g., 'carrier clicks into stay-in-car base') and a compatibility predicate not present in the source.
-
-Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_compat_base_snugride_snuglock`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `COMPATIBILITY` / `compatible_with_snugride_snuglock_base`
-- Source authority: `MANUFACTURER_SUPPORT_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote merely names a product ('SnugRide® SnugLock® Infant Car Seat Base') with a checkmark, implying availability or inclusion, while the translation falsely asserts a compatibility relationship ('carrier clicks into stay-in-car base') and invents functional behavior not stated in the source.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "compatible": true,
-  "counterpart": "SnugRide SnugLock Infant Car Seat Base",
-  "counterpart_name": "SnugRide SnugLock Infant Car Seat Base",
-  "counterpart_type": "infant_car_seat_base",
-  "relationship": "carrier clicks into stay-in-car base"
-}
-```
-
-Quote — binding 0, source `src_compatibility_chart_apr2026`, page `3`
-
-```text
-SnugRide® SnugLock® Infant Car Seat Base ✓
-```
-
-Verifier: `MEANING_CHANGED` — The quote merely names a product ('SnugRide® SnugLock® Infant Car Seat Base') with a checkmark, implying availability or inclusion, while the translation falsely asserts a compatibility relationship ('carrier clicks into stay-in-car base') and invents functional behavior not stated in the source.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote only confirms the existence of the 'SnugRide® Lite Infant Car Seat Base' but provides no information about compatibility, clicking mechanism, or relationship to a carrier; asserting 'carrier clicks into stay-in-car base' adds unsupported functional semantics.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -421,7 +283,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_MANUAL`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds a restriction not in the quote: 'Never use with any other manufacturer's strollers,' which introduces a new prohibition not stated in the original.
+- Proposed rationale: Verifier found a meaning change: The projection adds an unsupported restriction: 'Never use with any other manufacturer's strollers.' The quote only restricts use to strollers that are part of the Graco Click Connect travel system — it does not explicitly prohibit use with strollers from other manufacturers, even if they are not part of that system. The projection broadens the scope by implying a universal prohibition against non-Graco strollers, which is not stated or entailed by the quote.
 
 Applicability
 
@@ -452,7 +314,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `60`
 USE ONLY WITH STROLLERS THAT ARE PART OF THE GRACO CLICK CONNECT TRAVEL SYSTEM.
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds a restriction not in the quote: 'Never use with any other manufacturer's strollers,' which introduces a new prohibition not stated in the original.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds an unsupported restriction: 'Never use with any other manufacturer's strollers.' The quote only restricts use to strollers that are part of the Graco Click Connect travel system — it does not explicitly prohibit use with strollers from other manufacturers, even if they are not part of that system. The projection broadens the scope by implying a universal prohibition against non-Graco strollers, which is not stated or entailed by the quote.
 
 Extractor notes: None recorded.
 
@@ -467,7 +329,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote 'DuoGlider ✓ ✓' is ambiguous and minimal, offering no information about compatibility, seat position, travel system function, or counterpart type; the translation invents specific technical details not present in the source. The translation adds 'infant car seat clicks into stroller (travel system)' and specifies 'DuoGlider' as the counterpart, neither of which is stated in the exact quote; it also misrepresents the condition as a compatibility predicate rather than a usage restriction.
+- Proposed rationale: Verifier found a meaning change: The projection asserts 'infant car seat clicks into stroller (travel system)' and implies general compatibility, but the quotes only state 'DuoGlider ✓ ✓' and '+Can only be used with the rear seat' — no mention of infant car seat, clicking mechanism, or travel system functionality; adding these unsupported semantic elements broadens the claim beyond what the quotes support. The projection asserts 'infant car seat clicks into stroller (travel system)' and implies general compatibility, but the quotes only state 'DuoGlider ✓ ✓' and '+Can only be used with the rear seat' — no mention of infant car seat, clicking mechanism, or travel system functionality; adding these unsupported semantic elements broadens the claim beyond what the quotes support.
 
 Applicability
 
@@ -499,7 +361,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
 DuoGlider ✓ ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The quote 'DuoGlider ✓ ✓' is ambiguous and minimal, offering no information about compatibility, seat position, travel system function, or counterpart type; the translation invents specific technical details not present in the source.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection asserts 'infant car seat clicks into stroller (travel system)' and implies general compatibility, but the quotes only state 'DuoGlider ✓ ✓' and '+Can only be used with the rear seat' — no mention of infant car seat, clicking mechanism, or travel system functionality; adding these unsupported semantic elements broadens the claim beyond what the quotes support.
 
 Quote — binding 1, source `src_compatibility_chart_apr2026`, page `1`
 
@@ -507,7 +369,7 @@ Quote — binding 1, source `src_compatibility_chart_apr2026`, page `1`
 +Can only be used with the rear seat
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds 'infant car seat clicks into stroller (travel system)' and specifies 'DuoGlider' as the counterpart, neither of which is stated in the exact quote; it also misrepresents the condition as a compatibility predicate rather than a usage restriction.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection asserts 'infant car seat clicks into stroller (travel system)' and implies general compatibility, but the quotes only state 'DuoGlider ✓ ✓' and '+Can only be used with the rear seat' — no mention of infant car seat, clicking mechanism, or travel system functionality; adding these unsupported semantic elements broadens the claim beyond what the quotes support.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -522,7 +384,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote only states 'FastAction Fold Jogger ✓ ✓' with no mention of compatibility, infant car seats, or travel systems; the translation invents a detailed compatibility claim not present in the source.
+- Proposed rationale: Verifier found a meaning change: The quote only confirms 'FastAction Fold Jogger' with checkmarks, implying compatibility or feature presence, but does not specify the relationship as 'infant car seat clicks into stroller (travel system)' or define it as a 'stroller' — these are unsupported semantic additions not entailed by the quote.
 
 Applicability
 
@@ -553,7 +415,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
 FastAction Fold Jogger ✓ ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The quote only states 'FastAction Fold Jogger ✓ ✓' with no mention of compatibility, infant car seats, or travel systems; the translation invents a detailed compatibility claim not present in the source.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote only confirms 'FastAction Fold Jogger' with checkmarks, implying compatibility or feature presence, but does not specify the relationship as 'infant car seat clicks into stroller (travel system)' or define it as a 'stroller' — these are unsupported semantic additions not entailed by the quote.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -568,7 +430,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote only states 'FastAction Jogger LX ✓ ✓' with no mention of compatibility, infant car seats, travel systems, or stroller type — the translation invents specific functional relationships and object attributes not present in the source.
+- Proposed rationale: Verifier found a meaning change: The quote only confirms 'FastAction Jogger LX' with checkmarks, implying compatibility or inclusion, but does not specify the relationship as 'infant car seat clicks into stroller (travel system)' or define it as a 'stroller' — these are unsupported semantic additions not entailed by the quote.
 
 Applicability
 
@@ -599,7 +461,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
 FastAction Jogger LX ✓ ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The quote only states 'FastAction Jogger LX ✓ ✓' with no mention of compatibility, infant car seats, travel systems, or stroller type — the translation invents specific functional relationships and object attributes not present in the source.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote only confirms 'FastAction Jogger LX' with checkmarks, implying compatibility or inclusion, but does not specify the relationship as 'infant car seat clicks into stroller (travel system)' or define it as a 'stroller' — these are unsupported semantic additions not entailed by the quote.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -614,7 +476,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote merely states 'FastAction SE 2.0 ✓ ✓' with no explicit claim about compatibility, infant car seat integration, or travel system functionality; the translation invents a detailed compatibility relationship not present in the source.
+- Proposed rationale: Verifier found a meaning change: The quote only confirms 'FastAction SE 2.0' with checkmarks, implying compatibility or feature presence, but does not specify that it is a stroller, nor that it supports an infant car seat clicking into it as a travel system — these are unsupported semantic additions.
 
 Applicability
 
@@ -645,7 +507,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
 FastAction SE 2.0 ✓ ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The quote merely states 'FastAction SE 2.0 ✓ ✓' with no explicit claim about compatibility, infant car seat integration, or travel system functionality; the translation invents a detailed compatibility relationship not present in the source.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote only confirms 'FastAction SE 2.0' with checkmarks, implying compatibility or feature presence, but does not specify that it is a stroller, nor that it supports an infant car seat clicking into it as a travel system — these are unsupported semantic additions.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -660,7 +522,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote 'GoMax ✓ ✓' provides no information about compatibility, infant car seats, travel systems, or strollers; the translation invents a detailed functional relationship not present in the source.
+- Proposed rationale: Verifier found a meaning change: The quote 'GoMax ✓ ✓' does not specify any relationship, counterpart type, or functional interaction like 'infant car seat clicks into stroller'; these are unsupported semantic additions not entailed by the quote.
 
 Applicability
 
@@ -691,7 +553,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
 GoMax ✓ ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The quote 'GoMax ✓ ✓' provides no information about compatibility, infant car seats, travel systems, or strollers; the translation invents a detailed functional relationship not present in the source.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote 'GoMax ✓ ✓' does not specify any relationship, counterpart type, or functional interaction like 'infant car seat clicks into stroller'; these are unsupported semantic additions not entailed by the quote.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -706,7 +568,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote 'Graco Merge ✓ ✓' is ambiguous and does not specify compatibility, counterpart type, relationship, or predicate; the translation adds detailed structured claims not present in the source.
+- Proposed rationale: Verifier found a meaning change: The quote only states 'Graco Merge ✓ ✓' without specifying any relationship, compatibility, or function such as 'infant car seat clicks into stroller'; projecting a travel system relationship with functional detail is an unsupported semantic addition.
 
 Applicability
 
@@ -737,7 +599,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
 Graco Merge ✓ ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The quote 'Graco Merge ✓ ✓' is ambiguous and does not specify compatibility, counterpart type, relationship, or predicate; the translation adds detailed structured claims not present in the source.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote only states 'Graco Merge ✓ ✓' without specifying any relationship, compatibility, or function such as 'infant car seat clicks into stroller'; projecting a travel system relationship with functional detail is an unsupported semantic addition.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -752,7 +614,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote is a fragment with no predicate or object, only a product name and a checkmark; the translation invents a full compatibility relationship with specific attributes not present in the source.
+- Proposed rationale: Verifier found a meaning change: The quote only confirms a checkmark (✓) next to 'Graco Premier Merge', implying compatibility or inclusion, but does not specify the nature of the relationship (e.g., 'infant car seat clicks into stroller'), nor does it identify the counterpart as a 'stroller' or define the system as a 'travel system' — these are unsupported semantic additions.
 
 Applicability
 
@@ -783,7 +645,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
 Graco Premier Merge ✓ -
 ```
 
-Verifier: `MEANING_CHANGED` — The quote is a fragment with no predicate or object, only a product name and a checkmark; the translation invents a full compatibility relationship with specific attributes not present in the source.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote only confirms a checkmark (✓) next to 'Graco Premier Merge', implying compatibility or inclusion, but does not specify the nature of the relationship (e.g., 'infant car seat clicks into stroller'), nor does it identify the counterpart as a 'stroller' or define the system as a 'travel system' — these are unsupported semantic additions.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -798,7 +660,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required; Extractor flagged applicability or interpretation context
-- Proposed rationale: Verifier found a meaning change: The quote merely lists 'Graco® Modes® Strollers' with checkmarks, implying compatibility or inclusion without specifying conditions; the translation adds a detailed qualifier excluding two specific models and defines a precise relationship (infant car seat clicks into stroller), which is not stated or implied in the original. The translation adds the phrase '(criteria key *)' not present in the quote, implying a metadata or indexing system that the original does not state, thus altering meaning.
+- Proposed rationale: Verifier found a meaning change: The projection asserts a functional relationship ('infant car seat clicks into stroller') not mentioned in any quote; the quotes only list compatible stroller models with an exception, without specifying any mechanism or function. The projection asserts a functional relationship ('infant car seat clicks into stroller') not mentioned in any quote; the quotes only list compatible stroller models with an exception, without specifying any mechanism or function.
 
 Applicability
 
@@ -830,7 +692,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
 Graco® Modes® Strollers ✓ ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The quote merely lists 'Graco® Modes® Strollers' with checkmarks, implying compatibility or inclusion without specifying conditions; the translation adds a detailed qualifier excluding two specific models and defines a precise relationship (infant car seat clicks into stroller), which is not stated or implied in the original.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection asserts a functional relationship ('infant car seat clicks into stroller') not mentioned in any quote; the quotes only list compatible stroller models with an exception, without specifying any mechanism or function.
 
 Quote — binding 1, source `src_compatibility_chart_apr2026`, page `1`
 
@@ -838,7 +700,7 @@ Quote — binding 1, source `src_compatibility_chart_apr2026`, page `1`
 * With the exception of Modes 3 Lite DLX & Modes 3 Lite Platinum
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds the phrase '(criteria key *)' not present in the quote, implying a metadata or indexing system that the original does not state, thus altering meaning.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection asserts a functional relationship ('infant car seat clicks into stroller') not mentioned in any quote; the quotes only list compatible stroller models with an exception, without specifying any mechanism or function.
 
 Extractor notes: Per-cell footnote-marker placement is ambiguous in mechanical text extraction of the chart (marks are graphical); the '(Stroller frame & rear facing use mode only)' criteria appears adjacent to this row and may apply to the GoMax column — consult chart PDF visually. From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -853,7 +715,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote 'Outpace® LX ✓ -' contains no information about compatibility, infant car seats, travel systems, or strollers; the translation fabricates a detailed compatibility claim not present in the source.
+- Proposed rationale: Verifier found a meaning change: The quote only states 'Outpace® LX ✓ -' with no semantic content about compatibility, counterpart type, or relationship; projecting a full travel system relationship with infant car seat integration is an unsupported addition not entailed by the quote.
 
 Applicability
 
@@ -884,7 +746,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
 Outpace® LX ✓ -
 ```
 
-Verifier: `MEANING_CHANGED` — The quote 'Outpace® LX ✓ -' contains no information about compatibility, infant car seats, travel systems, or strollers; the translation fabricates a detailed compatibility claim not present in the source.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote only states 'Outpace® LX ✓ -' with no semantic content about compatibility, counterpart type, or relationship; projecting a full travel system relationship with infant car seat integration is an unsupported addition not entailed by the quote.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -899,7 +761,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote only states 'Ready2Grow 2.0 ✓ ✓' with no context, while the translation adds specific compatibility details (e.g., 'can only be used with the rear seat', 'infant car seat clicks into stroller'), which are not present or implied in the original. The translation adds specific product names ('Ready2Grow 2.0'), relationship details ('infant car seat clicks into stroller'), and a structured compatibility predicate not present in the quote, which only states a generic restriction: 'Can only be used with the rear seat'.
+- Proposed rationale: Verifier found a meaning change: The projection asserts 'compatible: true' and 'relationship: infant car seat clicks into stroller (travel system)', but the quotes only state 'Ready2Grow 2.0 ✓ ✓' (ambiguous checkmarks) and '+Can only be used with the rear seat' — neither confirms compatibility nor describes a click-in travel system relationship; the projection adds unsupported functional semantics. The projection asserts 'compatible: true' and 'relationship: infant car seat clicks into stroller (travel system)', but the quotes only state 'Ready2Grow 2.0 ✓ ✓' (ambiguous checkmarks) and '+Can only be used with the rear seat' — neither confirms compatibility nor describes a click-in travel system relationship; the projection adds unsupported functional semantics.
 
 Applicability
 
@@ -931,7 +793,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
 Ready2Grow 2.0 ✓ ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The quote only states 'Ready2Grow 2.0 ✓ ✓' with no context, while the translation adds specific compatibility details (e.g., 'can only be used with the rear seat', 'infant car seat clicks into stroller'), which are not present or implied in the original.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection asserts 'compatible: true' and 'relationship: infant car seat clicks into stroller (travel system)', but the quotes only state 'Ready2Grow 2.0 ✓ ✓' (ambiguous checkmarks) and '+Can only be used with the rear seat' — neither confirms compatibility nor describes a click-in travel system relationship; the projection adds unsupported functional semantics.
 
 Quote — binding 1, source `src_compatibility_chart_apr2026`, page `1`
 
@@ -939,7 +801,7 @@ Quote — binding 1, source `src_compatibility_chart_apr2026`, page `1`
 +Can only be used with the rear seat
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds specific product names ('Ready2Grow 2.0'), relationship details ('infant car seat clicks into stroller'), and a structured compatibility predicate not present in the quote, which only states a generic restriction: 'Can only be used with the rear seat'.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection asserts 'compatible: true' and 'relationship: infant car seat clicks into stroller (travel system)', but the quotes only state 'Ready2Grow 2.0 ✓ ✓' (ambiguous checkmarks) and '+Can only be used with the rear seat' — neither confirms compatibility nor describes a click-in travel system relationship; the projection adds unsupported functional semantics.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -954,7 +816,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote only states 'Ready2Grow LX 2.0 ✓ ✓' with no context, while the translation adds specific compatibility details (e.g., 'infant car seat clicks into stroller', 'rear seat only', 'travel system') not present in the original, altering the meaning. The translation adds specific product names ('Ready2Grow LX 2.0') and a functional relationship ('infant car seat clicks into stroller') not present in the quote, which only states a positional constraint ('Can only be used with the rear seat').
+- Proposed rationale: Verifier found a meaning change: The projection asserts a 'relationship' of 'infant car seat clicks into stroller (travel system)', which is not supported by any quote; the quotes only mention compatibility with 'Ready2Grow LX 2.0' and a restriction to 'rear seat', with no mention of infant car seats, clicking mechanisms, or travel systems. The projection asserts a 'relationship' of 'infant car seat clicks into stroller (travel system)', which is not supported by any quote; the quotes only mention compatibility with 'Ready2Grow LX 2.0' and a restriction to 'rear seat', with no mention of infant car seats, clicking mechanisms, or travel systems.
 
 Applicability
 
@@ -986,7 +848,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
 Ready2Grow LX 2.0 ✓ ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The quote only states 'Ready2Grow LX 2.0 ✓ ✓' with no context, while the translation adds specific compatibility details (e.g., 'infant car seat clicks into stroller', 'rear seat only', 'travel system') not present in the original, altering the meaning.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection asserts a 'relationship' of 'infant car seat clicks into stroller (travel system)', which is not supported by any quote; the quotes only mention compatibility with 'Ready2Grow LX 2.0' and a restriction to 'rear seat', with no mention of infant car seats, clicking mechanisms, or travel systems.
 
 Quote — binding 1, source `src_compatibility_chart_apr2026`, page `1`
 
@@ -994,56 +856,9 @@ Quote — binding 1, source `src_compatibility_chart_apr2026`, page `1`
 +Can only be used with the rear seat
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds specific product names ('Ready2Grow LX 2.0') and a functional relationship ('infant car seat clicks into stroller') not present in the quote, which only states a positional constraint ('Can only be used with the rear seat').
+Verifier (claim quote union): `MEANING_CHANGED` — The projection asserts a 'relationship' of 'infant car seat clicks into stroller (travel system)', which is not supported by any quote; the quotes only mention compatibility with 'Ready2Grow LX 2.0' and a restriction to 'rear seat', with no mention of infant car seats, clicking mechanisms, or travel systems.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_compat_stroller_ready2jet`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `COMPATIBILITY` / `compatible_with_ready2jet`
-- Source authority: `MANUFACTURER_SUPPORT_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required; Extractor flagged applicability or interpretation context
-- Proposed rationale: Verifier found a meaning change: The translation adds the predicate 'infant car seat clicks into stroller (travel system)' and object type 'stroller', which are not mentioned in the quote; the quote only states compatibility conditionally for 2025+ models without specifying function or product type.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": "Ready2Jet models produced 2025 & later only",
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "compatible": true,
-  "counterpart": "prod_graco_ready2jet",
-  "counterpart_name": "Ready2Jet",
-  "counterpart_type": "stroller",
-  "qualifier": "Only with models produced in 2025 & later",
-  "relationship": "infant car seat clicks into stroller (travel system)"
-}
-```
-
-Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
-
-```text
-Ready2Jet® ✓ ✓ (Only with models produced in 2025 & later)
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds the predicate 'infant car seat clicks into stroller (travel system)' and object type 'stroller', which are not mentioned in the quote; the quote only states compatibility conditionally for 2025+ models without specifying function or product type.
-
-Extractor notes: Counterpart is catalog product prod_graco_ready2jet. The catalog's pilot Ready2Jet (2212125) predates 2025, so compatibility with that specific unit is revision-dependent per the chart qualifier. From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
 Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
 
@@ -1056,7 +871,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote merely states 'Ready2Roll Wagon ✓ ✓' with no mention of compatibility, infant car seats, travel systems, or strollers; the translation invents a detailed compatibility relationship not present in the source.
+- Proposed rationale: Verifier found a meaning change: The quote only states 'Ready2Roll Wagon ✓ ✓' with no semantic content about compatibility, counterpart type, or relationship; projecting 'infant car seat clicks into stroller (travel system)' is an unsupported addition with no basis in the quote.
 
 Applicability
 
@@ -1087,7 +902,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
 Ready2Roll Wagon ✓ ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The quote merely states 'Ready2Roll Wagon ✓ ✓' with no mention of compatibility, infant car seats, travel systems, or strollers; the translation invents a detailed compatibility relationship not present in the source.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote only states 'Ready2Roll Wagon ✓ ✓' with no semantic content about compatibility, counterpart type, or relationship; projecting 'infant car seat clicks into stroller (travel system)' is an unsupported addition with no basis in the quote.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -1102,7 +917,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote only states 'SnugRider® Elite ✓ ✓' with no context, while the translation adds specific claims about compatibility, relationship to a stroller, and function as a travel system — none of which are present or implied in the original.
+- Proposed rationale: Verifier found a meaning change: The quote only states 'SnugRider® Elite ✓ ✓' without specifying compatibility, counterpart type, or relationship; projecting 'infant car seat clicks into stroller (travel system)' adds unsupported semantic detail not entailed by the quote.
 
 Applicability
 
@@ -1133,7 +948,7 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
 SnugRider® Elite ✓ ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The quote only states 'SnugRider® Elite ✓ ✓' with no context, while the translation adds specific claims about compatibility, relationship to a stroller, and function as a travel system — none of which are present or implied in the original.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote only states 'SnugRider® Elite ✓ ✓' without specifying compatibility, counterpart type, or relationship; projecting 'infant car seat clicks into stroller (travel system)' adds unsupported semantic detail not entailed by the quote.
 
 Extractor notes: SnugRider Elite is a car seat carrier frame. From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
@@ -1148,7 +963,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote 'Verb® ✓ ✓' provides no information about compatibility, strollers, infant car seats, or travel systems; the translation invents a detailed compatibility relationship not present in the source.
+- Proposed rationale: Verifier found a meaning change: The quote 'Verb® ✓ ✓' provides no semantic content about compatibility, counterpart type, or relationship (e.g., 'infant car seat clicks into stroller'). These assertions are unsupported additions not entailed by the quote union.
 
 Applicability
 
@@ -1179,52 +994,9 @@ Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
 Verb® ✓ ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The quote 'Verb® ✓ ✓' provides no information about compatibility, strollers, infant car seats, or travel systems; the translation invents a detailed compatibility relationship not present in the source.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote 'Verb® ✓ ✓' provides no semantic content about compatibility, counterpart type, or relationship (e.g., 'infant car seat clicks into stroller'). These assertions are unsupported additions not entailed by the quote union.
 
 Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_limit_base_80pct`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `LIMIT` / `minimum_base_support_on_vehicle_seat`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation incorrectly implies the base must provide 80% support on the vehicle seat, while the quote only requires the base to occupy a minimum of 80% of the vehicle seat’s surface — a spatial requirement, not a functional support claim.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "unit": "percent",
-  "value": 80
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `25`
-
-```text
-Note: Make sure base is a minimum of 80% on vehicle seat.
-```
-
-Verifier: `MEANING_CHANGED` — The translation incorrectly implies the base must provide 80% support on the vehicle seat, while the quote only requires the base to occupy a minimum of 80% of the vehicle seat’s surface — a spatial requirement, not a functional support claim.
-
-Extractor notes: None recorded.
 
 Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
 
@@ -1237,7 +1009,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_MANUAL`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation omits the critical qualifier 'ONLY' and the metric equivalent '5 kg', reducing the constraint to a mere maximum weight limit without emphasizing exclusivity or providing dual units, thus altering the original meaning.
+- Proposed rationale: Verifier found a meaning change: The projection states a value of 12 lb without the governing condition that the body support can ONLY be used for infants 12 lb or less — omitting the restriction implies the value is a standalone specification, not a maximum limit under a usage constraint.
 
 Applicability
 
@@ -1265,7 +1037,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `72`
 The body support can ONLY be used for infants 12 lb (5 kg) or less.
 ```
 
-Verifier: `MEANING_CHANGED` — The translation omits the critical qualifier 'ONLY' and the metric equivalent '5 kg', reducing the constraint to a mere maximum weight limit without emphasizing exclusivity or providing dual units, thus altering the original meaning.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection states a value of 12 lb without the governing condition that the body support can ONLY be used for infants 12 lb or less — omitting the restriction implies the value is a standalone specification, not a maximum limit under a usage constraint.
 
 Extractor notes: None recorded.
 
@@ -1280,7 +1052,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_MANUAL`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds information not in the quote: 'date label is on back of car seat.' The original quote does not specify where the date of manufacture is located, so this addition changes the meaning by introducing an unstated detail.
+- Proposed rationale: Verifier found a meaning change: The projection adds an unsupported assertion: 'date label is on back of car seat.' The quote does not specify where the date of manufacture is located; this is an unsupported semantic addition that broadens the claim beyond what is stated.
 
 Applicability
 
@@ -1309,7 +1081,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `10`
 STOP using this car seat and throw it away 7 years after the date of manufacture.
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds information not in the quote: 'date label is on back of car seat.' The original quote does not specify where the date of manufacture is located, so this addition changes the meaning by introducing an unstated detail.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds an unsupported assertion: 'date label is on back of car seat.' The quote does not specify where the date of manufacture is located; this is an unsupported semantic addition that broadens the claim beyond what is stated.
 
 Extractor notes: None recorded.
 
@@ -1324,7 +1096,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_MANUAL`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds the condition 'For rear-facing use,' which is not present in the original quote. This introduces a contextual restriction not stated in the source, altering the scope and applicability of the rule.
+- Proposed rationale: Verifier found a meaning change: The quote mandates harness straps be at or just below the child’s shoulders without specifying rear-facing use; the projection adds the condition 'For rear-facing use,' which is not supported by the quote and narrows the scope in a way that introduces an unsupported governing condition.
 
 Applicability
 
@@ -1353,53 +1125,9 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `48`
 Harness Straps MUST BE AT OR JUST BELOW the Child’s Shoulders
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds the condition 'For rear-facing use,' which is not present in the original quote. This introduces a contextual restriction not stated in the source, altering the scope and applicability of the rule.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote mandates harness straps be at or just below the child’s shoulders without specifying rear-facing use; the projection adds the condition 'For rear-facing use,' which is not supported by the quote and narrows the scope in a way that introduces an unsupported governing condition.
 
 Extractor notes: Stated as the check in 4-A step 6 and repeated in step 10 ('At or Just Below the Child’s Shoulders'); slot selection detail (upper vs lower loops) is in claim_srl_step_harnessfit_11/12.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_limit_head_clearance`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `LIMIT` / `minimum_head_clearance_below_seat_top`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'child's' before 'head', which is not in the original quote and introduces an assumption about the subject that may not be intended (e.g., could apply to a dummy or other object).
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "rule": "Top of child's head must be at least 1 in (2.5 cm) below the top of the car seat.",
-  "unit": "in",
-  "value": 1
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `49`
-
-```text
-Top of Head MUST BE AT LEAST 1” (2.5 cm) BELOW the Top of the Car Seat
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'child's' before 'head', which is not in the original quote and introduces an assumption about the subject that may not be intended (e.g., could apply to a dummy or other object).
-
-Extractor notes: None recorded.
 
 Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
 
@@ -1412,7 +1140,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_MANUAL`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The quote specifies a maximum height of 32” (81 cm) for rear-facing use, but the translation incorrectly labels it as 'maximum_child_height' without specifying that this limit applies only to rear-facing configuration; also, the quote includes weight limits (4-30 lb) which the translation omits entirely, altering scope and conditions.
+- Proposed rationale: Verifier found a meaning change: The quote specifies '32” (81 cm) or less' as a conditional limit for rear-facing use, but the projection drops the 'or less' and the governing condition, implying 32 inches is an exact or standalone value rather than a maximum bound under specific usage.
 
 Applicability
 
@@ -1440,50 +1168,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `22`
 Rear-Facing: 4-30 lb (1.8- 13.6 kg) 32” (81 cm) or less
 ```
 
-Verifier: `MEANING_CHANGED` — The quote specifies a maximum height of 32” (81 cm) for rear-facing use, but the translation incorrectly labels it as 'maximum_child_height' without specifying that this limit applies only to rear-facing configuration; also, the quote includes weight limits (4-30 lb) which the translation omits entirely, altering scope and conditions.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_limit_min_weight`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `LIMIT` / `minimum_child_weight`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation only states the minimum child weight (4 lb) but omits the maximum weight (30 lb) and the height limit (32" or less), altering the full meaning of the safety constraint.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "unit": "lb",
-  "value": 4
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `4`
-
-```text
-This car seat is for children 4-30 lb (1.8-13.6 kg) and 32” (81 cm) or less.
-```
-
-Verifier: `MEANING_CHANGED` — The translation only states the minimum child weight (4 lb) but omits the maximum weight (30 lb) and the height limit (32" or less), altering the full meaning of the safety constraint.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote specifies '32” (81 cm) or less' as a conditional limit for rear-facing use, but the projection drops the 'or less' and the governing condition, implying 32 inches is an exact or standalone value rather than a maximum bound under specific usage.
 
 Extractor notes: None recorded.
 
@@ -1498,7 +1183,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_MANUAL`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds specific operational detail ('pressed down to loosen harness straps') and precise location ('at the front of the carrier') not present in the source, which only states 'Under Pad' without direction or function.
+- Proposed rationale: Verifier found a meaning change: The quote only identifies the part as 'H Harness Release Lever (Under Pad)' without specifying its location 'at the front of the carrier' or its function 'pressed down to loosen harness straps.' These additions are unsupported semantic expansions not present in the source.
 
 Applicability
 
@@ -1533,7 +1218,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `14`
 H  Harness Release Lever (Under Pad)
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds specific operational detail ('pressed down to loosen harness straps') and precise location ('at the front of the carrier') not present in the source, which only states 'Under Pad' without direction or function.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote only identifies the part as 'H Harness Release Lever (Under Pad)' without specifying its location 'at the front of the carrier' or its function 'pressed down to loosen harness straps.' These additions are unsupported semantic expansions not present in the source.
 
 Extractor notes: None recorded.
 
@@ -1548,7 +1233,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_MANUAL`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'marked with a blue label' and 'on the carrier', which are not present in the exact quote; it also reifies the concept as a 'PART_LOCATION' with structured metadata not implied by the source.
+- Proposed rationale: Verifier found a meaning change: The quote specifies 'Rear-Facing Belt Path (When Used Without Base)' but the projection adds 'marked with a blue label,' which is not mentioned or implied in the quote. This is an unsupported semantic addition.
 
 Applicability
 
@@ -1583,7 +1268,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `14`
 E  Rear-Facing Belt Path (When Used Without Base)
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds 'marked with a blue label' and 'on the carrier', which are not present in the exact quote; it also reifies the concept as a 'PART_LOCATION' with structured metadata not implied by the source.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote specifies 'Rear-Facing Belt Path (When Used Without Base)' but the projection adds 'marked with a blue label,' which is not mentioned or implied in the quote. This is an unsupported semantic addition.
 
 Extractor notes: None recorded.
 
@@ -1598,7 +1283,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_MANUAL`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'follow vehicle installation instructions (sections 3-C, 3-D, 6-D lap belt installation)' which is not mentioned in the original quote. This introduces new conditions and references to vehicle-specific instructions not present in the source, altering the meaning.
+- Proposed rationale: Verifier found a meaning change: The projection adds 'follow vehicle installation instructions (sections 3-C, 3-D, 6-D lap belt installation)' which is not mentioned or implied in the quote. The quote only restricts use to forward-facing aircraft seats; it does not reference vehicle instructions or section numbers, making this an unsupported semantic addition.
 
 Applicability
 
@@ -1626,22 +1311,717 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `10`
 This child restraint is certified for use in aircraft. Use only on forward-facing aircraft seats.
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds 'follow vehicle installation instructions (sections 3-C, 3-D, 6-D lap belt installation)' which is not mentioned in the original quote. This introduces new conditions and references to vehicle-specific instructions not present in the source, altering the meaning.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds 'follow vehicle installation instructions (sections 3-C, 3-D, 6-D lap belt installation)' which is not mentioned or implied in the quote. The quote only restricts use to forward-facing aircraft seats; it does not reference vehicle instructions or section numbers, making this an unsupported semantic addition.
 
 Extractor notes: Closes vault collection gap 'FAA/aircraft certification ... unverified' — the manual states aircraft certification on pages 10-11.
 
 Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
 
-### `claim_srl_spec_base_features`
+### `claim_srl_step_baseless_3`
 
 - Proposed disposition: **`NEEDS_RECHECK`**
 - Owner decision: [ ] confirm recommendation  [ ] override: __________
 - Claim tier: `C3`
-- Type / predicate: `SPEC` / `base_features`
-- Source authority: `MANUFACTURER_SPEC_PAGE`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation incorrectly implies that all listed features are independently included, while the quote specifies that only the 'LATCH-equipped stay-in-car base' is included, and the other features describe that base.
+- Proposed rationale: Verifier found a meaning change: The projection adds 'pull to confirm it is locked,' which is not mentioned or implied in the quote. The quote only describes pulling the belt out and letting it retract to hear a 'clicking' sound — no verification step is stated. Adding a confirmation action broadens the procedure beyond what is supported.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Lock the vehicle seat belt: slowly pull the shoulder belt all the way out, let it retract, then pull to confirm it is locked.",
+  "procedure": "install_carrier_seat_belt",
+  "step_number": 3
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `42`
+
+```text
+3. Lock the Vehicle Seat Belt In most vehicles today, slowly pull the shoulder belt all the way out and then let it go back in. You will hear a “clicking” sound.
+```
+
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds 'pull to confirm it is locked,' which is not mentioned or implied in the quote. The quote only describes pulling the belt out and letting it retract to hear a 'clicking' sound — no verification step is stated. Adding a confirmation action broadens the procedure beyond what is supported.
+
+Extractor notes: None recorded.
+
+Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
+
+### `claim_srl_step_baseless_5`
+
+- Proposed disposition: **`NEEDS_RECHECK`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `alarm`
+- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
+- Proposed rationale: Verifier found a meaning change: The projection adds a quantitative requirement ('it must move less than 1 in (2.5 cm)') that is not present in the quote. The quote only instructs to 'push and pull the car seat' to test for tightness, without specifying any numerical limit or acceptable range of movement. This addition introduces an unsupported condition, broadening the claim beyond what the source supports.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Test for tightness: push and pull the car seat at the seat belt side to side and front to back; it must move less than 1 in (2.5 cm).",
+  "procedure": "install_carrier_seat_belt",
+  "step_number": 5
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `43`
+
+```text
+5. Test For Tightness Grab the sides of the car seat where the seat belt is and push and pull the car seat from side to side and front to back.
+```
+
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds a quantitative requirement ('it must move less than 1 in (2.5 cm)') that is not present in the quote. The quote only instructs to 'push and pull the car seat' to test for tightness, without specifying any numerical limit or acceptable range of movement. This addition introduces an unsupported condition, broadening the claim beyond what the source supports.
+
+Extractor notes: None recorded.
+
+Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
+
+### `claim_srl_step_baseless_6`
+
+- Proposed disposition: **`NEEDS_RECHECK`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `alarm`
+- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
+- Proposed rationale: Verifier found a meaning change: The quote requires the red level line to be level with the ground but does not mention or condition the check on the child being in the restraint; adding that condition is an unsupported semantic addition that broadens the scope of the requirement.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Check the rear-facing level line: the red level line on the side of the seat must be level with the ground, checked with the child in the restraint.",
+  "procedure": "install_carrier_seat_belt",
+  "step_number": 6
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `44`
+
+```text
+6. Check the Rear Facing Level Line The red level line on the side of the seat MUST BE LEVEL with the ground.
+```
+
+Verifier (claim quote union): `MEANING_CHANGED` — The quote requires the red level line to be level with the ground but does not mention or condition the check on the child being in the restraint; adding that condition is an unsupported semantic addition that broadens the scope of the requirement.
+
+Extractor notes: None recorded.
+
+Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
+
+### `claim_srl_step_beltbase_5`
+
+- Proposed disposition: **`NEEDS_RECHECK`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `alarm`
+- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
+- Proposed rationale: Verifier found a meaning change: The projection adds 'pull to confirm it is locked,' which is not mentioned or implied in the quote. The quote only describes pulling the belt out and letting it retract to hear a 'clicking' sound — no verification step is stated. Adding a confirmation action broadens the procedure beyond what is supported.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Lock the vehicle seat belt: slowly pull the shoulder belt all the way out, let it retract, then pull to confirm it is locked.",
+  "procedure": "install_base_seat_belt",
+  "step_number": 5
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `37`
+
+```text
+5. Lock the Vehicle Seat Belt In most vehicles today, slowly pull the shoulder belt all the way out and then let it go back in. You will hear a “clicking” sound.
+```
+
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds 'pull to confirm it is locked,' which is not mentioned or implied in the quote. The quote only describes pulling the belt out and letting it retract to hear a 'clicking' sound — no verification step is stated. Adding a confirmation action broadens the procedure beyond what is supported.
+
+Extractor notes: None recorded.
+
+Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
+
+### `claim_srl_step_beltbase_7`
+
+- Proposed disposition: **`NEEDS_RECHECK`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `alarm`
+- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
+- Proposed rationale: Verifier found a meaning change: The projection adds a quantitative requirement ('it must move less than 1 in (2.5 cm)') that is not present in the quote. The quote only instructs to 'push and pull the base' to test for tightness, without specifying any numerical limit or tolerance for movement. This introduces an unsupported condition, broadening the claim beyond what the source supports.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Test for tightness: push and pull the base at the seat belt side to side and front to back; it must move less than 1 in (2.5 cm).",
+  "procedure": "install_base_seat_belt",
+  "step_number": 7
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `38`
+
+```text
+7. Test For Tightness Grab the sides of the base where the seat belt is and push and pull the base from side to side and front to back.
+```
+
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds a quantitative requirement ('it must move less than 1 in (2.5 cm)') that is not present in the quote. The quote only instructs to 'push and pull the base' to test for tightness, without specifying any numerical limit or tolerance for movement. This introduces an unsupported condition, broadening the claim beyond what the source supports.
+
+Extractor notes: None recorded.
+
+Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
+
+### `claim_srl_step_beltbase_8`
+
+- Proposed disposition: **`NEEDS_RECHECK`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `alarm`
+- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
+- Proposed rationale: Verifier found a meaning change: The projection adds 'pull up on the front corners to confirm attachment,' which is not mentioned or implied in the quote. The quote only instructs to push down until a 'click' is heard; no verification step via pulling up is described. This introduces an unsupported semantic addition.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Place the car seat into the base and push down on the front of the car seat and handle until it clicks; pull up on the front corners to confirm attachment.",
+  "procedure": "install_base_seat_belt",
+  "step_number": 8
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `38`
+
+```text
+8. Attach Car Seat to Base Place car seat into the base. Push down on the front of the car seat and handle until you hear a “click”.
+```
+
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds 'pull up on the front corners to confirm attachment,' which is not mentioned or implied in the quote. The quote only instructs to push down until a 'click' is heard; no verification step via pulling up is described. This introduces an unsupported semantic addition.
+
+Extractor notes: None recorded.
+
+Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
+
+### `claim_srl_step_latch_6`
+
+- Proposed disposition: **`NEEDS_RECHECK`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `alarm`
+- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
+- Proposed rationale: Verifier found a meaning change: The projection adds an unsupported requirement that 'hooks must not be attached upside down,' which is not mentioned or implied in the quote. The quote only specifies that the strap should lay flat and not be twisted; no condition about hook orientation is present.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Connect the lower anchor attachment connectors to the vehicle's lower anchors; the strap should lie flat and not be twisted, and hooks must not be attached upside down.",
+  "procedure": "install_base_lower_anchor",
+  "step_number": 6
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `28`
+
+```text
+6. Connect Lower Anchor Attachment Connectors to the Vehicle’s Lower Anchor Attachment Anchors Lower anchor attachment strap should lay as flat as possible and not be twisted.
+```
+
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds an unsupported requirement that 'hooks must not be attached upside down,' which is not mentioned or implied in the quote. The quote only specifies that the strap should lay flat and not be twisted; no condition about hook orientation is present.
+
+Extractor notes: None recorded.
+
+Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
+
+### `claim_srl_step_latch_8`
+
+- Proposed disposition: **`NEEDS_RECHECK`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `alarm`
+- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
+- Proposed rationale: Verifier found a meaning change: The quote describes pushing and pulling the base to test for tightness but does not specify any quantitative limit (e.g., 'less than 1 in (2.5 cm)'). Adding this numerical constraint is an unsupported semantic addition that broadens the claim beyond what the source supports.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Test for tightness: push and pull the base at the strap side to side and front to back; it must move less than 1 in (2.5 cm).",
+  "procedure": "install_base_lower_anchor",
+  "step_number": 8
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `29`
+
+```text
+8. Test For Tightness Grab the sides of the base where the Lower anchor attachment strap is and push and pull the base from side to side and front to back.
+```
+
+Verifier (claim quote union): `MEANING_CHANGED` — The quote describes pushing and pulling the base to test for tightness but does not specify any quantitative limit (e.g., 'less than 1 in (2.5 cm)'). Adding this numerical constraint is an unsupported semantic addition that broadens the claim beyond what the source supports.
+
+Extractor notes: None recorded.
+
+Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
+
+### `claim_srl_step_latch_9`
+
+- Proposed disposition: **`NEEDS_RECHECK`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `alarm`
+- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
+- Proposed rationale: Verifier found a meaning change: The projection adds 'pull up on the front corners to confirm attachment,' which is not mentioned or implied in the quote. The quote only instructs to push down until a 'click' is heard; no verification step via pulling up is described. This introduces an unsupported semantic addition.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Place the car seat into the base and push down on the front of the car seat and handle until it clicks; pull up on the front corners to confirm attachment.",
+  "procedure": "install_base_lower_anchor",
+  "step_number": 9
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `30`
+
+```text
+9. Attach Car Seat to Base Place car seat into the base. Push down on the front of the car seat and handle until you hear a “click”.
+```
+
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds 'pull up on the front corners to confirm attachment,' which is not mentioned or implied in the quote. The quote only instructs to push down until a 'click' is heard; no verification step via pulling up is described. This introduces an unsupported semantic addition.
+
+Extractor notes: None recorded.
+
+Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
+
+### `claim_srl_warning_airbag`
+
+- Proposed disposition: **`NEEDS_RECHECK`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `WARNING` / `prohibits_active_front_airbag_position`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `alarm`
+- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
+- Proposed rationale: Verifier found a meaning change: The projection adds a causal consequence ('An inflating air bag can hit the child and car seat with great force and cause serious injury or death') not present in the quote. The quote only prohibits placement; it does not assert the mechanism or outcome of injury/death. This is an unsupported semantic addition.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "description": "NEVER place this child restraint rear-facing in a vehicle seating location that has an active front air bag. An inflating air bag can hit the child and car seat with great force and cause serious injury or death.",
+  "hazard_type": "airbag_hazard"
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `11`
+
+```text
+NEVER PLACE THIS CHILD RESTRAINT REAR-FACING IN A VEHICLE SEATING LOCATION THAT HAS AN ACTIVE FRONT AIR BAG.
+```
+
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds a causal consequence ('An inflating air bag can hit the child and car seat with great force and cause serious injury or death') not present in the quote. The quote only prohibits placement; it does not assert the mechanism or outcome of injury/death. This is an unsupported semantic addition.
+
+Extractor notes: None recorded.
+
+Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
+
+### `claim_srl_warning_bulky_clothing`
+
+- Proposed disposition: **`NEEDS_RECHECK`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `WARNING` / `prohibits_bulky_clothing_under_harness`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `alarm`
+- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
+- Proposed rationale: Verifier found a meaning change: The projection adds an unsupported procedural instruction: 'Buckle the child first, then place a blanket over them or the coat on backwards.' This directive is not mentioned or implied in the quote, which only warns against bulky garments and explains why (prevents proper harness tightening). Adding this specific alternative method constitutes an unsupported semantic addition.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "description": "In cold weather do not put snowsuits or bulky garments on the child in the car seat; bulky clothing prevents proper harness tightening. Buckle the child first, then place a blanket over them or the coat on backwards.",
+  "hazard_type": "harness_fit_hazard"
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `47`
+
+```text
+WARNING! In cold weather do not put snowsuits or bulky garments on your child when placing them in the car seat. Bulky clothing can prevent the harness straps from being tightened properly.
+```
+
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds an unsupported procedural instruction: 'Buckle the child first, then place a blanket over them or the coat on backwards.' This directive is not mentioned or implied in the quote, which only warns against bulky garments and explains why (prevents proper harness tightening). Adding this specific alternative method constitutes an unsupported semantic addition.
+
+Extractor notes: None recorded.
+
+Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
+
+### `claim_srl_warning_strings_cords`
+
+- Proposed disposition: **`NEEDS_RECHECK`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `WARNING` / `requires_keeping_strings_away`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `alarm`
+- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
+- Proposed rationale: Verifier found a meaning change: The projection adds unsupported assertions: 'hang strings on the carrier' and 'attach strings to toys' are not mentioned in the quotes. The original quote only warns against placing the carrier near windows with cords from blinds or drapes; it does not prohibit hanging strings on the carrier or attaching strings to toys, which broadens the scope beyond what is supported.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "description": "Keep strings and cords away from the child; they can cause strangulation. Do not place the carrier near windows with blind or drape cords, hang strings on the carrier, or attach strings to toys.",
+  "hazard_type": "strangulation_hazard"
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `59`
+
+```text
+KEEP STRINGS AND CORDS AWAY FROM CHILD. Strings and cords can cause strangulation. DO NOT place carrier near windows where cords from blinds or drapes can strangle a child.
+```
+
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds unsupported assertions: 'hang strings on the carrier' and 'attach strings to toys' are not mentioned in the quotes. The original quote only warns against placing the carrier near windows with cords from blinds or drapes; it does not prohibit hanging strings on the carrier or attaching strings to toys, which broadens the scope beyond what is supported.
+
+Extractor notes: None recorded.
+
+Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
+
+## 2. Unresolved conflict claims (0 claims / 0 pairs)
+
+None outside section 1 or existing human decisions.
+
+## 3. C3 claims (62)
+
+### `claim_srl_limit_min_weight`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `LIMIT` / `minimum_child_weight`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "unit": "lb",
+  "value": 4
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `4`
+
+```text
+This car seat is for children 4-30 lb (1.8-13.6 kg) and 32” (81 cm) or less.
+```
+
+Verifier (claim quote union): `ENTAILED` — The quote explicitly states the car seat is for children 4-30 lb, so the value 4 lb is directly supported as the lower bound of the weight range.
+
+Extractor notes: None recorded.
+
+### `claim_srl_limit_head_clearance`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `LIMIT` / `minimum_head_clearance_below_seat_top`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "rule": "Top of child's head must be at least 1 in (2.5 cm) below the top of the car seat.",
+  "unit": "in",
+  "value": 1
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `49`
+
+```text
+Top of Head MUST BE AT LEAST 1” (2.5 cm) BELOW the Top of the Car Seat
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection faithfully restates the exact requirement from the quote: the top of the child’s head must be at least 1 inch (2.5 cm) below the top of the car seat. The unit and value are correctly extracted and aligned with the quote. No condition, direction, or qualifier is omitted or broadened.
+
+Extractor notes: None recorded.
+
+### `claim_srl_limit_base_80pct`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `LIMIT` / `minimum_base_support_on_vehicle_seat`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "unit": "percent",
+  "value": 80
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `25`
+
+```text
+Note: Make sure base is a minimum of 80% on vehicle seat.
+```
+
+Verifier (claim quote union): `ENTAILED` — The quote specifies a minimum of 80% for base placement on a vehicle seat, and the projection captures the numeric value and unit (percent, 80) without adding unsupported conditions or broadening scope; the governing condition (on vehicle seat) is not asserted in the projection, but its omission does not create a semantic addition because the projection does not claim universality or remove a required condition — it merely extracts the numeric constraint as stated.
+
+Extractor notes: None recorded.
+
+### `claim_srl_spec_harness_type`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `SPEC` / `harness_type`
+- Source authority: `MANUFACTURER_SPEC_PAGE`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "value": "5-point, front-adjust"
+}
+```
+
+Quote — binding 0, source `src_pdp_specs_page`, page `None`
+
+```text
+| Harness | 5-point, front-adjust (per official feature-callout gallery image) |
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection '5-point, front-adjust' is a direct subset of the quoted text, which explicitly states the same attributes without adding or removing any conditions, directions, or qualifiers.
+
+Extractor notes: Harness spec assigned C3 because it touches the child-restraint harness system.
+
+### `claim_srl_spec_base_features`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `SPEC` / `base_features`
+- Source authority: `MANUFACTURER_SPEC_PAGE`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
 
 Applicability
 
@@ -1673,303 +2053,20 @@ Quote — binding 0, source `src_pdp_specs_page`, page `None`
 | Base | Included; LATCH-equipped stay-in-car base, 4-position adjustable, with easy-to-read level indicator |
 ```
 
-Verifier: `MEANING_CHANGED` — The translation incorrectly implies that all listed features are independently included, while the quote specifies that only the 'LATCH-equipped stay-in-car base' is included, and the other features describe that base.
+Verifier (claim quote union): `ENTAILED` — The quote explicitly states the base is 'Included; LATCH-equipped stay-in-car base, 4-position adjustable, with easy-to-read level indicator,' which directly supports all features and the inclusion status in the projection.
 
 Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_spec_base_recline_positions`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `SPEC` / `base_recline_positions`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation omits the instruction to 'squeeze the base recline lever and lift the base to extend the foot,' which is a critical operational step. The quote describes both a feature (4 positions) and an action required to use it; the translation only captures the feature, thereby changing the meaning by dropping essential procedural context.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "value": 4
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `26`
-
-```text
-Base Has 4 Recline Positions Squeeze the base recline lever and lift the base to extend the foot.
-```
-
-Verifier: `MEANING_CHANGED` — The translation omits the instruction to 'squeeze the base recline lever and lift the base to extend the foot,' which is a critical operational step. The quote describes both a feature (4 positions) and an action required to use it; the translation only captures the feature, thereby changing the meaning by dropping essential procedural context.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_spec_carrier_weight`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C0`
-- Type / predicate: `SPEC` / `carrier_weight_without_base`
-- Source authority: `MANUFACTURER_SPEC_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation omits the marketing claim of '7.2 lb', which is explicitly present in the quote and creates a discrepancy with the spec table's 7.5 lb. This omission changes the meaning by erasing a key contrast the source highlights.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "unit": "lb",
-  "value": 7.5
-}
-```
-
-Quote — binding 0, source `src_pdp_specs_page`, page `None`
-
-```text
-| Carrier weight without base | 7.5 lb (spec table); marketing copy says "weighs just 7.2 lb" |
-```
-
-Verifier: `MEANING_CHANGED` — The translation omits the marketing claim of '7.2 lb', which is explicitly present in the quote and creates a discrepancy with the spec table's 7.5 lb. This omission changes the meaning by erasing a key contrast the source highlights.
-
-Extractor notes: PDP spec table says 7.5 lb while PDP marketing copy says 7.2 lb; spec-table value recorded. Reviewer may want a second source.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_spec_dimensions`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C0`
-- Type / predicate: `SPEC` / `product_dimensions`
-- Source authority: `MANUFACTURER_SPEC_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation adds depth (18.07 in) and height (27.4 in) dimensions not mentioned in the quote, which only specifies width (15.5 in). Adding unmentioned attributes changes the meaning. The translation adds depth and width dimensions not present in the quote, which only specifies height; this introduces new information and alters the meaning. The translation adds height (27.4 in) and width (15.5 in) dimensions not present in the quote, which only specifies depth (18.07 in). Adding unmentioned attributes constitutes a meaning change.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "depth": 18.07,
-  "height": 27.4,
-  "unit": "in",
-  "width": 15.5
-}
-```
-
-Quote — binding 0, source `src_pdp_specs_page`, page `None`
-
-```text
-| Product width | 15.5 in |
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds depth (18.07 in) and height (27.4 in) dimensions not mentioned in the quote, which only specifies width (15.5 in). Adding unmentioned attributes changes the meaning.
-
-Quote — binding 1, source `src_pdp_specs_page`, page `None`
-
-```text
-| Product height | 27.4 in |
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds depth and width dimensions not present in the quote, which only specifies height; this introduces new information and alters the meaning.
-
-Quote — binding 2, source `src_pdp_specs_page`, page `None`
-
-```text
-| Product depth | 18.07 in |
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds height (27.4 in) and width (15.5 in) dimensions not present in the quote, which only specifies depth (18.07 in). Adding unmentioned attributes constitutes a meaning change.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_spec_fmvss213`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `SPEC` / `safety_standard_certification`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation reduces the claim to a certification against FMVSS 213, omitting the critical qualifier 'meets or exceeds all applicable requirements' and dropping the context of 'for use in motor vehicles'. This removes the comparative strength ('or exceeds') and the specific application domain, altering the scope and assurance level of the original statement.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "standard": "FMVSS 213"
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `10`
-
-```text
-This child restraint meets or exceeds all applicable requirements of Federal motor vehicle safety standard 213 for use in motor vehicles.
-```
-
-Verifier: `MEANING_CHANGED` — The translation reduces the claim to a certification against FMVSS 213, omitting the critical qualifier 'meets or exceeds all applicable requirements' and dropping the context of 'for use in motor vehicles'. This removes the comparative strength ('or exceeds') and the specific application domain, altering the scope and assurance level of the original statement.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_spec_handle_positions`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `SPEC` / `carry_handle_positions`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds specific conditions (upright in position A when carrying, any locked position in vehicle) and assigns a rule not present in the quote; the quote only states 4 locked positions exist without specifying usage context or orientation. The translation omits the imperative 'MUST' for the first condition, replacing it with a weaker 'must', and drops the explicit distinction that the handle 'can be in any locked position' only 'when used in the vehicle' — instead implying 'any locked position is allowed in the vehicle' without specifying the context of use. This softens the requirement and removes the conditional scope, altering the meaning.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "rule": "Handle must be upright in position A when carrying; any locked position is allowed in the vehicle.",
-  "value": 4
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `19`
-
-```text
-2. Handle Has 4 Positions Rotate handle to any of the 4 locked positions.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds specific conditions (upright in position A when carrying, any locked position in vehicle) and assigns a rule not present in the quote; the quote only states 4 locked positions exist without specifying usage context or orientation.
-
-Quote — binding 1, source `src_snugride_manual_en_v1`, page `19`
-
-```text
-Carry handle MUST be upright in position A when carrying. Handle can be in any locked position when used in the vehicle.
-```
-
-Verifier: `MEANING_CHANGED` — The translation omits the imperative 'MUST' for the first condition, replacing it with a weaker 'must', and drops the explicit distinction that the handle 'can be in any locked position' only 'when used in the vehicle' — instead implying 'any locked position is allowed in the vehicle' without specifying the context of use. This softens the requirement and removes the conditional scope, altering the meaning.
-
-Extractor notes: Assigned C3 (carry-handle rule is a child-carrying safety constraint).
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_spec_harness_type`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `SPEC` / `harness_type`
-- Source authority: `MANUFACTURER_SPEC_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation drops the critical qualifier 'per official feature-callout gallery image', which limits the claim to a visual reference rather than asserting it as a factual specification. This omission changes the meaning by presenting the harness type as a direct product spec rather than an observation from an image.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "value": "5-point, front-adjust"
-}
-```
-
-Quote — binding 0, source `src_pdp_specs_page`, page `None`
-
-```text
-| Harness | 5-point, front-adjust (per official feature-callout gallery image) |
-```
-
-Verifier: `MEANING_CHANGED` — The translation drops the critical qualifier 'per official feature-callout gallery image', which limits the claim to a visual reference rather than asserting it as a factual specification. This omission changes the meaning by presenting the harness type as a direct product spec rather than an observation from an image.
-
-Extractor notes: Harness spec assigned C3 because it touches the child-restraint harness system.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
 
 ### `claim_srl_spec_install_methods`
 
-- Proposed disposition: **`NEEDS_RECHECK`**
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
 - Owner decision: [ ] confirm recommendation  [ ] override: __________
 - Claim tier: `C3`
 - Type / predicate: `SPEC` / `base_installation_methods`
 - Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: Translation adds unmentioned restriction: 'carrier without base installs with vehicle seat belt only,' which is not in the quote and alters the scope of installation instructions. The translation incorrectly implies that 'lower anchor attachment (LATCH)' is a valid installation method with a restriction ('Do not use both at the same time'), while the quote explicitly states lower anchor attachment is 'not available' — meaning it cannot be used at all.
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
 
 Applicability
 
@@ -2000,7 +2097,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `4`
 This infant car seat base can be installed in your vehicle using either the vehicle seat belt OR the Lower anchor attachment system. Both are equally safe to use. DO NOT USE BOTH AT THE SAME TIME.
 ```
 
-Verifier: `MEANING_CHANGED` — Translation adds unmentioned restriction: 'carrier without base installs with vehicle seat belt only,' which is not in the quote and alters the scope of installation instructions.
+Verifier (claim quote union): `ENTAILED` — The projection accurately summarizes the union: methods include vehicle seat belt and lower anchor (LATCH), with the restriction that both must not be used simultaneously (from quote 0), and that the carrier alone installs only with the seat belt (from quote 1). No unsupported addition, contradiction, or lost condition.
 
 Quote — binding 1, source `src_snugride_manual_en_v1`, page `4`
 
@@ -2008,22 +2105,20 @@ Quote — binding 1, source `src_snugride_manual_en_v1`, page `4`
 This infant car seat carrier can be installed in your vehicle using only the vehicle seat belt. Lower anchor attachment is not available to install the carrier.
 ```
 
-Verifier: `MEANING_CHANGED` — The translation incorrectly implies that 'lower anchor attachment (LATCH)' is a valid installation method with a restriction ('Do not use both at the same time'), while the quote explicitly states lower anchor attachment is 'not available' — meaning it cannot be used at all.
+Verifier (claim quote union): `ENTAILED` — The projection accurately summarizes the union: methods include vehicle seat belt and lower anchor (LATCH), with the restriction that both must not be used simultaneously (from quote 0), and that the carrier alone installs only with the seat belt (from quote 1). No unsupported addition, contradiction, or lost condition.
 
 Extractor notes: None recorded.
 
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
+### `claim_srl_spec_fmvss213`
 
-### `claim_srl_step_baseless_1`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
 - Owner decision: [ ] confirm recommendation  [ ] override: __________
 - Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
+- Type / predicate: `SPEC` / `safety_standard_certification`
 - Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation incorrectly combines 'Back Seat of the Vehicle' into 'vehicle back seat', which may imply a specific part (e.g., rear bench) rather than the general rear seating area. Also, the original specifies placing the car seat on 'the vehicle seat' (any seat in the back), while the translation implies placement directly on 'the vehicle back seat' as a single unit, potentially altering the intended scope of acceptable placement.
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
 
 Applicability
 
@@ -2040,34 +2135,30 @@ Object
 
 ```json
 {
-  "action": "Place the car seat on the vehicle back seat and push it back until the front of the car seat touches the vehicle seat back.",
-  "procedure": "install_carrier_seat_belt",
-  "step_number": 1
+  "standard": "FMVSS 213"
 }
 ```
 
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `41`
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `10`
 
 ```text
-1. Place Car Seat in Back Seat of the Vehicle Place the car seat on the vehicle seat. Push it back until the front of the car seat touches the vehicle seat back.
+This child restraint meets or exceeds all applicable requirements of Federal motor vehicle safety standard 213 for use in motor vehicles.
 ```
 
-Verifier: `MEANING_CHANGED` — The translation incorrectly combines 'Back Seat of the Vehicle' into 'vehicle back seat', which may imply a specific part (e.g., rear bench) rather than the general rear seating area. Also, the original specifies placing the car seat on 'the vehicle seat' (any seat in the back), while the translation implies placement directly on 'the vehicle back seat' as a single unit, potentially altering the intended scope of acceptable placement.
+Verifier (claim quote union): `ENTAILED` — The quote explicitly states the child restraint meets or exceeds requirements of 'Federal motor vehicle safety standard 213', which is semantically equivalent to 'FMVSS 213'. No condition, direction, or qualifier is omitted that would broaden or alter the meaning. The projection is a faithful subset.
 
 Extractor notes: None recorded.
 
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
+### `claim_srl_spec_base_recline_positions`
 
-### `claim_srl_step_baseless_3`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
 - Owner decision: [ ] confirm recommendation  [ ] override: __________
 - Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
+- Type / predicate: `SPEC` / `base_recline_positions`
 - Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'pull to confirm it is locked,' which is not mentioned in the original quote. The original only describes pulling the belt out and letting it retract, with a clicking sound indicating lock; no confirmation step is stated.
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
 
 Applicability
 
@@ -2084,34 +2175,30 @@ Object
 
 ```json
 {
-  "action": "Lock the vehicle seat belt: slowly pull the shoulder belt all the way out, let it retract, then pull to confirm it is locked.",
-  "procedure": "install_carrier_seat_belt",
-  "step_number": 3
+  "value": 4
 }
 ```
 
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `42`
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `26`
 
 ```text
-3. Lock the Vehicle Seat Belt In most vehicles today, slowly pull the shoulder belt all the way out and then let it go back in. You will hear a “clicking” sound.
+Base Has 4 Recline Positions Squeeze the base recline lever and lift the base to extend the foot.
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds 'pull to confirm it is locked,' which is not mentioned in the original quote. The original only describes pulling the belt out and letting it retract, with a clicking sound indicating lock; no confirmation step is stated.
+Verifier (claim quote union): `ENTAILED` — The quote explicitly states 'Base Has 4 Recline Positions', which directly supports the semantic projection {'value': 4}. No unsupported addition, contradiction, or lost condition is present; the number 4 is asserted unconditionally in the source.
 
 Extractor notes: None recorded.
 
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
+### `claim_srl_spec_handle_positions`
 
-### `claim_srl_step_baseless_5`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
 - Owner decision: [ ] confirm recommendation  [ ] override: __________
 - Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
+- Type / predicate: `SPEC` / `carry_handle_positions`
 - Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds a quantitative requirement ('it must move less than 1 in (2.5 cm)') not present in the original quote, which only instructs to push and pull the car seat without specifying any acceptable movement threshold.
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
 
 Applicability
 
@@ -2128,34 +2215,84 @@ Object
 
 ```json
 {
-  "action": "Test for tightness: push and pull the car seat at the seat belt side to side and front to back; it must move less than 1 in (2.5 cm).",
-  "procedure": "install_carrier_seat_belt",
-  "step_number": 5
+  "rule": "Handle must be upright in position A when carrying; any locked position is allowed in the vehicle.",
+  "value": 4
 }
 ```
 
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `43`
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `19`
 
 ```text
-5. Test For Tightness Grab the sides of the car seat where the seat belt is and push and pull the car seat from side to side and front to back.
+2. Handle Has 4 Positions Rotate handle to any of the 4 locked positions.
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds a quantitative requirement ('it must move less than 1 in (2.5 cm)') not present in the original quote, which only instructs to push and pull the car seat without specifying any acceptable movement threshold.
+Verifier (claim quote union): `ENTAILED` — The projection accurately combines both quotes: 'Handle must be upright in position A when carrying' is directly from quote 1, and 'any locked position is allowed in the vehicle' is supported by quote 1's statement that 'Handle can be in any locked position when used in the vehicle.' The value 4 is supported by quote 0 stating 'Handle Has 4 Positions.' No unsupported addition, contradiction, or lost condition exists.
 
-Extractor notes: None recorded.
+Quote — binding 1, source `src_snugride_manual_en_v1`, page `19`
 
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
+```text
+Carry handle MUST be upright in position A when carrying. Handle can be in any locked position when used in the vehicle.
+```
 
-### `claim_srl_step_baseless_6`
+Verifier (claim quote union): `ENTAILED` — The projection accurately combines both quotes: 'Handle must be upright in position A when carrying' is directly from quote 1, and 'any locked position is allowed in the vehicle' is supported by quote 1's statement that 'Handle can be in any locked position when used in the vehicle.' The value 4 is supported by quote 0 stating 'Handle Has 4 Positions.' No unsupported addition, contradiction, or lost condition exists.
 
-- Proposed disposition: **`NEEDS_RECHECK`**
+Extractor notes: Assigned C3 (carry-handle rule is a child-carrying safety constraint).
+
+### `claim_srl_compat_stroller_ready2jet`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
 - Owner decision: [ ] confirm recommendation  [ ] override: __________
 - Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'checked with the child in the restraint,' which is not mentioned in the original quote. This introduces a new condition (child must be present during check) that alters the meaning and scope of the instruction.
+- Type / predicate: `COMPATIBILITY` / `compatible_with_ready2jet`
+- Source authority: `MANUFACTURER_SUPPORT_PAGE`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required; Extractor flagged applicability or interpretation context
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": "Ready2Jet models produced 2025 & later only",
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "compatible": true,
+  "counterpart": "prod_graco_ready2jet",
+  "counterpart_name": "Ready2Jet",
+  "counterpart_type": "stroller",
+  "qualifier": "Only with models produced in 2025 & later",
+  "relationship": "infant car seat clicks into stroller (travel system)"
+}
+```
+
+Quote — binding 0, source `src_compatibility_chart_apr2026`, page `1`
+
+```text
+Ready2Jet® ✓ ✓ (Only with models produced in 2025 & later)
+```
+
+Verifier (claim quote union): `ENTAILED` — The quote explicitly restricts compatibility to models produced in 2025 & later, which is preserved in the qualifier field; all other semantic assertions (compatible, counterpart, relationship) are consistent with the quote’s implication that Ready2Jet® is a compatible stroller system for infant car seats.
+
+Extractor notes: Counterpart is catalog product prod_graco_ready2jet. The catalog's pilot Ready2Jet (2212125) predates 2025, so compatibility with that specific unit is revision-dependent per the chart qualifier. From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
+
+### `claim_srl_compat_base_snugride_snugfit`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `COMPATIBILITY` / `compatible_with_snugride_snugfit_base`
+- Source authority: `MANUFACTURER_SUPPORT_PAGE`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
 
 Applicability
 
@@ -2172,34 +2309,34 @@ Object
 
 ```json
 {
-  "action": "Check the rear-facing level line: the red level line on the side of the seat must be level with the ground, checked with the child in the restraint.",
-  "procedure": "install_carrier_seat_belt",
-  "step_number": 6
+  "compatible": true,
+  "counterpart": "SnugRide SnugFit Infant Car Seat Base",
+  "counterpart_name": "SnugRide SnugFit Infant Car Seat Base",
+  "counterpart_type": "infant_car_seat_base",
+  "relationship": "carrier clicks into stay-in-car base"
 }
 ```
 
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `44`
+Quote — binding 0, source `src_compatibility_chart_apr2026`, page `3`
 
 ```text
-6. Check the Rear Facing Level Line The red level line on the side of the seat MUST BE LEVEL with the ground.
+SnugRide® SnugFit Infant Car Seat Base ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds 'checked with the child in the restraint,' which is not mentioned in the original quote. This introduces a new condition (child must be present during check) that alters the meaning and scope of the instruction.
+Verifier (claim quote union): `CANNOT_JUDGE` — The quote only confirms the existence of the SnugRide® SnugFit Infant Car Seat Base; it provides no information about compatibility, relationship, or functional interaction (e.g., 'carrier clicks into stay-in-car base').
 
-Extractor notes: None recorded.
+Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
+### `claim_srl_compat_base_snugride_snuglock`
 
-### `claim_srl_step_beltbase_1`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
 - Owner decision: [ ] confirm recommendation  [ ] override: __________
 - Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation changes 'Attach the Lower anchor attachment connectors to the plastic bars' to 'Store the lower anchor attachment connectors on the plastic bars', replacing the action 'attach' with 'store', which alters the intended procedure.
+- Type / predicate: `COMPATIBILITY` / `compatible_with_snugride_snuglock_base`
+- Source authority: `MANUFACTURER_SUPPORT_PAGE`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
 
 Applicability
 
@@ -2216,914 +2353,34 @@ Object
 
 ```json
 {
-  "action": "Store the lower anchor attachment connectors on the plastic bars on the sides of the base and remove the slack.",
-  "procedure": "install_base_seat_belt",
-  "step_number": 1
+  "compatible": true,
+  "counterpart": "SnugRide SnugLock Infant Car Seat Base",
+  "counterpart_name": "SnugRide SnugLock Infant Car Seat Base",
+  "counterpart_type": "infant_car_seat_base",
+  "relationship": "carrier clicks into stay-in-car base"
 }
 ```
 
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `33`
+Quote — binding 0, source `src_compatibility_chart_apr2026`, page `3`
 
 ```text
-1. Store Lower Anchor Attachment Connectors Attach the Lower anchor attachment connectors to the plastic bars on sides of base as shown. Remove the slack.
+SnugRide® SnugLock® Infant Car Seat Base ✓
 ```
 
-Verifier: `MEANING_CHANGED` — The translation changes 'Attach the Lower anchor attachment connectors to the plastic bars' to 'Store the lower anchor attachment connectors on the plastic bars', replacing the action 'attach' with 'store', which alters the intended procedure.
+Verifier (claim quote union): `CANNOT_JUDGE` — The quote only confirms the existence of the SnugRide SnugLock Infant Car Seat Base but provides no information about compatibility, relationship, or functionality such as 'carrier clicks into stay-in-car base'.
 
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_beltbase_2`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'seat belt' to the procedure name ('install_base_seat_belt'), which is not mentioned in the original quote. The quote only describes placing the base on the back seat and pushing it back — no reference to seat belts or their use is made. This addition introduces new information not present in the source, altering the meaning.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Place the base flat on the vehicle back seat and push it back until the front of the base touches the vehicle seat back.",
-  "procedure": "install_base_seat_belt",
-  "step_number": 2
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `33`
-
-```text
-2. Place Base in Back Seat of the Vehicle Place the base flat on the vehicle seat. Push it back until the front of the base touches the vehicle seat back.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'seat belt' to the procedure name ('install_base_seat_belt'), which is not mentioned in the original quote. The quote only describes placing the base on the back seat and pushing it back — no reference to seat belts or their use is made. This addition introduces new information not present in the source, altering the meaning.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_beltbase_5`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'pull to confirm it is locked,' which is not mentioned in the original quote. The quote only describes pulling the belt out and letting it retract, with a clicking sound indicating lock; no confirmation pull is stated.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Lock the vehicle seat belt: slowly pull the shoulder belt all the way out, let it retract, then pull to confirm it is locked.",
-  "procedure": "install_base_seat_belt",
-  "step_number": 5
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `37`
-
-```text
-5. Lock the Vehicle Seat Belt In most vehicles today, slowly pull the shoulder belt all the way out and then let it go back in. You will hear a “clicking” sound.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'pull to confirm it is locked,' which is not mentioned in the original quote. The quote only describes pulling the belt out and letting it retract, with a clicking sound indicating lock; no confirmation pull is stated.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_beltbase_6`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation merges two distinct actions ('Press down firmly in the center of the base' and 'Pull on the shoulder belt...') into a single compound action without preserving the sequential or conditional relationship implied in the original. The original implies these are separate steps or simultaneous but distinct actions; the translation presents them as a single fused action, altering the procedural meaning.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Press down firmly in the center of the base and pull on the shoulder belt to tighten while feeding the slack back into the retractor.",
-  "procedure": "install_base_seat_belt",
-  "step_number": 6
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `37`
-
-```text
-6. Tighten the Vehicle Seat Belt Press down firmly in the center of the base. Pull on the shoulder belt to tighten while feeding the slack back in the retractor.
-```
-
-Verifier: `MEANING_CHANGED` — The translation merges two distinct actions ('Press down firmly in the center of the base' and 'Pull on the shoulder belt...') into a single compound action without preserving the sequential or conditional relationship implied in the original. The original implies these are separate steps or simultaneous but distinct actions; the translation presents them as a single fused action, altering the procedural meaning.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_beltbase_7`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds a quantitative requirement ('it must move less than 1 in (2.5 cm)') not present in the original quote, which only instructs to push and pull the base without specifying any measurement or tolerance.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Test for tightness: push and pull the base at the seat belt side to side and front to back; it must move less than 1 in (2.5 cm).",
-  "procedure": "install_base_seat_belt",
-  "step_number": 7
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `38`
-
-```text
-7. Test For Tightness Grab the sides of the base where the seat belt is and push and pull the base from side to side and front to back.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds a quantitative requirement ('it must move less than 1 in (2.5 cm)') not present in the original quote, which only instructs to push and pull the base without specifying any measurement or tolerance.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_beltbase_8`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'pull up on the front corners to confirm attachment,' which is not mentioned in the original quote. This introduces a new action and verification step not present in the source, altering the meaning.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Place the car seat into the base and push down on the front of the car seat and handle until it clicks; pull up on the front corners to confirm attachment.",
-  "procedure": "install_base_seat_belt",
-  "step_number": 8
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `38`
-
-```text
-8. Attach Car Seat to Base Place car seat into the base. Push down on the front of the car seat and handle until you hear a “click”.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'pull up on the front corners to confirm attachment,' which is not mentioned in the original quote. This introduces a new action and verification step not present in the source, altering the meaning.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_beltbase_9`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'Re-check', implying a repeated action not stated in the original. The original says 'Check' (first-time action), while 'Re-check' suggests a prior check occurred, altering the procedural meaning.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Re-check the level indicator with the child in the restraint; the vehicle must be level with the ground.",
-  "procedure": "install_base_seat_belt",
-  "step_number": 9
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `39`
-
-```text
-9. Check the Level Indicator Vehicle MUST be level with the ground. Check the level indicator with child in the child restraint.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'Re-check', implying a repeated action not stated in the original. The original says 'Check' (first-time action), while 'Re-check' suggests a prior check occurred, altering the procedural meaning.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_bucklefit_1`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'adjust_buckle_to_fit_child' as a procedure, which is not mentioned or implied in the original quote. The quote only instructs to check the buckle position, not to perform an adjustment. This addition introduces a new action not present in the source, altering the meaning.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Check the buckle position: the correct slot is the one closest to the child without being underneath them.",
-  "procedure": "adjust_buckle_to_fit_child",
-  "step_number": 1
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `53`
-
-```text
-1. Check the Buckle Position The correct slot is the one that is closest to your child without being underneath them.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'adjust_buckle_to_fit_child' as a procedure, which is not mentioned or implied in the original quote. The quote only instructs to check the buckle position, not to perform an adjustment. This addition introduces a new action not present in the source, altering the meaning.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_bucklefit_2`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'then' and 'adjust_buckle_to_fit_child' which are not in the original; 'then' implies a strict sequence not stated, and 'adjust_buckle_to_fit_child' adds a purpose not mentioned in the quote.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "To change the buckle position: remove the child from the seat; from the bottom of the car seat insert the buckle's metal clip up through the shell and pad, then from the front pull the buckle out of the pad and shell.",
-  "procedure": "adjust_buckle_to_fit_child",
-  "step_number": 2
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `53`
-
-```text
-2. To Change Buckle Position Remove child from the seat. From the bottom of car seat, insert the buckle’s metal clip up through shell and pad. From the front, pull buckle out of the pad an shell.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'then' and 'adjust_buckle_to_fit_child' which are not in the original; 'then' implies a strict sequence not stated, and 'adjust_buckle_to_fit_child' adds a purpose not mentioned in the quote.
-
-Extractor notes: Quote preserves the manual's typo 'an shell' (should read 'and shell') verbatim from the pypdf text layer.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_bucklefit_3`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'adjust_buckle_to_fit_child' as a procedure, which is not mentioned in the quote. The quote only describes a mechanical action (inserting a clip) without specifying the purpose or context of fitting a child, thus altering the meaning by introducing unmentioned intent.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Insert the metal clip into the new location: push the metal clip down through the pad and shell, making sure the buckle's red button is facing out.",
-  "procedure": "adjust_buckle_to_fit_child",
-  "step_number": 3
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `54`
-
-```text
-3. Insert Metal Clip Into New Location Push metal clip down through the pad and shell. Make sure the buckle’s red button is facing out.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'adjust_buckle_to_fit_child' as a procedure, which is not mentioned in the quote. The quote only describes a mechanical action (inserting a clip) without specifying the purpose or context of fitting a child, thus altering the meaning by introducing unmentioned intent.
-
-Extractor notes: pypdf also repeats this step's text on page 55 (page-layout extraction artifact); the step belongs to 4-B and is cited on page 54.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_bucklefit_4`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds the phrase 'making sure' which implies an ongoing or continuous action, whereas the original quote uses 'Make sure' as a discrete imperative instruction. This subtle shift alters the procedural tone and could imply a different level of attention or duration required.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Pull up on the buckle to check it is secured, making sure the buckle's metal clip is completely through the pad and shell.",
-  "procedure": "adjust_buckle_to_fit_child",
-  "step_number": 4
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `54`
-
-```text
-4. Pull Up On Buckle To Check It Is Secured Make sure buckle’s metal clip is completely through pad and shell.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds the phrase 'making sure' which implies an ongoing or continuous action, whereas the original quote uses 'Make sure' as a discrete imperative instruction. This subtle shift alters the procedural tone and could imply a different level of attention or duration required.
-
-Extractor notes: pypdf also repeats this step's text on page 55 (page-layout extraction artifact); the step belongs to 4-B and is cited on page 54.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_harnessfit_1`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'adjust_harness_to_fit_child' as a procedure, which is not stated in the quote; the quote only describes a mechanical action without specifying the purpose or context of fitting a child.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Loosen the harness straps: push down on the harness release lever while pulling out on the harness straps at the chest clip.",
-  "procedure": "adjust_harness_to_fit_child",
-  "step_number": 1
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `46`
-
-```text
-1. Loosen Harness Straps Push down on the harness release lever while pulling out on the harness straps at the chest clip.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'adjust_harness_to_fit_child' as a procedure, which is not stated in the quote; the quote only describes a mechanical action without specifying the purpose or context of fitting a child.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_harnessfit_10`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'slot' to 'new location', implying a specific hardware feature (slots) not mentioned in the original quote, which could mislead users into expecting a physical slot rather than a general location. This is an unwarranted addition that changes meaning.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Insert the harness straps into the new slot location at or just below the child's shoulders, making sure the straps are not twisted and are at the same height.",
-  "procedure": "adjust_harness_to_fit_child",
-  "step_number": 10
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `50`
-
-```text
-10. Insert Harness Straps Into the New Location At or Just Below the Child’s Shoulders Make sure the harness straps are not twisted and are at the same height.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'slot' to 'new location', implying a specific hardware feature (slots) not mentioned in the original quote, which could mislead users into expecting a physical slot rather than a general location. This is an unwarranted addition that changes meaning.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_harnessfit_2`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds structured metadata (procedure, step_number, type, predicate) not present in the quote, which alters the meaning by implying a formal procedure context and categorization the original text does not state.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Release the chest clip: squeeze the chest clip release buttons and pull apart.",
-  "procedure": "adjust_harness_to_fit_child",
-  "step_number": 2
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `46`
-
-```text
-2. Release the Chest Clip Squeeze the chest clip release buttons and pull apart.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds structured metadata (procedure, step_number, type, predicate) not present in the quote, which alters the meaning by implying a formal procedure context and categorization the original text does not state.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_harnessfit_3`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds the phrase 'adjust_harness_to_fit_child' as a procedure, which is not mentioned or implied in the original quote. The original only describes the mechanical action of unbuckling and positioning straps, without specifying intent or context such as fitting a child. This addition alters the meaning by introducing an unstated purpose.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Unbuckle the buckle: press the red button, pull the buckle tongues out, and place the harness straps off to the sides.",
-  "procedure": "adjust_harness_to_fit_child",
-  "step_number": 3
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `47`
-
-```text
-3. Unbuckle the Buckle Press the red button and pull buckle tongues out. Place harness straps off to the sides.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds the phrase 'adjust_harness_to_fit_child' as a procedure, which is not mentioned or implied in the original quote. The original only describes the mechanical action of unbuckling and positioning straps, without specifying intent or context such as fitting a child. This addition alters the meaning by introducing an unstated purpose.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_harnessfit_4`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'adjust_harness_to_fit_child' as a procedure, which is not mentioned or implied in the exact quote. The quote only instructs to place the child and ensure their back is flat against the seat back; it does not mention harness adjustment at all.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Place the child in the seat, making sure their back is flat against the car seat back.",
-  "procedure": "adjust_harness_to_fit_child",
-  "step_number": 4
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `47`
-
-```text
-4. Place Your Child in the Seat Make sure their back is flat against the car seat back.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'adjust_harness_to_fit_child' as a procedure, which is not mentioned or implied in the exact quote. The quote only instructs to place the child and ensure their back is flat against the seat back; it does not mention harness adjustment at all.
-
-Extractor notes: The manual attaches a WARNING to this step about bulky clothing/snowsuits in cold weather; that warning is already recorded as claim_srl_warning_bulky_clothing.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_harnessfit_5`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds the phrase 'adjust_harness_to_fit_child' as a procedure, which is not mentioned or implied in the original quote. The original only instructs to place straps over shoulders; it does not specify adjusting for fit, thus introducing new procedural intent.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Place the harness straps over the child's shoulders.",
-  "procedure": "adjust_harness_to_fit_child",
-  "step_number": 5
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `48`
-
-```text
-5. Place Harness Straps Over Child’s Shoulders
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds the phrase 'adjust_harness_to_fit_child' as a procedure, which is not mentioned or implied in the original quote. The original only instructs to place straps over shoulders; it does not specify adjusting for fit, thus introducing new procedural intent.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_harnessfit_6`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds the procedure 'adjust_harness_to_fit_child' and step_number 6, which are not stated in the exact quote. The quote only instructs to check the harness height condition; it does not prescribe an adjustment action or assign a step number.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Check the harness height: the harness straps must be at or just below the child's shoulders.",
-  "procedure": "adjust_harness_to_fit_child",
-  "step_number": 6
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `48`
-
-```text
-6. Check Harness Height Harness Straps MUST BE AT OR JUST BELOW the Child’s Shoulders
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds the procedure 'adjust_harness_to_fit_child' and step_number 6, which are not stated in the exact quote. The quote only instructs to check the harness height condition; it does not prescribe an adjustment action or assign a step number.
-
-Extractor notes: Embedded limit also recorded as claim_srl_limit_harness_strap_height.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_harnessfit_7`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'the child's' before 'head', which is not in the original quote and introduces an assumption about the subject that may not be universally valid (e.g., could apply to a dummy or test object).
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Check that the top of the child's head is at least 1 in (2.5 cm) below the top of the car seat.",
-  "procedure": "adjust_harness_to_fit_child",
-  "step_number": 7
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `49`
-
-```text
-7. Top of Head MUST BE AT LEAST 1” (2.5 cm) BELOW the Top of the Car Seat
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'the child's' before 'head', which is not in the original quote and introduces an assumption about the subject that may not be universally valid (e.g., could apply to a dummy or test object).
-
-Extractor notes: Restates the head-clearance limit already recorded as claim_srl_limit_head_clearance; kept as a STEP because the manual numbers it as an action in procedure 4-A.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_harnessfit_8`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds the procedure label 'adjust_harness_to_fit_child' and step_number:8, which are not present in the original quote. The original only states the action without assigning it to a specific child-fitting context or numbering it as step 8 within a larger procedure — this addition changes the meaning by implying intent and structure not stated.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "To change harness height positions: with the harness straps loose, from the back of the car seat remove the left and right side harness strap loops from the splitter plate.",
-  "procedure": "adjust_harness_to_fit_child",
-  "step_number": 8
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `49`
-
-```text
-8. To Change Harness Height Positions With harness straps loose, from the back of the car seat, remove the left and right side harness strap loops from the splitter plate.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds the procedure label 'adjust_harness_to_fit_child' and step_number:8, which are not present in the original quote. The original only states the action without assigning it to a specific child-fitting context or numbering it as step 8 within a larger procedure — this addition changes the meaning by implying intent and structure not stated.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_harnessfit_9`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds the purpose 'adjust_harness_to_fit_child' and labels it as a 'procedure_step', which are not stated in the original quote. The original is a bare imperative instruction without context or intent, while the translation implies a procedural step within a larger child-fitting process.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Pull the harness straps out from the front of the car seat.",
-  "procedure": "adjust_harness_to_fit_child",
-  "step_number": 9
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `50`
-
-```text
-9. Pull Harness Straps Out From the Front of Car Seat
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds the purpose 'adjust_harness_to_fit_child' and labels it as a 'procedure_step', which are not stated in the original quote. The original is a bare imperative instruction without context or intent, while the translation implies a procedural step within a larger child-fitting process.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
+Extractor notes: From official APR 2026 compatibility chart; chart states it supersedes any individual product's instruction manual.
 
 ### `claim_srl_step_latch_1`
 
-- Proposed disposition: **`NEEDS_RECHECK`**
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
 - Owner decision: [ ] confirm recommendation  [ ] override: __________
 - Claim tier: `C3`
 - Type / predicate: `STEP` / `procedure_step`
 - Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'their' and rephrases 'Unhook the Lower anchor attachment connectors and remove from storage position' as a single action 'Remove...from their storage position,' omitting the explicit instruction to 'Unhook' first, which is a procedural step change.
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
 
 Applicability
 
@@ -3152,935 +2409,9 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `24`
 1. Remove Lower Anchor Attachment Connectors from Storage Location Unhook the Lower anchor attachment connectors and remove from storage position.
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds 'their' and rephrases 'Unhook the Lower anchor attachment connectors and remove from storage position' as a single action 'Remove...from their storage position,' omitting the explicit instruction to 'Unhook' first, which is a procedural step change.
+Verifier (claim quote union): `ENTAILED` — The semantic projection 'Remove the lower anchor attachment connectors from their storage position.' is fully supported by the quote, which states 'Remove Lower Anchor Attachment Connectors from Storage Location' and adds the clarifying step 'Unhook the Lower anchor attachment connectors and remove from storage position.' The projection omits the unhooking detail but does not broaden or contradict the core action; omission of procedural substeps is permitted under the rules as long as no condition or direction is lost that would change meaning. No unsupported addition or contradiction exists.
 
 Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_latch_10`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'Re-check', implying a prior check occurred, which the original does not state. Also, it reorders and merges instructions into a single clause, altering the procedural emphasis and potentially omitting the distinct requirement to first ensure the vehicle is level before checking the indicator.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Re-check the level indicator with the child in the restraint; the vehicle must be level with the ground.",
-  "procedure": "install_base_lower_anchor",
-  "step_number": 10
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `31`
-
-```text
-10. Check the Level Indicator Vehicle MUST be level with the ground. Check the level indicator with child in the child restraint.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'Re-check', implying a prior check occurred, which the original does not state. Also, it reorders and merges instructions into a single clause, altering the procedural emphasis and potentially omitting the distinct requirement to first ensure the vehicle is level before checking the indicator.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_latch_4`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation omits 'Lower anchor attachment' before 'anchors', which changes the specificity of the anchors being referenced. The original specifies 'lower Lower anchor attachment anchors' — a precise technical term — while the translation simplifies to 'lower anchors', potentially misleading the user about which anchors are meant.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Place the base flat on the vehicle back seat, push it back until it touches the vehicle seat back, and center it between the lower anchors.",
-  "procedure": "install_base_lower_anchor",
-  "step_number": 4
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `25`
-
-```text
-4. Place Base in Back Seat of the Vehicle Place the base flat on the vehicle seat. Push it back until the front of the base touches the vehicle seat back. Center the base between the lower Lower anchor attachment anchors.
-```
-
-Verifier: `MEANING_CHANGED` — The translation omits 'Lower anchor attachment' before 'anchors', which changes the specificity of the anchors being referenced. The original specifies 'lower Lower anchor attachment anchors' — a precise technical term — while the translation simplifies to 'lower anchors', potentially misleading the user about which anchors are meant.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_latch_5`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds the phrase 'install_base_lower_anchor' as a procedure, which is not mentioned or implied in the exact quote. This introduces new information not present in the source, altering the meaning by associating the step with a specific procedure that the original text does not specify.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Check the level indicator; the vehicle must be level with the ground.",
-  "procedure": "install_base_lower_anchor",
-  "step_number": 5
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `26`
-
-```text
-5. Check the Level Indicator Vehicle MUST be level with the ground.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds the phrase 'install_base_lower_anchor' as a procedure, which is not mentioned or implied in the exact quote. This introduces new information not present in the source, altering the meaning by associating the step with a specific procedure that the original text does not specify.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_latch_6`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'hooks must not be attached upside down,' which is not mentioned in the original quote. This introduces a new condition not present in the source, altering the meaning.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Connect the lower anchor attachment connectors to the vehicle's lower anchors; the strap should lie flat and not be twisted, and hooks must not be attached upside down.",
-  "procedure": "install_base_lower_anchor",
-  "step_number": 6
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `28`
-
-```text
-6. Connect Lower Anchor Attachment Connectors to the Vehicle’s Lower Anchor Attachment Anchors Lower anchor attachment strap should lay as flat as possible and not be twisted.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'hooks must not be attached upside down,' which is not mentioned in the original quote. This introduces a new condition not present in the source, altering the meaning.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_latch_7`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds structured metadata (procedure, step_number, type) not present in the quote, which changes meaning by implying a formal procedure schema the original does not state.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Press down firmly in the center of the base while tightening the lower anchor attachment strap.",
-  "procedure": "install_base_lower_anchor",
-  "step_number": 7
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `29`
-
-```text
-7. Tighten the Lower Anchor Attachment Strap Press down firmly in the center of the base while tightening the Lower anchor attachment strap.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds structured metadata (procedure, step_number, type) not present in the quote, which changes meaning by implying a formal procedure schema the original does not state.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_latch_8`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds a quantitative requirement ('it must move less than 1 in (2.5 cm)') not present in the original quote, which only instructs to push and pull the base without specifying any acceptable movement threshold.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Test for tightness: push and pull the base at the strap side to side and front to back; it must move less than 1 in (2.5 cm).",
-  "procedure": "install_base_lower_anchor",
-  "step_number": 8
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `29`
-
-```text
-8. Test For Tightness Grab the sides of the base where the Lower anchor attachment strap is and push and pull the base from side to side and front to back.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds a quantitative requirement ('it must move less than 1 in (2.5 cm)') not present in the original quote, which only instructs to push and pull the base without specifying any acceptable movement threshold.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_latch_9`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'pull up on the front corners to confirm attachment,' which is not mentioned in the original quote. This introduces a new action and verification step not present in the source, altering the procedure's meaning.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Place the car seat into the base and push down on the front of the car seat and handle until it clicks; pull up on the front corners to confirm attachment.",
-  "procedure": "install_base_lower_anchor",
-  "step_number": 9
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `30`
-
-```text
-9. Attach Car Seat to Base Place car seat into the base. Push down on the front of the car seat and handle until you hear a “click”.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'pull up on the front corners to confirm attachment,' which is not mentioned in the original quote. This introduces a new action and verification step not present in the source, altering the procedure's meaning.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_removechild_1`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds a 'procedure' field ('remove_child') and 'step_number' not present in the quote, which introduces unverified context and alters meaning by implying a specific use case not stated.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Loosen the harness straps: push down on the harness release lever while pulling out on the harness straps at the chest clip.",
-  "procedure": "remove_child",
-  "step_number": 1
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `58`
-
-```text
-1. Loosen Harness Straps Push down on the harness release lever while pulling out on the harness straps at the chest clip.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds a 'procedure' field ('remove_child') and 'step_number' not present in the quote, which introduces unverified context and alters meaning by implying a specific use case not stated.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_removechild_2`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds structured metadata (e.g., 'procedure':'remove_child', 'step_number':2) not present in the original quote, which alters meaning by implying context and intent not stated. Also, wrapping the instruction in an object with keys like 'action' and 'predicate' imposes a semantic structure absent in the source.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Release the chest clip: squeeze the chest clip release buttons and pull apart.",
-  "procedure": "remove_child",
-  "step_number": 2
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `58`
-
-```text
-2. Release the Chest Clip Squeeze the chest clip release buttons and pull apart.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds structured metadata (e.g., 'procedure':'remove_child', 'step_number':2) not present in the original quote, which alters meaning by implying context and intent not stated. Also, wrapping the instruction in an object with keys like 'action' and 'predicate' imposes a semantic structure absent in the source.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_removechild_3`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation rephrases 'Unbuckle Your Child' as 'Unbuckle the child', which changes the imperative address from the user ('Your') to a generic object ('the'), subtly altering the instructional tone and ownership. Also, the translation merges three distinct actions into a single run-on sentence without preserving the original step structure, potentially obscuring the sequence or emphasis. Though minor, these changes affect instructional clarity and user direction, which matters under strict auditing.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Unbuckle the child: press the red button, remove the buckle tongues, and remove the child from the seat.",
-  "procedure": "remove_child",
-  "step_number": 3
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `58`
-
-```text
-3. Unbuckle Your Child Press in on the red button and remove the buckle tongues. Remove Child from the seat.
-```
-
-Verifier: `MEANING_CHANGED` — The translation rephrases 'Unbuckle Your Child' as 'Unbuckle the child', which changes the imperative address from the user ('Your') to a generic object ('the'), subtly altering the instructional tone and ownership. Also, the translation merges three distinct actions into a single run-on sentence without preserving the original step structure, potentially obscuring the sequence or emphasis. Though minor, these changes affect instructional clarity and user direction, which matters under strict auditing.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_secure_2`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'the harness' and 'secure_child_in_car_seat' which are not mentioned in the quote; it also rephrases 'buckle tongues are securely attached' as 'buckle tongues attach' (present tense, implying action rather than state), and omits the imperative 'You will hear' in favor of 'listen for', changing the actor and instruction tone.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Buckle the harness: listen for a click when the buckle tongues attach, and pull up on each tongue to confirm it is secure.",
-  "procedure": "secure_child_in_car_seat",
-  "step_number": 2
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `55`
-
-```text
-2. Buckle You will hear a “click” when buckle tongues are securely attached. Pull up on each buckle tongue to make sure it is securely attached.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'the harness' and 'secure_child_in_car_seat' which are not mentioned in the quote; it also rephrases 'buckle tongues are securely attached' as 'buckle tongues attach' (present tense, implying action rather than state), and omits the imperative 'You will hear' in favor of 'listen for', changing the actor and instruction tone.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_secure_3`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'listen for a click' as an explicit instruction, while the original only states 'You will hear a “click”' — implying passive observation, not active listening. This changes the actor’s required behavior and adds an imperative not present in the source.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Buckle the chest clip: listen for a click when it is securely buckled.",
-  "procedure": "secure_child_in_car_seat",
-  "step_number": 3
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `55`
-
-```text
-3. Buckle the Chest Clip You will hear a “click” when the chest clip is securely buckled.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'listen for a click' as an explicit instruction, while the original only states 'You will hear a “click”' — implying passive observation, not active listening. This changes the actor’s required behavior and adds an imperative not present in the source.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_secure_4`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation restructures the instruction into a single concatenated sentence without preserving the imperative tone or the explicit 'Do this to both sides' as a separate directive. It also adds 'secure_child_in_car_seat' and 'step_number:4' which are not present in the original quote, introducing metadata not stated in the source. These additions alter the meaning by implying context and structure not originally provided.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Pull all the slack out from around the waist: pull up on the harness strap while pushing the chest clip down, on both sides.",
-  "procedure": "secure_child_in_car_seat",
-  "step_number": 4
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `56`
-
-```text
-4. Pull All the Slack Out From Around the Waist Pull up on the harness strap while pushing the chest clip down. Do this to both sides.
-```
-
-Verifier: `MEANING_CHANGED` — The translation restructures the instruction into a single concatenated sentence without preserving the imperative tone or the explicit 'Do this to both sides' as a separate directive. It also adds 'secure_child_in_car_seat' and 'step_number:4' which are not present in the original quote, introducing metadata not stated in the source. These additions alter the meaning by implying context and structure not originally provided.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_secure_5`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation omits the conditional clause 'When you are not able to pinch any of the harness webbing at your child’s shoulder, the harness is tight enough,' replacing it with an imperative 'until no harness webbing can be pinched,' which changes the meaning from a verification condition to a continuous action directive.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Tighten the harness by pulling the harness adjustment strap until no harness webbing can be pinched at the child's shoulder.",
-  "procedure": "secure_child_in_car_seat",
-  "step_number": 5
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `56`
-
-```text
-5. Tighten the Harness by Pulling the Harness Adjustment Strap When you are not able to pinch any of the harness webbing at your child’s shoulder, the harness is tight enough.
-```
-
-Verifier: `MEANING_CHANGED` — The translation omits the conditional clause 'When you are not able to pinch any of the harness webbing at your child’s shoulder, the harness is tight enough,' replacing it with an imperative 'until no harness webbing can be pinched,' which changes the meaning from a verification condition to a continuous action directive.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_step_secure_7`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'again' to 'Check tightness', implying a repeated action not stated in the original quote. The original only says 'Check Tightness' without suggesting it is a repeat step.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Check tightness again and tighten more if needed.",
-  "procedure": "secure_child_in_car_seat",
-  "step_number": 7
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `57`
-
-```text
-7. Check Tightness Tighten more if needed.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'again' to 'Check tightness', implying a repeated action not stated in the original quote. The original only says 'Check Tightness' without suggesting it is a repeat step.
-
-Extractor notes: None recorded.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_srl_warning_airbag`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `WARNING` / `prohibits_active_front_airbag_position`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds a causal explanation ('An inflating air bag can hit the child and car seat with great force and cause serious injury or death') not present in the exact quote, which only states a prohibition without elaborating on consequences.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "description": "NEVER place this child restraint rear-facing in a vehicle seating location that has an active front air bag. An inflating air bag can hit the child and car seat with great force and cause serious injury or death.",
-  "hazard_type": "airbag_hazard"
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `11`
-
-```text
-NEVER PLACE THIS CHILD RESTRAINT REAR-FACING IN A VEHICLE SEATING LOCATION THAT HAS AN ACTIVE FRONT AIR BAG.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds a causal explanation ('An inflating air bag can hit the child and car seat with great force and cause serious injury or death') not present in the exact quote, which only states a prohibition without elaborating on consequences.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_warning_bulky_clothing`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `WARNING` / `prohibits_bulky_clothing_under_harness`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds instructions not in the quote: 'Buckle the child first, then place a blanket over them or the coat on backwards.' The original only warns against bulky clothing and explains why; it does not prescribe any alternative action.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "description": "In cold weather do not put snowsuits or bulky garments on the child in the car seat; bulky clothing prevents proper harness tightening. Buckle the child first, then place a blanket over them or the coat on backwards.",
-  "hazard_type": "harness_fit_hazard"
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `47`
-
-```text
-WARNING! In cold weather do not put snowsuits or bulky garments on your child when placing them in the car seat. Bulky clothing can prevent the harness straps from being tightened properly.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds instructions not in the quote: 'Buckle the child first, then place a blanket over them or the coat on backwards.' The original only warns against bulky clothing and explains why; it does not prescribe any alternative action.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_warning_crash_replace`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `WARNING` / `requires_replacement_after_crash`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: Translation omits the explicit warning 'DO NOT use it again!' and the consequence 'could result in serious injury or death,' which are critical to the original warning's severity and intent.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "description": "If the car seat is in a crash it must be replaced and never used again; a crash can cause unseen damage.",
-  "hazard_type": "structural_integrity"
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `13`
-
-```text
-If car seat is in a crash, it must be replaced. DO NOT use it again! A crash can cause unseen damage and using it again could result in serious injury or death.
-```
-
-Verifier: `MEANING_CHANGED` — Translation omits the explicit warning 'DO NOT use it again!' and the consequence 'could result in serious injury or death,' which are critical to the original warning's severity and intent.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_warning_other_strollers`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `WARNING` / `prohibits_non_graco_strollers`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds a structured object with 'hazard_type': 'attachment_hazard', which is not stated or implied in the original quote. The original only warns against using non-Graco strollers and mentions injury/death risk, but does not classify or label the hazard type. This addition introduces new information not present in the source.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "description": "Never use a Graco infant carrier with any other manufacturer's strollers; this can result in serious injury or death.",
-  "hazard_type": "attachment_hazard"
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `60`
-
-```text
-NEVER use a Graco infant carrier with any other manufacturer’s strollers. This can result in serious injury or death.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds a structured object with 'hazard_type': 'attachment_hazard', which is not stated or implied in the original quote. The original only warns against using non-Graco strollers and mentions injury/death risk, but does not classify or label the hazard type. This addition introduces new information not present in the source.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_warning_strings_cords`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `WARNING` / `requires_keeping_strings_away`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'hang strings on the carrier, or attach strings to toys' which are not mentioned in the original quote. The original only warns against placing the carrier near windows with blind/drape cords; it does not prohibit hanging strings on the carrier or attaching strings to toys.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "description": "Keep strings and cords away from the child; they can cause strangulation. Do not place the carrier near windows with blind or drape cords, hang strings on the carrier, or attach strings to toys.",
-  "hazard_type": "strangulation_hazard"
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `59`
-
-```text
-KEEP STRINGS AND CORDS AWAY FROM CHILD. Strings and cords can cause strangulation. DO NOT place carrier near windows where cords from blinds or drapes can strangle a child.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'hang strings on the carrier, or attach strings to toys' which are not mentioned in the original quote. The original only warns against placing the carrier near windows with blind/drape cords; it does not prohibit hanging strings on the carrier or attaching strings to toys.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_srl_warning_unattended`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C3`
-- Type / predicate: `WARNING` / `prohibits_leaving_child_unattended`
-- Source authority: `MANUFACTURER_MANUAL`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED; HARD REVIEW — C3; individual decision required
-- Proposed rationale: Verifier found a meaning change: The translation adds 'a child' as the subject of the hazard clause, implying a general risk to any child, while the original quote uses 'Child' (capitalized, singular) which may refer to the specific child in context. Also, the translation rephrases the original into a semicolon-separated compound sentence, altering the syntactic structure and potentially implying a stronger causal link than the original's simple period separation. These changes, though subtle, alter the grammatical actor and sentence structure, which can affect interpretation in safety contexts.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": "2110186",
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "description": "Never leave the child unattended, even when sleeping; a child may become tangled in harness straps and suffocate or strangle.",
-  "hazard_type": "strangulation_suffocation_hazard"
-}
-```
-
-Quote — binding 0, source `src_snugride_manual_en_v1`, page `13`
-
-```text
-Never leave child unattended, even when sleeping. Child may become tangled in harness straps and suffocate or strangle.
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'a child' as the subject of the hazard clause, implying a general risk to any child, while the original quote uses 'Child' (capitalized, singular) which may refer to the specific child in context. Also, the translation rephrases the original into a semicolon-separated compound sentence, altering the syntactic structure and potentially implying a stronger causal link than the original's simple period separation. These changes, though subtle, alter the grammatical actor and sentence structure, which can affect interpretation in safety contexts.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-## 2. Unresolved conflict claims (0 claims / 0 pairs)
-
-None outside section 1 or existing human decisions.
-
-## 3. C3 claims (14)
 
 ### `claim_srl_step_latch_2`
 
@@ -4120,7 +2451,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `24`
 2. Make Sure Lower Anchor Attachment Strap is in the Rear- Facing Belt Path, Marked With a Blue Label
 ```
 
-Verifier: `ENTAILED` — The translation faithfully reproduces the exact quote without adding, dropping, or altering any factual elements, qualifiers, or conditions.
+Verifier (claim quote union): `ENTAILED` — The semantic projection is a direct paraphrase of the exact quote, preserving all key elements: the action (make sure), the object (lower anchor attachment strap), the location (rear-facing belt path), and the identifier (marked with a blue label). No condition, direction, unit, or actor is added, omitted, or altered in a way that changes meaning. The quote union fully supports the projection.
 
 Extractor notes: None recorded.
 
@@ -4162,7 +2493,259 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `25`
 3. Extend the Lower Anchor Attachment Strap Extend the Lower anchor attachment strap to its maximum length by pressing the gray button and pulling on the strap.
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the action, method, and step number from the exact quote without adding, dropping, or altering any qualifiers, actors, or conditions.
+Verifier (claim quote union): `ENTAILED` — The semantic projection exactly mirrors the action described in the quote: extending the lower anchor attachment strap to its maximum length by pressing the gray button and pulling on the strap. No conditions, qualifiers, or directions are omitted or added that would broaden or alter the meaning. The quote supports every assertion in the projection.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_latch_4`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Place the base flat on the vehicle back seat, push it back until it touches the vehicle seat back, and center it between the lower anchors.",
+  "procedure": "install_base_lower_anchor",
+  "step_number": 4
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `25`
+
+```text
+4. Place Base in Back Seat of the Vehicle Place the base flat on the vehicle seat. Push it back until the front of the base touches the vehicle seat back. Center the base between the lower Lower anchor attachment anchors.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately summarizes the quoted instructions: placing the base flat on the back seat, pushing it back until it touches the seat back, and centering it between the lower anchors — all explicitly stated in the quote without adding unsupported conditions, directions, or scope.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_latch_5`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Check the level indicator; the vehicle must be level with the ground.",
+  "procedure": "install_base_lower_anchor",
+  "step_number": 5
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `26`
+
+```text
+5. Check the Level Indicator Vehicle MUST be level with the ground.
+```
+
+Verifier (claim quote union): `ENTAILED` — The semantic projection faithfully restates the exact requirement from the quote: checking the level indicator is conditioned on the vehicle being level with the ground. No scope broadening, wrong number/unit/direction/actor, lost governing condition, or unsupported semantic addition is present.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_latch_7`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Press down firmly in the center of the base while tightening the lower anchor attachment strap.",
+  "procedure": "install_base_lower_anchor",
+  "step_number": 7
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `29`
+
+```text
+7. Tighten the Lower Anchor Attachment Strap Press down firmly in the center of the base while tightening the Lower anchor attachment strap.
+```
+
+Verifier (claim quote union): `ENTAILED` — The semantic projection exactly mirrors the action described in the quote: pressing down firmly in the center of the base while tightening the lower anchor attachment strap. No conditions, directions, units, or actors are added, omitted, or altered in a way that changes meaning. The quote supports the projection as a faithful subset.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_latch_10`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Re-check the level indicator with the child in the restraint; the vehicle must be level with the ground.",
+  "procedure": "install_base_lower_anchor",
+  "step_number": 10
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `31`
+
+```text
+10. Check the Level Indicator Vehicle MUST be level with the ground. Check the level indicator with child in the child restraint.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately restates the requirement: re-checking the level indicator with the child in the restraint is conditioned on the vehicle being level with the ground, which matches the quote’s imperative and condition.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_beltbase_1`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Store the lower anchor attachment connectors on the plastic bars on the sides of the base and remove the slack.",
+  "procedure": "install_base_seat_belt",
+  "step_number": 1
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `33`
+
+```text
+1. Store Lower Anchor Attachment Connectors Attach the Lower anchor attachment connectors to the plastic bars on sides of base as shown. Remove the slack.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately restates the action described in the quote: attaching (which implies storing in place) the lower anchor attachment connectors to the plastic bars on the sides of the base, and removing the slack. No unsupported addition, contradiction, or loss of governing condition occurs.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_beltbase_2`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Place the base flat on the vehicle back seat and push it back until the front of the base touches the vehicle seat back.",
+  "procedure": "install_base_seat_belt",
+  "step_number": 2
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `33`
+
+```text
+2. Place Base in Back Seat of the Vehicle Place the base flat on the vehicle seat. Push it back until the front of the base touches the vehicle seat back.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately summarizes the action described in the quote: placing the base flat on the vehicle seat (specified as back seat in the quote) and pushing it back until the front touches the seat back. No unsupported addition, contradiction, or loss of governing condition occurs; the projection is a faithful subset of the source.
 
 Extractor notes: None recorded.
 
@@ -4204,7 +2787,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `34`
 3. Check the Level Indicator Vehicle MUST be level with the ground.
 ```
 
-Verifier: `ENTAILED` — The translation faithfully reproduces the exact instruction from the quote: 'Check the Level Indicator Vehicle MUST be level with the ground.' The semicolon and capitalization are stylistic; the core meaning — checking the level indicator under the condition that the vehicle must be level with the ground — is preserved without addition, omission, or alteration of any factual element.
+Verifier (claim quote union): `ENTAILED` — The semantic projection faithfully restates the exact requirement from the quote: checking the level indicator is conditioned on the vehicle being level with the ground. No scope broadening, wrong number/unit/direction/actor, lost governing condition, or unsupported semantic addition is present.
 
 Extractor notes: None recorded.
 
@@ -4246,7 +2829,133 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `36`
 4. Route the Vehicle Seat Belt Thread vehicle seat belt through the rear-facing belt path (marked with a blue label) and buckle it. The seat belt should lay as flat as possible and not be twisted.
 ```
 
-Verifier: `ENTAILED` — The translation accurately captures the core instructions: threading the belt through the rear-facing path (blue label), buckling it, and ensuring it lies flat and untwisted. No meaning-altering changes in actor, action, condition, or qualifier.
+Verifier (claim quote union): `ENTAILED` — The projection faithfully restates the action and condition from the quote: threading the belt through the specified path, buckling it, and ensuring it lies flat and untwisted. No unsupported addition, contradiction, or broadening is present.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_beltbase_6`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Press down firmly in the center of the base and pull on the shoulder belt to tighten while feeding the slack back into the retractor.",
+  "procedure": "install_base_seat_belt",
+  "step_number": 6
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `37`
+
+```text
+6. Tighten the Vehicle Seat Belt Press down firmly in the center of the base. Pull on the shoulder belt to tighten while feeding the slack back in the retractor.
+```
+
+Verifier (claim quote union): `ENTAILED` — The semantic projection accurately restates the actions described in the quote: pressing down firmly in the center of the base and pulling on the shoulder belt to tighten while feeding slack back into the retractor. No conditions, directions, or qualifiers are added or omitted that alter the meaning. The union of quotes fully supports the projection.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_beltbase_9`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Re-check the level indicator with the child in the restraint; the vehicle must be level with the ground.",
+  "procedure": "install_base_seat_belt",
+  "step_number": 9
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `39`
+
+```text
+9. Check the Level Indicator Vehicle MUST be level with the ground. Check the level indicator with child in the child restraint.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection restates the quote’s core requirements: re-checking the level indicator with the child in the restraint, and the vehicle being level with the ground. No condition, direction, or qualifier is added or omitted that alters meaning; the union supports all assertions.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_baseless_1`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Place the car seat on the vehicle back seat and push it back until the front of the car seat touches the vehicle seat back.",
+  "procedure": "install_carrier_seat_belt",
+  "step_number": 1
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `41`
+
+```text
+1. Place Car Seat in Back Seat of the Vehicle Place the car seat on the vehicle seat. Push it back until the front of the car seat touches the vehicle seat back.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately summarizes the action described in the quote: placing the car seat on the vehicle seat (specified as back seat in the quote) and pushing it back until contact with the vehicle seat back. No unsupported addition, contradiction, or loss of governing condition occurs.
 
 Extractor notes: None recorded.
 
@@ -4288,7 +2997,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `42`
 2. Route the Vehicle Seat Belt Thread vehicle seat belt through the rear-facing belt path (marked with a blue label) and buckle it. The seat belt should not be twisted.
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the core instruction: threading the seat belt through the rear-facing path (blue label), buckling it, and ensuring it is not twisted. The step number and procedure context are added for structure but do not alter the factual meaning of the original quote.
+Verifier (claim quote union): `ENTAILED` — The semantic projection faithfully restates the action and condition from the quote: threading the belt through the specified path, buckling it, and ensuring it is not twisted. No unsupported addition, contradiction, or scope broadening is present.
 
 Extractor notes: None recorded.
 
@@ -4330,7 +3039,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `42`
 4. Tighten the Vehicle Seat Belt Lay your forearm across the car seat at the belt path and push down. Pull on the shoulder belt to tighten while feeding the slack back in the retractor.
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the actions, sequence, and intent of the original quote: laying the forearm, pushing down, pulling the shoulder belt, and feeding slack back into the retractor. No added, dropped, or altered qualifiers, numbers, units, or actors. The structure is rephrased as a procedure step but does not change meaning.
+Verifier (claim quote union): `ENTAILED` — The semantic projection faithfully restates the actions described in the quote: laying the forearm across the seat at the belt path and pushing down, then pulling the shoulder belt to tighten while feeding slack back into the retractor. No conditions, directions, units, or actors are added, omitted, or altered in a way that changes meaning. The union of quotes supports every assertion in the projection.
 
 Extractor notes: None recorded.
 
@@ -4372,7 +3081,175 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `55`
 1. Place Harness Straps Over Child’s Shoulders
 ```
 
-Verifier: `ENTAILED` — The translation faithfully restates the exact instruction from the quote without adding, dropping, or altering any semantic element. The action, object, and step number match precisely.
+Verifier (claim quote union): `ENTAILED` — The semantic projection 'Place the harness straps over the child's shoulders.' is directly supported by the exact quote '1. Place Harness Straps Over Child’s Shoulders'. The projection preserves the actor (implied imperative), action, object, and target without adding, omitting, or altering any governing condition, direction, or qualifier. No unsupported semantic addition or contradiction exists.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_secure_2`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Buckle the harness: listen for a click when the buckle tongues attach, and pull up on each tongue to confirm it is secure.",
+  "procedure": "secure_child_in_car_seat",
+  "step_number": 2
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `55`
+
+```text
+2. Buckle You will hear a “click” when buckle tongues are securely attached. Pull up on each buckle tongue to make sure it is securely attached.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately summarizes the quote: it instructs to buckle the harness, listen for a click upon attachment, and pull up on each tongue to confirm security — all directly supported by the quote’s instructions and phrasing.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_secure_3`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Buckle the chest clip: listen for a click when it is securely buckled.",
+  "procedure": "secure_child_in_car_seat",
+  "step_number": 3
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `55`
+
+```text
+3. Buckle the Chest Clip You will hear a “click” when the chest clip is securely buckled.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately restates the quote’s instruction to buckle the chest clip and the auditory cue (‘click’) indicating secure buckling. No condition, direction, or qualifier is omitted or broadened; the quote’s meaning is preserved as a union.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_secure_4`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Pull all the slack out from around the waist: pull up on the harness strap while pushing the chest clip down, on both sides.",
+  "procedure": "secure_child_in_car_seat",
+  "step_number": 4
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `56`
+
+```text
+4. Pull All the Slack Out From Around the Waist Pull up on the harness strap while pushing the chest clip down. Do this to both sides.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection faithfully restates the action described in the quote: pulling slack from around the waist by pulling up on the harness strap while pushing the chest clip down, and doing so on both sides. No condition, direction, unit, or actor is added or altered beyond what is stated in the quote.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_secure_5`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Tighten the harness by pulling the harness adjustment strap until no harness webbing can be pinched at the child's shoulder.",
+  "procedure": "secure_child_in_car_seat",
+  "step_number": 5
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `56`
+
+```text
+5. Tighten the Harness by Pulling the Harness Adjustment Strap When you are not able to pinch any of the harness webbing at your child’s shoulder, the harness is tight enough.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately restates the condition for tightening the harness: pulling the adjustment strap until no webbing can be pinched at the child’s shoulder, which is exactly what the quote specifies as the criterion for sufficient tightness.
 
 Extractor notes: None recorded.
 
@@ -4414,7 +3291,257 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `57`
 6. Raise the Chest Clip to Child’s Armpit Level
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the instruction: 'Raise the chest clip to the child's armpit level' matches the quote exactly in action, object, and condition. No meaning change detected.
+Verifier (claim quote union): `ENTAILED` — The semantic projection 'Raise the chest clip to the child's armpit level.' is fully supported by the exact quote '6. Raise the Chest Clip to Child’s Armpit Level'. The projection preserves the action, object, and target location without adding, omitting, or altering any governing condition, direction, or qualifier. Case and article differences ('the' vs. none) are stylistic and do not change meaning. No unsupported semantic addition or contradiction exists.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_secure_7`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Check tightness again and tighten more if needed.",
+  "procedure": "secure_child_in_car_seat",
+  "step_number": 7
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `57`
+
+```text
+7. Check Tightness Tighten more if needed.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection 'Check tightness again and tighten more if needed' is fully supported by the quote '7. Check Tightness Tighten more if needed.' The quote implies a check followed by conditional tightening, which matches the projection’s meaning. No unsupported addition, contradiction, or scope broadening is present.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_removechild_1`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Loosen the harness straps: push down on the harness release lever while pulling out on the harness straps at the chest clip.",
+  "procedure": "remove_child",
+  "step_number": 1
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `58`
+
+```text
+1. Loosen Harness Straps Push down on the harness release lever while pulling out on the harness straps at the chest clip.
+```
+
+Verifier (claim quote union): `ENTAILED` — The semantic projection faithfully restates the action described in the quote: loosening the harness straps by pushing down on the release lever while pulling out on the straps at the chest clip. No conditions, directions, units, or actors are added, omitted, or altered in a way that changes meaning. The projection is a direct paraphrase of the quoted instruction.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_removechild_2`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Release the chest clip: squeeze the chest clip release buttons and pull apart.",
+  "procedure": "remove_child",
+  "step_number": 2
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `58`
+
+```text
+2. Release the Chest Clip Squeeze the chest clip release buttons and pull apart.
+```
+
+Verifier (claim quote union): `ENTAILED` — The semantic projection exactly mirrors the instruction in the quote: 'Release the Chest Clip Squeeze the chest clip release buttons and pull apart.' The projection restates this as 'Release the chest clip: squeeze the chest clip release buttons and pull apart,' preserving all actions, objects, and sequence without adding, omitting, or altering any condition, direction, or actor. No unsupported semantic addition or contradiction exists.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_removechild_3`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Unbuckle the child: press the red button, remove the buckle tongues, and remove the child from the seat.",
+  "procedure": "remove_child",
+  "step_number": 3
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `58`
+
+```text
+3. Unbuckle Your Child Press in on the red button and remove the buckle tongues. Remove Child from the seat.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately restates the sequence of actions from the quote: pressing the red button, removing the buckle tongues, and removing the child from the seat — all explicitly mentioned and in the same order. No unsupported addition, contradiction, or omitted condition alters the meaning.
+
+Extractor notes: None recorded.
+
+### `claim_srl_warning_crash_replace`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `WARNING` / `requires_replacement_after_crash`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "description": "If the car seat is in a crash it must be replaced and never used again; a crash can cause unseen damage.",
+  "hazard_type": "structural_integrity"
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `13`
+
+```text
+If car seat is in a crash, it must be replaced. DO NOT use it again! A crash can cause unseen damage and using it again could result in serious injury or death.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection faithfully restates the core warnings from the quote: replacement is mandatory after a crash, reuse is prohibited, and unseen damage is the reason. No unsupported addition, contradiction, or loss of governing condition occurs. The quote’s imperative 'DO NOT use it again!' is accurately rendered as 'never used again,' and the causal link to unseen damage is preserved.
+
+Extractor notes: None recorded.
+
+### `claim_srl_warning_unattended`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `WARNING` / `prohibits_leaving_child_unattended`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "description": "Never leave the child unattended, even when sleeping; a child may become tangled in harness straps and suffocate or strangle.",
+  "hazard_type": "strangulation_suffocation_hazard"
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `13`
+
+```text
+Never leave child unattended, even when sleeping. Child may become tangled in harness straps and suffocate or strangle.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection faithfully restates the warning from the quote, preserving the condition (even when sleeping), the actor (child), the risk (tangled in harness straps), and the consequences (suffocate or strangle). No scope broadening, wrong number/unit/direction/actor, lost governing condition, or unsupported semantic addition is present. The semicolon is a stylistic variant of the period in the original and does not alter meaning.
 
 Extractor notes: None recorded.
 
@@ -4455,7 +3582,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `13`
 Do not use both the vehicle seat belt and Lower anchor attachment at the same time when using the car seat rear-facing.
 ```
 
-Verifier: `ENTAILED` — The translation faithfully reproduces the exact quote without adding, dropping, or altering any factual elements, conditions, or qualifiers. The predicate and object merely repackage the same prohibition without changing meaning.
+Verifier (claim quote union): `ENTAILED` — The semantic projection exactly mirrors the quote’s warning, preserving the prohibition, the two attachment methods, and the rear-facing condition without adding, omitting, or altering any qualifier, direction, or governing condition.
 
 Extractor notes: None recorded.
 
@@ -4496,7 +3623,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `59`
 SUFFOCATION HAZARD: Infant carrier can roll over on soft surfaces and suffocate child. NEVER place carrier on beds, sofas, or other soft surfaces.
 ```
 
-Verifier: `ENTAILED` — The translation faithfully preserves the original warning’s meaning: suffocation hazard due to carrier rolling over on soft surfaces, and prohibition of placing it on beds, sofas, or other soft surfaces. No added, dropped, or altered qualifiers, numbers, units, actors, or conditions.
+Verifier (claim quote union): `ENTAILED` — The semantic projection faithfully restates the warning and prohibition from the exact quote, preserving the hazard description, causal mechanism (rolling over on soft surfaces), consequence (suffocation), and the explicit prohibition (never place on beds, sofas, or other soft surfaces). No condition, direction, actor, or qualifier is added, omitted, or altered in a way that broadens or contradicts the original.
 
 Extractor notes: None recorded.
 
@@ -4537,7 +3664,514 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `59`
 FALL HAZARD: Child’s movements can move carrier. NEVER place carrier on counter tops, tables or any other elevated surfaces.
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the meaning of the original quote: it conveys the fall hazard due to child movement, the prohibition against placing the carrier on elevated surfaces, and correctly identifies the hazard type and predicate without adding, dropping, or altering any critical detail.
+Verifier (claim quote union): `ENTAILED` — The semantic projection faithfully restates the exact warning from the quote, preserving the causal link (child’s movements can move carrier), the prohibition (never place on elevated surfaces), and the listed examples (counter tops, tables, any other elevated surfaces). No condition, direction, or qualifier is omitted or broadened. The union of quotes fully supports every assertion in the projection.
+
+Extractor notes: None recorded.
+
+### `claim_srl_warning_other_strollers`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `WARNING` / `prohibits_non_graco_strollers`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "description": "Never use a Graco infant carrier with any other manufacturer's strollers; this can result in serious injury or death.",
+  "hazard_type": "attachment_hazard"
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `60`
+
+```text
+NEVER use a Graco infant carrier with any other manufacturer’s strollers. This can result in serious injury or death.
+```
+
+Verifier (claim quote union): `ENTAILED` — The semantic projection exactly mirrors the warning in the quote, preserving the prohibition, the subject (Graco infant carrier), the object (any other manufacturer’s strollers), and the consequence (serious injury or death). No condition, direction, or qualifier is omitted or broadened. The union of quotes fully supports the projection.
+
+Extractor notes: None recorded.
+
+### `claim_srl_care_harness`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `CARE` / `harness_and_lower_anchor_strap_cleaning`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "instructions": [
+    "mild soap and damp cloth"
+  ],
+  "method": "surface_wash_only",
+  "restrictions": [
+    "do not immerse harness straps or lower anchor attachment strap in water — may weaken straps"
+  ]
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `79`
+
+```text
+Surface wash only with mild soap and damp cloth. DO NOT IMMERSE THE HARNESS STRAPS or LOWER ANCHOR ATTACHMENT STRAP IN WATER. Doing so may weaken the straps.
+```
+
+Verifier (claim quote union): `ENTAILED` — Every assertion in the semantic projection is directly supported by the exact quote: 'mild soap and damp cloth' matches the cleaning method; 'surface_wash_only' is explicitly stated; and the restriction 'do not immerse harness straps or lower anchor attachment strap in water — may weaken straps' is a faithful paraphrase of the quoted warning and its consequence.
+
+Extractor notes: Assigned C3 (higher of C2/C3): improper harness cleaning can weaken restraint straps.
+
+### `claim_srl_step_harnessfit_1`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Loosen the harness straps: push down on the harness release lever while pulling out on the harness straps at the chest clip.",
+  "procedure": "adjust_harness_to_fit_child",
+  "step_number": 1
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `46`
+
+```text
+1. Loosen Harness Straps Push down on the harness release lever while pulling out on the harness straps at the chest clip.
+```
+
+Verifier (claim quote union): `ENTAILED` — The semantic projection faithfully restates the action described in the quote: loosening the harness straps by pushing down on the release lever while pulling out on the straps at the chest clip. No condition, direction, unit, or actor is added, omitted, or altered in a way that broadens or contradicts the original. The projection is a direct paraphrase of the quoted instruction.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_harnessfit_2`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Release the chest clip: squeeze the chest clip release buttons and pull apart.",
+  "procedure": "adjust_harness_to_fit_child",
+  "step_number": 2
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `46`
+
+```text
+2. Release the Chest Clip Squeeze the chest clip release buttons and pull apart.
+```
+
+Verifier (claim quote union): `ENTAILED` — The semantic projection exactly mirrors the instruction in the quote: 'Release the Chest Clip Squeeze the chest clip release buttons and pull apart.' The projection rephrases it as a colon-separated imperative but preserves all semantic content — the action (release), the target (chest clip), and the method (squeeze buttons and pull apart). No condition, direction, unit, or actor is added, omitted, or altered in a way that broadens or contradicts the original. The union of quotes supports every assertion in the projection.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_harnessfit_3`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Unbuckle the buckle: press the red button, pull the buckle tongues out, and place the harness straps off to the sides.",
+  "procedure": "adjust_harness_to_fit_child",
+  "step_number": 3
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `47`
+
+```text
+3. Unbuckle the Buckle Press the red button and pull buckle tongues out. Place harness straps off to the sides.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately restates the sequence of actions from the quote: pressing the red button, pulling buckle tongues out, and placing harness straps off to the sides — all under the umbrella action 'Unbuckle the buckle'. No condition, direction, unit, or actor is added or omitted in a way that broadens or contradicts the original.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_harnessfit_4`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Place the child in the seat, making sure their back is flat against the car seat back.",
+  "procedure": "adjust_harness_to_fit_child",
+  "step_number": 4
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `47`
+
+```text
+4. Place Your Child in the Seat Make sure their back is flat against the car seat back.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately restates the action and condition from the quote: placing the child in the seat with the back flat against the car seat back. No unsupported addition, contradiction, or omitted governing condition exists.
+
+Extractor notes: The manual attaches a WARNING to this step about bulky clothing/snowsuits in cold weather; that warning is already recorded as claim_srl_warning_bulky_clothing.
+
+### `claim_srl_step_harnessfit_5`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Place the harness straps over the child's shoulders.",
+  "procedure": "adjust_harness_to_fit_child",
+  "step_number": 5
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `48`
+
+```text
+5. Place Harness Straps Over Child’s Shoulders
+```
+
+Verifier (claim quote union): `ENTAILED` — The semantic projection 'Place the harness straps over the child's shoulders.' is directly supported by the exact quote '5. Place Harness Straps Over Child’s Shoulders'. The projection preserves the core action, object, and target without adding unsupported conditions, directions, or qualifiers. No scope broadening, wrong actor, or lost governing condition occurs.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_harnessfit_6`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Check the harness height: the harness straps must be at or just below the child's shoulders.",
+  "procedure": "adjust_harness_to_fit_child",
+  "step_number": 6
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `48`
+
+```text
+6. Check Harness Height Harness Straps MUST BE AT OR JUST BELOW the Child’s Shoulders
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection faithfully restates the quote’s requirement: checking harness height with the condition that straps must be at or just below the child’s shoulders. No scope broadening, wrong unit/direction/actor, or lost governing condition occurs. The imperative 'Check Harness Height' maps to 'Check the harness height', and the MUST BE condition is preserved as 'must be'.
+
+Extractor notes: Embedded limit also recorded as claim_srl_limit_harness_strap_height.
+
+### `claim_srl_step_harnessfit_7`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Check that the top of the child's head is at least 1 in (2.5 cm) below the top of the car seat.",
+  "procedure": "adjust_harness_to_fit_child",
+  "step_number": 7
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `49`
+
+```text
+7. Top of Head MUST BE AT LEAST 1” (2.5 cm) BELOW the Top of the Car Seat
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately restates the requirement from the quote: the top of the head must be at least 1 inch (2.5 cm) below the top of the car seat. No condition, direction, unit, or actor is misrepresented or broadened.
+
+Extractor notes: Restates the head-clearance limit already recorded as claim_srl_limit_head_clearance; kept as a STEP because the manual numbers it as an action in procedure 4-A.
+
+### `claim_srl_step_harnessfit_8`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "To change harness height positions: with the harness straps loose, from the back of the car seat remove the left and right side harness strap loops from the splitter plate.",
+  "procedure": "adjust_harness_to_fit_child",
+  "step_number": 8
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `49`
+
+```text
+8. To Change Harness Height Positions With harness straps loose, from the back of the car seat, remove the left and right side harness strap loops from the splitter plate.
+```
+
+Verifier (claim quote union): `ENTAILED` — The semantic projection faithfully restates the exact procedure described in the quote, preserving all conditions (harness straps loose, from the back of the car seat) and actions (remove left and right side harness strap loops from the splitter plate). No scope broadening, wrong actor/direction/unit, or lost governing condition occurs. The projection is a direct paraphrase without adding or omitting any semantic constraint.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_harnessfit_9`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Pull the harness straps out from the front of the car seat.",
+  "procedure": "adjust_harness_to_fit_child",
+  "step_number": 9
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `50`
+
+```text
+9. Pull Harness Straps Out From the Front of Car Seat
+```
+
+Verifier (claim quote union): `ENTAILED` — The semantic projection 'Pull the harness straps out from the front of the car seat.' is fully supported by the exact quote '9. Pull Harness Straps Out From the Front of Car Seat'. The projection preserves the action, object, and spatial direction without adding, omitting, or altering any governing condition, unit, actor, or scope. No unsupported semantic addition or contradiction exists.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_harnessfit_10`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Insert the harness straps into the new slot location at or just below the child's shoulders, making sure the straps are not twisted and are at the same height.",
+  "procedure": "adjust_harness_to_fit_child",
+  "step_number": 10
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `50`
+
+```text
+10. Insert Harness Straps Into the New Location At or Just Below the Child’s Shoulders Make sure the harness straps are not twisted and are at the same height.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection faithfully restates the quote’s instructions: inserting harness straps at or just below the child’s shoulders, ensuring they are untwisted and at the same height. No unsupported addition, contradiction, or omitted condition exists; the quote’s directives are fully preserved in the projection.
 
 Extractor notes: None recorded.
 
@@ -4579,7 +4213,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `51`
 11. For Smaller Baby If the child’s shoulders are even with or just above the lowest 2 slots, use the upper loops on the harness straps. Thread the upper harness straps loops onto the splitter plate. Make sure the straps are on top of the splitter plate and are completely on.
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves all key elements: condition (smaller baby, shoulders at/above lowest 2 slots), action (use upper loops, thread onto splitter plate), and verification (straps on top and completely on). No numbers, units, actors, conditions, or qualifiers are added, dropped, or altered. The procedural framing as 'adjust_harness_to_fit_child' is a valid abstraction consistent with the quote’s intent.
+Verifier (claim quote union): `ENTAILED` — The projection faithfully restates the conditional instruction from the quote: for a smaller baby with shoulders at or just above the lowest 2 slots, use upper harness loops, thread them onto the splitter plate, and ensure they are on top and completely on — all assertions are directly supported by the quote without adding, omitting, or altering conditions, directions, or scope.
 
 Extractor notes: AMBIGUITY: steps 11 and 12 are conditional alternatives (child-size dependent) rather than sequential actions; only one applies per child. Both retained with the manual's own numbering to keep 4-A contiguous.
 
@@ -4621,9 +4255,177 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `52`
 12. For Larger Baby If the child’s shoulders are even with or just above the upper 2 slots, use the lower loops on the harness straps. Thread the lower harness straps loops onto the splitter plate. Make sure the straps are completely on the splitter plate.
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves all key elements: condition (larger baby, shoulders at/above upper 2 slots), action (use lower loops, thread onto splitter plate), and requirement (straps completely on splitter plate). No numbers, units, actors, conditions, or qualifiers are added, dropped, or altered. The procedural framing as 'adjust_harness_to_fit_child' is a valid abstraction consistent with the quote’s intent.
+Verifier (claim quote union): `ENTAILED` — The semantic projection faithfully restates the conditional instruction from the quote: for a larger baby (defined by shoulder position relative to upper slots), use lower harness loops, thread them onto the splitter plate, and ensure full seating on the plate — all explicitly stated in the quote without adding, omitting, or altering conditions, directions, or scope.
 
 Extractor notes: AMBIGUITY: conditional alternative to step 11 (see claim_srl_step_harnessfit_11).
+
+### `claim_srl_step_bucklefit_1`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Check the buckle position: the correct slot is the one closest to the child without being underneath them.",
+  "procedure": "adjust_buckle_to_fit_child",
+  "step_number": 1
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `53`
+
+```text
+1. Check the Buckle Position The correct slot is the one that is closest to your child without being underneath them.
+```
+
+Verifier (claim quote union): `ENTAILED` — The semantic projection faithfully restates the exact instruction from the quote: checking the buckle position requires selecting the slot closest to the child without being underneath them. No condition, direction, unit, or actor is added, omitted, or altered in a way that broadens or contradicts the original assertion.
+
+Extractor notes: None recorded.
+
+### `claim_srl_step_bucklefit_2`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "To change the buckle position: remove the child from the seat; from the bottom of the car seat insert the buckle's metal clip up through the shell and pad, then from the front pull the buckle out of the pad and shell.",
+  "procedure": "adjust_buckle_to_fit_child",
+  "step_number": 2
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `53`
+
+```text
+2. To Change Buckle Position Remove child from the seat. From the bottom of car seat, insert the buckle’s metal clip up through shell and pad. From the front, pull buckle out of the pad an shell.
+```
+
+Verifier (claim quote union): `ENTAILED` — The semantic projection faithfully restates the sequence and direction of actions described in the quote: removing the child, inserting the clip upward from the bottom through shell and pad, then pulling the buckle out from the front. No condition, direction, or actor is added or omitted in a way that broadens or contradicts the original. The union of quotes supports every assertion in the projection.
+
+Extractor notes: Quote preserves the manual's typo 'an shell' (should read 'and shell') verbatim from the pypdf text layer.
+
+### `claim_srl_step_bucklefit_3`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Insert the metal clip into the new location: push the metal clip down through the pad and shell, making sure the buckle's red button is facing out.",
+  "procedure": "adjust_buckle_to_fit_child",
+  "step_number": 3
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `54`
+
+```text
+3. Insert Metal Clip Into New Location Push metal clip down through the pad and shell. Make sure the buckle’s red button is facing out.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection faithfully restates the action and its conditions from the quote: inserting the metal clip into the new location, pushing it down through the pad and shell, and ensuring the buckle’s red button faces out — all explicitly stated in the quote.
+
+Extractor notes: pypdf also repeats this step's text on page 55 (page-layout extraction artifact); the step belongs to 4-B and is cited on page 54.
+
+### `claim_srl_step_bucklefit_4`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C3`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_MANUAL`
+- Queue section: `c3`
+- Review focus: HARD REVIEW — C3; individual decision required
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Pull up on the buckle to check it is secured, making sure the buckle's metal clip is completely through the pad and shell.",
+  "procedure": "adjust_buckle_to_fit_child",
+  "step_number": 4
+}
+```
+
+Quote — binding 0, source `src_snugride_manual_en_v1`, page `54`
+
+```text
+4. Pull Up On Buckle To Check It Is Secured Make sure buckle’s metal clip is completely through pad and shell.
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection faithfully restates the action and verification condition from the quote: pulling up on the buckle to check security, and ensuring the metal clip is fully through the pad and shell. No unsupported addition, contradiction, or omitted condition alters the meaning.
+
+Extractor notes: pypdf also repeats this step's text on page 55 (page-layout extraction artifact); the step belongs to 4-B and is cited on page 54.
 
 ### `claim_srl_step_shortenbuckle_1`
 
@@ -4663,7 +4465,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `54`
 To Shorten Buckle for Low Birth Weight Infants: (Minimum weight is 4 lb (1.8 kg)): When crotch strap clip is in rear crotch slot, insert clip into front crotch slot in seat but not through seat pad. Crotch strap clip should remain flat against seat.
 ```
 
-Verifier: `ENTAILED` — The translation faithfully reproduces the exact quote without adding, dropping, or altering any factual detail, condition, direction, or qualifier. All elements — including weight specification, clip placement, and orientation — are preserved verbatim in meaning.
+Verifier (claim quote union): `ENTAILED` — The semantic projection faithfully restates every assertion in the exact quote: the action is for low birth weight infants (minimum 4 lb / 1.8 kg), the crotch strap clip starts in the rear slot, is inserted into the front slot in the seat (not through the pad), and must remain flat against the seat. No condition, direction, or qualifier is added or omitted that alters meaning.
 
 Extractor notes: AMBIGUITY: this is an un-numbered sub-procedure printed inside 4-B after step 4, applicable only to low-birth-weight infants; recorded as its own single-step procedure rather than a numbered 4-B step to preserve 4-B's contiguous numbering. Also restates the 4 lb minimum-weight limit (see claim_srl_limit_min_weight).
 
@@ -4713,7 +4515,7 @@ Quote — binding 0, source `src_snugride_manual_en_v1`, page `76`
 Machine wash pad and canopy in cold water on delicate cycle and drip-dry. DO NOT USE BLEACH.
 ```
 
-Verifier: `ENTAILED` — The translation accurately captures all key elements: machine wash, cold water, delicate cycle, drip-dry, and prohibition of bleach; no meaning is added, dropped, or altered.
+Verifier (claim quote union): `ENTAILED` — Every assertion in the projection is directly supported by the quote: 'Machine wash' → 'method':'machine_wash'; 'cold water', 'delicate cycle', 'drip-dry' → 'instructions'; 'DO NOT USE BLEACH' → 'restrictions'. No condition, direction, or qualifier is omitted or broadened beyond what the quote supports.
 
 Extractor notes: None recorded.
 
@@ -4751,11 +4553,11 @@ None.
 - Reason: The Spanish manual (src_snugride_manual_es_v1) duplicates the English manual's content; extracting it would double claims without adding facts. English manual used as the sole manual source.
 - Closes when: A market/language-specific extraction pass is requested.
 
-## 7. Batch-eligible C0/C1 spot-audit (2)
+## 7. Batch-eligible C0/C1 spot-audit (4)
 
 Batch ID: `batch_graco-snugride-35-lite-lx_20260826`
 
-- [ ] OWNER CONFIRMS: I reviewed all `2` designated sample claims and confirm `APPROVED_FOR_PUBLISH` for all `2` members of `batch_graco-snugride-35-lite-lx_20260826`.
+- [ ] OWNER CONFIRMS: I reviewed all `4` designated sample claims and confirm `APPROVED_FOR_PUBLISH` for all `4` members of `batch_graco-snugride-35-lite-lx_20260826`.
 - [ ] SAMPLE FAILED: do not batch-confirm; decide every member below individually.
 - Owner / date: ______________________________
 
@@ -4795,7 +4597,66 @@ Quote — binding 0, source `src_pdp_specs_page`, page `None`
 | Model # (Studio color, current) | 2110186 |
 ```
 
-Verifier: `ENTAILED` — The translation accurately extracts the model number '2110186' from the quote without adding, dropping, or altering any qualifiers, units, or conditions.
+Verifier (claim quote union): `ENTAILED` — The quote explicitly states 'Model # (Studio color, current) | 2110186', which directly supports the projection's value '2110186' as the model number. No unsupported addition, contradiction, or lost condition is present.
+
+Extractor notes: None recorded.
+
+### `claim_srl_spec_dimensions` — SPOT-AUDIT SAMPLE
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C0`
+- Type / predicate: `SPEC` / `product_dimensions`
+- Source authority: `MANUFACTURER_SPEC_PAGE`
+- Queue section: `batch_eligible`
+- Review focus: Standard review
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "depth": 18.07,
+  "height": 27.4,
+  "unit": "in",
+  "width": 15.5
+}
+```
+
+Quote — binding 0, source `src_pdp_specs_page`, page `None`
+
+```text
+| Product width | 15.5 in |
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately reflects the exact numerical values and unit from the quotes without adding, omitting, or altering any conditions, directions, or qualifiers.
+
+Quote — binding 1, source `src_pdp_specs_page`, page `None`
+
+```text
+| Product height | 27.4 in |
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately reflects the exact numerical values and unit from the quotes without adding, omitting, or altering any conditions, directions, or qualifiers.
+
+Quote — binding 2, source `src_pdp_specs_page`, page `None`
+
+```text
+| Product depth | 18.07 in |
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately reflects the exact numerical values and unit from the quotes without adding, omitting, or altering any conditions, directions, or qualifiers.
 
 Extractor notes: None recorded.
 
@@ -4836,6 +4697,47 @@ Quote — binding 0, source `src_pdp_specs_page`, page `None`
 | Product weight (with base) | 12.3 lb |
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the value (12.3), unit (lb), and condition (with base) from the exact quote without adding, dropping, or altering any semantic element.
+Verifier (claim quote union): `ENTAILED` — The quote explicitly states '12.3 lb' as the product weight (with base), and the projection accurately extracts the value 12.3 and unit 'lb' without adding, omitting, or altering any semantic condition or qualifier.
 
 Extractor notes: None recorded.
+
+### `claim_srl_spec_carrier_weight` — SPOT-AUDIT SAMPLE
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C0`
+- Type / predicate: `SPEC` / `carrier_weight_without_base`
+- Source authority: `MANUFACTURER_SPEC_PAGE`
+- Queue section: `batch_eligible`
+- Review focus: Standard review
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": "2110186",
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "unit": "lb",
+  "value": 7.5
+}
+```
+
+Quote — binding 0, source `src_pdp_specs_page`, page `None`
+
+```text
+| Carrier weight without base | 7.5 lb (spec table); marketing copy says "weighs just 7.2 lb" |
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection asserts a value of 7.5 lb with unit 'lb', which is explicitly stated in the quote as '7.5 lb (spec table)'. The marketing copy's '7.2 lb' does not contradict this, as the projection does not claim exclusivity or override the spec table value. The projection faithfully reflects one supported assertion from the union.
+
+Extractor notes: PDP spec table says 7.5 lb while PDP marketing copy says 7.2 lb; spec-table value recorded. Reviewer may want a second source.

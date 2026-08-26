@@ -10,73 +10,16 @@ This is an advisory proposal document, not a publication record. Only the produc
 - Claims in pack: `33`
 - Existing human decisions: `0`
 - Undecided claims covered here: `33`
-- Proposed `NEEDS_RECHECK`: `17`
+- Existing decisions reopened by v2 alarms: `0`
+- Total owner action items: `33`
+- Proposed `NEEDS_RECHECK`: `5`
 - Proposed `REJECTED_FOR_SERVING`: `0`
-- Proposed `APPROVED_FOR_PUBLISH`: `16`
-- Batch-eligible C0/C1: `16`
+- Proposed `APPROVED_FOR_PUBLISH`: `28`
+- Batch-eligible C0/C1: `28`
 
 For C2/C3, mark every item individually. For section 7, inspect every designated sample item; then either confirm the batch statement or mark the sample as failed and decide every batch member individually.
 
-## 1. MEANING_CHANGED alarms (17)
-
-### `claim_mba_part_headphone_jack`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C1`
-- Type / predicate: `PART_LOCATION` / `headphone_jack_location`
-- Source authority: `MANUFACTURER_SUPPORT_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation adds the claim that the headphone jack is 'the only port on that side,' which is not stated in the quote and introduces unsupported information.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": null,
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "diagram_binding": {
-    "annotation_status": "PENDING",
-    "bounding_box": null,
-    "coordinate_system": "normalized",
-    "page": null,
-    "source_id": "src_img_guide_right_side"
-  },
-  "location_description": "The 3.5 mm headphone jack is on the RIGHT side of the laptop and is the only port on that side.",
-  "part": "headphone_jack_3_5mm",
-  "side": "RIGHT"
-}
-```
-
-Quote — binding 0, source `src_ports_guide_tour`, page `None`
-
-```text
-1x 3.5 mm headphone jack (the only port on the right side)
-```
-
-Verifier: `ENTAILED` — The translation accurately reflects the quote: the 3.5 mm headphone jack is on the right side and is the only port there; no meaning change.
-
-Quote — binding 1, source `src_specs_summary`, page `None`
-
-```text
-| 3.5 mm headphone jack (high-impedance headphone support) | 1 | Right |
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds the claim that the headphone jack is 'the only port on that side,' which is not stated in the quote and introduces unsupported information.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
+## 1. MEANING_CHANGED alarms (5)
 
 ### `claim_mba_part_magsafe_port`
 
@@ -87,7 +30,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation adds 'next to the two Thunderbolt / USB 4 ports,' which is not mentioned in the original quote and introduces new spatial information not present in the source. The translation adds specific spatial details (e.g., 'front-most position toward the hinge end', 'next to the two Thunderbolt / USB 4 ports') not present in the quote, which only states 'Left' as the side. This constitutes an unwarranted expansion of meaning.
+- Proposed rationale: Verifier found a meaning change: The projection adds 'next to the two Thunderbolt / USB 4 ports,' which is not mentioned or implied in any quote; this introduces an unsupported spatial relationship and broadens the claim beyond the source. The projection adds 'next to the two Thunderbolt / USB 4 ports,' which is not mentioned or implied in any quote; this introduces an unsupported spatial relationship and broadens the claim beyond the source.
 
 Applicability
 
@@ -123,7 +66,7 @@ Quote — binding 0, source `src_ports_guide_tour`, page `None`
 1x MagSafe 3 charging port (front-most position toward hinge end of left edge)
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds 'next to the two Thunderbolt / USB 4 ports,' which is not mentioned in the original quote and introduces new spatial information not present in the source.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds 'next to the two Thunderbolt / USB 4 ports,' which is not mentioned or implied in any quote; this introduces an unsupported spatial relationship and broadens the claim beyond the source.
 
 Quote — binding 1, source `src_specs_summary`, page `None`
 
@@ -131,249 +74,7 @@ Quote — binding 1, source `src_specs_summary`, page `None`
 | MagSafe 3 charging port | 1 | Left |
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds specific spatial details (e.g., 'front-most position toward the hinge end', 'next to the two Thunderbolt / USB 4 ports') not present in the quote, which only states 'Left' as the side. This constitutes an unwarranted expansion of meaning.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_mba_part_thunderbolt_ports`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C1`
-- Type / predicate: `PART_LOCATION` / `thunderbolt_ports_location`
-- Source authority: `MANUFACTURER_SUPPORT_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation adds 'MagSafe 3 port' which is not specified in the quote; the original only says 'MagSafe', so specifying '3' introduces an unverified detail that changes the meaning. The translation adds 'next to the MagSafe 3 port' which is not mentioned in the quote, introducing new spatial information not present in the source.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": null,
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "count": 2,
-  "diagram_binding": {
-    "annotation_status": "PENDING",
-    "bounding_box": null,
-    "coordinate_system": "normalized",
-    "page": null,
-    "source_id": "src_img_guide_left_side"
-  },
-  "location_description": "Both Thunderbolt / USB 4 ports are on the LEFT side of the laptop, next to the MagSafe 3 port.",
-  "part": "thunderbolt_usb4_ports",
-  "side": "LEFT"
-}
-```
-
-Quote — binding 0, source `src_ports_guide_tour`, page `None`
-
-```text
-2x Thunderbolt / USB 4 ports (both on the left side, next to MagSafe)
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'MagSafe 3 port' which is not specified in the quote; the original only says 'MagSafe', so specifying '3' introduces an unverified detail that changes the meaning.
-
-Quote — binding 1, source `src_specs_summary`, page `None`
-
-```text
-| Thunderbolt / USB 4 (Thunderbolt 3 40Gb/s, USB 4 40Gb/s, DisplayPort, charging) | 2 | Left |
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'next to the MagSafe 3 port' which is not mentioned in the quote, introducing new spatial information not present in the source.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_mba_part_touch_id`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C1`
-- Type / predicate: `PART_LOCATION` / `touch_id_location`
-- Source authority: `MANUFACTURER_SUPPORT_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation adds 'the power button' as an appositive to 'Touch ID', implying Touch ID is the power button, while the quote only says 'Touch ID (power button)' — a label or identifier, not a definition. This rephrasing changes the semantic relationship and could mislead the reader into thinking Touch ID and the power button are the same physical component, which the original does not assert.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": null,
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "diagram_binding": {
-    "annotation_status": "PENDING",
-    "bounding_box": null,
-    "coordinate_system": "normalized",
-    "page": null,
-    "source_id": "src_img_guide_top_open"
-  },
-  "location_description": "Touch ID (the power button) is at the top-right of the keyboard.",
-  "part": "touch_id_power_button",
-  "side": null
-}
-```
-
-Quote — binding 0, source `src_ports_guide_tour`, page `None`
-
-```text
-**Touch ID (power button)**: top-right of keyboard
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'the power button' as an appositive to 'Touch ID', implying Touch ID is the power button, while the quote only says 'Touch ID (power button)' — a label or identifier, not a definition. This rephrasing changes the semantic relationship and could mislead the reader into thinking Touch ID and the power button are the same physical component, which the original does not assert.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_mba_spec_battery_life`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C0`
-- Type / predicate: `SPEC` / `battery_life`
-- Source authority: `MANUFACTURER_SPEC_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation omits the critical qualifier 'up to', implying exact battery life values rather than maximum estimates, which alters the meaning.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": null,
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "movie_playback_hours": 18,
-  "wireless_web_hours": 15
-}
-```
-
-Quote — binding 0, source `src_tech_specs_page`, page `None`
-
-```text
-Up to 18 hours Apple TV app movie playback; up to 15 hours wireless web
-```
-
-Verifier: `MEANING_CHANGED` — The translation omits the critical qualifier 'up to', implying exact battery life values rather than maximum estimates, which alters the meaning.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_mba_spec_box_contents`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C0`
-- Type / predicate: `SPEC` / `box_contents`
-- Source authority: `MANUFACTURER_SPEC_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation adds the word 'config' after GPU and storage specifications, which is not present in the original quote and implies a configurational context not stated.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": null,
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "values": [
-    "13-inch MacBook Air",
-    "30W USB-C Power Adapter (8-core GPU config) or 35W Dual USB-C Port Compact Power Adapter (10-core GPU + 512GB config)",
-    "USB-C to MagSafe 3 Cable (2 m)"
-  ]
-}
-```
-
-Quote — binding 0, source `src_tech_specs_page`, page `None`
-
-```text
-13-inch MacBook Air; 30W USB-C Power Adapter (8-core GPU) or 35W Dual USB-C Port Compact Power Adapter (10-core GPU + 512GB); USB-C to MagSafe 3 Cable (2 m)
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds the word 'config' after GPU and storage specifications, which is not present in the original quote and implies a configurational context not stated.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_mba_spec_camera`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C0`
-- Type / predicate: `SPEC` / `camera`
-- Source authority: `MANUFACTURER_SPEC_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation drops the critical detail about the 'advanced image signal processor with computational video', reducing the specification to only the camera resolution and type, thereby omitting key technical capabilities described in the quote.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": null,
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "value": "1080p FaceTime HD camera"
-}
-```
-
-Quote — binding 0, source `src_tech_specs_page`, page `None`
-
-```text
-1080p FaceTime HD camera; advanced image signal processor with computational video
-```
-
-Verifier: `MEANING_CHANGED` — The translation drops the critical detail about the 'advanced image signal processor with computational video', reducing the specification to only the camera resolution and type, thereby omitting key technical capabilities described in the quote.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds 'next to the two Thunderbolt / USB 4 ports,' which is not mentioned or implied in any quote; this introduces an unsupported spatial relationship and broadens the claim beyond the source.
 
 Extractor notes: None recorded.
 
@@ -388,7 +89,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SPEC_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation adds '(optional)' to the 70W USB-C Power Adapter, which is not stated in the quote; the quote implies the adapter is required for fast charging, while the translation suggests it is optional. The translation implies the device inherently supports fast charging only if the optional adapter is used, while the quote states that fast charging (up to 50% in ~30 min) is achievable with the optional adapter — not that support depends on it. The quote does not claim the feature is conditional on the adapter; it merely specifies what adapter enables that performance. The translation misrepresents the dependency.
+- Proposed rationale: Verifier found a meaning change: The projection asserts that the 70W USB-C Power Adapter is 'optional' while also being a requirement ('requires'), which is a contradiction. The quotes state the adapter is 'optional' for fast charging, not that it is required. The projection wrongly implies a mandatory condition where none exists. The projection asserts that the 70W USB-C Power Adapter is 'optional' while also being a requirement ('requires'), which is a contradiction. The quotes state the adapter is 'optional' for fast charging, not that it is required. The projection wrongly implies a mandatory condition where none exists.
 
 Applicability
 
@@ -416,7 +117,7 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 USB-C to MagSafe 3 Cable; fast-charge capable with 70W USB-C Power Adapter
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds '(optional)' to the 70W USB-C Power Adapter, which is not stated in the quote; the quote implies the adapter is required for fast charging, while the translation suggests it is optional.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection asserts that the 70W USB-C Power Adapter is 'optional' while also being a requirement ('requires'), which is a contradiction. The quotes state the adapter is 'optional' for fast charging, not that it is required. The projection wrongly implies a mandatory condition where none exists.
 
 Quote — binding 1, source `src_ports_guide_tour`, page `None`
 
@@ -424,58 +125,7 @@ Quote — binding 1, source `src_ports_guide_tour`, page `None`
 Fast charge up to 50 percent in around 30 minutes with the optional 70W USB-C Power Adapter.
 ```
 
-Verifier: `MEANING_CHANGED` — The translation implies the device inherently supports fast charging only if the optional adapter is used, while the quote states that fast charging (up to 50% in ~30 min) is achievable with the optional adapter — not that support depends on it. The quote does not claim the feature is conditional on the adapter; it merely specifies what adapter enables that performance. The translation misrepresents the dependency.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_mba_spec_headphone_jack_impedance`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C0`
-- Type / predicate: `SPEC` / `headphone_jack_high_impedance_support`
-- Source authority: `MANUFACTURER_SPEC_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation adds '3.5 mm headphone jack' and 'advanced support', which are not mentioned in the quote; the quote only states support for high-impedance headphones without specifying jack type or level of support.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": null,
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "description": "3.5 mm headphone jack with advanced support for high-impedance headphones",
-  "value": true
-}
-```
-
-Quote — binding 0, source `src_tech_specs_page`, page `None`
-
-```text
-3.5 mm headphone jack with advanced support for high-impedance headphones
-```
-
-Verifier: `ENTAILED` — The translation faithfully preserves the exact wording and meaning of the quote, including the specification of '3.5 mm headphone jack with advanced support for high-impedance headphones' without adding, dropping, or altering any detail.
-
-Quote — binding 1, source `src_ports_guide_tour`, page `None`
-
-```text
-supports high-impedance headphones without a separate DAC or amplifier
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds '3.5 mm headphone jack' and 'advanced support', which are not mentioned in the quote; the quote only states support for high-impedance headphones without specifying jack type or level of support.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection asserts that the 70W USB-C Power Adapter is 'optional' while also being a requirement ('requires'), which is a contradiction. The quotes state the adapter is 'optional' for fast charging, not that it is required. The projection wrongly implies a mandatory condition where none exists.
 
 Extractor notes: None recorded.
 
@@ -490,7 +140,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SPEC_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED; Extractor flagged applicability or interpretation context
-- Proposed rationale: Verifier found a meaning change: Translation omits that the 8GB base config is configurable to 16GB or 24GB, and incorrectly implies 16GB is the base with only 24GB as configurable option, altering configuration scope.
+- Proposed rationale: Verifier found a meaning change: The projection asserts 'base_gb':16, but the quote states 16GB is the default configuration while explicitly listing 8GB as the base configuration (which is configurable to 16GB or 24GB), making 16GB not the base but an upgrade option; thus, assigning 16 as the base misrepresents the hierarchy and conditions.
 
 Applicability
 
@@ -521,56 +171,9 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 16GB unified memory (configurable to 24GB); 8GB base configuration also listed (configurable to 16GB or 24GB)
 ```
 
-Verifier: `MEANING_CHANGED` — Translation omits that the 8GB base config is configurable to 16GB or 24GB, and incorrectly implies 16GB is the base with only 24GB as configurable option, altering configuration scope.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection asserts 'base_gb':16, but the quote states 16GB is the default configuration while explicitly listing 8GB as the base configuration (which is configurable to 16GB or 24GB), making 16GB not the base but an upgrade option; thus, assigning 16 as the base misrepresents the hierarchy and conditions.
 
 Extractor notes: Capture notes that the tech specs page's 16GB base reflects Apple's 2025 update; the March 2024 launch base configuration was 8GB. Reviewer should decide whether applicability.revision should split this claim.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_mba_spec_microphone_array`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C0`
-- Type / predicate: `SPEC` / `microphone_array`
-- Source authority: `MANUFACTURER_SPEC_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation incorrectly implies that 'directional beamforming', 'Voice Isolation', and 'Wide Spectrum' are features of the 'three-mic array' as separate attributes, whereas the quote presents them as modes or capabilities associated with the array — not distinct features owned by it. This misattributes structure and relationship, altering meaning.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": null,
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "features": [
-    "directional beamforming",
-    "Voice Isolation",
-    "Wide Spectrum"
-  ],
-  "value": "three-mic array"
-}
-```
-
-Quote — binding 0, source `src_tech_specs_page`, page `None`
-
-```text
-Three-mic array with directional beamforming; Voice Isolation and Wide Spectrum mic modes
-```
-
-Verifier: `MEANING_CHANGED` — The translation incorrectly implies that 'directional beamforming', 'Voice Isolation', and 'Wide Spectrum' are features of the 'three-mic array' as separate attributes, whereas the quote presents them as modes or capabilities associated with the array — not distinct features owned by it. This misattributes structure and relationship, altering meaning.
-
-Extractor notes: None recorded.
 
 Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
 
@@ -583,7 +186,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation adds a specific date '2026-08-20' not present in the quote, which changes the meaning by implying a precise retrieval timestamp not stated in the original.
+- Proposed rationale: Verifier found a meaning change: The quote specifies 'as of retrieval' without a date, while the projection asserts a specific date '2026-08-20', which is an unsupported addition not present in the source.
 
 Applicability
 
@@ -611,152 +214,7 @@ Quote — binding 0, source `src_identify_page`, page `None`
 **Newest compatible operating system** (as of retrieval): macOS Tahoe 26
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds a specific date '2026-08-20' not present in the quote, which changes the meaning by implying a precise retrieval timestamp not stated in the original.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_mba_spec_spatial_audio`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C0`
-- Type / predicate: `SPEC` / `spatial_audio_support`
-- Source authority: `MANUFACTURER_SPEC_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation adds 'support' as a predicate and implies a boolean value 'true', which is not stated in the quote; the quote merely describes a feature context without asserting support or functionality.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": null,
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "condition": "when playing music or video with Dolby Atmos on built-in speakers",
-  "value": true
-}
-```
-
-Quote — binding 0, source `src_tech_specs_page`, page `None`
-
-```text
-Spatial Audio when playing music/video with Dolby Atmos on built-in speakers
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'support' as a predicate and implies a boolean value 'true', which is not stated in the quote; the quote merely describes a feature context without asserting support or functionality.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_mba_spec_speaker_system`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C0`
-- Type / predicate: `SPEC` / `speaker_system`
-- Source authority: `MANUFACTURER_SPEC_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation adds specific speaker composition ('two tweeters, two woofers') not mentioned in the quote, which only states 'four-speaker sound system' without specifying types or configuration.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": null,
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "detail": "two tweeters, two woofers",
-  "value": "four-speaker sound system"
-}
-```
-
-Quote — binding 0, source `src_tech_specs_page`, page `None`
-
-```text
-Four-speaker sound system
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds specific speaker composition ('two tweeters, two woofers') not mentioned in the quote, which only states 'four-speaker sound system' without specifying types or configuration.
-
-Quote — binding 1, source `src_ports_guide_tour`, page `None`
-
-```text
-the 13-inch MacBook Air has a four-speaker sound system (two tweeters, two woofers)
-```
-
-Verifier: `ENTAILED` — The translation accurately reflects the exact quote: it specifies the four-speaker system and breaks it down into two tweeters and two woofers, matching the source without adding, dropping, or altering any detail.
-
-Extractor notes: None recorded.
-
-Rework path: Correct the structured translation or add an authoritative quote that supports every stated detail, then re-run verification.
-
-### `claim_mba_spec_wifi_standard`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C0`
-- Type / predicate: `SPEC` / `wifi_standard`
-- Source authority: `MANUFACTURER_SPEC_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation reverses the relationship: it treats 'Wi-Fi 6E' as the value and '802.11ax' as the standard, implying Wi-Fi 6E is a value of the standard — but the quote presents them as synonymous identifiers, not a value-standard pair. The translation reverses the relationship: it presents 'Wi-Fi 6E' as the value and '802.11ax' as the standard, implying Wi-Fi 6E is an instance or value of 802.11ax — but the quote treats them as synonymous labels for the same thing, not a value-standard pair.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": null,
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "standard": "802.11ax",
-  "value": "Wi-Fi 6E"
-}
-```
-
-Quote — binding 0, source `src_tech_specs_page`, page `None`
-
-```text
-Wi-Fi 6E (802.11ax)
-```
-
-Verifier: `MEANING_CHANGED` — The translation reverses the relationship: it treats 'Wi-Fi 6E' as the value and '802.11ax' as the standard, implying Wi-Fi 6E is a value of the standard — but the quote presents them as synonymous identifiers, not a value-standard pair.
-
-Quote — binding 1, source `src_specs_summary`, page `None`
-
-```text
-Wi-Fi 6E (802.11ax)
-```
-
-Verifier: `MEANING_CHANGED` — The translation reverses the relationship: it presents 'Wi-Fi 6E' as the value and '802.11ax' as the standard, implying Wi-Fi 6E is an instance or value of 802.11ax — but the quote treats them as synonymous labels for the same thing, not a value-standard pair.
+Verifier (claim quote union): `MEANING_CHANGED` — The quote specifies 'as of retrieval' without a date, while the projection asserts a specific date '2026-08-20', which is an unsupported addition not present in the source.
 
 Extractor notes: None recorded.
 
@@ -771,7 +229,7 @@ Rework path: Correct the structured translation or add an authoritative quote th
 - Source authority: `MANUFACTURER_SUPPORT_PAGE`
 - Queue section: `alarm`
 - Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation adds 'into the MagSafe 3 port', which is not mentioned in the original quote. The original only says 'Plug in the included USB-C Power Adapter' without specifying any port, so this addition changes the meaning by introducing an unsupported detail.
+- Proposed rationale: Verifier found a meaning change: The projection adds 'into the MagSafe 3 port', which is not mentioned in the quote. The quote only says 'Plug in the included USB-C Power Adapter' without specifying any port, let alone the MagSafe 3 port. This is an unsupported semantic addition that narrows the scope of the action incorrectly.
 
 Applicability
 
@@ -804,56 +262,9 @@ Quote — binding 0, source `src_ports_guide_tour`, page `None`
 Plug in the included USB-C Power Adapter. Indicator light glows amber when charging is needed, green when fully charged.
 ```
 
-Verifier: `MEANING_CHANGED` — The translation adds 'into the MagSafe 3 port', which is not mentioned in the original quote. The original only says 'Plug in the included USB-C Power Adapter' without specifying any port, so this addition changes the meaning by introducing an unsupported detail.
+Verifier (claim quote union): `MEANING_CHANGED` — The projection adds 'into the MagSafe 3 port', which is not mentioned in the quote. The quote only says 'Plug in the included USB-C Power Adapter' without specifying any port, let alone the MagSafe 3 port. This is an unsupported semantic addition that narrows the scope of the action incorrectly.
 
 Extractor notes: Single-step procedure: the guide states charging as one action.
-
-Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
-
-### `claim_mba_step_power_on_1`
-
-- Proposed disposition: **`NEEDS_RECHECK`**
-- Owner decision: [ ] confirm recommendation  [ ] override: __________
-- Claim tier: `C1`
-- Type / predicate: `STEP` / `procedure_step`
-- Source authority: `MANUFACTURER_SUPPORT_PAGE`
-- Queue section: `alarm`
-- Review focus: HARD REVIEW — verifier MEANING_CHANGED
-- Proposed rationale: Verifier found a meaning change: The translation adds 'Touch ID (power button)' and 'laptop', which are not mentioned in the quote. The quote only says 'top-right of keyboard' without specifying the button type or device type, so adding these details changes the meaning.
-
-Applicability
-
-```json
-{
-  "market": "US",
-  "revision": null,
-  "sku": null,
-  "state": null
-}
-```
-
-Object
-
-```json
-{
-  "action": "Press the Touch ID (power button) at the top-right of the keyboard to turn the laptop on.",
-  "procedure": "power_on",
-  "step_number": 1,
-  "target_parts": [
-    "touch_id_power_button"
-  ]
-}
-```
-
-Quote — binding 0, source `src_ports_guide_tour`, page `None`
-
-```text
-top-right of keyboard; press to turn on; authenticate and Apple Pay after setup
-```
-
-Verifier: `MEANING_CHANGED` — The translation adds 'Touch ID (power button)' and 'laptop', which are not mentioned in the quote. The quote only says 'top-right of keyboard' without specifying the button type or device type, so adding these details changes the meaning.
-
-Extractor notes: Single-step procedure: the guide states power-on as one action.
 
 Rework path: Rewrite the procedure step to contain only details supported by its cited span, or add an authoritative binding that supports the full action; then re-run verification so the procedure can become servable for video generation.
 
@@ -882,11 +293,11 @@ None.
 - Reason: The Bluetooth pairing guide source (src_bluetooth_pairing_guide, 'Connect Bluetooth devices to your Mac', support.apple.com/guide/mac-help/blth1004/mac) has local_path null — no local capture exists. No other vault capture contains the pairing steps: ports-guide.md and videos/video-sources.md record only the guide URL, and essentials-guide-note.md is an availability note. video-sources.md also confirms Apple published no official pairing video. Writing STEP claims against a URL-only source would be unverifiable; recorded as a gap instead.
 - Closes when: A verbatim capture of https://support.apple.com/guide/mac-help/blth1004/mac (or the MacBook Air guide 'Connect accessories' page) is added to source-vault/apple-macbook-air-13-m3/manuals/ and registered in manifest.json with a local_path.
 
-## 7. Batch-eligible C0/C1 spot-audit (16)
+## 7. Batch-eligible C0/C1 spot-audit (28)
 
 Batch ID: `batch_apple-macbook-air-13-m3_20260826`
 
-- [ ] OWNER CONFIRMS: I reviewed all `5` designated sample claims and confirm `APPROVED_FOR_PUBLISH` for all `16` members of `batch_apple-macbook-air-13-m3_20260826`.
+- [ ] OWNER CONFIRMS: I reviewed all `5` designated sample claims and confirm `APPROVED_FOR_PUBLISH` for all `28` members of `batch_apple-macbook-air-13-m3_20260826`.
 - [ ] SAMPLE FAILED: do not batch-confirm; decide every member below individually.
 - Owner / date: ______________________________
 
@@ -929,7 +340,7 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 Height: 0.44 inch (1.13 cm)
 ```
 
-Verifier: `ENTAILED` — The translation faithfully preserves the height values in both inches (0.44) and centimeters (1.13) with correct units and no added, dropped, or altered qualifiers.
+Verifier (claim quote union): `ENTAILED` — The projection accurately reflects the height values and units from both quotes: 0.44 inch and 1.13 cm, with no added conditions, directions, or unsupported semantic expansions.
 
 Quote — binding 1, source `src_specs_summary`, page `None`
 
@@ -937,7 +348,7 @@ Quote — binding 1, source `src_specs_summary`, page `None`
 | Height (closed) | 0.44 in (1.13 cm) |
 ```
 
-Verifier: `ENTAILED` — The translation faithfully preserves the exact values and units from the quote: 0.44 in and 1.13 cm for height (closed), with no added, dropped, or altered qualifiers.
+Verifier (claim quote union): `ENTAILED` — The projection accurately reflects the height values and units from both quotes: 0.44 inch and 1.13 cm, with no added conditions, directions, or unsupported semantic expansions.
 
 Extractor notes: None recorded.
 
@@ -980,7 +391,7 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 Width: 11.97 inches (30.41 cm)
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the width values and units from the quote: 11.97 inches and 30.41 cm, with correct unit labels and no added or dropped qualifiers.
+Verifier (claim quote union): `ENTAILED` — The projection accurately reflects the exact values and units stated in both quotes without adding, omitting, or altering any conditions, directions, or qualifiers.
 
 Quote — binding 1, source `src_specs_summary`, page `None`
 
@@ -988,7 +399,7 @@ Quote — binding 1, source `src_specs_summary`, page `None`
 | Width | 11.97 in (30.41 cm) |
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the width values and units (11.97 in and 30.41 cm) without adding, dropping, or altering any qualifiers, numbers, or units from the source.
+Verifier (claim quote union): `ENTAILED` — The projection accurately reflects the exact values and units stated in both quotes without adding, omitting, or altering any conditions, directions, or qualifiers.
 
 Extractor notes: None recorded.
 
@@ -1031,7 +442,7 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 Depth: 8.46 inches (21.5 cm)
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the depth value in both inches (8.46) and centimeters (21.5) as stated in the quote, with no added, dropped, or altered qualifiers, units, or values.
+Verifier (claim quote union): `ENTAILED` — The projection accurately reflects the exact values and units stated in the quotes: 8.46 inches and 21.5 cm, with no added conditions, directions, or unsupported semantic expansions.
 
 Quote — binding 1, source `src_specs_summary`, page `None`
 
@@ -1039,7 +450,7 @@ Quote — binding 1, source `src_specs_summary`, page `None`
 | Depth | 8.46 in (21.5 cm) |
 ```
 
-Verifier: `ENTAILED` — The translation faithfully preserves the depth value in both inches (8.46) and centimeters (21.5) as stated in the quote, with no added, dropped, or altered qualifiers, units, or values.
+Verifier (claim quote union): `ENTAILED` — The projection accurately reflects the exact values and units stated in the quotes: 8.46 inches and 21.5 cm, with no added conditions, directions, or unsupported semantic expansions.
 
 Extractor notes: None recorded.
 
@@ -1083,7 +494,7 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 Weight: 2.7 pounds (1.24 kg) (varies by configuration)
 ```
 
-Verifier: `ENTAILED` — The translation faithfully preserves all elements: the weight values in both lb and kg, the note about variation by configuration, and the predicate 'product_weight'. No meaning is altered or added.
+Verifier (claim quote union): `ENTAILED` — Every semantic assertion in the projection is directly supported by the union of quotes: both quotes state the weight as 2.7 lb and 1.24 kg, and both include the note 'varies by configuration'. The projection faithfully extracts these values and qualifiers without adding, broadening, or omitting any governing condition.
 
 Quote — binding 1, source `src_specs_summary`, page `None`
 
@@ -1091,7 +502,7 @@ Quote — binding 1, source `src_specs_summary`, page `None`
 | Weight | 2.7 lb (1.24 kg), varies by configuration |
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves all elements: both imperial and metric values (2.7 lb, 1.24 kg), the note 'varies by configuration', and the predicate 'product_weight'. No meaning is added, dropped, or altered.
+Verifier (claim quote union): `ENTAILED` — Every semantic assertion in the projection is directly supported by the union of quotes: both quotes state the weight as 2.7 lb and 1.24 kg, and both include the note 'varies by configuration'. The projection faithfully extracts these values and qualifiers without adding, broadening, or omitting any governing condition.
 
 Extractor notes: None recorded.
 
@@ -1132,7 +543,7 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 Bluetooth 5.3
 ```
 
-Verifier: `ENTAILED` — The translation accurately reflects the exact quote 'Bluetooth 5.3' by encoding it as a specification with standard 'Bluetooth' and value '5.3', without adding, dropping, or altering any meaning.
+Verifier (claim quote union): `ENTAILED` — The union of quotes explicitly states 'Bluetooth 5.3' twice, which fully supports the projection's assertion of standard 'Bluetooth' and value '5.3' without adding, omitting, or altering any semantic condition or qualifier.
 
 Quote — binding 1, source `src_specs_summary`, page `None`
 
@@ -1140,7 +551,56 @@ Quote — binding 1, source `src_specs_summary`, page `None`
 Bluetooth 5.3
 ```
 
-Verifier: `ENTAILED` — The translation accurately reflects the exact quote 'Bluetooth 5.3' by structuring it as a specification with standard 'Bluetooth' and value '5.3', preserving the meaning without adding or omitting any information.
+Verifier (claim quote union): `ENTAILED` — The union of quotes explicitly states 'Bluetooth 5.3' twice, which fully supports the projection's assertion of standard 'Bluetooth' and value '5.3' without adding, omitting, or altering any semantic condition or qualifier.
+
+Extractor notes: None recorded.
+
+### `claim_mba_spec_wifi_standard`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C0`
+- Type / predicate: `SPEC` / `wifi_standard`
+- Source authority: `MANUFACTURER_SPEC_PAGE`
+- Queue section: `batch_eligible`
+- Review focus: Standard review
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": null,
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "standard": "802.11ax",
+  "value": "Wi-Fi 6E"
+}
+```
+
+Quote — binding 0, source `src_tech_specs_page`, page `None`
+
+```text
+Wi-Fi 6E (802.11ax)
+```
+
+Verifier (claim quote union): `ENTAILED` — The union of quotes explicitly states 'Wi-Fi 6E (802.11ax)', which directly supports both the standard '802.11ax' and the value 'Wi-Fi 6E' in the projection without adding, omitting, or altering any semantic condition or qualifier.
+
+Quote — binding 1, source `src_specs_summary`, page `None`
+
+```text
+Wi-Fi 6E (802.11ax)
+```
+
+Verifier (claim quote union): `ENTAILED` — The union of quotes explicitly states 'Wi-Fi 6E (802.11ax)', which directly supports both the standard '802.11ax' and the value 'Wi-Fi 6E' in the projection without adding, omitting, or altering any semantic condition or qualifier.
 
 Extractor notes: None recorded.
 
@@ -1185,7 +645,7 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 Silver, Starlight, Space Gray, Midnight
 ```
 
-Verifier: `ENTAILED` — The translation accurately lists the exact color names from the quote as available colors without adding, dropping, or altering any meaning.
+Verifier (claim quote union): `ENTAILED` — The projection lists exactly the four colors stated in both quotes, with no added conditions, directions, or qualifiers; the union of quotes fully supports the semantic content of the projection.
 
 Quote — binding 1, source `src_identify_page`, page `None`
 
@@ -1193,7 +653,7 @@ Quote — binding 1, source `src_identify_page`, page `None`
 **Colors**: Silver, Starlight, Space Gray, Midnight
 ```
 
-Verifier: `ENTAILED` — The translation accurately reflects the exact colors listed in the quote without adding, dropping, or altering any details.
+Verifier (claim quote union): `ENTAILED` — The projection lists exactly the four colors stated in both quotes, with no added conditions, directions, or qualifiers; the union of quotes fully supports the semantic content of the projection.
 
 Extractor notes: None recorded.
 
@@ -1233,7 +693,7 @@ Quote — binding 0, source `src_identify_page`, page `None`
 **Model Identifier**: `Mac15,12`
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the exact model identifier 'Mac15,12' and correctly labels it as a 'model_identifier' under 'SPEC' type, with no added, dropped, or altered information.
+Verifier (claim quote union): `ENTAILED` — Both quotes explicitly state the model identifier as 'Mac15,12', and the projection faithfully extracts this exact value without adding, omitting, or altering any semantic condition or qualifier.
 
 Quote — binding 1, source `src_specs_summary`, page `None`
 
@@ -1241,7 +701,56 @@ Quote — binding 1, source `src_specs_summary`, page `None`
 Model identifier: **Mac15,12**
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the model identifier 'Mac15,12' as the object value with the predicate 'model_identifier', matching the exact quote without adding, dropping, or altering any detail.
+Verifier (claim quote union): `ENTAILED` — Both quotes explicitly state the model identifier as 'Mac15,12', and the projection faithfully extracts this exact value without adding, omitting, or altering any semantic condition or qualifier.
+
+Extractor notes: None recorded.
+
+### `claim_mba_spec_speaker_system` — SPOT-AUDIT SAMPLE
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C0`
+- Type / predicate: `SPEC` / `speaker_system`
+- Source authority: `MANUFACTURER_SPEC_PAGE`
+- Queue section: `batch_eligible`
+- Review focus: Standard review
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": null,
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "detail": "two tweeters, two woofers",
+  "value": "four-speaker sound system"
+}
+```
+
+Quote — binding 0, source `src_tech_specs_page`, page `None`
+
+```text
+Four-speaker sound system
+```
+
+Verifier (claim quote union): `ENTAILED` — The union of quotes supports both assertions: 'four-speaker sound system' is directly stated in both, and 'two tweeters, two woofers' is explicitly provided in the second quote as the composition of that system. No condition, direction, or qualifier is omitted that would broaden or alter the meaning.
+
+Quote — binding 1, source `src_ports_guide_tour`, page `None`
+
+```text
+the 13-inch MacBook Air has a four-speaker sound system (two tweeters, two woofers)
+```
+
+Verifier (claim quote union): `ENTAILED` — The union of quotes supports both assertions: 'four-speaker sound system' is directly stated in both, and 'two tweeters, two woofers' is explicitly provided in the second quote as the composition of that system. No condition, direction, or qualifier is omitted that would broaden or alter the meaning.
 
 Extractor notes: None recorded.
 
@@ -1289,7 +798,142 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 AAC, MP3, Apple Lossless, FLAC, Dolby Digital, Dolby Digital Plus, Dolby Atmos
 ```
 
-Verifier: `ENTAILED` — The translation accurately lists the exact same audio formats as the quote without adding, dropping, or altering any values, qualifiers, or conditions.
+Verifier (claim quote union): `ENTAILED` — The projection lists exactly the audio formats quoted, with no added conditions, directions, or semantic expansions; the union of quotes fully supports the asserted values.
+
+Extractor notes: None recorded.
+
+### `claim_mba_spec_headphone_jack_impedance`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C0`
+- Type / predicate: `SPEC` / `headphone_jack_high_impedance_support`
+- Source authority: `MANUFACTURER_SPEC_PAGE`
+- Queue section: `batch_eligible`
+- Review focus: Standard review
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": null,
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "description": "3.5 mm headphone jack with advanced support for high-impedance headphones",
+  "value": true
+}
+```
+
+Quote — binding 0, source `src_tech_specs_page`, page `None`
+
+```text
+3.5 mm headphone jack with advanced support for high-impedance headphones
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection's description exactly matches the first quote, and the value 'true' is semantically supported by both quotes asserting the feature exists and functions without additional hardware — no unsupported addition, contradiction, or lost condition.
+
+Quote — binding 1, source `src_ports_guide_tour`, page `None`
+
+```text
+supports high-impedance headphones without a separate DAC or amplifier
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection's description exactly matches the first quote, and the value 'true' is semantically supported by both quotes asserting the feature exists and functions without additional hardware — no unsupported addition, contradiction, or lost condition.
+
+Extractor notes: None recorded.
+
+### `claim_mba_spec_microphone_array`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C0`
+- Type / predicate: `SPEC` / `microphone_array`
+- Source authority: `MANUFACTURER_SPEC_PAGE`
+- Queue section: `batch_eligible`
+- Review focus: Standard review
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": null,
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "features": [
+    "directional beamforming",
+    "Voice Isolation",
+    "Wide Spectrum"
+  ],
+  "value": "three-mic array"
+}
+```
+
+Quote — binding 0, source `src_tech_specs_page`, page `None`
+
+```text
+Three-mic array with directional beamforming; Voice Isolation and Wide Spectrum mic modes
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately extracts 'directional beamforming', 'Voice Isolation', and 'Wide Spectrum' as features from the quote, and correctly assigns 'three-mic array' as the value. All assertions are directly supported by the single quote without adding, omitting, or misrepresenting conditions, directions, or scope.
+
+Extractor notes: None recorded.
+
+### `claim_mba_spec_spatial_audio`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C0`
+- Type / predicate: `SPEC` / `spatial_audio_support`
+- Source authority: `MANUFACTURER_SPEC_PAGE`
+- Queue section: `batch_eligible`
+- Review focus: Standard review
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": null,
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "condition": "when playing music or video with Dolby Atmos on built-in speakers",
+  "value": true
+}
+```
+
+Quote — binding 0, source `src_tech_specs_page`, page `None`
+
+```text
+Spatial Audio when playing music/video with Dolby Atmos on built-in speakers
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection's condition exactly matches the quote's context, and the value 'true' is a faithful semantic assertion of the feature being enabled under that condition; no unsupported addition or contradiction exists.
 
 Extractor notes: None recorded.
 
@@ -1332,7 +976,7 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 Liquid Retina display, 13.6-inch diagonal, LED-backlit with IPS technology
 ```
 
-Verifier: `ENTAILED` — The translation accurately captures all elements from the quote: 'Liquid Retina display' as the display type, '13.6-inch diagonal' as diagonal_in, 'LED-backlit' as backlight, and 'IPS technology' as panel. No meaning is added, dropped, or altered.
+Verifier (claim quote union): `ENTAILED` — Every assertion in the projection — LED backlight, 13.6-inch diagonal, IPS panel, and Liquid Retina display — is directly and unambiguously stated in the quote; no condition, direction, or qualifier is omitted that would broaden or alter the meaning.
 
 Extractor notes: None recorded.
 
@@ -1374,11 +1018,11 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 2560-by-1664 native resolution at 224 ppi
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the exact pixel dimensions (2560x1664) and ppi (224) from the quote without adding, dropping, or altering any qualifiers or values.
+Verifier (claim quote union): `ENTAILED` — The quote explicitly states '2560-by-1664 native resolution at 224 ppi', which directly supports the width_px (2560), height_px (1664), and ppi (224) values in the projection without adding, omitting, or altering any conditions or directions.
 
 Extractor notes: None recorded.
 
-### `claim_mba_spec_battery_capacity` — SPOT-AUDIT SAMPLE
+### `claim_mba_spec_battery_capacity`
 
 - Proposed disposition: **`APPROVED_FOR_PUBLISH`**
 - Owner decision: [ ] confirm recommendation  [ ] override: __________
@@ -1416,7 +1060,48 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 52.6-watt-hour lithium-polymer battery
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the chemistry (lithium-polymer), unit (Wh), and value (52.6) from the quote, and correctly labels it as battery capacity under SPEC type without adding or omitting any meaning.
+Verifier (claim quote union): `ENTAILED` — The quote explicitly states '52.6-watt-hour lithium-polymer battery', which directly supports the chemistry, unit, and value in the projection without adding or omitting any governing conditions or semantic qualifiers.
+
+Extractor notes: None recorded.
+
+### `claim_mba_spec_battery_life`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C0`
+- Type / predicate: `SPEC` / `battery_life`
+- Source authority: `MANUFACTURER_SPEC_PAGE`
+- Queue section: `batch_eligible`
+- Review focus: Standard review
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": null,
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "movie_playback_hours": 18,
+  "wireless_web_hours": 15
+}
+```
+
+Quote — binding 0, source `src_tech_specs_page`, page `None`
+
+```text
+Up to 18 hours Apple TV app movie playback; up to 15 hours wireless web
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately reflects the maximum durations stated in the quote: 18 hours for movie playback and 15 hours for wireless web, with no unsupported additions or dropped conditions.
 
 Extractor notes: None recorded.
 
@@ -1459,7 +1144,47 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 8-core CPU (4 performance + 4 efficiency cores)
 ```
 
-Verifier: `ENTAILED` — The translation accurately reflects the exact quote: 8 total cores, split into 4 performance and 4 efficiency cores, with no added, dropped, or altered details.
+Verifier (claim quote union): `ENTAILED` — The quote explicitly states '8-core CPU (4 performance + 4 efficiency cores)', which directly supports the projection's assertions of 8 total cores, 4 performance cores, and 4 efficiency cores.
+
+Extractor notes: None recorded.
+
+### `claim_mba_spec_camera`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C0`
+- Type / predicate: `SPEC` / `camera`
+- Source authority: `MANUFACTURER_SPEC_PAGE`
+- Queue section: `batch_eligible`
+- Review focus: Standard review
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": null,
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "value": "1080p FaceTime HD camera"
+}
+```
+
+Quote — binding 0, source `src_tech_specs_page`, page `None`
+
+```text
+1080p FaceTime HD camera; advanced image signal processor with computational video
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection '1080p FaceTime HD camera' is a direct subset of the quoted text, which includes that exact phrase. No condition, direction, or qualifier is omitted that would broaden or alter the meaning. The additional text in the quote ('advanced image signal processor with computational video') is irrelevant to the projection and its omission does not change the semantic assertion.
 
 Extractor notes: None recorded.
 
@@ -1505,7 +1230,7 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 Two Thunderbolt / USB 4 ports supporting: charging, DisplayPort, Thunderbolt 3 (up to 40Gb/s), USB 4 (up to 40Gb/s)
 ```
 
-Verifier: `ENTAILED` — The translation accurately reflects the exact quote: two ports with identical listed capabilities, including charging, DisplayPort, Thunderbolt 3 (up to 40Gb/s), and USB 4 (up to 40Gb/s), without adding or omitting any qualifiers or details.
+Verifier (claim quote union): `ENTAILED` — The projection accurately reflects the capabilities and count stated in the quote: two ports supporting charging, DisplayPort, Thunderbolt 3 (up to 40Gb/s), and USB 4 (up to 40Gb/s), with no unsupported additions or dropped conditions.
 
 Extractor notes: None recorded.
 
@@ -1550,7 +1275,51 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 256GB SSD; configurable to 512GB, 1TB, or 2TB
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the base storage (256GB SSD) and the configurable options (512GB, 1TB, 2TB) without adding, dropping, or altering any meaning.
+Verifier (claim quote union): `ENTAILED` — The projection accurately reflects the base storage (256GB SSD) and the configurable options (512GB, 1TB, 2TB) as stated in the quote; no unsupported addition or contradiction exists.
+
+Extractor notes: None recorded.
+
+### `claim_mba_spec_box_contents`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C0`
+- Type / predicate: `SPEC` / `box_contents`
+- Source authority: `MANUFACTURER_SPEC_PAGE`
+- Queue section: `batch_eligible`
+- Review focus: Standard review
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": null,
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "values": [
+    "13-inch MacBook Air",
+    "30W USB-C Power Adapter (8-core GPU config) or 35W Dual USB-C Port Compact Power Adapter (10-core GPU + 512GB config)",
+    "USB-C to MagSafe 3 Cable (2 m)"
+  ]
+}
+```
+
+Quote — binding 0, source `src_tech_specs_page`, page `None`
+
+```text
+13-inch MacBook Air; 30W USB-C Power Adapter (8-core GPU) or 35W Dual USB-C Port Compact Power Adapter (10-core GPU + 512GB); USB-C to MagSafe 3 Cable (2 m)
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection faithfully lists the exact components and their configurations as quoted, without adding, omitting, or altering any conditions, units, or qualifiers.
 
 Extractor notes: None recorded.
 
@@ -1593,7 +1362,7 @@ Quote — binding 0, source `src_tech_specs_page`, page `None`
 Operating temperature: 50° to 95° F (10° to 35° C)
 ```
 
-Verifier: `ENTAILED` — The translation accurately preserves the operating temperature range in both Fahrenheit and Celsius, with no added, dropped, or altered values or qualifiers.
+Verifier (claim quote union): `ENTAILED` — The projection's temperature bounds exactly match the quoted operating range, with no added conditions or directions; the union supports all asserted values.
 
 Extractor notes: None recorded.
 
@@ -1636,6 +1405,215 @@ Quote — binding 0, source `src_specs_summary`, page `None`
 Introduced: March 4, 2024 (orders), available March 8, 2024; launch price $1,099 US
 ```
 
-Verifier: `ENTAILED` — The translation accurately reflects the quote: orders began March 4, 2024; availability started March 8, 2024; launch price is $1,099 USD. No meaning change.
+Verifier (claim quote union): `ENTAILED` — The projection accurately reflects the dates and price from the quote: orders began March 4, 2024; availability started March 8, 2024; and the launch price was $1,099 US, which maps to value 1099 and unit USD. No unsupported additions, contradictions, or lost conditions.
 
 Extractor notes: Curated spec summary cites the Newsroom launch article (src_newsroom_article, no local capture) as its origin for this fact; bound to the local summary only.
+
+### `claim_mba_part_thunderbolt_ports`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C1`
+- Type / predicate: `PART_LOCATION` / `thunderbolt_ports_location`
+- Source authority: `MANUFACTURER_SUPPORT_PAGE`
+- Queue section: `batch_eligible`
+- Review focus: Standard review
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": null,
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "count": 2,
+  "diagram_binding": {
+    "annotation_status": "PENDING",
+    "bounding_box": null,
+    "coordinate_system": "normalized",
+    "page": null,
+    "source_id": "src_img_guide_left_side"
+  },
+  "location_description": "Both Thunderbolt / USB 4 ports are on the LEFT side of the laptop, next to the MagSafe 3 port.",
+  "part": "thunderbolt_usb4_ports",
+  "side": "LEFT"
+}
+```
+
+Quote — binding 0, source `src_ports_guide_tour`, page `None`
+
+```text
+2x Thunderbolt / USB 4 ports (both on the left side, next to MagSafe)
+```
+
+Verifier (claim quote union): `ENTAILED` — The union of quotes confirms both Thunderbolt/USB 4 ports are on the left side, and one quote explicitly places them next to MagSafe; the projection accurately reflects this without adding unsupported conditions or broadening scope.
+
+Quote — binding 1, source `src_specs_summary`, page `None`
+
+```text
+| Thunderbolt / USB 4 (Thunderbolt 3 40Gb/s, USB 4 40Gb/s, DisplayPort, charging) | 2 | Left |
+```
+
+Verifier (claim quote union): `ENTAILED` — The union of quotes confirms both Thunderbolt/USB 4 ports are on the left side, and one quote explicitly places them next to MagSafe; the projection accurately reflects this without adding unsupported conditions or broadening scope.
+
+Extractor notes: None recorded.
+
+### `claim_mba_part_headphone_jack`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C1`
+- Type / predicate: `PART_LOCATION` / `headphone_jack_location`
+- Source authority: `MANUFACTURER_SUPPORT_PAGE`
+- Queue section: `batch_eligible`
+- Review focus: Standard review
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": null,
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "diagram_binding": {
+    "annotation_status": "PENDING",
+    "bounding_box": null,
+    "coordinate_system": "normalized",
+    "page": null,
+    "source_id": "src_img_guide_right_side"
+  },
+  "location_description": "The 3.5 mm headphone jack is on the RIGHT side of the laptop and is the only port on that side.",
+  "part": "headphone_jack_3_5mm",
+  "side": "RIGHT"
+}
+```
+
+Quote — binding 0, source `src_ports_guide_tour`, page `None`
+
+```text
+1x 3.5 mm headphone jack (the only port on the right side)
+```
+
+Verifier (claim quote union): `ENTAILED` — The union of quotes confirms the 3.5 mm headphone jack is on the right side and is the only port on that side; the projection faithfully restates this without adding unsupported conditions, directions, or scope.
+
+Quote — binding 1, source `src_specs_summary`, page `None`
+
+```text
+| 3.5 mm headphone jack (high-impedance headphone support) | 1 | Right |
+```
+
+Verifier (claim quote union): `ENTAILED` — The union of quotes confirms the 3.5 mm headphone jack is on the right side and is the only port on that side; the projection faithfully restates this without adding unsupported conditions, directions, or scope.
+
+Extractor notes: None recorded.
+
+### `claim_mba_part_touch_id`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C1`
+- Type / predicate: `PART_LOCATION` / `touch_id_location`
+- Source authority: `MANUFACTURER_SUPPORT_PAGE`
+- Queue section: `batch_eligible`
+- Review focus: Standard review
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": null,
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "diagram_binding": {
+    "annotation_status": "PENDING",
+    "bounding_box": null,
+    "coordinate_system": "normalized",
+    "page": null,
+    "source_id": "src_img_guide_top_open"
+  },
+  "location_description": "Touch ID (the power button) is at the top-right of the keyboard.",
+  "part": "touch_id_power_button",
+  "side": null
+}
+```
+
+Quote — binding 0, source `src_ports_guide_tour`, page `None`
+
+```text
+**Touch ID (power button)**: top-right of keyboard
+```
+
+Verifier (claim quote union): `ENTAILED` — The projection accurately restates the quote’s assertion: 'Touch ID (power button)' is located at the 'top-right of keyboard.' The rephrasing 'Touch ID (the power button)' is semantically equivalent to '(power button)' as a descriptor, and no conditions, directions, or qualifiers are omitted or added that alter meaning.
+
+Extractor notes: None recorded.
+
+### `claim_mba_step_power_on_1`
+
+- Proposed disposition: **`APPROVED_FOR_PUBLISH`**
+- Owner decision: [ ] confirm recommendation  [ ] override: __________
+- Claim tier: `C1`
+- Type / predicate: `STEP` / `procedure_step`
+- Source authority: `MANUFACTURER_SUPPORT_PAGE`
+- Queue section: `batch_eligible`
+- Review focus: Standard review
+- Proposed rationale: Every source binding is ENTAILED by the pinned verifier and no unresolved conflict applies; publication still requires owner confirmation.
+
+Applicability
+
+```json
+{
+  "market": "US",
+  "revision": null,
+  "sku": null,
+  "state": null
+}
+```
+
+Object
+
+```json
+{
+  "action": "Press the Touch ID (power button) at the top-right of the keyboard to turn the laptop on.",
+  "procedure": "power_on",
+  "step_number": 1,
+  "target_parts": [
+    "touch_id_power_button"
+  ]
+}
+```
+
+Quote — binding 0, source `src_ports_guide_tour`, page `None`
+
+```text
+top-right of keyboard; press to turn on; authenticate and Apple Pay after setup
+```
+
+Verifier (claim quote union): `ENTAILED` — The quote states 'top-right of keyboard; press to turn on', which directly supports pressing the button at that location to turn on the device. The projection adds 'Touch ID (power button)' as a descriptor, which is a plausible functional label consistent with common device design and does not contradict the quote. No condition, direction, or scope is wrongly broadened or omitted.
+
+Extractor notes: Single-step procedure: the guide states power-on as one action.

@@ -153,9 +153,9 @@ def render_pack(pack_dir):
 
     alarm_ids = {
         claim_id for claim_id, entries in verdicts_by_claim.items()
-        if claim_id not in human
-        and any(entry.get("verdict") == "MEANING_CHANGED" for entry in entries)
+        if any(entry.get("verdict") == "MEANING_CHANGED" for entry in entries)
     }
+    reopened_alarm_ids = alarm_ids & human
 
     triage = {}
     if isinstance(verdicts_doc, dict):
@@ -219,6 +219,8 @@ def render_pack(pack_dir):
         "",
         "Work top-to-bottom. Record human dispositions in `reviews.json`; do not "
         "edit claims or verifier verdicts.",
+        f"A v2 alarm reopens `{len(reopened_alarm_ids)}` existing human "
+        "disposition(s); those decisions must be explicitly reconfirmed or amended.",
         "",
     ]
     for section_index, (title, items) in enumerate(sections, 1):
@@ -271,14 +273,21 @@ def render_pack(pack_dir):
                     claim, verdicts_by_claim.get(claim["claim_id"], [])))
         else:
             for claim in items:
+                reopened_reason = None
+                if section_index == 1 and claim["claim_id"] in reopened_alarm_ids:
+                    reopened_reason = (
+                        "REOPENED: v2 MEANING_CHANGED conflicts with an existing "
+                        "human disposition")
                 lines.extend(claim_block(
-                    claim, verdicts_by_claim.get(claim["claim_id"], [])))
+                    claim, verdicts_by_claim.get(claim["claim_id"], []),
+                    unresolved_reason=reopened_reason))
 
     output = "\n".join(lines).rstrip() + "\n"
     (pack_dir / "review-queue.md").write_text(output, encoding="utf-8")
     return {
         "product": product,
         "alarms": len(alarm_ids),
+        "reopened_alarms": len(reopened_alarm_ids),
         "conflicts": len(unresolved_pairs),
         "c3": len(c3),
         "c2": len(c2),

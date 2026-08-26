@@ -40,9 +40,33 @@
 - Fresh v2 projection: **$0.0500** for 355 claim-union requests plus eight
   conflict requests; the all-calls-retry ceiling is **$0.1001**, well below
   the $9.99 ceiling.
-- Live canary and fleet rerun are pending a rotated `FAL_KEY`. No key that
-  transited chat will be reused. No owner checkbox or `reviews.json` entry has
-  been changed.
+- The owner explicitly deferred credential rotation and authorized this run
+  with the existing key. It was loaded only into an echo-disabled ephemeral
+  shell, then unset and the shell closed; it was not written to a file or
+  command argument.
+- The first canary caught one remaining false negative on Bose's dropped
+  “powered on” condition. The governing-condition rule was tightened, offline
+  tests remained green, and the final live canary passed all **7/7** expected
+  results. Every response attested to the exact pinned Qwen model.
+- Phase A v2 completed: all **392 binding rows** are covered — 294 `ENTAILED`,
+  93 `MEANING_CHANGED` rows representing **82 unique alarm claims**, and five
+  `CANNOT_JUDGE` rows (three visual bindings plus two text claims the model
+  declined to decide). This replaces v1's 303 alarm rows. All five artifacts
+  are `COMPLETE` with exact model attestation. Conflict triage remains five
+  `GENUINE_CONFLICT` and three `DIFFERENT_SCOPE_OR_EVENT`.
+- Recorded cost was **$0.0790** provider-reported versus **$0.0560** estimated,
+  still far below the ceiling.
+- Phase B v2 completed: regenerated proposals contain **342 owner action
+  items** — all 338 undecided claims plus four existing decisions explicitly
+  reopened by new v2 alarms. Recommendations are 83 `NEEDS_RECHECK`, one
+  `REJECTED_FOR_SERVING`, and 258 `APPROVED_FOR_PUBLISH`; 118 C0/C1 approvals
+  are batch-eligible after 24 deterministic sample checks. The Bose range
+  catch is one of the reopened decisions, so it cannot be silently skipped.
+- Post-run audit identified five Levoit dual-unit alarms as residual verifier
+  serialization noise: dimensions, both revision weights, CADR, and operating
+  temperature. They remain visible for transparency but carry an explicit
+  “likely verifier noise” note in the owner proposals. No owner checkbox or
+  `reviews.json` entry has been changed.
 
 ---
 

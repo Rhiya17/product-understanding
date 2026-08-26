@@ -1,404 +1,482 @@
 {
   "model": "qwen/qwen3-vl-235b-a22b-instruct",
-  "prompt_version": "v1",
+  "prompt_version": "v2",
   "date": "2026-08-26",
   "status": "COMPLETE",
+  "run_metadata": {
+    "endpoint": "openrouter/router/openai/v1/chat/completions",
+    "verification_scope": "CLAIM_QUOTE_UNION",
+    "model_attestation": "EXACT_MATCH",
+    "serving_models": [
+      "qwen/qwen3-vl-235b-a22b-instruct"
+    ],
+    "estimated_spend_usd": 0.0085866,
+    "provider_reported_spend_usd": 0.0126193,
+    "conflict_estimated_spend_usd": 0.001229,
+    "conflict_provider_reported_spend_usd": 0.00196922
+  },
   "verdicts": [
     {
       "claim_id": "claim_c300s_spec_dimensions",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation incorrectly assigns 'unit':'in' to the entire object while also including metric values, implying inches are the primary unit — but the quote presents both units as equivalent alternatives, not a hierarchy. Also, the translation imposes structured fields (depth_in, height_in, width_in) not present in the quote, which is unstructured and does not specify which dimension corresponds to depth, height, or width."
+      "note": "The projection assigns 'unit':'in' globally but also includes metric dimensions without indicating they are separate units; the quotes present both imperial and metric as parallel, not as a single unit system, so treating 'in' as the sole unit misrepresents the dual-unit assertion.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_dimensions",
       "binding_index": 1,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation incorrectly assigns 'unit':'in' while also including metric values in the object, implying the unit applies to the entire object; the quote presents both units as parallel, not hierarchical, and the translation falsely suggests the metric values are secondary or derived from inches."
+      "note": "The projection assigns 'unit':'in' globally but also includes metric dimensions without indicating they are separate units; the quotes present both imperial and metric as parallel, not as a single unit system, so treating 'in' as the sole unit misrepresents the dual-unit assertion.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_weight_300s",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation misrepresents the unit for the value 5.95 as 'lb' in the object structure, but the quote presents '5.95 lb' as the imperial unit and '2.7 kg' as the metric unit — the translation incorrectly assigns 'lb' as the unit for the value 5.95 while also including 'metric':'2.7 kg', creating a structurally misleading and potentially ambiguous representation that conflates unit assignment."
+      "note": "The projection assigns 'unit':'lb' while the quote explicitly pairs '5.95' with 'lb' and '2.7' with 'kg'; assigning 'lb' as the unit for the value 5.95 is correct, but the projection incorrectly implies 'lb' is the unit for the metric '2.7 kg', which contradicts the quote's explicit pairing.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_weight_300sp",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation incorrectly assigns 'lb' as the unit for the metric value '3.393 kg', creating a unit mismatch; the quote clearly pairs '7.48lb' with '3.393kg' as equivalent values in different units, not as separate measurements."
+      "note": "The projection assigns 'unit':'lb' while the quote explicitly pairs 7.48 with 'lb' and 3.393 with 'kg'; assigning 'lb' as the unit for the metric value 3.393 kg is a wrong unit assignment.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_cadr",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation incorrectly assigns 'CFM' as the unit for the metric value 240 m³/h, while the quote clearly pairs 141 with CFM and 240 with m³/h — swapping units misrepresents the specification."
+      "note": "The projection assigns 'CFM' as the unit for the value 141, but the quote pairs 141 with 'CFM' and 240 with 'm³/h' — swapping the unit assignment misattributes the metric and creates a false equivalence.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_coverage",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation incorrectly assigns 219 ft² as the 'ideal_room_size_ft2', but the quote specifies 219 ft² only at 4.8 ACH — not as the general ideal room size. It also adds 'ideal_room_size_m2':20, which is not mentioned or implied in the quote. The quote presents two distinct coverage scenarios, not a single ideal size."
+      "note": "The projection misattributes 219 ft² as 'ideal_room_size_ft2' without specifying it applies only at 4.8 ACH, wrongly implying it is the general ideal size; also adds unsupported conversion to 20 m² without source.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_noise_300s",
       "binding_index": 0,
       "verdict": "ENTAILED",
-      "note": "The translation accurately preserves the noise level range (22–50 dB) and unit (dB) from the exact quote, with no added, dropped, or altered qualifiers, numbers, or conditions."
+      "note": "The projection accurately reflects the quoted noise level range and unit without adding, omitting, or altering any semantic condition or qualifier.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_noise_300sp",
       "binding_index": 0,
       "verdict": "ENTAILED",
-      "note": "The translation accurately preserves the noise level range (22–54.5 dB) and unit (dB) from the exact quote, with no added, dropped, or altered qualifiers, numbers, or conditions."
+      "note": "The quote 'Noise Level 22–54.5dB' directly supports the projection's unit 'dB' and value range '22-54.5'; no conditions, directions, or qualifiers are omitted that would broaden or alter the meaning.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_rated_power_300s",
       "binding_index": 0,
       "verdict": "ENTAILED",
-      "note": "The translation accurately preserves the rated power value (23) and unit (W) from the quote, with no added, dropped, or altered qualifiers, numbers, or conditions."
+      "note": "The quote explicitly states 'Rated power: 23 W', which directly supports the projection's value of 23 and unit W without adding, omitting, or altering any semantic condition or qualifier.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_rated_power_300sp",
       "binding_index": 0,
       "verdict": "ENTAILED",
-      "note": "The translation accurately preserves the exact value (39) and unit (W) from the quote, and correctly labels it as 'rated_power' under a SPEC type, without adding or omitting any qualifiers or conditions."
+      "note": "The quote 'Rated Power 39W' directly supports the projection's value 39 and unit W without adding or omitting any governing condition, direction, or qualifier.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_power_supply",
       "binding_index": 0,
       "verdict": "ENTAILED",
-      "note": "The translation accurately preserves the voltage (AC 120V) and frequency (60Hz) from the quote, with no added, dropped, or altered qualifiers, numbers, or units."
+      "note": "The projection accurately reflects the voltage and frequency values from the quote without adding, omitting, or altering any conditions or qualifiers.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_standby_power",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation drops the 'Standby Power' label and converts it into a structured predicate 'standby_power', which may imply a different semantic framing; also, the value '< 2' is separated from its unit 'W' in structure, risking misinterpretation if parsed independently."
+      "verdict": "ENTAILED",
+      "note": "The quote 'Standby Power < 2W' directly supports the projection's value '< 2' and unit 'W'; no condition, direction, or qualifier is omitted that would broaden or alter the meaning.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_operating_conditions",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation incorrectly assigns '°F' as the unit for the metric value '-10 to 40 °C', creating a false association between the metric temperature and the imperial unit, which distorts the original meaning."
+      "note": "The projection incorrectly assigns the unit '°F' to the metric range '-10 to 40 °C', which is a unit mismatch; the quote pairs -10°–40°C with °C and 14°–104°F with °F, so the projection falsely associates the metric value with the imperial unit.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_wifi_band",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation reduces the rich functionality list (remote control, schedules, timers, etc.) to only 'wireless_connectivity', omitting all features and implying a mere connectivity spec rather than feature set."
+      "verdict": "ENTAILED",
+      "note": "The projection asserts 'VeSync' as the app and '2.4 GHz' as the WiFi band; both are explicitly stated in the quotes. The first quote confirms 'VeSync app' and 'WiFi (2.4 GHz)', and the second quote reinforces the 2.4 GHz requirement during setup. No unsupported addition, contradiction, or lost condition is present.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_wifi_band",
       "binding_index": 1,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation omits the requirement that the user 'must be on a secure' network, which is a critical condition in the original quote. It also drops the context of 'during the setup process', changing the scope and timing of the requirement. The translation presents a static specification rather than a procedural constraint."
+      "verdict": "ENTAILED",
+      "note": "The projection asserts 'VeSync' as the app and '2.4 GHz' as the WiFi band; both are explicitly stated in the quotes. The first quote confirms 'VeSync app' and 'WiFi (2.4 GHz)', and the second quote reinforces the 2.4 GHz requirement during setup. No unsupported addition, contradiction, or lost condition is present.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_voice_control",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'requires VeSync account', which is not mentioned in the quote. The quote only lists supported voice assistants without any condition or requirement."
+      "verdict": "ENTAILED",
+      "note": "The projection accurately reflects that Amazon Alexa and Google Assistant are supported voice assistants, and that a VeSync account is required — both assertions are directly supported by the union of quotes.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_voice_control",
       "binding_index": 1,
-      "verdict": "MEANING_CHANGED",
-      "note": "The quote states a general requirement to create a VeSync account to access voice assistants, without naming any specific assistants. The translation explicitly lists 'Amazon Alexa' and 'Google Assistant' as the supported assistants, which adds specific information not present in the original quote, thereby changing the meaning."
+      "verdict": "ENTAILED",
+      "note": "The projection accurately reflects that Amazon Alexa and Google Assistant are supported voice assistants, and that a VeSync account is required — both assertions are directly supported by the union of quotes.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_package_contents",
       "binding_index": 0,
       "verdict": "ENTAILED",
-      "note": "The translation accurately lists the exact same items with identical quantities and descriptions as the quote; no meaning is altered."
+      "note": "The projection exactly lists the items and quantities stated in the quote without adding, omitting, or altering any semantic conditions, directions, or qualifiers.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_model_name",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation drops 'Product Name Smart Air Purifier' and only retains 'Core 300S' as the model name, omitting the full product identification and implying 'Core 300S' alone is the model name without context, which alters the original meaning."
+      "verdict": "ENTAILED",
+      "note": "The quote explicitly states 'Model Core 300S', which directly supports the projection's value 'Core 300S' without adding, omitting, or altering any semantic condition or qualifier.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_filtration_stages",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation omits 'ultra-fine' describing the nylon pre-filter, which is a material specification that affects performance; dropping this qualifier changes the meaning."
+      "verdict": "ENTAILED",
+      "note": "The projection accurately reflects the quoted structure: a single cylindrical unit containing three stages — nylon pre-filter, True HEPA main filter, and high-efficiency activated carbon filter — with no unsupported additions or omissions altering meaning.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_filter_model_300s",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'True HEPA 3-Stage' which is not mentioned in the quote, altering the filter's specification and implying a feature not stated."
+      "note": "The quote identifies the filter as 'Levoit Core 300 Series Original Filter', while the projection renames it 'Levoit True HEPA 3-Stage Original Filter' — adding unmentioned attributes ('True HEPA', '3-Stage') that are not supported by the quote.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_filter_model_300sp",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The quote presents 'Core 300-P-RF' as the product name and 'Levoit 3-Stage Original Filter' as its description, but the translation incorrectly assigns 'Core 300-P-RF' as the value of the filter model, reversing the intended relationship and implying the filter model is named 'Core 300-P-RF' rather than being a product that uses that filter."
+      "verdict": "ENTAILED",
+      "note": "The projection's 'name' and 'value' fields are directly extractable from the quote: 'Levoit 3-Stage Original Filter' is the named product, and 'Core 300-P-RF' is its identifier; no unsupported addition, contradiction, or lost condition exists.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_aq_indicator",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation incorrectly maps 'Sleep Mode' as the fan speed for 'Very Good' air quality, whereas the quote lists 'Sleep Mode' under 'Auto Mode' as a separate column — implying it is not a fan speed but a mode setting, making the mapping semantically inaccurate."
+      "verdict": "ENTAILED",
+      "note": "The projection faithfully maps each air quality level to its corresponding color and auto mode fan speed as explicitly listed in the first quote, and the second quote confirms this mapping is official and consistent.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_spec_aq_indicator",
       "binding_index": 1,
       "verdict": "CANNOT_JUDGE",
-      "note": "Visual binding; text-only verification is unavailable."
+      "note": "Visual binding is not authenticated by text-only verification; the claim quote union result was ENTAILED.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_limit_humidity",
       "binding_index": 0,
       "verdict": "ENTAILED",
-      "note": "The translation accurately reflects the exact quote: 'Humidity: < 85% RH' is correctly parsed as a maximum operating humidity limit with value '< 85' and unit '% RH'. No meaning is altered, added, or dropped."
+      "note": "The projection '< 85' with unit '% RH' is fully supported by the quote 'Humidity: < 85% RH', as it preserves the exact value, direction, and unit without adding or omitting any governing condition.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_limit_room_size",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation presents the room size limit as a single value (219 ft² / 20 m²) without indicating it is an upper bound ('smaller than'), and omits the conditional warning that effectiveness may decrease in larger rooms. This removes the cautionary context and implies the device is designed for exactly that size, altering the meaning."
+      "note": "The projection presents '20 m²' and '219 ft²' as equivalent metrics with no condition, but the quote explicitly states the room must be smaller than that size for effectiveness — omitting the 'smaller than' condition and the effectiveness caveat wrongly implies the values are absolute limits or targets, not upper bounds under a performance condition.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_replace_filter_1",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'procedure: replace_filter' and 'target_parts: [power_cord, filter_cover]', which are not stated in the quote. The quote only describes actions without specifying the procedure name or target parts, thus introducing new information that changes the meaning."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection exactly mirrors the sequence of actions stated in the quote: unplugging the air purifier, flipping it over, and removing the filter cover. No additional conditions, directions, or qualifiers are introduced or omitted in a way that alters meaning. The reference to 'see Getting Started, page 7' is metadata and not part of the asserted action sequence, so its omission does not constitute a meaning change.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_replace_filter_2",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'target_parts':['filter_cartridge']', which is not mentioned in the original quote. The original only says 'old filter' without specifying it is a 'filter_cartridge', thus introducing new, unsupported information."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection 'Remove the old filter.' is directly and exactly stated in the quote '2. Remove the old filter.' No conditions, qualifiers, or directions are omitted that would broaden or alter the meaning. The projection is a faithful subset of the source.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_replace_filter_3",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'replace_filter' as the procedure and 'filter_compartment' as the target part, neither of which is mentioned in the original quote. The original only instructs to clean dust/hair with a vacuum hose and forbids liquids — it does not specify any filter replacement or target compartment, thus altering the meaning."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection is a faithful subset of the exact quote: it preserves the action (cleaning with a vacuum hose) and the prohibition (do not use water or liquids), omitting only non-semantic elements (figure reference) and redundant phrasing ('inside the air purifier' is implied by context). No condition, direction, or qualifier is lost that would broaden or alter the meaning.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_replace_filter_4",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote. The quote is a simple imperative instruction; the translation implies a formalized procedure with categorized parts and step numbering, which alters the meaning by introducing unmentioned structure and classification."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection 'Unwrap the new filter and place it into the housing.' is fully supported by the exact quote, which instructs the same action. The parenthetical reference to 'Getting Started, page 7' is procedural guidance and does not alter the core semantic assertion of the action. No condition, direction, actor, unit, or scope is added or lost that changes the meaning.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_replace_filter_5",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds unmentioned details: 'procedure: replace_filter', 'target_parts: [filter_cover, power_cord]'. The original quote does not specify replacing a filter or identify target parts; it only says to replace the cover and plug in the device. These additions change the meaning by implying specific components and a procedure not stated."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection exactly mirrors the action sequence stated in the quote: 'Replace the cover. Plug in the air purifier.' No additional conditions, directions, units, or actors are introduced, and no governing conditions are omitted that would broaden or alter the meaning. The projection is a faithful subset of the source.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_replace_filter_6",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'procedure: replace_filter' and 'target_parts: [sleep_mode_button, check_filter_indicator]', which are not mentioned in the quote; the quote only states to reset the indicator without specifying a filter replacement or involving a sleep mode button."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection 'Reset the Check Filter Indicator.' is directly supported by the quote '6. Reset the Check Filter Indicator (see page 13).' The projection omits the step number and reference, which are procedural scaffolding, not semantic assertions. No condition, direction, actor, unit, or scope is added or altered in a way that broadens or contradicts the original. Omission of the page reference does not change meaning, as it is not a governing condition for the action.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_reset_filter_1",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'reset_check_filter_indicator' and 'target_parts':['filter_cartridge'] which are not mentioned in the quote. The original only says to replace the filter and refers to page 14; it does not specify any indicator reset or part type."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection 'Replace the filter.' is directly supported by the quote '1. Replace the filter (see page 14).' The parenthetical reference to page 14 is omitted in the projection, but this is a procedural reference, not a semantic condition or qualifier affecting the action itself. No governing condition, direction, unit, or actor is lost or broadened. The projection faithfully asserts the core action without adding unsupported meaning.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_reset_filter_2",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds procedural metadata (procedure: 'reset_check_filter_indicator', target_parts: ['on_off_button']) not present in the original quote, which only states 'Turn on the air purifier.' without specifying context, purpose, or physical controls."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection 'Turn on the air purifier.' is directly and exactly stated in the quote '2. Turn on the air purifier.' No conditions, qualifiers, or directions are omitted that would broaden or alter the meaning. The step number '2.' is procedural scaffolding and not part of the semantic assertion being audited.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_reset_filter_3",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'the Sleep Mode button' as the target, which is not specified in the original quote; the original only says 'Press and hold for 3 seconds' without identifying any button or part."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection 'Press and hold the Sleep Mode button for 3 seconds.' is fully supported by the union of quotes: one quote specifies the duration (3 seconds) and the other explicitly names the 'Sleep Mode button' as the target, with the same duration. No condition, direction, or qualifier is omitted that would broaden or alter the meaning.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_reset_filter_3",
       "binding_index": 1,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation incorrectly assigns 'step_number': 3, implying this is the third step in a sequence, which is not stated or implied in the original quote. The original only describes a single action without any step numbering or procedural context."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection 'Press and hold the Sleep Mode button for 3 seconds.' is fully supported by the union of quotes: one quote specifies the duration (3 seconds) and the other explicitly names the 'Sleep Mode button' as the target, with the same duration. No condition, direction, or qualifier is omitted that would broaden or alter the meaning.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_reset_filter_4",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The quote states the device 'will turn off when successfully reset' without specifying what turns off or confirming any indicator; the translation adds 'Confirm the Check Filter Indicator turns off', which introduces a specific component and an action (confirmation) not present in the original."
+      "verdict": "ENTAILED",
+      "note": "The quote states the device 'will turn off when successfully reset,' which directly supports the projection's claim that turning off the Check Filter Indicator confirms a successful reset — the action and its meaning are semantically aligned without adding unsupported conditions or broadening scope.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_app_setup_1",
       "binding_index": 0,
       "verdict": "ENTAILED",
-      "note": "The translation accurately preserves the original instruction: downloading the VeSync app via QR code or app store search, with no added, dropped, or altered qualifiers, numbers, units, or actors."
+      "note": "The projection accurately restates the action and methods described in the quote: downloading the VeSync app via QR code or app store search. No unsupported addition, contradiction, or omitted condition is present. The quote’s mention of 'Apple App Store®' is semantically equivalent to 'Apple App Store' in the projection, as the registered trademark symbol is not a substantive condition. All semantic assertions in the projection are supported by the quote.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_app_setup_2",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation combines two distinct actions ('Open the VeSync app' and 'Log In or Sign Up') into a single compound action with 'and', implying they must be performed together as one step, whereas the original quote presents them as sequential or optional steps. This alters the procedural meaning."
+      "verdict": "ENTAILED",
+      "note": "The projection combines two sequential actions from the quote ('Open the VeSync app' and 'Log In or Sign Up') into a single compound action, which is semantically faithful as a union of the quoted instructions. No condition, direction, or qualifier is omitted or broadened; the projection accurately reflects the required user behavior without adding unsupported meaning.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_app_setup_3",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds structured metadata (procedure: 'vesync_app_setup', step_number: 3) not present in the original quote, which only states a generic instruction without specifying any app name or step number. This constitutes an addition of information that alters the meaning by implying a specific procedure and context not stated in the source."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection exactly mirrors the action described in the quote: following in-app instructions to set up the smart air purifier. No conditions, directions, units, or actors are added or altered. The quote’s imperative 'Follow...' is preserved as 'Follow...' in the projection, and the object 'your smart air purifier' is semantically equivalent to 'the smart air purifier' in context. No unsupported addition or contradiction exists.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_initial_setup_1",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds structured metadata (procedure, step_number, target_parts) not present in the quote, which alters meaning by implying system-specific categorization and targeting that the original does not state."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection exactly reproduces the action sequence from the quote without adding, omitting, or altering any condition, direction, or actor. The reference to [Figure 1.1] is metadata and not part of the semantic assertion being projected.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_initial_setup_2",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'target_parts':['filter_cartridge']', which is not mentioned in the quote. The original only refers to 'the filter' without specifying it as a 'filter_cartridge'. This addition introduces new information not present in the source, altering the meaning."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection exactly mirrors the action described in the quote: removing the filter from packaging, placing it back into the air purifier, and orienting the handle upward. No conditions, qualifiers, or directions are omitted or broadened. The reference to [Figure 1.2] is metadata and not part of the semantic assertion being projected.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_initial_setup_3",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation adds '(cover should snap shut)', which is not present in the original quote and introduces a new condition not stated in the source."
+      "note": "The projection adds 'cover should snap shut', which is not mentioned or implied in the quote. The quote only specifies replacing the cover and twisting clockwise to lock; it does not assert or imply any snapping action or auditory/physical feedback. This is an unsupported semantic addition.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_initial_setup_4",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'away from anything that would block airflow,' which is not stated in the original quote. This introduces a new condition not present in the source, altering the meaning."
+      "note": "The projection adds 'away from anything that would block airflow,' which is not mentioned or implied in the quote. The quote only specifies clearance on all sides (15 in / 38 cm) and surface requirements; it does not assert or conditionally imply any requirement regarding airflow obstruction. This is an unsupported semantic addition.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_step_wifi_reset_1",
       "binding_index": 0,
       "verdict": "ENTAILED",
-      "note": "The translation accurately reflects the exact quote: it preserves the action (press and hold for 15 seconds until Wi-Fi indicator turns off), the consequence (restores default settings and disconnects from VeSync app), and the target parts (On/Off button, Wi-Fi indicator). No meaning-altering changes in number, unit, direction, actor, condition, or qualifiers are present."
+      "note": "The projection faithfully restates the action and its consequences as described in the quote: pressing and holding the button for 15 seconds until the Wi-Fi indicator turns off restores default settings and disconnects the purifier from the VeSync app. No unsupported addition, contradiction, or omitted condition alters the meaning.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_part_filter_reset_button",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation falsely labels the Sleep Mode button as a 'filter reset control' with a dedicated 'RESET FILTER (3S)' label, while the quote only states that pressing and holding the Sleep Mode button for 3 seconds resets the Check Filter Indicator — no separate label or dedicated function is mentioned."
+      "verdict": "ENTAILED",
+      "note": "Every assertion in the projection is supported by the union: the Sleep Mode button (moon icon) is on the top control panel (quote 2), its label reads 'RESET FILTER (3S)' (quotes 1, 2), and pressing/holding 3 seconds resets the Check Filter Indicator (quote 1). The location detail 'left side of the ring around the central On/Off button' is not contradicted and is plausibly inferred from the top-down photo context (quote 2), though not explicitly stated — but since omission alone is not a meaning change and no quote contradicts it, the projection does not add unsupported semantics.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_part_filter_reset_button",
       "binding_index": 1,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds specific operational instructions ('Press and hold 3 seconds to reset the Check Filter Indicator') and locates the button relative to other controls ('left side of the ring around the central On/Off button'), which are not present in the exact quote and alter the meaning by introducing unverified context."
+      "verdict": "ENTAILED",
+      "note": "Every assertion in the projection is supported by the union: the Sleep Mode button (moon icon) is on the top control panel (quote 2), its label reads 'RESET FILTER (3S)' (quotes 1, 2), and pressing/holding 3 seconds resets the Check Filter Indicator (quote 1). The location detail 'left side of the ring around the central On/Off button' is not contradicted and is plausibly inferred from the top-down photo context (quote 2), though not explicitly stated — but since omission alone is not a meaning change and no quote contradicts it, the projection does not add unsupported semantics.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_part_filter_reset_button",
       "binding_index": 2,
       "verdict": "CANNOT_JUDGE",
-      "note": "Visual binding; text-only verification is unavailable."
+      "note": "Visual binding is not authenticated by text-only verification; the claim quote union result was ENTAILED.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_part_filter_cover",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The quote only states 'R. Filter Cover' — a label or identifier — while the translation adds detailed location, orientation, removal/locking instructions, and diagram context not present in the original."
+      "note": "The projection adds 'clockwise to lock' and 'Labeled R in the parts diagram' — neither is supported by the quotes. The quotes only state twisting counterclockwise to remove; no direction for locking is mentioned. Also, while 'R. Filter Cover' implies a label 'R', the projection asserts it is 'in the parts diagram', which is not stated or implied in the quotes.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_part_filter_cover",
       "binding_index": 1,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation adds that the filter cover 'twists clockwise to lock' and specifies it is 'labeled R in the parts diagram' — neither stated in the quote. Also, it implies the cover is always on the bottom (requiring flipping), while the quote only instructs to flip it for access, not that it’s permanently located there."
+      "note": "The projection adds 'clockwise to lock' and 'Labeled R in the parts diagram' — neither is supported by the quotes. The quotes only state twisting counterclockwise to remove; no direction for locking is mentioned. Also, while 'R. Filter Cover' implies a label 'R', the projection asserts it is 'in the parts diagram', which is not stated or implied in the quotes.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_part_airsight_sensor",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The quote only labels a part as 'P. AirSight™ Plus Laser Dust Sensor' without specifying its location, while the translation adds detailed spatial information (behind slotted openings on the back, upper section, labeled P in diagram) not present in the quote."
+      "note": "The quote only identifies the component as 'P. AirSight™ Plus Laser Dust Sensor' without specifying its physical location, orientation, or relationship to slotted openings, housing sections, or diagram labels. The projection adds unsupported spatial and structural details (e.g., 'behind slotted openings on the back of the housing, upper section', 'labeled P in the parts diagram', 'shown on the 'Back' view'), which are not entailed by the quote and broaden the claim beyond what is asserted.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_care_prefilter_cleaning",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "Translation adds restrictions not in the quote: 'Do not clean the filter with water or other liquids' and 'Main filter: do not clean' — these are prohibitions absent in the source text."
+      "note": "The projection adds two restrictions not present in the quote: 'Do not clean the filter with water or other liquids' and 'Main filter: do not clean'. The quote only describes cleaning the outer pre-filter with a soft brush or vacuum hose, and does not mention water, liquids, or the main filter at all. These are unsupported semantic additions that broaden the claim beyond what is asserted.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_care_housing_cleaning",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'unplug first' and 'vacuum the inside', which are not mentioned in the quote. It also adds restrictions about abrasive chemicals and flammable agents, which the quote does not state. These are unauthorized additions that change the meaning."
+      "note": "The projection adds 'unplug first' and 'vacuum the inside', which are not mentioned in the quote. The quote only specifies wiping the outside and housing with dry or damp cloth and immediate drying. No instruction to unplug or vacuum interior is supported. Also, the restriction about abrasive chemicals or flammable agents is not mentioned in the quote, making it an unsupported addition.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_care_sensor_cleaning",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation adds specific cleaning instructions (unplug, vacuum for 10 seconds) not present in the quote, which only states 'Clean the sensor every 3 months' without method details."
+      "note": "The quote only states to 'Clean the sensor every 3 months' without specifying any method, let alone the detailed procedure involving unplugging, using a vacuum cleaner, or running it for at least 10 seconds. The projection adds unsupported operational details not present in the source.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_care_filter_lifespan",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation adds specific signals (increased noise, decreased airflow, etc.) that trigger filter replacement, which are not mentioned in the original quote. The original only states replacement depends on usage frequency, not diagnostic symptoms."
+      "note": "The projection adds unsupported signals (increased noise, decreased airflow, etc.) not mentioned in any quote; the quotes only specify replacement interval and app tracking, not diagnostic indicators.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_care_filter_lifespan",
       "binding_index": 1,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation adds unmentioned replacement signals (increased noise, decreased airflow, etc.) and implies a conditional trigger for replacement, while the quote only states a fixed lifespan tracked via app, with no mention of symptoms or user-triggered replacement."
+      "note": "The projection adds unsupported signals (increased noise, decreased airflow, etc.) not mentioned in any quote; the quotes only specify replacement interval and app tracking, not diagnostic indicators.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_care_storage",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation omits the conditional 'If not using the air purifier for an extended period of time,' which is a critical condition in the original. Removing this condition makes the instruction appear mandatory rather than situational, altering the meaning."
+      "verdict": "ENTAILED",
+      "note": "The projection accurately summarizes the method (wrap both the air purifier and the filter in plastic packaging; store in a dry place) and the reason (avoid moisture damage) as stated in the quote. The quote’s conditional 'If not using the air purifier for an extended period of time' is not asserted in the projection, but its omission does not broaden or misrepresent the claim — the projection is a faithful subset of the source’s semantic content and does not imply the method is universally required or sufficient without the condition.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_warning_plastic_wrap",
       "binding_index": 0,
       "verdict": "ENTAILED",
-      "note": "The translation accurately preserves the core warning: do not use without removing the plastic wrap, as it prevents air filtering and may cause overheating and fire hazard. The structured format does not alter meaning; 'hazard_type': 'fire' is a faithful extraction of 'causing a fire hazard'. No added, dropped, or altered qualifiers, numbers, units, or conditions."
+      "note": "The projection faithfully restates the warning from the quote: it preserves the condition (do not use without removing plastic wrap), the consequence (will not filter air), and the hazard (may overheat, causing fire hazard). No semantic addition, omission, or distortion is present.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_warning_water",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'hazard_type':'electric_shock', which is not stated or implied in the original quote. The original only gives a safety instruction without specifying the hazard type, so this addition changes the meaning by introducing unmentioned information."
+      "verdict": "ENTAILED",
+      "note": "The projection faithfully restates the warning from the quote without adding, omitting, or altering any condition, direction, or qualifier. The semicolon replaces 'and' but does not change meaning; the union of quotes fully supports the projection’s assertions.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_warning_oxygen",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'hazard_type: fire' which is not stated or implied in the exact quote. The original only specifies a distance requirement without attributing it to fire hazard, thus introducing new information that changes the meaning."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection exactly mirrors the warning in the quote without adding, omitting, or altering any condition, direction, unit, or actor. The quote’s instruction is fully preserved as-is.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_warning_combustible",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation drops 'spray' from 'aerosol (spray) products', altering the specificity of the hazard and potentially excluding a subset of aerosol products that are spray-based, which the original explicitly includes."
+      "verdict": "ENTAILED",
+      "note": "The projection faithfully restates the prohibition in the quote, omitting only the parenthetical '(spray)' which does not alter the meaning of 'aerosol products' as a category. No condition, direction, actor, or unit is added, removed, or misrepresented. The omission of '(spray)' is a stylistic compression that does not broaden scope or remove governing conditions.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_warning_dimmer",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation omits the causal phrase 'To reduce the risk of fire or electric shock,' which is critical context for the warning. Removing this changes the meaning by stripping the rationale for the restriction, making the warning appear arbitrary rather than safety-motivated."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection is a direct, faithful subset of the exact quote, omitting only the introductory 'WARNING:' and the safety rationale ('To reduce the risk of fire or electric shock'). These omissions do not broaden the claim, alter conditions, or add unsupported assertions — the core prohibition remains identical and unqualified in both.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_warning_unplug_before_maintenance",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'hazard_type': 'electric_shock', which is not mentioned or implied in the original quote; this introduces new safety information not present in the source."
+      "verdict": "ENTAILED",
+      "note": "The semantic projection exactly mirrors the content of the quote, preserving all conditions, directions, and scope. No qualifiers, limits, or governing conditions are omitted or broadened. The rephrasing of punctuation and spacing does not alter meaning.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_compat_filter_models",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'counterpart':'Levoit Core 300 Series Original Filter (Core 300-RF)', which is not mentioned in the source quote and introduces an unverified product association."
+      "verdict": "ENTAILED",
+      "note": "The projection lists exactly the models quoted as compatible per VeSync store, and adds no unsupported conditions, directions, or scope; the counterpart reference is not contradicted by the quotes and is not required to be supported by them under the union rule.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_policy_warranty",
       "binding_index": 0,
-      "verdict": "MEANING_CHANGED",
-      "note": "The translation adds 'provider: Arovast Corporation' which is not mentioned in the quote; also, it structures the warranty as a 'POLICY' with a specific object format, which introduces unquoted metadata and reifies the warranty beyond the original statement's scope."
+      "verdict": "ENTAILED",
+      "note": "The quote asserts a 2-year defect-free period from original purchase, which directly supports the projection's value of 2 and unit of years. The provider 'Arovast Corporation' is not contradicted by the quote — since the quote does not name any provider, its inclusion is not an unsupported addition under the rules (omission alone is not a meaning change, and no claim is made that the provider is the only or required actor). No condition, direction, or qualifier is lost that would broaden the claim beyond what the quote supports.",
+      "basis": "CLAIM_QUOTE_UNION"
     },
     {
       "claim_id": "claim_c300s_state_standby",
       "binding_index": 0,
       "verdict": "MEANING_CHANGED",
-      "note": "The translation adds that the laser dust sensor still detects air quality and reports to the VeSync app, which is not mentioned in the original quote and introduces new functional behavior not stated."
+      "note": "The quote states the air purifier is in Standby Mode when turned off but plugged in, but says nothing about the laser dust sensor remaining active or reporting to the VeSync app. The projection adds unsupported functionality (sensor operation and app reporting) that contradicts the implied inactivity of Standby Mode and lacks any governing condition or textual basis in the quote.",
+      "basis": "CLAIM_QUOTE_UNION"
     }
   ],
   "conflict_triage": [
@@ -417,7 +495,7 @@
         "claim_c300s_spec_noise_300sp"
       ],
       "result": "GENUINE_CONFLICT",
-      "note": "The two claims report different maximum noise levels (50 dB vs. 54.5 dB) for the same model (Core 300S), with no indication in the surrounding context that these refer to different revisions, test conditions, or operational modes.",
+      "note": "The two claims report different maximum noise levels (50 dB vs. 54.5 dB) for the same model (Core 300S), with no indication in either context that these values refer to different revisions, testing conditions, or operational modes.",
       "context_sha256": "1cbfc49f96fee5d3417ea20a82ac448392e4d3f9d9381fcb0bcf1d386e6b94b4"
     },
     {
@@ -426,7 +504,7 @@
         "claim_c300s_spec_rated_power_300sp"
       ],
       "result": "GENUINE_CONFLICT",
-      "note": "The two sources directly contradict each other on the rated power of the same model (Core 300S), listing 23 W versus 39 W without any indication that these refer to different revisions, modes, or measurement conditions.",
+      "note": "The two sources directly contradict each other on the rated power of the same model (Core 300S), listing 23 W and 39 W respectively, with no indication that these refer to different revisions, modes, or measurement conditions.",
       "context_sha256": "1cbfc49f96fee5d3417ea20a82ac448392e4d3f9d9381fcb0bcf1d386e6b94b4"
     },
     {
@@ -435,7 +513,7 @@
         "claim_c300s_spec_weight_300sp"
       ],
       "result": "GENUINE_CONFLICT",
-      "note": "The two claims provide mutually exclusive weight values (5.95 lb vs. 7.48 lb) for the same model (Core 300S), with no contextual indication that they refer to different revisions, configurations, or measurement conditions.",
+      "note": "The two claims report different weights (5.95 lb vs. 7.48 lb) for the same model (Core 300S), with no indication in either context that these refer to different revisions, configurations, or measurement conditions.",
       "context_sha256": "1cbfc49f96fee5d3417ea20a82ac448392e4d3f9d9381fcb0bcf1d386e6b94b4"
     }
   ]

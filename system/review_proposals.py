@@ -17,6 +17,24 @@ except ModuleNotFoundError:
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PACKS_ROOT = REPO_ROOT / "evidence-packs"
 
+# Manual post-run audit of v2 survivors. These remain visible as alarms, but
+# the owner should not spend time treating value/unit serialization as a claim
+# defect when each metric sibling already carries its own unit.
+POST_RUN_AUDIT_NOTES = {
+    claim_id: (
+        "LIKELY VERIFIER NOISE — the primary value/unit pair and the metric "
+        "sibling are unambiguous in the object, and each matches the quote. "
+        "The verifier incorrectly treated the primary unit as global."
+    )
+    for claim_id in {
+        "claim_c300s_spec_dimensions",
+        "claim_c300s_spec_weight_300s",
+        "claim_c300s_spec_weight_300sp",
+        "claim_c300s_spec_cadr",
+        "claim_c300s_spec_operating_conditions",
+    }
+}
+
 
 def load_json(path, default):
     path = Path(path)
@@ -46,9 +64,9 @@ def classify(pack_dir):
 
     alarm_ids = {
         claim_id for claim_id, entries in verdicts_by_claim.items()
-        if claim_id not in human
-        and any(entry.get("verdict") == "MEANING_CHANGED" for entry in entries)
+        if any(entry.get("verdict") == "MEANING_CHANGED" for entry in entries)
     }
+    reopened_alarm_ids = alarm_ids & human
 
     triage_by_pair = {}
     triage_by_claim = {}
@@ -102,6 +120,7 @@ def classify(pack_dir):
     sample = review_queue.spot_audit_sample(product, batch_eligible)
     sample_ids = {claim["claim_id"] for claim in sample}
     undecided = {claim["claim_id"] for claim in claims} - human
+    action_items = undecided | reopened_alarm_ids
     classified = (
         {claim["claim_id"] for claim in alarms}
         | {claim["claim_id"] for claim in conflict_claims}
@@ -110,9 +129,9 @@ def classify(pack_dir):
         | {claim["claim_id"] for claim, _reason in unresolved}
         | {claim["claim_id"] for claim in batch_eligible}
     )
-    if classified != undecided:
-        missing = sorted(undecided - classified)
-        extra = sorted(classified - undecided)
+    if classified != action_items:
+        missing = sorted(action_items - classified)
+        extra = sorted(classified - action_items)
         raise ValueError(
             f"proposal classification mismatch; missing={missing}, extra={extra}")
 
@@ -120,6 +139,7 @@ def classify(pack_dir):
         "product": product,
         "claims": claims,
         "human": human,
+        "reopened_alarm_ids": reopened_alarm_ids,
         "verification_status": verification_status,
         "verdicts_by_claim": verdicts_by_claim,
         "triage_by_pair": triage_by_pair,
@@ -187,11 +207,13 @@ def review_focus(claim, section, triage_entries):
 
 
 def claim_lines(claim, verdicts, section, triage_entries,
-                unresolved_reason=None, sample=False):
+                unresolved_reason=None, sample=False, reopened=False):
     disposition, rationale = recommendation(
         claim, verdicts, section, unresolved_reason=unresolved_reason)
     lines = [
-        f"### `{claim['claim_id']}`" + (" — SPOT-AUDIT SAMPLE" if sample else ""),
+        f"### `{claim['claim_id']}`"
+        + (" — REOPENED AFTER V2 ALARM" if reopened else "")
+        + (" — SPOT-AUDIT SAMPLE" if sample else ""),
         "",
         f"- Proposed disposition: **`{disposition}`**",
         f"- Owner decision: [ ] confirm recommendation  [ ] override: __________",
@@ -199,8 +221,12 @@ def claim_lines(claim, verdicts, section, triage_entries,
         f"- Type / predicate: `{claim.get('type')}` / `{claim.get('predicate')}`",
         f"- Source authority: `{claim.get('authority')}`",
         f"- Queue section: `{section}`",
+        *( ["- Prior decision status: **REOPENED** — explicitly reconfirm or "
+             "amend the existing human disposition."] if reopened else []),
         "- Review focus: " + "; ".join(
             review_focus(claim, section, triage_entries)),
+        *( ["- Agent post-run audit: " + POST_RUN_AUDIT_NOTES[claim["claim_id"]]]
+           if claim["claim_id"] in POST_RUN_AUDIT_NOTES else []),
         "- Proposed rationale: " + rationale,
         "",
         "Applicability",
@@ -258,6 +284,7 @@ def render_pack(pack_dir, date=None):
     verdicts_by_claim = data["verdicts_by_claim"]
     triage_by_claim = data["triage_by_claim"]
     undecided_count = len(data["claims"]) - len(data["human"])
+    reopened_count = len(data["reopened_alarm_ids"])
     proposal_items = []
     proposal_items.extend((claim, "alarm", None) for claim in data["alarms"])
     proposal_items.extend(
@@ -289,6 +316,8 @@ def render_pack(pack_dir, date=None):
         f"- Claims in pack: `{len(data['claims'])}`",
         f"- Existing human decisions: `{len(data['human'])}`",
         f"- Undecided claims covered here: `{undecided_count}`",
+        f"- Existing decisions reopened by v2 alarms: `{reopened_count}`",
+        f"- Total owner action items: `{undecided_count + reopened_count}`",
         f"- Proposed `NEEDS_RECHECK`: `{proposed_counts['NEEDS_RECHECK']}`",
         f"- Proposed `REJECTED_FOR_SERVING`: "
         f"`{proposed_counts['REJECTED_FOR_SERVING']}`",
@@ -309,7 +338,8 @@ def render_pack(pack_dir, date=None):
         claim_id = claim["claim_id"]
         lines.extend(claim_lines(
             claim, verdicts_by_claim.get(claim_id, []), "alarm",
-            triage_by_claim.get(claim_id, [])))
+            triage_by_claim.get(claim_id, []),
+            reopened=claim_id in data["reopened_alarm_ids"]))
 
     lines.extend([
         "## 2. Unresolved conflict claims " +
@@ -404,6 +434,7 @@ def render_pack(pack_dir, date=None):
     return {
         "product": data["product"],
         "undecided": undecided_count,
+        "reopened_alarms": reopened_count,
         "needs_recheck": proposed_counts["NEEDS_RECHECK"],
         "proposed_reject": proposed_counts["REJECTED_FOR_SERVING"],
         "proposed_approve": proposed_counts["APPROVED_FOR_PUBLISH"],

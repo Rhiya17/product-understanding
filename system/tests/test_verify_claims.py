@@ -294,6 +294,8 @@ def test_v2_prompt_preserves_three_known_genuine_catches():
     for prompt in prompts:
         assert "lost\ngoverning condition" in prompt
         assert "assert something more broadly" in prompt
+        assert "bare range or limit is read\nas unconditional" in prompt
+        assert "range alone is sufficient" in prompt
 
 
 def test_serving_model_mismatch_stops_and_records_failed_attestation(tmp_path):
