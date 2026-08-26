@@ -28,6 +28,15 @@
   pairs were triaged (5 `GENUINE_CONFLICT`, 3 `DIFFERENT_SCOPE_OR_EVENT`).
   Regenerated queues contain 268 alarm claims and 38 batch-eligible C0/C1
   claims. This measured result supersedes the pre-run workload estimate below.
+- Phase B completed: five `review-proposals.md` files cover every one of the
+  **338 undecided claims exactly once**. Recommendations are 267
+  `NEEDS_RECHECK`, 1 `REJECTED_FOR_SERVING` under the latest-revision policy,
+  and 70 `APPROVED_FOR_PUBLISH` (38 batch-eligible C0/C1 plus 32 individually
+  reviewed C2/C3). The owner gate is 300 individual decisions plus five batch
+  confirmations after inspecting 19 designated sample claims.
+- Acceptance checks at the owner gate: compile, evidence validator, vault
+  validator, queue/proposal regeneration, and **23 offline tests** all pass.
+  Phase A/B checkpoint: `0782751`.
 
 ---
 
