@@ -19,8 +19,18 @@
    named "Internal preview", each card carrying its status label. `REJECTED`
    content never renders anywhere.
 3. **Never invent pixels or motion.** Every image shown is either a file in
-   `source-vault/` or a page rendered from a vault PDF. Every video is an
-   origin URL registered in a vault manifest. Nothing else.
+   `source-vault/` or a page rendered from a vault PDF. Every video is
+   either an origin URL registered in a vault manifest, or (amendment
+   2026-08-27, owner-context decision) a **local video file registered in a
+   vault manifest** served under all of these conditions: the manifest
+   entry's `authority` is `MANUFACTURER`, the file's SHA-256 matches its
+   manifest hash at serve time, it is served only through the read-only
+   `/media/` route, and the UI displays the manifest `rights_note` beside
+   the player. Rationale: `src_r2j_fold_video_v1` is the official
+   manufacturer fold video, hash-pinned since 2026-08-11, with
+   `origin_url: null` as a curation gap only. Its rights note limits it to
+   internal research use — acceptable for this local app; **any future
+   non-local deployment requires rights re-clearance first.** Nothing else.
 4. **Media requires owner approval before default serving.** A media binding
    (claim ↔ asset link) drafted by the agent serves only in preview until the
    owner approves it (§3). The agent never sets the approval field.
@@ -78,7 +88,7 @@ passes. Commit checkpoint.
       "binding_id": "mb_<product_short>_<slug>",
       "claim_ids": ["claim_..."],
       "source_id": "src_...",
-      "kind": "IMAGE" | "VIDEO_URL" | "PDF_PAGE",
+      "kind": "IMAGE" | "VIDEO_URL" | "VIDEO_FILE" | "PDF_PAGE",
       "page": null,
       "start_seconds": null,
       "end_seconds": null,
@@ -93,8 +103,13 @@ passes. Commit checkpoint.
 Rules: `source_id` must exist in that product's vault manifest;
 `claim_ids` must exist in that product's `claims.json`; `page` is required
 and 1-based when `kind` is `PDF_PAGE`; `start_seconds`/`end_seconds` are
-optional integers for `VIDEO_URL`. `approved_by` is written only by the
-owner (their email), never by the agent.
+optional integers for `VIDEO_URL` and `VIDEO_FILE`. `VIDEO_FILE` is valid
+only when the manifest entry has a non-null `local_path`, `authority` is
+`MANUFACTURER`, and the amendment conditions in §0.3 are met; the media
+validator must enforce this, and the server must verify the file's SHA-256
+against the manifest before serving it (cache the check per file hash).
+`approved_by` is written only by the owner (their email), never by the
+agent.
 
 **Draft the bindings** for all five products from the vault manifests and
 `videos/video-sources.md` files. Bind conservatively: only assets whose
@@ -109,9 +124,12 @@ above, wired into CI next to the existing validators, with offline tests.
 approved bindings (id, kind, local file path or origin URL, page,
 start/end). The UI renders images inline (served read-only from
 `source-vault/` via a `GET /media/...` route that refuses paths outside the
-vault), and renders video bindings as an embedded player or link using the
-origin URL and start time. Unapproved bindings appear only when Internal
-preview is on, labeled "media awaiting owner approval".
+vault), renders `VIDEO_URL` bindings as an embedded player or link using
+the origin URL and start time, and renders `VIDEO_FILE` bindings with a
+native `<video>` player from the `/media/` route with the manifest
+`rights_note` displayed beside it (§0.3 amendment). Unapproved bindings
+appear only when Internal preview is on, labeled "media awaiting owner
+approval".
 
 **Expected outcome (acceptance):** with preview on, "how does the stroller
 fold?" shows the fold-step cards plus the official Graco fold-sequence
@@ -160,7 +178,9 @@ known gaps.
 
 1. Three phase commits plus reports as specified; repository clean;
    `python3.12 -m compileall`, both validators, media validator, and the
-   full test suite green.
+   full test suite green. Final acceptance must run under Python 3.12 (the
+   bundled 3.12.13 runtime used in the review-completion work order is
+   acceptable); a green run under an older interpreter does not count.
 2. The demo script in the final report works exactly as written on a fresh
    checkout with `python3.12 app/server.py`.
 3. No file under `source-vault/` modified; `claims.json`, `reviews.json`,
