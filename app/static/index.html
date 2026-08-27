@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShowMe Answer App</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="/" aria-label="ShowMe home">ShowMe</a>
+    <p>Answers grounded in published product facts.</p>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">LOCAL ANSWER APP · MVP V0</p>
+      <h1 id="page-title">What do you need to know?</h1>
+      <p class="intro">Ask about setup, limits, care, compatibility, or how a product works.</p>
+
+      <form id="answer-form">
+        <label class="question-label" for="question">Your question</label>
+        <div class="question-row">
+          <input id="question" name="q" type="search"
+                 placeholder="What is the max child weight for the SnugRide?"
+                 autocomplete="off" required>
+          <button type="submit">Find answer</button>
+        </div>
+
+        <div class="filters">
+          <label for="product">Product</label>
+          <select id="product" name="product">
+            <option value="">All products</option>
+          </select>
+
+          <label class="preview-control" for="preview">
+            <input id="preview" name="preview" type="checkbox">
+            <span>Internal preview</span>
+          </label>
+        </div>
+      </form>
+
+      <div id="preview-warning" class="preview-warning" hidden>
+        INTERNAL PREVIEW — includes facts that are not published for serving.
+      </div>
+    </section>
+
+    <section id="answer-region" class="answer-region" aria-live="polite">
+      <div id="empty-state" class="empty-state">
+        <p>Published answers will appear here with their source citations.</p>
+      </div>
+      <div id="error" class="error" hidden></div>
+      <div id="results"></div>
+      <div id="not-served" class="not-served" hidden></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>No generative models. No runtime network calls. Published facts by default.</p>
+  </footer>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
