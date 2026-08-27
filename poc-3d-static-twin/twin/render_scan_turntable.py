@@ -50,8 +50,8 @@ def main():
         raise SystemExit("GLB contains no mesh objects")
     # Center the complete imported hierarchy (some GLBs contain many meshes).
     bounds = [o.matrix_world @ Vector(c) for o in meshes for c in o.bound_box]
-    lo = Vector((min(v[i] for v in bounds) for i in range(3)))
-    hi = Vector((max(v[i] for v in bounds) for i in range(3)))
+    lo = Vector(min(v[i] for v in bounds) for i in range(3))
+    hi = Vector(max(v[i] for v in bounds) for i in range(3))
     center = (lo + hi) / 2
     for root in [o for o in scene.objects if o.parent is None]:
         root.location += Vector((-center.x, -center.y, -lo.z))
