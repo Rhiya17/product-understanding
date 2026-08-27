@@ -1,7 +1,7 @@
 {
   "_comment": "POC 5 input pack for the open-state static twin. See docs/pocs/poc5-digital-twin-runbook.md Stage 1. Product: Graco Ready2Jet Kingston. One state per job: all input views show the OPEN stroller; the folded-state image feeds a separate future job.",
-  "pack_version": "v1",
-  "pack_status": "RETIRED 2026-08-14 after the meshy-v1-pilot-run-01 FAIL. Known defects: three conflicting canopy states, no rear view, close-up held-out (silhouette IoU unsatisfiable), view-02 SKU unconfirmed. Pack v2 requirements are listed in evaluation/scorecard-meshy-v1-pilot-run-01.md; v2 must bump pack_version, and every v2 frame must be verified against Kingston 2209064 with the same canopy/seat state and same accessories. Runner records pack_version + pack_hash in every submission.",
+  "pack_version": "v1.1",
+  "pack_status": "v1.1 ACTIVE 2026-08-27 for the Tripo3D comparative run. The four v1 INPUT views are byte-identical to the Meshy pilot inputs (tool results stay directly comparable). Change from v1: a valid GLOBAL held-out image replaces the close-up held-out, fixing the unsatisfiable silhouette-IoU defect. Remaining v1 defects are carried as accepted, documented risks: canopy-state conflict between view-01 and view-02, no rear view (rear surfaces are inferred by construction; invented-geometry check applies), view-02 SKU confirmation pending. Full v2 (state-consistent, rear coverage) still requires new capture per digital-twin plan Decision 2; v2 requirements remain listed in evaluation/scorecard-meshy-v1-pilot-run-01.md.",
   "product": {
     "brand": "Graco",
     "name": "Ready2Jet Stroller",
@@ -11,8 +11,16 @@
   },
   "verified_dimensions": {
     "status": "RECORDED 2026-08-14 from the official Graco specification (identical for 2209064 Kingston and 2212125 Splatter Art).",
-    "open_in": {"W": 20.5, "D": 27.0, "H": 43.0},
-    "open_cm": {"W": 52.07, "D": 68.58, "H": 109.22},
+    "open_in": {
+      "W": 20.5,
+      "D": 27.0,
+      "H": 43.0
+    },
+    "open_cm": {
+      "W": 52.07,
+      "D": 68.58,
+      "H": 109.22
+    },
     "folded_cm": null,
     "source_url": "Official Graco product specification (Ready2Jet); folded dimensions still to be recorded."
   },
@@ -54,7 +62,7 @@
       "notes": "Fills the side-view gap with matching colorway. Marked derived, not observed."
     },
     "heldout-01-seat-bellybar.png": {
-      "role": "held-out",
+      "role": "retired held-out (v1); unusable for global silhouette check",
       "state": "open, canopy extended",
       "viewpoint": "close-up of seat, harness, belly bar",
       "sha256": "63666025a85915efa1c68981c230dca32b255e359795b6ebc3cee27be19bd63c",
@@ -70,6 +78,15 @@
       "origin": "user-curated 2026-08-13 (curated_7/07_folded_self_standing_crucial.png); official studio asset",
       "source_url": "UNKNOWN — recover from curation session if possible",
       "notes": "Excluded from the open-state job. Single view only — folded job needs more views or self-captured scan (Decision 2)."
+    },
+    "heldout-05-front-3q.png": {
+      "role": "held-out validation",
+      "state": "open, canopy fully extended (matches view-01 anchor state)",
+      "viewpoint": "front three-quarter, full product, eye level",
+      "sha256": "0d34c9c036c141d7159fa1b4d9066c6314b182a28fd15017d5e4823f77d1fd83",
+      "origin": "extracted 2026-08-27 from vault source src_r2j_fold_video_v1 (official Graco fold video, authority MANUFACTURER, video sha256 9b1af253...) — title-card frame 29 (~t=1.0s), crop y120:1000 x1030:1830; reproducible via extract_heldout.py",
+      "source_url": "vault: source-vault/graco-ready2jet-2212125/videos/official-fold-video.mp4",
+      "notes": "Person-free official studio asset shown on the video title card. Kingston colorway confirmed (gray fabric, black frame, tan handle, tri-spoke wheels visible). NEVER submit as a tool input; held-out only. Rights: manufacturer copyright, internal research use (matches vault rights_note)."
     }
   },
   "excluded": {

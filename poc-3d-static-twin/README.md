@@ -42,3 +42,24 @@ Runbook Stages 3–5: normalize scale against verified dimensions (record them
 in the manifest first — currently missing), silhouette/landmark checks
 against the held-out image, invented-geometry inspection, fusion grade
 F0–F3, scorecards in `evaluation/`.
+
+## Tripo3D run (Decision 1 amendment: Tripo3D-first, Meshy retired)
+
+Input pack **v1.1**: the four v1 input views are byte-identical to the Meshy
+pilot (results stay comparable); the defective close-up held-out is replaced
+by `heldout-05-front-3q.png` — a person-free full-product title-card frame
+extracted deterministically from the vault's official fold video
+(`extract_heldout.py`). Remaining pack risks (canopy conflict, no rear view,
+view-02 SKU pending) are documented in the manifest and carried into scoring.
+
+```bash
+python3 run_tripo3d.py --label tripo-run-01 --dry-run   # inspect exact request
+python3 run_tripo3d.py --label tripo-run-01             # needs FAL_KEY
+```
+
+Endpoint `tripo3d/h3.1/multiview-to-3d` (schema verified live 2026-08-27).
+Seeded -> reproducible; submits only truthful semantic slots (front + left);
+`auto_size` on so the mesh arrives in real-world meters for the dimension
+check. Score with the same runbook Stages 3-5 and the Meshy scorecard
+template. License/commercial-terms check for Tripo3D remains OPEN and must
+close before anything ships (Decision 1).
