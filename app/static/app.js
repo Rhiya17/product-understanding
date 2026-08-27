@@ -8,6 +8,22 @@ const emptyState = document.querySelector("#empty-state");
 const errorBox = document.querySelector("#error");
 const notServedBox = document.querySelector("#not-served");
 const submitButton = form.querySelector("button[type='submit']");
+const procedureSelect = document.querySelector("#procedure");
+const showProcedureButton = document.querySelector("#show-procedure");
+const procedureRegion = document.querySelector("#procedure-region");
+const procedureTitle = document.querySelector("#procedure-title");
+const procedureProgress = document.querySelector("#procedure-progress");
+const procedureBanner = document.querySelector("#procedure-banner");
+const stepStatus = document.querySelector("#step-status");
+const stepNumber = document.querySelector("#step-number");
+const stepAction = document.querySelector("#step-action");
+const stepClaim = document.querySelector("#step-claim");
+const pagePanel = document.querySelector("#page-panel");
+const previousStepButton = document.querySelector("#previous-step");
+const nextStepButton = document.querySelector("#next-step");
+
+let procedureSteps = [];
+let activeStepIndex = 0;
 
 function element(tag, className, text) {
   const node = document.createElement(tag);
@@ -20,6 +36,10 @@ function statusLabel(status) {
   if (status === "SUSPENDED") return "SUSPENDED — verifier alarm outstanding";
   if (status === "CANDIDATE") return "CANDIDATE — not human-reviewed";
   return status;
+}
+
+function readableName(value) {
+  return value.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
 function renderCitation(citation) {
@@ -132,6 +152,95 @@ async function loadProducts() {
   }
 }
 
+async function loadProcedures() {
+  procedureRegion.hidden = true;
+  procedureSteps = [];
+  activeStepIndex = 0;
+  procedureSelect.replaceChildren();
+  const placeholder = element("option", "", productSelect.value
+    ? "Choose a procedure"
+    : "Choose a product first");
+  placeholder.value = "";
+  procedureSelect.append(placeholder);
+  procedureSelect.disabled = true;
+  showProcedureButton.disabled = true;
+  if (!productSelect.value) return;
+
+  const query = new URLSearchParams({
+    product: productSelect.value,
+    preview: previewToggle.checked ? "1" : "0",
+  });
+  try {
+    const response = await fetch(`/api/procedures?${query}`);
+    const payload = await response.json();
+    if (!response.ok) throw new Error(payload.error || "Could not load procedures.");
+    payload.procedures.forEach((procedure) => {
+      const suffix = procedure.fully_published ? "" : " · not fully published";
+      const option = element("option", "", `${readableName(procedure.name)}${suffix}`);
+      option.value = procedure.name;
+      procedureSelect.append(option);
+    });
+    if (payload.procedures.length) {
+      procedureSelect.disabled = false;
+    } else {
+      placeholder.textContent = previewToggle.checked
+        ? "No procedures available"
+        : "No published procedures — try Internal preview";
+    }
+  } catch (error) {
+    errorBox.textContent = error.message;
+    errorBox.hidden = false;
+  }
+}
+
+function renderProcedureStep() {
+  const step = procedureSteps[activeStepIndex];
+  stepStatus.className = `badge ${step.status}`;
+  stepStatus.textContent = statusLabel(step.status);
+  stepNumber.textContent = `Step ${step.step_number}`;
+  stepAction.textContent = step.action;
+  stepClaim.textContent = step.claim_id;
+  procedureProgress.textContent = `${activeStepIndex + 1} of ${procedureSteps.length}`;
+  previousStepButton.disabled = activeStepIndex === 0;
+  nextStepButton.disabled = activeStepIndex === procedureSteps.length - 1;
+  pagePanel.replaceChildren();
+  if (step.page_image_url) {
+    const image = element("img", "manual-page");
+    image.src = step.page_image_url;
+    image.alt = `Authentic whole manual page for step ${step.step_number}`;
+    pagePanel.append(image);
+    pagePanel.append(element("figcaption", "", "Whole authentic manual page · 144 DPI · no crop or annotation"));
+  } else {
+    pagePanel.append(element("div", "no-page", "No approved page binding for this step. Showing verified step text only."));
+  }
+}
+
+async function showProcedure() {
+  if (!productSelect.value || !procedureSelect.value) return;
+  errorBox.hidden = true;
+  const query = new URLSearchParams({
+    product: productSelect.value,
+    procedure: procedureSelect.value,
+    preview: previewToggle.checked ? "1" : "0",
+  });
+  try {
+    const response = await fetch(`/api/procedure?${query}`);
+    const payload = await response.json();
+    if (!response.ok) throw new Error(payload.error || "Could not load procedure.");
+    if (!payload.steps.length) throw new Error("No published steps are available for this procedure.");
+    procedureSteps = payload.steps;
+    activeStepIndex = 0;
+    procedureTitle.textContent = readableName(payload.procedure);
+    procedureBanner.hidden = payload.fully_published;
+    procedureRegion.hidden = false;
+    renderProcedureStep();
+    procedureRegion.scrollIntoView({ behavior: "smooth", block: "start" });
+  } catch (error) {
+    errorBox.textContent = error.message;
+    errorBox.hidden = false;
+  }
+}
+
 async function submitQuestion(event) {
   event.preventDefault();
   errorBox.hidden = true;
@@ -173,6 +282,24 @@ async function submitQuestion(event) {
 
 previewToggle.addEventListener("change", () => {
   previewWarning.hidden = !previewToggle.checked;
+  loadProcedures();
+});
+productSelect.addEventListener("change", loadProcedures);
+procedureSelect.addEventListener("change", () => {
+  showProcedureButton.disabled = !procedureSelect.value;
+});
+showProcedureButton.addEventListener("click", showProcedure);
+previousStepButton.addEventListener("click", () => {
+  if (activeStepIndex > 0) {
+    activeStepIndex -= 1;
+    renderProcedureStep();
+  }
+});
+nextStepButton.addEventListener("click", () => {
+  if (activeStepIndex < procedureSteps.length - 1) {
+    activeStepIndex += 1;
+    renderProcedureStep();
+  }
 });
 form.addEventListener("submit", submitQuestion);
 loadProducts();

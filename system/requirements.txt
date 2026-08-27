@@ -1,4 +1,6 @@
 pypdf==6.16.1
+pypdfium2==4.30.0
+Pillow==12.3.0
 fal-client==1.0.0
 pytest==8.4.1
 claude-agent-sdk==0.2.144

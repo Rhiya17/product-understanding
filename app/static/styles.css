@@ -116,6 +116,28 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 .preview-control { align-items: center; display: flex; gap: 0.5rem; margin-left: auto; }
 .preview-control input { accent-color: var(--amber); height: 1.1rem; width: 1.1rem; }
 
+.procedure-tools {
+  align-items: end;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-top: 1rem;
+  padding: 0.9rem;
+}
+
+.procedure-tools label {
+  color: var(--muted);
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 750;
+  margin-bottom: 0.4rem;
+}
+
+.procedure-tools select { max-width: 100%; padding: 0.65rem 2.4rem 0.65rem 0.75rem; width: 100%; }
+
 .preview-warning {
   background: var(--amber-pale);
   border: 2px solid var(--amber);
@@ -233,6 +255,100 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   padding: 0.55rem 0.7rem;
 }
 
+.procedure-region {
+  border-top: 1px solid var(--line);
+  margin-top: 4.5rem;
+  padding-top: 2rem;
+  scroll-margin-top: 1rem;
+}
+
+.procedure-heading {
+  align-items: end;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.procedure-heading h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+
+.procedure-progress { color: var(--muted); font-weight: 750; }
+.procedure-banner {
+  background: var(--amber-pale);
+  border: 2px solid var(--amber);
+  border-radius: 8px;
+  color: #5a3900;
+  font-weight: 800;
+  margin: 1.25rem 0;
+  padding: 0.85rem 1rem;
+}
+
+.procedure-player {
+  align-items: start;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 1.2fr);
+  margin-top: 1.25rem;
+}
+
+.step-panel, .page-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin: 0;
+  overflow: hidden;
+  padding: 1.25rem;
+}
+
+.step-number {
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  margin: 2rem 0 0.45rem;
+  text-transform: uppercase;
+}
+
+.step-action {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.55rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.page-panel img {
+  background: #ecece8;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.page-panel figcaption {
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin-top: 0.7rem;
+}
+
+.no-page {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  justify-content: center;
+  min-height: 15rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.procedure-nav { display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1rem; }
+.procedure-nav button:first-child { background: transparent; border: 1px solid var(--ink); color: var(--ink); }
+.procedure-nav button:disabled { cursor: not-allowed; opacity: 0.35; }
+
 .not-served, .error {
   border-radius: 8px;
   margin-top: 1rem;
@@ -254,4 +370,5 @@ footer {
   .site-header p { display: none; }
   .question-row { grid-template-columns: 1fr; }
   .preview-control { flex-basis: 100%; margin-left: 0; margin-top: 0.45rem; }
+  .procedure-tools, .procedure-player { grid-template-columns: 1fr; }
 }
