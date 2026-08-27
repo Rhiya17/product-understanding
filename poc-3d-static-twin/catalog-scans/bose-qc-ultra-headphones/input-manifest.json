@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "product": "bose-qc-ultra-headphones",
+  "status": "READY",
+  "provider": "fal.ai / tripo3d/h3.1/multiview-to-3d",
+  "provider_slot_contract": {
+    "image_count": "2-4",
+    "semantic_order": ["front", "left", "back", "right"],
+    "front_required": true
+  },
+  "selected_inputs": [
+    {
+      "slot": "front",
+      "source_id": "src_img_black_front",
+      "local_path": "source-vault/bose-qc-ultra-headphones/images/black-front-view.png",
+      "sha256": "c8706c2b262f3b8b18f750582a090c3b4496d02f543ff2b6f3797292a49af990",
+      "person_free": true,
+      "semantic_assessment": "exact clean front view, black colorway"
+    },
+    {
+      "slot": "left",
+      "source_id": "src_img_black_side",
+      "local_path": "source-vault/bose-qc-ultra-headphones/images/black-side-view.png",
+      "sha256": "2a0fc8126f75e7b6e0bc755bdbb4ca7bec47e733d5366270782ef28b07d9034a",
+      "person_free": true,
+      "semantic_assessment": "clean side profile; gallery orientation is consistent with the product's left exterior earcup"
+    }
+  ],
+  "selection_notes": "Both inputs show the same product state and black colorway. Lifestyle and folded-state gallery images were excluded.",
+  "expected_provider_spend_usd": 0.60,
+  "request_id": null,
+  "rights_note": "Tripo3D license check OPEN — do not ship",
+  "approved_by": null,
+  "internal_only": true
+}

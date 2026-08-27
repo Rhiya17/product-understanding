@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "ceiling_usd": 10.0,
+  "currency": "USD",
+  "entries": [
+    {
+      "product": "levoit-core-300s",
+      "status": "skipped",
+      "spend_usd": 0.0,
+      "request_id": null
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "status": "skipped",
+      "spend_usd": 0.0,
+      "request_id": null
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "product": "apple-macbook-air-13-m3",
+  "status": "READY_WITH_INPUT_LIMITATIONS",
+  "provider": "fal.ai / tripo3d/h3.1/multiview-to-3d",
+  "provider_slot_contract": {
+    "image_count": "2-4",
+    "semantic_order": ["front", "left", "back", "right"],
+    "front_required": true
+  },
+  "selected_inputs": [
+    {
+      "slot": "front",
+      "source_id": "src_img_store_starlight",
+      "local_path": "source-vault/apple-macbook-air-13-m3/images/store-color-starlight.jpg",
+      "sha256": "ee6b9cb5b0f5e399e34c14720c889baf52945e751b24c060763c0917e5cd66ad",
+      "person_free": true,
+      "semantic_assessment": "exact front view of the open 13-inch product, Starlight"
+    },
+    {
+      "slot": "left",
+      "source_id": "src_img_guide_left_side",
+      "local_path": "source-vault/apple-macbook-air-13-m3/images/guide-left-side-magsafe-thunderbolt-ports.png",
+      "sha256": "ce9223456435cefc0858bc45a491e37e0c4acdfec5f0c26a7e8785e6740efdda",
+      "person_free": true,
+      "semantic_assessment": "true left profile from the official guide; closed state with port callouts"
+    }
+  ],
+  "evaluated_not_selected": [
+    {
+      "slot": "right",
+      "source_id": "src_img_guide_right_side",
+      "local_path": "source-vault/apple-macbook-air-13-m3/images/guide-right-side-headphone-jack.png",
+      "sha256": "b8680a9cd16337fb3fc0f1d717afe90bad1dd441f9526f876413bfe575f50006",
+      "person_free": true,
+      "semantic_assessment": "true right profile, but not submitted: with no honest back view, placing it third in H3.1's positional array would falsely label it as back"
+    }
+  ],
+  "selection_notes": "The submitted labels are honest and contiguous (front, left). The open front conflicts with the closed left state and the guide image contains annotations. This limitation is accepted for an internal probe and must be scored, not concealed.",
+  "expected_provider_spend_usd": 0.60,
+  "request_id": null,
+  "rights_note": "Tripo3D license check OPEN — do not ship",
+  "approved_by": null,
+  "internal_only": true
+}

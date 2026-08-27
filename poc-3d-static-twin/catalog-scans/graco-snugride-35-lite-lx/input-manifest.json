@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "product": "graco-snugride-35-lite-lx",
+  "status": "SKIPPED_NO_HONEST_H31_VIEW_SET",
+  "provider": "fal.ai / tripo3d/h3.1/multiview-to-3d",
+  "provider_slot_contract": {
+    "image_count": "2-4",
+    "semantic_order": ["front", "left", "back", "right"],
+    "front_required": true
+  },
+  "evaluated_candidates": [
+    {
+      "source_id": "src_img_front_3q_seat_in_base",
+      "local_path": "source-vault/graco-snugride-35-lite-lx/images/front-3q-seat-in-base.jpg",
+      "sha256": "2a5ce5c5d7e4a7cc073ff9496d05dcbc90c18faae500be364df2f3aba36bb731",
+      "person_free": true,
+      "semantic_assessment": "clean front three-quarter studio view; acceptable only for the front slot",
+      "selected": false
+    },
+    {
+      "source_id": "src_img_side_recline",
+      "local_path": "source-vault/graco-snugride-35-lite-lx/images/side-3q-recline-adjust.jpg",
+      "sha256": "729e93ae1c783a9f319451a2147f70ae2304f791079c8ef2df2863f4e2792811",
+      "person_free": false,
+      "semantic_assessment": "best side candidate, but a human hand and arm operate the recline foot",
+      "selected": false
+    },
+    {
+      "source_id": "src_img_carry_alt",
+      "local_path": "source-vault/graco-snugride-35-lite-lx/images/carry-handle-up-alt.jpg",
+      "sha256": "10de12fd5335296a8f2d24502a11fadad869c24441758a99a1dbdaba4f114c53",
+      "person_free": false,
+      "semantic_assessment": "human-held lifestyle view with an infant; provider-prohibited",
+      "selected": false
+    },
+    {
+      "source_id": "src_img_front_canopy_protectplus",
+      "local_path": "source-vault/graco-snugride-35-lite-lx/images/front-canopy-protectplus.jpg",
+      "sha256": "c16be23488aea944a2e3daeb7e9d07e6c4fa7ab8679be69601343e098211e945",
+      "person_free": false,
+      "semantic_assessment": "front graphic includes an infant and cannot be submitted",
+      "selected": false
+    },
+    {
+      "source_id": "src_img_feature_callouts_alt",
+      "local_path": "source-vault/graco-snugride-35-lite-lx/images/feature-callouts-front-alt.jpg",
+      "sha256": "bf18082c53a5f89d438ed9661cbefb0f525cf62e12b36efce179c72fafd74279",
+      "person_free": true,
+      "semantic_assessment": "annotated front feature graphic; duplicates the front slot and cannot fill left/back/right",
+      "selected": false
+    }
+  ],
+  "selected_inputs": [],
+  "skip_reason": "Only one clean semantic slot is available: front. The sole useful side candidate contains a human arm/hand, all other non-front imagery is lifestyle, detail, installed, or not a true H3.1 left/back/right view. No person image was submitted and no view was mislabeled.",
+  "request_id": null,
+  "provider_spend_usd": 0,
+  "rights_note": "Tripo3D license check OPEN — do not ship",
+  "approved_by": null,
+  "internal_only": true
+}
