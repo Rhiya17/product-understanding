@@ -1,0 +1,93 @@
+{
+  "bindings": [
+    {
+      "binding_id": "mb_c300s_reset_control_image",
+      "claim_ids": [
+        "claim_c300s_part_filter_reset_button",
+        "claim_c300s_step_replace_filter_6",
+        "claim_c300s_step_reset_filter_2",
+        "claim_c300s_step_reset_filter_3",
+        "claim_c300s_step_reset_filter_4"
+      ],
+      "source_id": "src_img_top_panel_2048",
+      "kind": "IMAGE",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The official top-panel image clearly shows the Sleep Mode button and RESET FILTER (3S) label.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_c300s_filter_context_image",
+      "claim_ids": [
+        "claim_c300s_step_replace_filter_1",
+        "claim_c300s_step_replace_filter_2",
+        "claim_c300s_step_replace_filter_3",
+        "claim_c300s_step_replace_filter_4",
+        "claim_c300s_step_replace_filter_5"
+      ],
+      "source_id": "src_img_filter_beside_unit",
+      "kind": "IMAGE",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The official product image shows the exact purifier with its cylindrical replacement filter removed beside it.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_c300s_vesync_video",
+      "claim_ids": [
+        "claim_c300s_step_app_setup_1",
+        "claim_c300s_step_app_setup_2",
+        "claim_c300s_step_app_setup_3",
+        "claim_c300s_step_replace_filter_6"
+      ],
+      "source_id": "src_video_vesync_app_flow",
+      "kind": "VIDEO_URL",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The official Levoit video walks through VeSync setup and its Filter Life replacement flow for the Core 300S.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_c300s_replace_filter_page_14",
+      "claim_ids": [
+        "claim_c300s_step_replace_filter_1",
+        "claim_c300s_step_replace_filter_2",
+        "claim_c300s_step_replace_filter_3",
+        "claim_c300s_step_replace_filter_4",
+        "claim_c300s_step_replace_filter_5",
+        "claim_c300s_step_replace_filter_6"
+      ],
+      "source_id": "src_manual_core300sp_us",
+      "kind": "PDF_PAGE",
+      "page": 14,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "Manual page 14 contains the complete filter-replacement sequence and its authentic illustrations.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_c300s_reset_filter_page_13",
+      "claim_ids": [
+        "claim_c300s_step_reset_filter_1",
+        "claim_c300s_step_reset_filter_2",
+        "claim_c300s_step_reset_filter_3",
+        "claim_c300s_step_reset_filter_4"
+      ],
+      "source_id": "src_manual_core300sp_us",
+      "kind": "PDF_PAGE",
+      "page": 13,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "Manual page 13 contains the Check Filter Indicator reset sequence.",
+      "proposed_by": "agent",
+      "approved_by": null
+    }
+  ]
+}

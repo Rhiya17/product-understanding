@@ -25,6 +25,8 @@ jobs:
           else
             echo "evidence-packs/ not created yet — skipping"
           fi
+      - name: Validate claim-to-media bindings
+        run: python evidence-packs/validate_media.py
 
   docs-consistency:
     name: Docs consistency
@@ -49,7 +51,7 @@ jobs:
         run: python -m pip install --quiet -r system/requirements.txt
       - name: Syntax-check all Python
         run: |
-          python -m compileall system/ evidence-packs/
+          python -m compileall app/ system/ evidence-packs/
           python -m compileall -q scripts/ $(ls -d poc-*/ 2>/dev/null || true)
       - name: Ruff lint (scripts only, advisory on POCs)
         run: |
@@ -58,7 +60,7 @@ jobs:
           ruff check poc-*/ --exit-zero
       - name: Tests (when they exist)
         run: |
-          python -m pytest -q system/tests
+          python -m pytest -q system/tests app/tests
           if ls tests/test_*.py >/dev/null 2>&1; then
             python -m pytest -q
           else

@@ -1,0 +1,51 @@
+{
+  "bindings": [
+    {
+      "binding_id": "mb_mba_left_ports",
+      "claim_ids": [
+        "claim_mba_part_magsafe_port",
+        "claim_mba_part_thunderbolt_ports",
+        "claim_mba_step_charge_1"
+      ],
+      "source_id": "src_img_guide_left_side",
+      "kind": "IMAGE",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The official M3 guide diagram identifies the MagSafe 3 and Thunderbolt ports on the left side.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_mba_right_headphone_jack",
+      "claim_ids": [
+        "claim_mba_part_headphone_jack",
+        "claim_mba_spec_headphone_jack_impedance"
+      ],
+      "source_id": "src_img_guide_right_side",
+      "kind": "IMAGE",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The official M3 guide diagram identifies the headphone jack as the sole port on the right side.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_mba_top_controls",
+      "claim_ids": [
+        "claim_mba_part_touch_id",
+        "claim_mba_step_power_on_1",
+        "claim_mba_spec_camera"
+      ],
+      "source_id": "src_img_guide_top_open",
+      "kind": "IMAGE",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The official open-top guide diagram labels Touch ID and the FaceTime HD camera on this exact M3 model.",
+      "proposed_by": "agent",
+      "approved_by": null
+    }
+  ]
+}

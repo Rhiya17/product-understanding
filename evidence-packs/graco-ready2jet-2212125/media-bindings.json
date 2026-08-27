@@ -1,0 +1,92 @@
+{
+  "bindings": [
+    {
+      "binding_id": "mb_r2j_fold_sequence",
+      "claim_ids": [
+        "claim_r2j_step_fold_1",
+        "claim_r2j_step_fold_2",
+        "claim_r2j_step_fold_3",
+        "claim_r2j_step_fold_4",
+        "claim_r2j_step_fold_5",
+        "claim_r2j_step_fold_6",
+        "claim_r2j_step_fold_7"
+      ],
+      "source_id": "src_r2j_fold_sequence_v1",
+      "kind": "IMAGE",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The official manufacturer sequence shows the exact Ready2Jet moving from open through mid-fold to folded.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_r2j_fold_video",
+      "claim_ids": [
+        "claim_r2j_step_fold_1",
+        "claim_r2j_step_fold_2",
+        "claim_r2j_step_fold_3",
+        "claim_r2j_step_fold_4",
+        "claim_r2j_step_fold_5",
+        "claim_r2j_step_fold_6",
+        "claim_r2j_step_fold_7"
+      ],
+      "source_id": "src_r2j_fold_video_v1",
+      "kind": "VIDEO_FILE",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The hash-pinned official manufacturer video demonstrates the Ready2Jet fold motion for internal local research use.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_r2j_fold_page_33",
+      "claim_ids": [
+        "claim_r2j_step_fold_1",
+        "claim_r2j_step_fold_2",
+        "claim_r2j_step_fold_3"
+      ],
+      "source_id": "src_r2j_manual_v1",
+      "kind": "PDF_PAGE",
+      "page": 33,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "Manual page 33 contains the first three fold preparation steps and their authentic illustrations.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_r2j_fold_page_34",
+      "claim_ids": [
+        "claim_r2j_step_fold_4",
+        "claim_r2j_step_fold_5",
+        "claim_r2j_step_fold_tips_1",
+        "claim_r2j_step_fold_tips_2"
+      ],
+      "source_id": "src_r2j_manual_v1",
+      "kind": "PDF_PAGE",
+      "page": 34,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "Manual page 34 contains the thumb-switch and handle-lever fold actions with authentic illustrations.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_r2j_fold_page_35",
+      "claim_ids": [
+        "claim_r2j_step_fold_6",
+        "claim_r2j_step_fold_7"
+      ],
+      "source_id": "src_r2j_manual_v1",
+      "kind": "PDF_PAGE",
+      "page": 35,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "Manual page 35 contains the final security check and carry instruction with authentic illustrations.",
+      "proposed_by": "agent",
+      "approved_by": null
+    }
+  ]
+}

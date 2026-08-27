@@ -37,7 +37,45 @@ function renderCitation(citation) {
   return wrapper;
 }
 
-function renderResult(result) {
+function renderMedia(media) {
+  const wrapper = element("figure", "media-item");
+  if (media.awaiting_approval) {
+    wrapper.append(element("div", "media-approval", "MEDIA AWAITING OWNER APPROVAL"));
+  }
+
+  if (media.kind === "IMAGE") {
+    const image = element("img", "bound-image");
+    image.src = media.url;
+    image.alt = media.rationale;
+    image.loading = "lazy";
+    wrapper.append(image);
+  } else if (media.kind === "VIDEO_FILE") {
+    const video = element("video", "bound-video");
+    video.src = media.url;
+    video.controls = true;
+    video.preload = "metadata";
+    if (media.start_seconds !== null) video.currentTime = media.start_seconds;
+    wrapper.append(video);
+    wrapper.append(element("p", "rights-note", `Rights: ${media.rights_note}`));
+  } else if (media.kind === "VIDEO_URL") {
+    const link = element("a", "official-video-link", "Open official video ↗");
+    const start = media.start_seconds === null ? "" : `#t=${media.start_seconds}`;
+    link.href = `${media.url}${start}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    wrapper.append(link);
+  } else if (media.kind === "PDF_PAGE") {
+    const link = element("a", "manual-page-link", `Open manual page ${media.page} ↗`);
+    link.href = `${media.url}#page=${media.page}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    wrapper.append(link);
+  }
+  wrapper.append(element("figcaption", "", media.rationale));
+  return wrapper;
+}
+
+function renderResult(result, renderedMedia) {
   const unpublished = result.status !== "PUBLISHED";
   const card = element("article", `result-card${unpublished ? " unpublished" : ""}`);
   const topLine = element("div", "card-topline");
@@ -53,6 +91,18 @@ function renderResult(result) {
     citations.append(element("h3", "", "Source evidence"));
     result.citations.forEach((citation) => citations.append(renderCitation(citation)));
     card.append(citations);
+  }
+
+  const unseenMedia = (result.media || []).filter((media) => {
+    if (renderedMedia.has(media.id)) return false;
+    renderedMedia.add(media.id);
+    return true;
+  });
+  if (unseenMedia.length) {
+    const mediaSection = element("div", "media-section");
+    mediaSection.append(element("h3", "", "Official media"));
+    unseenMedia.forEach((media) => mediaSection.append(renderMedia(media)));
+    card.append(mediaSection);
   }
   return card;
 }
@@ -108,7 +158,8 @@ async function submitQuestion(event) {
         : "No published answer found.";
       emptyState.hidden = false;
     } else {
-      payload.results.forEach((result) => resultsRegion.append(renderResult(result)));
+      const renderedMedia = new Set();
+      payload.results.forEach((result) => resultsRegion.append(renderResult(result, renderedMedia)));
     }
     renderNotServed(payload.not_served, previewToggle.checked);
   } catch (error) {

@@ -1,0 +1,126 @@
+{
+  "bindings": [
+    {
+      "binding_id": "mb_bqcu2_controls_image",
+      "claim_ids": [
+        "claim_bqcu2_part_controls_1",
+        "claim_bqcu2_part_aux_port_1",
+        "claim_bqcu2_step_aux_1",
+        "claim_bqcu2_step_clearlist_1"
+      ],
+      "source_id": "src_img_black_controls",
+      "kind": "IMAGE",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The official gallery view shows the right-earcup controls and the connected auxiliary cable on this exact model.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_bqcu2_folded_image",
+      "claim_ids": [
+        "claim_bqcu2_step_store_2",
+        "claim_bqcu2_step_store_3",
+        "claim_bqcu2_step_store_4"
+      ],
+      "source_id": "src_img_black_folded",
+      "kind": "IMAGE",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The official gallery image shows both earcups rotated flat in their storage orientation.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_bqcu2_pairing_video",
+      "claim_ids": [
+        "claim_bqcu2_step_pairing_1",
+        "claim_bqcu2_step_pairing_2",
+        "claim_bqcu2_step_pairing_3"
+      ],
+      "source_id": "src_video_unboxing_setup",
+      "kind": "VIDEO_URL",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The official Bose setup video demonstrates first power-on, app setup, and initial Bluetooth pairing for this model.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_bqcu2_controls_video",
+      "claim_ids": [
+        "claim_bqcu2_part_controls_1"
+      ],
+      "source_id": "src_video_controls_overview",
+      "kind": "VIDEO_URL",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The official Bose controls overview demonstrates the buttons and capacitive volume strip on this model.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_bqcu2_pairing_page_27",
+      "claim_ids": [
+        "claim_bqcu2_step_pairing_1"
+      ],
+      "source_id": "src_owners_guide_en",
+      "kind": "PDF_PAGE",
+      "page": 27,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "Owner's Guide page 27 contains the first Bluetooth pairing step and its authentic diagram.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_bqcu2_pairing_page_28",
+      "claim_ids": [
+        "claim_bqcu2_step_pairing_2",
+        "claim_bqcu2_step_pairing_3"
+      ],
+      "source_id": "src_owners_guide_en",
+      "kind": "PDF_PAGE",
+      "page": 28,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "Owner's Guide page 28 contains the device-side Bluetooth selection steps.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_bqcu2_storage_page_42",
+      "claim_ids": [
+        "claim_bqcu2_step_store_1",
+        "claim_bqcu2_step_store_2"
+      ],
+      "source_id": "src_owners_guide_en",
+      "kind": "PDF_PAGE",
+      "page": 42,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "Owner's Guide page 42 shows the first two authentic storage actions.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_bqcu2_storage_page_43",
+      "claim_ids": [
+        "claim_bqcu2_step_store_3",
+        "claim_bqcu2_step_store_4"
+      ],
+      "source_id": "src_owners_guide_en",
+      "kind": "PDF_PAGE",
+      "page": 43,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "Owner's Guide page 43 shows the final authentic folding and casing actions.",
+      "proposed_by": "agent",
+      "approved_by": null
+    }
+  ]
+}
