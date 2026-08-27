@@ -1,0 +1,64 @@
+{
+  "blender_version": "5.2.0 LTS",
+  "scaffold": {
+    "run_id": "tripo-probe-01",
+    "pack_hash": "da454173c3733e0227d90f869925145897669e96df8f7c593f0f45be94d8a83f",
+    "glb_sha256": "95e0fe44bba9a303b31849cfbec1d7d517d2ed2c6361ab505e025cf7ef80716b"
+  },
+  "timebox": "maximum 0.5 day per branch; neither branch exhausted its budget",
+  "B1_surgery": {
+    "script_runtime_seconds": 0.1145,
+    "agent_hours_including_inspection": 0.1,
+    "region_rule": "face centroid X > 0.08 m and Z > 0.22 m in Tripo coordinates",
+    "topology_before_cleanup": {
+      "vertices": 9132,
+      "edges": 25077,
+      "faces": 15982,
+      "connected_face_components": 40,
+      "boundary_edges": 2208,
+      "nonmanifold_edges": 2208
+    },
+    "boundary_edges_sent_to_hole_fill": 2208,
+    "faces_created_by_hole_fill": 22,
+    "topology_after_cleanup": {
+      "vertices": 8111,
+      "edges": 24104,
+      "faces": 16006,
+      "connected_face_components": 1,
+      "boundary_edges": 155,
+      "nonmanifold_edges": 964
+    },
+    "defects": [
+      "welded handle envelope also contains canopy/soft-goods faces",
+      "spatial cut does not recover patent pivot 118 as a clean part boundary",
+      "hole-fill closes arbitrary cut loops with non-evidenced surfaces",
+      "candidate remains unsuitable for independent hinge rotation"
+    ],
+    "rig_ready": false
+  },
+  "B2_rebuild": {
+    "script_runtime_seconds": 0.0116,
+    "agent_hours_including_inspection": 0.1,
+    "objects": [
+      "B2_LowerHandle_L",
+      "B2_UpperHandle_L",
+      "B2_HandlePivot118_L",
+      "B2_LowerHandle_R",
+      "B2_UpperHandle_R",
+      "B2_HandlePivot118_R",
+      "B2_Grip",
+      "B2_ControlHousing",
+      "B2_ThumbSwitch",
+      "B2_SqueezeLever"
+    ],
+    "object_count": 10,
+    "aggregate_boundary_edges": 0,
+    "defects": [
+      "tube centerlines and control housing are simplified to visible envelope",
+      "control travel and internal cable geometry remain INFERRED/hidden"
+    ],
+    "rig_ready": true
+  },
+  "winner": "B2_rebuild",
+  "decision": "Rebuild wins: separate manifold primitives expose the documented handle pivot and control parts immediately; surgery retains contaminated welded topology and arbitrary closure surfaces."
+}

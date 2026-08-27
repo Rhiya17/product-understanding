@@ -1,3 +1,4 @@
 .env
 __pycache__/
 runs/upload-cache.json
+*.blend1

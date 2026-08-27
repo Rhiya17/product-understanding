@@ -1,0 +1,81 @@
+{
+  "blender_version": "5.2.0 LTS",
+  "strategy": "B2 rebuild",
+  "scaffold": {
+    "run_id": "tripo-probe-01",
+    "pack_hash": "da454173c3733e0227d90f869925145897669e96df8f7c593f0f45be94d8a83f",
+    "glb_sha256": "95e0fe44bba9a303b31849cfbec1d7d517d2ed2c6361ab505e025cf7ef80716b"
+  },
+  "target_open_dimensions_m_DWH": [
+    0.6858,
+    0.5207,
+    1.0922
+  ],
+  "geometry_bbox_min_xyz": [
+    -0.3404499888420105,
+    -0.27300000190734863,
+    0.004549994599074125
+  ],
+  "geometry_bbox_max_xyz": [
+    0.34974998235702515,
+    0.26100000739097595,
+    1.0980000495910645
+  ],
+  "geometry_dimensions_m_DWH": [
+    0.6901999711990356,
+    0.534000039100647,
+    1.0934500694274902
+  ],
+  "open_dimension_error_percent_DWH": [
+    0.6415822687424438,
+    2.5542613982421587,
+    0.11445425997895757
+  ],
+  "mesh_object_count": 52,
+  "named_roots": [
+    "RigRoot",
+    "RearFrame_ROOT",
+    "FrontFrame_ROOT",
+    "LowerHandle_ROOT",
+    "UpperHandle_ROOT",
+    "SeatUnit_ROOT",
+    "Canopy_ROOT",
+    "BellyBar_ROOT",
+    "CupHolder_ROOT",
+    "Wheel_FL",
+    "Wheel_FR",
+    "Wheel_RL",
+    "Wheel_RR"
+  ],
+  "required_parts": {
+    "front_and_rear_frame": true,
+    "handle_with_controls": true,
+    "seat_backrest": true,
+    "canopy_fold_relevant": true,
+    "four_tri_spoke_wheels": true,
+    "basket_simplified": true,
+    "belly_bar": true,
+    "cup_holder": true
+  },
+  "inferred_objects": [
+    "Basket_INFERRED",
+    "CalfSupport",
+    "CanopyFabric",
+    "Canopy_ROOT",
+    "Canopy_Rib_1",
+    "Canopy_Rib_2",
+    "Canopy_Rib_3",
+    "Canopy_Rib_4",
+    "Canopy_Rib_5",
+    "CupHolder_INFERRED",
+    "CupHolder_ROOT",
+    "RearAxle",
+    "SeatBack",
+    "SeatBase",
+    "SeatUnit_ROOT",
+    "Wheel_RL",
+    "Wheel_RR"
+  ],
+  "external_spend_usd": 0,
+  "internal_only": true
+}

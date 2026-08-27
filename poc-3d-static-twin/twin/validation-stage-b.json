@@ -1,0 +1,29 @@
+{
+  "blend": "/Users/vbp/workplace/product-understanding/poc-3d-static-twin/twin/ready2jet-stage-b.blend",
+  "blender_version": "5.2.0 LTS",
+  "checks": {
+    "required_parts_present": true,
+    "geometry_collection_present": true,
+    "reference_present_and_hidden": true,
+    "internal_only_scene_flag": true,
+    "open_license_scene_flag": true,
+    "scaffold_run_id": true,
+    "scaffold_pack_hash": true,
+    "four_wheel_roots": true,
+    "three_spokes_per_wheel": true,
+    "open_dimensions_within_5_percent": true,
+    "inferred_objects_labeled": true
+  },
+  "missing_required_objects": [],
+  "dimensions_m_DWH": [
+    0.6901999711990356,
+    0.534000039100647,
+    1.0934500694274902
+  ],
+  "dimension_error_percent_DWH": [
+    0.6415799260139465,
+    2.5542657375335693,
+    0.11445052176713943
+  ],
+  "passed": true
+}

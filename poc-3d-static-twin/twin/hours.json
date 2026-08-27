@@ -7,6 +7,17 @@
       "hours": 0.3,
       "external_spend_usd": 0,
       "outcome": "Procedure, patent, video-kinematics, and inferred folded-dimension evidence assembled."
+    },
+    "B": {
+      "started_at_utc": "2026-08-27T02:47:00Z",
+      "ended_at_utc": "2026-08-27T02:57:00Z",
+      "hours": 0.2,
+      "external_spend_usd": 0,
+      "spike_hours": {
+        "B1_surgery": 0.1,
+        "B2_rebuild": 0.1
+      },
+      "outcome": "Rebuild won the handle spike; complete rig-ready part geometry rebuilt over the hidden Tripo scaffold."
     }
   }
 }
