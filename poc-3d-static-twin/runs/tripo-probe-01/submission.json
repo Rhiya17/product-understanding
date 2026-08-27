@@ -1,0 +1,37 @@
+{
+  "endpoint": "tripo3d/h3.1/multiview-to-3d",
+  "submitted_at": "2026-08-27T02:26:39.160638+00:00",
+  "inputs": [
+    {
+      "slot": "front",
+      "name": "view-01-front-3q.png",
+      "path": "/Users/vbp/workplace/product-understanding/poc-3d-static-twin/inputs/images/view-01-front-3q.png",
+      "sha256": "2480f81d2987d6c4b7026c6fd024772066b5307d4568d3740ca435c2dafed8c9"
+    },
+    {
+      "slot": "left",
+      "name": "view-04-side-profile.png",
+      "path": "/Users/vbp/workplace/product-understanding/poc-3d-static-twin/inputs/images/view-04-side-profile.png",
+      "sha256": "16d1a8f8e277b00d2be1e421b345236453bae40e02b96023ca8e3a5240cd272a"
+    }
+  ],
+  "slot_order": [
+    "front",
+    "left"
+  ],
+  "arguments": {
+    "model_seed": 20260827,
+    "texture_seed": 20260827,
+    "face_limit": 100000,
+    "geometry_quality": "detailed",
+    "texture_quality": "detailed",
+    "texture": true,
+    "pbr": true,
+    "quad": false,
+    "auto_size": true,
+    "orientation": "default"
+  },
+  "scope": "exploratory capability probe (pack v1.2); NOT the controlled cross-tool comparison",
+  "pack_version": "v1.2",
+  "pack_hash": "da454173c3733e0227d90f869925145897669e96df8f7c593f0f45be94d8a83f"
+}

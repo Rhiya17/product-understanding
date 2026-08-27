@@ -1,0 +1,4 @@
+{
+  "request_id": "01a0410a-752c-7570-aa0f-a0eb20316afb",
+  "recover_with": "python3.12 run_tripo3d.py --label tripo-probe-01-recovered --attach 01a0410a-752c-7570-aa0f-a0eb20316afb"
+}
