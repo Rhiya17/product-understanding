@@ -1,0 +1,64 @@
+{
+  "axis_order": "DWH = Blender XYZ",
+  "open": {
+    "frame": 1,
+    "bbox_min_xyz_m": [
+      -0.3404499888420105,
+      -0.27300000190734863,
+      0.004549994599074125
+    ],
+    "bbox_max_xyz_m": [
+      0.34974998235702515,
+      0.26100000739097595,
+      1.0980000495910645
+    ],
+    "dimensions_m_DWH": [
+      0.6901999711990356,
+      0.534000039100647,
+      1.0934500694274902
+    ],
+    "target_m_DWH": [
+      0.6858,
+      0.5207,
+      1.0922
+    ],
+    "error_percent_DWH": [
+      0.6415822687424438,
+      2.5542613982421587,
+      0.11445425997895757
+    ],
+    "target_confidence": "OFFICIAL"
+  },
+  "folded": {
+    "frame": 96,
+    "bbox_min_xyz_m": [
+      -0.08399999886751175,
+      -0.29545000195503235,
+      0.0052499910816550255
+    ],
+    "bbox_max_xyz_m": [
+      0.39287686347961426,
+      0.29545000195503235,
+      0.8309374451637268
+    ],
+    "dimensions_m_DWH": [
+      0.4768768548965454,
+      0.5909000039100647,
+      0.8256874680519104
+    ],
+    "target_m_DWH": [
+      0.2921,
+      0.5207,
+      0.762
+    ],
+    "error_percent_DWH": [
+      63.25808110117952,
+      13.481852104871257,
+      8.357935439883253
+    ],
+    "target_confidence": "INFERRED",
+    "target_method": "Planar width retained from the official open width; depth and height estimated from the official fold video's final self-standing pose against the known open envelope and manual fold diagrams. Cross-check only: manufacturer-authored retailer Q&A reports 20.5 W x 11.5 D x 30 H in. No folded W x D x H is published in the official manual or Graco PDP."
+  },
+  "external_spend_usd": 0,
+  "internal_only": true
+}

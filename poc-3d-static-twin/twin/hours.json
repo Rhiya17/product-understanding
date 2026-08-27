@@ -25,6 +25,15 @@
       "hours": 0.3,
       "external_spend_usd": 0,
       "outcome": "Evidence-mapped parameter rig authored with continuous stage controls, correct and defect actions, ground-safe fold arc, and folded-pose QA."
+    },
+    "D": {
+      "started_at_utc": "2026-08-27T03:12:00Z",
+      "ended_at_utc": "2026-08-27T06:14:00Z",
+      "hours": 3.0,
+      "external_spend_usd": 0,
+      "outcome": "Three 1024 px scripted animations rendered and visually reframed; pose contact sheet, envelope measurements, report, and final validators completed."
     }
-  }
+  },
+  "total_hours": 3.8,
+  "total_external_spend_usd": 0
 }

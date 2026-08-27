@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "render_checks": {
+    "open-turntable": {
+      "bytes": 10184640,
+      "size_px": [
+        1024,
+        1024
+      ],
+      "encoded_frames": 25,
+      "source_frames": 72
+    },
+    "fold-official-angle": {
+      "bytes": 11623223,
+      "size_px": [
+        1024,
+        1024
+      ],
+      "encoded_frames": 29,
+      "source_frames": 96
+    },
+    "fold-novel-rear-right": {
+      "bytes": 12379550,
+      "size_px": [
+        1024,
+        1024
+      ],
+      "encoded_frames": 29,
+      "source_frames": 96
+    }
+  },
+  "contact_sheet_size_px": [
+    1536,
+    2316
+  ],
+  "matched_pose_count": 5,
+  "open_dimension_error_percent_DWH": [
+    0.6415822687424438,
+    2.5542613982421587,
+    0.11445425997895757
+  ],
+  "folded_dimension_error_percent_DWH": [
+    63.25808110117952,
+    13.481852104871257,
+    8.357935439883253
+  ],
+  "folded_dimension_confidence": "INFERRED",
+  "total_hours": 3.8,
+  "external_spend_usd": 0,
+  "internal_only": true,
+  "errors": []
+}

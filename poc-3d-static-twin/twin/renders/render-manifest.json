@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "internal_only": true,
+  "external_spend_usd": 0,
+  "renders": {
+    "fold-official-angle": {
+      "file": "fold-official-angle.gif",
+      "resolution_px": [
+        1024,
+        1024
+      ],
+      "source_frame_count": 96,
+      "source_fps": 24,
+      "selected_frame_count": 33,
+      "encoded_frame_count": 29,
+      "encoded_frame_step": 3,
+      "encoded_frame_duration_ms": 125,
+      "format_reason": "GIF is an allowed work-order format and was used because the installed Blender build has no FFmpeg codec and no local system encoder is present."
+    },
+    "open-turntable": {
+      "file": "open-turntable.gif",
+      "resolution_px": [
+        1024,
+        1024
+      ],
+      "source_frame_count": 72,
+      "source_fps": 24,
+      "selected_frame_count": 25,
+      "encoded_frame_count": 25,
+      "encoded_frame_step": 3,
+      "encoded_frame_duration_ms": 125,
+      "format_reason": "GIF is an allowed work-order format and was used because the installed Blender build has no FFmpeg codec and no local system encoder is present."
+    },
+    "fold-novel-rear-right": {
+      "file": "fold-novel-rear-right.gif",
+      "resolution_px": [
+        1024,
+        1024
+      ],
+      "source_frame_count": 96,
+      "source_fps": 24,
+      "selected_frame_count": 33,
+      "encoded_frame_count": 29,
+      "encoded_frame_step": 3,
+      "encoded_frame_duration_ms": 125,
+      "format_reason": "GIF is an allowed work-order format and was used because the installed Blender build has no FFmpeg codec and no local system encoder is present."
+    }
+  }
+}
