@@ -1,0 +1,45 @@
+{
+  "glb": "pbr_model-wTBg81hlp4aYRYEHUDwqP_model.glb",
+  "object_count": 1,
+  "vertex_count": 37906,
+  "face_count": 62758,
+  "weld_tolerance_m": 6.775301197110392e-06,
+  "welded_component_count": 6,
+  "component_face_counts_desc": [
+    51100,
+    3548,
+    2970,
+    2280,
+    1714,
+    1146
+  ],
+  "largest_shell_face_share": 0.814238822142197,
+  "component_surface_areas_desc_m2": [
+    35.58267379811924,
+    0.8370398967198823,
+    0.7197325153902568,
+    0.5257599904675705,
+    0.47997387431218447,
+    0.46547727032117714
+  ],
+  "largest_shell_area_share": 0.9215764828832347,
+  "axis_aligned_extents_m": [
+    6.2436792850494385,
+    2.4333465099334717,
+    1.0000000298023224
+  ],
+  "pca_obb_extents_m": [
+    6.255552717472861,
+    2.4390942031231373,
+    0.9956195774635418
+  ],
+  "pca_obb_extents_sorted_m": [
+    0.9956195774635418,
+    2.4390942031231373,
+    6.255552717472861
+  ],
+  "analysis_note": "Position weld uses 1e-6 of mesh diagonal; largest-shell headline uses face share, matching the existing Tripo probe scorecard convention.",
+  "rights_note": "Tripo3D license check OPEN \u2014 do not ship",
+  "approved_by": null,
+  "internal_only": true
+}

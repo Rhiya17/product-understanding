@@ -1,0 +1,22 @@
+[
+  {
+    "kind": "model_mesh",
+    "file": "model_mesh-zTFUED2CgtA628PGPOxHI_model.glb",
+    "sha256": "604df8832e8c74ef040e5d7dd9d8c7acb07db08e9382208ad87b5e3a2630686c"
+  },
+  {
+    "kind": "glb",
+    "file": "glb-zTFUED2CgtA628PGPOxHI_model.glb",
+    "sha256": "604df8832e8c74ef040e5d7dd9d8c7acb07db08e9382208ad87b5e3a2630686c"
+  },
+  {
+    "kind": "pbr_model",
+    "file": "pbr_model-zTFUED2CgtA628PGPOxHI_model.glb",
+    "sha256": "604df8832e8c74ef040e5d7dd9d8c7acb07db08e9382208ad87b5e3a2630686c"
+  },
+  {
+    "kind": "rendered_image",
+    "file": "rendered_image-BZ1-Cbgvi28QpBxiDXpJd_preview.png",
+    "sha256": "aee386978261964e4a6344c0c395eed5b9f935702531fea10e1bb8a44dc2c38b"
+  }
+]

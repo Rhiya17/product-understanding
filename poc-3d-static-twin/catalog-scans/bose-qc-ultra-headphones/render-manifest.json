@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-08-27T08:40:58.379171+00:00",
+  "frame_count": 24,
+  "resolution_px": [
+    1024,
+    1024
+  ],
+  "gif": "turntable-internal-only.gif",
+  "gif_sha256": "ee00fbe232976ce5e301d0db836c28dc2ab5971d41c271c8b8f336b6044ff879",
+  "frames_dir": "frames-turntable",
+  "frame_sha256": [
+    {
+      "file": "frame-0000.png",
+      "sha256": "2a08fc296a05330dd84efaa425eb13e09095b50de366558325a19dea2850657c"
+    },
+    {
+      "file": "frame-0001.png",
+      "sha256": "359c56f7b5e79bccb7c909c75a840d4d0fdfef92c2d0b7bf4949318e66e1ac14"
+    },
+    {
+      "file": "frame-0002.png",
+      "sha256": "7a8b5ca2b90d1fc4ed0dc2c060ce3ea40bbf0deeb9d7cdddd729ccdde6f9ad5b"
+    },
+    {
+      "file": "frame-0003.png",
+      "sha256": "5ad5f92f97f78720cb663d000a20afee856bcb98bd1df149ca1a989fcd0092ed"
+    },
+    {
+      "file": "frame-0004.png",
+      "sha256": "13f4a0f541efa3df4d956933faf012d8a1c676bd6e71100c3b8671fe336736fe"
+    },
+    {
+      "file": "frame-0005.png",
+      "sha256": "03e9d25a864e91b3b75a2fdf8e7195cfe359c9168c2e8b966650ab4d71f2aca6"
+    },
+    {
+      "file": "frame-0006.png",
+      "sha256": "3062fd33a476204d051d8c86597d880ade4c8b97539557e3b5e2ea82926a9da0"
+    },
+    {
+      "file": "frame-0007.png",
+      "sha256": "4179a8b55843d274ee1b7320f04b395a2085b2bba184b15cc70cc0b7937009ac"
+    },
+    {
+      "file": "frame-0008.png",
+      "sha256": "5f4be0c3ebd19ef684707439041ef84a82b72ed79e35a2b23539094128348a26"
+    },
+    {
+      "file": "frame-0009.png",
+      "sha256": "e653d4ab40e63ea1a908176403b5c8908da8ae266ecaa5785ca3331340e8961a"
+    },
+    {
+      "file": "frame-0010.png",
+      "sha256": "ba3a0134abaf49eb66dc84b394e4fab5ee05e2ebfdaa2524cb5204f7e20c4ea7"
+    },
+    {
+      "file": "frame-0011.png",
+      "sha256": "7ff0a6301f5917c21e1c2e5e09d6e697439c9493751f0cd2ef554a2d46283e23"
+    },
+    {
+      "file": "frame-0012.png",
+      "sha256": "a1077dfb2749ae5314b83590eb14dee7d182c32f84382d08f19992f39bb76235"
+    },
+    {
+      "file": "frame-0013.png",
+      "sha256": "728ab7a0aad320dcb561873aa6526c1706d0a6594bda928f4f7f8087ebfd4530"
+    },
+    {
+      "file": "frame-0014.png",
+      "sha256": "6d16113f9708cdd57e5b2e4f8f05b207eadf1443eb3a5622aa705da4113ec068"
+    },
+    {
+      "file": "frame-0015.png",
+      "sha256": "3cc16efd0d492f4ad073800a700da25bd4a66b153f07b84af0ca0f525192c52a"
+    },
+    {
+      "file": "frame-0016.png",
+      "sha256": "2a38a87322cd44e96504546cdcbabb5fbd8fd692dc4d7a28fd7cd4b7ffd88753"
+    },
+    {
+      "file": "frame-0017.png",
+      "sha256": "390a314fc5c4ec55d05468bb5d7a08c8a903dd2e170ef276ae29a982ee7d368f"
+    },
+    {
+      "file": "frame-0018.png",
+      "sha256": "3ce4731395bc9f82e14fad53f8b074d788aba9ddb111d88aff1a2df38ab61b74"
+    },
+    {
+      "file": "frame-0019.png",
+      "sha256": "3f8e08bf39e0d219061f5fbc2db5e3aa436f18dfa539a7e19a3f06534da5e5e8"
+    },
+    {
+      "file": "frame-0020.png",
+      "sha256": "78786bde4a299c9c20ea615a1194bdf5ce4a112fe9ca163f22a9a352a1389f68"
+    },
+    {
+      "file": "frame-0021.png",
+      "sha256": "9f21ff4d2f2bf9af7a0269449289326c2a6ffe3fee029bb687834e56b91fe96c"
+    },
+    {
+      "file": "frame-0022.png",
+      "sha256": "f5768ec3b106c8bc9e76be539a3acccd0b491060cd3a15af64ebfccd1f479a88"
+    },
+    {
+      "file": "frame-0023.png",
+      "sha256": "38dcae52ad51f47b8037418cf3a30ce9303c50166b347e35b944b77271a2c45c"
+    }
+  ],
+  "rights_note": "Tripo3D license check OPEN \u2014 do not ship",
+  "approved_by": null,
+  "internal_only": true
+}

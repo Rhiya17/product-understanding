@@ -5,7 +5,12 @@
   "provider": "fal.ai / tripo3d/h3.1/multiview-to-3d",
   "provider_slot_contract": {
     "image_count": "2-4",
-    "semantic_order": ["front", "left", "back", "right"],
+    "semantic_order": [
+      "front",
+      "left",
+      "back",
+      "right"
+    ],
     "front_required": true
   },
   "selected_inputs": [
@@ -37,9 +42,9 @@
     }
   ],
   "selection_notes": "The submitted labels are honest and contiguous (front, left). The open front conflicts with the closed left state and the guide image contains annotations. This limitation is accepted for an internal probe and must be scored, not concealed.",
-  "expected_provider_spend_usd": 0.60,
-  "request_id": null,
-  "rights_note": "Tripo3D license check OPEN — do not ship",
+  "expected_provider_spend_usd": 0.6,
+  "request_id": "01a04258-a4b7-7fb1-9196-b018747c7742",
+  "rights_note": "Tripo3D license check OPEN \u2014 do not ship",
   "approved_by": null,
   "internal_only": true
 }

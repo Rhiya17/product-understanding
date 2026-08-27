@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "product_id": "prod_bose_qc_ultra_headphones",
+  "assets": [
+    {
+      "asset_id": "derived_bose_tripo_h31_turntable_20260827",
+      "type": "TURNTABLE_GIF",
+      "local_path": "poc-3d-static-twin/catalog-scans/bose-qc-ultra-headphones/turntable-internal-only.gif",
+      "sha256": "ee00fbe232976ce5e301d0db836c28dc2ab5971d41c271c8b8f336b6044ff879",
+      "provider": "fal.ai / tripo3d/h3.1/multiview-to-3d",
+      "request_id": "01a04255-9708-7e12-aafa-44a4cc2865b5",
+      "input_hashes": [
+        "c8706c2b262f3b8b18f750582a090c3b4496d02f543ff2b6f3797292a49af990",
+        "2a0fc8126f75e7b6e0bc755bdbb4ca7bec47e733d5366270782ef28b07d9034a"
+      ],
+      "license_status": "OPEN",
+      "rights_note": "Tripo3D license check OPEN — do not ship",
+      "approved_by": null,
+      "internal_only": true
+    }
+  ]
+}

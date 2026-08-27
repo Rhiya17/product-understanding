@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "product_id": "prod_apple_macbook_air_13_m3",
+  "assets": [
+    {
+      "asset_id": "derived_mba13m3_tripo_h31_turntable_20260827",
+      "type": "TURNTABLE_GIF",
+      "local_path": "poc-3d-static-twin/catalog-scans/apple-macbook-air-13-m3/turntable-internal-only.gif",
+      "sha256": "00fe4c483c79812e973345fb3023d483e980291d54c58c85cf55fa0af1976ef5",
+      "provider": "fal.ai / tripo3d/h3.1/multiview-to-3d",
+      "request_id": "01a04258-a4b7-7fb1-9196-b018747c7742",
+      "input_hashes": [
+        "ee6b9cb5b0f5e399e34c14720c889baf52945e751b24c060763c0917e5cd66ad",
+        "ce9223456435cefc0858bc45a491e37e0c4acdfec5f0c26a7e8785e6740efdda"
+      ],
+      "license_status": "OPEN",
+      "rights_note": "Tripo3D license check OPEN — do not ship",
+      "approved_by": null,
+      "internal_only": true
+    }
+  ]
+}

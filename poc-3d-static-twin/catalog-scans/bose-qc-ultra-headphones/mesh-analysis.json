@@ -1,0 +1,35 @@
+{
+  "glb": "pbr_model-zTFUED2CgtA628PGPOxHI_model.glb",
+  "object_count": 1,
+  "vertex_count": 54612,
+  "face_count": 97648,
+  "weld_tolerance_m": 3.712430338074551e-07,
+  "welded_component_count": 1,
+  "component_face_counts_desc": [
+    97648
+  ],
+  "largest_shell_face_share": 1.0,
+  "component_surface_areas_desc_m2": [
+    0.13630518953709908
+  ],
+  "largest_shell_area_share": 1.0,
+  "axis_aligned_extents_m": [
+    0.11063956469297409,
+    0.25115787982940674,
+    0.2499999925494194
+  ],
+  "pca_obb_extents_m": [
+    0.2485071397213668,
+    0.25608006081142193,
+    0.11102817444791174
+  ],
+  "pca_obb_extents_sorted_m": [
+    0.11102817444791174,
+    0.2485071397213668,
+    0.25608006081142193
+  ],
+  "analysis_note": "Position weld uses 1e-6 of mesh diagonal; largest-shell headline uses face share, matching the existing Tripo probe scorecard convention.",
+  "rights_note": "Tripo3D license check OPEN \u2014 do not ship",
+  "approved_by": null,
+  "internal_only": true
+}

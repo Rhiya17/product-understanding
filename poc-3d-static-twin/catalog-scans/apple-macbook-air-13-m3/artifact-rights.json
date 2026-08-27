@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "product": "apple-macbook-air-13-m3",
+  "request_id": "01a04258-a4b7-7fb1-9196-b018747c7742",
+  "artifacts": [
+    {"file": "model_mesh-wTBg81hlp4aYRYEHUDwqP_model.glb", "sha256": "33e1b5c60298c66f8d9e017c24c010456c86373e1cb8b009fa0bf83796e3bb75"},
+    {"file": "glb-wTBg81hlp4aYRYEHUDwqP_model.glb", "sha256": "33e1b5c60298c66f8d9e017c24c010456c86373e1cb8b009fa0bf83796e3bb75"},
+    {"file": "pbr_model-wTBg81hlp4aYRYEHUDwqP_model.glb", "sha256": "33e1b5c60298c66f8d9e017c24c010456c86373e1cb8b009fa0bf83796e3bb75"},
+    {"file": "rendered_image-Y_J9mZBB42fY1cyAEF9ui_preview.png", "sha256": "e4171636198435e52018182d22c4867276a07d256907d1067333fd6675dcdf3f"},
+    {"file": "turntable-internal-only.gif", "sha256": "00fe4c483c79812e973345fb3023d483e980291d54c58c85cf55fa0af1976ef5"}
+  ],
+  "rights_note": "Tripo3D license check OPEN — do not ship",
+  "approved_by": null,
+  "internal_only": true
+}

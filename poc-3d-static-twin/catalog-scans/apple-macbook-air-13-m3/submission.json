@@ -1,0 +1,46 @@
+{
+  "endpoint": "tripo3d/h3.1/multiview-to-3d",
+  "submitted_at": "2026-08-27T08:31:39.309818+00:00",
+  "product": "apple-macbook-air-13-m3",
+  "inputs": [
+    {
+      "slot": "front",
+      "source_id": "src_img_store_starlight",
+      "local_path": "source-vault/apple-macbook-air-13-m3/images/store-color-starlight.jpg",
+      "sha256": "ee6b9cb5b0f5e399e34c14720c889baf52945e751b24c060763c0917e5cd66ad",
+      "person_free": true,
+      "semantic_assessment": "exact front view of the open 13-inch product, Starlight",
+      "path": "/Users/vbp/workplace/product-understanding/source-vault/apple-macbook-air-13-m3/images/store-color-starlight.jpg"
+    },
+    {
+      "slot": "left",
+      "source_id": "src_img_guide_left_side",
+      "local_path": "source-vault/apple-macbook-air-13-m3/images/guide-left-side-magsafe-thunderbolt-ports.png",
+      "sha256": "ce9223456435cefc0858bc45a491e37e0c4acdfec5f0c26a7e8785e6740efdda",
+      "person_free": true,
+      "semantic_assessment": "true left profile from the official guide; closed state with port callouts",
+      "path": "/Users/vbp/workplace/product-understanding/source-vault/apple-macbook-air-13-m3/images/guide-left-side-magsafe-thunderbolt-ports.png"
+    }
+  ],
+  "slot_order": [
+    "front",
+    "left"
+  ],
+  "input_fingerprint": "03bf353d3c65328c56d8bcfaf3a6bfe28d9302ce289954a0f69ac60309230dd2",
+  "arguments": {
+    "model_seed": 20260827,
+    "texture_seed": 20260827,
+    "face_limit": 100000,
+    "geometry_quality": "detailed",
+    "texture_quality": "detailed",
+    "texture": true,
+    "pbr": true,
+    "quad": false,
+    "auto_size": true,
+    "orientation": "default"
+  },
+  "scope": "internal-only exploratory catalog capability probe",
+  "estimated_spend_usd": 0.6,
+  "rights_note": "Tripo3D license check OPEN \u2014 do not ship",
+  "approved_by": null
+}

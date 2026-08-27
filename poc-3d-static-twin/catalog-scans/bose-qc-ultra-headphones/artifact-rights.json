@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "product": "bose-qc-ultra-headphones",
+  "request_id": "01a04255-9708-7e12-aafa-44a4cc2865b5",
+  "artifacts": [
+    {"file": "model_mesh-zTFUED2CgtA628PGPOxHI_model.glb", "sha256": "604df8832e8c74ef040e5d7dd9d8c7acb07db08e9382208ad87b5e3a2630686c"},
+    {"file": "glb-zTFUED2CgtA628PGPOxHI_model.glb", "sha256": "604df8832e8c74ef040e5d7dd9d8c7acb07db08e9382208ad87b5e3a2630686c"},
+    {"file": "pbr_model-zTFUED2CgtA628PGPOxHI_model.glb", "sha256": "604df8832e8c74ef040e5d7dd9d8c7acb07db08e9382208ad87b5e3a2630686c"},
+    {"file": "rendered_image-BZ1-Cbgvi28QpBxiDXpJd_preview.png", "sha256": "aee386978261964e4a6344c0c395eed5b9f935702531fea10e1bb8a44dc2c38b"},
+    {"file": "turntable-internal-only.gif", "sha256": "ee00fbe232976ce5e301d0db836c28dc2ab5971d41c271c8b8f336b6044ff879"}
+  ],
+  "rights_note": "Tripo3D license check OPEN — do not ship",
+  "approved_by": null,
+  "internal_only": true
+}

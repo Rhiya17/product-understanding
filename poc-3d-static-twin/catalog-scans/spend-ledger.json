@@ -14,6 +14,22 @@
       "status": "skipped",
       "spend_usd": 0.0,
       "request_id": null
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "status": "complete",
+      "spend_usd": 0.6,
+      "request_id": "01a04255-9708-7e12-aafa-44a4cc2865b5",
+      "reserved_at": "2026-08-27T08:28:18.932818+00:00",
+      "completed_at": "2026-08-27T08:31:30.054602+00:00"
+    },
+    {
+      "product": "apple-macbook-air-13-m3",
+      "status": "complete",
+      "spend_usd": 0.6,
+      "request_id": "01a04258-a4b7-7fb1-9196-b018747c7742",
+      "reserved_at": "2026-08-27T08:31:39.310189+00:00",
+      "completed_at": "2026-08-27T08:33:51.552786+00:00"
     }
   ]
 }
