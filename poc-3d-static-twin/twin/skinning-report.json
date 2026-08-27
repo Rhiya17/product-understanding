@@ -1,0 +1,277 @@
+{
+  "status": "BUILT_PENDING_VALIDATION",
+  "blender_version": "5.2.0 LTS",
+  "source_rig": "ready2jet-rigged.blend",
+  "source_rig_sha256": "83d80dc107d46edecbe89d4d97dabf726887012dd4c0917f8da8e2961a9dc79d",
+  "source_scan_object": "REFERENCE_TripoProbe01_DO_NOT_RENDER",
+  "source_scan_run_id": "tripo-probe-01",
+  "source_scan_glb_sha256": "95e0fe44bba9a303b31849cfbec1d7d517d2ed2c6361ab505e025cf7ef80716b",
+  "output_blend": "ready2jet-skinned.blend",
+  "motion_authority": "existing object rig; pose bones COPY_TRANSFORMS in WORLD space",
+  "action": "Ready2Jet_Fold_Correct",
+  "defect_parameters": [
+    "defect_reverse_direction",
+    "defect_skip_handle_release",
+    "defect_skip_latch"
+  ],
+  "bone_targets": {
+    "rig_root": "RigRoot",
+    "rear_frame": "RearFrame_ROOT",
+    "front_frame": "FrontFrame_ROOT",
+    "lower_handle": "LowerHandle_ROOT",
+    "upper_handle": "UpperHandle_ROOT",
+    "seat_unit": "SeatUnit_ROOT",
+    "canopy": "Canopy_ROOT",
+    "belly_bar": "BellyBar_ROOT",
+    "cup_holder": "CupHolder_ROOT",
+    "basket": "Basket_INFERRED",
+    "wheel_FL": "Wheel_FL",
+    "wheel_FR": "Wheel_FR",
+    "wheel_RL": "Wheel_RL",
+    "wheel_RR": "Wheel_RR",
+    "thumb_switch_validation": "ThumbSwitch",
+    "squeeze_lever_validation": "SqueezeLever"
+  },
+  "alignment": {
+    "method": "axis-preserving non-uniform bbox fit to the evidence-mapped rig rest envelope; baked scan lean retained",
+    "source_matrix_world": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "applied_matrix_world_before_bake": [
+      [
+        0.7977742552757263,
+        0.0,
+        0.0,
+        0.004813893232494593
+      ],
+      [
+        0.0,
+        0.796847403049469,
+        0.0,
+        -0.00599261187016964
+      ],
+      [
+        0.0,
+        0.0,
+        1.1165064573287964,
+        0.5513283014297485
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_bbox_min_xyz_m": [
+      -0.43278393149375916,
+      -0.33507972955703735,
+      -0.48972249031066895
+    ],
+    "source_bbox_max_xyz_m": [
+      0.432373046875,
+      0.3350611925125122,
+      0.48962703347206116
+    ],
+    "rig_rest_bbox_min_xyz_m": [
+      -0.3404499888420105,
+      -0.27300000190734863,
+      0.004549994599074125
+    ],
+    "rig_rest_bbox_max_xyz_m": [
+      0.34974998235702515,
+      0.26100000739097595,
+      1.0980000495910645
+    ],
+    "applied_scale_xyz": [
+      0.7977742552757263,
+      0.796847403049469,
+      1.1165064573287964
+    ],
+    "aligned_bbox_min_xyz_m": [
+      -0.3404499888420105,
+      -0.273000031709671,
+      0.004549980163574219
+    ],
+    "aligned_bbox_max_xyz_m": [
+      0.34974995255470276,
+      0.26100000739097595,
+      1.0980000495910645
+    ]
+  },
+  "binding": {
+    "method": "nearest evidence-mapped proxy surface",
+    "smoothing_band_m": 0.03,
+    "smoothing_definition": "only declared hinge-axis bands blend: radial distance and the two proxy-distance difference must both be < 0.03 m",
+    "smoothing_joints": [
+      {
+        "name": "front_frame_about_hub112",
+        "bones": [
+          "front_frame",
+          "rear_frame"
+        ],
+        "pivot": [
+          0.0,
+          0.0,
+          0.52
+        ],
+        "axis": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "name": "seat_follow",
+        "bones": [
+          "seat_unit",
+          "rear_frame"
+        ],
+        "pivot": [
+          -0.01,
+          0.0,
+          0.53
+        ],
+        "axis": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "name": "canopy_fold",
+        "bones": [
+          "canopy",
+          "seat_unit"
+        ],
+        "pivot": [
+          0.145,
+          0.0,
+          0.845
+        ],
+        "axis": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      }
+    ],
+    "force_rigid_bones": [
+      "belly_bar",
+      "cup_holder",
+      "lower_handle",
+      "upper_handle",
+      "wheel_FL",
+      "wheel_FR",
+      "wheel_RL",
+      "wheel_RR"
+    ],
+    "vertex_count": 59099,
+    "primary_vertex_counts": {
+      "basket": 12745,
+      "belly_bar": 637,
+      "canopy": 1224,
+      "front_frame": 4776,
+      "lower_handle": 2214,
+      "rear_frame": 4706,
+      "seat_unit": 23028,
+      "upper_handle": 6093,
+      "wheel_FL": 2086,
+      "wheel_RL": 1590
+    },
+    "smoothed_vertex_count": 696,
+    "smoothed_vertex_fraction": 0.011776849016057802,
+    "smoothed_pair_counts": {
+      "canopy_fold": 452,
+      "front_frame_about_hub112": 59,
+      "seat_follow": 185
+    },
+    "topology_majority_relabels": 86,
+    "rigid_override_spheres": [
+      {
+        "bone": "wheel_FL",
+        "center": [
+          -0.28,
+          -0.235,
+          0.065
+        ],
+        "radius_m": 0.105,
+        "reason": "aligned scan feature is close to documented caster pivot"
+      },
+      {
+        "bone": "wheel_RL",
+        "center": [
+          0.28,
+          -0.235,
+          0.075
+        ],
+        "radius_m": 0.115,
+        "reason": "aligned scan feature is close to documented rear-wheel pivot"
+      },
+      {
+        "bone": "front_frame",
+        "center": [
+          -0.267,
+          0.064,
+          0.114
+        ],
+        "radius_m": 0.09,
+        "reason": "provider reconstruction collapsed far-side wheel inward; rigidly follow its documented parent instead of orbiting around an invented corrected pivot"
+      },
+      {
+        "bone": "rear_frame",
+        "center": [
+          0.156,
+          0.01,
+          0.122
+        ],
+        "radius_m": 0.09,
+        "reason": "provider reconstruction collapsed far-side wheel inward; rigidly follow its documented parent instead of orbiting around an invented corrected pivot"
+      },
+      {
+        "bone": "lower_handle",
+        "center": [
+          0.14,
+          0.15,
+          0.775
+        ],
+        "radius_m": 0.055,
+        "reason": "provider reconstruction places the cup-side surface away from the documented cup pivot; rigid parent mask avoids invented alignment"
+      }
+    ],
+    "rigid_override_vertex_counts": {
+      "front_frame": 2557,
+      "lower_handle": 1031,
+      "rear_frame": 2577,
+      "wheel_FL": 2086,
+      "wheel_RL": 746
+    }
+  },
+  "rights_note": "Tripo3D license check OPEN \u2014 do not ship",
+  "approved_by": null,
+  "internal_only": true,
+  "external_spend_usd": 0
+}

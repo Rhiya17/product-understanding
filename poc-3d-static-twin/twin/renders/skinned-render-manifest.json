@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "source_blend": "ready2jet-skinned.blend",
+  "motion_authority": "ready2jet-rigged.blend / Ready2Jet_Fold_Correct; unchanged",
+  "rights_note": "Tripo3D license check OPEN \u2014 do not ship",
+  "approved_by": null,
+  "internal_only": true,
+  "external_spend_usd": 0,
+  "renders": {
+    "skinned-fold-official-angle": {
+      "file": "skinned-fold-official-angle.gif",
+      "sha256": "89959c0235c4e61b1572f1719a71c56969e217ca7c6d60ab6fee91bc5de1d671",
+      "resolution_px": [
+        1024,
+        1024
+      ],
+      "source_frame_count": 96,
+      "source_fps": 24,
+      "selected_frame_count": 33,
+      "encoded_frame_count": 24,
+      "encoded_frame_step": 3,
+      "encoded_frame_duration_ms": 125,
+      "rights_note": "Tripo3D license check OPEN \u2014 do not ship",
+      "approved_by": null,
+      "internal_only": true
+    },
+    "skinned-fold-novel-rear-right": {
+      "file": "skinned-fold-novel-rear-right.gif",
+      "sha256": "2efc336b0a6e557bcfbad748c83eb652b06e1aab085305f5717af45c35ea4127",
+      "resolution_px": [
+        1024,
+        1024
+      ],
+      "source_frame_count": 96,
+      "source_fps": 24,
+      "selected_frame_count": 33,
+      "encoded_frame_count": 22,
+      "encoded_frame_step": 3,
+      "encoded_frame_duration_ms": 125,
+      "rights_note": "Tripo3D license check OPEN \u2014 do not ship",
+      "approved_by": null,
+      "internal_only": true
+    }
+  }
+}

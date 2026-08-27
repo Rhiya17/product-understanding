@@ -1,0 +1,272 @@
+{
+  "status": "MEASURED",
+  "method": "per-frame evaluated edge length divided by frame-1 rest length",
+  "frames_checked": [
+    1,
+    96
+  ],
+  "frame_count": 96,
+  "mesh_edge_count": 158045,
+  "visible_artifact_threshold_ratio": 1.6,
+  "whole_mesh_max_ratio": 192.55599941950564,
+  "whole_mesh_worst_frame": 84,
+  "whole_mesh_worst_edge_index": 72474,
+  "severe_joint_count": 8,
+  "bands": [
+    {
+      "joint": "front_frame_about_hub112",
+      "bones": [
+        "front_frame",
+        "rear_frame"
+      ],
+      "pivot": [
+        0.0,
+        0.0,
+        0.52
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "radius_m": 0.04,
+      "edge_count": 726,
+      "max_edge_length_ratio_vs_rest": 29.64833160611206,
+      "min_edge_length_ratio_vs_rest": 0.19226578106893838,
+      "worst_frame": 84,
+      "worst_edge_index": 22419,
+      "visible_artifact": true,
+      "coverage_note": null
+    },
+    {
+      "joint": "lower_handle_about_hub112",
+      "bones": [
+        "lower_handle",
+        "rear_frame"
+      ],
+      "pivot": [
+        0.0,
+        0.0,
+        0.52
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "radius_m": 0.04,
+      "edge_count": 696,
+      "max_edge_length_ratio_vs_rest": 29.64833160611206,
+      "min_edge_length_ratio_vs_rest": 0.19226578106893838,
+      "worst_frame": 84,
+      "worst_edge_index": 22419,
+      "visible_artifact": true,
+      "coverage_note": null
+    },
+    {
+      "joint": "upper_handle_pivot118",
+      "bones": [
+        "upper_handle",
+        "lower_handle"
+      ],
+      "pivot": [
+        0.17,
+        0.0,
+        0.79
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "radius_m": 0.04,
+      "edge_count": 2121,
+      "max_edge_length_ratio_vs_rest": 15.606799001743953,
+      "min_edge_length_ratio_vs_rest": 0.7666378719693261,
+      "worst_frame": 84,
+      "worst_edge_index": 137519,
+      "visible_artifact": true,
+      "coverage_note": null
+    },
+    {
+      "joint": "seat_follow",
+      "bones": [
+        "seat_unit",
+        "rear_frame"
+      ],
+      "pivot": [
+        -0.01,
+        0.0,
+        0.53
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "radius_m": 0.04,
+      "edge_count": 5911,
+      "max_edge_length_ratio_vs_rest": 71.8744098463969,
+      "min_edge_length_ratio_vs_rest": 0.19226578106893838,
+      "worst_frame": 84,
+      "worst_edge_index": 22423,
+      "visible_artifact": true,
+      "coverage_note": null
+    },
+    {
+      "joint": "canopy_fold",
+      "bones": [
+        "canopy",
+        "seat_unit"
+      ],
+      "pivot": [
+        0.145,
+        0.0,
+        0.845
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "radius_m": 0.04,
+      "edge_count": 1888,
+      "max_edge_length_ratio_vs_rest": 11.978444033813256,
+      "min_edge_length_ratio_vs_rest": 0.029798564301643467,
+      "worst_frame": 82,
+      "worst_edge_index": 89381,
+      "visible_artifact": true,
+      "coverage_note": null
+    },
+    {
+      "joint": "belly_bar_follow",
+      "bones": [
+        "belly_bar",
+        "seat_unit"
+      ],
+      "pivot": [
+        -0.02,
+        0.0,
+        0.59
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "radius_m": 0.04,
+      "edge_count": 2557,
+      "max_edge_length_ratio_vs_rest": 17.073734967771905,
+      "min_edge_length_ratio_vs_rest": 0.32665663959857194,
+      "worst_frame": 84,
+      "worst_edge_index": 121421,
+      "visible_artifact": true,
+      "coverage_note": null
+    },
+    {
+      "joint": "cup_holder_compact_rotation",
+      "bones": [
+        "cup_holder",
+        "lower_handle"
+      ],
+      "pivot": [
+        0.14,
+        -0.205,
+        0.8
+      ],
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "radius_m": 0.04,
+      "edge_count": 0,
+      "max_edge_length_ratio_vs_rest": null,
+      "min_edge_length_ratio_vs_rest": null,
+      "worst_frame": null,
+      "worst_edge_index": null,
+      "visible_artifact": false,
+      "coverage_note": "No fused-shell edges in this spatial/weight band; nearest-part binding assigned no scan surface here."
+    },
+    {
+      "joint": "front_caster_left_prepare",
+      "bones": [
+        "wheel_FL",
+        "front_frame"
+      ],
+      "pivot": [
+        -0.28,
+        -0.235,
+        0.065
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "radius_m": 0.04,
+      "edge_count": 2064,
+      "max_edge_length_ratio_vs_rest": 8.733146606947924,
+      "min_edge_length_ratio_vs_rest": 0.23545940836960175,
+      "worst_frame": 50,
+      "worst_edge_index": 119952,
+      "visible_artifact": true,
+      "coverage_note": null
+    },
+    {
+      "joint": "front_caster_right_prepare",
+      "bones": [
+        "wheel_FR",
+        "front_frame"
+      ],
+      "pivot": [
+        -0.28,
+        0.235,
+        0.065
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "radius_m": 0.04,
+      "edge_count": 0,
+      "max_edge_length_ratio_vs_rest": null,
+      "min_edge_length_ratio_vs_rest": null,
+      "worst_frame": null,
+      "worst_edge_index": null,
+      "visible_artifact": false,
+      "coverage_note": "No fused-shell edges in this spatial/weight band; nearest-part binding assigned no scan surface here."
+    },
+    {
+      "joint": "basket_soft_envelope_collapse",
+      "bones": [
+        "basket",
+        "rear_frame"
+      ],
+      "pivot": [
+        0.015,
+        0.0,
+        0.245
+      ],
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "radius_m": 0.12,
+      "edge_count": 21613,
+      "max_edge_length_ratio_vs_rest": 25.782978802517338,
+      "min_edge_length_ratio_vs_rest": 0.45001164232645685,
+      "worst_frame": 84,
+      "worst_edge_index": 87302,
+      "visible_artifact": true,
+      "coverage_note": null
+    }
+  ],
+  "mitigation": "Weights are already rigid outside three declared 3 cm hinge bands. Remaining fused-shell stretch is disclosed; no geometry was invented or patched.",
+  "rights_note": "Tripo3D license check OPEN \u2014 do not ship",
+  "approved_by": null,
+  "internal_only": true,
+  "external_spend_usd": 0
+}
