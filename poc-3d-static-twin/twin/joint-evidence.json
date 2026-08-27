@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "product": "Graco Ready2Jet Kingston 2209064",
+  "coordinate_system": "Blender Z-up; stroller longitudinal axis X (front negative), lateral hinge axis Y, vertical Z",
+  "rig_blend": "ready2jet-rigged.blend",
+  "governing_note": "Evidence documents external motion, not manufacturing tolerances. Any axis/range detail absent from the cited source is labeled INFERRED.",
+  "joints": [
+    {
+      "joint": "front_frame_about_hub112",
+      "object": "FrontFrame_ROOT",
+      "type": "HINGE",
+      "pivot_m_xyz": [0.0, 0.0, 0.52],
+      "axis": [0.0, 1.0, 0.0],
+      "range": [0.0, -65.0],
+      "units": "degrees",
+      "evidence": [
+        "US20220169297A1 figs 1-2, 5-11F; parts 108, 112, 616, 702",
+        "video frames 1166, 1173, 1180, 1186, 1193",
+        "manual pp.34-35"
+      ],
+      "confidence": "DOCUMENTED",
+      "notes": "Axis location matches the visible left/right hub centers; range is fitted to the documented final wheel clustering."
+    },
+    {
+      "joint": "lower_handle_about_hub112",
+      "object": "LowerHandle_ROOT",
+      "type": "HINGE",
+      "pivot_m_xyz": [0.0, 0.0, 0.52],
+      "axis": [0.0, 1.0, 0.0],
+      "range": [0.0, 60.0],
+      "units": "degrees",
+      "evidence": [
+        "US20220169297A1 figs 5-11F; parts 106, 112, 614, 704",
+        "video frames 1173-1193"
+      ],
+      "confidence": "DOCUMENTED",
+      "notes": "Patent documents rotation toward the rear leg; range is pose-fitted to video final state."
+    },
+    {
+      "joint": "upper_handle_pivot118",
+      "object": "UpperHandle_ROOT",
+      "type": "HINGE",
+      "pivot_m_xyz": [0.17, 0.0, 0.79],
+      "axis": [0.0, 1.0, 0.0],
+      "range": [0.0, -78.0],
+      "units": "degrees",
+      "evidence": [
+        "US20220169297A1 figs 3-5, 11A-11F; parts 118, 120, 124",
+        "video frames 1173-1193",
+        "official folded-01-side.png"
+      ],
+      "confidence": "DOCUMENTED",
+      "notes": "The split-handle hinge and fold direction are documented; range is fitted to the visible folded grip pose."
+    },
+    {
+      "joint": "seat_follow",
+      "object": "SeatUnit_ROOT",
+      "type": "COMPOUND_HINGE_TRANSLATION",
+      "pivot_m_xyz": [-0.01, 0.0, 0.53],
+      "axis": [0.0, 1.0, 0.0],
+      "range": [0.0, -22.0],
+      "translation_range_m_xyz": [[0.0, 0.0, 0.0], [0.15, 0.0, -0.15]],
+      "units": "degrees",
+      "evidence": [
+        "video frames 1166-1193",
+        "manual pp.34-35 folded-state drawings"
+      ],
+      "confidence": "INFERRED",
+      "notes": "External pose is observable, but no source exposes the seat linkage or exact pivot."
+    },
+    {
+      "joint": "canopy_fold",
+      "object": "Canopy_ROOT",
+      "type": "HINGE_WITH_SOFT_ENVELOPE_COLLAPSE",
+      "pivot_m_xyz": [0.145, 0.0, 0.845],
+      "axis": [0.0, 1.0, 0.0],
+      "range": [0.0, 35.0],
+      "final_scale_xyz": [0.25, 1.0, 0.35],
+      "units": "degrees",
+      "evidence": [
+        "claim_r2j_step_fold_3",
+        "manual p.33",
+        "video frames 488 and 611"
+      ],
+      "confidence": "INFERRED",
+      "notes": "The collapse action and end states are documented; soft-goods linkage axis/range are approximated."
+    },
+    {
+      "joint": "cup_holder_compact_rotation",
+      "object": "CupHolder_ROOT",
+      "type": "HINGE",
+      "pivot_m_xyz": [0.14, -0.205, 0.8],
+      "axis": [1.0, 0.0, 0.0],
+      "range": [0.0, -90.0],
+      "units": "degrees",
+      "evidence": [
+        "claim_r2j_step_fold_tips_1",
+        "manual p.34 tip (a)"
+      ],
+      "confidence": "INFERRED",
+      "notes": "Rotation is documented; exact mount center and travel are not."
+    },
+    {
+      "joint": "front_caster_left_prepare",
+      "object": "Wheel_FL",
+      "type": "SWIVEL",
+      "pivot_m_xyz": [-0.28, -0.235, 0.065],
+      "axis": [0.0, 0.0, 1.0],
+      "range": [0.0, 90.0],
+      "units": "degrees",
+      "evidence": [
+        "claim_r2j_step_fold_tips_2",
+        "manual p.34 tip (b)",
+        "video frame 731"
+      ],
+      "confidence": "INFERRED",
+      "notes": "Caster alignment is documented; the exact swivel range between sampled frames is not."
+    },
+    {
+      "joint": "front_caster_right_prepare",
+      "object": "Wheel_FR",
+      "type": "SWIVEL",
+      "pivot_m_xyz": [-0.28, 0.235, 0.065],
+      "axis": [0.0, 0.0, 1.0],
+      "range": [0.0, 90.0],
+      "units": "degrees",
+      "evidence": [
+        "claim_r2j_step_fold_tips_2",
+        "manual p.34 tip (b)",
+        "video frame 731"
+      ],
+      "confidence": "INFERRED",
+      "notes": "Mirrored external caster behavior; right-side occlusion makes the symmetry inferred."
+    },
+    {
+      "joint": "thumb_switch_release",
+      "object": "ThumbSwitch",
+      "type": "SLIDER",
+      "pivot_m_xyz": [0.235, 0.0, 1.024],
+      "axis": [0.0, 1.0, 0.0],
+      "range": [0.0, 0.025],
+      "units": "meters",
+      "evidence": [
+        "claim_r2j_step_fold_4",
+        "manual p.34 control diagram",
+        "US20220169297A1 claim 7 and part 126",
+        "video frames 1127-1153"
+      ],
+      "confidence": "INFERRED",
+      "notes": "Slider type/direction are visible; exact 25 mm travel is a visualization parameter."
+    },
+    {
+      "joint": "squeeze_lever_release",
+      "object": "SqueezeLever",
+      "type": "SLIDER",
+      "pivot_m_xyz": [0.235, 0.0, 0.965],
+      "axis": [0.0, 0.0, 1.0],
+      "range": [0.0, -0.018],
+      "units": "meters",
+      "evidence": [
+        "claim_r2j_step_fold_5",
+        "manual p.34 control diagram",
+        "US20220169297A1 claim 7 and part 126",
+        "video frames 1127-1153"
+      ],
+      "confidence": "INFERRED",
+      "notes": "Squeeze control is documented; exact translation vs hinge and 18 mm travel are not visible."
+    },
+    {
+      "joint": "basket_soft_envelope_collapse",
+      "object": "Basket_INFERRED",
+      "type": "SOFT_ENVELOPE_SCALE",
+      "pivot_m_xyz": [0.015, 0.0, 0.245],
+      "axis": [1.0, 0.0, 0.0],
+      "range": [1.0, 0.45],
+      "units": "longitudinal scale",
+      "evidence": [
+        "video frames 1173-1193: basket envelope compresses as front and rear frames converge"
+      ],
+      "confidence": "INFERRED",
+      "notes": "The visible envelope change is documented; fabric attachment points and 0.45 final scale are approximated."
+    },
+    {
+      "joint": "whole_stroller_supported_fold_lift",
+      "object": "RigRoot",
+      "type": "PRESENTATION_TRANSLATION",
+      "pivot_m_xyz": [0.0, 0.0, 0.0],
+      "axis": [0.0, 0.0, 1.0],
+      "range": [0.0, 0.075, 0.0],
+      "units": "meters at fold parameters 0.0, 0.5, 1.0",
+      "evidence": [
+        "video frames 1173-1186: operator-supported frame rises and settles during the automatic fold"
+      ],
+      "confidence": "INFERRED",
+      "notes": "This is external whole-stroller support motion, not a hidden product joint; the 75 mm arc is fitted to keep modeled wheels above the ground plane."
+    },
+    {
+      "joint": "fold_secure_latch_state",
+      "object": "RigRoot.effective_latch_state",
+      "type": "LATCH_STATE",
+      "pivot_m_xyz": [0.0, 0.0, 0.52],
+      "axis": "STATE_ONLY",
+      "range": [0.0, 1.0],
+      "units": "normalized",
+      "evidence": [
+        "claim_r2j_step_fold_6",
+        "manual p.35",
+        "US20220169297A1 hub lock 600"
+      ],
+      "confidence": "DOCUMENTED",
+      "notes": "State is documented; hidden latch surfaces remain unmodeled."
+    }
+  ],
+  "inferred_inventory": [
+    "seat-follow pivot, range, and 0.15 m rearward/downward translation",
+    "canopy linkage axis/range and soft-envelope collapse scale",
+    "cup-holder pivot and travel",
+    "front-caster exact travel and right-side symmetry",
+    "thumb-switch exact travel",
+    "squeeze-lever translation model and exact travel",
+    "basket soft-envelope collapse scale",
+    "75 mm operator-supported whole-stroller lift arc during fold",
+    "rear/unseen surfaces",
+    "hidden cable, spring, slider, and latch surface geometry"
+  ]
+}

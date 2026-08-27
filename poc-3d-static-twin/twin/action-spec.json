@@ -1,0 +1,66 @@
+{
+  "action": "Ready2Jet_Fold_Correct",
+  "frame_start": 1,
+  "frame_end": 96,
+  "fps": 24,
+  "stage_parameters": {
+    "stage_prepare": {
+      "frames": [
+        1,
+        24
+      ],
+      "claims": [
+        "claim_r2j_step_fold_3",
+        "claim_r2j_step_fold_tips_1",
+        "claim_r2j_step_fold_tips_2"
+      ]
+    },
+    "stage_thumb_switch": {
+      "frames": [
+        24,
+        36
+      ],
+      "claims": [
+        "claim_r2j_step_fold_4"
+      ]
+    },
+    "stage_handle_lever": {
+      "frames": [
+        36,
+        48
+      ],
+      "claims": [
+        "claim_r2j_step_fold_5"
+      ]
+    },
+    "stage_auto_fold": {
+      "frames": [
+        48,
+        84
+      ],
+      "evidence": [
+        "US20220169297A1 figs 11A-11F",
+        "video frames 1166-1193"
+      ]
+    },
+    "stage_secure": {
+      "frames": [
+        84,
+        96
+      ],
+      "claims": [
+        "claim_r2j_step_fold_6"
+      ]
+    }
+  },
+  "preconditions": [
+    "claim_r2j_step_fold_1",
+    "claim_r2j_step_fold_2"
+  ],
+  "postcondition": "claim_r2j_step_fold_7 belly bar remains available as carry handle",
+  "defect_parameters": {
+    "defect_reverse_direction": "0 correct; 1 reverses all principal fold rotations",
+    "defect_skip_handle_release": "0 correct; 1 suppresses visible squeeze-lever travel while automatic motion continues",
+    "defect_skip_latch": "0 correct; 1 forces effective_latch_state to 0 after the fold"
+  }
+}

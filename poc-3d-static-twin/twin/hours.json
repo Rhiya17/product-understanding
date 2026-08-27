@@ -18,6 +18,13 @@
         "B2_rebuild": 0.1
       },
       "outcome": "Rebuild won the handle spike; complete rig-ready part geometry rebuilt over the hidden Tripo scaffold."
+    },
+    "C": {
+      "started_at_utc": "2026-08-27T02:57:00Z",
+      "ended_at_utc": "2026-08-27T03:12:00Z",
+      "hours": 0.3,
+      "external_spend_usd": 0,
+      "outcome": "Evidence-mapped parameter rig authored with continuous stage controls, correct and defect actions, ground-safe fold arc, and folded-pose QA."
     }
   }
 }

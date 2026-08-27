@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "blender_version": "5.2.0 LTS",
+  "joint_count": 13,
+  "inferred_joint_count": 9,
+  "action": "Ready2Jet_Fold_Correct",
+  "stage_order": [
+    "stage_prepare",
+    "stage_thumb_switch",
+    "stage_handle_lever",
+    "stage_auto_fold",
+    "stage_secure"
+  ],
+  "frame_checks": {
+    "1": {
+      "stage_auto_fold": 0.0,
+      "bbox_m_DWH": [
+        0.6901999711990356,
+        0.534000039100647,
+        1.0934500694274902
+      ],
+      "minimum_z_m": 0.004549994599074125
+    },
+    "48": {
+      "stage_auto_fold": 0.0,
+      "bbox_m_DWH": [
+        0.6557499766349792,
+        0.5909000039100647,
+        1.0264500379562378
+      ],
+      "minimum_z_m": 0.004549994599074125
+    },
+    "66": {
+      "stage_auto_fold": 0.5,
+      "bbox_m_DWH": [
+        0.5307852029800415,
+        0.5909000039100647,
+        0.989331841468811
+      ],
+      "minimum_z_m": 0.005512008909136057
+    },
+    "84": {
+      "stage_auto_fold": 1.0,
+      "bbox_m_DWH": [
+        0.4768768548965454,
+        0.5909000039100647,
+        0.8256874680519104
+      ],
+      "minimum_z_m": 0.0052499910816550255
+    },
+    "96": {
+      "stage_auto_fold": 1.0,
+      "bbox_m_DWH": [
+        0.4768768548965454,
+        0.5909000039100647,
+        0.8256874680519104
+      ],
+      "minimum_z_m": 0.0052499910816550255
+    }
+  },
+  "wheel_center_cluster_gap_m": 0.014076729590613664,
+  "target_open_dimensions_m_DWH": [
+    0.6858,
+    0.5207,
+    1.0922
+  ],
+  "open_dimension_error_percent_DWH": [
+    0.6415822687424438,
+    2.5542613982421587,
+    0.11445425997895757
+  ],
+  "target_folded_dimensions_m_DWH": [
+    0.2921,
+    0.5207,
+    0.762
+  ],
+  "folded_dimension_confidence": "INFERRED",
+  "folded_dimension_error_percent_DWH": [
+    63.25808110117952,
+    13.481852104871257,
+    8.357935439883253
+  ],
+  "defect_parameter_checks": {
+    "skip_latch_effective_state": 0.0,
+    "reverse_direction_front_angle_deg": 65.00000067042492
+  },
+  "external_spend_usd": 0,
+  "internal_only": true,
+  "errors": []
+}
