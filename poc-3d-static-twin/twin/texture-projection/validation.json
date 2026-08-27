@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "stage_a_gate_failed": true,
+  "stages_b_to_d_absent": true,
+  "stage_e_complete": true,
+  "protected_inputs_unchanged": true,
+  "external_spend_usd": 0,
+  "failures": []
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "measurement_scope": "wall-clock active-stage measurements from the first explicit Stage A timer snapshot; Blender runtime is separately recorded in coverage.json",
+  "stages": {
+    "A": {
+      "started_at_utc": "2026-08-27T16:52:00Z",
+      "ended_at_utc": "2026-08-27T16:53:32.039351Z",
+      "elapsed_seconds": 92.039351,
+      "elapsed_hours": 0.0255664864,
+      "outcome": "STOP_GATE_FAILED"
+    },
+    "B": {
+      "elapsed_seconds": 0.0,
+      "elapsed_hours": 0.0,
+      "outcome": "SKIPPED_BY_STAGE_A_GATE"
+    },
+    "C": {
+      "elapsed_seconds": 0.0,
+      "elapsed_hours": 0.0,
+      "outcome": "SKIPPED_BY_STAGE_A_GATE"
+    },
+    "D": {
+      "elapsed_seconds": 0.0,
+      "elapsed_hours": 0.0,
+      "outcome": "SKIPPED_BY_STAGE_A_GATE"
+    },
+    "E": {
+      "started_at_utc": "2026-08-27T16:53:32.039351Z",
+      "ended_at_utc": "2026-08-27T16:56:45Z",
+      "elapsed_seconds": 192.960649,
+      "elapsed_hours": 0.0536001803,
+      "outcome": "RESEARCH_COMPLETE_OWNER_DECISION_OPEN"
+    }
+  },
+  "total_elapsed_seconds": 285.0,
+  "total_elapsed_hours": 0.0791666667,
+  "external_spend_usd": 0.0
+}

@@ -1,0 +1,803 @@
+{
+  "schema_version": 1,
+  "stage": "A_alignment_and_coverage",
+  "status": "STOP_GATE_FAILED",
+  "internal_only": true,
+  "external_spend_usd": 0,
+  "appearance_only": true,
+  "measurement": {
+    "projection_distance_m": 0.015,
+    "maximum_sample_triangle_edge_m": 0.0075,
+    "area_weighted": true,
+    "sample_method": "evaluated twin triangles recursively split to <=7.5 mm longest edge; leaf centroids queried against aligned scan BVH",
+    "pose_frame": 1
+  },
+  "alignment": {
+    "method": "axis-preserving non-uniform bbox fit to the evidence-mapped rig rest envelope; baked scan lean retained",
+    "refinement": "none; reused the disclosed Stage-S transform exactly",
+    "applied_matrix_world": [
+      [
+        0.7977742552757263,
+        0.0,
+        0.0,
+        0.004813893232494593
+      ],
+      [
+        0.0,
+        0.796847403049469,
+        0.0,
+        -0.00599261187016964
+      ],
+      [
+        0.0,
+        0.0,
+        1.1165064573287964,
+        0.5513283014297485
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "applied_scale_xyz": [
+      0.7977742552757263,
+      0.796847403049469,
+      1.1165064573287964
+    ],
+    "area_weighted_twin_to_scan_rms_surface_distance_m": 0.11778923976154775,
+    "area_weighted_twin_to_scan_mean_surface_distance_m": 0.08364728385125779
+  },
+  "gate": {
+    "key_groups": [
+      "seat",
+      "canopy",
+      "frame_tubes",
+      "handle_grip",
+      "wheels"
+    ],
+    "aggregation": "arithmetic mean of the five area-weighted logical key-group coverage fractions",
+    "minimum_fraction": 0.6,
+    "actual_fraction": 0.1789195521650538,
+    "passed": false,
+    "on_failure": "stop before Stage B baking; report disclosed dress-material fallback coverage"
+  },
+  "overall": {
+    "surface_area_m2": 2.1936076206507304,
+    "covered_area_m2": 0.4598491416454281,
+    "coverage_fraction": 0.20963144790179683,
+    "fallback_fraction": 0.7903685520982031
+  },
+  "key_part_groups": {
+    "seat": {
+      "objects": [
+        "SeatBack",
+        "SeatBase",
+        "CalfSupport"
+      ],
+      "surface_area_m2": 0.5971748747677204,
+      "covered_area_m2": 0.25799295698411084,
+      "coverage_fraction": 0.4320224575497435,
+      "fallback_fraction": 0.5679775424502564,
+      "mean_distance_m": 0.03091631230543845,
+      "rms_distance_m": 0.043548654279085816
+    },
+    "canopy": {
+      "objects": [
+        "CanopyFabric"
+      ],
+      "surface_area_m2": 0.326876015806757,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.2029350672761576,
+      "rms_distance_m": 0.22023749324562458
+    },
+    "frame_tubes": {
+      "objects": [
+        "RearLeg110_L",
+        "RearLeg110_R",
+        "RearAxle",
+        "FrontLeg108_L",
+        "FrontLeg108_R",
+        "FrontCrossbar",
+        "LowerHandle124_L",
+        "LowerHandle124_R",
+        "UpperHandle120_L",
+        "UpperHandle120_R"
+      ],
+      "surface_area_m2": 0.3385348428855325,
+      "covered_area_m2": 0.04810990049203098,
+      "coverage_fraction": 0.1421121089987721,
+      "fallback_fraction": 0.8578878910012279,
+      "mean_distance_m": 0.07768321171639554,
+      "rms_distance_m": 0.09753980712674724
+    },
+    "handle_grip": {
+      "objects": [
+        "HandleGrip"
+      ],
+      "surface_area_m2": 0.056601578574372334,
+      "covered_area_m2": 0.010772345700672219,
+      "coverage_fraction": 0.19031882099397218,
+      "fallback_fraction": 0.8096811790060279,
+      "mean_distance_m": 0.049609649215569804,
+      "rms_distance_m": 0.06407291278636154
+    },
+    "wheels": {
+      "objects": [
+        "Wheel_FL_Tire",
+        "Wheel_FL_Hub",
+        "Wheel_FL_Spoke1",
+        "Wheel_FL_Spoke2",
+        "Wheel_FL_Spoke3",
+        "Wheel_FR_Tire",
+        "Wheel_FR_Hub",
+        "Wheel_FR_Spoke1",
+        "Wheel_FR_Spoke2",
+        "Wheel_FR_Spoke3",
+        "Wheel_RL_Tire",
+        "Wheel_RL_Hub",
+        "Wheel_RL_Spoke1",
+        "Wheel_RL_Spoke2",
+        "Wheel_RL_Spoke3",
+        "Wheel_RR_Tire",
+        "Wheel_RR_Hub",
+        "Wheel_RR_Spoke1",
+        "Wheel_RR_Spoke2",
+        "Wheel_RR_Spoke3"
+      ],
+      "surface_area_m2": 0.1251044763213125,
+      "covered_area_m2": 0.016281643665707765,
+      "coverage_fraction": 0.13014437328278128,
+      "fallback_fraction": 0.8698556267172187,
+      "mean_distance_m": 0.11077395568989909,
+      "rms_distance_m": 0.13596105780995604
+    }
+  },
+  "parts": {
+    "Basket_INFERRED": {
+      "surface_area_m2": 0.44443207256217854,
+      "covered_area_m2": 0.08243815717823576,
+      "coverage_fraction": 0.185491017115337,
+      "fallback_fraction": 0.814508982884663,
+      "mean_distance_m": 0.05866481330984412,
+      "rms_distance_m": 0.07479930436553628,
+      "p95_distance_m": 0.1489797830581665,
+      "maximum_distance_m": 0.18110790848731995,
+      "sample_count": 63568,
+      "render_visible": true
+    },
+    "BellyBarArm_L": {
+      "surface_area_m2": 0.01221289075138583,
+      "covered_area_m2": 0.002070439922037105,
+      "coverage_fraction": 0.16952906270795604,
+      "fallback_fraction": 0.830470937292044,
+      "mean_distance_m": 0.031765857410219374,
+      "rms_distance_m": 0.03550211193843232,
+      "p95_distance_m": 0.060677312314510345,
+      "maximum_distance_m": 0.0695432499051094,
+      "sample_count": 9932,
+      "render_visible": true
+    },
+    "BellyBarArm_R": {
+      "surface_area_m2": 0.01221289075138583,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.09350667323875467,
+      "rms_distance_m": 0.09471877717743302,
+      "p95_distance_m": 0.11886806786060333,
+      "maximum_distance_m": 0.12682269513607025,
+      "sample_count": 9932,
+      "render_visible": true
+    },
+    "BellyBarGrip": {
+      "surface_area_m2": 0.04255022669322709,
+      "covered_area_m2": 0.008267209037602734,
+      "coverage_fraction": 0.19429294929981333,
+      "fallback_fraction": 0.8057070507001867,
+      "mean_distance_m": 0.04082662709810235,
+      "rms_distance_m": 0.050970858344552054,
+      "p95_distance_m": 0.10720981657505035,
+      "maximum_distance_m": 0.12407524883747101,
+      "sample_count": 29452,
+      "render_visible": true
+    },
+    "CalfSupport": {
+      "surface_area_m2": 0.09867492625598132,
+      "covered_area_m2": 0.02636037201242987,
+      "coverage_fraction": 0.26714356942153783,
+      "fallback_fraction": 0.7328564305784622,
+      "mean_distance_m": 0.04282652226070775,
+      "rms_distance_m": 0.05649120606510808,
+      "p95_distance_m": 0.12319600582122803,
+      "maximum_distance_m": 0.13876067101955414,
+      "sample_count": 38192,
+      "render_visible": true
+    },
+    "CanopyFabric": {
+      "surface_area_m2": 0.326876015806757,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.2029350672761576,
+      "rms_distance_m": 0.22023749324562458,
+      "p95_distance_m": 0.30277490615844727,
+      "maximum_distance_m": 0.32778051495552063,
+      "sample_count": 45420,
+      "render_visible": true
+    },
+    "Canopy_Rib_1": {
+      "surface_area_m2": 0.015615608528717883,
+      "covered_area_m2": 0.003613775124452423,
+      "coverage_fraction": 0.23142070434248593,
+      "fallback_fraction": 0.768579295657514,
+      "mean_distance_m": 0.03961063439665654,
+      "rms_distance_m": 0.052133684527047024,
+      "p95_distance_m": 0.1170155256986618,
+      "maximum_distance_m": 0.1353798359632492,
+      "sample_count": 29208,
+      "render_visible": false
+    },
+    "Canopy_Rib_2": {
+      "surface_area_m2": 0.015615620837322333,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.13539249210752263,
+      "rms_distance_m": 0.13628838431528595,
+      "p95_distance_m": 0.17314665019512177,
+      "maximum_distance_m": 0.1884090155363083,
+      "sample_count": 29208,
+      "render_visible": false
+    },
+    "Canopy_Rib_3": {
+      "surface_area_m2": 0.01561561878925063,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.23922478928197988,
+      "rms_distance_m": 0.2397118699910737,
+      "p95_distance_m": 0.2734767198562622,
+      "maximum_distance_m": 0.2876218557357788,
+      "sample_count": 29208,
+      "render_visible": false
+    },
+    "Canopy_Rib_4": {
+      "surface_area_m2": 0.015615619394922784,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.3018395939072887,
+      "rms_distance_m": 0.3021281584676151,
+      "p95_distance_m": 0.32965707778930664,
+      "maximum_distance_m": 0.3408992886543274,
+      "sample_count": 29208,
+      "render_visible": false
+    },
+    "Canopy_Rib_5": {
+      "surface_area_m2": 0.015615608556452665,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.26384378535559105,
+      "rms_distance_m": 0.2643094283263929,
+      "p95_distance_m": 0.298321932554245,
+      "maximum_distance_m": 0.3120359778404236,
+      "sample_count": 29208,
+      "render_visible": false
+    },
+    "ControlHousing126": {
+      "surface_area_m2": 0.030045784574147614,
+      "covered_area_m2": 0.009325517841445455,
+      "coverage_fraction": 0.31037691222313557,
+      "fallback_fraction": 0.6896230877768644,
+      "mean_distance_m": 0.02634485010191942,
+      "rms_distance_m": 0.03129598216008775,
+      "p95_distance_m": 0.05377136543393135,
+      "maximum_distance_m": 0.06239544600248337,
+      "sample_count": 4496,
+      "render_visible": true
+    },
+    "CupHolder_INFERRED": {
+      "surface_area_m2": 0.034437253629841236,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.1268996630622317,
+      "rms_distance_m": 0.13013389768926362,
+      "p95_distance_m": 0.17154861986637115,
+      "maximum_distance_m": 0.18240986764431,
+      "sample_count": 6340,
+      "render_visible": true
+    },
+    "FrontCrossbar": {
+      "surface_area_m2": 0.02627328151464214,
+      "covered_area_m2": 0.006233180653912973,
+      "coverage_fraction": 0.2372440858002154,
+      "fallback_fraction": 0.7627559141997846,
+      "mean_distance_m": 0.0330879606095434,
+      "rms_distance_m": 0.04314718953107623,
+      "p95_distance_m": 0.10094023495912552,
+      "maximum_distance_m": 0.11813072860240936,
+      "sample_count": 29248,
+      "render_visible": true
+    },
+    "FrontLeg108_L": {
+      "surface_area_m2": 0.047269796842973874,
+      "covered_area_m2": 0.02608027184181915,
+      "coverage_fraction": 0.5517322599979757,
+      "fallback_fraction": 0.4482677400020243,
+      "mean_distance_m": 0.016731066843368402,
+      "rms_distance_m": 0.021695755663985166,
+      "p95_distance_m": 0.045238617807626724,
+      "maximum_distance_m": 0.05705782398581505,
+      "sample_count": 74892,
+      "render_visible": true
+    },
+    "FrontLeg108_R": {
+      "surface_area_m2": 0.047269796842973874,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.13888965865796166,
+      "rms_distance_m": 0.1402429377248116,
+      "p95_distance_m": 0.1700412631034851,
+      "maximum_distance_m": 0.1797492951154709,
+      "sample_count": 74892,
+      "render_visible": true
+    },
+    "HandleGrip": {
+      "surface_area_m2": 0.056601578574372334,
+      "covered_area_m2": 0.010772345700672219,
+      "coverage_fraction": 0.19031882099397218,
+      "fallback_fraction": 0.8096811790060279,
+      "mean_distance_m": 0.049609649215569804,
+      "rms_distance_m": 0.06407291278636154,
+      "p95_distance_m": 0.13765984773635864,
+      "maximum_distance_m": 0.1580183207988739,
+      "sample_count": 29532,
+      "render_visible": true
+    },
+    "HandlePivot118_L": {
+      "surface_area_m2": 0.01129477424439926,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.12016517341860333,
+      "rms_distance_m": 0.12104798182189656,
+      "p95_distance_m": 0.14506231248378754,
+      "maximum_distance_m": 0.1491725742816925,
+      "sample_count": 1752,
+      "render_visible": true
+    },
+    "HandlePivot118_R": {
+      "surface_area_m2": 0.01129477424439926,
+      "covered_area_m2": 0.004783015058352842,
+      "coverage_fraction": 0.42347150592448507,
+      "fallback_fraction": 0.5765284940755149,
+      "mean_distance_m": 0.020459179182448183,
+      "rms_distance_m": 0.024801563677678936,
+      "p95_distance_m": 0.045536525547504425,
+      "maximum_distance_m": 0.05300683155655861,
+      "sample_count": 1752,
+      "render_visible": true
+    },
+    "Hub112_L": {
+      "surface_area_m2": 0.029176471963703283,
+      "covered_area_m2": 0.010065617220678445,
+      "coverage_fraction": 0.34499089654158605,
+      "fallback_fraction": 0.655009103458414,
+      "mean_distance_m": 0.024249775344960905,
+      "rms_distance_m": 0.028630227928995805,
+      "p95_distance_m": 0.0498063862323761,
+      "maximum_distance_m": 0.05632689595222473,
+      "sample_count": 3192,
+      "render_visible": true
+    },
+    "Hub112_R": {
+      "surface_area_m2": 0.029176471963703283,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.11542495772903766,
+      "rms_distance_m": 0.11678156678741738,
+      "p95_distance_m": 0.14239265024662018,
+      "maximum_distance_m": 0.14898064732551575,
+      "sample_count": 3192,
+      "render_visible": true
+    },
+    "LowerHandle124_L": {
+      "surface_area_m2": 0.029162148294207588,
+      "covered_area_m2": 0.00019487145509324133,
+      "coverage_fraction": 0.006682342231005944,
+      "fallback_fraction": 0.9933176577689941,
+      "mean_distance_m": 0.05529374168743107,
+      "rms_distance_m": 0.06257938241509409,
+      "p95_distance_m": 0.11577759683132172,
+      "maximum_distance_m": 0.13146540522575378,
+      "sample_count": 29372,
+      "render_visible": true
+    },
+    "LowerHandle124_R": {
+      "surface_area_m2": 0.029162148294207588,
+      "covered_area_m2": 0.0005600898479470583,
+      "coverage_fraction": 0.019206055819224667,
+      "fallback_fraction": 0.9807939441807754,
+      "mean_distance_m": 0.06664624880028143,
+      "rms_distance_m": 0.07406441616451843,
+      "p95_distance_m": 0.11620443314313889,
+      "maximum_distance_m": 0.12726828455924988,
+      "sample_count": 29372,
+      "render_visible": true
+    },
+    "RearAxle": {
+      "surface_area_m2": 0.026969314413514307,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.09531153166890576,
+      "rms_distance_m": 0.10497723456774241,
+      "p95_distance_m": 0.1902911514043808,
+      "maximum_distance_m": 0.21116404235363007,
+      "sample_count": 29328,
+      "render_visible": true
+    },
+    "RearLeg110_L": {
+      "surface_area_m2": 0.04616302507130534,
+      "covered_area_m2": 0.006173171990975473,
+      "coverage_fraction": 0.1337254649460284,
+      "fallback_fraction": 0.8662745350539716,
+      "mean_distance_m": 0.03316072699846008,
+      "rms_distance_m": 0.036598553086098176,
+      "p95_distance_m": 0.05872488021850586,
+      "maximum_distance_m": 0.07163501530885696,
+      "sample_count": 74892,
+      "render_visible": true
+    },
+    "RearLeg110_R": {
+      "surface_area_m2": 0.04616302507130534,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.163480707583228,
+      "rms_distance_m": 0.1650881278226906,
+      "p95_distance_m": 0.19417253136634827,
+      "maximum_distance_m": 0.20634903013706207,
+      "sample_count": 74892,
+      "render_visible": true
+    },
+    "SeatBack": {
+      "surface_area_m2": 0.320883932065927,
+      "covered_area_m2": 0.13501335206147297,
+      "coverage_fraction": 0.4207544802640161,
+      "fallback_fraction": 0.5792455197359839,
+      "mean_distance_m": 0.02942953024701453,
+      "rms_distance_m": 0.039754360093441736,
+      "p95_distance_m": 0.08119426667690277,
+      "maximum_distance_m": 0.1295958161354065,
+      "sample_count": 105872,
+      "render_visible": true
+    },
+    "SeatBase": {
+      "surface_area_m2": 0.17761601644581207,
+      "covered_area_m2": 0.09661923291020798,
+      "coverage_fraction": 0.5439781549187318,
+      "fallback_fraction": 0.4560218450812682,
+      "mean_distance_m": 0.026985616020453865,
+      "rms_distance_m": 0.0418114923064987,
+      "p95_distance_m": 0.10060729831457138,
+      "maximum_distance_m": 0.12981852889060974,
+      "sample_count": 66272,
+      "render_visible": true
+    },
+    "SqueezeLever": {
+      "surface_area_m2": 0.009506156843778066,
+      "covered_area_m2": 0.005051310775117136,
+      "coverage_fraction": 0.5313725470901841,
+      "fallback_fraction": 0.4686274529098159,
+      "mean_distance_m": 0.014477675938923218,
+      "rms_distance_m": 0.01688675972642645,
+      "p95_distance_m": 0.029212022200226784,
+      "maximum_distance_m": 0.032714925706386566,
+      "sample_count": 2200,
+      "render_visible": true
+    },
+    "ThumbSwitch": {
+      "surface_area_m2": 0.004897987966220118,
+      "covered_area_m2": 0.0010772526449844405,
+      "coverage_fraction": 0.21993778923384727,
+      "fallback_fraction": 0.7800622107661528,
+      "mean_distance_m": 0.0251401325114527,
+      "rms_distance_m": 0.027435478858969575,
+      "p95_distance_m": 0.04117992892861366,
+      "maximum_distance_m": 0.04495955631136894,
+      "sample_count": 1336,
+      "render_visible": true
+    },
+    "UpperHandle120_L": {
+      "surface_area_m2": 0.020051153270201218,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.12595279308307816,
+      "rms_distance_m": 0.12649273577267814,
+      "p95_distance_m": 0.14634953439235687,
+      "maximum_distance_m": 0.15746819972991943,
+      "sample_count": 9932,
+      "render_visible": true
+    },
+    "UpperHandle120_R": {
+      "surface_area_m2": 0.020051153270201218,
+      "covered_area_m2": 0.008868314702283083,
+      "coverage_fraction": 0.44228452013593766,
+      "fallback_fraction": 0.5577154798640623,
+      "mean_distance_m": 0.0171263718252022,
+      "rms_distance_m": 0.019701901970422542,
+      "p95_distance_m": 0.031223488971590996,
+      "maximum_distance_m": 0.03744998201727867,
+      "sample_count": 9932,
+      "render_visible": true
+    },
+    "Wheel_FL_Hub": {
+      "surface_area_m2": 0.005929069347869911,
+      "covered_area_m2": 0.0024705855269024596,
+      "coverage_fraction": 0.41669027328716385,
+      "fallback_fraction": 0.5833097267128362,
+      "mean_distance_m": 0.02037106957140006,
+      "rms_distance_m": 0.024770107443327534,
+      "p95_distance_m": 0.04254471883177757,
+      "maximum_distance_m": 0.04609932377934456,
+      "sample_count": 1428,
+      "render_visible": true
+    },
+    "Wheel_FL_Spoke1": {
+      "surface_area_m2": 0.0014158764493766307,
+      "covered_area_m2": 0.0009229205941114579,
+      "coverage_fraction": 0.6518369554898614,
+      "fallback_fraction": 0.3481630445101386,
+      "mean_distance_m": 0.012311946790385882,
+      "rms_distance_m": 0.013333708043918124,
+      "p95_distance_m": 0.019872726872563362,
+      "maximum_distance_m": 0.021808156743645668,
+      "sample_count": 1124,
+      "render_visible": true
+    },
+    "Wheel_FL_Spoke2": {
+      "surface_area_m2": 0.0014158761817909026,
+      "covered_area_m2": 0.0005440310800374087,
+      "coverage_fraction": 0.3842363386248075,
+      "fallback_fraction": 0.6157636613751925,
+      "mean_distance_m": 0.016326542496109316,
+      "rms_distance_m": 0.016692452721467504,
+      "p95_distance_m": 0.021401720121502876,
+      "maximum_distance_m": 0.02347130887210369,
+      "sample_count": 1124,
+      "render_visible": true
+    },
+    "Wheel_FL_Spoke3": {
+      "surface_area_m2": 0.0014158753753025074,
+      "covered_area_m2": 2.66014580239779e-05,
+      "coverage_fraction": 0.018787993977432083,
+      "fallback_fraction": 0.981212006022568,
+      "mean_distance_m": 0.02248130195788011,
+      "rms_distance_m": 0.022793730632886193,
+      "p95_distance_m": 0.028666241094470024,
+      "maximum_distance_m": 0.030572276562452316,
+      "sample_count": 1124,
+      "render_visible": true
+    },
+    "Wheel_FL_Tire": {
+      "surface_area_m2": 0.017008820844924107,
+      "covered_area_m2": 0.0068457163851435784,
+      "coverage_fraction": 0.40248036283988053,
+      "fallback_fraction": 0.5975196371601195,
+      "mean_distance_m": 0.017920695618655506,
+      "rms_distance_m": 0.02047670527770047,
+      "p95_distance_m": 0.034727804362773895,
+      "maximum_distance_m": 0.038601312786340714,
+      "sample_count": 2160,
+      "render_visible": true
+    },
+    "Wheel_FR_Hub": {
+      "surface_area_m2": 0.005929069346138737,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.14437441388229763,
+      "rms_distance_m": 0.14545113378477,
+      "p95_distance_m": 0.17026039958000183,
+      "maximum_distance_m": 0.17246904969215393,
+      "sample_count": 1428,
+      "render_visible": true
+    },
+    "Wheel_FR_Spoke1": {
+      "surface_area_m2": 0.0014158764493766307,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.1469270519779964,
+      "rms_distance_m": 0.1469718707531992,
+      "p95_distance_m": 0.15255841612815857,
+      "maximum_distance_m": 0.1545564979314804,
+      "sample_count": 1124,
+      "render_visible": true
+    },
+    "Wheel_FR_Spoke2": {
+      "surface_area_m2": 0.0014158761817909026,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.1436204856844287,
+      "rms_distance_m": 0.14365918345934078,
+      "p95_distance_m": 0.14856356382369995,
+      "maximum_distance_m": 0.1496150642633438,
+      "sample_count": 1124,
+      "render_visible": true
+    },
+    "Wheel_FR_Spoke3": {
+      "surface_area_m2": 0.0014158753753025074,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.14361115961724852,
+      "rms_distance_m": 0.14365032422945204,
+      "p95_distance_m": 0.14826105535030365,
+      "maximum_distance_m": 0.14960125088691711,
+      "sample_count": 1124,
+      "render_visible": true
+    },
+    "Wheel_FR_Tire": {
+      "surface_area_m2": 0.017008820844924107,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.1455687908514019,
+      "rms_distance_m": 0.14573472314630195,
+      "p95_distance_m": 0.1571764051914215,
+      "maximum_distance_m": 0.1602160930633545,
+      "sample_count": 2160,
+      "render_visible": true
+    },
+    "Wheel_RL_Hub": {
+      "surface_area_m2": 0.00706671377416381,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.05239392707327807,
+      "rms_distance_m": 0.05349266158733941,
+      "p95_distance_m": 0.0675320103764534,
+      "maximum_distance_m": 0.07199525833129883,
+      "sample_count": 1560,
+      "render_visible": true
+    },
+    "Wheel_RL_Spoke1": {
+      "surface_area_m2": 0.0018850428150707333,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.07343855562811198,
+      "rms_distance_m": 0.07496262049006022,
+      "p95_distance_m": 0.09675279259681702,
+      "maximum_distance_m": 0.09780984371900558,
+      "sample_count": 1124,
+      "render_visible": true
+    },
+    "Wheel_RL_Spoke2": {
+      "surface_area_m2": 0.001885042625433341,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.03769417598837964,
+      "rms_distance_m": 0.038486752094278584,
+      "p95_distance_m": 0.051078587770462036,
+      "maximum_distance_m": 0.05391382426023483,
+      "sample_count": 1124,
+      "render_visible": true
+    },
+    "Wheel_RL_Spoke3": {
+      "surface_area_m2": 0.0018850421984759633,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.04211114316077633,
+      "rms_distance_m": 0.0424707594354136,
+      "p95_distance_m": 0.051457978785037994,
+      "maximum_distance_m": 0.054507821798324585,
+      "sample_count": 1124,
+      "render_visible": true
+    },
+    "Wheel_RL_Tire": {
+      "surface_area_m2": 0.022644878549544594,
+      "covered_area_m2": 0.005471788621488882,
+      "coverage_fraction": 0.24163470824174166,
+      "fallback_fraction": 0.7583652917582584,
+      "mean_distance_m": 0.05755230696145268,
+      "rms_distance_m": 0.06980186181511705,
+      "p95_distance_m": 0.1130736693739891,
+      "maximum_distance_m": 0.1186218187212944,
+      "sample_count": 2160,
+      "render_visible": true
+    },
+    "Wheel_RR_Hub": {
+      "surface_area_m2": 0.007066713773302479,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.2089136554825891,
+      "rms_distance_m": 0.20966438677749424,
+      "p95_distance_m": 0.23490402102470398,
+      "maximum_distance_m": 0.23830446600914001,
+      "sample_count": 1560,
+      "render_visible": true
+    },
+    "Wheel_RR_Spoke1": {
+      "surface_area_m2": 0.0018850428150707333,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.21648587309118614,
+      "rms_distance_m": 0.21657849581013497,
+      "p95_distance_m": 0.2270590215921402,
+      "maximum_distance_m": 0.23027253150939941,
+      "sample_count": 1124,
+      "render_visible": true
+    },
+    "Wheel_RR_Spoke2": {
+      "surface_area_m2": 0.001885042625433341,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.20485071777220976,
+      "rms_distance_m": 0.20489882195415576,
+      "p95_distance_m": 0.21208640933036804,
+      "maximum_distance_m": 0.21417421102523804,
+      "sample_count": 1124,
+      "render_visible": true
+    },
+    "Wheel_RR_Spoke3": {
+      "surface_area_m2": 0.0018850421984759633,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.20665337607499917,
+      "rms_distance_m": 0.20669218189562716,
+      "p95_distance_m": 0.21275104582309723,
+      "maximum_distance_m": 0.21419008076190948,
+      "sample_count": 1124,
+      "render_visible": true
+    },
+    "Wheel_RR_Tire": {
+      "surface_area_m2": 0.022644878549544594,
+      "covered_area_m2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "mean_distance_m": 0.21157820863429144,
+      "rms_distance_m": 0.2120962675426223,
+      "p95_distance_m": 0.23599182069301605,
+      "maximum_distance_m": 0.2402249127626419,
+      "sample_count": 2160,
+      "render_visible": true
+    }
+  },
+  "provenance": {
+    "source_twin": "poc-3d-static-twin/twin/ready2jet-rigged.blend",
+    "source_scan_run_id": "tripo-probe-01",
+    "source_scan": "poc-3d-static-twin/runs/tripo-probe-01/pbr_model-k11lDWbp1BeH5sJR6lO6C_model.glb",
+    "input_sha256": {
+      "source_twin": "83d80dc107d46edecbe89d4d97dabf726887012dd4c0917f8da8e2961a9dc79d",
+      "scan_glb": "95e0fe44bba9a303b31849cfbec1d7d517d2ed2c6361ab505e025cf7ef80716b",
+      "action_spec": "42d43c0cab6d4f320a1c473c534020d1e91176ba2f6d9eec8e8ff5b944b5d3c2",
+      "joint_evidence": "e2a1ad9ddb091f00a59aba553287b844427ef8e84e846d8dc09ab9a98fc8f361"
+    },
+    "alignment_report": "poc-3d-static-twin/twin/skinning-report.json"
+  },
+  "timing": {
+    "started_at_utc": "2026-08-27T16:53:28.845361+00:00",
+    "ended_at_utc": "2026-08-27T16:53:32.039351+00:00",
+    "script_elapsed_seconds": 3.1940408750015195,
+    "script_elapsed_hours": 0.0008872336344433684
+  }
+}
