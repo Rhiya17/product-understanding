@@ -2,7 +2,7 @@
   "status": "PASS",
   "render_checks": {
     "open-turntable": {
-      "bytes": 10184640,
+      "bytes": 8666932,
       "size_px": [
         1024,
         1024
@@ -11,7 +11,7 @@
       "source_frames": 72
     },
     "fold-official-angle": {
-      "bytes": 11623223,
+      "bytes": 10469394,
       "size_px": [
         1024,
         1024
@@ -20,7 +20,7 @@
       "source_frames": 96
     },
     "fold-novel-rear-right": {
-      "bytes": 12379550,
+      "bytes": 11327888,
       "size_px": [
         1024,
         1024
