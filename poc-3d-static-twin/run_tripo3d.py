@@ -5,6 +5,13 @@ docs/planning/digital-twin-phase-plan.md Decision 1 (amended in-session
 2026-08-26: Tripo3D-first sequential escalation; Meshy retired after the v1
 pilot FAIL; Rodin/Hunyuan are fallbacks only if Tripo3D fails).
 
+SCOPE (amended 2026-08-27 after protocol verification): a run from pack v1.2
+is an EXPLORATORY CAPABILITY PROBE — fusion/separability grade, identity
+components, invented-geometry inspection, and dimensional error via
+auto_size. It is NOT the runbook's controlled cross-tool comparison (which
+requires identical four-view inputs and a valid independent held-out; both
+wait on the Decision 2 capture set), and its scorecard must say so.
+
 Endpoint schema verified live on 2026-08-27 via
 https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=tripo3d/h3.1/multiview-to-3d
   required: image_urls (2-4 URLs, semantic order [front, left, back, right],
@@ -40,7 +47,7 @@ MANIFEST = HERE / "inputs" / "source-manifest.json"
 IMAGES_DIR = HERE / "inputs" / "images"
 UPLOAD_CACHE = HERE / "runs" / "upload-cache.json"
 ENDPOINT = "tripo3d/h3.1/multiview-to-3d"
-REQUIRED_PACK_VERSION = "v1.1"
+REQUIRED_PACK_VERSION = "v1.2"
 
 # Semantic slots per the verified schema: [front, left, back, right].
 # None = no truthful asset for that slot; omitted from submission.
@@ -126,6 +133,9 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=None,
                         help="override model_seed AND texture_seed")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--attach", metavar="REQUEST_ID", default=None,
+                        help="skip submission; fetch the result of an "
+                             "already-paid job into this run directory")
     args = parser.parse_args()
 
     manifest = load_manifest()
@@ -135,8 +145,6 @@ def main() -> None:
         generation["model_seed"] = generation["texture_seed"] = args.seed
 
     run_dir = HERE / "runs" / args.label
-    if run_dir.exists():
-        sys.exit(f"{run_dir} already exists; pick a fresh label")
 
     submission = {
         "endpoint": ENDPOINT,
@@ -145,6 +153,8 @@ def main() -> None:
                    for r in refs],
         "slot_order": [r["slot"] for r in refs],
         "arguments": generation,
+        "scope": "exploratory capability probe (pack v1.2); NOT the "
+                 "controlled cross-tool comparison",
         **pack_fingerprint(manifest, refs),
     }
 
@@ -157,18 +167,38 @@ def main() -> None:
         sys.exit("FAL_KEY is not set (set -a; source .env; set +a)")
 
     import fal_client
-    cache = (json.loads(UPLOAD_CACHE.read_text())
-             if UPLOAD_CACHE.exists() else {})
-    image_urls = [upload(r["path"], cache) for r in refs]
 
-    print(f"submitting {ENDPOINT} …")
-    handle = fal_client.submit(ENDPOINT,
-                               arguments={"image_urls": image_urls,
-                                          **generation})
-    result = handle.get()
+    if args.attach:
+        # Recover an already-paid job: no new submission, no new charge.
+        if not run_dir.exists():
+            run_dir.mkdir(parents=True)
+        (run_dir / "request.json").write_text(json.dumps(
+            {"request_id": args.attach, "attached": True}, indent=2))
+        result = fal_client.result(ENDPOINT, args.attach)
+    else:
+        if run_dir.exists():
+            sys.exit(f"{run_dir} already exists; pick a fresh label or "
+                     "--attach the orphaned request id from request.json")
+        # Persist the run record BEFORE any network call, and the request id
+        # IMMEDIATELY after submission, so an interruption can never orphan
+        # a paid job without a recovery handle on disk.
+        run_dir.mkdir(parents=True)
+        (run_dir / "submission.json").write_text(
+            json.dumps(submission, indent=2))
+        cache = (json.loads(UPLOAD_CACHE.read_text())
+                 if UPLOAD_CACHE.exists() else {})
+        image_urls = [upload(r["path"], cache) for r in refs]
+        print(f"submitting {ENDPOINT} …")
+        handle = fal_client.submit(ENDPOINT,
+                                   arguments={"image_urls": image_urls,
+                                              **generation})
+        (run_dir / "request.json").write_text(json.dumps(
+            {"request_id": handle.request_id,
+             "recover_with": f"python3.12 run_tripo3d.py --label "
+                             f"{args.label}-recovered --attach "
+                             f"{handle.request_id}"}, indent=2))
+        result = handle.get()
 
-    run_dir.mkdir(parents=True)
-    (run_dir / "submission.json").write_text(json.dumps(submission, indent=2))
     (run_dir / "result.json").write_text(json.dumps(result, indent=2))
 
     import urllib.request

@@ -60,6 +60,20 @@ python3 run_tripo3d.py --label tripo-run-01             # needs FAL_KEY
 Endpoint `tripo3d/h3.1/multiview-to-3d` (schema verified live 2026-08-27).
 Seeded -> reproducible; submits only truthful semantic slots (front + left);
 `auto_size` on so the mesh arrives in real-world meters for the dimension
-check. Score with the same runbook Stages 3-5 and the Meshy scorecard
-template. License/commercial-terms check for Tripo3D remains OPEN and must
-close before anything ships (Decision 1).
+check.
+
+**Scope correction (2026-08-27, post-verification).** The v1.1 held-out was
+retired: it is the same studio asset/pose as view-01 (86.4% registration
+inliers) — circular for silhouette/landmark checks. Pack v1.2 therefore has
+NO valid global held-out, and Tripo's semantic slots cannot take the same
+four inputs Meshy received. A run from this pack is an **exploratory
+capability probe** — fusion/separability grade, identity components,
+invented-geometry inspection, dimensional error via auto_size — and its
+scorecard must be labeled as such. The controlled cross-tool comparison and
+silhouette/landmark scoring wait on a genuinely independent capture set
+(digital-twin plan Decision 2). Environment: use Python 3.12 with
+`python3.12 -m pip install fal-client` (the system 3.9 is not the pinned
+runtime). The runner records fal's request id to `runs/<label>/request.json`
+immediately on submission; recover an interrupted paid job with `--attach
+<request_id>`. License/commercial-terms check for Tripo3D remains OPEN and
+must close before anything ships (Decision 1).

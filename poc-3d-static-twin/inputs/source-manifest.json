@@ -1,7 +1,7 @@
 {
   "_comment": "POC 5 input pack for the open-state static twin. See docs/pocs/poc5-digital-twin-runbook.md Stage 1. Product: Graco Ready2Jet Kingston. One state per job: all input views show the OPEN stroller; the folded-state image feeds a separate future job.",
-  "pack_version": "v1.1",
-  "pack_status": "v1.1 ACTIVE 2026-08-27 for the Tripo3D comparative run. The four v1 INPUT views are byte-identical to the Meshy pilot inputs (tool results stay directly comparable). Change from v1: a valid GLOBAL held-out image replaces the close-up held-out, fixing the unsatisfiable silhouette-IoU defect. Remaining v1 defects are carried as accepted, documented risks: canopy-state conflict between view-01 and view-02, no rear view (rear surfaces are inferred by construction; invented-geometry check applies), view-02 SKU confirmation pending. Full v2 (state-consistent, rear coverage) still requires new capture per digital-twin plan Decision 2; v2 requirements remain listed in evaluation/scorecard-meshy-v1-pilot-run-01.md.",
+  "pack_version": "v1.2",
+  "pack_status": "v1.2 2026-08-27. The v1.1 held-out replacement FAILED independence verification: heldout-05 is the same studio asset and camera pose as view-01 composited into the video title card (feature registration: 86.4% geometric inliers) — circular for silhouette/landmark checks and retired from that role. THIS PACK HAS NO VALID GLOBAL HELD-OUT; silhouette-IoU and landmark checks remain unsatisfiable until a genuinely independent person-free angle exists (digital-twin plan Decision 2 capture). Checks that stay valid with this pack: dimensional error via auto_size against the official spec, identity-component inspection, invented-geometry orbit inspection, and fusion/separability grading. The four v1 input views remain byte-identical to the Meshy pilot inputs. Runbook's same-four-inputs comparison protocol CANNOT be satisfied by Tripo's semantic slots; any Tripo run on this pack is an EXPLORATORY CAPABILITY PROBE (fusion, identity, dimensions), not the controlled cross-tool comparison, which is deferred to the Decision 2 capture set.",
   "product": {
     "brand": "Graco",
     "name": "Ready2Jet Stroller",
@@ -80,13 +80,13 @@
       "notes": "Excluded from the open-state job. Single view only — folded job needs more views or self-captured scan (Decision 2)."
     },
     "heldout-05-front-3q.png": {
-      "role": "held-out validation",
+      "role": "identity reference only — RETIRED as held-out 2026-08-27",
       "state": "open, canopy fully extended (matches view-01 anchor state)",
       "viewpoint": "front three-quarter, full product, eye level",
       "sha256": "0d34c9c036c141d7159fa1b4d9066c6314b182a28fd15017d5e4823f77d1fd83",
       "origin": "extracted 2026-08-27 from vault source src_r2j_fold_video_v1 (official Graco fold video, authority MANUFACTURER, video sha256 9b1af253...) — title-card frame 29 (~t=1.0s), crop y120:1000 x1030:1830; reproducible via extract_heldout.py",
       "source_url": "vault: source-vault/graco-ready2jet-2212125/videos/official-fold-video.mp4",
-      "notes": "Person-free official studio asset shown on the video title card. Kingston colorway confirmed (gray fabric, black frame, tan handle, tri-spoke wheels visible). NEVER submit as a tool input; held-out only. Rights: manufacturer copyright, internal research use (matches vault rights_note)."
+      "notes": "RETIRED as held-out: same studio asset and pose as view-01 (86.4% feature-registration inliers) — using it for silhouette/landmark scoring is circular. Keep only as an identity/texture reference (canopy state, colorway, tri-spoke wheels). Never a tool input, never a held-out. Person-free official studio asset shown on the video title card. Kingston colorway confirmed (gray fabric, black frame, tan handle, tri-spoke wheels visible). NEVER submit as a tool input; held-out only. Rights: manufacturer copyright, internal research use (matches vault rights_note)."
     }
   },
   "excluded": {
