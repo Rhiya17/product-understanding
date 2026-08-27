@@ -1,0 +1,84 @@
+{
+  "source": "source-vault/graco-ready2jet-2212125/videos/official-fold-video.mp4",
+  "source_sha256": "9b1af25362a0b78187c6a4ced7228abcbbf5886e3617356277958392233af0fa",
+  "fps": 29.97002997002997,
+  "frames": [
+    {
+      "frame": 488,
+      "seconds": 16.282933,
+      "file": "frame-0488-16.283s.png",
+      "sha256": "67a7c18cf0943eece07a463feb80de239a7b5bc247a2b65adbb9451832af8b55",
+      "event": "canopy collapse in progress"
+    },
+    {
+      "frame": 611,
+      "seconds": 20.387033,
+      "file": "frame-0611-20.387s.png",
+      "sha256": "8f4f2253fda1419e1445c38c9813727349f1270e95b0a14e4b8671bfff544c21",
+      "event": "canopy collapsed before mechanism release"
+    },
+    {
+      "frame": 731,
+      "seconds": 24.391033,
+      "file": "frame-0731-24.391s.png",
+      "sha256": "7bec03fadc7cd250d2ee94a2246eae28597c2f5f7f38cb247b983e6a057fb8af",
+      "event": "front caster alignment close-up"
+    },
+    {
+      "frame": 1127,
+      "seconds": 37.604233,
+      "file": "frame-1127-37.604s.png",
+      "sha256": "59bf0577eac16de409e5c554893ff8956a3a747c50091fc777f782e1eeca4aff",
+      "event": "thumb switch and squeeze lever close-up"
+    },
+    {
+      "frame": 1153,
+      "seconds": 38.471767,
+      "file": "frame-1153-38.472s.png",
+      "sha256": "eb606737df46adb24acede10da8dd2c1a1360d1630032620954cd17c3be30064",
+      "event": "release controls held at end of close-up"
+    },
+    {
+      "frame": 1166,
+      "seconds": 38.905533,
+      "file": "frame-1166-38.906s.png",
+      "sha256": "c18789a34d039f6327d91e0006a839c194c1a014e239bde307e5582aa5926b3b",
+      "event": "wide open pose immediately before automatic motion"
+    },
+    {
+      "frame": 1173,
+      "seconds": 39.1391,
+      "file": "frame-1173-39.139s.png",
+      "sha256": "1d2fcf69a2945453823f2714b9f400f4707d448aafc25b0a2d14e6d8a23dba22",
+      "event": "first observable frame/seat motion"
+    },
+    {
+      "frame": 1180,
+      "seconds": 39.372667,
+      "file": "frame-1180-39.373s.png",
+      "sha256": "d71049f09854b1706b4b7debab40cc1014888d55e7668de7f6784370e5d02459",
+      "event": "mid-fold handle and front-leg convergence"
+    },
+    {
+      "frame": 1186,
+      "seconds": 39.572867,
+      "file": "frame-1186-39.573s.png",
+      "sha256": "30910ae7cc128afef3136e8ce88416c639328a3e185f1a870f0ddc94ded61a66",
+      "event": "near-fold wheelbase collapse"
+    },
+    {
+      "frame": 1193,
+      "seconds": 39.806433,
+      "file": "frame-1193-39.806s.png",
+      "sha256": "4daa3accc6e032807b050674e33e510f84434a80b2d4d55ad614a1db06caec74",
+      "event": "first self-standing folded pose"
+    },
+    {
+      "frame": 1206,
+      "seconds": 40.2402,
+      "file": "frame-1206-40.240s.png",
+      "sha256": "7ebd2b5d8de744849123b73754242012f4c18ce6f54ef81eba408dc9273be92b",
+      "event": "settled and secure folded pose"
+    }
+  ]
+}

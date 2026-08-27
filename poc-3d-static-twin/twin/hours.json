@@ -1,0 +1,12 @@
+{
+  "measurement": "Agent wall-clock time, rounded to the nearest 0.1 hour. External spend is tracked separately and must remain zero.",
+  "stages": {
+    "A": {
+      "started_at_utc": "2026-08-27T02:27:00Z",
+      "ended_at_utc": "2026-08-27T02:47:00Z",
+      "hours": 0.3,
+      "external_spend_usd": 0,
+      "outcome": "Procedure, patent, video-kinematics, and inferred folded-dimension evidence assembled."
+    }
+  }
+}

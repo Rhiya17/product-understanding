@@ -21,8 +21,14 @@
       "D": 68.58,
       "H": 109.22
     },
-    "folded_cm": null,
-    "source_url": "Official Graco product specification (Ready2Jet); folded dimensions still to be recorded."
+    "folded_cm": {
+      "W": 52.07,
+      "D": 29.21,
+      "H": 76.2,
+      "confidence": "INFERRED",
+      "method": "Planar width retained from the official open width; depth and height estimated from the official fold video's final self-standing pose against the known open envelope and manual fold diagrams. Cross-check only: manufacturer-authored retailer Q&A reports 20.5 W x 11.5 D x 30 H in. No folded W x D x H is published in the official manual or Graco PDP."
+    },
+    "source_url": "Official Graco product specification (Ready2Jet) for open dimensions; folded dimensions are INFERRED per poc-3d-static-twin/evaluation/fold-kinematics.md."
   },
   "images": {
     "view-01-front-3q.png": {
