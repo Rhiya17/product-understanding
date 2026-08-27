@@ -1,0 +1,25 @@
+{
+  "prepared_at": "2026-08-27T15:53:48.684345+00:00",
+  "endpoint": "fal-ai/any-llm/vision",
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "question": "motion-direction",
+  "arguments": {
+    "model": "qwen/qwen3-vl-235b-a22b-instruct",
+    "prompt": "This contact sheet has five chronological rows. In every row the deterministic control is on the left and the candidate realism-skin output at the same timestamp is on the right. Does the candidate's product silhouette progress in the same direction and fold-stage order as the control across all five rows? Answer JSON only: {\"answer\":\"yes|no|unsure\",\"evidence\":\"visible concise evidence\"}",
+    "image_urls": [
+      "https://v3b.fal.media/files/b/0aa8095a/dqiREeNFgfpeMO6uQcpV1_contact-sheet.png"
+    ],
+    "temperature": 0,
+    "max_tokens": 500
+  },
+  "inputs": [
+    {
+      "path": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/out/twin-skin-2/contact-sheet.png",
+      "sha256": "ef0466e5c44f3a1d362c7054cd73f936767f5cb8d55297c2cc1e4f099f8d803e"
+    }
+  ],
+  "estimated_cost_usd": 0.01,
+  "advisory_only": true,
+  "internal_only": true,
+  "approved_by": null
+}

@@ -1,0 +1,10 @@
+{
+  "request_id": "01a043f1-a60a-7973-8abf-ce3a9ac64e5c",
+  "submitted_at": "2026-08-27T15:58:25.312136+00:00",
+  "endpoint": "fal-ai/wan-vace-14b/depth",
+  "label": "twin-skin-defect-reverse-direction",
+  "estimated_cost_usd": 0.24,
+  "response_url": "https://queue.fal.run/fal-ai/wan-vace-14b/requests/01a043f1-a60a-7973-8abf-ce3a9ac64e5c",
+  "status_url": "https://queue.fal.run/fal-ai/wan-vace-14b/requests/01a043f1-a60a-7973-8abf-ce3a9ac64e5c/status",
+  "cancel_url": "https://queue.fal.run/fal-ai/wan-vace-14b/requests/01a043f1-a60a-7973-8abf-ce3a9ac64e5c/cancel"
+}

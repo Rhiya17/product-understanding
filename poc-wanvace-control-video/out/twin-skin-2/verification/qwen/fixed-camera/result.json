@@ -1,0 +1,6 @@
+{
+  "output": "{\n  \"answer\": \"yes\",\n  \"evidence\": \"The stroller's position, size, and angle relative to the frame are consistent across all images; background elements and shadows remain unchanged, indicating no camera movement.\"\n}",
+  "reasoning": null,
+  "partial": false,
+  "error": null
+}

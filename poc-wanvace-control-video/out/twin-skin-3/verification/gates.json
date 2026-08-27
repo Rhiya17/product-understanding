@@ -1,0 +1,74 @@
+{
+  "computed_at": "2026-08-27T15:47:28.424040+00:00",
+  "label": "twin-skin-3",
+  "control": {
+    "path": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/references/twin-fold-novel-rear-right.mp4",
+    "num_frames": 96,
+    "fps": 24.0
+  },
+  "output": {
+    "path": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/out/twin-skin-3/video.mp4",
+    "num_frames": 96,
+    "fps": 24.0
+  },
+  "frame_correspondence": "normalized same-timestamp mapping from first to last frame",
+  "silhouette_gate": {
+    "mean_iou": 0.77287,
+    "minimum_iou": 0.730701,
+    "mean_threshold": 0.8,
+    "minimum_threshold": 0.65,
+    "pass": false,
+    "segmentation": "dynamic neutral-background distance/luminance threshold, morphology, largest grounded component"
+  },
+  "pose_sequence_gate": {
+    "status": "PASS",
+    "reviewed_at": "2026-08-27T15:48:00Z",
+    "review_method": "manual visual comparison of the five same-timestamp control/output pairs",
+    "basis": "The rear-right output retains the same five progressive fold stages and reaches the corresponding compact stage at each timestamp.",
+    "contact_sheet": "contact-sheet.png",
+    "poses": [
+      {
+        "pose": 1,
+        "fraction": 0.49473684210526314,
+        "control_frame": 48,
+        "output_frame": 48
+      },
+      {
+        "pose": 2,
+        "fraction": 0.5894736842105263,
+        "control_frame": 57,
+        "output_frame": 57
+      },
+      {
+        "pose": 3,
+        "fraction": 0.6842105263157895,
+        "control_frame": 66,
+        "output_frame": 66
+      },
+      {
+        "pose": 4,
+        "fraction": 0.7789473684210526,
+        "control_frame": 75,
+        "output_frame": 75
+      },
+      {
+        "pose": 5,
+        "fraction": 0.8736842105263158,
+        "control_frame": 84,
+        "output_frame": 84
+      }
+    ]
+  },
+  "identity_gate": {
+    "status": "FAIL",
+    "reviewed_at": "2026-08-27T15:48:00Z",
+    "kingston_colorway": "PASS — gray fabric, black frame, and tan grip are present",
+    "tri_spoke_wheels": "PASS — visible wheels retain tri-spoke geometry",
+    "invented_or_missing_parts": "FAIL — VACE adds a central badge/control on the handle that is absent from the control and reference",
+    "other_identity_defect": "Hallucinated pseudo-brand text appears in the studio background",
+    "basis": "The invented handle control violates the work-order identity gate; the silhouette gate also independently fails."
+  },
+  "all_serving_gates_pass": false,
+  "trust_label_if_passed": "TWIN_RENDER_VACE_SKIN",
+  "internal_only": true
+}

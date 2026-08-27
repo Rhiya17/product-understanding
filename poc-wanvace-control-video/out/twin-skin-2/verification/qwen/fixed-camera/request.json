@@ -1,0 +1,10 @@
+{
+  "request_id": "01a043ed-5cb3-7410-9311-4febb3591783",
+  "submitted_at": "2026-08-27T15:53:44.388370+00:00",
+  "endpoint": "fal-ai/any-llm/vision",
+  "question": "fixed-camera",
+  "estimated_cost_usd": 0.01,
+  "response_url": "https://queue.fal.run/fal-ai/any-llm/requests/01a043ed-5cb3-7410-9311-4febb3591783",
+  "status_url": "https://queue.fal.run/fal-ai/any-llm/requests/01a043ed-5cb3-7410-9311-4febb3591783/status",
+  "cancel_url": "https://queue.fal.run/fal-ai/any-llm/requests/01a043ed-5cb3-7410-9311-4febb3591783/cancel"
+}

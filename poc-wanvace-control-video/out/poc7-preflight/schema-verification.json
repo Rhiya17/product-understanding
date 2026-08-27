@@ -1,0 +1,36 @@
+{
+  "verified_at": "2026-08-27T15:26:34.189540+00:00",
+  "endpoint": "fal-ai/wan-vace-14b/depth",
+  "schema_url": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai/wan-vace-14b/depth",
+  "model_url": "https://fal.ai/models/fal-ai/wan-vace-14b/depth",
+  "documentation_url": "https://fal.ai/models/fal-ai/wan-vace-14b/depth/api",
+  "schema_sha256": "fa5c46bbd69c21f3ab607bc43a27b00d635e07b68dfc6ae3e238e8c3259d0b31",
+  "verified_fields": [
+    "match_input_frames_per_second",
+    "match_input_num_frames",
+    "negative_prompt",
+    "num_inference_steps",
+    "preprocess",
+    "prompt",
+    "ref_image_urls",
+    "resolution",
+    "seed",
+    "video_url"
+  ],
+  "resolution_enum": [
+    "240p",
+    "360p",
+    "480p",
+    "580p",
+    "720p",
+    "auto"
+  ],
+  "alternative_not_run": "fal-ai/wan-vace-14b/pose",
+  "pricing_usd_per_billed_video_second": {
+    "720p": 0.08,
+    "580p": 0.06,
+    "480p": 0.04
+  },
+  "billing_frames_per_second": 16,
+  "status": "PASS"
+}

@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-08-27T15:38:29.190269+00:00",
+  "request_id": "01a043d8-4732-7992-89fa-d4e42e94e1fc",
+  "video": "video.mp4",
+  "gif": "video.gif",
+  "frames": "frames/",
+  "video_metadata": {
+    "width": 640,
+    "height": 640,
+    "fps": 24.0,
+    "num_frames": 96,
+    "duration_seconds": 4.0,
+    "sha256": "d7d61de2a5fc890a90acc8e90f9d4bfd7c1b9ec6d496836912b61d87e1be7a54",
+    "gif_sha256": "738f637e2b540f02000870e17aeb17de0bf67db8995dce509b04c9ea6083aead",
+    "watermark": [
+      "INTERNAL ONLY",
+      "DO NOT SHIP"
+    ],
+    "internal_only": true
+  },
+  "trust_label": "TWIN_RENDER_VACE_SKIN",
+  "internal_only": true,
+  "approved_by": null
+}

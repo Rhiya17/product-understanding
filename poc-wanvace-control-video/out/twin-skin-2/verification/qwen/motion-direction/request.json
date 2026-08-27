@@ -1,0 +1,10 @@
+{
+  "request_id": "01a043ed-6dc0-7693-8dfc-ba8e7501e97d",
+  "submitted_at": "2026-08-27T15:53:48.754750+00:00",
+  "endpoint": "fal-ai/any-llm/vision",
+  "question": "motion-direction",
+  "estimated_cost_usd": 0.01,
+  "response_url": "https://queue.fal.run/fal-ai/any-llm/requests/01a043ed-6dc0-7693-8dfc-ba8e7501e97d",
+  "status_url": "https://queue.fal.run/fal-ai/any-llm/requests/01a043ed-6dc0-7693-8dfc-ba8e7501e97d/status",
+  "cancel_url": "https://queue.fal.run/fal-ai/any-llm/requests/01a043ed-6dc0-7693-8dfc-ba8e7501e97d/cancel"
+}

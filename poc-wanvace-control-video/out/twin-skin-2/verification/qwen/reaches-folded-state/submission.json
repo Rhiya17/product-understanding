@@ -1,0 +1,35 @@
+{
+  "prepared_at": "2026-08-27T15:53:56.936781+00:00",
+  "endpoint": "fal-ai/any-llm/vision",
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "question": "reaches-folded-state",
+  "arguments": {
+    "model": "qwen/qwen3-vl-235b-a22b-instruct",
+    "prompt": "Image 1 is an official product-only folded-state reference. Image 2 is the first candidate frame and Image 3 is the final candidate frame. By Image 3, does the candidate clearly reach a compact folded state rather than remain open or only part-folded? Answer JSON only: {\"answer\":\"yes|no|unsure\",\"evidence\":\"visible concise evidence\"}",
+    "image_urls": [
+      "https://v3b.fal.media/files/b/0aa8095b/Th0FAw4R1CghDCYbpVQrV_folded-product-only.png",
+      "https://v3b.fal.media/files/b/0aa80959/64zc9egi4_o0wKpIeEQz1_frame-0001.png",
+      "https://v3b.fal.media/files/b/0aa80959/SqznZRopUNc8kLr2prZHM_frame-0096.png"
+    ],
+    "temperature": 0,
+    "max_tokens": 500
+  },
+  "inputs": [
+    {
+      "path": "/Users/vbp/workplace/product-understanding/poc-seedance-keyframe-fold/references/folded-product-only.png",
+      "sha256": "6b37b1a702a90dce520aaeb3d99b49fd59a2459c621c10b45e4e6c2a5de5f77c"
+    },
+    {
+      "path": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/out/twin-skin-2/frames/frame-0001.png",
+      "sha256": "caaadd1120376af5642e1a2bf8648567ab027c19525cc89808f540cff4d234bd"
+    },
+    {
+      "path": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/out/twin-skin-2/frames/frame-0096.png",
+      "sha256": "7b28a18f474d6f97d8f581931ccbc39e455e27ab2a8559388fc50d643076e6df"
+    }
+  ],
+  "estimated_cost_usd": 0.01,
+  "advisory_only": true,
+  "internal_only": true,
+  "approved_by": null
+}

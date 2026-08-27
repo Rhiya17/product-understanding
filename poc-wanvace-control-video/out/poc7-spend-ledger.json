@@ -1,0 +1,103 @@
+{
+  "spend_ceiling_usd": 15.0,
+  "entries": [
+    {
+      "request_id": "01a043d8-4732-7992-89fa-d4e42e94e1fc",
+      "label": "twin-skin-1",
+      "endpoint": "fal-ai/wan-vace-14b/depth",
+      "resolution": "480p",
+      "estimated_cost_usd": 0.24,
+      "submitted_at": "2026-08-27T15:30:42.631640+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-27T15:38:29.190583+00:00",
+      "output_num_frames": 96,
+      "output_duration_seconds": 4.0
+    },
+    {
+      "request_id": "01a043e0-204e-72b3-a554-65e216775bb5",
+      "label": "twin-skin-2",
+      "endpoint": "fal-ai/wan-vace-14b/depth",
+      "resolution": "720p",
+      "estimated_cost_usd": 0.48,
+      "submitted_at": "2026-08-27T15:39:16.960375+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-27T15:45:16.120148+00:00",
+      "output_num_frames": 96,
+      "output_duration_seconds": 4.0
+    },
+    {
+      "request_id": "01a043e6-2b2c-7711-9385-e44d4fa1629f",
+      "label": "twin-skin-3",
+      "endpoint": "fal-ai/wan-vace-14b/depth",
+      "resolution": "480p",
+      "estimated_cost_usd": 0.24,
+      "submitted_at": "2026-08-27T15:45:52.955430+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-27T15:47:21.512945+00:00",
+      "output_num_frames": 96,
+      "output_duration_seconds": 4.0
+    },
+    {
+      "request_id": "01a043e8-b842-7792-9a05-4f8987bbfdc8",
+      "label": "twin-skin-4",
+      "endpoint": "fal-ai/wan-vace-14b/depth",
+      "resolution": "720p",
+      "estimated_cost_usd": 0.48,
+      "submitted_at": "2026-08-27T15:48:40.152470+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-27T15:50:31.665266+00:00",
+      "output_num_frames": 96,
+      "output_duration_seconds": 4.0
+    },
+    {
+      "request_id": "01a043ed-4293-7003-8289-25614d702c45",
+      "label": "twin-skin-2-qwen-same-product",
+      "endpoint": "fal-ai/any-llm/vision",
+      "estimated_cost_usd": 0.01,
+      "submitted_at": "2026-08-27T15:53:37.702557+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-27T15:53:44.316461+00:00"
+    },
+    {
+      "request_id": "01a043ed-5cb3-7410-9311-4febb3591783",
+      "label": "twin-skin-2-qwen-fixed-camera",
+      "endpoint": "fal-ai/any-llm/vision",
+      "estimated_cost_usd": 0.01,
+      "submitted_at": "2026-08-27T15:53:44.388370+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-27T15:53:48.082309+00:00"
+    },
+    {
+      "request_id": "01a043ed-6dc0-7693-8dfc-ba8e7501e97d",
+      "label": "twin-skin-2-qwen-motion-direction",
+      "endpoint": "fal-ai/any-llm/vision",
+      "estimated_cost_usd": 0.01,
+      "submitted_at": "2026-08-27T15:53:48.754750+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-27T15:53:56.511073+00:00"
+    },
+    {
+      "request_id": "01a043ed-8df8-77f0-85e9-f25712f1f983",
+      "label": "twin-skin-2-qwen-reaches-folded-state",
+      "endpoint": "fal-ai/any-llm/vision",
+      "estimated_cost_usd": 0.01,
+      "submitted_at": "2026-08-27T15:53:57.002109+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-27T15:53:59.549905+00:00"
+    },
+    {
+      "request_id": "01a043f1-a60a-7973-8abf-ce3a9ac64e5c",
+      "label": "twin-skin-defect-reverse-direction",
+      "endpoint": "fal-ai/wan-vace-14b/depth",
+      "resolution": "480p",
+      "estimated_cost_usd": 0.24,
+      "submitted_at": "2026-08-27T15:58:25.312136+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-27T16:02:50.079931+00:00",
+      "output_num_frames": 96,
+      "output_duration_seconds": 4.0
+    }
+  ],
+  "estimated_spend_usd": 1.72,
+  "remaining_ceiling_usd": 13.28
+}

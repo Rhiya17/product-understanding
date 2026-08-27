@@ -1,0 +1,17 @@
+{
+  "verified_at": "2026-08-27T15:53:33.087006+00:00",
+  "endpoint": "fal-ai/any-llm/vision",
+  "schema_url": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai/any-llm/vision",
+  "schema_sha256": "db937725340ccdf806b5a208040074fe8847a236c657e664ce33f72990e99b34",
+  "verified_fields": [
+    "image_urls",
+    "max_tokens",
+    "model",
+    "prompt",
+    "temperature"
+  ],
+  "pricing_url": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/any-llm/vision",
+  "unit_price_usd": 0.01,
+  "unit": "requests",
+  "status": "PASS"
+}

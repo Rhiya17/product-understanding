@@ -1,0 +1,6 @@
+{
+  "output": "{\n  \"answer\": \"no\",\n  \"evidence\": \"Candidate frames show an added wooden handlebar, a cup holder, and a different canopy design not present in the reference image.\"\n}",
+  "reasoning": null,
+  "partial": false,
+  "error": null
+}

@@ -1,0 +1,85 @@
+{
+  "created_at": "2026-08-27T15:28:54.592915+00:00",
+  "motion_authority": "ready2jet-rigged.blend / Ready2Jet_Fold_Correct; unchanged",
+  "source_blend": "/Users/vbp/workplace/product-understanding/poc-3d-static-twin/twin/ready2jet-rigged.blend",
+  "source_blend_sha256": "83d80dc107d46edecbe89d4d97dabf726887012dd4c0917f8da8e2961a9dc79d",
+  "reference_image": "/Users/vbp/workplace/product-understanding/source-vault/graco-ready2jet-2212125/images/view-01-front-3q.png",
+  "reference_image_sha256": "2480f81d2987d6c4b7026c6fd024772066b5307d4568d3740ca435c2dafed8c9",
+  "reference_image_resolution_px": [
+    2000,
+    2000
+  ],
+  "reference_person_free_review": {
+    "status": "PASS",
+    "basis": "manual visual inspection; exact Kingston product-only studio image"
+  },
+  "controls": {
+    "official": {
+      "control_clip": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/references/twin-fold-official-angle.mp4",
+      "control_clip_sha256": "a71b449619503cabf25d3c5c615d543028851cd14aa037d3eb43bd192853c98f",
+      "source_frame_directory": "/tmp/poc6-articulated-twin-frames/fold-official-angle",
+      "source_frame_count": 96,
+      "source_frame_set_sha256": "f6381d2ac2885adcb7278647b79c61fbd31f3027b0fde47e6aa304bf1bc2c80e",
+      "resolution_px": [
+        1024,
+        1024
+      ],
+      "fps": 24,
+      "duration_seconds": 4.0,
+      "watermark": [
+        "INTERNAL ONLY",
+        "RIGHTS OPEN - DO NOT SHIP"
+      ],
+      "person_free_review": {
+        "status": "PASS",
+        "basis": "scripted Blender scene contains the product twin only; source sequence manually inspected"
+      }
+    },
+    "novel": {
+      "control_clip": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/references/twin-fold-novel-rear-right.mp4",
+      "control_clip_sha256": "cb61506fa4485439df6c0e012129451091160a1e1ffa237b845879a6ea0d931a",
+      "source_frame_directory": "/tmp/poc6-articulated-twin-frames/fold-novel-rear-right",
+      "source_frame_count": 96,
+      "source_frame_set_sha256": "e6ae59de20536e2aff6ea1d6d4864a80a94c719a3f36d7735f1ed19a19683d35",
+      "resolution_px": [
+        1024,
+        1024
+      ],
+      "fps": 24,
+      "duration_seconds": 4.0,
+      "watermark": [
+        "INTERNAL ONLY",
+        "RIGHTS OPEN - DO NOT SHIP"
+      ],
+      "person_free_review": {
+        "status": "PASS",
+        "basis": "scripted Blender scene contains the product twin only; source sequence manually inspected"
+      }
+    },
+    "defect_reverse_direction": {
+      "control_clip": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/references/twin-fold-defect-reverse-direction.mp4",
+      "control_clip_sha256": "1b0093087a95511aacb72e1634e6e84177379eebc7715ddda0a1821069b0a29f",
+      "source_frame_directory": "/tmp/poc7-defect-reverse-direction-frames",
+      "source_frame_count": 96,
+      "source_frame_set_sha256": "24ee014636a38ae30d861041f975ef091445e5aba8a6bca8f92c4bdec9aa5dd5",
+      "resolution_px": [
+        1024,
+        1024
+      ],
+      "fps": 24,
+      "duration_seconds": 4.0,
+      "watermark": [
+        "INTERNAL ONLY",
+        "RIGHTS OPEN - DO NOT SHIP"
+      ],
+      "person_free_review": {
+        "status": "PASS",
+        "basis": "scripted Blender scene contains the product twin only; source sequence manually inspected"
+      },
+      "motion_authority": "ready2jet-rigged.blend / defect_reverse_direction=1.0"
+    }
+  },
+  "internal_only": true,
+  "approved_by": null,
+  "updated_at": "2026-08-27T15:58:15.141093+00:00"
+}

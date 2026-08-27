@@ -1,0 +1,80 @@
+{
+  "computed_at": "2026-08-27T16:03:06.121929+00:00",
+  "label": "twin-skin-defect-reverse-direction",
+  "control": {
+    "path": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/references/twin-fold-defect-reverse-direction.mp4",
+    "num_frames": 96,
+    "fps": 24.0
+  },
+  "output": {
+    "path": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/out/twin-skin-defect-reverse-direction/video.mp4",
+    "num_frames": 96,
+    "fps": 24.0
+  },
+  "frame_correspondence": "normalized same-timestamp mapping from first to last frame",
+  "silhouette_gate": {
+    "mean_iou": 0.768046,
+    "minimum_iou": 0.727508,
+    "mean_threshold": 0.8,
+    "minimum_threshold": 0.65,
+    "pass": false,
+    "segmentation": "dynamic neutral-background distance/luminance threshold, morphology, largest grounded component"
+  },
+  "pose_sequence_gate": {
+    "status": "PASS",
+    "reviewed_at": "2026-08-27T16:04:00Z",
+    "review_method": "manual visual comparison of the five same-timestamp defect-control/output pairs",
+    "basis": "All five output frames preserve the defect control's progressively outward hyperextension; VACE does not replace it with the correct inward collapse.",
+    "contact_sheet": "contact-sheet.png",
+    "poses": [
+      {
+        "pose": 1,
+        "fraction": 0.49473684210526314,
+        "control_frame": 48,
+        "output_frame": 48
+      },
+      {
+        "pose": 2,
+        "fraction": 0.5894736842105263,
+        "control_frame": 57,
+        "output_frame": 57
+      },
+      {
+        "pose": 3,
+        "fraction": 0.6842105263157895,
+        "control_frame": 66,
+        "output_frame": 66
+      },
+      {
+        "pose": 4,
+        "fraction": 0.7789473684210526,
+        "control_frame": 75,
+        "output_frame": 75
+      },
+      {
+        "pose": 5,
+        "fraction": 0.8736842105263158,
+        "control_frame": 84,
+        "output_frame": 84
+      }
+    ]
+  },
+  "identity_gate": {
+    "status": "FAIL",
+    "reviewed_at": "2026-08-27T16:04:00Z",
+    "kingston_colorway": "PASS — gray fabric, black frame, tan handle grip, and black belly bar are present",
+    "tri_spoke_wheels": "PASS — visible wheels retain tri-spoke geometry",
+    "invented_or_missing_parts": "FAIL — an added handle-top device remains visible",
+    "other_identity_defect": "Hallucinated pseudo-brand text appears in the studio background",
+    "basis": "Identity defects make the output non-serving even though it is useful as a negative control."
+  },
+  "negative_control_gate": {
+    "status": "PASS",
+    "preserves_defect_reverse_direction": true,
+    "basis": "The output follows the control's visibly wrong outward hyperextension in all five same-timestamp pairs, so the realism layer did not accidentally correct the defect.",
+    "scope_note": "This establishes wrong-direction preservation only. The silhouette mean remains below the serving threshold, and identity fails."
+  },
+  "all_serving_gates_pass": false,
+  "trust_label_if_passed": "TWIN_RENDER_VACE_SKIN",
+  "internal_only": true
+}

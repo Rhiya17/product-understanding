@@ -1,0 +1,10 @@
+{
+  "request_id": "01a043d8-4732-7992-89fa-d4e42e94e1fc",
+  "submitted_at": "2026-08-27T15:30:42.631640+00:00",
+  "endpoint": "fal-ai/wan-vace-14b/depth",
+  "label": "twin-skin-1",
+  "estimated_cost_usd": 0.24,
+  "response_url": "https://queue.fal.run/fal-ai/wan-vace-14b/requests/01a043d8-4732-7992-89fa-d4e42e94e1fc",
+  "status_url": "https://queue.fal.run/fal-ai/wan-vace-14b/requests/01a043d8-4732-7992-89fa-d4e42e94e1fc/status",
+  "cancel_url": "https://queue.fal.run/fal-ai/wan-vace-14b/requests/01a043d8-4732-7992-89fa-d4e42e94e1fc/cancel"
+}

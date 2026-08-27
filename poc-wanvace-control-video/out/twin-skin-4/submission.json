@@ -1,0 +1,49 @@
+{
+  "prepared_at": "2026-08-27T15:48:39.849956+00:00",
+  "status": "submitted",
+  "endpoint": "fal-ai/wan-vace-14b/depth",
+  "label": "twin-skin-4",
+  "arguments": {
+    "prompt": "A photoreal professional studio product video of the exact Graco Ready2Jet compact stroller in the Kingston colorway shown in the reference image. Exact gray heather fabric, matte black frame, tan leather-look handle grip, black mesh basket, black belly bar, and original black tri-spoke wheels. The tan handle grip is uninterrupted and bare, with no attached device or accessory. The belly bar is matte black plastic, never tan. Clean neutral light-gray studio background, soft grounded shadow, bright diffuse product lighting, realistic fabric weave, molded plastic, powder-coated metal, and rubber materials. Product-only scene, no people, no text, no logos.",
+    "negative_prompt": "morphing, warping, extra wheels, missing wheels, extra parts, invented controls, invented parts, altered wheel design, non-tri-spoke wheels, duplicate parts, handle-mounted device, silver handle controls, tan belly bar, pseudo-branding, orange label, people, person, hands, face, text, captions, watermark, cartoon, illustration, cluttered background, low quality",
+    "video_url": "https://v3b.fal.media/files/b/0aa808d0/u607QXU3drLHreTOFZ-jQ_twin-fold-official-angle.mp4",
+    "ref_image_urls": [
+      "https://v3b.fal.media/files/b/0aa808d0/eqWveZQJzi4XSqA_OLwwR_view-01-front-3q.png"
+    ],
+    "preprocess": true,
+    "match_input_num_frames": true,
+    "match_input_frames_per_second": true,
+    "resolution": "720p",
+    "num_inference_steps": 30,
+    "seed": 42002,
+    "enable_safety_checker": true,
+    "enable_prompt_expansion": false
+  },
+  "inputs": {
+    "control_clip": {
+      "path": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/references/twin-fold-official-angle.mp4",
+      "sha256": "a71b449619503cabf25d3c5c615d543028851cd14aa037d3eb43bd192853c98f",
+      "provenance": "deterministic dressed twin Ready2Jet_Fold_Correct PNG sequence; 24 fps; visibly watermarked internal-only",
+      "motion_authority": "sole motion authority"
+    },
+    "reference_image": {
+      "path": "/Users/vbp/workplace/product-understanding/source-vault/graco-ready2jet-2212125/images/view-01-front-3q.png",
+      "sha256": "2480f81d2987d6c4b7026c6fd024772066b5307d4568d3740ca435c2dafed8c9",
+      "provenance": "official product-only Kingston studio image; appearance authority only"
+    },
+    "source_blend": {
+      "path": "/Users/vbp/workplace/product-understanding/poc-3d-static-twin/twin/ready2jet-rigged.blend",
+      "sha256": "83d80dc107d46edecbe89d4d97dabf726887012dd4c0917f8da8e2961a9dc79d"
+    }
+  },
+  "person_free_inputs": true,
+  "prompt_scope": "appearance only",
+  "estimated_cost_usd": 0.48,
+  "spend_ceiling_usd": 15.0,
+  "schema_verification": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/out/poc7-preflight/schema-verification.json",
+  "trust_label": "TWIN_RENDER_VACE_SKIN",
+  "internal_only": true,
+  "approved_by": null,
+  "submitted_at": "2026-08-27T15:48:40.152470+00:00",
+  "request_id": "01a043e8-b842-7792-9a05-4f8987bbfdc8"
+}

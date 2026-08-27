@@ -1,0 +1,55 @@
+{
+  "prepared_at": "2026-08-27T15:53:37.406582+00:00",
+  "endpoint": "fal-ai/any-llm/vision",
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "question": "same-product",
+  "arguments": {
+    "model": "qwen/qwen3-vl-235b-a22b-instruct",
+    "prompt": "Image 1 is an official product-only Kingston reference image. Images 2-7 are chronological frames from a candidate realism-skin video. Is the exact same product identity preserved across the candidate frames? Treat any invented or missing part, added handle control, altered belly-bar material/color, or changed wheel design as NO. Answer JSON only: {\"answer\":\"yes|no|unsure\",\"evidence\":\"visible concise evidence\"}",
+    "image_urls": [
+      "https://v3b.fal.media/files/b/0aa80959/4jMZJa_rXAS8w3oroRZ4j_view-01-front-3q.png",
+      "https://v3b.fal.media/files/b/0aa80959/64zc9egi4_o0wKpIeEQz1_frame-0001.png",
+      "https://v3b.fal.media/files/b/0aa80959/Rk1XVer9u1g5RdWzv41nw_frame-0020.png",
+      "https://v3b.fal.media/files/b/0aa80959/YLwTvNSNwh0j7GBbkiH3S_frame-0039.png",
+      "https://v3b.fal.media/files/b/0aa80959/8u4cQFBqok25r48MVxr46_frame-0058.png",
+      "https://v3b.fal.media/files/b/0aa80959/B2rYJaARYITdYBQGYYXTN_frame-0077.png",
+      "https://v3b.fal.media/files/b/0aa80959/SqznZRopUNc8kLr2prZHM_frame-0096.png"
+    ],
+    "temperature": 0,
+    "max_tokens": 500
+  },
+  "inputs": [
+    {
+      "path": "/Users/vbp/workplace/product-understanding/source-vault/graco-ready2jet-2212125/images/view-01-front-3q.png",
+      "sha256": "2480f81d2987d6c4b7026c6fd024772066b5307d4568d3740ca435c2dafed8c9"
+    },
+    {
+      "path": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/out/twin-skin-2/frames/frame-0001.png",
+      "sha256": "caaadd1120376af5642e1a2bf8648567ab027c19525cc89808f540cff4d234bd"
+    },
+    {
+      "path": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/out/twin-skin-2/frames/frame-0020.png",
+      "sha256": "f902968954f9e8b4f3e1e216847eab62ad430aee1093cec7f9adda753229b700"
+    },
+    {
+      "path": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/out/twin-skin-2/frames/frame-0039.png",
+      "sha256": "582143b936af8e3f0f64a1acc22144e7b34bf817bb672c8c3e1779120e30fdd9"
+    },
+    {
+      "path": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/out/twin-skin-2/frames/frame-0058.png",
+      "sha256": "bd0efa3287eb93d4724788104d44166bff8ffdd0f79c9da583ae98cd6b4258ef"
+    },
+    {
+      "path": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/out/twin-skin-2/frames/frame-0077.png",
+      "sha256": "28d319b82f935aac2299977e41d2c80d1c0dfa4b50d32f99236892639e9ef4f4"
+    },
+    {
+      "path": "/Users/vbp/workplace/product-understanding/poc-wanvace-control-video/out/twin-skin-2/frames/frame-0096.png",
+      "sha256": "7b28a18f474d6f97d8f581931ccbc39e455e27ab2a8559388fc50d643076e6df"
+    }
+  ],
+  "estimated_cost_usd": 0.01,
+  "advisory_only": true,
+  "internal_only": true,
+  "approved_by": null
+}

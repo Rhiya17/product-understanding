@@ -1,0 +1,16 @@
+{
+  "video": {
+    "url": "https://v3b.fal.media/files/b/0aa80933/ngp8oTkETJB4rEMM0qkK7_MI1GRW50.mp4",
+    "content_type": "video/mp4",
+    "file_name": "ngp8oTkETJB4rEMM0qkK7_MI1GRW50.mp4",
+    "file_size": 735758,
+    "width": 640,
+    "height": 640,
+    "fps": 24.0,
+    "duration": 4.0,
+    "num_frames": 96
+  },
+  "prompt": "A photoreal professional studio product video of the exact Graco Ready2Jet compact stroller in the Kingston colorway shown in the reference image. Exact gray heather fabric, matte black frame, tan leather-look handle grip, black mesh basket, black belly bar, and original black tri-spoke wheels. Clean neutral light-gray studio background, soft grounded shadow, bright diffuse product lighting, realistic fabric weave, molded plastic, powder-coated metal, and rubber materials. Product-only scene, no people, no text, no logos.",
+  "seed": 42001,
+  "frames_zip": null
+}
