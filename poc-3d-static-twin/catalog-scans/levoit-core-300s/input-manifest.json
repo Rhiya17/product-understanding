@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "product": "levoit-core-300s",
+  "status": "SKIPPED_NO_HONEST_H31_VIEW_SET",
+  "provider": "fal.ai / tripo3d/h3.1/multiview-to-3d",
+  "provider_slot_contract": {
+    "image_count": "2-4",
+    "semantic_order": [
+      "front",
+      "left",
+      "back",
+      "right"
+    ],
+    "front_required": true
+  },
+  "evaluated_person_free_candidates": [
+    {
+      "source_id": "src_img_front_hero_3000",
+      "local_path": "source-vault/levoit-core-300s/images/levoit-core-300s-front-hero-app-3000.png",
+      "sha256": "161cc28ac471ba05799783dafda9a4c860022070306d6cfb5605120e00868446",
+      "person_free": true,
+      "semantic_assessment": "front three-quarter product view, but a large smartphone/app composite is present and would contaminate the generated twin",
+      "selected": false
+    },
+    {
+      "source_id": "src_img_three_quarter_2048",
+      "local_path": "source-vault/levoit-core-300s/images/levoit-core-300s-three-quarter-view-2048.jpg",
+      "sha256": "a3f54690554821e65693702f1406f1fd85a95a89880401bd12a9320dd0cdf075",
+      "person_free": true,
+      "semantic_assessment": "clean front three-quarter; acceptable only for the front slot, not an honest left/back/right view",
+      "selected": false
+    },
+    {
+      "source_id": "src_img_three_quarter_elevated_3000",
+      "local_path": "source-vault/levoit-core-300s/images/levoit-core-300s-three-quarter-elevated-base-3000.png",
+      "sha256": "1dfdd4f159478221eca5016a3335c7bb72528c2cd432d0777493b36e2704a976",
+      "person_free": true,
+      "semantic_assessment": "elevated front three-quarter; not an honest left/back/right view",
+      "selected": false
+    },
+    {
+      "source_id": "src_img_top_panel_3000",
+      "local_path": "source-vault/levoit-core-300s/images/levoit-core-300s-top-control-panel-3000.png",
+      "sha256": "d1252b1db5c2831cb77974734b1a814cf441ec94714f4fd592578ecb2bc40b3d",
+      "person_free": true,
+      "semantic_assessment": "true top view; H3.1 has no top slot and it may not be relabeled as left/back/right",
+      "selected": false
+    }
+  ],
+  "selected_inputs": [],
+  "skip_reason": "The vault has no true left, back, or right view (also recorded in the source-vault collection gaps). H3.1 requires at least two semantic views, so the clean front three-quarter alone is insufficient. No view was mislabeled and no provider request was submitted.",
+  "request_id": null,
+  "provider_spend_usd": 0,
+  "rights_note": "Tripo3D license check OPEN — do not ship",
+  "approved_by": null,
+  "internal_only": true
+}
