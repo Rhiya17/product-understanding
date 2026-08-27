@@ -1,0 +1,843 @@
+{
+  "schema_version": 1,
+  "lane": 4,
+  "state": null,
+  "created_at": "2026-08-27T19:46:59.993031+00:00",
+  "method": "angle grid + deterministic distance/sensor-shift fit; final Blender render is authoritative",
+  "resolution_px": [
+    256,
+    256
+  ],
+  "all_attempts": {
+    "src_img_black_front": [
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_front__az-090__el+06.png",
+        "azimuth_deg": -90,
+        "elevation_deg": 6,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          5.804913987391753e-17,
+          -0.9482394456863403,
+          0.2086305171251297
+        ],
+        "base_rotation_euler_rad": [
+          1.4660766124725342,
+          -1.464015399563467e-23,
+          6.123234262925839e-17
+        ],
+        "predicted_fit_iou": 0.614269,
+        "image_scale": 2.035,
+        "translation_px": [
+          0.03230474754211343,
+          -1.9975405992458946
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_front__az-092__el+06.png",
+        "azimuth_deg": -92,
+        "elevation_deg": 6,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.03308522328734398,
+          -0.9476618766784668,
+          0.2086305171251297
+        ],
+        "base_rotation_euler_rad": [
+          1.4660766124725342,
+          -5.850520512495905e-09,
+          -0.034906595945358276
+        ],
+        "predicted_fit_iou": 0.61425,
+        "image_scale": 2.035,
+        "translation_px": [
+          0.44329246538985956,
+          -1.9869708130944161
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_front__az-088__el+06.png",
+        "azimuth_deg": -88,
+        "elevation_deg": 6,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          0.03308522328734398,
+          -0.9476618766784668,
+          0.2086305171251297
+        ],
+        "base_rotation_euler_rad": [
+          1.4660766124725342,
+          5.850520512495905e-09,
+          0.034906595945358276
+        ],
+        "predicted_fit_iou": 0.613614,
+        "image_scale": 2.035,
+        "translation_px": [
+          -0.39482450922071166,
+          -2.001061520276295
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_front__az-090__el+02.png",
+        "azimuth_deg": -90,
+        "elevation_deg": 2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          5.833333266261115e-17,
+          -0.9528806805610657,
+          0.1422576606273651
+        ],
+        "base_rotation_euler_rad": [
+          1.5358898639678955,
+          -8.815481961660451e-24,
+          6.123234924670329e-17
+        ],
+        "predicted_fit_iou": 0.612991,
+        "image_scale": 2.035,
+        "translation_px": [
+          0.0226373753099125,
+          -3.11456974669224
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_front__az-092__el+02.png",
+        "azimuth_deg": -92,
+        "elevation_deg": 2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.0332471989095211,
+          -0.9523003697395325,
+          0.1422576606273651
+        ],
+        "base_rotation_euler_rad": [
+          1.5358896255493164,
+          -2.859552594713932e-10,
+          -0.03490658849477768
+        ],
+        "predicted_fit_iou": 0.612262,
+        "image_scale": 2.035,
+        "translation_px": [
+          0.2646057184746411,
+          -3.290539605477676
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_front__az-088__el+02.png",
+        "azimuth_deg": -88,
+        "elevation_deg": 2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          0.0332471989095211,
+          -0.9523003697395325,
+          0.1422576606273651
+        ],
+        "base_rotation_euler_rad": [
+          1.5358896255493164,
+          2.859552594713932e-10,
+          0.03490658849477768
+        ],
+        "predicted_fit_iou": 0.612068,
+        "image_scale": 2.035,
+        "translation_px": [
+          -0.1982281332582403,
+          -3.238611837988003
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_front__az-090__el-02.png",
+        "azimuth_deg": -90,
+        "elevation_deg": -2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          5.833333266261115e-17,
+          -0.9528806805610657,
+          0.07572272419929504
+        ],
+        "base_rotation_euler_rad": [
+          1.6057028770446777,
+          -9.735300088035393e-24,
+          6.123234262925839e-17
+        ],
+        "predicted_fit_iou": 0.609462,
+        "image_scale": 2.035,
+        "translation_px": [
+          0.042026577114597785,
+          -4.251358744136894
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_front__az-092__el-02.png",
+        "azimuth_deg": -92,
+        "elevation_deg": -2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.0332471989095211,
+          -0.9523003697395325,
+          0.07572272419929504
+        ],
+        "base_rotation_euler_rad": [
+          1.6057028770446777,
+          -2.904691376315327e-09,
+          -0.03490658476948738
+        ],
+        "predicted_fit_iou": 0.609243,
+        "image_scale": 2.035,
+        "translation_px": [
+          0.3433269388873583,
+          -4.282243133681902
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_front__az-088__el-02.png",
+        "azimuth_deg": -88,
+        "elevation_deg": -2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          0.0332471989095211,
+          -0.9523003697395325,
+          0.07572272419929504
+        ],
+        "base_rotation_euler_rad": [
+          1.6057028770446777,
+          2.904691376315327e-09,
+          0.03490658476948738
+        ],
+        "predicted_fit_iou": 0.609128,
+        "image_scale": 2.035,
+        "translation_px": [
+          -0.29380876362913,
+          -4.281227655485566
+        ]
+      }
+    ],
+    "src_img_black_three_quarter": [
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_three_quarter__az-142__el+02.png",
+        "azimuth_deg": -142,
+        "elevation_deg": 2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.7507028579711914,
+          -0.5867384076118469,
+          0.1422576606273651
+        ],
+        "base_rotation_euler_rad": [
+          1.535889744758606,
+          -6.600839697057381e-08,
+          -0.9075713157653809
+        ],
+        "predicted_fit_iou": 0.537272,
+        "image_scale": 2.0700000000000003,
+        "translation_px": [
+          -2.5071803066334013,
+          -2.3094939085169983
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_three_quarter__az-142__el+08.png",
+        "azimuth_deg": -142,
+        "elevation_deg": 8,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.7438501715660095,
+          -0.581384539604187,
+          0.24165505170822144
+        ],
+        "base_rotation_euler_rad": [
+          1.4311699867248535,
+          6.089301507472555e-08,
+          -0.9075711369514465
+        ],
+        "predicted_fit_iou": 0.506737,
+        "image_scale": 2.205,
+        "translation_px": [
+          -1.9752460300446728,
+          -2.0117082376649478
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_three_quarter__az-132__el+02.png",
+        "azimuth_deg": -132,
+        "elevation_deg": 2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.6374509930610657,
+          -0.708186149597168,
+          0.1422576606273651
+        ],
+        "base_rotation_euler_rad": [
+          1.535889744758606,
+          1.4497231859422754e-08,
+          -0.7330383658409119
+        ],
+        "predicted_fit_iou": 0.486437,
+        "image_scale": 1.8950000000000002,
+        "translation_px": [
+          -2.1806070054798,
+          -3.6134522561812616
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_three_quarter__az-142__el+14.png",
+        "azimuth_deg": -142,
+        "elevation_deg": 14,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.7288478016853333,
+          -0.5696633458137512,
+          0.3395989239215851
+        ],
+        "base_rotation_euler_rad": [
+          1.3264503479003906,
+          -9.728552186061279e-09,
+          -0.9075711965560913
+        ],
+        "predicted_fit_iou": 0.479063,
+        "image_scale": 2.245,
+        "translation_px": [
+          -2.2253272161731843,
+          -0.38379871234030816
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_three_quarter__az-132__el+08.png",
+        "azimuth_deg": -132,
+        "elevation_deg": 8,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.6316322088241577,
+          -0.7017236351966858,
+          0.24165505170822144
+        ],
+        "base_rotation_euler_rad": [
+          1.4311699867248535,
+          1.1243507458402746e-08,
+          -0.7330383658409119
+        ],
+        "predicted_fit_iou": 0.458091,
+        "image_scale": 1.865,
+        "translation_px": [
+          -2.18642537844579,
+          -0.20525633626209583
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_three_quarter__az-132__el+14.png",
+        "azimuth_deg": -132,
+        "elevation_deg": 14,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.618893027305603,
+          -0.6875753998756409,
+          0.3395989239215851
+        ],
+        "base_rotation_euler_rad": [
+          1.3264503479003906,
+          5.559812521482854e-08,
+          -0.7330383658409119
+        ],
+        "predicted_fit_iou": 0.439373,
+        "image_scale": 1.8850000000000002,
+        "translation_px": [
+          -2.534052690416857,
+          0.9670711713982882
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_three_quarter__az-122__el+02.png",
+        "azimuth_deg": -122,
+        "elevation_deg": 2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.504830539226532,
+          -0.8081228137016296,
+          0.1422576606273651
+        ],
+        "base_rotation_euler_rad": [
+          1.5358898639678955,
+          -2.2672232091736078e-08,
+          -0.5585053563117981
+        ],
+        "predicted_fit_iou": 0.436553,
+        "image_scale": 1.81,
+        "translation_px": [
+          -2.6725811329536526,
+          -3.5217914465431477
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_three_quarter__az-122__el+08.png",
+        "azimuth_deg": -122,
+        "elevation_deg": 8,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.5002223253250122,
+          -0.8007480502128601,
+          0.24165505170822144
+        ],
+        "base_rotation_euler_rad": [
+          1.4311699867248535,
+          5.0173962762301016e-08,
+          -0.5585053563117981
+        ],
+        "predicted_fit_iou": 0.420414,
+        "image_scale": 1.7650000000000001,
+        "translation_px": [
+          -2.6601250326516492,
+          -1.9120544461621591
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_three_quarter__az-122__el+14.png",
+        "azimuth_deg": -122,
+        "elevation_deg": 14,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.49013349413871765,
+          -0.7846026420593262,
+          0.3395989239215851
+        ],
+        "base_rotation_euler_rad": [
+          1.3264503479003906,
+          2.02480805455707e-08,
+          -0.5585053563117981
+        ],
+        "predicted_fit_iou": 0.399843,
+        "image_scale": 1.76,
+        "translation_px": [
+          -2.6585737151127944,
+          -0.7150334570817165
+        ]
+      }
+    ],
+    "src_img_black_side": [
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_side__az-180__el-02.png",
+        "azimuth_deg": -180,
+        "elevation_deg": -2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.9526556134223938,
+          -0.00022504571825265884,
+          0.07572272419929504
+        ],
+        "base_rotation_euler_rad": [
+          1.6057031154632568,
+          2.823741240831623e-08,
+          -1.5707963705062866
+        ],
+        "predicted_fit_iou": 0.795457,
+        "image_scale": 2.3600000000000003,
+        "translation_px": [
+          -0.6122783294026561,
+          -5.550343483800646
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_side__az-182__el+06.png",
+        "azimuth_deg": -182,
+        "elevation_deg": 6,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.9474368095397949,
+          0.032860178500413895,
+          0.2086305171251297
+        ],
+        "base_rotation_euler_rad": [
+          1.4660766124725342,
+          1.5113391427235e-08,
+          -1.6057029962539673
+        ],
+        "predicted_fit_iou": 0.790624,
+        "image_scale": 2.21,
+        "translation_px": [
+          -1.5861535830969444,
+          -6.056957182174187
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_side__az-182__el+02.png",
+        "azimuth_deg": -182,
+        "elevation_deg": 2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.9520753026008606,
+          0.03302215412259102,
+          0.1422576606273651
+        ],
+        "base_rotation_euler_rad": [
+          1.5358898639678955,
+          4.590020452610588e-08,
+          -1.6057029962539673
+        ],
+        "predicted_fit_iou": 0.786818,
+        "image_scale": 2.21,
+        "translation_px": [
+          -1.765629446025315,
+          -4.983551965726548
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_side__az-182__el-02.png",
+        "azimuth_deg": -182,
+        "elevation_deg": -2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.9520753026008606,
+          0.03302215412259102,
+          0.07572272419929504
+        ],
+        "base_rotation_euler_rad": [
+          1.6057028770446777,
+          -1.68138996059497e-07,
+          -1.6057026386260986
+        ],
+        "predicted_fit_iou": 0.782405,
+        "image_scale": 2.21,
+        "translation_px": [
+          -2.001423156929434,
+          -3.3928407126277307
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_side__az-178__el+06.png",
+        "azimuth_deg": -178,
+        "elevation_deg": 6,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.9474368095397949,
+          -0.03331026807427406,
+          0.2086305171251297
+        ],
+        "base_rotation_euler_rad": [
+          1.4660767316818237,
+          1.0402813721555049e-08,
+          -1.535889983177185
+        ],
+        "predicted_fit_iou": 0.781576,
+        "image_scale": 2.21,
+        "translation_px": [
+          0.32906014334578515,
+          -5.679197804348547
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_side__az-180__el+06.png",
+        "azimuth_deg": -180,
+        "elevation_deg": 6,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.9480143785476685,
+          -0.00022504571825265884,
+          0.2086305171251297
+        ],
+        "base_rotation_euler_rad": [
+          1.4660767316818237,
+          6.264242102815842e-08,
+          -1.5707963705062866
+        ],
+        "predicted_fit_iou": 0.781029,
+        "image_scale": 2.235,
+        "translation_px": [
+          -0.7123308312630741,
+          -7.835734567482632
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_side__az-180__el+02.png",
+        "azimuth_deg": -180,
+        "elevation_deg": 2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.9526556134223938,
+          -0.00022504571825265884,
+          0.1422576606273651
+        ],
+        "base_rotation_euler_rad": [
+          1.535889744758606,
+          2.823741773738675e-08,
+          -1.5707963705062866
+        ],
+        "predicted_fit_iou": 0.780908,
+        "image_scale": 2.27,
+        "translation_px": [
+          -0.7286897910289127,
+          -5.740581003110435
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_side__az-178__el+02.png",
+        "azimuth_deg": -178,
+        "elevation_deg": 2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.9520753026008606,
+          -0.03347224369645119,
+          0.1422576606273651
+        ],
+        "base_rotation_euler_rad": [
+          1.5358898639678955,
+          4.4510535701647314e-08,
+          -1.5358898639678955
+        ],
+        "predicted_fit_iou": 0.779051,
+        "image_scale": 2.21,
+        "translation_px": [
+          -0.4003945736290859,
+          -4.593572696857251
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_side__az-178__el-02.png",
+        "azimuth_deg": -178,
+        "elevation_deg": -2,
+        "lens_mm": 70.0,
+        "base_distance_m": 0.9532362967729568,
+        "target_xyz_m": [
+          0.0,
+          -0.00022504571825265884,
+          0.10899019241333008
+        ],
+        "base_position_xyz_m": [
+          -0.9520753026008606,
+          -0.03347224369645119,
+          0.07572272419929504
+        ],
+        "base_rotation_euler_rad": [
+          1.6057028770446777,
+          4.272548537187504e-08,
+          -1.5358895063400269
+        ],
+        "predicted_fit_iou": 0.775615,
+        "image_scale": 2.21,
+        "translation_px": [
+          -0.05158815260674032,
+          -3.1392136512317848
+        ]
+      }
+    ]
+  },
+  "selected": {
+    "src_img_black_front": {
+      "source_id": "src_img_black_front",
+      "selected_raw_mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_front__az-090__el+06.png",
+      "predicted_fit_iou": 0.614269,
+      "azimuth_deg": -90,
+      "elevation_deg": 6,
+      "lens_mm": 70.0,
+      "base_distance_m": 0.9532362967729568,
+      "fitted_distance_m": 0.46842078465501563,
+      "target_xyz_m": [
+        0.0,
+        -0.00022504571825265884,
+        0.10899019241333008
+      ],
+      "image_scale": 2.035,
+      "translation_px": [
+        0.03230474754211343,
+        -1.9975405992458946
+      ],
+      "shift_x": -0.0001261904200863806,
+      "shift_y": -0.007802892965804276
+    },
+    "src_img_black_three_quarter": {
+      "source_id": "src_img_black_three_quarter",
+      "selected_raw_mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_three_quarter__az-142__el+02.png",
+      "predicted_fit_iou": 0.537272,
+      "azimuth_deg": -142,
+      "elevation_deg": 2,
+      "lens_mm": 70.0,
+      "base_distance_m": 0.9532362967729568,
+      "fitted_distance_m": 0.46050062646036555,
+      "target_xyz_m": [
+        0.0,
+        -0.00022504571825265884,
+        0.10899019241333008
+      ],
+      "image_scale": 2.0700000000000003,
+      "translation_px": [
+        -2.5071803066334013,
+        -2.3094939085169983
+      ],
+      "shift_x": 0.009793673072786724,
+      "shift_y": -0.009021460580144525
+    },
+    "src_img_black_side": {
+      "source_id": "src_img_black_side",
+      "selected_raw_mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/raw/src_img_black_side__az-180__el-02.png",
+      "predicted_fit_iou": 0.795457,
+      "azimuth_deg": -180,
+      "elevation_deg": -2,
+      "lens_mm": 70.0,
+      "base_distance_m": 0.9532362967729568,
+      "fitted_distance_m": 0.40391368507328673,
+      "target_xyz_m": [
+        0.0,
+        -0.00022504571825265884,
+        0.10899019241333008
+      ],
+      "image_scale": 2.3600000000000003,
+      "translation_px": [
+        -0.6122783294026561,
+        -5.550343483800646
+      ],
+      "shift_x": 0.0023917122242291255,
+      "shift_y": -0.021681029233596272
+    }
+  }
+}

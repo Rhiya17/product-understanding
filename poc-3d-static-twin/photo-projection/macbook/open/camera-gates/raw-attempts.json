@@ -1,0 +1,610 @@
+{
+  "schema_version": 1,
+  "lane": 3,
+  "state": "open",
+  "resolution_px": [
+    256,
+    256
+  ],
+  "camera_type": "PERSP",
+  "attempts": {
+    "src_img_newsroom_keyboard": [
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-092__el+72.png",
+        "azimuth_deg": -92,
+        "elevation_deg": 72,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          -0.014758100733160973,
+          -0.40999656915664673,
+          1.3732216358184814
+        ],
+        "base_rotation_euler_rad": [
+          0.31415924429893494,
+          2.06876449304616e-09,
+          -0.03490658849477768
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-092__el+78.png",
+        "azimuth_deg": -92,
+        "elevation_deg": 78,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          -0.009929492138326168,
+          -0.27172333002090454,
+          1.4102944135665894
+        ],
+        "base_rotation_euler_rad": [
+          0.2094394415616989,
+          4.489600691215401e-09,
+          -0.03490658104419708
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-092__el+84.png",
+        "azimuth_deg": -92,
+        "elevation_deg": 84,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          -0.004992092959582806,
+          -0.13033470511436462,
+          1.432701826095581
+        ],
+        "base_rotation_euler_rad": [
+          0.10471957921981812,
+          5.875020914203333e-09,
+          -0.03490658104419708
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-092__el+86.png",
+        "azimuth_deg": -92,
+        "elevation_deg": 86,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          -0.00333144492469728,
+          -0.08277996629476547,
+          1.4368648529052734
+        ],
+        "base_rotation_euler_rad": [
+          0.06981278210878372,
+          1.3645507834780801e-08,
+          -0.03490658476948738
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-092__el+88.png",
+        "azimuth_deg": -92,
+        "elevation_deg": 88,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          -0.0016667377203702927,
+          -0.035108987241983414,
+          1.4393646717071533
+        ],
+        "base_rotation_euler_rad": [
+          0.03490620106458664,
+          1.3335664128533153e-08,
+          -0.03490658104419708
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-092__el+89.png",
+        "azimuth_deg": -92,
+        "elevation_deg": 89,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          -0.0008334958110935986,
+          -0.011248063296079636,
+          1.4399899244308472
+        ],
+        "base_rotation_euler_rad": [
+          0.017452433705329895,
+          3.0024455810462314e-08,
+          -0.03490658104419708
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-090__el+72.png",
+        "azimuth_deg": -90,
+        "elevation_deg": 72,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          2.5893585439327148e-17,
+          -0.41025418043136597,
+          1.3732216358184814
+        ],
+        "base_rotation_euler_rad": [
+          0.31415921449661255,
+          -4.881349008067312e-24,
+          6.123234924670329e-17
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-090__el+78.png",
+        "azimuth_deg": -90,
+        "elevation_deg": 78,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          1.7421626420977415e-17,
+          -0.2718966007232666,
+          1.4102944135665894
+        ],
+        "base_rotation_euler_rad": [
+          0.20943939685821533,
+          -5.753278149899454e-24,
+          6.123234262925839e-17
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-090__el+84.png",
+        "azimuth_deg": -90,
+        "elevation_deg": 84,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          8.758795476281071e-18,
+          -0.13042184710502625,
+          1.432701826095581
+        ],
+        "base_rotation_euler_rad": [
+          0.10471955686807632,
+          -1.1558147014139457e-23,
+          6.123233601181349e-17
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-090__el+86.png",
+        "azimuth_deg": -90,
+        "elevation_deg": 86,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          5.8451320050824486e-18,
+          -0.08283811062574387,
+          1.4368648529052734
+        ],
+        "base_rotation_euler_rad": [
+          0.06981278210878372,
+          -2.4027183826928564e-23,
+          6.123234924670329e-17
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-090__el+88.png",
+        "azimuth_deg": -90,
+        "elevation_deg": 88,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          2.9243475427855104e-18,
+          -0.0351380817592144,
+          1.4393646717071533
+        ],
+        "base_rotation_euler_rad": [
+          0.03490619733929634,
+          -2.3821442591959682e-23,
+          6.123234262925839e-17
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-090__el+89.png",
+        "azimuth_deg": -90,
+        "elevation_deg": 89,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          1.462396489772685e-18,
+          -0.01126260869204998,
+          1.4399899244308472
+        ],
+        "base_rotation_euler_rad": [
+          0.017452437430620193,
+          -5.2353672209086126e-23,
+          6.123235586414819e-17
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-088__el+72.png",
+        "azimuth_deg": -88,
+        "elevation_deg": 72,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          0.014758100733160973,
+          -0.40999656915664673,
+          1.3732216358184814
+        ],
+        "base_rotation_euler_rad": [
+          0.31415924429893494,
+          -2.06876449304616e-09,
+          0.03490658849477768
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-088__el+78.png",
+        "azimuth_deg": -88,
+        "elevation_deg": 78,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          0.009929492138326168,
+          -0.27172333002090454,
+          1.4102944135665894
+        ],
+        "base_rotation_euler_rad": [
+          0.2094394415616989,
+          -4.489600691215401e-09,
+          0.03490658104419708
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-088__el+84.png",
+        "azimuth_deg": -88,
+        "elevation_deg": 84,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          0.004992092959582806,
+          -0.13033470511436462,
+          1.432701826095581
+        ],
+        "base_rotation_euler_rad": [
+          0.10471957921981812,
+          -5.875020914203333e-09,
+          0.03490658104419708
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-088__el+86.png",
+        "azimuth_deg": -88,
+        "elevation_deg": 86,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          0.00333144492469728,
+          -0.08277996629476547,
+          1.4368648529052734
+        ],
+        "base_rotation_euler_rad": [
+          0.06981278210878372,
+          -1.3645507834780801e-08,
+          0.03490658476948738
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-088__el+88.png",
+        "azimuth_deg": -88,
+        "elevation_deg": 88,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          0.0016667377203702927,
+          -0.035108987241983414,
+          1.4393646717071533
+        ],
+        "base_rotation_euler_rad": [
+          0.03490620106458664,
+          -1.3335664128533153e-08,
+          0.03490658104419708
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_newsroom_keyboard__az-088__el+89.png",
+        "azimuth_deg": -88,
+        "elevation_deg": 89,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          0.0008334958110935986,
+          -0.011248063296079636,
+          1.4399899244308472
+        ],
+        "base_rotation_euler_rad": [
+          0.017452433705329895,
+          -3.0024455810462314e-08,
+          0.03490658104419708
+        ]
+      }
+    ],
+    "src_img_store_midnight": [
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_store_midnight__az-092__el+02.png",
+        "azimuth_deg": -92,
+        "elevation_deg": 2,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          -0.04772912338376045,
+          -1.3541632890701294,
+          0.11950649321079254
+        ],
+        "base_rotation_euler_rad": [
+          1.5358898639678955,
+          -1.422752471391675e-09,
+          -0.03490658849477768
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_store_midnight__az-092__el+06.png",
+        "azimuth_deg": -92,
+        "elevation_deg": 6,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          -0.04749659448862076,
+          -1.3475043773651123,
+          0.2147902548313141
+        ],
+        "base_rotation_euler_rad": [
+          1.4660766124725342,
+          -1.5525515317804661e-09,
+          -0.03490658849477768
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_store_midnight__az-092__el+10.png",
+        "azimuth_deg": -92,
+        "elevation_deg": 10,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          -0.047032661736011505,
+          -1.3342190980911255,
+          0.30937713384628296
+        ],
+        "base_rotation_euler_rad": [
+          1.3962633609771729,
+          7.140177338271769e-11,
+          -0.03490658849477768
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_store_midnight__az-090__el+02.png",
+        "azimuth_deg": -90,
+        "elevation_deg": 2,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          8.374235569910473e-17,
+          -1.3549963235855103,
+          0.11950649321079254
+        ],
+        "base_rotation_euler_rad": [
+          1.5358898639678955,
+          -1.8385225783669373e-24,
+          6.123234924670329e-17
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_store_midnight__az-090__el+06.png",
+        "azimuth_deg": -90,
+        "elevation_deg": 6,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          8.333437036865888e-17,
+          -1.348333477973938,
+          0.2147902548313141
+        ],
+        "base_rotation_euler_rad": [
+          1.4660766124725342,
+          4.067869726146615e-24,
+          6.123234262925839e-17
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_store_midnight__az-090__el+10.png",
+        "azimuth_deg": -90,
+        "elevation_deg": 10,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          8.25203849412373e-17,
+          -1.3350400924682617,
+          0.30937713384628296
+        ],
+        "base_rotation_euler_rad": [
+          1.3962634801864624,
+          2.5707969131346355e-24,
+          6.123234262925839e-17
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_store_midnight__az-088__el+02.png",
+        "azimuth_deg": -88,
+        "elevation_deg": 2,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          0.04772912338376045,
+          -1.3541632890701294,
+          0.11950649321079254
+        ],
+        "base_rotation_euler_rad": [
+          1.5358898639678955,
+          1.422752471391675e-09,
+          0.03490658849477768
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_store_midnight__az-088__el+06.png",
+        "azimuth_deg": -88,
+        "elevation_deg": 6,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          0.04749659448862076,
+          -1.3475043773651123,
+          0.2147902548313141
+        ],
+        "base_rotation_euler_rad": [
+          1.4660766124725342,
+          1.5525515317804661e-09,
+          0.03490658849477768
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/raw/src_img_store_midnight__az-088__el+10.png",
+        "azimuth_deg": -88,
+        "elevation_deg": 10,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.012620136141777039,
+          0.0717482790350914
+        ],
+        "base_position_xyz_m": [
+          0.047032661736011505,
+          -1.3342190980911255,
+          0.30937713384628296
+        ],
+        "base_rotation_euler_rad": [
+          1.3962633609771729,
+          -7.140177338271769e-11,
+          0.03490658849477768
+        ]
+      }
+    ]
+  }
+}

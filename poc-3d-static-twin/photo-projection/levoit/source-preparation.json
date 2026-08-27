@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "lane": 2,
+  "product_id": "prod_levoit_core_300s",
+  "prepared_at": "2026-08-27T19:31:50.012120+00:00",
+  "vault_manifest": "source-vault/levoit-core-300s/manifest.json",
+  "vault_hashes_verified": true,
+  "person_free_only": true,
+  "appearance_policy": "official vault imagery only; no generated or hand-painted RGB pixels",
+  "external_spend_usd": 0,
+  "sources": [
+    {
+      "source_id": "src_img_three_quarter_elevated_3000",
+      "parent_source_id": "src_img_three_quarter_elevated_3000",
+      "parent_local_path": "source-vault/levoit-core-300s/images/levoit-core-300s-three-quarter-elevated-base-3000.png",
+      "parent_sha256": "1dfdd4f159478221eca5016a3335c7bb72528c2cd432d0777493b36e2704a976",
+      "derived_source_local_path": "source-vault/levoit-core-300s/images/levoit-core-300s-three-quarter-elevated-base-3000.png",
+      "derived_source_sha256": "1dfdd4f159478221eca5016a3335c7bb72528c2cd432d0777493b36e2704a976",
+      "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/masks/src_img_three_quarter_elevated_3000.png",
+      "mask_sha256": "33f94179651b84c35d0a2a09b8a5d1bbd748077f82938f2666ec879ae077f9bd",
+      "masked_texture_local_path": "poc-3d-static-twin/photo-projection/levoit/textures/src_img_three_quarter_elevated_3000.png",
+      "masked_texture_sha256": "8a2f10f2b0d0ae5ccfffc9a6ca3c9664602ded22189837e87f3ffe2273a6a355",
+      "mask_method": "alpha",
+      "mask_area_fraction": 0.394101,
+      "person_free": true,
+      "rgb_policy": "decoded source RGB copied unchanged; only alpha is derived/feathered"
+    },
+    {
+      "source_id": "src_img_top_panel_3000",
+      "parent_source_id": "src_img_top_panel_3000",
+      "parent_local_path": "source-vault/levoit-core-300s/images/levoit-core-300s-top-control-panel-3000.png",
+      "parent_sha256": "d1252b1db5c2831cb77974734b1a814cf441ec94714f4fd592578ecb2bc40b3d",
+      "derived_source_local_path": "source-vault/levoit-core-300s/images/levoit-core-300s-top-control-panel-3000.png",
+      "derived_source_sha256": "d1252b1db5c2831cb77974734b1a814cf441ec94714f4fd592578ecb2bc40b3d",
+      "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/masks/src_img_top_panel_3000.png",
+      "mask_sha256": "5418a6591f88ee9fe468d1f44c163f3d08f7e89e774b27dcc638dc7fef9259df",
+      "masked_texture_local_path": "poc-3d-static-twin/photo-projection/levoit/textures/src_img_top_panel_3000.png",
+      "masked_texture_sha256": "becf76e068eea7dfeef468d097ce1e3dfa3e323f41f10363b84af4785f69b9e5",
+      "mask_method": "alpha",
+      "mask_area_fraction": 0.564839,
+      "person_free": true,
+      "rgb_policy": "decoded source RGB copied unchanged; only alpha is derived/feathered"
+    }
+  ],
+  "audited_exclusions": []
+}

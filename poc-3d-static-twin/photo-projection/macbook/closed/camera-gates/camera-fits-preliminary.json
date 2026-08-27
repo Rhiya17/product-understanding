@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "lane": 3,
+  "state": "closed",
+  "created_at": "2026-08-27T19:40:58.290246+00:00",
+  "method": "angle grid + deterministic distance/sensor-shift fit; final Blender render is authoritative",
+  "resolution_px": [
+    256,
+    256
+  ],
+  "all_attempts": {
+    "src_img_store_closed_top": [
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/closed/camera-gates/raw/src_img_store_closed_top__az+090__el+89.png",
+        "azimuth_deg": 90,
+        "elevation_deg": 89,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.0056500001810491085
+        ],
+        "base_position_xyz_m": [
+          1.462396489772685e-18,
+          0.02388274483382702,
+          1.3738917112350464
+        ],
+        "base_rotation_euler_rad": [
+          0.01745414547622204,
+          2.6352395821049868e-09,
+          3.141592502593994
+        ],
+        "predicted_fit_iou": 0.97789,
+        "image_scale": 1.55,
+        "translation_px": [
+          0.0,
+          24.043946776611705
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/closed/camera-gates/raw/src_img_store_closed_top__az+090__el+86.png",
+        "azimuth_deg": 90,
+        "elevation_deg": 86,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.0056500001810491085
+        ],
+        "base_position_xyz_m": [
+          5.8451320050824486e-18,
+          0.0954582467675209,
+          1.3707666397094727
+        ],
+        "base_rotation_euler_rad": [
+          0.06981357932090759,
+          1.0532933636397956e-08,
+          3.141592502593994
+        ],
+        "predicted_fit_iou": 0.971702,
+        "image_scale": 1.55,
+        "translation_px": [
+          0.0,
+          23.75706153071006
+        ]
+      }
+    ],
+    "src_img_guide_left_side": [
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/closed/camera-gates/raw/src_img_guide_left_side__az+180__el+02.png",
+        "azimuth_deg": 180,
+        "elevation_deg": 2,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.0056500001810491085
+        ],
+        "base_position_xyz_m": [
+          -1.3676164150238037,
+          1.6748471139820946e-16,
+          0.053408216685056686
+        ],
+        "base_rotation_euler_rad": [
+          1.5358898639678955,
+          8.887322877626502e-08,
+          -1.5707963705062866
+        ],
+        "predicted_fit_iou": 0.439179,
+        "image_scale": 2.3850000000000002,
+        "translation_px": [
+          -3.250019759709488,
+          -30.907660924076737
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/closed/camera-gates/raw/src_img_guide_left_side__az+180__el-02.png",
+        "azimuth_deg": 180,
+        "elevation_deg": -2,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.0056500001810491085
+        ],
+        "base_position_xyz_m": [
+          -1.3676164150238037,
+          1.6748471139820946e-16,
+          -0.04210821911692619
+        ],
+        "base_rotation_euler_rad": [
+          1.6057028770446777,
+          8.887322877626502e-08,
+          -1.570796251296997
+        ],
+        "predicted_fit_iou": 0.438273,
+        "image_scale": 2.3850000000000002,
+        "translation_px": [
+          -3.4489888318744306,
+          -28.067494498811897
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/closed/camera-gates/raw/src_img_guide_left_side__az+180__el+00.png",
+        "azimuth_deg": 180,
+        "elevation_deg": 0,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.0056500001810491085
+        ],
+        "base_position_xyz_m": [
+          -1.3684500455856323,
+          1.675868053381332e-16,
+          0.0056500001810491085
+        ],
+        "base_rotation_euler_rad": [
+          1.5707964897155762,
+          5.960463766996327e-08,
+          -1.5707963705062866
+        ],
+        "predicted_fit_iou": 0.209277,
+        "image_scale": 2.355,
+        "translation_px": [
+          -3.4489888318744306,
+          -29.49265519669987
+        ]
+      }
+    ],
+    "src_img_guide_right_side": [
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/closed/camera-gates/raw/src_img_guide_right_side__az+000__el+02.png",
+        "azimuth_deg": 0,
+        "elevation_deg": 2,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.0056500001810491085
+        ],
+        "base_position_xyz_m": [
+          1.3676164150238037,
+          0.0,
+          0.053408216685056686
+        ],
+        "base_rotation_euler_rad": [
+          1.5358898639678955,
+          -8.887322877626502e-08,
+          1.5707963705062866
+        ],
+        "predicted_fit_iou": 0.487928,
+        "image_scale": 2.3850000000000002,
+        "translation_px": [
+          -2.7739797317697708,
+          21.95476847338324
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/closed/camera-gates/raw/src_img_guide_right_side__az+000__el-02.png",
+        "azimuth_deg": 0,
+        "elevation_deg": -2,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.0056500001810491085
+        ],
+        "base_position_xyz_m": [
+          1.3676164150238037,
+          0.0,
+          -0.04210821911692619
+        ],
+        "base_rotation_euler_rad": [
+          1.6057028770446777,
+          -8.887322877626502e-08,
+          1.570796251296997
+        ],
+        "predicted_fit_iou": 0.486922,
+        "image_scale": 2.3850000000000002,
+        "translation_px": [
+          -2.972948803934713,
+          24.79493489864808
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/closed/camera-gates/raw/src_img_guide_right_side__az+000__el+00.png",
+        "azimuth_deg": 0,
+        "elevation_deg": 0,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.3684500306844711,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.0056500001810491085
+        ],
+        "base_position_xyz_m": [
+          1.3684500455856323,
+          0.0,
+          0.0056500001810491085
+        ],
+        "base_rotation_euler_rad": [
+          1.5707964897155762,
+          -5.960463766996327e-08,
+          1.5707963705062866
+        ],
+        "predicted_fit_iou": 0.232506,
+        "image_scale": 2.355,
+        "translation_px": [
+          -2.972948803934713,
+          23.369774200760105
+        ]
+      }
+    ]
+  },
+  "selected": {
+    "src_img_store_closed_top": {
+      "source_id": "src_img_store_closed_top",
+      "selected_raw_mask_local_path": "poc-3d-static-twin/photo-projection/macbook/closed/camera-gates/raw/src_img_store_closed_top__az+090__el+89.png",
+      "predicted_fit_iou": 0.97789,
+      "azimuth_deg": 90,
+      "elevation_deg": 89,
+      "lens_mm": 70.0,
+      "base_distance_m": 1.3684500306844711,
+      "fitted_distance_m": 0.8828709875383685,
+      "target_xyz_m": [
+        0.0,
+        0.0,
+        0.0056500001810491085
+      ],
+      "image_scale": 1.55,
+      "translation_px": [
+        0.0,
+        24.043946776611705
+      ],
+      "shift_x": -0.0,
+      "shift_y": 0.09392166709613947
+    },
+    "src_img_guide_left_side": {
+      "source_id": "src_img_guide_left_side",
+      "selected_raw_mask_local_path": "poc-3d-static-twin/photo-projection/macbook/closed/camera-gates/raw/src_img_guide_left_side__az+180__el+02.png",
+      "predicted_fit_iou": 0.439179,
+      "azimuth_deg": 180,
+      "elevation_deg": 2,
+      "lens_mm": 70.0,
+      "base_distance_m": 1.3684500306844711,
+      "fitted_distance_m": 0.5737735977712667,
+      "target_xyz_m": [
+        0.0,
+        0.0,
+        0.0056500001810491085
+      ],
+      "image_scale": 2.3850000000000002,
+      "translation_px": [
+        -3.250019759709488,
+        -30.907660924076737
+      ],
+      "shift_x": 0.012695389686365188,
+      "shift_y": -0.12073305048467475
+    },
+    "src_img_guide_right_side": {
+      "source_id": "src_img_guide_right_side",
+      "selected_raw_mask_local_path": "poc-3d-static-twin/photo-projection/macbook/closed/camera-gates/raw/src_img_guide_right_side__az+000__el+02.png",
+      "predicted_fit_iou": 0.487928,
+      "azimuth_deg": 0,
+      "elevation_deg": 2,
+      "lens_mm": 70.0,
+      "base_distance_m": 1.3684500306844711,
+      "fitted_distance_m": 0.5737735977712667,
+      "target_xyz_m": [
+        0.0,
+        0.0,
+        0.0056500001810491085
+      ],
+      "image_scale": 2.3850000000000002,
+      "translation_px": [
+        -2.7739797317697708,
+        21.95476847338324
+      ],
+      "shift_x": 0.010835858327225667,
+      "shift_y": 0.08576081434915328
+    }
+  }
+}

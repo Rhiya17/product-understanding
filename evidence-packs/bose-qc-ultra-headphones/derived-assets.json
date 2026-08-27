@@ -15,6 +15,10 @@
       ],
       "license_status": "OPEN",
       "rights_note": "Tripo3D license check OPEN — do not ship",
+      "disposition": "INTERIM_INTERNAL_ONLY — retained after the photo-projection parametric attempt failed the front and three-quarter camera gates",
+      "tripo_ancestry": true,
+      "worst_axis_scale_error_percent": 147.0,
+      "retention_verdict": "poc-3d-static-twin/photo-projection/bose/verdict.json",
       "approved_by": null,
       "internal_only": true
     }

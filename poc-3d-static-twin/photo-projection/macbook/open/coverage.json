@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "lane": 3,
+  "state": "open",
+  "geometry_blend": "poc-3d-static-twin/photo-projection/macbook/open/macbook-open-photo-projected.blend",
+  "geometry_sha256": "2c528c33e46a8efd8af200e65d94734da01060fa79871c3ddfb9afcdd6eec83e",
+  "qualified_sources_best_view_first": [
+    "src_img_store_midnight"
+  ],
+  "front_facing_threshold_deg": 60,
+  "overall_coverage_fraction": 0.085678,
+  "overall_fallback_fraction": 0.914322,
+  "source_area_fraction": {
+    "src_img_store_midnight": 0.085678
+  },
+  "parts": {
+    "BaseSlab": {
+      "part_area_mesh_units2": 0.13686347240582108,
+      "covered_area_mesh_units2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "source_area_fraction": {
+        "src_img_store_midnight": 0.0
+      },
+      "original_material_slot_count": 1,
+      "projection_diagnostic_face_counts": {
+        "src_img_store_midnight": {
+          "faces": 0,
+          "camera_facing": 0,
+          "positive_depth": 0,
+          "xy_in_frame": 0,
+          "in_frame": 0,
+          "inside_mask": 0,
+          "x_min": null,
+          "x_max": null,
+          "y_min": null,
+          "y_max": null
+        }
+      }
+    },
+    "KeyboardDeck": {
+      "part_area_mesh_units2": 0.11824532455648296,
+      "covered_area_mesh_units2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "source_area_fraction": {
+        "src_img_store_midnight": 0.0
+      },
+      "original_material_slot_count": 1,
+      "projection_diagnostic_face_counts": {
+        "src_img_store_midnight": {
+          "faces": 0,
+          "camera_facing": 0,
+          "positive_depth": 0,
+          "xy_in_frame": 0,
+          "in_frame": 0,
+          "inside_mask": 0,
+          "x_min": null,
+          "x_max": null,
+          "y_min": null,
+          "y_max": null
+        }
+      }
+    },
+    "Lid": {
+      "part_area_mesh_units2": 0.0901338323019445,
+      "covered_area_mesh_units2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "source_area_fraction": {
+        "src_img_store_midnight": 0.0
+      },
+      "original_material_slot_count": 1,
+      "projection_diagnostic_face_counts": {
+        "src_img_store_midnight": {
+          "faces": 0,
+          "camera_facing": 0,
+          "positive_depth": 0,
+          "xy_in_frame": 0,
+          "in_frame": 0,
+          "inside_mask": 0,
+          "x_min": null,
+          "x_max": null,
+          "y_min": null,
+          "y_max": null
+        }
+      }
+    },
+    "DisplayInset_INFERRED": {
+      "part_area_mesh_units2": 0.07178168615791947,
+      "covered_area_mesh_units2": 0.03572968393564224,
+      "coverage_fraction": 0.497755,
+      "fallback_fraction": 0.502245,
+      "source_area_fraction": {
+        "src_img_store_midnight": 0.497755
+      },
+      "original_material_slot_count": 1,
+      "projection_diagnostic_face_counts": {
+        "src_img_store_midnight": {
+          "faces": 6,
+          "camera_facing": 1,
+          "positive_depth": 1,
+          "xy_in_frame": 1,
+          "in_frame": 1,
+          "inside_mask": 1,
+          "x_min": 0.49332912880059954,
+          "x_max": 0.49332912880059954,
+          "y_min": 0.5232240144280768,
+          "y_max": 0.5232240144280768
+        }
+      }
+    }
+  },
+  "uncovered_policy": "neutral pre-existing/dimension-build material; never invented"
+}

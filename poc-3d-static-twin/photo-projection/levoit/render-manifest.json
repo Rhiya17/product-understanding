@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "lane": 2,
+  "state": null,
+  "created_at": "2026-08-27T19:50:11.094723+00:00",
+  "geometry_blend_local_path": "poc-3d-static-twin/photo-projection/levoit/levoit-photo-projected.blend",
+  "geometry_blend_sha256": "1aed9466d1070d1f6356becbb603fbaab49fea64da5f99b9cb32c1392091d297",
+  "camera_matches_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/camera-matches.json",
+  "coverage_local_path": "poc-3d-static-twin/photo-projection/levoit/coverage.json",
+  "source_preparation_local_path": "poc-3d-static-twin/photo-projection/levoit/source-preparation.json",
+  "scripts": [
+    "poc-3d-static-twin/photo-projection/prepare_sources.py",
+    "poc-3d-static-twin/photo-projection/blender_pipeline.py",
+    "poc-3d-static-twin/photo-projection/fit_camera.py",
+    "poc-3d-static-twin/photo-projection/encode_media.py"
+  ],
+  "watermark": "INTERNAL ONLY \u2014 MANUFACTURER IMAGERY \u2014 DO NOT SHIP",
+  "appearance_policy": "hash-verified manufacturer imagery only; neutral fallback",
+  "rights_note": "Manufacturer imagery cleared for internal research only; reuse rights review OPEN \u2014 do not ship",
+  "tripo_texture_ancestry": false,
+  "approved_by": null,
+  "internal_only": true,
+  "external_spend_usd": 0,
+  "outputs": {
+    "levoit-turntable": {
+      "gif_local_path": "poc-3d-static-twin/photo-projection/levoit/levoit-turntable-internal-only.gif",
+      "gif_sha256": "d2b09ff0a3d87821859b88069884c9c783f91d41418dbabcd105e374b9b340f5",
+      "qa_contact_sheet_local_path": "poc-3d-static-twin/photo-projection/levoit/levoit-turntable-qa-contact-sheet.png",
+      "qa_contact_sheet_sha256": "9de6e92bcc9e834fea2c67b02560fe91a53625f3f47d552df4aac04fd466df73",
+      "source_frame_count": 24,
+      "encoded_frame_count": 24,
+      "resolution_px": [
+        1024,
+        1024
+      ],
+      "watermark_pixel_check": "PASS"
+    }
+  }
+}

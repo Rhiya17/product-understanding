@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "lane": 2,
+  "state": null,
+  "resolution_px": [
+    1024,
+    1024
+  ],
+  "watermark": "INTERNAL ONLY \u2014 MANUFACTURER IMAGERY \u2014 DO NOT SHIP",
+  "internal_only": true,
+  "external_spend_usd": 0,
+  "outputs": {
+    "levoit-turntable": {
+      "frames_dir": "/tmp/product-understanding-photo-projection/levoit/levoit-turntable",
+      "frame_count": 24,
+      "fps": 8
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "captured_before_execution": true,
+  "sha256": {
+    "evidence-packs/apple-macbook-air-13-m3/claims.json": "310904883ce1273c141b64d7af3df3fbfbce9250fff1d835ad065cd1b4a083fa",
+    "evidence-packs/apple-macbook-air-13-m3/verdicts.json": "ecc91faee4f43673a5085f3ecd6b50acd0e8adbc56b67ae735fe5e0d68fe0e7f",
+    "evidence-packs/bose-qc-ultra-headphones/claims.json": "7e7af1a6ff3e57f799ca5d9c99406da39235bb450ebb44b4723f7784f514d567",
+    "evidence-packs/bose-qc-ultra-headphones/reviews.json": "91e5d48251bfb00fc8839c7a748d0d38395d7e97fe23ce28503b968a8903b7f1",
+    "evidence-packs/bose-qc-ultra-headphones/verdicts.json": "42d7cfaa423e5575bbf5a067f80928afc0ac4029350d2c24f1809b45ab3f4fba",
+    "evidence-packs/graco-ready2jet-2212125/claims.json": "bd869989acebc887795336697a26533883b80cb691d34e4953ae421421bb229d",
+    "evidence-packs/graco-ready2jet-2212125/reviews.json": "f79d1ed1984e22410823c2929ad778f347f7b2494f1c9b81f7915a6d8cb26eed",
+    "evidence-packs/graco-ready2jet-2212125/verdicts.json": "1c5c1b60635c5c7b571ef66edcef5d3b6e37c56a8fa1726d95761a6e5e8b22ee",
+    "evidence-packs/graco-snugride-35-lite-lx/claims.json": "9c84d2c96fd0f03533598a334d85448b19052f6b5b7b737e22251739bae31b53",
+    "evidence-packs/graco-snugride-35-lite-lx/reviews.json": "78a0aedd54d4bb2bfe5b783dc286118b9d7e7ee5de095afdd34ac4f461c240fe",
+    "evidence-packs/graco-snugride-35-lite-lx/verdicts.json": "196a9408e22e51a133748869982c7f58c7e88ce2d72d8805416bc78d1334aa40",
+    "evidence-packs/levoit-core-300s/claims.json": "185cb20d81f327b8d39ba838de578063074a6ebd793b2544b0961ebd54c572f1",
+    "evidence-packs/levoit-core-300s/reviews.json": "8226c7730b4df643d06b62d4e885bf371f32d3c85f7fd291e797567280ff3d9d",
+    "evidence-packs/levoit-core-300s/verdicts.json": "b172506c1f21ab4fd98060a690667769e65d2ea13c5cef705f0d5965200b8774",
+    "poc-3d-static-twin/twin/ready2jet-rigged.blend": "83d80dc107d46edecbe89d4d97dabf726887012dd4c0917f8da8e2961a9dc79d",
+    "poc-3d-static-twin/twin/joint-evidence.json": "e2a1ad9ddb091f00a59aba553287b844427ef8e84e846d8dc09ab9a98fc8f361",
+    "poc-3d-static-twin/twin/action-spec.json": "42d43c0cab6d4f320a1c473c534020d1e91176ba2f6d9eec8e8ff5b944b5d3c2"
+  }
+}

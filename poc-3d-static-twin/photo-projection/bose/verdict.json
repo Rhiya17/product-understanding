@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "lane": 4,
+  "product_id": "prod_bose_qc_ultra_headphones",
+  "verdict": "SKIPPED_PROJECTED_TWIN_RETAIN_TRIPO_INTERIM",
+  "outcome": "No photo-projected Bose scene or render was created. The existing registered Tripo turntable remains the explicitly labeled interim internal asset.",
+  "published_dimension_basis": {
+    "claim_id": "claim_bqcu2_spec_headphone_weight_1",
+    "source_quote_dimensions_in": {"H": 1.772, "W": 6.299, "D": 8.071},
+    "wearing_orientation_dimensions_m": {"vertical": 0.2050034, "width": 0.1599946, "depth": 0.0450088}
+  },
+  "camera_gate_threshold": 0.75,
+  "final_camera_matches": {
+    "src_img_black_front": {"iou": 0.619714, "status": "FAIL"},
+    "src_img_black_three_quarter": {"iou": 0.526289, "status": "FAIL"},
+    "src_img_black_side": {"iou": 0.772118, "status": "PASS_NOT_SUFFICIENT_ALONE"}
+  },
+  "camera_match_record": "poc-3d-static-twin/photo-projection/bose/camera-gates/camera-matches.json",
+  "measured_reason": "The only passing view is the narrow side profile. Front and three-quarter silhouettes fail on the curved headband/earcup geometry, so projection would cover one side while leaving the identity-bearing majority neutral fallback.",
+  "interim_asset": {
+    "asset_id": "derived_bose_tripo_h31_turntable_20260827",
+    "tripo_ancestry": true,
+    "worst_axis_scale_error_percent": 147.0,
+    "rights_status": "Tripo3D license check OPEN — do not ship"
+  },
+  "approved_by": null,
+  "internal_only": true,
+  "external_spend_usd": 0
+}

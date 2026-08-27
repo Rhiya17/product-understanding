@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "renders": {
+    "src_img_newsroom_keyboard": {
+      "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/final/src_img_newsroom_keyboard.png",
+      "position_xyz_m": [
+        1.483873014286221e-17,
+        -0.22971472144126892,
+        0.8175782561302185
+      ],
+      "rotation_euler_rad": [
+        0.31415921449661255,
+        -4.881349008067312e-24,
+        6.123234924670329e-17
+      ],
+      "focal_length_mm": 70.0,
+      "shift_x": 0.011703500524163246,
+      "shift_y": 0.026981214061379433
+    },
+    "src_img_store_midnight": {
+      "mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/final/src_img_store_midnight.png",
+      "position_xyz_m": [
+        -0.02750447951257229,
+        -0.7750051021575928,
+        0.2107125222682953
+      ],
+      "rotation_euler_rad": [
+        1.3962633609771729,
+        -1.074830890956946e-09,
+        -0.03490658476948738
+      ],
+      "focal_length_mm": 70.0,
+      "shift_x": -0.0006887436029501259,
+      "shift_y": 0.020548399537801743
+    }
+  }
+}

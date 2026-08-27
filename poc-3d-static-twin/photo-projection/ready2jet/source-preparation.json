@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "lane": 1,
+  "product_id": "prod_graco_ready2jet",
+  "prepared_at": "2026-08-27T19:30:58.803931+00:00",
+  "vault_manifest": "source-vault/graco-ready2jet-2212125/manifest.json",
+  "vault_hashes_verified": true,
+  "person_free_only": true,
+  "appearance_policy": "official vault imagery only; no generated or hand-painted RGB pixels",
+  "external_spend_usd": 0,
+  "sources": [
+    {
+      "source_id": "src_r2j_view_front3q_v1",
+      "parent_source_id": "src_r2j_view_front3q_v1",
+      "parent_local_path": "source-vault/graco-ready2jet-2212125/images/view-01-front-3q.png",
+      "parent_sha256": "2480f81d2987d6c4b7026c6fd024772066b5307d4568d3740ca435c2dafed8c9",
+      "derived_source_local_path": "source-vault/graco-ready2jet-2212125/images/view-01-front-3q.png",
+      "derived_source_sha256": "2480f81d2987d6c4b7026c6fd024772066b5307d4568d3740ca435c2dafed8c9",
+      "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/masks/src_r2j_view_front3q_v1.png",
+      "mask_sha256": "f40b7043d6149b16d660c35bd70685c749e906a94ff04f321fb80955940c21af",
+      "masked_texture_local_path": "poc-3d-static-twin/photo-projection/ready2jet/textures/src_r2j_view_front3q_v1.png",
+      "masked_texture_sha256": "f48d64030d1ed845f8e56fc1de604183d85513ca9396e704ec342c53745ac05f",
+      "mask_method": "corner_background",
+      "mask_area_fraction": 0.256364,
+      "person_free": true,
+      "rgb_policy": "decoded source RGB copied unchanged; only alpha is derived/feathered"
+    },
+    {
+      "source_id": "src_r2j_view_side_v1",
+      "parent_source_id": "src_r2j_view_side_v1",
+      "parent_local_path": "source-vault/graco-ready2jet-2212125/images/view-04-side-profile.png",
+      "parent_sha256": "16d1a8f8e277b00d2be1e421b345236453bae40e02b96023ca8e3a5240cd272a",
+      "derived_source_local_path": "source-vault/graco-ready2jet-2212125/images/view-04-side-profile.png",
+      "derived_source_sha256": "16d1a8f8e277b00d2be1e421b345236453bae40e02b96023ca8e3a5240cd272a",
+      "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/masks/src_r2j_view_side_v1.png",
+      "mask_sha256": "914f42a843ba22b100a907f3cb5e2f99842fbd3033c7399b6c04be08dcef42b7",
+      "masked_texture_local_path": "poc-3d-static-twin/photo-projection/ready2jet/textures/src_r2j_view_side_v1.png",
+      "masked_texture_sha256": "cbb9e79314d30f3c11295737b403657a7686ab4dfe08c56ace73b92d8d07e58c",
+      "mask_method": "corner_background",
+      "mask_area_fraction": 0.186736,
+      "person_free": true,
+      "rgb_policy": "decoded source RGB copied unchanged; only alpha is derived/feathered"
+    },
+    {
+      "source_id": "src_r2j_fold_video_v1#title-0000ms",
+      "parent_source_id": "src_r2j_fold_video_v1",
+      "parent_local_path": "source-vault/graco-ready2jet-2212125/videos/official-fold-video.mp4",
+      "parent_sha256": "9b1af25362a0b78187c6a4ced7228abcbbf5886e3617356277958392233af0fa",
+      "derived_source_local_path": "poc-3d-static-twin/photo-projection/ready2jet/source-derivatives/title-0000ms.png",
+      "derived_source_sha256": "e52e470794c09dcdb8e55a7a2b8209c28330544827658b6756db51d3903cdc82",
+      "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/masks/src_r2j_fold_video_v1-title-0000ms.png",
+      "mask_sha256": "afd10e745fa6d6aafd4a5c8eb47928647805b38bdd560e9f9ce0ff18e8cb285e",
+      "masked_texture_local_path": "poc-3d-static-twin/photo-projection/ready2jet/textures/src_r2j_fold_video_v1-title-0000ms.png",
+      "masked_texture_sha256": "9712ccc6638d17a94f548bf7b9024b1396f3ebce8a6771566f4e2031523202df",
+      "mask_method": "registered_source_mask",
+      "mask_area_fraction": 0.105561,
+      "person_free": true,
+      "rgb_policy": "decoded source RGB copied unchanged; only alpha is derived/feathered"
+    }
+  ],
+  "audited_exclusions": [
+    {
+      "candidate": "poc-3d-static-twin/inputs/images/heldout-05-front-3q.png",
+      "reason": "not vault-registered; \u00a70.1 forbids use even though it is an official-video composite"
+    },
+    {
+      "source_id": "src_r2j_fold_sequence_v1",
+      "reason": "contains a demonstrator in every product state; excluded by \u00a70.4"
+    },
+    {
+      "source_id": "src_r2j_view_top3q_v1",
+      "reason": "person-free but the product boundary is inseparable from the complex pavement background at the required no-invention mask QA; not a projection source"
+    }
+  ]
+}

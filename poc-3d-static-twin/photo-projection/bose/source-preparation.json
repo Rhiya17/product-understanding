@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "lane": 4,
+  "product_id": "prod_bose_qc_ultra_headphones",
+  "prepared_at": "2026-08-27T19:46:34.371334+00:00",
+  "vault_manifest": "source-vault/bose-qc-ultra-headphones/manifest.json",
+  "vault_hashes_verified": true,
+  "person_free_only": true,
+  "appearance_policy": "official vault imagery only; no generated or hand-painted RGB pixels",
+  "external_spend_usd": 0,
+  "sources": [
+    {
+      "source_id": "src_img_black_front",
+      "parent_source_id": "src_img_black_front",
+      "parent_local_path": "source-vault/bose-qc-ultra-headphones/images/black-front-view.png",
+      "parent_sha256": "c8706c2b262f3b8b18f750582a090c3b4496d02f543ff2b6f3797292a49af990",
+      "derived_source_local_path": "source-vault/bose-qc-ultra-headphones/images/black-front-view.png",
+      "derived_source_sha256": "c8706c2b262f3b8b18f750582a090c3b4496d02f543ff2b6f3797292a49af990",
+      "mask_local_path": "poc-3d-static-twin/photo-projection/bose/masks/src_img_black_front.png",
+      "mask_sha256": "38d214b8b6f445b6b91a237bff1928ae98ed033f1fdff36ff5eb3ae086133c06",
+      "masked_texture_local_path": "poc-3d-static-twin/photo-projection/bose/textures/src_img_black_front.png",
+      "masked_texture_sha256": "97ebb24916af867a10b56da045b86adc76ee8e7b8a0f804f81ba3c6f0088aee9",
+      "mask_method": "alpha",
+      "mask_area_fraction": 0.238858,
+      "person_free": true,
+      "rgb_policy": "decoded source RGB copied unchanged; only alpha is derived/feathered"
+    },
+    {
+      "source_id": "src_img_black_three_quarter",
+      "parent_source_id": "src_img_black_three_quarter",
+      "parent_local_path": "source-vault/bose-qc-ultra-headphones/images/black-three-quarter-view.png",
+      "parent_sha256": "d0eb14ea6c21ad3e2ba7a4008f026462db651a72cb131da9ef43c5ce74f55c71",
+      "derived_source_local_path": "source-vault/bose-qc-ultra-headphones/images/black-three-quarter-view.png",
+      "derived_source_sha256": "d0eb14ea6c21ad3e2ba7a4008f026462db651a72cb131da9ef43c5ce74f55c71",
+      "mask_local_path": "poc-3d-static-twin/photo-projection/bose/masks/src_img_black_three_quarter.png",
+      "mask_sha256": "83b50bae0b90e25cc6538f419912f1326a3841fe48cdac499b10cb6c10316285",
+      "masked_texture_local_path": "poc-3d-static-twin/photo-projection/bose/textures/src_img_black_three_quarter.png",
+      "masked_texture_sha256": "70dcf176cbd2fb5a17ff31340f589075d8c0f692c467ea73256d57954bddd8a1",
+      "mask_method": "alpha",
+      "mask_area_fraction": 0.308145,
+      "person_free": true,
+      "rgb_policy": "decoded source RGB copied unchanged; only alpha is derived/feathered"
+    },
+    {
+      "source_id": "src_img_black_side",
+      "parent_source_id": "src_img_black_side",
+      "parent_local_path": "source-vault/bose-qc-ultra-headphones/images/black-side-view.png",
+      "parent_sha256": "2a0fc8126f75e7b6e0bc755bdbb4ca7bec47e733d5366270782ef28b07d9034a",
+      "derived_source_local_path": "source-vault/bose-qc-ultra-headphones/images/black-side-view.png",
+      "derived_source_sha256": "2a0fc8126f75e7b6e0bc755bdbb4ca7bec47e733d5366270782ef28b07d9034a",
+      "mask_local_path": "poc-3d-static-twin/photo-projection/bose/masks/src_img_black_side.png",
+      "mask_sha256": "7cbd103b11de058439df79429562d563ef001fe51e5ea239f6980e9d15052ac5",
+      "masked_texture_local_path": "poc-3d-static-twin/photo-projection/bose/textures/src_img_black_side.png",
+      "masked_texture_sha256": "13aa40c71a1ff956c4979bc09ae5c606048b09f0dd9f5e6803855bde54cb4f53",
+      "mask_method": "alpha",
+      "mask_area_fraction": 0.156785,
+      "person_free": true,
+      "rgb_policy": "decoded source RGB copied unchanged; only alpha is derived/feathered"
+    }
+  ],
+  "audited_exclusions": []
+}

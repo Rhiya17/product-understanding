@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "renders": {
+    "src_r2j_view_front3q_v1": {
+      "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/final/src_r2j_view_front3q_v1.png",
+      "position_xyz_m": [
+        -1.656113862991333,
+        -1.1688793897628784,
+        1.4509398937225342
+      ],
+      "rotation_euler_rad": [
+        1.1519172191619873,
+        6.321296552869171e-08,
+        -0.9599311947822571
+      ],
+      "focal_length_mm": 70.0,
+      "shift_x": 0.0017235471168532968,
+      "shift_y": 0.08530719578266144
+    },
+    "src_r2j_view_side_v1": {
+      "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/final/src_r2j_view_side_v1.png",
+      "position_xyz_m": [
+        0.004649996757507324,
+        -2.482701301574707,
+        0.8085867762565613
+      ],
+      "rotation_euler_rad": [
+        1.4660766124725342,
+        -0.0,
+        0.0
+      ],
+      "focal_length_mm": 70.0,
+      "shift_x": 0.030328217893838882,
+      "shift_y": 0.06295792758464813
+    },
+    "src_r2j_fold_video_v1#title-0000ms": {
+      "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/final/src_r2j_fold_video_v1-title-0000ms.png",
+      "position_xyz_m": [
+        -2.857353687286377,
+        -2.0099964141845703,
+        1.2909181118011475
+      ],
+      "rotation_euler_rad": [
+        1.3613569736480713,
+        -1.2143682681653445e-07,
+        -0.9599313139915466
+      ],
+      "focal_length_mm": 70.0,
+      "shift_x": -0.26866433024406433,
+      "shift_y": 0.0460350476205349
+    }
+  }
+}

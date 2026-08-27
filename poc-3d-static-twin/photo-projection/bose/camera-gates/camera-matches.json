@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "lane": 4,
+  "state": null,
+  "finalized_at": "2026-08-27T19:47:02.259784+00:00",
+  "gate_threshold": 0.75,
+  "measurement": "pixel IoU of unmodified final Blender RGBA silhouette vs official-image product mask at 256x256",
+  "all_angle_attempts_file": "poc-3d-static-twin/photo-projection/bose/camera-gates/camera-fits-preliminary.json",
+  "matches": {
+    "src_img_black_front": {
+      "source_id": "src_img_black_front",
+      "status": "FAIL",
+      "silhouette_iou": 0.619714,
+      "gate_threshold": 0.75,
+      "camera_type": "PERSP",
+      "focal_length_mm": 70.0,
+      "position_xyz_m": [
+        2.852537636345036e-17,
+        -0.4660797715187073,
+        0.15795350074768066
+      ],
+      "rotation_euler_rad": [
+        1.4660766124725342,
+        1.853902210575126e-24,
+        6.123234924670329e-17
+      ],
+      "azimuth_deg": -90,
+      "elevation_deg": 6,
+      "distance_m": 0.46842078465501563,
+      "target_xyz_m": [
+        0.0,
+        -0.00022504571825265884,
+        0.10899019241333008
+      ],
+      "shift_x": -0.00012619042536243796,
+      "shift_y": -0.007802892941981554,
+      "target_mask_local_path": "poc-3d-static-twin/photo-projection/bose/masks/src_img_black_front.png",
+      "rendered_mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/final/src_img_black_front.png",
+      "projection_eligible": false
+    },
+    "src_img_black_three_quarter": {
+      "source_id": "src_img_black_three_quarter",
+      "status": "FAIL",
+      "silhouette_iou": 0.526289,
+      "gate_threshold": 0.75,
+      "camera_type": "PERSP",
+      "focal_length_mm": 70.0,
+      "position_xyz_m": [
+        -0.36265838146209717,
+        -0.28356480598449707,
+        0.12506143748760223
+      ],
+      "rotation_euler_rad": [
+        1.5358898639678955,
+        8.797254480441552e-09,
+        -0.9075714349746704
+      ],
+      "azimuth_deg": -142,
+      "elevation_deg": 2,
+      "distance_m": 0.46050062646036555,
+      "target_xyz_m": [
+        0.0,
+        -0.00022504571825265884,
+        0.10899019241333008
+      ],
+      "shift_x": 0.00979367271065712,
+      "shift_y": -0.009021461009979248,
+      "target_mask_local_path": "poc-3d-static-twin/photo-projection/bose/masks/src_img_black_three_quarter.png",
+      "rendered_mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/final/src_img_black_three_quarter.png",
+      "projection_eligible": false
+    },
+    "src_img_black_side": {
+      "source_id": "src_img_black_side",
+      "status": "PASS",
+      "silhouette_iou": 0.772118,
+      "gate_threshold": 0.75,
+      "camera_type": "PERSP",
+      "focal_length_mm": 70.0,
+      "position_xyz_m": [
+        -0.4036676287651062,
+        -0.00022504571825265884,
+        0.09489380568265915
+      ],
+      "rotation_euler_rad": [
+        1.6057028770446777,
+        8.887322877626502e-08,
+        -1.570796251296997
+      ],
+      "azimuth_deg": -180,
+      "elevation_deg": -2,
+      "distance_m": 0.40391368507328673,
+      "target_xyz_m": [
+        0.0,
+        -0.00022504571825265884,
+        0.10899019241333008
+      ],
+      "shift_x": 0.00239171227440238,
+      "shift_y": -0.021681029349565506,
+      "target_mask_local_path": "poc-3d-static-twin/photo-projection/bose/masks/src_img_black_side.png",
+      "rendered_mask_local_path": "poc-3d-static-twin/photo-projection/bose/camera-gates/final/src_img_black_side.png",
+      "projection_eligible": true
+    }
+  }
+}

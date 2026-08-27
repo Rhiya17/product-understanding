@@ -2,3 +2,4 @@
 __pycache__/
 runs/upload-cache.json
 *.blend1
+twin/renders/frames-*/

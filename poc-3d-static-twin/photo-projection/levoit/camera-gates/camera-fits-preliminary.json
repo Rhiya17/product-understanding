@@ -1,0 +1,399 @@
+{
+  "schema_version": 1,
+  "lane": 2,
+  "state": null,
+  "created_at": "2026-08-27T19:49:42.377437+00:00",
+  "method": "angle grid + deterministic distance/sensor-shift fit; final Blender render is authoritative",
+  "resolution_px": [
+    256,
+    256
+  ],
+  "all_attempts": {
+    "src_img_three_quarter_elevated_3000": [
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/raw/src_img_three_quarter_elevated_3000__az-035__el+22.png",
+        "azimuth_deg": -35,
+        "elevation_deg": 22,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.6230599284172058,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.1803399920463562
+        ],
+        "base_position_xyz_m": [
+          1.2327214479446411,
+          -0.8631608486175537,
+          0.788348913192749
+        ],
+        "base_rotation_euler_rad": [
+          1.186824083328247,
+          -5.1589839955568095e-08,
+          0.9599313139915466
+        ],
+        "predicted_fit_iou": 0.974838,
+        "image_scale": 1.8050000000000002,
+        "translation_px": [
+          0.2708822450042021,
+          -1.2490163218549952
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/raw/src_img_three_quarter_elevated_3000__az-055__el+22.png",
+        "azimuth_deg": -55,
+        "elevation_deg": 22,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.6230599284172058,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.1803399920463562
+        ],
+        "base_position_xyz_m": [
+          0.8631608486175537,
+          -1.2327214479446411,
+          0.788348913192749
+        ],
+        "base_rotation_euler_rad": [
+          1.186824083328247,
+          4.051384294712079e-08,
+          0.6108652949333191
+        ],
+        "predicted_fit_iou": 0.974764,
+        "image_scale": 1.8050000000000002,
+        "translation_px": [
+          0.24892366978266978,
+          -1.2435368998400662
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/raw/src_img_three_quarter_elevated_3000__az-015__el+22.png",
+        "azimuth_deg": -15,
+        "elevation_deg": 22,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.6230599284172058,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.1803399920463562
+        ],
+        "base_position_xyz_m": [
+          1.4535976648330688,
+          -0.3894903361797333,
+          0.788348913192749
+        ],
+        "base_rotation_euler_rad": [
+          1.186824083328247,
+          -4.1626126545679654e-08,
+          1.3089970350265503
+        ],
+        "predicted_fit_iou": 0.974616,
+        "image_scale": 1.8050000000000002,
+        "translation_px": [
+          0.25798354793033695,
+          -1.252922945388164
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/raw/src_img_three_quarter_elevated_3000__az-055__el+15.png",
+        "azimuth_deg": -55,
+        "elevation_deg": 15,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.6230599284172058,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.1803399920463562
+        ],
+        "base_position_xyz_m": [
+          0.8992276191711426,
+          -1.28423011302948,
+          0.6004188060760498
+        ],
+        "base_rotation_euler_rad": [
+          1.3089970350265503,
+          -2.3445931418564214e-08,
+          0.6108653545379639
+        ],
+        "predicted_fit_iou": 0.965872,
+        "image_scale": 1.8050000000000002,
+        "translation_px": [
+          0.25442425110520617,
+          -2.770258752919247
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/raw/src_img_three_quarter_elevated_3000__az-015__el+15.png",
+        "azimuth_deg": -15,
+        "elevation_deg": 15,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.6230599284172058,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.1803399920463562
+        ],
+        "base_position_xyz_m": [
+          1.5143356323242188,
+          -0.40576499700546265,
+          0.6004188060760498
+        ],
+        "base_rotation_euler_rad": [
+          1.3089970350265503,
+          -5.0786596261787054e-08,
+          1.3089970350265503
+        ],
+        "predicted_fit_iou": 0.965728,
+        "image_scale": 1.8050000000000002,
+        "translation_px": [
+          0.2730845489412843,
+          -2.7775399513231065
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/raw/src_img_three_quarter_elevated_3000__az-035__el+15.png",
+        "azimuth_deg": -35,
+        "elevation_deg": 15,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.6230599284172058,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.1803399920463562
+        ],
+        "base_position_xyz_m": [
+          1.28423011302948,
+          -0.8992276191711426,
+          0.6004188060760498
+        ],
+        "base_rotation_euler_rad": [
+          1.3089969158172607,
+          1.0763089308696294e-09,
+          0.9599310755729675
+        ],
+        "predicted_fit_iou": 0.965725,
+        "image_scale": 1.8050000000000002,
+        "translation_px": [
+          0.2635245002929736,
+          -2.783924589721309
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/raw/src_img_three_quarter_elevated_3000__az-055__el+08.png",
+        "azimuth_deg": -55,
+        "elevation_deg": 8,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.6230599284172058,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.1803399920463562
+        ],
+        "base_position_xyz_m": [
+          0.9218890070915222,
+          -1.3165940046310425,
+          0.4062262773513794
+        ],
+        "base_rotation_euler_rad": [
+          1.4311699867248535,
+          -3.587484442846289e-08,
+          0.6108652353286743
+        ],
+        "predicted_fit_iou": 0.947818,
+        "image_scale": 1.8150000000000002,
+        "translation_px": [
+          0.2523390342581564,
+          -3.6906522265497728
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/raw/src_img_three_quarter_elevated_3000__az-035__el+08.png",
+        "azimuth_deg": -35,
+        "elevation_deg": 8,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.6230599284172058,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.1803399920463562
+        ],
+        "base_position_xyz_m": [
+          1.3165940046310425,
+          -0.9218890070915222,
+          0.4062262773513794
+        ],
+        "base_rotation_euler_rad": [
+          1.4311699867248535,
+          -6.967582066863542e-10,
+          0.9599311947822571
+        ],
+        "predicted_fit_iou": 0.947818,
+        "image_scale": 1.8150000000000002,
+        "translation_px": [
+          0.2523390342581564,
+          -3.6906522265497728
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/raw/src_img_three_quarter_elevated_3000__az-015__el+08.png",
+        "azimuth_deg": -15,
+        "elevation_deg": 8,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.6230599284172058,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.1803399920463562
+        ],
+        "base_position_xyz_m": [
+          1.5524982213974,
+          -0.4159906804561615,
+          0.4062262773513794
+        ],
+        "base_rotation_euler_rad": [
+          1.431170105934143,
+          4.8793697970950234e-08,
+          1.3089971542358398
+        ],
+        "predicted_fit_iou": 0.947678,
+        "image_scale": 1.8150000000000002,
+        "translation_px": [
+          0.25234155752565357,
+          -3.6662600422641134
+        ]
+      }
+    ],
+    "src_img_top_panel_3000": [
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/raw/src_img_top_panel_3000__az+000__el+82.png",
+        "azimuth_deg": 0,
+        "elevation_deg": 82,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.6230599284172058,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.1803399920463562
+        ],
+        "base_position_xyz_m": [
+          0.2258863002061844,
+          0.0,
+          1.7876043319702148
+        ],
+        "base_rotation_euler_rad": [
+          0.1396263688802719,
+          -3.3635345175753173e-07,
+          1.5707963705062866
+        ],
+        "predicted_fit_iou": 0.717958,
+        "image_scale": 2.3850000000000002,
+        "translation_px": [
+          -2.994557040825981,
+          7.983317710657715
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/raw/src_img_top_panel_3000__az+000__el+86.png",
+        "azimuth_deg": 0,
+        "elevation_deg": 86,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.6230599284172058,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.1803399920463562
+        ],
+        "base_position_xyz_m": [
+          0.11321893334388733,
+          0.0,
+          1.7994463443756104
+        ],
+        "base_rotation_euler_rad": [
+          0.06981315463781357,
+          -3.8729751850041794e-07,
+          1.5707963705062866
+        ],
+        "predicted_fit_iou": 0.673871,
+        "image_scale": 2.3850000000000002,
+        "translation_px": [
+          -2.9753087694870004,
+          5.236300327912673
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/raw/src_img_top_panel_3000__az+000__el+89.png",
+        "azimuth_deg": 0,
+        "elevation_deg": 89,
+        "lens_mm": 70.0,
+        "base_distance_m": 1.6230599284172058,
+        "target_xyz_m": [
+          0.0,
+          0.0,
+          0.1803399920463562
+        ],
+        "base_position_xyz_m": [
+          0.028326300904154778,
+          0.0,
+          1.8031527996063232
+        ],
+        "base_rotation_euler_rad": [
+          0.01745329611003399,
+          2.558347887315904e-06,
+          1.5707964897155762
+        ],
+        "predicted_fit_iou": 0.670664,
+        "image_scale": 2.3850000000000002,
+        "translation_px": [
+          -3.0019617917354253,
+          -1.0248542329080976
+        ]
+      }
+    ]
+  },
+  "selected": {
+    "src_img_three_quarter_elevated_3000": {
+      "source_id": "src_img_three_quarter_elevated_3000",
+      "selected_raw_mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/raw/src_img_three_quarter_elevated_3000__az-035__el+22.png",
+      "predicted_fit_iou": 0.974838,
+      "azimuth_deg": -35,
+      "elevation_deg": 22,
+      "lens_mm": 70.0,
+      "base_distance_m": 1.6230599284172058,
+      "fitted_distance_m": 0.8992021764084241,
+      "target_xyz_m": [
+        0.0,
+        0.0,
+        0.1803399920463562
+      ],
+      "image_scale": 1.8050000000000002,
+      "translation_px": [
+        0.2708822450042021,
+        -1.2490163218549952
+      ],
+      "shift_x": -0.0010581337695476645,
+      "shift_y": -0.004878970007246075
+    },
+    "src_img_top_panel_3000": {
+      "source_id": "src_img_top_panel_3000",
+      "selected_raw_mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/raw/src_img_top_panel_3000__az+000__el+82.png",
+      "predicted_fit_iou": 0.717958,
+      "azimuth_deg": 0,
+      "elevation_deg": 82,
+      "lens_mm": 70.0,
+      "base_distance_m": 1.6230599284172058,
+      "fitted_distance_m": 0.6805282718730422,
+      "target_xyz_m": [
+        0.0,
+        0.0,
+        0.1803399920463562
+      ],
+      "image_scale": 2.3850000000000002,
+      "translation_px": [
+        -2.994557040825981,
+        7.983317710657715
+      ],
+      "shift_x": 0.011697488440726489,
+      "shift_y": 0.0311848348072567
+    }
+  }
+}

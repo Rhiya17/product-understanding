@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "blender_version": "5.2.0 LTS",
+  "results": {
+    "levoit": {
+      "geometry_objects": 5,
+      "projection_cameras": 2,
+      "photo_materials": 7
+    },
+    "macbook-closed": {
+      "geometry_objects": 2,
+      "projection_cameras": 1,
+      "photo_materials": 1
+    },
+    "macbook-open": {
+      "geometry_objects": 4,
+      "projection_cameras": 1,
+      "photo_materials": 1
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,15 @@
+{
+  "measurement": "Active lane execution plus the later final-validation geometry correction, rounded together to the nearest 0.1 hour.",
+  "lane": 2,
+  "started_at_utc": "2026-08-27T19:31:16Z",
+  "ended_at_utc": "2026-08-27T19:39:09Z",
+  "post_lane_validation_rework": {
+    "started_at_utc": "2026-08-27T19:48:11Z",
+    "ended_at_utc": "2026-08-27T19:50:34Z",
+    "reason": "The final dimension validator found that the top control panel ended at 99% of published height. Its deterministic placement was corrected, then the scene, camera gates, renders, hashes, and registry were rebuilt."
+  },
+  "hours": 0.2,
+  "budget": "1 day",
+  "external_spend_usd": 0,
+  "outcome": "Registered 1024px internal-only photo-projected turntable after both camera matches passed."
+}

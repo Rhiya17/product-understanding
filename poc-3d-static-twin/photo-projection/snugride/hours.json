@@ -1,0 +1,10 @@
+{
+  "measurement": "Agent wall-clock time, rounded to the nearest 0.1 hour.",
+  "lane": 5,
+  "started_at_utc": "2026-08-27T19:47:18Z",
+  "ended_at_utc": "2026-08-27T19:48:11Z",
+  "hours": 0.0,
+  "budget": "0.5 day, audit only",
+  "external_spend_usd": 0,
+  "outcome": "Full 12-image person audit recorded; no twin is feasible under §0."
+}

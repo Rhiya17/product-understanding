@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "lane": 3,
+  "product_id": "prod_apple_macbook_air_13_m3",
+  "status": "PASS_INTERNAL_ONLY_WITH_DISCLOSED_OPEN_DECK_FALLBACK",
+  "closed": {
+    "registered_asset": "derived_macbook_closed_macbook_closed_turntable_20260827",
+    "camera_matches": {
+      "src_img_store_closed_top": {"iou": 0.951498, "status": "PASS"},
+      "src_img_guide_left_side": {"iou": 0.487876, "status": "FAIL_NOT_PROJECTED"},
+      "src_img_guide_right_side": {"iou": 0.542522, "status": "FAIL_NOT_PROJECTED"}
+    },
+    "coverage_fraction": 0.239267,
+    "fallback_fraction": 0.760733,
+    "identity": "Apple lid logo and Midnight finish are official source pixels; side/underside remain neutral."
+  },
+  "open": {
+    "registered_asset": "derived_macbook_open_macbook_open_turntable_20260827",
+    "camera_matches": {
+      "src_img_store_midnight": {"iou": 0.853629, "status": "PASS"},
+      "src_img_newsroom_keyboard": {"iou": 0.749616, "status": "FAIL_NOT_PROJECTED"}
+    },
+    "coverage_fraction": 0.085678,
+    "fallback_fraction": 0.914322,
+    "identity": "Display wallpaper is official source imagery. The keyboard/deck source missed the hard gate by 0.000384, so no keyboard was modeled, painted, or projected; the deck remains neutral fallback."
+  },
+  "checks": {
+    "published_closed_dimensions": "PASS — claim_mba_spec_height/depth/width",
+    "person_free_sources": "PASS",
+    "appearance_pixels": "PASS — qualified source RGB only; derived alpha masks only",
+    "invented_text_or_keys": "PASS — none",
+    "watermark": "PASS — every encoded source frame passed the visible watermark pixel check",
+    "tripo_texture_ancestry": "NONE"
+  },
+  "disposition": "The closed photo-projected turntable replaces the failed Tripo slab for proposed internal media binding. The open turntable is optional/supporting and must retain the neutral-deck disclosure.",
+  "approved_by": null,
+  "internal_only": true,
+  "external_spend_usd": 0
+}

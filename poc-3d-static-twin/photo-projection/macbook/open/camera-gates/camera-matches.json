@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "lane": 3,
+  "state": "open",
+  "finalized_at": "2026-08-27T19:43:52.128380+00:00",
+  "gate_threshold": 0.75,
+  "measurement": "pixel IoU of unmodified final Blender RGBA silhouette vs official-image product mask at 256x256",
+  "all_angle_attempts_file": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/camera-fits-preliminary.json",
+  "matches": {
+    "src_img_newsroom_keyboard": {
+      "source_id": "src_img_newsroom_keyboard",
+      "status": "FAIL",
+      "silhouette_iou": 0.749616,
+      "gate_threshold": 0.75,
+      "camera_type": "PERSP",
+      "focal_length_mm": 70.0,
+      "position_xyz_m": [
+        1.483873014286221e-17,
+        -0.22971472144126892,
+        0.8175782561302185
+      ],
+      "rotation_euler_rad": [
+        0.31415921449661255,
+        -4.881349008067312e-24,
+        6.123234924670329e-17
+      ],
+      "azimuth_deg": -90,
+      "elevation_deg": 72,
+      "distance_m": 0.7842120519681783,
+      "target_xyz_m": [
+        0.0,
+        0.012620136141777039,
+        0.0717482790350914
+      ],
+      "shift_x": 0.011703500524163246,
+      "shift_y": 0.026981214061379433,
+      "target_mask_local_path": "poc-3d-static-twin/photo-projection/macbook/masks/src_img_newsroom_keyboard.png",
+      "rendered_mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/final/src_img_newsroom_keyboard.png",
+      "projection_eligible": false
+    },
+    "src_img_store_midnight": {
+      "source_id": "src_img_store_midnight",
+      "status": "PASS",
+      "silhouette_iou": 0.853629,
+      "gate_threshold": 0.75,
+      "camera_type": "PERSP",
+      "focal_length_mm": 70.0,
+      "position_xyz_m": [
+        -0.02750447951257229,
+        -0.7750051021575928,
+        0.2107125222682953
+      ],
+      "rotation_euler_rad": [
+        1.3962633609771729,
+        -1.074830890956946e-09,
+        -0.03490658476948738
+      ],
+      "azimuth_deg": -92,
+      "elevation_deg": 10,
+      "distance_m": 0.8002631758388721,
+      "target_xyz_m": [
+        0.0,
+        0.012620136141777039,
+        0.0717482790350914
+      ],
+      "shift_x": -0.0006887436029501259,
+      "shift_y": 0.020548399537801743,
+      "target_mask_local_path": "poc-3d-static-twin/photo-projection/macbook/masks/src_img_store_midnight.png",
+      "rendered_mask_local_path": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/final/src_img_store_midnight.png",
+      "projection_eligible": true
+    }
+  }
+}

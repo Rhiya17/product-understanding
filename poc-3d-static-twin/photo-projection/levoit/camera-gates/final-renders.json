@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "renders": {
+    "src_img_three_quarter_elevated_3000": {
+      "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/final/src_img_three_quarter_elevated_3000.png",
+      "position_xyz_m": [
+        0.6829481720924377,
+        -0.47820544242858887,
+        0.5171869993209839
+      ],
+      "rotation_euler_rad": [
+        1.186824083328247,
+        5.015425585952471e-08,
+        0.9599311351776123
+      ],
+      "focal_length_mm": 70.0,
+      "shift_x": -0.0010581337846815586,
+      "shift_y": -0.0048789698630571365
+    },
+    "src_img_top_panel_3000": {
+      "mask_local_path": "poc-3d-static-twin/photo-projection/levoit/camera-gates/final/src_img_top_panel_3000.png",
+      "position_xyz_m": [
+        0.09471123665571213,
+        0.0,
+        0.8542454242706299
+      ],
+      "rotation_euler_rad": [
+        0.1396263837814331,
+        9.923041233150798e-08,
+        1.5707964897155762
+      ],
+      "focal_length_mm": 70.0,
+      "shift_x": 0.011697488836944103,
+      "shift_y": 0.031184835359454155
+    }
+  }
+}

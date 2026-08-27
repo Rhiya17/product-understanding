@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "lane": 2,
+  "state": null,
+  "geometry_blend": "poc-3d-static-twin/photo-projection/levoit/levoit-photo-projected.blend",
+  "geometry_sha256": "1aed9466d1070d1f6356becbb603fbaab49fea64da5f99b9cb32c1392091d297",
+  "qualified_sources_best_view_first": [
+    "src_img_top_panel_3000",
+    "src_img_three_quarter_elevated_3000"
+  ],
+  "front_facing_threshold_deg": 60,
+  "overall_coverage_fraction": 0.273002,
+  "overall_fallback_fraction": 0.726998,
+  "source_area_fraction": {
+    "src_img_top_panel_3000": 0.097566,
+    "src_img_three_quarter_elevated_3000": 0.175436
+  },
+  "parts": {
+    "LowerVentShell": {
+      "part_area_mesh_units2": 0.1840195427648723,
+      "covered_area_mesh_units2": 0.02990116144064814,
+      "coverage_fraction": 0.162489,
+      "fallback_fraction": 0.837511,
+      "source_area_fraction": {
+        "src_img_top_panel_3000": 0.0,
+        "src_img_three_quarter_elevated_3000": 0.162489
+      },
+      "original_material_slot_count": 1,
+      "projection_diagnostic_face_counts": {
+        "src_img_top_panel_3000": {
+          "faces": 0,
+          "camera_facing": 0,
+          "positive_depth": 0,
+          "xy_in_frame": 0,
+          "in_frame": 0,
+          "inside_mask": 0,
+          "x_min": null,
+          "x_max": null,
+          "y_min": null,
+          "y_max": null
+        },
+        "src_img_three_quarter_elevated_3000": {
+          "faces": 98,
+          "camera_facing": 26,
+          "positive_depth": 26,
+          "xy_in_frame": 26,
+          "in_frame": 26,
+          "inside_mask": 26,
+          "x_min": 0.32740893179174985,
+          "x_max": 0.681288292474772,
+          "y_min": 0.19669975919227317,
+          "y_max": 0.23866684323152354
+        }
+      }
+    },
+    "UpperHousing": {
+      "part_area_mesh_units2": 0.19681856641545892,
+      "covered_area_mesh_units2": 0.03379723441321403,
+      "coverage_fraction": 0.171718,
+      "fallback_fraction": 0.828282,
+      "source_area_fraction": {
+        "src_img_top_panel_3000": 0.0,
+        "src_img_three_quarter_elevated_3000": 0.171718
+      },
+      "original_material_slot_count": 1,
+      "projection_diagnostic_face_counts": {
+        "src_img_top_panel_3000": {
+          "faces": 0,
+          "camera_facing": 0,
+          "positive_depth": 0,
+          "xy_in_frame": 0,
+          "in_frame": 0,
+          "inside_mask": 0,
+          "x_min": null,
+          "x_max": null,
+          "y_min": null,
+          "y_max": null
+        },
+        "src_img_three_quarter_elevated_3000": {
+          "faces": 98,
+          "camera_facing": 27,
+          "positive_depth": 27,
+          "xy_in_frame": 27,
+          "in_frame": 27,
+          "inside_mask": 27,
+          "x_min": 0.2990727739275712,
+          "x_max": 0.6996287779189208,
+          "y_min": 0.5607891861321277,
+          "y_max": 0.5930903141597182
+        }
+      }
+    },
+    "BaseRing_INFERRED": {
+      "part_area_mesh_units2": 0.07596501187072136,
+      "covered_area_mesh_units2": 0.03472222217533272,
+      "coverage_fraction": 0.457082,
+      "fallback_fraction": 0.542918,
+      "source_area_fraction": {
+        "src_img_top_panel_3000": 0.0,
+        "src_img_three_quarter_elevated_3000": 0.457082
+      },
+      "original_material_slot_count": 1,
+      "projection_diagnostic_face_counts": {
+        "src_img_top_panel_3000": {
+          "faces": 0,
+          "camera_facing": 0,
+          "positive_depth": 0,
+          "xy_in_frame": 0,
+          "in_frame": 0,
+          "inside_mask": 0,
+          "x_min": null,
+          "x_max": null,
+          "y_min": null,
+          "y_max": null
+        },
+        "src_img_three_quarter_elevated_3000": {
+          "faces": 98,
+          "camera_facing": 26,
+          "positive_depth": 26,
+          "xy_in_frame": 26,
+          "in_frame": 26,
+          "inside_mask": 11,
+          "x_min": 0.3402338887229299,
+          "x_max": 0.6586724175820227,
+          "y_min": 0.056392424656549534,
+          "y_max": 0.190576239510573
+        }
+      }
+    },
+    "TopRim": {
+      "part_area_mesh_units2": 0.08710911113303155,
+      "covered_area_mesh_units2": 0.04074333501921501,
+      "coverage_fraction": 0.467728,
+      "fallback_fraction": 0.532272,
+      "source_area_fraction": {
+        "src_img_top_panel_3000": 0.422546,
+        "src_img_three_quarter_elevated_3000": 0.045181
+      },
+      "original_material_slot_count": 1,
+      "projection_diagnostic_face_counts": {
+        "src_img_top_panel_3000": {
+          "faces": 98,
+          "camera_facing": 1,
+          "positive_depth": 1,
+          "xy_in_frame": 1,
+          "in_frame": 1,
+          "inside_mask": 1,
+          "x_min": 0.488302767846825,
+          "x_max": 0.488302767846825,
+          "y_min": 0.5608435561605548,
+          "y_max": 0.5608435561605548
+        },
+        "src_img_three_quarter_elevated_3000": {
+          "faces": 98,
+          "camera_facing": 28,
+          "positive_depth": 28,
+          "xy_in_frame": 28,
+          "in_frame": 28,
+          "inside_mask": 28,
+          "x_min": 0.29436861634654954,
+          "x_max": 0.714351026158354,
+          "y_min": 0.7968776801191564,
+          "y_max": 0.8212916885831172
+        }
+      }
+    },
+    "ControlPanel": {
+      "part_area_mesh_units2": 0.0426746804441791,
+      "covered_area_mesh_units2": 0.020975636811272125,
+      "coverage_fraction": 0.491524,
+      "fallback_fraction": 0.508476,
+      "source_area_fraction": {
+        "src_img_top_panel_3000": 0.478587,
+        "src_img_three_quarter_elevated_3000": 0.012937
+      },
+      "original_material_slot_count": 1,
+      "projection_diagnostic_face_counts": {
+        "src_img_top_panel_3000": {
+          "faces": 98,
+          "camera_facing": 1,
+          "positive_depth": 1,
+          "xy_in_frame": 1,
+          "in_frame": 1,
+          "inside_mask": 1,
+          "x_min": 0.4883027646807253,
+          "x_max": 0.4883027646807253,
+          "y_min": 0.5660423271020846,
+          "y_max": 0.5660423271020846
+        },
+        "src_img_three_quarter_elevated_3000": {
+          "faces": 98,
+          "camera_facing": 29,
+          "positive_depth": 29,
+          "xy_in_frame": 29,
+          "in_frame": 29,
+          "inside_mask": 29,
+          "x_min": 0.34182401834698783,
+          "x_max": 0.6579063012681658,
+          "y_min": 0.8522471570649619,
+          "y_max": 0.8688802563697713
+        }
+      }
+    }
+  },
+  "uncovered_policy": "neutral pre-existing/dimension-build material; never invented"
+}

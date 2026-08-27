@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "lane": 2,
+  "product_id": "prod_levoit_core_300s",
+  "status": "PASS_INTERNAL_ONLY",
+  "checks": {
+    "published_dimensions": "PASS — 0.22098 x 0.22098 x 0.36068 m from claim_c300s_spec_dimensions",
+    "camera_match": "PASS — 0.963177 three-quarter; 0.862217 top; threshold 0.75",
+    "person_free_sources": "PASS",
+    "appearance_pixels": "PASS — source RGB only; derived alpha masks only",
+    "brand_and_control_text": "PASS — Levoit logo and control-panel marks are manufacturer-source pixels, not recreated text",
+    "cross_part_bleed": "PASS — top source is restricted to TopRim and ControlPanel; three-quarter source covers camera-facing side faces",
+    "wrap_policy": "PASS — no image repeat; rear arc is neutral fallback",
+    "watermark": "PASS — all 24 source frames pass visible red watermark pixel check",
+    "tripo_texture_ancestry": "NONE"
+  },
+  "coverage": {
+    "overall_fraction": 0.273002,
+    "fallback_fraction": 0.726998,
+    "interpretation": "Full-mesh surface area including unseen caps and rear arc; projected front and top are visible in the QA sheet, while the unobserved rear stays neutral."
+  },
+  "qa_contact_sheet": "poc-3d-static-twin/photo-projection/levoit/levoit-turntable-qa-contact-sheet.png",
+  "approved_by": null,
+  "internal_only": true,
+  "external_spend_usd": 0
+}

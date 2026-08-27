@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "lane": 5,
+  "product_id": "prod_graco_snugride_35_lite_lx",
+  "verdict": "AUDIT_SKIP_NO_TWIN_SERVE_OFFICIAL_MEDIA",
+  "outcome": "No geometry, camera solve, projection, render, or derived-asset registration was created.",
+  "dimension_claim": {
+    "claim_id": "claim_srl_spec_dimensions",
+    "dimensions_in": {"width": 15.5, "height": 27.4, "depth": 18.07}
+  },
+  "inventory": [
+    {"source_id": "src_img_front_3q_seat_in_base", "sha256": "2a5ce5c5d7e4a7cc073ff9496d05dcbc90c18faae500be364df2f3aba36bb731", "person_free": true, "semantic_view": "front_three_quarter", "usable_for_projection_audit": true},
+    {"source_id": "src_img_in_car_installed", "sha256": "4f4c1c853746186ed18adc4240739151ff3af0a57fb437ea3fc7e53c1350b0aa", "person_free": false, "reason": "infant in harness"},
+    {"source_id": "src_img_base_alone", "sha256": "3b3647978c5db9de43f287ac55ea96fac4fc3699e37541dbce1ae49dcc1974de", "person_free": false, "reason": "caregiver torso and hands"},
+    {"source_id": "src_img_carry_handle_up", "sha256": "ca1227fe52efd06ae9dd4d35a5b52240d9540ac63bffe37d55cc2e580df7c28e", "person_free": false, "reason": "carrier and infant"},
+    {"source_id": "src_img_harness_support_detail", "sha256": "45585147ef0a1069fc5ee429ef75e13735be6a710d3b098b6786a3a70aa8d8e4", "person_free": false, "reason": "infant"},
+    {"source_id": "src_img_feature_callouts", "sha256": "0f6d5ca06f405cb3266a774100793bfec682e918ca706c568e57b6f3936e3db5", "person_free": true, "semantic_view": "annotated_front_duplicate", "usable_for_projection_audit": false, "reason": "duplicate front geometry with callout overlay"},
+    {"source_id": "src_img_in_car_installed_alt", "sha256": "aa2fc3a2f06844713f469059ae73c83b38f7d1b32b99d7e62fb51640d3f89ed1", "person_free": false, "reason": "infant and caregiver"},
+    {"source_id": "src_img_carry_alt", "sha256": "10de12fd5335296a8f2d24502a11fadad869c24441758a99a1dbdaba4f114c53", "person_free": false, "reason": "infant and carrier"},
+    {"source_id": "src_img_front_canopy_protectplus", "sha256": "c16be23488aea944a2e3daeb7e9d07e6c4fa7ab8679be69601343e098211e945", "person_free": false, "reason": "infant in front marketing graphic"},
+    {"source_id": "src_img_support_detail_alt", "sha256": "c3eb83a911326702ce43b55f309f95e19d2f43e61952a986c1d111ea5e7a980f", "person_free": false, "reason": "infant close-up"},
+    {"source_id": "src_img_side_recline", "sha256": "729e93ae1c783a9f319451a2147f70ae2304f791079c8ef2df2863f4e2792811", "person_free": false, "reason": "human arm and hand; this is the only useful side view"},
+    {"source_id": "src_img_feature_callouts_alt", "sha256": "bf18082c53a5f89d438ed9661cbefb0f525cf62e12b36efce179c72fafd74279", "person_free": true, "semantic_view": "annotated_front_duplicate", "usable_for_projection_audit": false, "reason": "duplicate front geometry with callout overlay"}
+  ],
+  "inventory_summary": {
+    "official_images": 12,
+    "person_free_images": 3,
+    "clean_distinct_semantic_views": 1,
+    "person_free_side_or_rear_views": 0
+  },
+  "feasibility": "The organic carrier shell, canopy, handle pivots, base, harness, and infant-support volumes cannot be dimension-grounded from a single clean front-three-quarter view. The only useful side view is barred by §0.4. Annotated duplicate fronts cannot supply unseen geometry or honest rear/side appearance.",
+  "serve_disposition": "Use the exact official source imagery and existing proposed media bindings after owner approval; no twin this round.",
+  "existing_media_bindings": "evidence-packs/graco-snugride-35-lite-lx/media-bindings.json",
+  "approved_by": null,
+  "internal_only": true,
+  "external_spend_usd": 0
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "product_id": "prod_levoit_core_300s",
+  "assets": [
+    {
+      "asset_id": "derived_levoit_levoit_turntable_20260827",
+      "type": "TURNTABLE_GIF",
+      "local_path": "poc-3d-static-twin/photo-projection/levoit/levoit-turntable-internal-only.gif",
+      "sha256": "d2b09ff0a3d87821859b88069884c9c783f91d41418dbabcd105e374b9b340f5",
+      "created_at": "2026-08-27T19:50:11.131535+00:00",
+      "provider": "local Blender 5.2.0 LTS deterministic photo projection",
+      "geometry_local_path": "poc-3d-static-twin/photo-projection/levoit/levoit-photo-projected.blend",
+      "geometry_sha256": "1aed9466d1070d1f6356becbb603fbaab49fea64da5f99b9cb32c1392091d297",
+      "geometry_claim_ids": [
+        "claim_c300s_spec_dimensions"
+      ],
+      "camera_gate": {
+        "minimum_iou": 0.862217,
+        "threshold": 0.75,
+        "record": "poc-3d-static-twin/photo-projection/levoit/camera-gates/camera-matches.json"
+      },
+      "coverage": {
+        "overall_fraction": 0.273002,
+        "fallback_fraction": 0.726998,
+        "record": "poc-3d-static-twin/photo-projection/levoit/coverage.json"
+      },
+      "input_sources": [
+        {
+          "source_id": "src_img_three_quarter_elevated_3000",
+          "parent_source_id": "src_img_three_quarter_elevated_3000",
+          "parent_sha256": "1dfdd4f159478221eca5016a3335c7bb72528c2cd432d0777493b36e2704a976",
+          "masked_texture_sha256": "8a2f10f2b0d0ae5ccfffc9a6ca3c9664602ded22189837e87f3ffe2273a6a355"
+        },
+        {
+          "source_id": "src_img_top_panel_3000",
+          "parent_source_id": "src_img_top_panel_3000",
+          "parent_sha256": "d1252b1db5c2831cb77974734b1a814cf441ec94714f4fd592578ecb2bc40b3d",
+          "masked_texture_sha256": "becf76e068eea7dfeef468d097ce1e3dfa3e323f41f10363b84af4785f69b9e5"
+        }
+      ],
+      "scripts": [
+        "poc-3d-static-twin/photo-projection/prepare_sources.py",
+        "poc-3d-static-twin/photo-projection/blender_pipeline.py",
+        "poc-3d-static-twin/photo-projection/fit_camera.py",
+        "poc-3d-static-twin/photo-projection/encode_media.py",
+        "poc-3d-static-twin/photo-projection/register_asset.py"
+      ],
+      "license_status": "OPEN_MANUFACTURER_IMAGERY_REUSE_REVIEW",
+      "rights_note": "Manufacturer imagery cleared for internal research only; reuse rights review OPEN \u2014 do not ship",
+      "tripo_texture_ancestry": false,
+      "approved_by": null,
+      "internal_only": true,
+      "external_spend_usd": 0
+    }
+  ]
+}

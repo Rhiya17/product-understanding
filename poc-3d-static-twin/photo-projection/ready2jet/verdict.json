@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "lane": 1,
+  "product_id": "prod_graco_ready2jet",
+  "verdict": "SKIPPED_CAMERA_MATCH_GATE",
+  "outcome": "No projection, derived scene, fold render, turntable, or derived-asset registration was produced.",
+  "binding_stop": "§0.7 camera-match residual too poor to project",
+  "camera_gate_threshold": 0.75,
+  "final_camera_matches": {
+    "src_r2j_view_front3q_v1": 0.65756,
+    "src_r2j_view_side_v1": 0.25696,
+    "src_r2j_fold_video_v1#title-0000ms": 0.489569
+  },
+  "camera_match_record": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/camera-matches.json",
+  "source_exclusions": [
+    "heldout-05-front-3q.png is not vault-registered",
+    "official fold-sequence and demonstration frames contain a person",
+    "view-02-top-3q has a complex pavement boundary that failed no-invention mask QA"
+  ],
+  "measured_reason": "The existing deterministic mechanism twin has a materially different canopy, seat, undercarriage, wheel, and recline silhouette from every eligible exact-product photograph. Two-dimensional camera scale/shift cannot close that geometry residual.",
+  "fallback_disposition": "Keep the existing measured dress-pass fold assets. They are not relabeled as photo-projected and no new media binding is proposed.",
+  "rig_untouched": {
+    "ready2jet-rigged.blend_sha256": "83d80dc107d46edecbe89d4d97dabf726887012dd4c0917f8da8e2961a9dc79d",
+    "joint-evidence.json_sha256": "e2a1ad9ddb091f00a59aba553287b844427ef8e84e846d8dc09ab9a98fc8f361",
+    "action-spec.json_sha256": "42d43c0cab6d4f320a1c473c534020d1e91176ba2f6d9eec8e8ff5b944b5d3c2"
+  },
+  "internal_only": true,
+  "approved_by": null,
+  "external_spend_usd": 0
+}

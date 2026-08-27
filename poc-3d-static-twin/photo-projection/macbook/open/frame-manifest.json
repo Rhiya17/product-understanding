@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "lane": 3,
+  "state": "open",
+  "resolution_px": [
+    1024,
+    1024
+  ],
+  "watermark": "INTERNAL ONLY \u2014 MANUFACTURER IMAGERY \u2014 DO NOT SHIP",
+  "internal_only": true,
+  "external_spend_usd": 0,
+  "outputs": {
+    "macbook-open-turntable": {
+      "frames_dir": "/tmp/product-understanding-photo-projection/macbook-open/macbook-open-turntable",
+      "frame_count": 24,
+      "fps": 8
+    }
+  }
+}

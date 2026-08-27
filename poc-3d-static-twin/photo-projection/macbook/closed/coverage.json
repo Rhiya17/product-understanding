@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "lane": 3,
+  "state": "closed",
+  "geometry_blend": "poc-3d-static-twin/photo-projection/macbook/closed/macbook-closed-photo-projected.blend",
+  "geometry_sha256": "fbb1ad759d5cbf80627e986029c629fd41c89699538a65400912bf1884f2651d",
+  "qualified_sources_best_view_first": [
+    "src_img_store_closed_top"
+  ],
+  "front_facing_threshold_deg": 60,
+  "overall_coverage_fraction": 0.239267,
+  "overall_fallback_fraction": 0.760733,
+  "source_area_fraction": {
+    "src_img_store_closed_top": 0.239267
+  },
+  "parts": {
+    "BaseSlab": {
+      "part_area_mesh_units2": 0.13686347240582108,
+      "covered_area_mesh_units2": 0.0,
+      "coverage_fraction": 0.0,
+      "fallback_fraction": 1.0,
+      "source_area_fraction": {
+        "src_img_store_closed_top": 0.0
+      },
+      "original_material_slot_count": 1,
+      "projection_diagnostic_face_counts": {
+        "src_img_store_closed_top": {
+          "faces": 0,
+          "camera_facing": 0,
+          "positive_depth": 0,
+          "xy_in_frame": 0,
+          "in_frame": 0,
+          "inside_mask": 0,
+          "x_min": null,
+          "x_max": null,
+          "y_min": null,
+          "y_max": null
+        }
+      }
+    },
+    "Lid": {
+      "part_area_mesh_units2": 0.136394205968827,
+      "covered_area_mesh_units2": 0.0653815045952797,
+      "coverage_fraction": 0.479357,
+      "fallback_fraction": 0.520643,
+      "source_area_fraction": {
+        "src_img_store_closed_top": 0.479357
+      },
+      "original_material_slot_count": 1,
+      "projection_diagnostic_face_counts": {
+        "src_img_store_closed_top": {
+          "faces": 6,
+          "camera_facing": 1,
+          "positive_depth": 1,
+          "xy_in_frame": 1,
+          "in_frame": 1,
+          "inside_mask": 1,
+          "x_min": 0.4999999999662113,
+          "x_max": 0.4999999999662113,
+          "y_min": 0.4062952187691526,
+          "y_max": 0.4062952187691526
+        }
+      }
+    }
+  },
+  "uncovered_policy": "neutral pre-existing/dimension-build material; never invented"
+}

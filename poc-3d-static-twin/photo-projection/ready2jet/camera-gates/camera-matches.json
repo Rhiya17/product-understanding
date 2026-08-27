@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "lane": 1,
+  "state": null,
+  "finalized_at": "2026-08-27T19:31:08.239050+00:00",
+  "gate_threshold": 0.75,
+  "measurement": "pixel IoU of unmodified final Blender RGBA silhouette vs official-image product mask at 256x256",
+  "all_angle_attempts_file": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/camera-fits-preliminary.json",
+  "matches": {
+    "src_r2j_view_front3q_v1": {
+      "source_id": "src_r2j_view_front3q_v1",
+      "status": "FAIL",
+      "silhouette_iou": 0.65756,
+      "gate_threshold": 0.75,
+      "camera_type": "PERSP",
+      "focal_length_mm": 70.0,
+      "position_xyz_m": [
+        -1.656113862991333,
+        -1.1688793897628784,
+        1.4509398937225342
+      ],
+      "rotation_euler_rad": [
+        1.1519172191619873,
+        6.321296552869171e-08,
+        -0.9599311947822571
+      ],
+      "azimuth_deg": -145,
+      "elevation_deg": 24,
+      "distance_m": 2.219285770338409,
+      "target_xyz_m": [
+        0.004649996757507324,
+        -0.00599999725818634,
+        0.5482749938964844
+      ],
+      "shift_x": 0.0017235471168532968,
+      "shift_y": 0.08530719578266144,
+      "target_mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/masks/src_r2j_view_front3q_v1.png",
+      "rendered_mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/final/src_r2j_view_front3q_v1.png",
+      "projection_eligible": false
+    },
+    "src_r2j_view_side_v1": {
+      "source_id": "src_r2j_view_side_v1",
+      "status": "FAIL",
+      "silhouette_iou": 0.25696,
+      "gate_threshold": 0.75,
+      "camera_type": "PERSP",
+      "focal_length_mm": 70.0,
+      "position_xyz_m": [
+        0.004649996757507324,
+        -2.482701301574707,
+        0.8085867762565613
+      ],
+      "rotation_euler_rad": [
+        1.4660766124725342,
+        -0.0,
+        0.0
+      ],
+      "azimuth_deg": -90,
+      "elevation_deg": 6,
+      "distance_m": 2.4903435743492066,
+      "target_xyz_m": [
+        0.004649996757507324,
+        -0.00599999725818634,
+        0.5482749938964844
+      ],
+      "shift_x": 0.030328217893838882,
+      "shift_y": 0.06295792758464813,
+      "target_mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/masks/src_r2j_view_side_v1.png",
+      "rendered_mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/final/src_r2j_view_side_v1.png",
+      "projection_eligible": false
+    },
+    "src_r2j_fold_video_v1#title-0000ms": {
+      "source_id": "src_r2j_fold_video_v1#title-0000ms",
+      "status": "FAIL",
+      "silhouette_iou": 0.489569,
+      "gate_threshold": 0.75,
+      "camera_type": "PERSP",
+      "focal_length_mm": 70.0,
+      "position_xyz_m": [
+        -2.857353687286377,
+        -2.0099964141845703,
+        1.2909181118011475
+      ],
+      "rotation_euler_rad": [
+        1.3613569736480713,
+        -1.2143682681653445e-07,
+        -0.9599313139915466
+      ],
+      "azimuth_deg": -145,
+      "elevation_deg": 12,
+      "distance_m": 3.5719161486103586,
+      "target_xyz_m": [
+        0.004649996757507324,
+        -0.00599999725818634,
+        0.5482749938964844
+      ],
+      "shift_x": -0.26866433024406433,
+      "shift_y": 0.0460350476205349,
+      "target_mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/masks/src_r2j_fold_video_v1-title-0000ms.png",
+      "rendered_mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/final/src_r2j_fold_video_v1-title-0000ms.png",
+      "projection_eligible": false
+    }
+  }
+}

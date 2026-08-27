@@ -14,9 +14,101 @@
         "ce9223456435cefc0858bc45a491e37e0c4acdfec5f0c26a7e8785e6740efdda"
       ],
       "license_status": "OPEN",
-      "rights_note": "Tripo3D license check OPEN — do not ship",
+      "rights_note": "Tripo3D license check OPEN \u2014 do not ship",
       "approved_by": null,
       "internal_only": true
+    },
+    {
+      "asset_id": "derived_macbook_closed_macbook_closed_turntable_20260827",
+      "type": "TURNTABLE_GIF",
+      "local_path": "poc-3d-static-twin/photo-projection/macbook/closed/macbook-closed-turntable-internal-only.gif",
+      "sha256": "ad3c7a15a483849c2853ff6b78bce18e948322388cf4905d187d5d963d4f5ac7",
+      "created_at": "2026-08-27T19:45:45.688732+00:00",
+      "provider": "local Blender 5.2.0 LTS deterministic photo projection",
+      "geometry_local_path": "poc-3d-static-twin/photo-projection/macbook/closed/macbook-closed-photo-projected.blend",
+      "geometry_sha256": "fbb1ad759d5cbf80627e986029c629fd41c89699538a65400912bf1884f2651d",
+      "geometry_claim_ids": [
+        "claim_mba_spec_height",
+        "claim_mba_spec_depth",
+        "claim_mba_spec_width"
+      ],
+      "camera_gate": {
+        "minimum_iou": 0.951498,
+        "threshold": 0.75,
+        "record": "poc-3d-static-twin/photo-projection/macbook/closed/camera-gates/camera-matches.json"
+      },
+      "coverage": {
+        "overall_fraction": 0.239267,
+        "fallback_fraction": 0.760733,
+        "record": "poc-3d-static-twin/photo-projection/macbook/closed/coverage.json"
+      },
+      "input_sources": [
+        {
+          "source_id": "src_img_store_closed_top",
+          "parent_source_id": "src_img_store_closed_top",
+          "parent_sha256": "0b49ba80de043f1a2f8adb7f9e6067f5839843522178900efc738d3109b57852",
+          "masked_texture_sha256": "6d441aae6e57d67b51cdd3c4369ce31ae906aaf87bbf4ddae6d2394531b42342"
+        }
+      ],
+      "scripts": [
+        "poc-3d-static-twin/photo-projection/prepare_sources.py",
+        "poc-3d-static-twin/photo-projection/blender_pipeline.py",
+        "poc-3d-static-twin/photo-projection/fit_camera.py",
+        "poc-3d-static-twin/photo-projection/encode_media.py",
+        "poc-3d-static-twin/photo-projection/register_asset.py"
+      ],
+      "license_status": "OPEN_MANUFACTURER_IMAGERY_REUSE_REVIEW",
+      "rights_note": "Manufacturer imagery cleared for internal research only; reuse rights review OPEN \u2014 do not ship",
+      "tripo_texture_ancestry": false,
+      "approved_by": null,
+      "internal_only": true,
+      "external_spend_usd": 0
+    },
+    {
+      "asset_id": "derived_macbook_open_macbook_open_turntable_20260827",
+      "type": "TURNTABLE_GIF",
+      "local_path": "poc-3d-static-twin/photo-projection/macbook/open/macbook-open-turntable-internal-only.gif",
+      "sha256": "d30569eb098bceaf353ca419783a1ea5e7375ea44554cc5f8c7e8fd2a59b46e3",
+      "created_at": "2026-08-27T19:45:45.715023+00:00",
+      "provider": "local Blender 5.2.0 LTS deterministic photo projection",
+      "geometry_local_path": "poc-3d-static-twin/photo-projection/macbook/open/macbook-open-photo-projected.blend",
+      "geometry_sha256": "2c528c33e46a8efd8af200e65d94734da01060fa79871c3ddfb9afcdd6eec83e",
+      "geometry_claim_ids": [
+        "claim_mba_spec_height",
+        "claim_mba_spec_depth",
+        "claim_mba_spec_width"
+      ],
+      "camera_gate": {
+        "minimum_iou": 0.853629,
+        "threshold": 0.75,
+        "record": "poc-3d-static-twin/photo-projection/macbook/open/camera-gates/camera-matches.json"
+      },
+      "coverage": {
+        "overall_fraction": 0.085678,
+        "fallback_fraction": 0.914322,
+        "record": "poc-3d-static-twin/photo-projection/macbook/open/coverage.json"
+      },
+      "input_sources": [
+        {
+          "source_id": "src_img_store_midnight",
+          "parent_source_id": "src_img_store_midnight",
+          "parent_sha256": "b1d1b0ca6f97ed74faaa780f16759ad49d8a6c6ce89ec925113d9a00f58d1032",
+          "masked_texture_sha256": "dbdd79e66fc50eac386fcb975b7c29284384182cfce593639e5f9ef22f96ced6"
+        }
+      ],
+      "scripts": [
+        "poc-3d-static-twin/photo-projection/prepare_sources.py",
+        "poc-3d-static-twin/photo-projection/blender_pipeline.py",
+        "poc-3d-static-twin/photo-projection/fit_camera.py",
+        "poc-3d-static-twin/photo-projection/encode_media.py",
+        "poc-3d-static-twin/photo-projection/register_asset.py"
+      ],
+      "license_status": "OPEN_MANUFACTURER_IMAGERY_REUSE_REVIEW",
+      "rights_note": "Manufacturer imagery cleared for internal research only; reuse rights review OPEN \u2014 do not ship",
+      "tripo_texture_ancestry": false,
+      "approved_by": null,
+      "internal_only": true,
+      "external_spend_usd": 0
     }
   ]
 }

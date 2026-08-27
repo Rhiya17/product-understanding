@@ -1,0 +1,10 @@
+{
+  "measurement": "Agent wall-clock time, rounded to the nearest 0.1 hour.",
+  "lane": 3,
+  "started_at_utc": "2026-08-27T19:39:09Z",
+  "ended_at_utc": "2026-08-27T19:45:45Z",
+  "hours": 0.1,
+  "budget": "1 day",
+  "external_spend_usd": 0,
+  "outcome": "Registered separate closed and open internal-only turntables; failed profile and keyboard sources were not projected."
+}

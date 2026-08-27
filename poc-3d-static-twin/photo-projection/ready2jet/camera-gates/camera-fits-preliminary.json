@@ -1,0 +1,843 @@
+{
+  "schema_version": 1,
+  "lane": 1,
+  "state": null,
+  "created_at": "2026-08-27T19:31:00.373646+00:00",
+  "method": "angle grid + deterministic distance/sensor-shift fit; final Blender render is authoritative",
+  "resolution_px": [
+    256,
+    256
+  ],
+  "all_attempts": {
+    "src_r2j_view_front3q_v1": [
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_front3q_v1__az-145__el+24.png",
+        "azimuth_deg": -145,
+        "elevation_deg": 24,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -3.657334327697754,
+          -2.5701491832733154,
+          2.5386509895324707
+        ],
+        "base_rotation_euler_rad": [
+          1.1519174575805664,
+          3.631491551914223e-08,
+          -0.9599311947822571
+        ],
+        "predicted_fit_iou": 0.662769,
+        "image_scale": 2.205,
+        "translation_px": [
+          -0.44122806179908025,
+          21.838641209086404
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_front3q_v1__az-137__el+24.png",
+        "azimuth_deg": -137,
+        "elevation_deg": 24,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -3.264835834503174,
+          -3.054844856262207,
+          2.5386509895324707
+        ],
+        "base_rotation_euler_rad": [
+          1.1519172191619873,
+          1.0428092167558134e-07,
+          -0.8203047513961792
+        ],
+        "predicted_fit_iou": 0.657259,
+        "image_scale": 2.205,
+        "translation_px": [
+          -0.7663033742333312,
+          21.021592397431306
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_front3q_v1__az-145__el+18.png",
+        "azimuth_deg": -145,
+        "elevation_deg": 18,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -3.807699203491211,
+          -2.675435781478882,
+          2.060457468032837
+        ],
+        "base_rotation_euler_rad": [
+          1.2566370964050293,
+          -8.949364627142131e-08,
+          -0.9599310159683228
+        ],
+        "predicted_fit_iou": 0.654795,
+        "image_scale": 2.205,
+        "translation_px": [
+          -0.4869841095091658,
+          19.68843847392712
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_front3q_v1__az-129__el+24.png",
+        "azimuth_deg": -129,
+        "elevation_deg": 24,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -2.8087000846862793,
+          -3.4801979064941406,
+          2.5386509895324707
+        ],
+        "base_rotation_euler_rad": [
+          1.1519173383712769,
+          -2.4789480690401433e-08,
+          -0.6806785464286804
+        ],
+        "predicted_fit_iou": 0.645023,
+        "image_scale": 2.215,
+        "translation_px": [
+          -1.0590712132395765,
+          20.148102385355628
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_front3q_v1__az-137__el+18.png",
+        "azimuth_deg": -137,
+        "elevation_deg": 18,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -3.3990840911865234,
+          -3.1800334453582764,
+          2.060457468032837
+        ],
+        "base_rotation_euler_rad": [
+          1.2566370964050293,
+          1.7163550580789888e-09,
+          -0.8203048706054688
+        ],
+        "predicted_fit_iou": 0.644568,
+        "image_scale": 2.235,
+        "translation_px": [
+          0.40605923995462945,
+          18.998854928024002
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_front3q_v1__az-145__el+12.png",
+        "azimuth_deg": -145,
+        "elevation_deg": 12,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -3.916294574737549,
+          -2.7514753341674805,
+          1.5656960010528564
+        ],
+        "base_rotation_euler_rad": [
+          1.3613568544387817,
+          -1.4552482241469988e-07,
+          -0.9599310755729675
+        ],
+        "predicted_fit_iou": 0.639164,
+        "image_scale": 2.2399999999999998,
+        "translation_px": [
+          -0.3350093348101666,
+          18.603377904895964
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_front3q_v1__az-129__el+18.png",
+        "azimuth_deg": -129,
+        "elevation_deg": 18,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -2.9242191314697266,
+          -3.622852087020874,
+          2.060457468032837
+        ],
+        "base_rotation_euler_rad": [
+          1.2566372156143188,
+          5.3566836299978604e-08,
+          -0.6806784868240356
+        ],
+        "predicted_fit_iou": 0.63278,
+        "image_scale": 2.2399999999999998,
+        "translation_px": [
+          -1.0052288687794544,
+          17.82598141768021
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_front3q_v1__az-137__el+12.png",
+        "azimuth_deg": -137,
+        "elevation_deg": 12,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -3.4960403442382812,
+          -3.270446538925171,
+          1.5656960010528564
+        ],
+        "base_rotation_euler_rad": [
+          1.3613569736480713,
+          2.3270995797020078e-08,
+          -0.8203049302101135
+        ],
+        "predicted_fit_iou": 0.628839,
+        "image_scale": 2.235,
+        "translation_px": [
+          -0.5061177576683349,
+          17.58653330126515
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_front3q_v1__az-129__el+12.png",
+        "azimuth_deg": -129,
+        "elevation_deg": 12,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -3.007648468017578,
+          -3.725879192352295,
+          1.5656960010528564
+        ],
+        "base_rotation_euler_rad": [
+          1.3613569736480713,
+          2.4860703717877186e-08,
+          -0.6806784868240356
+        ],
+        "predicted_fit_iou": 0.605117,
+        "image_scale": 2.285,
+        "translation_px": [
+          -0.9488246868094734,
+          15.87691406147755
+        ]
+      }
+    ],
+    "src_r2j_view_side_v1": [
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_side_v1__az-090__el+06.png",
+        "azimuth_deg": -90,
+        "elevation_deg": 6,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          0.004649996757507324,
+          -4.87271785736084,
+          1.059787631034851
+        ],
+        "base_rotation_euler_rad": [
+          1.4660766124725342,
+          -0.0,
+          0.0
+        ],
+        "predicted_fit_iou": 0.265626,
+        "image_scale": 1.965,
+        "translation_px": [
+          -7.764023755579785,
+          16.117229680518165
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_side_v1__az-082__el+12.png",
+        "azimuth_deg": -82,
+        "elevation_deg": 12,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          0.670814573764801,
+          -4.746006965637207,
+          1.5656960010528564
+        ],
+        "base_rotation_euler_rad": [
+          1.3613570928573608,
+          -9.02925822998668e-09,
+          0.1396263986825943
+        ],
+        "predicted_fit_iou": 0.259675,
+        "image_scale": 1.87,
+        "translation_px": [
+          -8.856973020935754,
+          23.459050140982583
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_side_v1__az-090__el+12.png",
+        "azimuth_deg": -90,
+        "elevation_deg": 12,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          0.004649996757507324,
+          -4.792590141296387,
+          1.5656960010528564
+        ],
+        "base_rotation_euler_rad": [
+          1.3613569736480713,
+          -0.0,
+          0.0
+        ],
+        "predicted_fit_iou": 0.259174,
+        "image_scale": 1.7200000000000002,
+        "translation_px": [
+          -7.0170327365167395,
+          26.206239165653642
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_side_v1__az-082__el+06.png",
+        "azimuth_deg": -82,
+        "elevation_deg": 6,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          0.681966245174408,
+          -4.825355052947998,
+          1.059787631034851
+        ],
+        "base_rotation_euler_rad": [
+          1.4660766124725342,
+          -1.2971979046483284e-09,
+          0.1396263688802719
+        ],
+        "predicted_fit_iou": 0.240289,
+        "image_scale": 1.745,
+        "translation_px": [
+          -13.03744973926041,
+          25.987856647817978
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_side_v1__az-098__el+12.png",
+        "azimuth_deg": -98,
+        "elevation_deg": 12,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -0.6615145802497864,
+          -4.746006965637207,
+          1.5656960010528564
+        ],
+        "base_rotation_euler_rad": [
+          1.3613570928573608,
+          9.02925822998668e-09,
+          -0.1396263986825943
+        ],
+        "predicted_fit_iou": 0.236679,
+        "image_scale": 1.77,
+        "translation_px": [
+          -6.341304636276618,
+          30.431611391989918
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_side_v1__az-098__el+06.png",
+        "azimuth_deg": -98,
+        "elevation_deg": 6,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -0.6726662516593933,
+          -4.825355052947998,
+          1.059787631034851
+        ],
+        "base_rotation_euler_rad": [
+          1.4660766124725342,
+          1.2971979046483284e-09,
+          -0.1396263688802719
+        ],
+        "predicted_fit_iou": 0.236227,
+        "image_scale": 1.6300000000000001,
+        "translation_px": [
+          -7.5406069868292604,
+          29.030564680804815
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_side_v1__az-082__el+00.png",
+        "azimuth_deg": -82,
+        "elevation_deg": 0,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          0.685697078704834,
+          -4.851901531219482,
+          0.5482749938964844
+        ],
+        "base_rotation_euler_rad": [
+          1.5707961320877075,
+          1.6391075163824098e-08,
+          0.13962633907794952
+        ],
+        "predicted_fit_iou": 0.230613,
+        "image_scale": 1.645,
+        "translation_px": [
+          -6.852816519987357,
+          29.681245678603233
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_side_v1__az-098__el+00.png",
+        "azimuth_deg": -98,
+        "elevation_deg": 0,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -0.6763970851898193,
+          -4.851901531219482,
+          0.5482749938964844
+        ],
+        "base_rotation_euler_rad": [
+          1.5707961320877075,
+          -1.6391075163824098e-08,
+          -0.13962633907794952
+        ],
+        "predicted_fit_iou": 0.228326,
+        "image_scale": 1.645,
+        "translation_px": [
+          -9.919603378883977,
+          30.116130783975365
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_side_v1__az-090__el+00.png",
+        "azimuth_deg": -90,
+        "elevation_deg": 0,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          0.004649996757507324,
+          -4.899525165557861,
+          0.5482749938964844
+        ],
+        "base_rotation_euler_rad": [
+          1.5707964897155762,
+          -0.0,
+          0.0
+        ],
+        "predicted_fit_iou": 0.21208,
+        "image_scale": 1.805,
+        "translation_px": [
+          -11.561542628950122,
+          23.172997884602353
+        ]
+      }
+    ],
+    "src_r2j_fold_video_v1#title-0000ms": [
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_fold_video_v1-title-0000ms__az-145__el+12.png",
+        "azimuth_deg": -145,
+        "elevation_deg": 12,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -3.916294574737549,
+          -2.7514753341674805,
+          1.5656960010528564
+        ],
+        "base_rotation_euler_rad": [
+          1.3613568544387817,
+          -1.4552482241469988e-07,
+          -0.9599310755729675
+        ],
+        "predicted_fit_iou": 0.490179,
+        "image_scale": 1.37,
+        "translation_px": [
+          68.77806727144895,
+          11.784971846946135
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_fold_video_v1-title-0000ms__az-145__el+24.png",
+        "azimuth_deg": -145,
+        "elevation_deg": 24,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -3.657334327697754,
+          -2.5701491832733154,
+          2.5386509895324707
+        ],
+        "base_rotation_euler_rad": [
+          1.1519174575805664,
+          3.631491551914223e-08,
+          -0.9599311947822571
+        ],
+        "predicted_fit_iou": 0.48551,
+        "image_scale": 1.3800000000000001,
+        "translation_px": [
+          69.75182337629161,
+          10.67709240413059
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_fold_video_v1-title-0000ms__az-145__el+18.png",
+        "azimuth_deg": -145,
+        "elevation_deg": 18,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -3.807699203491211,
+          -2.675435781478882,
+          2.060457468032837
+        ],
+        "base_rotation_euler_rad": [
+          1.2566370964050293,
+          -8.949364627142131e-08,
+          -0.9599310159683228
+        ],
+        "predicted_fit_iou": 0.484097,
+        "image_scale": 1.395,
+        "translation_px": [
+          69.70594186997505,
+          9.527960687801851
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_fold_video_v1-title-0000ms__az-137__el+12.png",
+        "azimuth_deg": -137,
+        "elevation_deg": 12,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -3.4960403442382812,
+          -3.270446538925171,
+          1.5656960010528564
+        ],
+        "base_rotation_euler_rad": [
+          1.3613569736480713,
+          2.3270995797020078e-08,
+          -0.8203049302101135
+        ],
+        "predicted_fit_iou": 0.48115,
+        "image_scale": 1.4200000000000002,
+        "translation_px": [
+          66.71820210289627,
+          10.117367563514279
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_fold_video_v1-title-0000ms__az-137__el+24.png",
+        "azimuth_deg": -137,
+        "elevation_deg": 24,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -3.264835834503174,
+          -3.054844856262207,
+          2.5386509895324707
+        ],
+        "base_rotation_euler_rad": [
+          1.1519172191619873,
+          1.0428092167558134e-07,
+          -0.8203047513961792
+        ],
+        "predicted_fit_iou": 0.478791,
+        "image_scale": 1.37,
+        "translation_px": [
+          66.7121633484557,
+          10.00231000422174
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_fold_video_v1-title-0000ms__az-137__el+18.png",
+        "azimuth_deg": -137,
+        "elevation_deg": 18,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -3.3990840911865234,
+          -3.1800334453582764,
+          2.060457468032837
+        ],
+        "base_rotation_euler_rad": [
+          1.2566370964050293,
+          1.7163550580789888e-09,
+          -0.8203048706054688
+        ],
+        "predicted_fit_iou": 0.47719,
+        "image_scale": 1.34,
+        "translation_px": [
+          66.77515263567966,
+          8.64066950073385
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_fold_video_v1-title-0000ms__az-129__el+24.png",
+        "azimuth_deg": -129,
+        "elevation_deg": 24,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -2.8087000846862793,
+          -3.4801979064941406,
+          2.5386509895324707
+        ],
+        "base_rotation_euler_rad": [
+          1.1519173383712769,
+          -2.4789480690401433e-08,
+          -0.6806785464286804
+        ],
+        "predicted_fit_iou": 0.477164,
+        "image_scale": 1.6900000000000002,
+        "translation_px": [
+          67.25999789066609,
+          15.570415295885539
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_fold_video_v1-title-0000ms__az-129__el+18.png",
+        "azimuth_deg": -129,
+        "elevation_deg": 18,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -2.9242191314697266,
+          -3.622852087020874,
+          2.060457468032837
+        ],
+        "base_rotation_euler_rad": [
+          1.2566372156143188,
+          5.3566836299978604e-08,
+          -0.6806784868240356
+        ],
+        "predicted_fit_iou": 0.474028,
+        "image_scale": 1.3800000000000001,
+        "translation_px": [
+          64.66412475080824,
+          7.929165169916558
+        ]
+      },
+      {
+        "mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_fold_video_v1-title-0000ms__az-129__el+12.png",
+        "azimuth_deg": -129,
+        "elevation_deg": 12,
+        "lens_mm": 70.0,
+        "base_distance_m": 4.893525123596191,
+        "target_xyz_m": [
+          0.004649996757507324,
+          -0.00599999725818634,
+          0.5482749938964844
+        ],
+        "base_position_xyz_m": [
+          -3.007648468017578,
+          -3.725879192352295,
+          1.5656960010528564
+        ],
+        "base_rotation_euler_rad": [
+          1.3613569736480713,
+          2.4860703717877186e-08,
+          -0.6806784868240356
+        ],
+        "predicted_fit_iou": 0.4718,
+        "image_scale": 1.3900000000000001,
+        "translation_px": [
+          64.62028111082549,
+          8.935094699469857
+        ]
+      }
+    ]
+  },
+  "selected": {
+    "src_r2j_view_front3q_v1": {
+      "source_id": "src_r2j_view_front3q_v1",
+      "selected_raw_mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_front3q_v1__az-145__el+24.png",
+      "predicted_fit_iou": 0.662769,
+      "azimuth_deg": -145,
+      "elevation_deg": 24,
+      "lens_mm": 70.0,
+      "base_distance_m": 4.893525123596191,
+      "fitted_distance_m": 2.219285770338409,
+      "target_xyz_m": [
+        0.004649996757507324,
+        -0.00599999725818634,
+        0.5482749938964844
+      ],
+      "image_scale": 2.205,
+      "translation_px": [
+        -0.44122806179908025,
+        21.838641209086404
+      ],
+      "shift_x": 0.0017235471164026572,
+      "shift_y": 0.08530719222299377
+    },
+    "src_r2j_view_side_v1": {
+      "source_id": "src_r2j_view_side_v1",
+      "selected_raw_mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_view_side_v1__az-090__el+06.png",
+      "predicted_fit_iou": 0.265626,
+      "azimuth_deg": -90,
+      "elevation_deg": 6,
+      "lens_mm": 70.0,
+      "base_distance_m": 4.893525123596191,
+      "fitted_distance_m": 2.4903435743492066,
+      "target_xyz_m": [
+        0.004649996757507324,
+        -0.00599999725818634,
+        0.5482749938964844
+      ],
+      "image_scale": 1.965,
+      "translation_px": [
+        -7.764023755579785,
+        16.117229680518165
+      ],
+      "shift_x": 0.030328217795233536,
+      "shift_y": 0.06295792843952408
+    },
+    "src_r2j_fold_video_v1#title-0000ms": {
+      "source_id": "src_r2j_fold_video_v1#title-0000ms",
+      "selected_raw_mask_local_path": "poc-3d-static-twin/photo-projection/ready2jet/camera-gates/raw/src_r2j_fold_video_v1-title-0000ms__az-145__el+12.png",
+      "predicted_fit_iou": 0.490179,
+      "azimuth_deg": -145,
+      "elevation_deg": 12,
+      "lens_mm": 70.0,
+      "base_distance_m": 4.893525123596191,
+      "fitted_distance_m": 3.5719161486103586,
+      "target_xyz_m": [
+        0.004649996757507324,
+        -0.00599999725818634,
+        0.5482749938964844
+      ],
+      "image_scale": 1.37,
+      "translation_px": [
+        68.77806727144895,
+        11.784971846946135
+      ],
+      "shift_x": -0.26866432527909745,
+      "shift_y": 0.04603504627713334
+    }
+  }
+}
