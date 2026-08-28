@@ -510,7 +510,16 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT):
             media_by_claim = _media_index(
                 packs_root, vault_root, preview)
             for result in results:
-                result["media"] = media_by_claim.get(result["claim_id"], [])
+                member_ids = ([step["claim_id"]
+                               for step in result.get("steps", [])]
+                              or [result["claim_id"]])
+                seen, media = set(), []
+                for member_id in member_ids:
+                    for item in media_by_claim.get(member_id, []):
+                        if item["id"] not in seen:
+                            seen.add(item["id"])
+                            media.append(item)
+                result["media"] = media
             self._send_json(200, {
                 "question": question,
                 "results": results,

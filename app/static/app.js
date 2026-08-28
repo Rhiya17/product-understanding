@@ -109,6 +109,22 @@ function renderResult(result, renderedMedia) {
   card.append(element("p", "answer", result.answer));
   card.append(element("p", "meta", `Tier ${result.tier} · ${result.claim_id}`));
 
+  if (result.steps && result.steps.length) {
+    const stepsBox = element("ol", "procedure-steps");
+    result.steps.forEach((step) => {
+      const item = element("li", "procedure-step-line", step.action || "");
+      if (step.status !== "PUBLISHED") {
+        item.append(element("span", `badge inline ${step.status}`, "pending review"));
+      }
+      const quote = (step.citations || [])[0];
+      if (quote && quote.quote) {
+        item.append(element("div", "step-quote", `“${quote.quote}” — ${quote.source_id}`));
+      }
+      stepsBox.append(item);
+    });
+    card.append(stepsBox);
+  }
+
   if (result.citations.length) {
     const citations = element("div", "citations");
     citations.append(element("h3", "", "Source evidence"));

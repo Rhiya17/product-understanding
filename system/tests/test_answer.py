@@ -116,3 +116,32 @@ def test_no_match_returns_empty(tmp_path):
     results, hidden = run("does it support warp drive?", tmp_path)
     assert results == []
     assert sum(hidden.values()) == 0
+
+
+def test_procedure_question_composes_ordered_steps(tmp_path):
+    packs, vault = build_vault_and_pack(tmp_path)
+    steps = [
+        {"claim_id": f"claim_w_fold_{n}", "consequence_ceiling": "C1",
+         "type": "STEP", "predicate": "procedure_step",
+         "object": {"procedure": "fold_widget", "step_number": n,
+                    "action": f"Fold action {n}"},
+         "source_bindings": [{"source_id": "src_spec", "page": None,
+                              "quote": f"{n}. Fold action {n}"}]}
+        for n in (3, 1, 2)
+    ]
+    pack = packs / "acme-widget-9000"
+    existing = json.loads((pack / "claims.json").read_text())
+    (pack / "claims.json").write_text(json.dumps(existing + steps),
+                                     encoding="utf-8")
+    results, _ = answer.search("how do I fold the widget? fold action",
+                               packs_root=packs, vault_root=vault,
+                               preview=True, top=5)
+    composed = [row for row in results if row.get("steps")]
+    assert len(composed) == 1
+    row = composed[0]
+    assert row["claim_id"] == "procedure:fold_widget"
+    assert [step["step_number"] for step in row["steps"]] == [1, 2, 3]
+    assert results[0] is row  # the assembled procedure outranks fragments
+    fragment_ids = {r["claim_id"] for r in results if not r.get("steps")}
+    assert not fragment_ids & {"claim_w_fold_1", "claim_w_fold_2",
+                               "claim_w_fold_3"}

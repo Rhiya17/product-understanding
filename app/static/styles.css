@@ -372,3 +372,9 @@ footer {
   .preview-control { flex-basis: 100%; margin-left: 0; margin-top: 0.45rem; }
   .procedure-tools, .procedure-player { grid-template-columns: 1fr; }
 }
+
+/* Composed procedure answers */
+.procedure-steps { margin: 0.5rem 0 0.75rem; padding-left: 1.4rem; }
+.procedure-step-line { margin-bottom: 0.55rem; line-height: 1.45; }
+.badge.inline { margin-left: 0.5rem; font-size: 0.62rem; vertical-align: 0.1em; }
+.step-quote { font-size: 0.78rem; color: var(--muted, #777); margin-top: 0.15rem; }

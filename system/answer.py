@@ -193,6 +193,7 @@ def search(question, packs_root=PACKS_ROOT, vault_root=VAULT_ROOT,
             load_json(pack_dir / "reviews.json", {}))
         alarms = alarmed_claims(load_json(pack_dir / "verdicts.json", {}))
         urls = source_urls(vault_root, product["dir"])
+        product_rows = []
         for claim in claims:
             score = score_claim(question_tokens, claim)
             if score <= 0:
@@ -202,13 +203,18 @@ def search(question, packs_root=PACKS_ROOT, vault_root=VAULT_ROOT,
                 if status in hidden:
                     hidden[status] += 1
                 continue
-            results.append({
+            obj = claim.get("object") if isinstance(claim.get("object"),
+                                                   dict) else {}
+            product_rows.append({
                 "score": score,
                 "status": status,
                 "product": f"{product.get('brand', '')} "
                            f"{product.get('model', '')}".strip(),
                 "claim_id": claim["claim_id"],
                 "tier": claim.get("consequence_ceiling"),
+                "type": claim.get("type"),
+                "procedure": (obj.get("procedure")
+                              if claim.get("type") == "STEP" else None),
                 "predicate": claim.get("predicate"),
                 "answer": render_object(claim),
                 "citations": [{
@@ -217,8 +223,76 @@ def search(question, packs_root=PACKS_ROOT, vault_root=VAULT_ROOT,
                     "origin_url": urls.get(binding.get("source_id")),
                 } for binding in claim.get("source_bindings", [])],
             })
+        results.extend(compose_procedures(
+            product_rows, product, claims, dispositions, alarms, wanted,
+            urls))
     results.sort(key=lambda row: (-row["score"], row["claim_id"]))
     return results[:top], hidden
+
+
+def compose_procedures(rows, product, claims, dispositions, alarms, wanted,
+                       urls):
+    """Fold multiple matched STEP rows into one ordered procedure answer.
+
+    A question that matches two or more steps of the same procedure is a
+    procedure question; answering with scattered per-step cards presents the
+    steps out of order and without their siblings. The composed row carries
+    the complete ordered step list (every step of that procedure whose
+    serving status is allowed), each step keeping its own status, tier, and
+    citations.
+    """
+    by_procedure = {}
+    for row in rows:
+        if row["procedure"]:
+            by_procedure.setdefault(row["procedure"], []).append(row)
+
+    composed, absorbed = [], set()
+    for procedure, members in by_procedure.items():
+        if len(members) < 2:
+            continue
+        steps = []
+        for claim in claims:
+            obj = claim.get("object") if isinstance(claim.get("object"),
+                                                    dict) else {}
+            if claim.get("type") != "STEP" or obj.get("procedure") != procedure:
+                continue
+            status = claim_status(claim["claim_id"], dispositions, alarms)
+            if status not in wanted:
+                continue
+            steps.append({
+                "step_number": obj.get("step_number"),
+                "action": obj.get("action"),
+                "claim_id": claim["claim_id"],
+                "status": status,
+                "tier": claim.get("consequence_ceiling"),
+                "citations": [{
+                    "source_id": binding.get("source_id"),
+                    "quote": binding.get("quote", ""),
+                    "origin_url": urls.get(binding.get("source_id")),
+                } for binding in claim.get("source_bindings", [])],
+            })
+        steps.sort(key=lambda step: (step["step_number"] is None,
+                                     step["step_number"]))
+        tiers = [step["tier"] for step in steps if step["tier"]]
+        statuses = {step["status"] for step in steps}
+        absorbed.update(member["claim_id"] for member in members)
+        composed.append({
+            # Rank the assembled procedure above its own fragments.
+            "score": max(member["score"] for member in members) + 1.0,
+            "status": ("PUBLISHED" if statuses == {"PUBLISHED"}
+                       else "CANDIDATE"),
+            "product": members[0]["product"],
+            "claim_id": f"procedure:{procedure}",
+            "tier": max(tiers) if tiers else None,
+            "type": "PROCEDURE",
+            "procedure": procedure,
+            "predicate": procedure,
+            "answer": f"{len(steps)} documented steps",
+            "steps": steps,
+            "citations": [],
+        })
+    kept = [row for row in rows if row["claim_id"] not in absorbed]
+    return kept + composed
 
 
 STATUS_LABELS = {
@@ -237,6 +311,10 @@ def format_results(question, results, hidden, preview):
                      f"{row['product']} — {row['predicate']} "
                      f"(tier {row['tier']}, {row['claim_id']})")
         lines.append(f"   {row['answer']}")
+        for step in row.get("steps", []):
+            marker = ("" if step["status"] == "PUBLISHED"
+                      else f" [{step['status']}]")
+            lines.append(f"   {step['step_number']}. {step['action']}{marker}")
         for citation in row["citations"]:
             quote = " ".join(str(citation["quote"]).split())
             if len(quote) > 160:
