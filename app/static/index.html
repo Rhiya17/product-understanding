@@ -33,9 +33,9 @@
             <option value="">All products</option>
           </select>
 
-          <label class="preview-control" for="preview">
-            <input id="preview" name="preview" type="checkbox">
-            <span>Internal preview</span>
+          <label class="preview-control" for="published-only">
+            <input id="published-only" name="published-only" type="checkbox">
+            <span>Published facts only</span>
           </label>
         </div>
 
@@ -50,8 +50,9 @@
         </div>
       </form>
 
-      <div id="preview-warning" class="preview-warning" hidden>
-        INTERNAL PREVIEW — includes facts that are not published for serving.
+      <div id="preview-warning" class="preview-warning">
+        MVP exception (owner, 2026-08-27): serving unreviewed facts, labeled
+        PENDING REVIEW. TODO: the owner review pass promotes them to PUBLISHED.
       </div>
     </section>
 

@@ -420,3 +420,19 @@ def test_page_image_route_refuses_tampered_pdf(tmp_path):
             assert json.loads(error.read())["error"] == "Media integrity check failed"
         else:
             raise AssertionError("tampered PDF unexpectedly rendered")
+
+
+def test_default_serving_includes_labeled_candidates_mvp_exception(tmp_path):
+    # Owner decision 2026-08-27 (MVP exception): with no preview param, the
+    # API serves CANDIDATE facts so the demo answers before the review pass.
+    # TODO: when the owner review pass promotes the catalog, revert the
+    # server default to published-only and update this test.
+    with running_server(tmp_path) as base_url:
+        _, payload = get_json(base_url, "/api/answer", {
+            "q": "widget noise and weight", "top": 20,
+        })
+    statuses = {row["claim_id"]: row["status"] for row in payload["results"]}
+    assert statuses.get("claim_prod_acme_noise") == "CANDIDATE"
+    assert "CANDIDATE" in statuses.values() and "PUBLISHED" in statuses.values()
+    # The rejected claim (claims[2] in the fixture) must stay out even now.
+    assert all(row["status"] != "REJECTED" for row in payload["results"])

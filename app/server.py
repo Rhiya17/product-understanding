@@ -325,7 +325,11 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT):
             self._send_json(200, {"products": _catalog_products(vault_root)})
 
         def _preview_value(self, query):
-            preview_value = query.get("preview", ["0"])[0]
+            # MVP exception (owner decision 2026-08-27): when the client does
+            # not specify, serve labeled CANDIDATE/SUSPENDED facts too.
+            # TODO: revert the default to "0" (published-only) once the owner
+            # review pass promotes the catalog in reviews.json.
+            preview_value = query.get("preview", ["1"])[0]
             if preview_value not in {"0", "1"}:
                 self._send_json(400, {"error": "preview must be 0 or 1"})
                 return None

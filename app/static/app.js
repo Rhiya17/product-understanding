@@ -1,7 +1,10 @@
 const form = document.querySelector("#answer-form");
 const questionInput = document.querySelector("#question");
 const productSelect = document.querySelector("#product");
-const previewToggle = document.querySelector("#preview");
+// MVP exception (owner decision 2026-08-27): unreviewed facts serve by
+// default, labeled. TODO: revert to published-only default once the owner
+// review pass promotes the catalog.
+const publishedOnlyToggle = document.querySelector("#published-only");
 const previewWarning = document.querySelector("#preview-warning");
 const resultsRegion = document.querySelector("#results");
 const emptyState = document.querySelector("#empty-state");
@@ -34,7 +37,7 @@ function element(tag, className, text) {
 
 function statusLabel(status) {
   if (status === "SUSPENDED") return "SUSPENDED — verifier alarm outstanding";
-  if (status === "CANDIDATE") return "CANDIDATE — not human-reviewed";
+  if (status === "CANDIDATE") return "PENDING REVIEW — TODO: owner approval promotes to PUBLISHED";
   return status;
 }
 
@@ -132,7 +135,7 @@ function renderNotServed(counts, preview) {
   const entries = Object.entries(counts).filter(([, count]) => count > 0);
   if (!preview && entries.length) {
     const detail = entries.map(([status, count]) => `${count} ${status.toLowerCase()}`).join(", ");
-    notServedBox.textContent = `Not served: ${detail} matching fact${entries.length === 1 && entries[0][1] === 1 ? "" : "s"}. Turn on Internal preview to inspect candidate or suspended facts.`;
+    notServedBox.textContent = `Not served: ${detail} matching fact${entries.length === 1 && entries[0][1] === 1 ? "" : "s"}. Untick 'Published facts only' to see them, labeled.`;
     notServedBox.hidden = false;
   }
 }
@@ -168,7 +171,7 @@ async function loadProcedures() {
 
   const query = new URLSearchParams({
     product: productSelect.value,
-    preview: previewToggle.checked ? "1" : "0",
+    preview: publishedOnlyToggle.checked ? "0" : "1",
   });
   try {
     const response = await fetch(`/api/procedures?${query}`);
@@ -183,9 +186,9 @@ async function loadProcedures() {
     if (payload.procedures.length) {
       procedureSelect.disabled = false;
     } else {
-      placeholder.textContent = previewToggle.checked
-        ? "No procedures available"
-        : "No published procedures — try Internal preview";
+      placeholder.textContent = publishedOnlyToggle.checked
+        ? "No published procedures — untick 'Published facts only'"
+        : "No procedures available";
     }
   } catch (error) {
     errorBox.textContent = error.message;
@@ -221,7 +224,7 @@ async function showProcedure() {
   const query = new URLSearchParams({
     product: productSelect.value,
     procedure: procedureSelect.value,
-    preview: previewToggle.checked ? "1" : "0",
+    preview: publishedOnlyToggle.checked ? "0" : "1",
   });
   try {
     const response = await fetch(`/api/procedure?${query}`);
@@ -252,7 +255,7 @@ async function submitQuestion(event) {
 
   const query = new URLSearchParams({
     q: questionInput.value,
-    preview: previewToggle.checked ? "1" : "0",
+    preview: publishedOnlyToggle.checked ? "0" : "1",
     product: productSelect.value,
     top: "10",
   });
@@ -262,7 +265,7 @@ async function submitQuestion(event) {
     const payload = await response.json();
     if (!response.ok) throw new Error(payload.error || "The answer request failed.");
     if (!payload.results.length) {
-      emptyState.textContent = previewToggle.checked
+      emptyState.textContent = !publishedOnlyToggle.checked
         ? "No matching published or preview facts found."
         : "No published answer found.";
       emptyState.hidden = false;
@@ -270,7 +273,7 @@ async function submitQuestion(event) {
       const renderedMedia = new Set();
       payload.results.forEach((result) => resultsRegion.append(renderResult(result, renderedMedia)));
     }
-    renderNotServed(payload.not_served, previewToggle.checked);
+    renderNotServed(payload.not_served, !publishedOnlyToggle.checked);
   } catch (error) {
     errorBox.textContent = error.message;
     errorBox.hidden = false;
@@ -280,8 +283,8 @@ async function submitQuestion(event) {
   }
 }
 
-previewToggle.addEventListener("change", () => {
-  previewWarning.hidden = !previewToggle.checked;
+publishedOnlyToggle.addEventListener("change", () => {
+  previewWarning.hidden = publishedOnlyToggle.checked;
   loadProcedures();
 });
 productSelect.addEventListener("change", loadProcedures);
