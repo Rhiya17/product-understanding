@@ -151,3 +151,40 @@ def test_every_catalog_product_requires_a_binding_file(tmp_path):
     assert not success
     assert count == 0
     assert errors == ["acme-widget: missing media-bindings.json"]
+
+
+def test_derived_asset_lane_requires_provenance_watermark_and_matching_hash(tmp_path):
+    _, _, pack, vault, document = build_media_fixture(tmp_path)
+    derived_bytes = b"GIF89a derived turntable"
+    derived_file = tmp_path / "derived" / "widget-turntable.gif"
+    derived_file.parent.mkdir()
+    derived_file.write_bytes(derived_bytes)
+    asset = {
+        "asset_id": "derived_widget_turntable",
+        "type": "TURNTABLE_GIF",
+        "label": "Photo-projected widget turntable",
+        "watermark": "INTERNAL ONLY — NOT FOR DISTRIBUTION",
+        "local_path": "derived/widget-turntable.gif",
+        "sha256": hashlib.sha256(derived_bytes).hexdigest(),
+        "provider": "local deterministic fixture",
+        "approved_by": None,
+        "internal_only": True,
+    }
+    (pack / "derived-assets.json").write_text(json.dumps({
+        "schema_version": 1, "product_id": "widget",
+        "assets": [asset],
+    }), encoding="utf-8")
+    document["bindings"].append(binding(
+        "mb_widget_derived", ["claim_widget_one"],
+        "derived_widget_turntable", "DERIVED_ASSET"))
+    (pack / "media-bindings.json").write_text(
+        json.dumps(document), encoding="utf-8")
+    assert validate_media.validate_pack(pack, vault) == []
+
+    asset["watermark"] = ""
+    (pack / "derived-assets.json").write_text(json.dumps({
+        "schema_version": 1, "product_id": "widget",
+        "assets": [asset],
+    }), encoding="utf-8")
+    errors = validate_media.validate_pack(pack, vault)
+    assert any("INTERNAL ONLY watermark" in error for error in errors)

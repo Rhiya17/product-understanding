@@ -50,6 +50,27 @@ SYNONYMS = {
     "works": "compatible", "compatibility": "compatible",
     "clean": "care", "cleaning": "care", "wash": "care", "washing": "care",
     "expire": "expiration", "expires": "expiration", "expiry": "expiration",
+    "looks": "dimensions", "look": "dimensions", "appearance": "dimensions",
+    "pairing": "pair", "paired": "pair",
+}
+
+PREDICATE_LABELS = {
+    "maximum_child_weight": "Maximum child weight",
+    "minimum_child_weight": "Minimum child weight",
+    "product_weight": "Product weight",
+    "product_dimensions": "Product dimensions",
+    "procedure_step": "Procedure step",
+}
+
+SOURCE_TYPE_LABELS = {
+    "MANUAL_PDF": "owner's manual",
+    "SPEC_DOC_PDF": "specification document",
+    "SPEC_PAGE": "product specifications",
+    "SUPPORT_PAGE": "support page",
+    "GUIDE": "guide",
+    "IMAGE": "manufacturer image",
+    "VIDEO": "manufacturer video",
+    "VIDEO_URL": "manufacturer video",
 }
 
 
@@ -94,6 +115,15 @@ def product_aliases(product):
     return set(tokenize(alias_text))
 
 
+def product_identity_aliases(product):
+    """Aliases that identify a product, excluding its shared category."""
+    alias_text = " ".join(str(product.get(field, "")) for field in
+                          ("brand", "model", "model_number", "dir",
+                           "product_id"))
+    category_tokens = set(tokenize(product.get("category", "")))
+    return set(tokenize(alias_text)) - category_tokens
+
+
 def detect_products(question_tokens, products):
     """Products whose aliases overlap the question; all products if none do."""
     scored = []
@@ -105,6 +135,25 @@ def detect_products(question_tokens, products):
         return products
     best = max(score for score, _ in scored)
     return [product for score, product in scored if score == best]
+
+
+def clarification_candidates(question, products):
+    """Return tied same-category products when no product name was supplied."""
+    question_tokens = set(tokenize(question))
+    if any(question_tokens & product_identity_aliases(product)
+           for product in products):
+        return []
+    scored = []
+    for product in products:
+        category_tokens = set(tokenize(product.get("category", "")))
+        score = len(question_tokens & category_tokens)
+        if score:
+            scored.append((score, product))
+    if not scored:
+        return []
+    best = max(score for score, _ in scored)
+    candidates = [product for score, product in scored if score == best]
+    return candidates if len(candidates) > 1 else []
 
 
 def latest_dispositions(reviews):
@@ -166,10 +215,134 @@ def render_object(claim):
     return " | ".join(parts)
 
 
-def source_urls(vault_root, product_dir):
+def readable_label(value):
+    """Turn a stable identifier into restrained sentence-case copy."""
+    value = str(value or "").replace("_", " ").strip()
+    return value[:1].upper() + value[1:]
+
+
+def _list_text(values):
+    values = [str(value) for value in values]
+    if len(values) < 2:
+        return values[0] if values else ""
+    return ", ".join(values[:-1]) + f", and {values[-1]}"
+
+
+def _value_with_unit(obj):
+    value = obj.get("value")
+    unit = obj.get("unit")
+    if isinstance(value, dict):
+        dimensions = [value.get(key) for key in
+                      ("width_in", "depth_in", "height_in")]
+        if all(item is not None for item in dimensions):
+            return " × ".join(str(item) for item in dimensions) + (
+                f" {unit}" if unit else "")
+        return ", ".join(str(item) for item in value.values())
+    if isinstance(value, bool):
+        return "Yes" if value else "No"
+    return f"{value}{f' {unit}' if unit else ''}"
+
+
+def display_text(claim):
+    """Render a deterministic human lead sentence for a claim.
+
+    The underlying object is still returned separately for the Details
+    disclosure. This renderer makes no factual additions and never calls a
+    model.
+    """
+    obj = claim.get("object")
+    if not isinstance(obj, dict):
+        return str(obj)
+    claim_type = claim.get("type")
+    predicate = claim.get("predicate", "")
+    label = PREDICATE_LABELS.get(predicate, readable_label(predicate))
+
+    if claim_type == "STEP":
+        procedure = readable_label(obj.get("procedure", "procedure"))
+        number = obj.get("step_number")
+        action = str(obj.get("action", "")).rstrip(".")
+        return f"Step {number} of {procedure}: {action}."
+
+    if claim_type == "WARNING":
+        description = obj.get("description") or obj.get("warning")
+        if description:
+            return f"Warning: {str(description).rstrip('.')}."
+
+    if claim_type == "COMPATIBILITY":
+        counterpart = (obj.get("counterpart_name") or
+                       obj.get("counterpart") or "the named product")
+        if "compatible" in obj:
+            verdict = "Compatible" if obj.get("compatible") else "Not compatible"
+            lead = f"{verdict} with {counterpart}"
+        else:
+            relationship = obj.get("relationship") or obj.get("feature")
+            lead = f"Works with {counterpart}"
+            if relationship:
+                lead += f" for {relationship}"
+        qualifier = obj.get("qualifier") or obj.get("requirement")
+        return lead + (f" — {qualifier}" if qualifier else "") + "."
+
+    if claim_type == "PART_LOCATION" and obj.get("location_description"):
+        return str(obj["location_description"]).rstrip(".") + "."
+
+    if claim_type == "CARE":
+        instruction = obj.get("instruction") or obj.get("method")
+        if instruction:
+            interval = f" {obj['interval']}" if obj.get("interval") else ""
+            restrictions = obj.get("restrictions") or []
+            suffix = (f" Avoid: {_list_text(restrictions)}."
+                      if restrictions else "")
+            return (f"{label}{interval}: {str(instruction).rstrip('.')}."
+                    f"{suffix}")
+
+    if "width" in obj and "height" in obj and "depth" in obj:
+        unit = f" {obj['unit']}" if obj.get("unit") else ""
+        return (f"{label}: {obj['width']} × {obj['height']} × "
+                f"{obj['depth']}{unit} (width × height × depth).")
+
+    if "value" in obj:
+        lead = f"{label}: {_value_with_unit(obj)}"
+        metric = obj.get("metric")
+        if metric:
+            lead += f" ({metric})"
+        elif obj.get("metric_value") is not None:
+            metric_unit = f" {obj.get('metric_unit')}" if obj.get("metric_unit") else ""
+            lead += f" ({obj['metric_value']}{metric_unit})"
+        context = (obj.get("context") or obj.get("conditions") or
+                   obj.get("qualifier") or obj.get("rule") or obj.get("note"))
+        if context:
+            lead += f" — {context}"
+        return lead.rstrip(".") + "."
+
+    for field in ("description", "behavior", "instruction", "method",
+                  "relationship", "state"):
+        if obj.get(field):
+            return f"{label}: {str(obj[field]).rstrip('.')}."
+
+    values = []
+    for value in obj.values():
+        if isinstance(value, list):
+            values.extend(str(item) for item in value)
+        elif isinstance(value, dict):
+            values.extend(str(item) for item in value.values())
+        elif value is not None:
+            values.append(str(value))
+    return f"{label}: {_list_text(values)}." if values else f"{label}."
+
+
+def source_details(vault_root, product):
+    product_dir = product["dir"]
     manifest = load_json(vault_root / product_dir / "manifest.json", {})
-    return {source.get("source_id"): source.get("origin_url")
-            for source in manifest.get("sources", [])}
+    brand = product.get("brand") or "Product"
+    details = {}
+    for source in manifest.get("sources", []):
+        source_type = SOURCE_TYPE_LABELS.get(
+            source.get("type"), readable_label(source.get("type", "source")))
+        details[source.get("source_id")] = {
+            "origin_url": source.get("origin_url"),
+            "source_name": f"{brand} {source_type}",
+        }
+    return details
 
 
 def search(question, packs_root=PACKS_ROOT, vault_root=VAULT_ROOT,
@@ -192,7 +365,7 @@ def search(question, packs_root=PACKS_ROOT, vault_root=VAULT_ROOT,
         dispositions = latest_dispositions(
             load_json(pack_dir / "reviews.json", {}))
         alarms = alarmed_claims(load_json(pack_dir / "verdicts.json", {}))
-        urls = source_urls(vault_root, product["dir"])
+        sources = source_details(vault_root, product)
         product_rows = []
         for claim in claims:
             score = score_claim(question_tokens, claim)
@@ -210,28 +383,33 @@ def search(question, packs_root=PACKS_ROOT, vault_root=VAULT_ROOT,
                 "status": status,
                 "product": f"{product.get('brand', '')} "
                            f"{product.get('model', '')}".strip(),
+                "product_dir": product["dir"],
                 "claim_id": claim["claim_id"],
                 "tier": claim.get("consequence_ceiling"),
                 "type": claim.get("type"),
                 "procedure": (obj.get("procedure")
                               if claim.get("type") == "STEP" else None),
                 "predicate": claim.get("predicate"),
-                "answer": render_object(claim),
+                "answer": display_text(claim),
+                "display_text": display_text(claim),
+                "raw_answer": render_object(claim),
+                "step_number": (obj.get("step_number")
+                                if claim.get("type") == "STEP" else None),
                 "citations": [{
                     "source_id": binding.get("source_id"),
                     "quote": binding.get("quote", ""),
-                    "origin_url": urls.get(binding.get("source_id")),
+                    **sources.get(binding.get("source_id"), {}),
                 } for binding in claim.get("source_bindings", [])],
             })
         results.extend(compose_procedures(
             product_rows, product, claims, dispositions, alarms, wanted,
-            urls))
+            sources))
     results.sort(key=lambda row: (-row["score"], row["claim_id"]))
     return results[:top], hidden
 
 
 def compose_procedures(rows, product, claims, dispositions, alarms, wanted,
-                       urls):
+                       sources):
     """Fold multiple matched STEP rows into one ordered procedure answer.
 
     A question that matches two or more steps of the same procedure is a
@@ -268,7 +446,7 @@ def compose_procedures(rows, product, claims, dispositions, alarms, wanted,
                 "citations": [{
                     "source_id": binding.get("source_id"),
                     "quote": binding.get("quote", ""),
-                    "origin_url": urls.get(binding.get("source_id")),
+                    **sources.get(binding.get("source_id"), {}),
                 } for binding in claim.get("source_bindings", [])],
             })
         steps.sort(key=lambda step: (step["step_number"] is None,
@@ -282,12 +460,15 @@ def compose_procedures(rows, product, claims, dispositions, alarms, wanted,
             "status": ("PUBLISHED" if statuses == {"PUBLISHED"}
                        else "CANDIDATE"),
             "product": members[0]["product"],
+            "product_dir": product["dir"],
             "claim_id": f"procedure:{procedure}",
             "tier": max(tiers) if tiers else None,
             "type": "PROCEDURE",
             "procedure": procedure,
             "predicate": procedure,
-            "answer": f"{len(steps)} documented steps",
+            "answer": f"{readable_label(procedure)} has {len(steps)} documented steps.",
+            "display_text": f"{readable_label(procedure)} has {len(steps)} documented steps.",
+            "raw_answer": f"{len(steps)} documented steps",
             "steps": steps,
             "citations": [],
         })

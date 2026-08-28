@@ -5,6 +5,8 @@
     {
       "asset_id": "derived_levoit_levoit_turntable_20260827",
       "type": "TURNTABLE_GIF",
+      "label": "Photo-projected Levoit Core 300S turntable",
+      "watermark": "INTERNAL ONLY — NOT FOR DISTRIBUTION",
       "local_path": "poc-3d-static-twin/photo-projection/levoit/levoit-turntable-internal-only.gif",
       "sha256": "d2b09ff0a3d87821859b88069884c9c783f91d41418dbabcd105e374b9b340f5",
       "created_at": "2026-08-27T19:50:11.131535+00:00",

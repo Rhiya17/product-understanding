@@ -14,9 +14,11 @@
 
   <main>
     <section class="hero" aria-labelledby="page-title">
-      <p class="eyebrow">LOCAL ANSWER APP · MVP V0</p>
-      <h1 id="page-title">What do you need to know?</h1>
-      <p class="intro">Ask about setup, limits, care, compatibility, or how a product works.</p>
+      <div class="hero-copy">
+        <p class="eyebrow">LOCAL ANSWER APP · MVP V1</p>
+        <h1 id="page-title">What do you need to know?</h1>
+        <p class="intro">Ask about setup, limits, care, compatibility, or how a product works.</p>
+      </div>
 
       <form id="answer-form">
         <label class="question-label" for="question">Your question</label>
@@ -37,6 +39,16 @@
             <input id="published-only" name="published-only" type="checkbox">
             <span>Published facts only</span>
           </label>
+
+          <label class="review-control" for="review-mode">
+            <input id="review-mode" name="review-mode" type="checkbox" disabled>
+            <span>Owner review</span>
+          </label>
+
+          <label class="miss-log-control" for="log-misses">
+            <input id="log-misses" name="log-misses" type="checkbox">
+            <span>Log unanswered questions locally</span>
+          </label>
         </div>
 
         <div class="procedure-tools">
@@ -54,12 +66,15 @@
         MVP exception (owner, 2026-08-27): serving unreviewed facts, labeled
         PENDING REVIEW. TODO: the owner review pass promotes them to PUBLISHED.
       </div>
+      <div id="review-mode-note" class="review-mode-note" hidden></div>
     </section>
 
     <section id="answer-region" class="answer-region" aria-live="polite">
       <div id="empty-state" class="empty-state">
-        <p>Published answers will appear here with their source citations.</p>
+        <p id="empty-message">Published answers will appear here with their source citations.</p>
+        <div id="example-questions" class="example-questions" aria-label="Example questions"></div>
       </div>
+      <div id="clarify" class="clarify" hidden></div>
       <div id="error" class="error" hidden></div>
       <div id="results"></div>
       <div id="not-served" class="not-served" hidden></div>
@@ -81,7 +96,10 @@
           <span id="step-status" class="badge"></span>
           <p id="step-number" class="step-number"></p>
           <p id="step-action" class="step-action"></p>
-          <p id="step-claim" class="meta"></p>
+          <details class="claim-details">
+            <summary>Details</summary>
+            <p id="step-claim" class="meta"></p>
+          </details>
         </article>
         <figure id="page-panel" class="page-panel"></figure>
       </div>
@@ -93,7 +111,7 @@
   </main>
 
   <footer>
-    <p>No generative models. No runtime network calls. Published facts by default.</p>
+    <p>No generative models. No runtime network calls. Pending facts stay clearly labeled under the MVP exception.</p>
   </footer>
   <script src="/static/app.js" defer></script>
 </body>

@@ -21,6 +21,8 @@
     {
       "asset_id": "derived_macbook_closed_macbook_closed_turntable_20260827",
       "type": "TURNTABLE_GIF",
+      "label": "Photo-projected MacBook Air closed turntable",
+      "watermark": "INTERNAL ONLY — NOT FOR DISTRIBUTION",
       "local_path": "poc-3d-static-twin/photo-projection/macbook/closed/macbook-closed-turntable-internal-only.gif",
       "sha256": "ad3c7a15a483849c2853ff6b78bce18e948322388cf4905d187d5d963d4f5ac7",
       "created_at": "2026-08-27T19:45:45.688732+00:00",
@@ -67,6 +69,8 @@
     {
       "asset_id": "derived_macbook_open_macbook_open_turntable_20260827",
       "type": "TURNTABLE_GIF",
+      "label": "Photo-projected MacBook Air open turntable",
+      "watermark": "INTERNAL ONLY — NOT FOR DISTRIBUTION",
       "local_path": "poc-3d-static-twin/photo-projection/macbook/open/macbook-open-turntable-internal-only.gif",
       "sha256": "d30569eb098bceaf353ca419783a1ea5e7375ea44554cc5f8c7e8fd2a59b46e3",
       "created_at": "2026-08-27T19:45:45.715023+00:00",

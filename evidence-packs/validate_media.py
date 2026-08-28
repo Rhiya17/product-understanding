@@ -13,7 +13,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 PACKS_ROOT = REPO_ROOT / "evidence-packs"
 VAULT_ROOT = REPO_ROOT / "source-vault"
 
-ALLOWED_KINDS = {"IMAGE", "VIDEO_URL", "VIDEO_FILE", "PDF_PAGE"}
+ALLOWED_KINDS = {"IMAGE", "VIDEO_URL", "VIDEO_FILE", "PDF_PAGE",
+                 "DERIVED_ASSET"}
 REQUIRED_FIELDS = {
     "binding_id", "claim_ids", "source_id", "kind", "page",
     "start_seconds", "end_seconds", "rationale", "proposed_by",
@@ -69,6 +70,18 @@ def validate_pack(pack_dir, product_vault):
     claim_ids = {claim.get("claim_id") for claim in claims}
     sources = {source.get("source_id"): source
                for source in manifest.get("sources", [])}
+    derived_doc = {}
+    derived_path = pack_dir / "derived-assets.json"
+    if derived_path.is_file():
+        try:
+            derived_doc = load_json(derived_path)
+        except (OSError, ValueError, json.JSONDecodeError) as exc:
+            errors.append(f"{pack_dir.name}: cannot load derived-assets.json: {exc}")
+    derived_assets = {
+        asset.get("asset_id"): asset
+        for asset in derived_doc.get("assets", [])
+        if isinstance(asset, dict) and asset.get("asset_id")
+    }
 
     if not isinstance(media_doc, dict) or set(media_doc) != {"bindings"}:
         return [f"{pack_dir.name}: media document must contain only a bindings array"]
@@ -110,7 +123,10 @@ def validate_pack(pack_dir, product_vault):
 
         source_id = binding.get("source_id")
         source = sources.get(source_id)
-        if source is None:
+        asset = derived_assets.get(source_id)
+        if binding.get("kind") == "DERIVED_ASSET" and asset is None:
+            errors.append(f"{label}: unknown derived asset {source_id!r}")
+        elif binding.get("kind") != "DERIVED_ASSET" and source is None:
             errors.append(f"{label}: unknown source_id {source_id!r}")
 
         kind = binding.get("kind")
@@ -151,7 +167,38 @@ def validate_pack(pack_dir, product_vault):
                 or approved_by.lower() == "agent"):
             errors.append(f"{label}: approved_by must be null or an owner email")
 
-        if source is not None and kind in ALLOWED_KINDS:
+        if kind == "DERIVED_ASSET" and asset is not None:
+            asset_label = asset.get("label")
+            watermark = asset.get("watermark")
+            if not isinstance(asset_label, str) or not asset_label.strip():
+                errors.append(f"{label}: derived asset requires a label")
+            if not isinstance(watermark, str) or "INTERNAL ONLY" not in watermark.upper():
+                errors.append(f"{label}: derived asset requires an INTERNAL ONLY watermark")
+            if not asset.get("internal_only"):
+                errors.append(f"{label}: derived asset must remain internal_only")
+            if not asset.get("provider"):
+                errors.append(f"{label}: derived asset requires provider provenance")
+            expected_hash = asset.get("sha256")
+            if not isinstance(expected_hash, str) or not SHA256_RE.fullmatch(expected_hash):
+                errors.append(f"{label}: derived asset requires a lowercase SHA-256")
+            local_path = asset.get("local_path")
+            repo_root = pack_dir.parent.parent.resolve()
+            candidate = ((repo_root / local_path).resolve()
+                         if isinstance(local_path, str) else None)
+            if (candidate is None or repo_root not in candidate.parents
+                    or not candidate.is_file()):
+                errors.append(f"{label}: registered derived file does not exist or escapes the repository")
+            elif isinstance(expected_hash, str):
+                actual_hash = hashlib.sha256(candidate.read_bytes()).hexdigest()
+                if actual_hash != expected_hash:
+                    errors.append(f"{label}: derived asset SHA-256 does not match")
+            asset_approved_by = asset.get("approved_by")
+            if asset_approved_by is not None and (
+                    not isinstance(asset_approved_by, str)
+                    or not EMAIL_RE.fullmatch(asset_approved_by)
+                    or asset_approved_by.lower() == "agent"):
+                errors.append(f"{label}: derived approved_by must be null or an owner email")
+        elif source is not None and kind in ALLOWED_KINDS:
             source_type = source.get("type")
             if kind == "IMAGE":
                 if source_type != "IMAGE":

@@ -44,7 +44,8 @@ ALLOWED_TYPES = ["LIMIT", "SPEC", "STEP", "WARNING", "PART_LOCATION",
 ALLOWED_AUTHORITIES = ["MANUFACTURER_MANUAL", "MANUFACTURER_SPEC_PAGE",
                        "MANUFACTURER_SUPPORT_PAGE"]
 ALLOWED_GAP_KINDS = ["SOURCE_MISSING", "NOT_EXTRACTED", "UNDERIVABLE"]
-ALLOWED_DISPOSITIONS = ["APPROVED_FOR_PUBLISH", "REJECTED_FOR_SERVING", "NEEDS_RECHECK"]
+ALLOWED_DISPOSITIONS = ["APPROVED_FOR_PUBLISH", "REJECTED_FOR_SERVING",
+                        "NEEDS_RECHECK", "NEEDS_REWORK"]
 ALLOWED_VERDICTS = ["ENTAILED", "MEANING_CHANGED", "CANNOT_JUDGE"]
 ALLOWED_VERIFICATION_STATUS = ["COMPLETE", "PARTIAL", "FAILED"]
 ALLOWED_CONFLICT_RESULTS = ["GENUINE_CONFLICT", "DIFFERENT_SCOPE_OR_EVENT",
@@ -338,13 +339,16 @@ def validate_pack(claims_path):
     # ---- review layer (human decisions; claims themselves stay CANDIDATE) ----
     reviews_path = os.path.join(pack_dir, "reviews.json")
     review_count = 0
-    reviewed_claim_ids = set()
+    review_ids = set()
     if os.path.exists(reviews_path):
         for r in load_json(reviews_path).get("reviews", []):
             rid = r.get("review_id", "<unnamed review>")
             claim_id = r.get("claim_id")
             if not r.get("review_id"):
                 errors.append("reviews.json: review missing review_id")
+            elif r.get("review_id") in review_ids:
+                errors.append(f"reviews.json: duplicate review_id {rid}")
+            review_ids.add(r.get("review_id"))
             if not r.get("scope"):
                 errors.append(f"reviews.json: {rid} missing scope")
             reviewer = r.get("reviewer")
@@ -352,10 +356,6 @@ def validate_pack(claims_path):
                 errors.append(
                     f"reviews.json: {rid} has system reviewer; publication "
                     "dispositions require explicit human confirmation")
-            if claim_id in reviewed_claim_ids:
-                errors.append(
-                    f"reviews.json: multiple current dispositions for {claim_id}")
-            reviewed_claim_ids.add(claim_id)
             if claim_id not in seen_ids:
                 errors.append(f"reviews.json: {rid} references unknown claim_id "
                               f"{claim_id}")

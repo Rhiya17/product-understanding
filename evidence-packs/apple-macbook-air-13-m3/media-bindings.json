@@ -46,6 +46,38 @@
       "rationale": "The official open-top guide diagram labels Touch ID and the FaceTime HD camera on this exact M3 model.",
       "proposed_by": "agent",
       "approved_by": null
+    },
+    {
+      "binding_id": "mb_mba_derived_closed_turntable",
+      "claim_ids": [
+        "claim_mba_spec_height",
+        "claim_mba_spec_width",
+        "claim_mba_spec_depth"
+      ],
+      "source_id": "derived_macbook_closed_macbook_closed_turntable_20260827",
+      "kind": "DERIVED_ASSET",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The closed photo-projected turntable visualizes the recorded enclosure dimensions with provenance-tracked manufacturer imagery.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_mba_derived_open_turntable",
+      "claim_ids": [
+        "claim_mba_spec_height",
+        "claim_mba_spec_width",
+        "claim_mba_spec_depth"
+      ],
+      "source_id": "derived_macbook_open_macbook_open_turntable_20260827",
+      "kind": "DERIVED_ASSET",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The open photo-projected turntable visualizes the recorded enclosure dimensions with provenance-tracked manufacturer imagery.",
+      "proposed_by": "agent",
+      "approved_by": null
     }
   ]
 }

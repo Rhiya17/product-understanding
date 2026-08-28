@@ -88,6 +88,20 @@
       "rationale": "Manual page 13 contains the Check Filter Indicator reset sequence.",
       "proposed_by": "agent",
       "approved_by": null
+    },
+    {
+      "binding_id": "mb_c300s_derived_turntable",
+      "claim_ids": [
+        "claim_c300s_spec_dimensions"
+      ],
+      "source_id": "derived_levoit_levoit_turntable_20260827",
+      "kind": "DERIVED_ASSET",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The photo-projected turntable visualizes the recorded product dimensions using provenance-tracked manufacturer imagery.",
+      "proposed_by": "agent",
+      "approved_by": null
     }
   ]
 }

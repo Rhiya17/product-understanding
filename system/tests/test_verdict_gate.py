@@ -138,7 +138,7 @@ def test_partial_and_failed_documents_require_reason(tmp_path):
     assert result.returncode == 0, result.stdout + result.stderr
 
 
-def test_reviews_require_human_traceability_and_one_current_disposition(tmp_path):
+def test_reviews_require_human_traceability_and_unique_append_ids(tmp_path):
     pack = make_gate_pack(tmp_path)
     base = {
         "review_id": "rev_one",
@@ -155,11 +155,17 @@ def test_reviews_require_human_traceability_and_one_current_disposition(tmp_path
     assert "publication dispositions require explicit human confirmation" in result.stdout
 
     human = dict(base, reviewer="owner@example.com", scope="manual")
-    duplicate = dict(human, review_id="rev_two")
+    later = dict(human, review_id="rev_two",
+                 disposition="REJECTED_FOR_SERVING")
+    write_reviews(pack, [human, later])
+    result = run_gate(pack)
+    assert result.returncode == 0, result.stdout + result.stderr
+
+    duplicate = dict(later, review_id="rev_one")
     write_reviews(pack, [human, duplicate])
     result = run_gate(pack)
     assert result.returncode != 0
-    assert "multiple current dispositions for claim_one" in result.stdout
+    assert "duplicate review_id rev_one" in result.stdout
 
 
 def test_v2_gate_requires_union_basis_and_exact_serving_model(tmp_path):

@@ -15,11 +15,11 @@ from app import server
 FIXTURE_PDF = Path(__file__).resolve().parent / "fixtures" / "manual-fixture.pdf"
 
 
-def make_claim(claim_id, predicate, obj, quote):
+def make_claim(claim_id, predicate, obj, quote, tier="C0", claim_type="SPEC"):
     return {
         "claim_id": claim_id,
-        "consequence_ceiling": "C0",
-        "type": "SPEC",
+        "consequence_ceiling": tier,
+        "type": claim_type,
         "predicate": predicate,
         "object": obj,
         "source_bindings": [{
@@ -45,7 +45,7 @@ def make_step_claim(claim_id, step_number, action):
     }
 
 
-def build_fixture(tmp_path, approve_media=False):
+def build_fixture(tmp_path, approve_media=False, include_derived=False):
     vault = tmp_path / "vault"
     packs = tmp_path / "packs"
     products = [
@@ -101,7 +101,8 @@ def build_fixture(tmp_path, approve_media=False):
             make_claim(f"claim_{product_id}_weight", "product_weight",
                        {"value": weight, "unit": "lb"}, f"Weight {weight} lb"),
             make_claim(f"claim_{product_id}_noise", "noise_level",
-                       {"value": 24, "unit": "dB"}, "Noise level 24 dB"),
+                       {"value": 24, "unit": "dB"}, "Noise level 24 dB",
+                       tier="C3"),
             make_claim(f"claim_{product_id}_old", "product_weight",
                        {"value": 99, "unit": "lb"}, "Old weight 99 lb"),
             make_step_claim(f"claim_{product_id}_calibrate_1", 1,
@@ -126,6 +127,14 @@ def build_fixture(tmp_path, approve_media=False):
         }), encoding="utf-8")
         (packs / product_dir / "verdicts.json").write_text(
             json.dumps({"verdicts": []}), encoding="utf-8")
+        (packs / product_dir / "gaps.json").write_text(json.dumps({
+            "gaps": [{
+                "gap_id": f"gap_{product_id}_warp_drive",
+                "kind": "SOURCE_MISSING",
+                "reason": "The warp drive source is missing and the feature is not documented.",
+                "closes_when": "A manufacturer source documents warp drive support.",
+            }],
+        }), encoding="utf-8")
         approval = "owner@example.com" if approve_media else None
         (packs / product_dir / "media-bindings.json").write_text(json.dumps({
             "bindings": [{
@@ -163,6 +172,41 @@ def build_fixture(tmp_path, approve_media=False):
                 "approved_by": approval,
             }],
         }), encoding="utf-8")
+        if include_derived:
+            derived_bytes = b"GIF89a derived fixture"
+            derived_path = tmp_path / "derived" / f"{product_dir}.gif"
+            derived_path.parent.mkdir(exist_ok=True)
+            derived_path.write_bytes(derived_bytes)
+            (packs / product_dir / "derived-assets.json").write_text(json.dumps({
+                "schema_version": 1,
+                "product_id": product_id,
+                "assets": [{
+                    "asset_id": f"derived_{product_id}_turntable",
+                    "type": "TURNTABLE_GIF",
+                    "label": f"{brand} {model} turntable",
+                    "watermark": "INTERNAL ONLY — NOT FOR DISTRIBUTION",
+                    "local_path": f"derived/{product_dir}.gif",
+                    "sha256": hashlib.sha256(derived_bytes).hexdigest(),
+                    "provider": "local deterministic fixture",
+                    "approved_by": None,
+                    "internal_only": True,
+                }],
+            }), encoding="utf-8")
+            media_path = packs / product_dir / "media-bindings.json"
+            media_doc = json.loads(media_path.read_text())
+            media_doc["bindings"].append({
+                "binding_id": f"mb_{product_id}_derived",
+                "claim_ids": [claims[0]["claim_id"]],
+                "source_id": f"derived_{product_id}_turntable",
+                "kind": "DERIVED_ASSET",
+                "page": None,
+                "start_seconds": None,
+                "end_seconds": None,
+                "rationale": "The provenance-backed turntable shows the fixture product.",
+                "proposed_by": "agent",
+                "approved_by": None,
+            })
+            media_path.write_text(json.dumps(media_doc), encoding="utf-8")
     vault.mkdir(exist_ok=True)
     (vault / "catalog.json").write_text(
         json.dumps({"products": catalog}), encoding="utf-8")
@@ -170,9 +214,14 @@ def build_fixture(tmp_path, approve_media=False):
 
 
 @contextmanager
-def running_server(tmp_path, approve_media=False, yield_roots=False):
-    packs, vault = build_fixture(tmp_path, approve_media=approve_media)
-    httpd = server.create_server(0, packs, vault, tmp_path / "page-cache")
+def running_server(tmp_path, approve_media=False, yield_roots=False,
+                   reviewer=None, feedback_path=None, include_derived=False):
+    packs, vault = build_fixture(
+        tmp_path, approve_media=approve_media,
+        include_derived=include_derived)
+    httpd = server.create_server(
+        0, packs, vault, tmp_path / "page-cache", reviewer=reviewer,
+        feedback_path=feedback_path)
     thread = threading.Thread(target=httpd.serve_forever, daemon=True)
     thread.start()
     try:
@@ -184,10 +233,36 @@ def running_server(tmp_path, approve_media=False, yield_roots=False):
         thread.join(timeout=2)
 
 
+@contextmanager
+def serving_roots(packs, vault, tmp_path, reviewer=None, feedback_path=None):
+    httpd = server.create_server(
+        0, packs, vault, tmp_path / "restart-cache", reviewer=reviewer,
+        feedback_path=feedback_path)
+    thread = threading.Thread(target=httpd.serve_forever, daemon=True)
+    thread.start()
+    try:
+        yield f"http://127.0.0.1:{httpd.server_port}"
+    finally:
+        httpd.shutdown()
+        httpd.server_close()
+        thread.join(timeout=2)
+
+
 def get_json(base_url, path, params=None):
     query = f"?{urlencode(params)}" if params else ""
     with urlopen(f"{base_url}{path}{query}", timeout=2) as response:
         return response.status, json.loads(response.read())
+
+
+def post_json(base_url, path, payload):
+    request = Request(
+        f"{base_url}{path}", data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json"}, method="POST")
+    try:
+        with urlopen(request, timeout=2) as response:
+            return response.status, json.loads(response.read())
+    except HTTPError as error:
+        return error.code, json.loads(error.read())
 
 
 def test_default_serves_only_published_and_never_rejected(tmp_path):
@@ -207,7 +282,7 @@ def test_default_serves_only_published_and_never_rejected(tmp_path):
 def test_preview_adds_labeled_candidates_but_not_rejected(tmp_path):
     with running_server(tmp_path) as base_url:
         _, payload = get_json(base_url, "/api/answer", {
-            "q": "widget noise and weight", "preview": 1, "top": 20,
+            "q": "acme widget noise and weight", "preview": 1, "top": 20,
         })
     statuses = {row["claim_id"]: row["status"] for row in payload["results"]}
     assert "CANDIDATE" in statuses.values()
@@ -328,9 +403,11 @@ def test_procedure_discovery_applies_step_status_policy(tmp_path):
         "step_count": 2,
         "served_step_count": 1,
         "fully_published": False,
+        "publication_state": "partial",
     }]
     assert preview["procedures"][0]["served_step_count"] == 2
     assert not preview["procedures"][0]["fully_published"]
+    assert preview["procedures"][0]["publication_state"] == "partial"
 
 
 def test_procedure_steps_are_ordered_and_allow_no_page_fallback(tmp_path):
@@ -429,10 +506,169 @@ def test_default_serving_includes_labeled_candidates_mvp_exception(tmp_path):
     # server default to published-only and update this test.
     with running_server(tmp_path) as base_url:
         _, payload = get_json(base_url, "/api/answer", {
-            "q": "widget noise and weight", "top": 20,
+            "q": "acme widget noise and weight", "top": 20,
         })
     statuses = {row["claim_id"]: row["status"] for row in payload["results"]}
     assert statuses.get("claim_prod_acme_noise") == "CANDIDATE"
     assert "CANDIDATE" in statuses.values() and "PUBLISHED" in statuses.values()
     # The rejected claim (claims[2] in the fixture) must stay out even now.
     assert all(row["status"] != "REJECTED" for row in payload["results"])
+
+
+def test_owner_review_api_appends_approve_and_reject_and_survives_restart(tmp_path):
+    packs, vault = build_fixture(tmp_path)
+    acme_reviews = packs / "acme-widget-9000" / "reviews.json"
+    beta_reviews = packs / "beta-widget-2" / "reviews.json"
+    acme_before = json.loads(acme_reviews.read_text())["reviews"]
+    beta_before = json.loads(beta_reviews.read_text())["reviews"]
+
+    with serving_roots(packs, vault, tmp_path,
+                       reviewer="owner@example.com") as base_url:
+        approve_status, approved = post_json(base_url, "/api/reviews", {
+            "product": "acme-widget-9000",
+            "claim_id": "claim_prod_acme_noise",
+            "disposition": "APPROVED_FOR_PUBLISH",
+            "rationale": "Owner verified the source beside the answer.",
+        })
+        reject_status, rejected = post_json(base_url, "/api/reviews", {
+            "product": "beta-widget-2",
+            "claim_id": "claim_prod_beta_noise",
+            "disposition": "REJECTED_FOR_SERVING",
+        })
+        bulk_status, bulk = post_json(base_url, "/api/reviews", {
+            "product": "acme-widget-9000",
+            "claim_ids": ["claim_prod_acme_noise"],
+            "disposition": "APPROVED_FOR_PUBLISH",
+        })
+
+    assert approve_status == reject_status == 201
+    assert approved["status"] == "PUBLISHED"
+    assert rejected["status"] == "REJECTED"
+    assert bulk_status == 400
+    assert "C2/C3" in bulk["error"]
+
+    acme_after = json.loads(acme_reviews.read_text())["reviews"]
+    beta_after = json.loads(beta_reviews.read_text())["reviews"]
+    assert acme_after[:len(acme_before)] == acme_before
+    assert beta_after[:len(beta_before)] == beta_before
+    assert set(acme_after[-1]) == {
+        "review_id", "date", "reviewer", "scope", "claim_id",
+        "disposition", "rationale",
+    }
+    assert beta_after[-1]["rationale"] == "rejected via app review mode"
+
+    with serving_roots(packs, vault, tmp_path) as base_url:
+        _, acme = get_json(base_url, "/api/answer", {
+            "q": "acme noise", "preview": 0, "top": 10,
+        })
+        _, beta = get_json(base_url, "/api/answer", {
+            "q": "beta noise", "preview": 1, "top": 10,
+        })
+    assert any(row["claim_id"] == "claim_prod_acme_noise"
+               and row["status"] == "PUBLISHED" for row in acme["results"])
+    assert all(row["claim_id"] != "claim_prod_beta_noise"
+               for row in beta["results"])
+
+
+def test_review_write_refuses_to_run_without_reviewer_identity(tmp_path):
+    with running_server(tmp_path) as base_url:
+        config_status, config = get_json(base_url, "/api/review-config")
+        status, payload = post_json(base_url, "/api/reviews", {
+            "product": "acme-widget-9000",
+            "claim_id": "claim_prod_acme_noise",
+            "disposition": "APPROVED_FOR_PUBLISH",
+        })
+    assert config_status == 200 and not config["enabled"]
+    assert status == 403
+    assert "--reviewer" in payload["error"]
+
+
+def test_single_step_answer_names_and_links_its_procedure(tmp_path):
+    with running_server(tmp_path) as base_url:
+        _, payload = get_json(base_url, "/api/answer", {
+            "q": "acme open panel", "preview": 1, "top": 10,
+        })
+    row = payload["results"][0]
+    assert row["type"] == "STEP"
+    assert row["procedure"] == "calibrate_widget"
+    assert row["product_dir"] == "acme-widget-9000"
+    assert row["display_text"].startswith("Step 1 of Calibrate widget:")
+
+
+def test_video_has_poster_and_dropdown_marks_only_partial_procedures(tmp_path):
+    with running_server(tmp_path) as base_url:
+        _, answer_payload = get_json(base_url, "/api/answer", {
+            "q": "acme weight", "preview": 1, "top": 10,
+        })
+        _, procedures = get_json(base_url, "/api/procedures", {
+            "product": "acme-widget-9000", "preview": 1,
+        })
+    media = answer_payload["results"][0]["media"]
+    image = next(item for item in media if item["kind"] == "IMAGE")
+    video = next(item for item in media if item["kind"] == "VIDEO_FILE")
+    assert video["poster_url"] == image["url"]
+    assert procedures["procedures"][0]["publication_state"] == "partial"
+
+
+def test_zero_result_returns_matching_recorded_gap(tmp_path):
+    with running_server(tmp_path) as base_url:
+        _, payload = get_json(base_url, "/api/answer", {
+            "q": "Does the Acme widget support warp drive?", "preview": 1,
+        })
+    assert payload["results"] == []
+    assert payload["gap"]["gap_id"] == "gap_prod_acme_warp_drive"
+    assert "source is missing" in payload["gap"]["reason"]
+
+
+def test_pending_derived_asset_serves_labeled_with_watermark_and_provenance(tmp_path):
+    with running_server(tmp_path, include_derived=True) as base_url:
+        _, payload = get_json(base_url, "/api/answer", {
+            "q": "acme weight", "preview": 1, "top": 10,
+        })
+        derived = next(item for item in payload["results"][0]["media"]
+                       if item["kind"] == "DERIVED_ASSET")
+        with urlopen(f"{base_url}{derived['url']}", timeout=2) as response:
+            body = response.read()
+    assert derived["awaiting_approval"]
+    assert derived["label"] == "Acme Widget 9000 turntable"
+    assert derived["watermark"].startswith("INTERNAL ONLY")
+    assert derived["provenance"] == "local deterministic fixture"
+    assert body == b"GIF89a derived fixture"
+
+
+def test_feedback_endpoint_accumulates_reports_and_misses(tmp_path):
+    feedback_path = tmp_path / "feedback.jsonl"
+    with running_server(tmp_path, feedback_path=feedback_path) as base_url:
+        report_status, _ = post_json(base_url, "/api/feedback", {
+            "question": "How heavy is the Acme widget?",
+            "product": "acme-widget-9000",
+            "claim_id": "claim_prod_acme_weight",
+            "note": "The unit looks wrong.",
+        })
+        miss_status, _ = post_json(base_url, "/api/feedback", {
+            "question": "Does it support warp drive?",
+            "claim_id": None,
+        })
+    records = [json.loads(line) for line in feedback_path.read_text().splitlines()]
+    assert report_status == miss_status == 201
+    assert [record["claim_id"] for record in records] == [
+        "claim_prod_acme_weight", None,
+    ]
+    assert all(record["timestamp"].endswith("Z") for record in records)
+
+
+def test_tied_category_requires_clarification_but_named_product_does_not(tmp_path):
+    with running_server(tmp_path) as base_url:
+        _, tied = get_json(base_url, "/api/answer", {
+            "q": "How heavy is the widget?", "preview": 1,
+        })
+        _, named = get_json(base_url, "/api/answer", {
+            "q": "How heavy is the Acme widget?", "preview": 1,
+        })
+    assert tied["mode"] == "clarify"
+    assert len(tied["clarify"]["candidates"]) == 2
+    assert tied["results"] == []
+    assert named["mode"] == "answer"
+    assert {row["product_dir"] for row in named["results"]} == {
+        "acme-widget-9000",
+    }

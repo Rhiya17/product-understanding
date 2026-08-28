@@ -145,3 +145,44 @@ def test_procedure_question_composes_ordered_steps(tmp_path):
     fragment_ids = {r["claim_id"] for r in results if not r.get("steps")}
     assert not fragment_ids & {"claim_w_fold_1", "claim_w_fold_2",
                                "claim_w_fold_3"}
+
+
+def test_human_display_text_covers_spec_limit_warning_and_step():
+    cases = [
+        (make_claim("spec", "product_weight", {"value": 7.5, "unit": "lb"},
+                    "Weight 7.5 lb"), "Product weight: 7.5 lb."),
+        (make_claim("limit", "maximum_child_weight",
+                    {"value": 30, "unit": "lb"}, "30 lb", ctype="LIMIT"),
+         "Maximum child weight: 30 lb."),
+        (make_claim("warning", "hearing_damage_volume",
+                    {"hazard_type": "hearing_damage",
+                     "description": "Keep the volume moderate"},
+                    "Keep volume moderate", ctype="WARNING"),
+         "Warning: Keep the volume moderate."),
+        (make_claim("step", "procedure_step",
+                    {"procedure": "fold_widget", "step_number": 2,
+                     "action": "Press the release"},
+                    "Press release", ctype="STEP"),
+         "Step 2 of Fold widget: Press the release."),
+    ]
+    for claim, expected in cases:
+        rendered = answer.display_text(claim)
+        assert rendered == expected
+        assert "value:" not in rendered and "unit:" not in rendered
+
+
+def test_clarification_only_for_tied_unnamed_same_category_products():
+    products = [
+        {"dir": "acme-one", "product_id": "one", "brand": "Acme",
+         "model": "One", "category": "stroller"},
+        {"dir": "beta-two", "product_id": "two", "brand": "Beta",
+         "model": "Two", "category": "stroller"},
+        {"dir": "gamma-seat", "product_id": "three", "brand": "Gamma",
+         "model": "Seat", "category": "car seat"},
+    ]
+    assert len(answer.clarification_candidates("How do I fold the stroller?",
+                                                products)) == 2
+    assert answer.clarification_candidates("How do I fold the Acme One?",
+                                           products) == []
+    assert answer.clarification_candidates("What is the car seat limit?",
+                                           products) == []
