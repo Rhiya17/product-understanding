@@ -1,8 +1,8 @@
 # ShowMe Low-Level Design
 
-**Version:** 0.7
+**Version:** 0.8
 
-**Date:** 2026-08-20
+**Date:** 2026-08-28
 
 **Status:** Draft for implementation review
 
@@ -61,6 +61,7 @@ The contracts deliberately reserve extension points for geometry and interactive
 8. Every delivered answer produces a durable, version-pinned Answer Manifest; required privacy erasure or redaction is recorded as a lifecycle event.
 9. Every publish, stale, retire, and delete transition propagates to dependent records.
 10. Existing video may be returned unmodified or trimmed when it completely answers the question; explanatory overlays on existing source video are not the primary answer strategy.
+11. Online language models may interpret intent, select allowlisted tools, and propose a presentation, but they do not establish product facts, grant lifecycle eligibility, or bypass the Delivery Gate.
 
 ### 1.3 MVP exception — provisional serving of unverified generated video (time-boxed)
 
@@ -95,13 +96,14 @@ flowchart TB
         COORD["Answer Coordinator"]
         ID["Product Identity Resolver"]
         RAWPOL["Raw Request Policy Scan"]
-        PLAN["Claim Planner"]
+        PLAN["Intent + Tool Planner<br/>(Luna)"]
         COMPLETE["Claim Completeness Validator"]
         POLICY["Consequence Policy Engine"]
         ROUTE["Per-Claim Route Planner"]
         EVID["Evidence Query Service"]
         DERIVE["Deterministic Derivation Service"]
         RETR["Asset Retrieval Service"]
+        COMPOSE["Response Composition Planner<br/>(Luna)"]
         IR["Answer IR Builder"]
         DG["Delivery Gate"]
         ELIG["Lifecycle Eligibility Resolver"]
@@ -145,9 +147,10 @@ flowchart TB
     UI --> API --> COORD
     COORD --> RAWPOL --> ID --> PLAN --> COMPLETE --> POLICY --> ROUTE
     ROUTE --> EVID & RETR
-    EVID --> IR
-    EVID --> DERIVE --> IR
-    RETR --> IR
+    EVID --> COMPOSE
+    EVID --> DERIVE --> COMPOSE
+    RETR --> COMPOSE
+    COMPOSE --> IR
     IR --> DG --> REAL --> UI
     REAL --> MANIFEST
     DG --> ELIG
@@ -218,11 +221,12 @@ sequenceDiagram
     participant A as Answer Coordinator
     participant R as Raw Policy Scan
     participant I as Identity Resolver
-    participant P as Claim Planner
+    participant P as Intent + Tool Planner
     participant C as Completeness Validator
     participant S as Consequence Policy
     participant Q as Evidence / Asset Query
     participant D as Deterministic Derivation
+    participant X as Response Composition Planner
     participant B as Answer IR Builder
     participant G as Delivery Gate
     participant L as Controlled Realizer
@@ -234,7 +238,7 @@ sequenceDiagram
     alt identity insufficient
         A-->>U: Clarification with mandatory warnings + clarification manifest
     else identity sufficient
-        A->>P: Create material ClaimPlan
+        A->>P: Interpret intent, create ClaimPlan, select allowlisted tool
         A->>C: Validate request-to-claim completeness
         A->>S: Apply raw-request and per-claim floors
         par per claim
@@ -242,9 +246,10 @@ sequenceDiagram
         end
         opt claim requires a calculation or deterministic derivation
             Q->>D: Approved operands + user constraints
-            D-->>B: Typed derived result + formula/version
+            D-->>X: Typed derived result + formula/version
         end
-        Q-->>B: EvidenceBundle per claim
+        Q-->>X: EvidenceBundle + eligible media candidates
+        X->>B: Structured presentation plan using only returned IDs
         B->>G: Typed Answer IR + provisional manifest
         G->>G: Deterministic policy and alignment checks
         alt gate passes
@@ -359,7 +364,7 @@ P0 should preserve logical boundaries without deploying every component as a sep
 
 | Deployable | Included logical components | Scaling model |
 |---|---|---|
-| `showme-api` | API Gateway, Answer Coordinator, Identity Resolver, policy scan, Claim Planner, completeness validator, Route Planner, Evidence Query, Deterministic Derivation, Asset Retrieval, Answer IR Builder, Delivery Gate, Lifecycle Eligibility Resolver, Controlled Realizer, Session API | Horizontally scaled stateless instances; session data external |
+| `showme-api` | API Gateway, Answer Coordinator, Identity Resolver, policy scan, Luna Intent + Tool Planner, completeness validator, Route Planner, Evidence Query, Deterministic Derivation, Asset Retrieval, Luna Response Composition Planner, Answer IR Builder, Delivery Gate, Lifecycle Eligibility Resolver, Controlled Realizer, Session API | Horizontally scaled stateless instances; session data external |
 | `showme-worker` | source processing, extraction, media analysis, asset preparation, verification automation, lifecycle propagation, deletion jobs | Queue-driven worker pools separated by workload class |
 | `showme-ops` | claim review, conflict resolution, media coverage review, asset approval, staleness/recall review | Internal authenticated web application |
 | `showme-notify` | deferred-answer notifications and status updates | Event-driven; may initially be a module of `showme-api` |
@@ -412,6 +417,8 @@ The client must present critical conclusions, warnings, and required actions out
 - enforce per-stage timeouts and total deadline;
 - collect partial per-claim results;
 - choose answer-now, clarify, partial, deferred, unsupported, or escalation state;
+- preserve the Luna response ID and tool-call linkage between intent planning and response composition;
+- validate every model-selected tool, procedure, claim, and asset identifier against the current request-scoped allowlist;
 - persist the final Answer Manifest.
 
 The coordinator must not contain product-domain rules. Those belong to versioned policy tables and claim data.
@@ -473,9 +480,11 @@ Example:
 }
 ```
 
-### 5.5 Claim Planner
+### 5.5 Intent and Tool Planner (Claim Planner)
 
-The planner converts a user request into material claims without deciding whether those claims are true.
+The planner converts a user request into material claims and selects one request-scoped, allowlisted answer tool without deciding whether any product claim is true.
+
+**Decision (2026-08-28, product owner):** the initial online planner uses `gpt-5.6-luna` through the Responses API with low reasoning effort. The planner receives concise tool descriptions plus only the product and procedure identifiers allowed for the request. Its tool choice is untrusted input: the coordinator validates the tool name and every argument before execution. Model configuration, prompt version, latency, token usage, and request ID are recorded; hidden chain-of-thought is neither requested nor stored.
 
 Example input:
 
@@ -493,9 +502,21 @@ Example output:
   "request_relationships": [
     {"type": "DEPENDS_ON", "from": "c3", "to": "c1"},
     {"type": "DEPENDS_ON", "from": "c3", "to": "c2"}
-  ]
+  ],
+  "tool_call": {
+    "name": "show_procedure",
+    "arguments": {
+      "product_id": "prod_laptop",
+      "procedure_id": "connect_headphones"
+    }
+  },
+  "ambiguity": null
 }
 ```
+
+The initial allowlist is deliberately small: `show_procedure`, `search_evidence`, `ask_clarification`, and `report_unsupported_question`. The planner may normalize an obvious typo and may preserve multiple plausible interpretations, but it may not invent an identifier or silently discard a modifier, negation, requested modality, or excluded modality. A material ambiguity produces `ask_clarification` unless an approved comparison procedure explicitly covers all plausible branches.
+
+When Luna is disabled, credentials are absent, the request times out, or the response fails schema/allowlist validation, the coordinator records a machine-readable fallback reason and invokes the versioned deterministic retrieval path. The fallback must preserve hard-coded safety and known ambiguity checks; it may never turn a model failure into permission to serve otherwise ineligible content.
 
 ### 5.6 Claim Completeness Validator
 
@@ -556,19 +577,19 @@ Policy output includes:
 
 ### 5.8 Per-Claim Route Planner
 
-The route planner selects a route independently for each material claim.
+The route planner selects retrieval and fallback routes independently for each material claim. It identifies which modalities may contribute and retrieves eligible candidates broadly enough for the post-retrieval Response Composition Planner; it does not make the final text/image/video choice through a fixed keyword-to-modality mapping.
 
-**Video-first rule for action intents (decision 2026-08-20, product owner).** The "least complex format first" hierarchy applies only to non-action intents. Any claim whose intent is an action the user performs — a discrete, continuous, or on-screen procedure — targets **video** as its ideal modality regardless of how briefly the action could be described in text; brevity never downgrades an action intent to text-only ("plug into the headphone jack" is a video, "how much does it weigh" is not). Pure facts, limits, policies, compatibility verdicts, and comparisons remain text-first. Every video answer still ships with its text/step equivalent for accessibility and immediate fallback, and per-lane evidence requirements are unchanged: this rule changes what we aim to show, not what we are allowed to show.
+Intent type is evidence for presentation rather than a rigid result. Motion, sequence, timing, and state change make video a strong candidate; part location and orientation make an exact image a strong candidate; direct facts make text a strong candidate. Explicit requests ("show me"), exclusions ("no video"), brevity, ambiguity, accessibility, and the actual coverage of eligible assets may change the final composition.
 
-| Claim need | Primary route | Minimum support | Miss behavior |
+| Claim need | Candidate retrieval emphasis | Minimum support | Miss behavior |
 |---|---|---|---|
 | Direct fact | Text | Published applicable claim | Unsupported or clarify |
 | Derived calculation | Text/hybrid | Published operands + approved deterministic formula | Clarify for missing inputs or mark unsupported |
 | Part location | Exact static visual | Published location claim + eligible observed photo | Text location immediately; when no observed photo exists but the location claim has an exact source binding (e.g., a manual diagram region), defer a Lane B diagram-grounded visual; otherwise clarify |
 | Appearance/state/context | Exact or purpose-built static visual | Published appearance/state claims at the required fidelity | Text immediately; defer new visual when useful |
-| Ordered discrete procedure | Verified video (video-first rule); step sequence serves immediately | Published ordered steps and part locations; video additionally requires Lane D evidence | Steps/text immediately; defer video |
+| Ordered discrete procedure | Step sequence plus eligible video candidates | Published ordered steps and part locations; video additionally requires Lane D evidence | Steps/text immediately; defer video when it adds material value |
 | Continuous physical procedure | Verified video | Published steps plus evidence establishing every depicted action, direction, control, and state change | Illustrated steps immediately; defer video |
-| Digital/on-screen procedure | Purpose-built screen video (video-first rule); step sequence serves immediately | Published steps + applicable software/firmware/UI state | Text/steps immediately; defer video |
+| Digital/on-screen procedure | Step sequence plus eligible screen-video candidates | Published steps + applicable software/firmware/UI state | Text/steps immediately; defer video when it adds material value |
 | Non-instructional transition | Labeled transition video | Validated endpoints; label mandatory | Static endpoints |
 | Compatibility | Text/hybrid | Published compatibility claim for exact identities | Clarify or unsupported |
 | Comparison | Text/table/hybrid | Comparable published claims with matched conditions | Partial comparison with missing dimensions exposed |
@@ -618,7 +639,45 @@ Eligibility filters run before relevance ranking:
 
 The retrieval response includes a coverage map showing which required claims and steps the asset answers.
 
-### 5.12 Answer IR Builder
+### 5.12 Response Composition Planner
+
+The Response Composition Planner makes the final, request-specific presentation judgment only after the answer tool has returned supported text and request-eligible media metadata.
+
+**Inputs**
+
+- raw and normalized user request, including explicit modality requests and exclusions;
+- validated intent/tool plan and ambiguity state;
+- supported claim/step results;
+- eligible media IDs, modality, label, claim/step coverage, and publication state;
+- client accessibility or bandwidth preferences supplied by the session.
+
+**Judgment rubric**
+
+- prefer the smallest presentation that answers the actual request well;
+- choose video when motion, ordering, timing, or state change materially improves understanding;
+- choose an image when location, identity, orientation, or visual comparison materially improves understanding;
+- combine modalities only when each contributes non-duplicative value;
+- honor an explicit request or exclusion when an eligible answer remains possible;
+- clarify material ambiguity rather than hiding it behind the closest media match;
+- never select media merely because it is available.
+
+Example output:
+
+```json
+{
+  "primary_modality": "video",
+  "supplemental_modalities": ["text"],
+  "asset_ids": ["asset_bluetooth_pairing_video_v1"],
+  "reason_code": "PROCEDURE_SEQUENCE_BENEFITS_FROM_MOTION",
+  "confidence": 0.94
+}
+```
+
+The coordinator validates that every selected asset ID was in the eligible input set, removes duplicates, and applies policy-required text equivalents and warnings. Invalid output, timeout, or provider failure produces a versioned deterministic presentation fallback from the already supported evidence; it never changes claim truth, lifecycle eligibility, or media approval.
+
+Intent planning and response composition are separate logical components and prompt/schema versions. P0 may co-locate them in `showme-api` and use the same Luna client; a cloud deployment may separate them only for independent scaling, ownership, security, or failure isolation. They remain one coordinator-owned request state machine rather than independent agents.
+
+### 5.13 Answer IR Builder
 
 The builder combines supported per-claim results into a typed representation. It does not generate unrestricted prose.
 
@@ -633,6 +692,13 @@ The builder combines supported per-claim results into a typed representation. It
     "market": "US"
   },
   "response_state": "PARTIAL",
+  "presentation": {
+    "planner": "gpt-5.6-luna",
+    "planner_version": "response_composer_v1",
+    "primary_modality": "video",
+    "supplemental_modalities": ["text"],
+    "asset_ids": ["asset_photo_port_v3"]
+  },
   "claims": [
     {
       "claim_key": "c1",
@@ -671,7 +737,7 @@ The builder combines supported per-claim results into a typed representation. It
 
 `response_state` is a closed enumeration: `ANSWERED`, `PARTIAL`, `CLARIFICATION`, `DEFERRED`, `UNSUPPORTED`, `ESCALATION`, `TEMPORARY_FAILURE`. Coordinator, gate, realizer, and client all use this enumeration; no component introduces additional states.
 
-### 5.13 Delivery Gate
+### 5.14 Delivery Gate
 
 The delivery gate validates the structured Answer IR before language or media URLs are released.
 
@@ -697,7 +763,7 @@ The gate returns `PASS`, `REPAIRABLE_FAILURE`, or `HARD_FAILURE` with machine-re
 
 Clarification, deferred-status, and terminal-status responses are gated too: they pass a reduced profile that checks mandatory warnings from the raw policy scan, absence of unbound product claims, and approved realization templates, and each produces a lightweight manifest recording what was asked or reported and why.
 
-### 5.14 Controlled Realizer
+### 5.15 Controlled Realizer
 
 The realizer receives only a gated Answer IR.
 
@@ -713,7 +779,7 @@ The realizer receives only a gated Answer IR.
 - video bindings include an accessible transcript or equivalent step sequence;
 - the realized response or its content hash is written to the Answer Manifest.
 
-### 5.15 Session Service
+### 5.16 Session Service
 
 Stores:
 
@@ -1319,7 +1385,7 @@ The logical stores map to concrete services as follows. This resolves the first 
 | Events / outbox | Transactional outbox → consumers | Outbox table in Postgres + a relay to SQS/SNS | EventBridge, Kafka later |
 | Media delivery (published serving copies) | Signed URLs, revocable, fast start | CloudFront over S3 with signed URLs | Any CDN (Fastly, Cloudflare); Mux if we want per-title video packaging/ABR |
 
-**Why co-location is the design, not a shortcut:** the §7.7 publish transaction (asset version + outbox event atomically) requires claims, assets, and outbox in one transactional database; the Delivery Gate's `BatchResolveEligibility` (§5.13) becomes a single-snapshot indexed query, which this section's co-located registry is explicitly permitted to use; and "the index is never authoritative" (§11.2) is structurally enforced when pgvector rows sit beside the registry rows they point to, letting retrieval join the eligibility check into the query itself.
+**Why co-location is the design, not a shortcut:** the §7.7 publish transaction (asset version + outbox event atomically) requires claims, assets, and outbox in one transactional database; the Delivery Gate's `BatchResolveEligibility` (§5.14) becomes a single-snapshot indexed query, which this section's co-located registry is explicitly permitted to use; and "the index is never authoritative" (§11.2) is structurally enforced when pgvector rows sit beside the registry rows they point to, letting retrieval join the eligibility check into the query itself.
 
 ### 11.2 Publish rule
 
@@ -1371,6 +1437,8 @@ When an asset combines sources, its effective rights are the intersection of all
 - raw source content treated as untrusted data, not planner instruction;
 - provider responses treated as untrusted candidate data;
 - secrets stored outside job payloads and logs;
+- local Luna access uses `OPENAI_API_KEY` from the process environment; deployed access uses a server-side secret manager or workload identity, never a browser, query parameter, source file, or committed `.env` file;
+- absence of Luna credentials is an explicit deterministic-fallback mode, not a startup crash and not permission to weaken serving policy;
 - asset delivery uses expiring signed URLs where required;
 - audit logs cover publishing, approval, delivery gate, rights denial, and deletion.
 
@@ -1390,7 +1458,8 @@ When an asset combines sources, its effective rights are the intersection of all
 | Failure | Required behavior |
 |---|---|
 | Identity unresolved | Ask focused clarification; do not retrieve sibling assets |
-| Planner timeout | Return safe clarification or supported deterministic fast-path fact |
+| Intent planner timeout, provider failure, or invalid tool call | Record reason; use the versioned deterministic retrieval fallback or return safe clarification |
+| Response composer timeout, provider failure, or invalid asset ID | Keep supported claims; apply the deterministic presentation fallback using only eligible assets |
 | Policy service unavailable | Fail closed to stricter consequence handling |
 | Claim store unavailable | Return temporary failure; do not answer from unverified cache |
 | Retrieval index unavailable | Use exact registry lookup; otherwise text-only/temporary fallback |
@@ -1428,6 +1497,8 @@ Online:
 - identity clarification rate;
 - request-to-claim completeness failure rate;
 - route distribution by claim type;
+- intent-tool selection accuracy, invalid-call rate, fallback rate, model latency, and token usage;
+- response-composition primary/supplemental modality distribution, invalid-asset rate, fallback rate, model latency, and token usage;
 - retrieval hit/miss and eligibility rejection reasons;
 - delivery-gate pass/repair/hard-fail rates;
 - partial/deferred/unsupported/escalation rate;
@@ -1476,7 +1547,7 @@ Targets are provisional until PR-N01 is ratified and measured.
 |---|---:|---|
 | Request acknowledgement | `< 300 ms` | Client-visible state change |
 | Exact deterministic fact path | `< 1.5 s` p95 | Includes auth, identity, policy, claim lookup, gate, realization |
-| Standard retrieved answer | `< 5 s` p95 | Includes planner and mixed-format retrieval |
+| Standard retrieved answer | `< 5 s` p95 | Includes up to two Luna turns, tool execution, and mixed-format retrieval |
 | Delivery Gate batch eligibility read | `< 25 ms` p95 | Up to 25 pinned claim/asset versions, same region; provisional budget |
 | Media playback start after answer | `< 2 s` p95 | Published/CDN-hosted assets |
 | Deferred job acknowledgement | `< 2 s` p95 | Does not include media preparation |
@@ -1499,12 +1570,15 @@ No unverified media generation is awaited during these online budgets. The exact
 - delivery-gate reason codes;
 - Answer IR realization templates;
 - deterministic derivation formulas, unit handling, and uncertainty propagation;
+- intent/tool planner schema, allowlist validation, typo/negation/ambiguity coverage, and deterministic fallback;
+- response composition schema, explicit modality requests/exclusions, asset-ID allowlist validation, and deterministic fallback;
 - idempotency and optimistic concurrency.
 
 ### 16.2 Contract tests
 
 - API and event schemas;
 - Claim Record, Asset Record, Answer IR, and Manifest compatibility;
+- mocked Luna intent and response-composition contracts, including provider timeouts and malformed responses;
 - provider adapter submission/response audit;
 - generation-spec capability negotiation, idempotency, budget, and fallback contracts;
 - retrieval eligibility before semantic ranking;
@@ -1686,7 +1760,8 @@ Each component document must include APIs, schemas, algorithms or decision table
 - ~~queue/workflow engine~~ — resolved for MVP: Postgres-backed queue or SQS, Temporal as scale-up (§11.1);
 - ~~search and vector technology~~ — resolved for MVP: pgvector + Postgres full-text (§11.1);
 - source-processing and OCR libraries;
-- model/provider choices for extraction, planning, media analysis, and generation;
+- ~~online intent and response-composition model~~ — resolved for the initial implementation: `gpt-5.6-luna` with independently versioned planner/composer prompts and schemas (§5.5, §5.12);
+- model/provider choices for extraction, media analysis, and generation;
 - tenant and catalog model for launch;
 - identity confidence thresholds;
 - source-authority precedence;

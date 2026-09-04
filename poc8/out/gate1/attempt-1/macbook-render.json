@@ -1,0 +1,20 @@
+{
+  "attempt": 1,
+  "product": "macbook",
+  "rendered_at": "2026-08-30T01:42:46.167079+00:00",
+  "render": "poc8/out/gate1/attempt-1/macbook.png",
+  "render_sha256": "33f5bac554ba2f5101e919ea4b42e0e097dd55115e46a36b6440052178bd1393",
+  "official_image": "poc8/inputs/macbook-right-side-open.png",
+  "official_image_sha256": "d75a75d9d998ce363aa0adf0f696c2207038c56c21381db7e2dbc19b35a62a2e",
+  "camera": {
+    "direction": [
+      0.0,
+      1.0,
+      0.06
+    ],
+    "lens_mm": 58.0
+  },
+  "watermark": "INTERNAL ONLY \u2014 TWIN RENDER",
+  "internal_only": true,
+  "approved_by": null
+}

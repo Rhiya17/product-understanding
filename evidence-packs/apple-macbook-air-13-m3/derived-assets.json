@@ -14,7 +14,7 @@
         "ce9223456435cefc0858bc45a491e37e0c4acdfec5f0c26a7e8785e6740efdda"
       ],
       "license_status": "OPEN",
-      "rights_note": "Tripo3D license check OPEN \u2014 do not ship",
+      "rights_note": "Tripo3D license check OPEN — do not ship",
       "approved_by": null,
       "internal_only": true
     },
@@ -60,7 +60,7 @@
         "poc-3d-static-twin/photo-projection/register_asset.py"
       ],
       "license_status": "OPEN_MANUFACTURER_IMAGERY_REUSE_REVIEW",
-      "rights_note": "Manufacturer imagery cleared for internal research only; reuse rights review OPEN \u2014 do not ship",
+      "rights_note": "Manufacturer imagery cleared for internal research only; reuse rights review OPEN — do not ship",
       "tripo_texture_ancestry": false,
       "approved_by": null,
       "internal_only": true,
@@ -108,10 +108,63 @@
         "poc-3d-static-twin/photo-projection/register_asset.py"
       ],
       "license_status": "OPEN_MANUFACTURER_IMAGERY_REUSE_REVIEW",
-      "rights_note": "Manufacturer imagery cleared for internal research only; reuse rights review OPEN \u2014 do not ship",
+      "rights_note": "Manufacturer imagery cleared for internal research only; reuse rights review OPEN — do not ship",
       "tripo_texture_ancestry": false,
       "approved_by": null,
       "internal_only": true,
+      "external_spend_usd": 0
+    },
+    {
+      "asset_id": "derived_mba_bluetooth_pairing_walkthrough_20260828",
+      "type": "PROCEDURE_VIDEO_MP4",
+      "label": "Generated Mac Bluetooth pairing walkthrough",
+      "watermark": "INTERNAL ONLY — GENERATED WALKTHROUGH",
+      "local_path": "generated-assets/apple-macbook-air-13-m3/bluetooth-pairing-walkthrough.mp4",
+      "sha256": "42165ee4b351384df488753a6cf36b1fdb508bfd08f3eaf28d388abbd57878a4",
+      "poster_local_path": "generated-assets/apple-macbook-air-13-m3/bluetooth-pairing-walkthrough-poster.png",
+      "poster_sha256": "6614d3d6c06543d12c7a8d7ebc24e9479bca4a98d151cbf51ee165cf0c503b28",
+      "created_at": "2026-08-28T16:59:00Z",
+      "provider": "local deterministic Pillow/OpenCV procedure renderer",
+      "source_claim_ids": [
+        "claim_mba_step_bluetooth_pairing_1",
+        "claim_mba_step_bluetooth_pairing_2",
+        "claim_mba_step_bluetooth_pairing_3"
+      ],
+      "source_id": "src_bluetooth_pairing_guide",
+      "generator": "scripts/generate_bluetooth_pairing_video.py",
+      "license_status": "INTERNAL_GENERATED_DEMO",
+      "rights_note": "Generated illustrative interface; factual sequence is grounded in the captured Apple Support guide. No Apple screenshots or product imagery are embedded.",
+      "approved_by": null,
+      "internal_only": true,
+      "provisional_unverified": true,
+      "external_spend_usd": 0
+    },
+    {
+      "asset_id": "derived_mba_wired_vs_bluetooth_walkthrough_20260828",
+      "type": "PROCEDURE_VIDEO_MP4",
+      "label": "Generated wired versus Bluetooth connection walkthrough",
+      "watermark": "INTERNAL ONLY — GENERATED WALKTHROUGH",
+      "local_path": "generated-assets/apple-macbook-air-13-m3/wired-vs-bluetooth-walkthrough.mp4",
+      "sha256": "e38512f8be34ba992d7361605d8414b6203d7b3eb03289659386afba2756113c",
+      "poster_local_path": "generated-assets/apple-macbook-air-13-m3/wired-vs-bluetooth-walkthrough-poster.png",
+      "poster_sha256": "240a2f535bf3d3b693a8ac4fac7a0e7e8a33230820fe155da10a398b3464c4b6",
+      "created_at": "2026-08-28T19:03:00Z",
+      "provider": "local deterministic Pillow/OpenCV procedure renderer",
+      "source_claim_ids": [
+        "claim_mba_step_connection_method_1_repair_20260829",
+        "claim_mba_step_connection_method_2_repair_20260829",
+        "claim_mba_step_connection_method_3_repair_20260829"
+      ],
+      "source_ids": [
+        "src_ports_guide_tour",
+        "src_bluetooth_pairing_guide"
+      ],
+      "generator": "scripts/generate_wired_vs_bluetooth_video.py",
+      "license_status": "INTERNAL_GENERATED_DEMO",
+      "rights_note": "Generated illustrative interface and port diagram; factual paths are grounded in captured Apple Support guides. No Apple screenshots or product imagery are embedded.",
+      "approved_by": null,
+      "internal_only": true,
+      "provisional_unverified": true,
       "external_spend_usd": 0
     }
   ]

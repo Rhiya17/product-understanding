@@ -8,3 +8,13 @@ system/staging/
 system/cache/
 app/cache/
 app/feedback.jsonl
+
+# POC8 binary artifacts (Blender scenes, 3D twins, renders) - reproducible from poc8/*.py
+poc8/*.blend
+poc8/*.blend1
+poc8/twins/
+poc8/out/**/*.png
+poc8/inputs/*.png
+
+# scratch files
+tmp_*

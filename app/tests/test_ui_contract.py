@@ -29,6 +29,13 @@ def test_pending_labels_are_quiet_and_step_chips_only_show_when_different():
     assert "MEDIA AWAITING OWNER APPROVAL" not in javascript
 
 
+def test_published_only_is_the_default_and_stale_pending_banner_is_hidden():
+    html = source("index.html")
+    assert 'id="published-only" name="published-only" type="checkbox" checked' in html
+    assert 'id="preview-warning" class="preview-warning" hidden' in html
+    assert "PENDING REVIEW" not in html
+
+
 def test_landing_examples_and_click_to_search_are_wired():
     html = source("index.html")
     javascript = source("app.js")
@@ -47,6 +54,48 @@ def test_review_feedback_derived_and_clarification_controls_are_present():
     assert 'media.kind === "DERIVED_ASSET"' in javascript
     assert "derived-watermark" in javascript
     assert "renderClarification" in javascript
+
+
+def test_generated_procedure_video_is_rendered_as_an_autoplaying_video():
+    javascript = source("app.js")
+    html = source("index.html")
+    assert 'media.asset_type === "PROCEDURE_VIDEO_MP4"' in javascript
+    assert "video.autoplay = true" in javascript
+    assert 'video.addEventListener("canplay"' in javascript
+    assert "video.poster = media.poster_url" in javascript
+    assert '"Generated walkthrough"' in javascript
+    assert "resultsForDisplay(payload)" in javascript
+    assert 'result.type === "PROCEDURE"' in javascript
+    assert 'result.procedure === "connect_wired_or_bluetooth_device"' in javascript
+    assert "Generated walkthroughs are labeled" in html
+
+
+def test_luna_primary_media_leads_the_dedicated_media_panel():
+    javascript = source("app.js")
+    css = source("styles.css")
+    assert "function mediaModality(media)" in javascript
+    assert "presentation.primary_modality" in javascript
+    assert 'element("div", "card-media")' in javascript
+    assert 'element("div", "card-body")' in javascript
+    assert "columns.append(mediaPanel, textPanel)" in javascript
+    assert "orderedMedia" in javascript
+    assert "renderResult(result, renderedMedia, payload.presentation)" in javascript
+    assert ".card-columns" in css
+
+
+def test_video_placeholder_polls_and_swaps_in_the_generated_walkthrough():
+    javascript = source("app.js")
+    css = source("styles.css")
+    assert "result.video_job" in javascript
+    assert "renderVideoSlot(result.video_job)" in javascript
+    assert "pollVideoJob" in javascript
+    assert "job.poll_url" in javascript
+    assert 'payload.state === "ready" && payload.media' in javascript
+    assert "slot.replaceChildren(renderMedia(payload.media))" in javascript
+    assert "stopVideoPolls()" in javascript
+    assert "Video generating…" in javascript
+    assert ".video-slot" in css
+    assert "prefers-reduced-motion" in css
 
 
 def test_internal_fields_are_inside_collapsed_details_and_lead_is_bold():

@@ -2,7 +2,7 @@
   "model": "qwen/qwen3-vl-235b-a22b-instruct",
   "prompt_version": "v2",
   "date": "2026-08-26",
-  "status": "COMPLETE",
+  "status": "PARTIAL",
   "run_metadata": {
     "endpoint": "openrouter/router/openai/v1/chat/completions",
     "verification_scope": "CLAIM_QUOTE_UNION",
@@ -507,5 +507,6 @@
       "note": "The two claims directly contradict on the duration of the solid blue light during connection: Claim A states 10 seconds, while Claim B states 5 seconds, with no contextual indication that these refer to different events or revisions.",
       "context_sha256": "04ec0ebd23f3d6ecc418a9fc2cc1a1598c7087e0d3e15ed3eb17a87eb708c335"
     }
-  ]
+  ],
+  "reason": "Claims appended by the 2026-08-29 unpublished repair pass have complete exact-source and human review but no new independent verifier verdict because FAL_KEY is unavailable; all earlier verifier verdict entries remain unchanged."
 }

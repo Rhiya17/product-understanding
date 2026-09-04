@@ -7,13 +7,34 @@
     "type": "SPEC",
     "predicate": "product_dimensions",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series (identical across revisions)", "market": "US", "state": null},
-    "object": {"value": {"width_in": 8.7, "depth_in": 8.7, "height_in": 14.2}, "unit": "in", "metric": "22 x 22 x 36 cm"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series (identical across revisions)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": {
+        "width_in": 8.7,
+        "depth_in": 8.7,
+        "height_in": 14.2
+      },
+      "unit": "in",
+      "metric": "22 x 22 x 36 cm"
+    },
     "source_bindings": [
-      {"source_id": "src_spec_page_core300s", "page": null, "region": null,
-       "quote": "Dimensions: 8.7 x 8.7 x 14.2 in / 22 x 22 x 36 cm"},
-      {"source_id": "src_manual_core300sp_us", "page": 2, "region": null,
-       "quote": "Dimensions 8.7 × 8.7 × 14.2 in / 22 × 22 × 36 cm"}
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "Dimensions: 8.7 x 8.7 x 14.2 in / 22 x 22 x 36 cm"
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 2,
+        "region": null,
+        "quote": "Dimensions 8.7 × 8.7 × 14.2 in / 22 × 22 × 36 cm"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -28,11 +49,24 @@
     "type": "SPEC",
     "predicate": "product_weight",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073", "revision": "Core 300S (original revision)", "market": "US", "state": null},
-    "object": {"value": 5.95, "unit": "lb", "metric": "2.7 kg"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073",
+      "revision": "Core 300S (original revision)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 5.95,
+      "unit": "lb",
+      "metric": "2.7 kg"
+    },
     "source_bindings": [
-      {"source_id": "src_spec_page_core300s", "page": null, "region": null,
-       "quote": "Weight: 5.95 lb / 2.7 kg"}
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "Weight: 5.95 lb / 2.7 kg"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -47,11 +81,24 @@
     "type": "SPEC",
     "predicate": "product_weight",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073A", "revision": "Core 300S-P (current retail revision; manual rev A2-240918)", "market": "US", "state": null},
-    "object": {"value": 7.48, "unit": "lb", "metric": "3.393 kg"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073A",
+      "revision": "Core 300S-P (current retail revision; manual rev A2-240918)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 7.48,
+      "unit": "lb",
+      "metric": "3.393 kg"
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 2, "region": null,
-       "quote": "Weight 7.48lb / 3.393kg"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 2,
+        "region": null,
+        "quote": "Weight 7.48lb / 3.393kg"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -66,11 +113,24 @@
     "type": "SPEC",
     "predicate": "clean_air_delivery_rate",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series (CADR row absent from 300S-P manual spec table)", "market": "US", "state": null},
-    "object": {"value": 141, "unit": "CFM", "metric": "240 m³/h"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series (CADR row absent from 300S-P manual spec table)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 141,
+      "unit": "CFM",
+      "metric": "240 m³/h"
+    },
     "source_bindings": [
-      {"source_id": "src_spec_page_core300s", "page": null, "region": null,
-       "quote": "CADR: 141 CFM / 240 m³/h"}
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "CADR: 141 CFM / 240 m³/h"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -85,11 +145,24 @@
     "type": "SPEC",
     "predicate": "room_coverage",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"ideal_room_size_ft2": 219, "ideal_room_size_m2": 20, "extended_coverage_ft2_at_1ach": 1051},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "ideal_room_size_ft2": 219,
+      "ideal_room_size_m2": 20,
+      "extended_coverage_ft2_at_1ach": 1051
+    },
     "source_bindings": [
-      {"source_id": "src_spec_page_core300s", "page": null, "region": null,
-       "quote": "Ideal room size (coverage): 1,051 ft² at 1 air change per hour; 219 ft² at 4.8 ACH"}
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "Ideal room size (coverage): 1,051 ft² at 1 air change per hour; 219 ft² at 4.8 ACH"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -104,11 +177,23 @@
     "type": "SPEC",
     "predicate": "noise_level",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073", "revision": "Core 300S (original revision)", "market": "US", "state": null},
-    "object": {"value": "22-50", "unit": "dB"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073",
+      "revision": "Core 300S (original revision)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "22-50",
+      "unit": "dB"
+    },
     "source_bindings": [
-      {"source_id": "src_spec_page_core300s", "page": null, "region": null,
-       "quote": "Noise level: 22–50 dB"}
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "Noise level: 22–50 dB"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -123,11 +208,23 @@
     "type": "SPEC",
     "predicate": "noise_level",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073A", "revision": "Core 300S-P (current retail revision; manual rev A2-240918)", "market": "US", "state": null},
-    "object": {"value": "22-54.5", "unit": "dB"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073A",
+      "revision": "Core 300S-P (current retail revision; manual rev A2-240918)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "22-54.5",
+      "unit": "dB"
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 2, "region": null,
-       "quote": "Noise Level 22–54.5dB"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 2,
+        "region": null,
+        "quote": "Noise Level 22–54.5dB"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -142,11 +239,23 @@
     "type": "SPEC",
     "predicate": "rated_power",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073", "revision": "Core 300S (original revision)", "market": "US", "state": null},
-    "object": {"value": 23, "unit": "W"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073",
+      "revision": "Core 300S (original revision)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 23,
+      "unit": "W"
+    },
     "source_bindings": [
-      {"source_id": "src_spec_page_core300s", "page": null, "region": null,
-       "quote": "Rated power: 23 W"}
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "Rated power: 23 W"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -161,11 +270,23 @@
     "type": "SPEC",
     "predicate": "rated_power",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073A", "revision": "Core 300S-P (current retail revision; manual rev A2-240918)", "market": "US", "state": null},
-    "object": {"value": 39, "unit": "W"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073A",
+      "revision": "Core 300S-P (current retail revision; manual rev A2-240918)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 39,
+      "unit": "W"
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 2, "region": null,
-       "quote": "Rated Power 39W"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 2,
+        "region": null,
+        "quote": "Rated Power 39W"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -180,11 +301,23 @@
     "type": "SPEC",
     "predicate": "power_supply",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series (identical across revisions)", "market": "US", "state": null},
-    "object": {"voltage": "AC 120V", "frequency": "60Hz"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series (identical across revisions)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "voltage": "AC 120V",
+      "frequency": "60Hz"
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 2, "region": null,
-       "quote": "Power Supply AC 120V, 60Hz"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 2,
+        "region": null,
+        "quote": "Power Supply AC 120V, 60Hz"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -199,11 +332,23 @@
     "type": "SPEC",
     "predicate": "standby_power",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series (identical across revisions)", "market": "US", "state": null},
-    "object": {"value": "< 2", "unit": "W"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series (identical across revisions)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "< 2",
+      "unit": "W"
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 2, "region": null,
-       "quote": "Standby Power < 2W"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 2,
+        "region": null,
+        "quote": "Standby Power < 2W"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -218,11 +363,24 @@
     "type": "SPEC",
     "predicate": "operating_temperature_range",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series (identical across revisions)", "market": "US", "state": null},
-    "object": {"value": "14 to 104", "unit": "°F", "metric": "-10 to 40 °C"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series (identical across revisions)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "14 to 104",
+      "unit": "°F",
+      "metric": "-10 to 40 °C"
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 2, "region": null,
-       "quote": "Temperature: 14°–104°F / -10°–40°C"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 2,
+        "region": null,
+        "quote": "Temperature: 14°–104°F / -10°–40°C"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -237,13 +395,29 @@
     "type": "SPEC",
     "predicate": "wireless_connectivity",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"wifi_band": "2.4 GHz", "app": "VeSync"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "wifi_band": "2.4 GHz",
+      "app": "VeSync"
+    },
     "source_bindings": [
-      {"source_id": "src_spec_page_core300s", "page": null, "region": null,
-       "quote": "WiFi (2.4 GHz) + VeSync app: remote control, schedules, timers, filter life %, PM2.5 history, Auto/Sleep modes"},
-      {"source_id": "src_manual_core300sp_us", "page": 17, "region": null,
-       "quote": "During the setup process, you must be on a secure 2.4GHz WiFi network."}
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "WiFi (2.4 GHz) + VeSync app: remote control, schedules, timers, filter life %, PM2.5 history, Auto/Sleep modes"
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 17,
+        "region": null,
+        "quote": "During the setup process, you must be on a secure 2.4GHz WiFi network."
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -257,13 +431,32 @@
     "type": "SPEC",
     "predicate": "voice_assistant_support",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"assistants": ["Amazon Alexa", "Google Assistant"], "requires": "VeSync account"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "assistants": [
+        "Amazon Alexa",
+        "Google Assistant"
+      ],
+      "requires": "VeSync account"
+    },
     "source_bindings": [
-      {"source_id": "src_spec_page_core300s", "page": null, "region": null,
-       "quote": "Voice control: Amazon Alexa and Google Assistant"},
-      {"source_id": "src_manual_core300sp_us", "page": 8, "region": null,
-       "quote": "Note: Y ou must create your own VeSync account to access voice assistants."}
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "Voice control: Amazon Alexa and Google Assistant"
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 8,
+        "region": null,
+        "quote": "Note: Y ou must create your own VeSync account to access voice assistants."
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -278,11 +471,27 @@
     "type": "SPEC",
     "predicate": "package_contents",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073A", "revision": "Core 300S-P (current retail revision; manual rev A2-240918)", "market": "US", "state": null},
-    "object": {"items": ["1 x Smart Air Purifier", "1 x Pre-installed 3-Stage Original Filter", "1 x User Manual", "1 x Quick Start Guide"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073A",
+      "revision": "Core 300S-P (current retail revision; manual rev A2-240918)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "items": [
+        "1 x Smart Air Purifier",
+        "1 x Pre-installed 3-Stage Original Filter",
+        "1 x User Manual",
+        "1 x Quick Start Guide"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 2, "region": null,
-       "quote": "1 × Smart Air Purifier 1 × Pre-installed 3-Stage Original Filter 1 × User Manual 1 × Quick Start Guide"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 2,
+        "region": null,
+        "quote": "1 × Smart Air Purifier 1 × Pre-installed 3-Stage Original Filter 1 × User Manual 1 × Quick Start Guide"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -297,11 +506,22 @@
     "type": "SPEC",
     "predicate": "model_name",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"value": "Core 300S"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "Core 300S"
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 19, "region": null,
-       "quote": "Product Name Smart Air Purifier Model Core 300S"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 19,
+        "region": null,
+        "quote": "Product Name Smart Air Purifier Model Core 300S"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -316,11 +536,27 @@
     "type": "SPEC",
     "predicate": "filtration_stages",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"stages": ["nylon pre-filter", "True HEPA main filter", "high-efficiency activated carbon filter"], "form": "single cylindrical cartridge"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "stages": [
+        "nylon pre-filter",
+        "True HEPA main filter",
+        "high-efficiency activated carbon filter"
+      ],
+      "form": "single cylindrical cartridge"
+    },
     "source_bindings": [
-      {"source_id": "src_spec_page_core300s", "page": null, "region": null,
-       "quote": "3-stage filter cartridge (single cylindrical unit): ultra-fine nylon pre-filter + True HEPA main filter + high-efficiency activated carbon filter"}
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "3-stage filter cartridge (single cylindrical unit): ultra-fine nylon pre-filter + True HEPA main filter + high-efficiency activated carbon filter"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -335,11 +571,23 @@
     "type": "SPEC",
     "predicate": "replacement_filter_model",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073", "revision": "Core 300S (original revision)", "market": "US", "state": null},
-    "object": {"value": "Core 300-RF", "name": "Levoit True HEPA 3-Stage Original Filter"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073",
+      "revision": "Core 300S (original revision)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "Core 300-RF",
+      "name": "Levoit True HEPA 3-Stage Original Filter"
+    },
     "source_bindings": [
-      {"source_id": "src_spec_page_core300s", "page": null, "region": null,
-       "quote": "Levoit Core 300 Series Original Filter, part \"Core 300-RF\""}
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "Levoit Core 300 Series Original Filter, part \"Core 300-RF\""
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -354,11 +602,23 @@
     "type": "SPEC",
     "predicate": "replacement_filter_model",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073A", "revision": "Core 300S-P (current retail revision; manual rev A2-240918)", "market": "US", "state": null},
-    "object": {"value": "Core 300-P-RF", "name": "Levoit 3-Stage Original Filter"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073A",
+      "revision": "Core 300S-P (current retail revision; manual rev A2-240918)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "Core 300-P-RF",
+      "name": "Levoit 3-Stage Original Filter"
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 12, "region": null,
-       "quote": "Core 300-P-RF Levoit 3-Stage Original Filter"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 12,
+        "region": null,
+        "quote": "Core 300-P-RF Levoit 3-Stage Original Filter"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -373,18 +633,49 @@
     "type": "SPEC",
     "predicate": "air_quality_indicator_mapping",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"mapping": [
-      {"color": "Blue", "air_quality": "Very Good", "auto_mode_fan_speed": "Sleep Mode"},
-      {"color": "Green", "air_quality": "Good", "auto_mode_fan_speed": "Low"},
-      {"color": "Orange", "air_quality": "Moderate", "auto_mode_fan_speed": "Medium"},
-      {"color": "Red", "air_quality": "Bad", "auto_mode_fan_speed": "High"}
-    ]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "mapping": [
+        {
+          "color": "Blue",
+          "air_quality": "Very Good",
+          "auto_mode_fan_speed": "Sleep Mode"
+        },
+        {
+          "color": "Green",
+          "air_quality": "Good",
+          "auto_mode_fan_speed": "Low"
+        },
+        {
+          "color": "Orange",
+          "air_quality": "Moderate",
+          "auto_mode_fan_speed": "Medium"
+        },
+        {
+          "color": "Red",
+          "air_quality": "Bad",
+          "auto_mode_fan_speed": "High"
+        }
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 9, "region": null,
-       "quote": "Indicator Color Air Quality Auto Mode Fan Speed Blue Very Good Sleep Mode Green Good Low Orange Moderate Medium Red Bad High"},
-      {"source_id": "src_img_aq_indicator_table", "page": null, "region": null,
-       "quote": "Official 'Air Quality Indicator Color Table' graphic showing the same color-to-quality-to-fan-speed mapping."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 9,
+        "region": null,
+        "quote": "Indicator Color Air Quality Auto Mode Fan Speed Blue Very Good Sleep Mode Green Good Low Orange Moderate Medium Red Bad High"
+      },
+      {
+        "source_id": "src_img_aq_indicator_table",
+        "page": null,
+        "region": null,
+        "quote": "Official 'Air Quality Indicator Color Table' graphic showing the same color-to-quality-to-fan-speed mapping."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -399,11 +690,23 @@
     "type": "LIMIT",
     "predicate": "maximum_operating_humidity",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"value": "< 85", "unit": "% RH"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "< 85",
+      "unit": "% RH"
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 2, "region": null,
-       "quote": "Humidity: < 85% RH"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 2,
+        "region": null,
+        "quote": "Humidity: < 85% RH"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -418,11 +721,24 @@
     "type": "LIMIT",
     "predicate": "effective_room_size",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"value": 219, "unit": "ft²", "metric": "20 m²"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 219,
+      "unit": "ft²",
+      "metric": "20 m²"
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 16, "region": null,
-       "quote": "Make sure the room is smaller than 219 ft² / 20 m². The air purifier may not be as effective in larger rooms."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 16,
+        "region": null,
+        "quote": "Make sure the room is smaller than 219 ft² / 20 m². The air purifier may not be as effective in larger rooms."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -436,11 +752,28 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series (300S-P manual covers both; 300S manual page 14 identical except cross-reference 'page 6')", "market": "US", "state": null},
-    "object": {"procedure": "replace_filter", "step_number": 1, "action": "Unplug the air purifier. Flip the air purifier over and remove the filter cover.", "target_parts": ["power_cord", "filter_cover"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series (300S-P manual covers both; 300S manual page 14 identical except cross-reference 'page 6')",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "replace_filter",
+      "step_number": 1,
+      "action": "Unplug the air purifier. Flip the air purifier over and remove the filter cover.",
+      "target_parts": [
+        "power_cord",
+        "filter_cover"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 14, "region": null,
-       "quote": "1. Unplug the air purifier. Flip the air purifier over and remove the filter cover (see Getting Started, page 7)."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "region": null,
+        "quote": "1. Unplug the air purifier. Flip the air purifier over and remove the filter cover (see Getting Started, page 7)."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -454,11 +787,27 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"procedure": "replace_filter", "step_number": 2, "action": "Remove the old filter.", "target_parts": ["filter_cartridge"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "replace_filter",
+      "step_number": 2,
+      "action": "Remove the old filter.",
+      "target_parts": [
+        "filter_cartridge"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 14, "region": null,
-       "quote": "2. Remove the old filter."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "region": null,
+        "quote": "2. Remove the old filter."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -472,11 +821,27 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"procedure": "replace_filter", "step_number": 3, "action": "Clean out any remaining dust or hair inside the air purifier using a vacuum hose. Do not use water or liquids.", "target_parts": ["filter_compartment"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "replace_filter",
+      "step_number": 3,
+      "action": "Clean out any remaining dust or hair inside the air purifier using a vacuum hose. Do not use water or liquids.",
+      "target_parts": [
+        "filter_compartment"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 14, "region": null,
-       "quote": "3. Clean out any remaining dust or hair inside the air purifier using a vacuum hose. Do not use water or liquids to clean the air purifier. [Figure 3.2]"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "region": null,
+        "quote": "3. Clean out any remaining dust or hair inside the air purifier using a vacuum hose. Do not use water or liquids to clean the air purifier. [Figure 3.2]"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -490,11 +855,28 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"procedure": "replace_filter", "step_number": 4, "action": "Unwrap the new filter and place it into the housing.", "target_parts": ["filter_cartridge", "housing"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "replace_filter",
+      "step_number": 4,
+      "action": "Unwrap the new filter and place it into the housing.",
+      "target_parts": [
+        "filter_cartridge",
+        "housing"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 14, "region": null,
-       "quote": "4. Unwrap the new filter and place it into the housing (see Getting Started, page 7)."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "region": null,
+        "quote": "4. Unwrap the new filter and place it into the housing (see Getting Started, page 7)."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -509,11 +891,28 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"procedure": "replace_filter", "step_number": 5, "action": "Replace the cover. Plug in the air purifier.", "target_parts": ["filter_cover", "power_cord"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "replace_filter",
+      "step_number": 5,
+      "action": "Replace the cover. Plug in the air purifier.",
+      "target_parts": [
+        "filter_cover",
+        "power_cord"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 14, "region": null,
-       "quote": "5. Replace the cover. Plug in the air purifier."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "region": null,
+        "quote": "5. Replace the cover. Plug in the air purifier."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -527,11 +926,28 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"procedure": "replace_filter", "step_number": 6, "action": "Reset the Check Filter Indicator.", "target_parts": ["sleep_mode_button", "check_filter_indicator"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "replace_filter",
+      "step_number": 6,
+      "action": "Reset the Check Filter Indicator.",
+      "target_parts": [
+        "sleep_mode_button",
+        "check_filter_indicator"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 14, "region": null,
-       "quote": "6. Reset the Check Filter Indicator (see page 13)."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "region": null,
+        "quote": "6. Reset the Check Filter Indicator (see page 13)."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -546,11 +962,28 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null, "condition": "Check Filter Indicator lit up red"},
-    "object": {"procedure": "reset_check_filter_indicator", "step_number": 1, "action": "Replace the filter.", "target_parts": ["filter_cartridge"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null,
+      "condition": "Check Filter Indicator lit up red"
+    },
+    "object": {
+      "procedure": "reset_check_filter_indicator",
+      "step_number": 1,
+      "action": "Replace the filter.",
+      "target_parts": [
+        "filter_cartridge"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 13, "region": null,
-       "quote": "1. Replace the filter (see page 14)."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "region": null,
+        "quote": "1. Replace the filter (see page 14)."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -565,11 +998,28 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null, "condition": "Check Filter Indicator lit up red"},
-    "object": {"procedure": "reset_check_filter_indicator", "step_number": 2, "action": "Turn on the air purifier.", "target_parts": ["on_off_button"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null,
+      "condition": "Check Filter Indicator lit up red"
+    },
+    "object": {
+      "procedure": "reset_check_filter_indicator",
+      "step_number": 2,
+      "action": "Turn on the air purifier.",
+      "target_parts": [
+        "on_off_button"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 13, "region": null,
-       "quote": "2. Turn on the air purifier."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "region": null,
+        "quote": "2. Turn on the air purifier."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -583,13 +1033,34 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null, "condition": "Check Filter Indicator lit up red"},
-    "object": {"procedure": "reset_check_filter_indicator", "step_number": 3, "action": "Press and hold the Sleep Mode button for 3 seconds.", "target_parts": ["sleep_mode_button"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null,
+      "condition": "Check Filter Indicator lit up red"
+    },
+    "object": {
+      "procedure": "reset_check_filter_indicator",
+      "step_number": 3,
+      "action": "Press and hold the Sleep Mode button for 3 seconds.",
+      "target_parts": [
+        "sleep_mode_button"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 13, "region": null,
-       "quote": "3. Press and hold for 3 seconds."},
-      {"source_id": "src_manual_core300sp_us", "page": 6, "region": null,
-       "quote": "Reset the Check Filter Indicator by pressing and holding the Sleep Mode button for 3 seconds."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "region": null,
+        "quote": "3. Press and hold for 3 seconds."
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 6,
+        "region": null,
+        "quote": "Reset the Check Filter Indicator by pressing and holding the Sleep Mode button for 3 seconds."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -604,11 +1075,28 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null, "condition": "Check Filter Indicator lit up red"},
-    "object": {"procedure": "reset_check_filter_indicator", "step_number": 4, "action": "Confirm the Check Filter Indicator turns off, indicating a successful reset.", "target_parts": ["check_filter_indicator"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null,
+      "condition": "Check Filter Indicator lit up red"
+    },
+    "object": {
+      "procedure": "reset_check_filter_indicator",
+      "step_number": 4,
+      "action": "Confirm the Check Filter Indicator turns off, indicating a successful reset.",
+      "target_parts": [
+        "check_filter_indicator"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 13, "region": null,
-       "quote": "4. will turn off when successfully reset."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "region": null,
+        "quote": "4. will turn off when successfully reset."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -623,11 +1111,24 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series (identical text on 300S manual page 7)", "market": "US", "state": null},
-    "object": {"procedure": "vesync_app_setup", "step_number": 1, "action": "Download the VeSync app by scanning the QR code or searching \"VeSync\" in the Apple App Store or Google Play Store."},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series (identical text on 300S manual page 7)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "vesync_app_setup",
+      "step_number": 1,
+      "action": "Download the VeSync app by scanning the QR code or searching \"VeSync\" in the Apple App Store or Google Play Store."
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 8, "region": null,
-       "quote": "1. To download the VeSync app, scan the QR code or search “VeSync” in the Apple App Store® or Google Play Store."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 8,
+        "region": null,
+        "quote": "1. To download the VeSync app, scan the QR code or search “VeSync” in the Apple App Store® or Google Play Store."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -641,11 +1142,24 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"procedure": "vesync_app_setup", "step_number": 2, "action": "Open the VeSync app and Log In or Sign Up."},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "vesync_app_setup",
+      "step_number": 2,
+      "action": "Open the VeSync app and Log In or Sign Up."
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 8, "region": null,
-       "quote": "2. Open the VeSync app. Log In or Sign Up."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 8,
+        "region": null,
+        "quote": "2. Open the VeSync app. Log In or Sign Up."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -659,11 +1173,24 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"procedure": "vesync_app_setup", "step_number": 3, "action": "Follow the in-app instructions to set up the smart air purifier."},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "vesync_app_setup",
+      "step_number": 3,
+      "action": "Follow the in-app instructions to set up the smart air purifier."
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 8, "region": null,
-       "quote": "3. Follow the in-app instructions to set up your smart air purifier."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 8,
+        "region": null,
+        "quote": "3. Follow the in-app instructions to set up your smart air purifier."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -677,11 +1204,27 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series (identical text on 300S manual page 6)", "market": "US", "state": null},
-    "object": {"procedure": "initial_setup_unwrap_filter", "step_number": 1, "action": "Flip the air purifier over. Twist the filter cover counterclockwise and remove it.", "target_parts": ["filter_cover"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series (identical text on 300S manual page 6)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "initial_setup_unwrap_filter",
+      "step_number": 1,
+      "action": "Flip the air purifier over. Twist the filter cover counterclockwise and remove it.",
+      "target_parts": [
+        "filter_cover"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 7, "region": null,
-       "quote": "1. Flip the air purifier over. Twist the filter cover counterclockwise and remove it. [Figure 1.1]"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 7,
+        "region": null,
+        "quote": "1. Flip the air purifier over. Twist the filter cover counterclockwise and remove it. [Figure 1.1]"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -696,11 +1239,27 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"procedure": "initial_setup_unwrap_filter", "step_number": 2, "action": "Remove the filter from its plastic packaging and place it back into the air purifier with the handle facing up.", "target_parts": ["filter_cartridge"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "initial_setup_unwrap_filter",
+      "step_number": 2,
+      "action": "Remove the filter from its plastic packaging and place it back into the air purifier with the handle facing up.",
+      "target_parts": [
+        "filter_cartridge"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 7, "region": null,
-       "quote": "2. Remove the filter from its plastic packaging and place the filter back into the air purifier with the handle facing up. [Figure 1.2]"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 7,
+        "region": null,
+        "quote": "2. Remove the filter from its plastic packaging and place the filter back into the air purifier with the handle facing up. [Figure 1.2]"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -714,11 +1273,27 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"procedure": "initial_setup_unwrap_filter", "step_number": 3, "action": "Replace the filter cover and twist clockwise to lock (cover should snap shut).", "target_parts": ["filter_cover"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "initial_setup_unwrap_filter",
+      "step_number": 3,
+      "action": "Replace the filter cover and twist clockwise to lock (cover should snap shut).",
+      "target_parts": [
+        "filter_cover"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 7, "region": null,
-       "quote": "3. Replace the filter cover and twist clockwise to lock. [Figure 1.3]"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 7,
+        "region": null,
+        "quote": "3. Replace the filter cover and twist clockwise to lock. [Figure 1.3]"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -732,11 +1307,27 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"procedure": "initial_setup_unwrap_filter", "step_number": 4, "action": "Place the purifier on a flat, stable surface with the display facing up, allowing at least 15 in / 38 cm of clearance on all sides, away from anything that would block airflow.", "target_parts": ["housing"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "initial_setup_unwrap_filter",
+      "step_number": 4,
+      "action": "Place the purifier on a flat, stable surface with the display facing up, allowing at least 15 in / 38 cm of clearance on all sides, away from anything that would block airflow.",
+      "target_parts": [
+        "housing"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 7, "region": null,
-       "quote": "4. Place the purifier on a flat, stable surface with the display facing up. Allow at least 15 inches / 38 cm of clearance on all sides."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 7,
+        "region": null,
+        "quote": "4. Place the purifier on a flat, stable surface with the display facing up. Allow at least 15 inches / 38 cm of clearance on all sides."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -750,11 +1341,28 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"procedure": "disconnect_wifi_restore_defaults", "step_number": 1, "action": "Press and hold the On/Off button for 15 seconds until the Wi-Fi indicator turns off. This restores default settings and disconnects the purifier from the VeSync app.", "target_parts": ["on_off_button", "wifi_indicator"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "disconnect_wifi_restore_defaults",
+      "step_number": 1,
+      "action": "Press and hold the On/Off button for 15 seconds until the Wi-Fi indicator turns off. This restores default settings and disconnects the purifier from the VeSync app.",
+      "target_parts": [
+        "on_off_button",
+        "wifi_indicator"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 8, "region": null,
-       "quote": "To disconnect Wi-Fi, press and hold the On/Off button for 15 seconds until the Wi-Fi indicator turns off. This will restore the smart air purifier’s default settings and disconnect it from the VeSync app."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 8,
+        "region": null,
+        "quote": "To disconnect Wi-Fi, press and hold the On/Off button for 15 seconds until the Wi-Fi indicator turns off. This will restore the smart air purifier’s default settings and disconnect it from the VeSync app."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -769,19 +1377,42 @@
     "type": "PART_LOCATION",
     "predicate": "filter_reset_control_location",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
     "object": {
       "part": "sleep_mode_button_filter_reset",
       "location_description": "The filter reset control is the Sleep Mode (moon icon) touch button on the top control panel, left side of the ring around the central On/Off button; the label under the moon icon reads 'RESET FILTER (3S)'. Press and hold 3 seconds to reset the Check Filter Indicator.",
-      "diagram_binding": {"source_id": "src_img_top_panel_2048", "page": null, "bounding_box": null, "coordinate_system": "normalized", "annotation_status": "PENDING"}
+      "diagram_binding": {
+        "source_id": "src_img_top_panel_2048",
+        "page": null,
+        "bounding_box": null,
+        "coordinate_system": "normalized",
+        "annotation_status": "PENDING"
+      }
     },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 6, "region": null,
-       "quote": "Sleep Mode Button • Turns Sleep Mode on (see page 9). • Press and hold for 3 seconds to reset the Check Filter Indicator."},
-      {"source_id": "src_spec_page_core300s", "page": null, "region": null,
-       "quote": "label under the moon icon reads \"RESET FILTER (3S)\""},
-      {"source_id": "src_img_top_panel_2048", "page": null, "region": null,
-       "quote": "Top-down control panel photo showing the moon icon button with the 'RESET FILTER (3S)' label beneath it."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 6,
+        "region": null,
+        "quote": "Sleep Mode Button • Turns Sleep Mode on (see page 9). • Press and hold for 3 seconds to reset the Check Filter Indicator."
+      },
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "label under the moon icon reads \"RESET FILTER (3S)\""
+      },
+      {
+        "source_id": "src_img_top_panel_2048",
+        "page": null,
+        "region": null,
+        "quote": "Top-down control panel photo showing the moon icon button with the 'RESET FILTER (3S)' label beneath it."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -796,17 +1427,36 @@
     "type": "PART_LOCATION",
     "predicate": "filter_cover_location",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
     "object": {
       "part": "filter_cover",
       "location_description": "The filter cover is on the bottom of the unit (the unit is flipped over to access it); it twists counterclockwise to remove and clockwise to lock. Labeled R in the parts diagram.",
-      "diagram_binding": {"source_id": "src_manual_core300sp_us", "page": 5, "bounding_box": null, "coordinate_system": "normalized", "annotation_status": "PENDING"}
+      "diagram_binding": {
+        "source_id": "src_manual_core300sp_us",
+        "page": 5,
+        "bounding_box": null,
+        "coordinate_system": "normalized",
+        "annotation_status": "PENDING"
+      }
     },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 5, "region": null,
-       "quote": "R. Filter Cover"},
-      {"source_id": "src_manual_core300sp_us", "page": 7, "region": null,
-       "quote": "Flip the air purifier over. Twist the filter cover counterclockwise and remove it."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 5,
+        "region": null,
+        "quote": "R. Filter Cover"
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 7,
+        "region": null,
+        "quote": "Flip the air purifier over. Twist the filter cover counterclockwise and remove it."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -821,15 +1471,30 @@
     "type": "PART_LOCATION",
     "predicate": "dust_sensor_location",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
     "object": {
       "part": "airsight_plus_laser_dust_sensor",
       "location_description": "The AirSight Plus Laser Dust Sensor sits behind slotted openings on the back of the housing, upper section (labeled P in the parts diagram, shown on the 'Back' view).",
-      "diagram_binding": {"source_id": "src_manual_core300sp_us", "page": 5, "bounding_box": null, "coordinate_system": "normalized", "annotation_status": "PENDING"}
+      "diagram_binding": {
+        "source_id": "src_manual_core300sp_us",
+        "page": 5,
+        "bounding_box": null,
+        "coordinate_system": "normalized",
+        "annotation_status": "PENDING"
+      }
     },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 5, "region": null,
-       "quote": "P. AirSight™ Plus Laser Dust Sensor"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 5,
+        "region": null,
+        "quote": "P. AirSight™ Plus Laser Dust Sensor"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -844,11 +1509,27 @@
     "type": "CARE",
     "predicate": "prefilter_cleaning",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"interval": "every 2-4 weeks", "method": "soft brush or vacuum hose", "restrictions": ["Do not clean the filter with water or other liquids", "Main filter: do not clean"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "interval": "every 2-4 weeks",
+      "method": "soft brush or vacuum hose",
+      "restrictions": [
+        "Do not clean the filter with water or other liquids",
+        "Main filter: do not clean"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 13, "region": null,
-       "quote": "The outer pre-filter should be cleaned every 2–4 weeks to increase efficiency and extend the life of your filter. Clean the pre-filter using a soft brush or vacuum hose to remove hair, dust, and large particles."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "region": null,
+        "quote": "The outer pre-filter should be cleaned every 2–4 weeks to increase efficiency and extend the life of your filter. Clean the pre-filter using a soft brush or vacuum hose to remove hair, dust, and large particles."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -862,11 +1543,25 @@
     "type": "CARE",
     "predicate": "housing_cleaning",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"method": "wipe with a soft, dry cloth; damp cloth if necessary, then immediately dry; unplug first; vacuum the inside", "restrictions": ["Do not clean with abrasive chemicals or flammable cleaning agents"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "method": "wipe with a soft, dry cloth; damp cloth if necessary, then immediately dry; unplug first; vacuum the inside",
+      "restrictions": [
+        "Do not clean with abrasive chemicals or flammable cleaning agents"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 13, "region": null,
-       "quote": "Wipe the outside of the air purifier with a soft, dry cloth. If necessary, wipe the housing with a damp cloth, then immediately dry."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "region": null,
+        "quote": "Wipe the outside of the air purifier with a soft, dry cloth. If necessary, wipe the housing with a damp cloth, then immediately dry."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -881,11 +1576,23 @@
     "type": "CARE",
     "predicate": "dust_sensor_cleaning",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"interval": "every 3 months", "method": "unplug; place a vacuum cleaner over the sensor openings; run the vacuum for at least 10 seconds"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "interval": "every 3 months",
+      "method": "unplug; place a vacuum cleaner over the sensor openings; run the vacuum for at least 10 seconds"
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 14, "region": null,
-       "quote": "The AirSight Plus Laser Dust Sensor can be blocked by dust, which affects the sensor’s accuracy. Clean the sensor every 3 months."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "region": null,
+        "quote": "The AirSight Plus Laser Dust Sensor can be blocked by dust, which affects the sensor’s accuracy. Clean the sensor every 3 months."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -899,13 +1606,34 @@
     "type": "CARE",
     "predicate": "filter_replacement_interval",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"interval": "every 6-8 months", "signals": ["increased noise", "decreased airflow", "unusual odors", "visibly clogged filter"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "interval": "every 6-8 months",
+      "signals": [
+        "increased noise",
+        "decreased airflow",
+        "unusual odors",
+        "visibly clogged filter"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 14, "region": null,
-       "quote": "The filter should be replaced every 6–8 months. Y ou may need to replace your filter earlier or later depending on how often you use your air purifier."},
-      {"source_id": "src_spec_page_core300s", "page": null, "region": null,
-       "quote": "Filter lifespan: 6–8 months; filter life tracked in the VeSync app"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "region": null,
+        "quote": "The filter should be replaced every 6–8 months. Y ou may need to replace your filter earlier or later depending on how often you use your air purifier."
+      },
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "Filter lifespan: 6–8 months; filter life tracked in the VeSync app"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -920,11 +1648,23 @@
     "type": "CARE",
     "predicate": "storage_procedure",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"method": "wrap both the air purifier and the filter in plastic packaging; store in a dry place", "reason": "avoid moisture damage"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "method": "wrap both the air purifier and the filter in plastic packaging; store in a dry place",
+      "reason": "avoid moisture damage"
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 14, "region": null,
-       "quote": "If not using the air purifier for an extended period of time, wrap both the air purifier and the filter in plastic packaging and store in a dry place to avoid moisture damage."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "region": null,
+        "quote": "If not using the air purifier for an extended period of time, wrap both the air purifier and the filter in plastic packaging and store in a dry place to avoid moisture damage."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -938,11 +1678,23 @@
     "type": "WARNING",
     "predicate": "remove_filter_wrap_before_use",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series (identical text on 300S manual page 3)", "market": "US", "state": null},
-    "object": {"hazard_type": "fire", "description": "Do not use without removing the plastic wrap from the filter; the purifier will not filter air and may overheat, causing a fire hazard."},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series (identical text on 300S manual page 3)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "hazard_type": "fire",
+      "description": "Do not use without removing the plastic wrap from the filter; the purifier will not filter air and may overheat, causing a fire hazard."
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 3, "region": null,
-       "quote": "Do not use without removing the plastic wrap from the filter. The air purifier will not filter air, and may overheat, causing a fire hazard."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 3,
+        "region": null,
+        "quote": "Do not use without removing the plastic wrap from the filter. The air purifier will not filter air, and may overheat, causing a fire hazard."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -957,11 +1709,23 @@
     "type": "WARNING",
     "predicate": "keep_away_from_water",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"hazard_type": "electric_shock", "description": "Keep the air purifier away from water and wet or damp areas; never place in water or liquid."},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "hazard_type": "electric_shock",
+      "description": "Keep the air purifier away from water and wet or damp areas; never place in water or liquid."
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 3, "region": null,
-       "quote": "Keep the air purifier away from water, and wet or damp areas. Never place in water or liquid."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 3,
+        "region": null,
+        "quote": "Keep the air purifier away from water, and wet or damp areas. Never place in water or liquid."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -975,11 +1739,23 @@
     "type": "WARNING",
     "predicate": "oxygen_administration_distance",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"hazard_type": "fire", "description": "Keep 5 ft / 1.5 m away from where oxygen is being administered."},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "hazard_type": "fire",
+      "description": "Keep 5 ft / 1.5 m away from where oxygen is being administered."
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 3, "region": null,
-       "quote": "Keep 5 ft / 1.5 m away from where oxygen is being administered."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 3,
+        "region": null,
+        "quote": "Keep 5 ft / 1.5 m away from where oxygen is being administered."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -993,11 +1769,23 @@
     "type": "WARNING",
     "predicate": "no_combustible_environments",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"hazard_type": "fire_explosion", "description": "Do not use where combustible gases, vapors, metallic dust, aerosol products, or fumes from industrial oil are present."},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "hazard_type": "fire_explosion",
+      "description": "Do not use where combustible gases, vapors, metallic dust, aerosol products, or fumes from industrial oil are present."
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 3, "region": null,
-       "quote": "Do not use where combustible gases, vapors, metallic dust, aerosol (spray) products, or fumes from industrial oil are present."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 3,
+        "region": null,
+        "quote": "Do not use where combustible gases, vapors, metallic dust, aerosol (spray) products, or fumes from industrial oil are present."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -1011,11 +1799,23 @@
     "type": "WARNING",
     "predicate": "no_solid_state_speed_controls",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"hazard_type": "fire_electric_shock", "description": "Do not use this air purifier with any solid-state speed controls such as a dimmer switch."},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "hazard_type": "fire_electric_shock",
+      "description": "Do not use this air purifier with any solid-state speed controls such as a dimmer switch."
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 3, "region": null,
-       "quote": "WARNING: To reduce the risk of fire or electric shock, do not use this air purifier with any solid-state speed controls (such as a dimmer switch)."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 3,
+        "region": null,
+        "quote": "WARNING: To reduce the risk of fire or electric shock, do not use this air purifier with any solid-state speed controls (such as a dimmer switch)."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -1029,11 +1829,23 @@
     "type": "WARNING",
     "predicate": "unplug_before_maintenance",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"hazard_type": "electric_shock", "description": "Always unplug the air purifier before servicing, cleaning, or other maintenance such as changing the filter."},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "hazard_type": "electric_shock",
+      "description": "Always unplug the air purifier before servicing, cleaning, or other maintenance such as changing the filter."
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 3, "region": null,
-       "quote": "Always unplug the air purifierbefore servicing ,cleaning or other maintenances(such aschanging the filter)."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 3,
+        "region": null,
+        "quote": "Always unplug the air purifierbefore servicing ,cleaning or other maintenances(such aschanging the filter)."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -1048,11 +1860,30 @@
     "type": "COMPATIBILITY",
     "predicate": "replacement_filter_compatible_models",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"counterpart": "Levoit Core 300 Series Original Filter (Core 300-RF)", "compatible_with": ["Core 300", "Core 300-P", "Core 300S", "Core 300S-P", "Core P350", "Core P350-P"]},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "Levoit Core 300 Series Original Filter (Core 300-RF)",
+      "compatible_with": [
+        "Core 300",
+        "Core 300-P",
+        "Core 300S",
+        "Core 300S-P",
+        "Core P350",
+        "Core P350-P"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_spec_page_core300s", "page": null, "region": null,
-       "quote": "Compatible models per VeSync store: Core 300, Core 300-P, Core 300S, Core 300S-P, Core P350, Core P350-P"}
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "Compatible models per VeSync store: Core 300, Core 300-P, Core 300S, Core 300S-P, Core P350, Core P350-P"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -1067,11 +1898,24 @@
     "type": "POLICY",
     "predicate": "warranty_period",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"value": 2, "unit": "years", "provider": "Arovast Corporation"},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 2,
+      "unit": "years",
+      "provider": "Arovast Corporation"
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 19, "region": null,
-       "quote": "the product shall be free from defects in material and workmanship for a period of 2 years from the date of original purchase"}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 19,
+        "region": null,
+        "quote": "the product shall be free from defects in material and workmanship for a period of 2 years from the date of original purchase"
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
@@ -1086,14 +1930,710 @@
     "type": "STATE",
     "predicate": "standby_mode_definition",
     "subject": "prod_levoit_core_300s",
-    "applicability": {"sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A", "revision": "Core 300S series / Core 300S-P series", "market": "US", "state": null},
-    "object": {"state": "STANDBY", "description": "Turned off but plugged in; the laser dust sensor still detects surrounding air quality and reports to the VeSync app."},
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "state": "STANDBY",
+      "description": "Turned off but plugged in; the laser dust sensor still detects surrounding air quality and reports to the VeSync app."
+    },
     "source_bindings": [
-      {"source_id": "src_manual_core300sp_us", "page": 9, "region": null,
-       "quote": "The air purifier is in Standby Mode when it is turned off, but plugged in."}
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 9,
+        "region": null,
+        "quote": "The air purifier is in Standby Mode when it is turned off, but plugged in."
+      }
     ],
     "authority": "MANUFACTURER_MANUAL",
     "extractor": "evidence-pack-agent-v2",
     "extracted_at": "2026-08-24"
+  },
+  {
+    "claim_id": "claim_c300s_spec_dimensions_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "product_dimensions",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series (identical across revisions)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "imperial": {
+        "width": 8.7,
+        "depth": 8.7,
+        "height": 14.2,
+        "unit": "in"
+      },
+      "metric": {
+        "width": 22,
+        "depth": 22,
+        "height": 36,
+        "unit": "cm"
+      }
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "Dimensions: 8.7 x 8.7 x 14.2 in / 22 x 22 x 36 cm"
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 2,
+        "region": null,
+        "quote": "Dimensions 8.7 × 8.7 × 14.2 in / 22 × 22 × 36 cm"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_spec_dimensions. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_spec_weight_300sp_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "product_weight",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073A",
+      "revision": "Core 300S-P (current retail revision; manual rev A2-240918)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "imperial": {
+        "value": 7.48,
+        "unit": "lb"
+      },
+      "metric": {
+        "value": 3.393,
+        "unit": "kg"
+      },
+      "revision": "Core 300S-P"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 2,
+        "region": null,
+        "quote": "Weight 7.48lb / 3.393kg"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_spec_weight_300sp. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_spec_coverage_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "room_coverage",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "coverage": [
+        {
+          "area_ft2": 1051,
+          "air_changes_per_hour": 1
+        },
+        {
+          "area_ft2": 219,
+          "air_changes_per_hour": 4.8
+        }
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "Ideal room size (coverage): 1,051 ft² at 1 air change per hour; 219 ft² at 4.8 ACH"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_spec_coverage. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_spec_operating_conditions_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "operating_temperature_range",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series (identical across revisions)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "imperial": {
+        "minimum": 14,
+        "maximum": 104,
+        "unit": "°F"
+      },
+      "metric": {
+        "minimum": -10,
+        "maximum": 40,
+        "unit": "°C"
+      }
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 2,
+        "region": null,
+        "quote": "Temperature: 14°–104°F / -10°–40°C"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_spec_operating_conditions. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_limit_room_size_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "LIMIT",
+    "predicate": "effective_room_size",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "rule": "For poor air-purification troubleshooting, make sure the room is smaller than 219 ft² / 20 m²; the purifier may be less effective in larger rooms.",
+      "imperial_upper_bound": {
+        "value": 219,
+        "unit": "ft²"
+      },
+      "metric_upper_bound": {
+        "value": 20,
+        "unit": "m²"
+      }
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 16,
+        "region": null,
+        "quote": "Make sure the room is smaller than 219 ft² / 20 m². The air purifier may not be as effective in larger rooms."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_limit_room_size. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_step_initial_setup_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series (identical text on 300S manual page 6)",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "initial_setup_unwrap_filter_verified_20260829",
+      "step_number": 1,
+      "action": "Flip the air purifier over. Twist the filter cover counterclockwise and remove it.",
+      "target_parts": [
+        "filter_cover"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 7,
+        "region": null,
+        "quote": "1. Flip the air purifier over. Twist the filter cover counterclockwise and remove it. [Figure 1.1]"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_step_initial_setup_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_step_initial_setup_2_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "initial_setup_unwrap_filter_verified_20260829",
+      "step_number": 2,
+      "action": "Remove the filter from its plastic packaging and place it back into the air purifier with the handle facing up.",
+      "target_parts": [
+        "filter_cartridge"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 7,
+        "region": null,
+        "quote": "2. Remove the filter from its plastic packaging and place the filter back into the air purifier with the handle facing up. [Figure 1.2]"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_step_initial_setup_2. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_step_initial_setup_3_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "initial_setup_unwrap_filter_verified_20260829",
+      "step_number": 3,
+      "action": "Replace the filter cover and twist clockwise to lock (cover should snap shut).",
+      "target_parts": [
+        "filter_cover"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 7,
+        "region": null,
+        "quote": "3. Replace the filter cover and twist clockwise to lock. [Figure 1.3]"
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 7,
+        "quote": "cover should snap shut"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_step_initial_setup_3. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_step_initial_setup_4_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "initial_setup_unwrap_filter_verified_20260829",
+      "step_number": 4,
+      "action": "Place the purifier on a flat, stable surface with the display facing up, allowing at least 15 in / 38 cm of clearance on all sides, away from anything that would block airflow.",
+      "target_parts": [
+        "housing"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 7,
+        "region": null,
+        "quote": "4. Place the purifier on a flat, stable surface with the display facing up. Allow at least 15 inches / 38 cm of clearance on all sides."
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 7,
+        "quote": "Keep away from anything that would block airflow, such as curtains."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_step_initial_setup_4. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_part_filter_cover_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "PART_LOCATION",
+    "predicate": "filter_cover_location",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "part": "filter_cover",
+      "location_description": "The filter cover is on the bottom of the unit (the unit is flipped over to access it); it twists counterclockwise to remove and clockwise to lock. Labeled R in the parts diagram.",
+      "diagram_binding": {
+        "source_id": "src_manual_core300sp_us",
+        "page": 5,
+        "bounding_box": null,
+        "coordinate_system": "normalized",
+        "annotation_status": "PENDING"
+      }
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 5,
+        "region": null,
+        "quote": "R. Filter Cover"
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 7,
+        "region": null,
+        "quote": "Flip the air purifier over. Twist the filter cover counterclockwise and remove it."
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 7,
+        "quote": "Replace the filter cover and twist clockwise to lock."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_part_filter_cover. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_part_airsight_sensor_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "PART_LOCATION",
+    "predicate": "dust_sensor_location",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "part": "airsight_plus_laser_dust_sensor",
+      "location_description": "Labeled P in the parts diagram and shown on the Back view of the purifier.",
+      "diagram_binding": {
+        "source_id": "src_manual_core300sp_us",
+        "page": 5,
+        "bounding_box": null,
+        "coordinate_system": "normalized",
+        "annotation_status": "PENDING"
+      }
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 5,
+        "quote": "P. AirSight™ Plus Laser Dust Sensor"
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 5,
+        "quote": "Front, upside downBack"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_part_airsight_sensor. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_care_prefilter_cleaning_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "CARE",
+    "predicate": "prefilter_cleaning",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "interval": "every 2-4 weeks",
+      "method": "soft brush or vacuum hose",
+      "restrictions": [
+        "Do not clean the filter with water or other liquids",
+        "Main filter: do not clean"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "region": null,
+        "quote": "The outer pre-filter should be cleaned every 2–4 weeks to increase efficiency and extend the life of your filter. Clean the pre-filter using a soft brush or vacuum hose to remove hair, dust, and large particles."
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "quote": "Do not clean the filter with water or other liquids."
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "quote": "Main Filter Do not clean"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_care_prefilter_cleaning. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_care_housing_cleaning_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "CARE",
+    "predicate": "housing_cleaning",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "method": "wipe with a soft, dry cloth; damp cloth if necessary, then immediately dry; unplug first; vacuum the inside",
+      "restrictions": [
+        "Do not clean with abrasive chemicals or flammable cleaning agents"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "region": null,
+        "quote": "Wipe the outside of the air purifier with a soft, dry cloth. If necessary, wipe the housing with a damp cloth, then immediately dry."
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "quote": "Unplug before cleaning."
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "quote": "Vacuum the inside of the air purifier."
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "quote": "Do not clean with abrasive chemicals or flammable cleaning agents."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_care_housing_cleaning. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_care_sensor_cleaning_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "CARE",
+    "predicate": "dust_sensor_cleaning",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "interval": "every 3 months",
+      "method": "unplug; place a vacuum cleaner over the sensor openings; run the vacuum for at least 10 seconds"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "region": null,
+        "quote": "The AirSight Plus Laser Dust Sensor can be blocked by dust, which affects the sensor’s accuracy. Clean the sensor every 3 months."
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "quote": "1. Unplug the air purifier."
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "quote": "2. Place the end of a vacuum cleaner over the sensor openings."
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "quote": "3. Turn the vacuum on for at least 10 seconds to clean out dust."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_care_sensor_cleaning. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_care_filter_lifespan_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "CARE",
+    "predicate": "filter_replacement_interval",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "interval": "every 6-8 months",
+      "signals": [
+        "increased noise",
+        "decreased airflow",
+        "unusual odors",
+        "visibly clogged filter"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "region": null,
+        "quote": "The filter should be replaced every 6–8 months. Y ou may need to replace your filter earlier or later depending on how often you use your air purifier."
+      },
+      {
+        "source_id": "src_spec_page_core300s",
+        "page": null,
+        "region": null,
+        "quote": "Filter lifespan: 6–8 months; filter life tracked in the VeSync app"
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "quote": "Y ou may need to replace your filter if you notice:"
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "quote": "Increased noise when the air purifier is on"
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "quote": "Decreased airflow"
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "quote": "Unusual odors"
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 14,
+        "quote": "A visibly clogged filter"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_care_filter_lifespan. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_state_standby_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STATE",
+    "predicate": "standby_mode_definition",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "state": "STANDBY",
+      "description": "Turned off but plugged in; the laser dust sensor still detects surrounding air quality and reports to the VeSync app."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 9,
+        "region": null,
+        "quote": "The air purifier is in Standby Mode when it is turned off, but plugged in."
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 9,
+        "quote": "The laser dust sensor will still detect the surrounding air quality and give you updates in the VeSync app."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_c300s_state_standby. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
   }
 ]

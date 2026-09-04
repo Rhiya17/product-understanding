@@ -1,0 +1,10 @@
+{
+  "request_id": "01a0503f-4baf-7a10-b1ef-51e5a1a6bb98",
+  "submitted_at": "2026-08-30T01:18:40.587622+00:00",
+  "endpoint": "fal-ai/any-llm/vision",
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "estimated_cost_usd": 0.01,
+  "response_url": "https://queue.fal.run/fal-ai/any-llm/requests/01a0503f-4baf-7a10-b1ef-51e5a1a6bb98",
+  "status_url": "https://queue.fal.run/fal-ai/any-llm/requests/01a0503f-4baf-7a10-b1ef-51e5a1a6bb98/status",
+  "cancel_url": "https://queue.fal.run/fal-ai/any-llm/requests/01a0503f-4baf-7a10-b1ef-51e5a1a6bb98/cancel"
+}

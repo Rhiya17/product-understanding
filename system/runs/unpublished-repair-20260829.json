@@ -1,0 +1,544 @@
+{
+  "date": "2026-08-29",
+  "policy": "append-only repaired replacements; protected originals unchanged",
+  "independent_verifier": "not_rerun_fal_key_unavailable",
+  "replacement_count": 106,
+  "replacements": [
+    {
+      "product": "apple-macbook-air-13-m3",
+      "old_claim_id": "claim_mba_spec_fast_charge",
+      "new_claim_id": "claim_mba_spec_fast_charge_repair_20260829"
+    },
+    {
+      "product": "apple-macbook-air-13-m3",
+      "old_claim_id": "claim_mba_spec_memory_options",
+      "new_claim_id": "claim_mba_spec_memory_options_repair_20260829"
+    },
+    {
+      "product": "apple-macbook-air-13-m3",
+      "old_claim_id": "claim_mba_spec_newest_compatible_os",
+      "new_claim_id": "claim_mba_spec_newest_compatible_os_repair_20260829"
+    },
+    {
+      "product": "apple-macbook-air-13-m3",
+      "old_claim_id": "claim_mba_part_magsafe_port",
+      "new_claim_id": "claim_mba_part_magsafe_port_repair_20260829"
+    },
+    {
+      "product": "apple-macbook-air-13-m3",
+      "old_claim_id": "claim_mba_step_charge_1",
+      "new_claim_id": "claim_mba_step_charge_1_repair_20260829"
+    },
+    {
+      "product": "apple-macbook-air-13-m3",
+      "old_claim_id": "claim_mba_step_connection_method_1",
+      "new_claim_id": "claim_mba_step_connection_method_1_repair_20260829"
+    },
+    {
+      "product": "apple-macbook-air-13-m3",
+      "old_claim_id": "claim_mba_step_connection_method_2",
+      "new_claim_id": "claim_mba_step_connection_method_2_repair_20260829"
+    },
+    {
+      "product": "apple-macbook-air-13-m3",
+      "old_claim_id": "claim_mba_step_connection_method_3",
+      "new_claim_id": "claim_mba_step_connection_method_3_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_full_charge_time_1",
+      "new_claim_id": "claim_bqcu2_full_charge_time_1_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_bluetooth_device_name_1",
+      "new_claim_id": "claim_bqcu2_bluetooth_device_name_1_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_aptx_adaptive_codec_1",
+      "new_claim_id": "claim_bqcu2_aptx_adaptive_codec_1_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_part_serial_number_1",
+      "new_claim_id": "claim_bqcu2_part_serial_number_1_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_warning_vehicle_1",
+      "new_claim_id": "claim_bqcu2_warning_vehicle_1_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_care_firmware_update_1",
+      "new_claim_id": "claim_bqcu2_care_firmware_update_1_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_state_default_power_on_mode_1",
+      "new_claim_id": "claim_bqcu2_state_default_power_on_mode_1_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_state_lay_flat_disconnect_1",
+      "new_claim_id": "claim_bqcu2_state_lay_flat_disconnect_1_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_state_auto_sleep_1",
+      "new_claim_id": "claim_bqcu2_state_auto_sleep_1_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_compat_fast_pair_android_1",
+      "new_claim_id": "claim_bqcu2_compat_fast_pair_android_1_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_compat_bose_speakers_1",
+      "new_claim_id": "claim_bqcu2_compat_bose_speakers_1_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_bluetooth_range_1",
+      "new_claim_id": "claim_bqcu2_bluetooth_range_1_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_part_aux_port_1",
+      "new_claim_id": "claim_bqcu2_part_aux_port_1_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_step_pairing_1",
+      "new_claim_id": "claim_bqcu2_step_pairing_1_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_step_pairing_2",
+      "new_claim_id": "claim_bqcu2_step_pairing_2_repair_20260829"
+    },
+    {
+      "product": "bose-qc-ultra-headphones",
+      "old_claim_id": "claim_bqcu2_step_pairing_3",
+      "new_claim_id": "claim_bqcu2_step_pairing_3_repair_20260829"
+    },
+    {
+      "product": "graco-ready2jet-2212125",
+      "old_claim_id": "claim_r2j_part_belly_bar",
+      "new_claim_id": "claim_r2j_part_belly_bar_repair_20260829"
+    },
+    {
+      "product": "graco-ready2jet-2212125",
+      "old_claim_id": "claim_r2j_part_thumb_switch",
+      "new_claim_id": "claim_r2j_part_thumb_switch_repair_20260829"
+    },
+    {
+      "product": "graco-ready2jet-2212125",
+      "old_claim_id": "claim_r2j_part_handle_lever",
+      "new_claim_id": "claim_r2j_part_handle_lever_repair_20260829"
+    },
+    {
+      "product": "graco-ready2jet-2212125",
+      "old_claim_id": "claim_r2j_limit_cup_holder_weight",
+      "new_claim_id": "claim_r2j_limit_cup_holder_weight_repair_20260829"
+    },
+    {
+      "product": "graco-ready2jet-2212125",
+      "old_claim_id": "claim_r2j_warning_zip_tie",
+      "new_claim_id": "claim_r2j_warning_zip_tie_repair_20260829"
+    },
+    {
+      "product": "graco-ready2jet-2212125",
+      "old_claim_id": "claim_r2j_compat_graco_infant_car_seats",
+      "new_claim_id": "claim_r2j_compat_graco_infant_car_seats_repair_20260829"
+    },
+    {
+      "product": "graco-ready2jet-2212125",
+      "old_claim_id": "claim_r2j_care_wet_drying",
+      "new_claim_id": "claim_r2j_care_wet_drying_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_limit_max_height",
+      "new_claim_id": "claim_srl_limit_max_height_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_limit_body_support_max_weight",
+      "new_claim_id": "claim_srl_limit_body_support_max_weight_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_limit_expiration_7yr",
+      "new_claim_id": "claim_srl_limit_expiration_7yr_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_spec_carrier_weight",
+      "new_claim_id": "claim_srl_spec_carrier_weight_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_spec_aircraft_certified",
+      "new_claim_id": "claim_srl_spec_aircraft_certified_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_part_harness_release_lever",
+      "new_claim_id": "claim_srl_part_harness_release_lever_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_part_rearfacing_belt_path",
+      "new_claim_id": "claim_srl_part_rearfacing_belt_path_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_modes",
+      "new_claim_id": "claim_srl_compat_stroller_modes_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_duoglider",
+      "new_claim_id": "claim_srl_compat_stroller_duoglider_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_fastaction_se_20",
+      "new_claim_id": "claim_srl_compat_stroller_fastaction_se_20_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_fastaction_fold_jogger",
+      "new_claim_id": "claim_srl_compat_stroller_fastaction_fold_jogger_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_fastaction_jogger_lx",
+      "new_claim_id": "claim_srl_compat_stroller_fastaction_jogger_lx_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_gomax",
+      "new_claim_id": "claim_srl_compat_stroller_gomax_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_graco_merge",
+      "new_claim_id": "claim_srl_compat_stroller_graco_merge_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_graco_premier_merge",
+      "new_claim_id": "claim_srl_compat_stroller_graco_premier_merge_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_outpace_lx",
+      "new_claim_id": "claim_srl_compat_stroller_outpace_lx_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_ready2grow_20",
+      "new_claim_id": "claim_srl_compat_stroller_ready2grow_20_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_ready2grow_lx_20",
+      "new_claim_id": "claim_srl_compat_stroller_ready2grow_lx_20_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_ready2jet",
+      "new_claim_id": "claim_srl_compat_stroller_ready2jet_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_ready2roll_wagon",
+      "new_claim_id": "claim_srl_compat_stroller_ready2roll_wagon_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_snugrider_elite",
+      "new_claim_id": "claim_srl_compat_stroller_snugrider_elite_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_stroller_verb",
+      "new_claim_id": "claim_srl_compat_stroller_verb_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_base_gomax",
+      "new_claim_id": "claim_srl_compat_base_gomax_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_base_graco_premier",
+      "new_claim_id": "claim_srl_compat_base_graco_premier_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_base_snuglock_load_leg",
+      "new_claim_id": "claim_srl_compat_base_snuglock_load_leg_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_base_snugride_lite",
+      "new_claim_id": "claim_srl_compat_base_snugride_lite_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_base_snugride_snugfit",
+      "new_claim_id": "claim_srl_compat_base_snugride_snugfit_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_base_snugride_snuglock",
+      "new_claim_id": "claim_srl_compat_base_snugride_snuglock_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_compat_click_connect_requirement",
+      "new_claim_id": "claim_srl_compat_click_connect_requirement_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_latch_1",
+      "new_claim_id": "claim_srl_step_latch_1_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_latch_2",
+      "new_claim_id": "claim_srl_step_latch_2_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_latch_3",
+      "new_claim_id": "claim_srl_step_latch_3_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_latch_4",
+      "new_claim_id": "claim_srl_step_latch_4_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_latch_5",
+      "new_claim_id": "claim_srl_step_latch_5_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_latch_6",
+      "new_claim_id": "claim_srl_step_latch_6_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_latch_7",
+      "new_claim_id": "claim_srl_step_latch_7_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_latch_8",
+      "new_claim_id": "claim_srl_step_latch_8_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_latch_9",
+      "new_claim_id": "claim_srl_step_latch_9_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_latch_10",
+      "new_claim_id": "claim_srl_step_latch_10_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_beltbase_1",
+      "new_claim_id": "claim_srl_step_beltbase_1_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_beltbase_2",
+      "new_claim_id": "claim_srl_step_beltbase_2_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_beltbase_3",
+      "new_claim_id": "claim_srl_step_beltbase_3_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_beltbase_4",
+      "new_claim_id": "claim_srl_step_beltbase_4_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_beltbase_5",
+      "new_claim_id": "claim_srl_step_beltbase_5_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_beltbase_6",
+      "new_claim_id": "claim_srl_step_beltbase_6_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_beltbase_7",
+      "new_claim_id": "claim_srl_step_beltbase_7_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_beltbase_8",
+      "new_claim_id": "claim_srl_step_beltbase_8_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_beltbase_9",
+      "new_claim_id": "claim_srl_step_beltbase_9_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_baseless_1",
+      "new_claim_id": "claim_srl_step_baseless_1_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_baseless_2",
+      "new_claim_id": "claim_srl_step_baseless_2_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_baseless_3",
+      "new_claim_id": "claim_srl_step_baseless_3_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_baseless_4",
+      "new_claim_id": "claim_srl_step_baseless_4_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_baseless_5",
+      "new_claim_id": "claim_srl_step_baseless_5_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_step_baseless_6",
+      "new_claim_id": "claim_srl_step_baseless_6_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_warning_airbag",
+      "new_claim_id": "claim_srl_warning_airbag_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_warning_bulky_clothing",
+      "new_claim_id": "claim_srl_warning_bulky_clothing_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_warning_strings_cords",
+      "new_claim_id": "claim_srl_warning_strings_cords_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_care_buckle",
+      "new_claim_id": "claim_srl_care_buckle_repair_20260829"
+    },
+    {
+      "product": "graco-snugride-35-lite-lx",
+      "old_claim_id": "claim_srl_limit_harness_strap_height",
+      "new_claim_id": "claim_srl_limit_harness_strap_height_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_spec_dimensions",
+      "new_claim_id": "claim_c300s_spec_dimensions_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_spec_weight_300sp",
+      "new_claim_id": "claim_c300s_spec_weight_300sp_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_spec_coverage",
+      "new_claim_id": "claim_c300s_spec_coverage_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_spec_operating_conditions",
+      "new_claim_id": "claim_c300s_spec_operating_conditions_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_limit_room_size",
+      "new_claim_id": "claim_c300s_limit_room_size_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_step_initial_setup_1",
+      "new_claim_id": "claim_c300s_step_initial_setup_1_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_step_initial_setup_2",
+      "new_claim_id": "claim_c300s_step_initial_setup_2_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_step_initial_setup_3",
+      "new_claim_id": "claim_c300s_step_initial_setup_3_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_step_initial_setup_4",
+      "new_claim_id": "claim_c300s_step_initial_setup_4_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_part_filter_cover",
+      "new_claim_id": "claim_c300s_part_filter_cover_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_part_airsight_sensor",
+      "new_claim_id": "claim_c300s_part_airsight_sensor_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_care_prefilter_cleaning",
+      "new_claim_id": "claim_c300s_care_prefilter_cleaning_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_care_housing_cleaning",
+      "new_claim_id": "claim_c300s_care_housing_cleaning_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_care_sensor_cleaning",
+      "new_claim_id": "claim_c300s_care_sensor_cleaning_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_care_filter_lifespan",
+      "new_claim_id": "claim_c300s_care_filter_lifespan_repair_20260829"
+    },
+    {
+      "product": "levoit-core-300s",
+      "old_claim_id": "claim_c300s_state_standby",
+      "new_claim_id": "claim_c300s_state_standby_repair_20260829"
+    }
+  ],
+  "obsolete_without_replacement": [
+    {
+      "product": "levoit-core-300s",
+      "claim_id": "claim_c300s_spec_weight_300s"
+    }
+  ]
+}

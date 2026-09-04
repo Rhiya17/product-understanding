@@ -1,0 +1,17 @@
+{
+  "verified_at": "2026-08-30T01:18:21.874299+00:00",
+  "endpoint": "fal-ai/any-llm/vision",
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "schema_url": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai/any-llm/vision",
+  "pricing_url": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/any-llm/vision",
+  "unit_price_usd": 0.01,
+  "unit": "requests",
+  "required_fields": [
+    "image_urls",
+    "max_tokens",
+    "model",
+    "prompt",
+    "temperature"
+  ],
+  "status": "PASS"
+}

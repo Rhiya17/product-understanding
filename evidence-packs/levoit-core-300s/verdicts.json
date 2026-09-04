@@ -2,7 +2,7 @@
   "model": "qwen/qwen3-vl-235b-a22b-instruct",
   "prompt_version": "v2",
   "date": "2026-08-26",
-  "status": "COMPLETE",
+  "status": "PARTIAL",
   "run_metadata": {
     "endpoint": "openrouter/router/openai/v1/chat/completions",
     "verification_scope": "CLAIM_QUOTE_UNION",
@@ -516,5 +516,6 @@
       "note": "The two claims report different weights (5.95 lb vs. 7.48 lb) for the same model (Core 300S), with no indication in either context that these refer to different revisions, configurations, or measurement conditions.",
       "context_sha256": "1cbfc49f96fee5d3417ea20a82ac448392e4d3f9d9381fcb0bcf1d386e6b94b4"
     }
-  ]
+  ],
+  "reason": "Claims appended by the 2026-08-29 unpublished repair pass have complete exact-source and human review but no new independent verifier verdict because FAL_KEY is unavailable; all earlier verifier verdict entries remain unchanged."
 }

@@ -36,7 +36,7 @@
           </select>
 
           <label class="preview-control" for="published-only">
-            <input id="published-only" name="published-only" type="checkbox">
+            <input id="published-only" name="published-only" type="checkbox" checked>
             <span>Published facts only</span>
           </label>
 
@@ -62,9 +62,8 @@
         </div>
       </form>
 
-      <div id="preview-warning" class="preview-warning">
-        MVP exception (owner, 2026-08-27): serving unreviewed facts, labeled
-        PENDING REVIEW. TODO: the owner review pass promotes them to PUBLISHED.
+      <div id="preview-warning" class="preview-warning" hidden>
+        Preview mode may include unpublished facts. Any such facts are clearly labeled.
       </div>
       <div id="review-mode-note" class="review-mode-note" hidden></div>
     </section>
@@ -111,7 +110,7 @@
   </main>
 
   <footer>
-    <p>No generative models. No runtime network calls. Pending facts stay clearly labeled under the MVP exception.</p>
+    <p>Grounded answers use captured sources. Generated walkthroughs are labeled.</p>
   </footer>
   <script src="/static/app.js" defer></script>
 </body>

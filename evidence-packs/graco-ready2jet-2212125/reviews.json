@@ -8,6 +8,969 @@
       "claim_id": "claim_r2j_step_harness_3",
       "disposition": "APPROVED_FOR_PUBLISH",
       "rationale": "Human review of the extractor's flagged judgment call: the ambiguous p24 slide-adjuster instruction is correctly assigned to the 5-point securing procedure, not the 3-point conversion. Reasoning verified and accepted: (1) the step adjusts shoulder straps, which are removed entirely in the 3-point configuration — physically impossible there; (2) the 3-point sequence already has its own step 3 on p25, so the p24 instruction does not belong to that numbering."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_fold_1_20260829004613017416_05674c75",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_fold_1",
+      "claim_id": "claim_r2j_step_fold_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_fold_2_20260829004613040193_6e13950e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_fold_2",
+      "claim_id": "claim_r2j_step_fold_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_fold_3_20260829004613056997_62baa20f",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_fold_3",
+      "claim_id": "claim_r2j_step_fold_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_fold_4_20260829004613070954_b4593c43",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_fold_4",
+      "claim_id": "claim_r2j_step_fold_4",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_fold_5_20260829004613086158_fcccc9e9",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_fold_5",
+      "claim_id": "claim_r2j_step_fold_5",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_fold_6_20260829004613100065_41e3aede",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_fold_6",
+      "claim_id": "claim_r2j_step_fold_6",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_fold_7_20260829004613114839_e159c673",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_fold_7",
+      "claim_id": "claim_r2j_step_fold_7",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_fold_tips_1_20260829004613130068_c28ec89e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_fold_tips_1",
+      "claim_id": "claim_r2j_step_fold_tips_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_fold_tips_2_20260829004613144929_cd1c368a",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_fold_tips_2",
+      "claim_id": "claim_r2j_step_fold_tips_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_unfold_1_20260829004613159185_97501ec4",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_unfold_1",
+      "claim_id": "claim_r2j_step_unfold_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_unfold_2_20260829004613174045_4bb351cf",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_unfold_2",
+      "claim_id": "claim_r2j_step_unfold_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_unfold_3_20260829004613190554_2f2f3536",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_unfold_3",
+      "claim_id": "claim_r2j_step_unfold_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_unfold_4_20260829004613206217_15f2d7f9",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_unfold_4",
+      "claim_id": "claim_r2j_step_unfold_4",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_care_seat_20260829004613220679_6a05aeb0",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_care_seat",
+      "claim_id": "claim_r2j_care_seat",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_care_frame_20260829004613237227_97744025",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_care_frame",
+      "claim_id": "claim_r2j_care_frame",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_care_wheel_oil_20260829004613254000_60632ecf",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_care_wheel_oil",
+      "claim_id": "claim_r2j_care_wheel_oil",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_spec_assembly_no_tools_20260829004613269828_e6c9e648",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_spec_assembly_no_tools",
+      "claim_id": "claim_r2j_spec_assembly_no_tools",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_canopy_1_20260829004613285878_0868dab3",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_canopy_1",
+      "claim_id": "claim_r2j_step_canopy_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_canopy_2_20260829004613302577_8e700b92",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_canopy_2",
+      "claim_id": "claim_r2j_step_canopy_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_canopy_3_20260829004613319321_ad42df9e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_canopy_3",
+      "claim_id": "claim_r2j_step_canopy_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_brake_1_20260829004613336116_09d1b0f2",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_brake_1",
+      "claim_id": "claim_r2j_step_brake_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_brake_2_20260829004613352315_4e8620bf",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_brake_2",
+      "claim_id": "claim_r2j_step_brake_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_recline_1_20260829004613367078_d4573830",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_recline_1",
+      "claim_id": "claim_r2j_step_recline_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_recline_2_20260829004613382247_9f2f55e7",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_recline_2",
+      "claim_id": "claim_r2j_step_recline_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_belly_bar_1_20260829004613397580_2982e4ab",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_belly_bar_1",
+      "claim_id": "claim_r2j_step_belly_bar_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_belly_bar_2_20260829004613413606_eaac4f0a",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_belly_bar_2",
+      "claim_id": "claim_r2j_step_belly_bar_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_belly_bar_3_20260829004613431669_70b2a021",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_belly_bar_3",
+      "claim_id": "claim_r2j_step_belly_bar_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_care_inspection_20260829004613448586_632fa697",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_care_inspection",
+      "claim_id": "claim_r2j_care_inspection",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_care_sun_exposure_20260829004613464788_be51014f",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_care_sun_exposure",
+      "claim_id": "claim_r2j_care_sun_exposure",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_care_cup_holder_20260829004613479717_b8bc77d5",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_care_cup_holder",
+      "claim_id": "claim_r2j_care_cup_holder",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_footrest_1_20260829004613494119_1137f7fd",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_footrest_1",
+      "claim_id": "claim_r2j_step_footrest_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_footrest_2_20260829004613508922_dde7e5cb",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_footrest_2",
+      "claim_id": "claim_r2j_step_footrest_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_cup_holder_1_20260829004613524403_bc28481c",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_cup_holder_1",
+      "claim_id": "claim_r2j_step_cup_holder_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_cup_holder_2_20260829004613539333_4bea1bbb",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_cup_holder_2",
+      "claim_id": "claim_r2j_step_cup_holder_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_cup_holder_3_20260829004613555091_fa0620c5",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_cup_holder_3",
+      "claim_id": "claim_r2j_step_cup_holder_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_graco-ready2jet-2212125_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_care_wet_drying_20260829011303643725_2b04f355",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_care_wet_drying",
+      "claim_id": "claim_r2j_care_wet_drying",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_part_belly_bar_20260829011303658277_0bdbc167",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_part_belly_bar",
+      "claim_id": "claim_r2j_part_belly_bar",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_part_handle_lever_20260829011303670754_0ac6eca6",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_part_handle_lever",
+      "claim_id": "claim_r2j_part_handle_lever",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_part_thumb_switch_20260829011303684838_54354ae5",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_part_thumb_switch",
+      "claim_id": "claim_r2j_part_thumb_switch",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_limit_max_weight_20260829022455244902_8ab8faae",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_limit_max_weight",
+      "claim_id": "claim_r2j_limit_max_weight",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_limit_max_height_20260829022455257077_c584c97a",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_limit_max_height",
+      "claim_id": "claim_r2j_limit_max_height",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_unattended_20260829022455268871_f229111e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_unattended",
+      "claim_id": "claim_r2j_warning_unattended",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_seat_belt_20260829022455280811_f7892c09",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_seat_belt",
+      "claim_id": "claim_r2j_warning_seat_belt",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_brakes_loading_20260829022455293058_5ddd8ae7",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_brakes_loading",
+      "claim_id": "claim_r2j_warning_brakes_loading",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_dimension_basket_capacity_20260829022455304873_3e36f666",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_dimension_basket_capacity",
+      "claim_id": "claim_r2j_dimension_basket_capacity",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_basket_overload_20260829022455315593_dc200429",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_basket_overload",
+      "claim_id": "claim_r2j_warning_basket_overload",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_limit_cup_holder_weight_20260829022455325624_585ff625",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_limit_cup_holder_weight",
+      "claim_id": "claim_r2j_limit_cup_holder_weight",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the current scope or source binding does not fully support every field; correct and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_limit_single_occupant_20260829022455338482_a452bc30",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_limit_single_occupant",
+      "claim_id": "claim_r2j_limit_single_occupant",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_finger_entrapment_20260829022455349534_f042d53e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_finger_entrapment",
+      "claim_id": "claim_r2j_warning_finger_entrapment",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_strangulation_20260829022455362567_bf754310",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_strangulation",
+      "claim_id": "claim_r2j_warning_strangulation",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_stairs_20260829022455377796_bba5b0b5",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_stairs",
+      "claim_id": "claim_r2j_warning_stairs",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_walking_speed_20260829022455389234_169ade6f",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_walking_speed",
+      "claim_id": "claim_r2j_warning_walking_speed",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_tipping_handle_canopy_20260829022455400025_99295732",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_tipping_handle_canopy",
+      "claim_id": "claim_r2j_warning_tipping_handle_canopy",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_hot_liquids_20260829022455410096_30004840",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_hot_liquids",
+      "claim_id": "claim_r2j_warning_hot_liquids",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_basket_not_carrier_20260829022455420426_2248e2d1",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_basket_not_carrier",
+      "claim_id": "claim_r2j_warning_basket_not_carrier",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_basket_standing_20260829022455431135_7203463c",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_basket_standing",
+      "claim_id": "claim_r2j_warning_basket_standing",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_head_toward_footrest_20260829022455440776_15aa7ae5",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_head_toward_footrest",
+      "claim_id": "claim_r2j_warning_head_toward_footrest",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_not_a_toy_20260829022455453092_2afd6924",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_not_a_toy",
+      "claim_id": "claim_r2j_warning_not_a_toy",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_damaged_discontinue_20260829022455465501_09b82991",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_damaged_discontinue",
+      "claim_id": "claim_r2j_warning_damaged_discontinue",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_caregiver_assist_20260829022455476928_ce05ad44",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_caregiver_assist",
+      "claim_id": "claim_r2j_warning_caregiver_assist",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_adult_assembly_20260829022455487444_4430ae35",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_adult_assembly",
+      "claim_id": "claim_r2j_warning_adult_assembly",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_car_seat_other_brands_20260829022455498914_d59f65e5",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_car_seat_other_brands",
+      "claim_id": "claim_r2j_warning_car_seat_other_brands",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_car_seat_fall_hazard_20260829022455510977_8a98ee83",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_car_seat_fall_hazard",
+      "claim_id": "claim_r2j_warning_car_seat_fall_hazard",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_car_seat_harness_20260829022455523357_9dd05187",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_car_seat_harness",
+      "claim_id": "claim_r2j_warning_car_seat_harness",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_car_seat_read_manual_20260829022455535773_cf58ca44",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_car_seat_read_manual",
+      "claim_id": "claim_r2j_warning_car_seat_read_manual",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_zip_tie_20260829022455545907_3aec96a5",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_zip_tie",
+      "claim_id": "claim_r2j_warning_zip_tie",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the current scope or source binding does not fully support every field; correct and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_belly_bar_not_restraint_20260829022455556620_449904ab",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_belly_bar_not_restraint",
+      "claim_id": "claim_r2j_warning_belly_bar_not_restraint",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_apply_both_brakes_20260829022455569564_6cc5d6b5",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_apply_both_brakes",
+      "claim_id": "claim_r2j_warning_apply_both_brakes",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_recline_clearance_20260829022455581367_80786567",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_recline_clearance",
+      "claim_id": "claim_r2j_warning_recline_clearance",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_compat_graco_infant_car_seats_20260829022455591503_0a51f412",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_compat_graco_infant_car_seats",
+      "claim_id": "claim_r2j_compat_graco_infant_car_seats",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the current scope or source binding does not fully support every field; correct and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_part_click_connect_mounts_20260829022455602487_6ee752a1",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_part_click_connect_mounts",
+      "claim_id": "claim_r2j_part_click_connect_mounts",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_rear_wheels_1_20260829022455616740_0ee2a5e2",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_rear_wheels_1",
+      "claim_id": "claim_r2j_step_rear_wheels_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_rear_wheels_2_20260829022455629046_e778546c",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_rear_wheels_2",
+      "claim_id": "claim_r2j_step_rear_wheels_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_front_wheels_1_20260829022455641095_0b4d2ab3",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_front_wheels_1",
+      "claim_id": "claim_r2j_step_front_wheels_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_front_wheels_2_20260829022455654892_5407f7e1",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_front_wheels_2",
+      "claim_id": "claim_r2j_step_front_wheels_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_wheel_removal_1_20260829022455667126_0c7de528",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_wheel_removal_1",
+      "claim_id": "claim_r2j_step_wheel_removal_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_car_seat_1_20260829022455677374_2df7802a",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_car_seat_1",
+      "claim_id": "claim_r2j_step_car_seat_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_car_seat_2_20260829022455688430_805d1038",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_car_seat_2",
+      "claim_id": "claim_r2j_step_car_seat_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_car_seat_3_20260829022455699966_162b50d2",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_car_seat_3",
+      "claim_id": "claim_r2j_step_car_seat_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_car_seat_4_20260829022455710004_4d58fda1",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_car_seat_4",
+      "claim_id": "claim_r2j_step_car_seat_4",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_car_seat_5_20260829022455721465_ac70ce34",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_car_seat_5",
+      "claim_id": "claim_r2j_step_car_seat_5",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_harness_1_20260829022455733843_27b24b7d",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_harness_1",
+      "claim_id": "claim_r2j_step_harness_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_harness_2_20260829022455745050_c35ec24f",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_harness_2",
+      "claim_id": "claim_r2j_step_harness_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_care_beach_cleaning_20260829022455756318_960a6627",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_care_beach_cleaning",
+      "claim_id": "claim_r2j_care_beach_cleaning",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_harness_3pt_1_20260829022455768362_331caa17",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_harness_3pt_1",
+      "claim_id": "claim_r2j_step_harness_3pt_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_harness_3pt_2_20260829022455779776_4c0c0f63",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_harness_3pt_2",
+      "claim_id": "claim_r2j_step_harness_3pt_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_harness_3pt_3_20260829022455789931_918e669f",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_harness_3pt_3",
+      "claim_id": "claim_r2j_step_harness_3pt_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_harness_3pt_4_20260829022455801981_975e5fb0",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_harness_3pt_4",
+      "claim_id": "claim_r2j_step_harness_3pt_4",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_harness_3pt_5_20260829022455815570_97250e80",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_harness_3pt_5",
+      "claim_id": "claim_r2j_step_harness_3pt_5",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_harness_3pt_6_20260829022455827271_abda7fbf",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_harness_3pt_6",
+      "claim_id": "claim_r2j_step_harness_3pt_6",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_harness_height_1_20260829022455838934_b7e29c5c",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_harness_height_1",
+      "claim_id": "claim_r2j_step_harness_height_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_harness_height_2_20260829022455852483_c64362b7",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_harness_height_2",
+      "claim_id": "claim_r2j_step_harness_height_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_step_harness_height_3_20260829022455865487_89b01531",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_step_harness_height_3",
+      "claim_id": "claim_r2j_step_harness_height_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after every remaining Ready2Jet C2/C3 claim was checked against the manufacturer manual."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_care_wet_drying_20260830003704255361_a2952022",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_care_wet_drying",
+      "claim_id": "claim_r2j_care_wet_drying",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_r2j_care_wet_drying_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_compat_graco_infant_car_seats_20260830003704260145_947ac52e",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_compat_graco_infant_car_seats",
+      "claim_id": "claim_r2j_compat_graco_infant_car_seats",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_r2j_compat_graco_infant_car_seats_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_limit_cup_holder_weight_20260830003704263439_f50654b4",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_limit_cup_holder_weight",
+      "claim_id": "claim_r2j_limit_cup_holder_weight",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_r2j_limit_cup_holder_weight_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_part_belly_bar_20260830003704266608_e572ffa2",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_part_belly_bar",
+      "claim_id": "claim_r2j_part_belly_bar",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_r2j_part_belly_bar_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_part_handle_lever_20260830003704271841_17a28a7f",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_part_handle_lever",
+      "claim_id": "claim_r2j_part_handle_lever",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_r2j_part_handle_lever_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_part_thumb_switch_20260830003704275657_804d36b1",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_part_thumb_switch",
+      "claim_id": "claim_r2j_part_thumb_switch",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_r2j_part_thumb_switch_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_zip_tie_20260830003704278964_c11a8d68",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_zip_tie",
+      "claim_id": "claim_r2j_warning_zip_tie",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_r2j_warning_zip_tie_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_care_wet_drying_repair_20260829_20260830003704814364_24d89515",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_care_wet_drying_repair_20260829",
+      "claim_id": "claim_r2j_care_wet_drying_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_compat_graco_infant_car_seats_repair_20260829_20260830003704818550_44d9af21",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_compat_graco_infant_car_seats_repair_20260829",
+      "claim_id": "claim_r2j_compat_graco_infant_car_seats_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_limit_cup_holder_weight_repair_20260829_20260830003704824356_1559ba3a",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_limit_cup_holder_weight_repair_20260829",
+      "claim_id": "claim_r2j_limit_cup_holder_weight_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_part_belly_bar_repair_20260829_20260830003704828428_6259361e",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_part_belly_bar_repair_20260829",
+      "claim_id": "claim_r2j_part_belly_bar_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_part_handle_lever_repair_20260829_20260830003704832789_3709761f",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_part_handle_lever_repair_20260829",
+      "claim_id": "claim_r2j_part_handle_lever_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_part_thumb_switch_repair_20260829_20260830003704838476_007e441d",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_part_thumb_switch_repair_20260829",
+      "claim_id": "claim_r2j_part_thumb_switch_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_r2j_warning_zip_tie_repair_20260829_20260830003704843268_16967a9e",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_r2j_warning_zip_tie_repair_20260829",
+      "claim_id": "claim_r2j_warning_zip_tie_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
     }
   ]
 }

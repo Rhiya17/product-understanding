@@ -1,0 +1,61 @@
+{
+  "product": "bose",
+  "product_id": "bose-qc-ultra-headphones",
+  "measured_at": "2026-08-30T01:42:42.442125+00:00",
+  "source_glb": "poc-3d-static-twin/catalog-scans/bose-qc-ultra-headphones/pbr_model-zTFUED2CgtA628PGPOxHI_model.glb",
+  "source_glb_sha256": "604df8832e8c74ef040e5d7dd9d8c7acb07db08e9382208ad87b5e3a2630686c",
+  "source_mesh_analysis": "poc-3d-static-twin/catalog-scans/bose-qc-ultra-headphones/mesh-analysis.json",
+  "mesh_object_count": 1,
+  "committed_axis_aligned_extents_m_xyz": [
+    0.11063956469297409,
+    0.25115787982940674,
+    0.25
+  ],
+  "fresh_import_extents_m_xyz": [
+    0.11063956469297409,
+    0.25115787982940674,
+    0.25
+  ],
+  "fresh_vs_committed_error_percent_xyz": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "target_extents_m_xyz": [
+    0.04500880092382431,
+    0.15999460220336914,
+    0.20500339567661285
+  ],
+  "target_axis_semantics_xyz": [
+    "depth/thickness",
+    "width",
+    "height"
+  ],
+  "dimension_claim_ids_xyz": [
+    "src_specs_curated_v1",
+    "src_specs_curated_v1",
+    "src_specs_curated_v1"
+  ],
+  "scale_factors_xyz": [
+    0.4068056643009186,
+    0.6370279788970947,
+    0.8200135827064514
+  ],
+  "post_repair_extents_m_xyz": [
+    0.04500879719853401,
+    0.15999460220336914,
+    0.20500338077545166
+  ],
+  "post_repair_error_percent_xyz": [
+    8.276804140520932e-06,
+    0.0,
+    7.268738717554622e-06
+  ],
+  "worst_axis_error_percent": 8.276804140520932e-06,
+  "dimension_gate": "PASS",
+  "dimension_source_note": "The Bose pack has no dimension claims; targets cite the vault spec source src_specs_curated_v1 (specs/specs.md, 'Weight & dimensions'): \"Headphones: 1.772\" H x 6.299\" W x 8.071\" D (product page)\" = 0.04501 x 0.16000 x 0.20500 m. Axis mapping to scan X thickness / Y width / Z wearing height is INFERRED from the observed scan orientation. Provenance corrected 2026-08-29; previous citation of the weight claim was an error.",
+  "repaired_blend": "poc8/bose-repaired.blend",
+  "repaired_blend_sha256": "b9bc1c076279325ad725223bc8a720de9c902d47842b478d146d2a589dde8026",
+  "internal_only": true,
+  "approved_by": null
+}

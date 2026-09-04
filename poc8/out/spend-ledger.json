@@ -1,0 +1,108 @@
+{
+  "workorder": "docs/workorders/workorder-poc8-connection-scene.md",
+  "spend_ceiling_usd": 10.0,
+  "estimated_spend_usd": 0.69,
+  "remaining_ceiling_usd": 9.31,
+  "entries": [
+    {
+      "request_id": "01a0503f-08f6-79f3-bddd-bbb973f6549b",
+      "label": "gate1-attempt-1-bose",
+      "endpoint": "fal-ai/any-llm/vision",
+      "model": "qwen/qwen3-vl-235b-a22b-instruct",
+      "estimated_cost_usd": 0.01,
+      "submitted_at": "2026-08-30T01:18:23.507321+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-30T01:18:32.868787+00:00"
+    },
+    {
+      "request_id": "01a0503f-3192-75e3-8f43-5294798062bd",
+      "label": "gate1-attempt-1-macbook",
+      "endpoint": "fal-ai/any-llm/vision",
+      "model": "qwen/qwen3-vl-235b-a22b-instruct",
+      "estimated_cost_usd": 0.01,
+      "submitted_at": "2026-08-30T01:18:33.907100+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-30T01:18:40.045146+00:00"
+    },
+    {
+      "request_id": "01a0503f-4baf-7a10-b1ef-51e5a1a6bb98",
+      "label": "gate1-attempt-2-macbook",
+      "endpoint": "fal-ai/any-llm/vision",
+      "model": "qwen/qwen3-vl-235b-a22b-instruct",
+      "estimated_cost_usd": 0.01,
+      "submitted_at": "2026-08-30T01:18:40.587622+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-30T01:18:47.992913+00:00"
+    },
+    {
+      "request_id": "01a0504c-7e27-78b0-8a49-6c8c6c4a0c1a",
+      "label": "macbook-rescan-tripo-h31",
+      "endpoint": "tripo3d/h3.1/multiview-to-3d",
+      "model": "tripo3d/h3.1",
+      "estimated_cost_usd": 0.6,
+      "submitted_at": "2026-08-30T01:33:05.454265+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-30T01:36:13.064348+00:00"
+    },
+    {
+      "request_id": "01a05051-db64-7f22-938e-af169f672081",
+      "label": "gate1-attempt-1-bose",
+      "endpoint": "fal-ai/any-llm/vision",
+      "model": "qwen/qwen3-vl-235b-a22b-instruct",
+      "estimated_cost_usd": 0.01,
+      "submitted_at": "2026-08-30T01:38:57.000979+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-30T01:39:06.558224+00:00"
+    },
+    {
+      "request_id": "01a05052-031d-7e53-bb4e-f762f496b91b",
+      "label": "gate1-attempt-1-macbook",
+      "endpoint": "fal-ai/any-llm/vision",
+      "model": "qwen/qwen3-vl-235b-a22b-instruct",
+      "estimated_cost_usd": 0.01,
+      "submitted_at": "2026-08-30T01:39:07.174748+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-30T01:39:15.562101+00:00"
+    },
+    {
+      "request_id": "01a05052-266e-79f0-baae-7efc63b76572",
+      "label": "gate1-attempt-2-macbook",
+      "endpoint": "fal-ai/any-llm/vision",
+      "model": "qwen/qwen3-vl-235b-a22b-instruct",
+      "estimated_cost_usd": 0.01,
+      "submitted_at": "2026-08-30T01:39:16.212181+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-30T01:39:26.842970+00:00"
+    },
+    {
+      "request_id": "01a05055-8157-7112-86f4-c9668708bfe0",
+      "label": "gate1-attempt-1-bose",
+      "endpoint": "fal-ai/any-llm/vision",
+      "model": "qwen/qwen3-vl-235b-a22b-instruct",
+      "estimated_cost_usd": 0.01,
+      "submitted_at": "2026-08-30T01:42:56.090330+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-30T01:43:05.723794+00:00"
+    },
+    {
+      "request_id": "01a05055-a957-7ae1-bccf-f664632df1f1",
+      "label": "gate1-attempt-1-macbook",
+      "endpoint": "fal-ai/any-llm/vision",
+      "model": "qwen/qwen3-vl-235b-a22b-instruct",
+      "estimated_cost_usd": 0.01,
+      "submitted_at": "2026-08-30T01:43:06.329382+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-30T01:43:13.788416+00:00"
+    },
+    {
+      "request_id": "01a05055-c962-7523-9135-a4bac2573e43",
+      "label": "gate1-attempt-2-macbook",
+      "endpoint": "fal-ai/any-llm/vision",
+      "model": "qwen/qwen3-vl-235b-a22b-instruct",
+      "estimated_cost_usd": 0.01,
+      "submitted_at": "2026-08-30T01:43:14.532768+00:00",
+      "status": "completed",
+      "completed_at": "2026-08-30T01:43:22.860624+00:00"
+    }
+  ]
+}

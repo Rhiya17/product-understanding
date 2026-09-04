@@ -1,0 +1,30 @@
+{
+  "prepared_at": "2026-08-30T01:43:06.266245+00:00",
+  "endpoint": "fal-ai/any-llm/vision",
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "arguments": {
+    "model": "qwen/qwen3-vl-235b-a22b-instruct",
+    "prompt": "You are the strict Stage B gate for a product digital twin.\nImage 1 is an authoritative official product image. Image 2 is an INTERNAL-ONLY\ndeterministic render of a repaired Tripo3D scan. Judge the PRODUCT GEOMETRY and\nrecognizable identity, not background, lighting, watermark, camera crop, or\nthe render's missing presentation props. The official image establishes the right-side profile of the Apple MacBook Air 13-inch M3: a thin two-slab aluminum laptop with the single 3.5 mm jack on that right side. Reject detached debris, invented fins/callouts, extra ports, impossible stacking, or a shape that is not a credible MacBook Air. This is the first fixed-camera attempt.\n\nFail if the rendered object is not recognizably the same product/model family,\nif major proportions are implausible relative to Image 1, or if major parts are\nmissing/invented. Answer JSON only:\n{\n  \"recognizable_same_product\": {\"answer\":\"yes|no|unsure\",\"evidence\":\"...\"},\n  \"major_proportions_plausible\": {\"answer\":\"yes|no|unsure\",\"evidence\":\"...\"},\n  \"missing_or_invented_major_parts\": {\"answer\":\"yes|no|unsure\",\"evidence\":\"...\"},\n  \"verdict\":\"pass|fail\",\n  \"verdict_reason\":\"...\"\n}",
+    "image_urls": [
+      "https://v3b.fal.media/files/b/0aa85a6e/REAV1yGoWkZ3Ma5gEN9O-_macbook-right-side-open.png",
+      "https://v3b.fal.media/files/b/0aa85aaa/Brboj-eYZSGnVzM5u164y_macbook.png"
+    ],
+    "temperature": 0,
+    "max_tokens": 700
+  },
+  "inputs": [
+    {
+      "role": "official_ground_truth",
+      "path": "poc8/inputs/macbook-right-side-open.png",
+      "sha256": "d75a75d9d998ce363aa0adf0f696c2207038c56c21381db7e2dbc19b35a62a2e"
+    },
+    {
+      "role": "repaired_twin_render",
+      "path": "poc8/out/gate1/attempt-1/macbook.png",
+      "sha256": "33f5bac554ba2f5101e919ea4b42e0e097dd55115e46a36b6440052178bd1393"
+    }
+  ],
+  "estimated_cost_usd": 0.01,
+  "internal_only": true,
+  "approved_by": null
+}

@@ -1,8 +1,8 @@
 const form = document.querySelector("#answer-form");
 const questionInput = document.querySelector("#question");
 const productSelect = document.querySelector("#product");
-// MVP exception (owner decision 2026-08-27): unreviewed facts serve by
-// default, labeled. TODO: revert after the owner review pass.
+// Published-only is the safe default. Preview remains an explicit opt-in for
+// future owner review work.
 const publishedOnlyToggle = document.querySelector("#published-only");
 const reviewModeToggle = document.querySelector("#review-mode");
 const logMissesToggle = document.querySelector("#log-misses");
@@ -63,6 +63,12 @@ let activeStepIndex = 0;
 let procedureStatus = null;
 let currentPayload = null;
 let currentQuestion = "";
+let activeVideoPolls = [];
+
+function stopVideoPolls() {
+  activeVideoPolls.forEach((timer) => clearInterval(timer));
+  activeVideoPolls = [];
+}
 
 function element(tag, className, text) {
   const node = document.createElement(tag);
@@ -106,9 +112,42 @@ function mediaCaption(media) {
   return parts.join(" · ");
 }
 
+function isGeneratedProcedureVideo(media) {
+  return media.kind === "DERIVED_ASSET" && (
+    media.asset_type === "PROCEDURE_VIDEO_MP4" ||
+    String(media.label || "").startsWith("Generated ")
+  );
+}
+
+function mediaModality(media) {
+  return media.kind === "VIDEO_FILE" || media.kind === "VIDEO_URL" ||
+    isGeneratedProcedureVideo(media) ? "video" : "image";
+}
+
 function renderMedia(media) {
   const wrapper = element("figure", "media-item");
-  if (media.kind === "IMAGE" || media.kind === "DERIVED_ASSET") {
+  const isGeneratedVideo = isGeneratedProcedureVideo(media);
+  if (isGeneratedVideo) {
+    const frame = element("div", "media-frame generated-video-frame");
+    const video = element("video", "bound-video generated-video");
+    video.controls = true;
+    video.autoplay = true;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.setAttribute("muted", "");
+    video.playsInline = true;
+    video.preload = "auto";
+    if (media.poster_url) video.poster = media.poster_url;
+    video.addEventListener("canplay", () => {
+      video.play().catch(() => {
+        // The poster and controls remain available if autoplay is blocked.
+      });
+    }, { once: true });
+    video.src = media.url;
+    frame.append(video);
+    if (media.watermark) frame.append(element("span", "derived-watermark", media.watermark));
+    wrapper.append(frame);
+  } else if (media.kind === "IMAGE" || media.kind === "DERIVED_ASSET") {
     const frame = element("div", "media-frame");
     const image = element("img", "bound-image");
     image.src = media.url;
@@ -142,6 +181,65 @@ function renderMedia(media) {
   }
   wrapper.append(element("figcaption", "", mediaCaption(media)));
   return wrapper;
+}
+
+const VIDEO_POLL_INTERVAL_MS = 2500;
+const VIDEO_POLL_MAX_ATTEMPTS = 240; // ~10 minutes; model generation can be slow
+
+function pollVideoJob(job, slot) {
+  let attempts = 0;
+  const timer = setInterval(async () => {
+    attempts += 1;
+    if (attempts > VIDEO_POLL_MAX_ATTEMPTS) {
+      clearInterval(timer);
+      renderVideoSlotFailure(slot);
+      return;
+    }
+    try {
+      const response = await fetch(job.poll_url);
+      if (!response.ok) throw new Error("poll failed");
+      const payload = await response.json();
+      if (payload.state === "ready" && payload.media) {
+        clearInterval(timer);
+        slot.classList.remove("waiting");
+        slot.replaceChildren(renderMedia(payload.media));
+      } else if (payload.state === "failed") {
+        clearInterval(timer);
+        renderVideoSlotFailure(slot);
+      }
+    } catch {
+      // Transient poll errors are retried until the attempt cap.
+    }
+  }, VIDEO_POLL_INTERVAL_MS);
+  activeVideoPolls.push(timer);
+}
+
+function renderVideoSlotFailure(slot) {
+  slot.classList.remove("waiting");
+  slot.classList.add("failed");
+  slot.replaceChildren(element(
+    "p", "video-slot-sub",
+    "No walkthrough video could be generated for this procedure yet."));
+}
+
+function renderVideoSlot(videoJob) {
+  const slot = element("div", "video-slot waiting");
+  slot.setAttribute("role", "status");
+  const shimmer = element("div", "video-shimmer");
+  shimmer.append(element("span", "video-shimmer-icon", "▶"));
+  slot.append(shimmer);
+  const copy = element("div", "video-slot-copy");
+  copy.append(element("p", "video-slot-title", "Video generating…"));
+  copy.append(element(
+    "p", "video-slot-sub",
+    "The written answer is ready now. A real demonstration video is being generated in the background and will replace this placeholder automatically."));
+  slot.append(copy);
+  if (videoJob.state === "failed") {
+    renderVideoSlotFailure(slot);
+  } else {
+    pollVideoJob(videoJob, slot);
+  }
+  return slot;
 }
 
 function renderClaimDetails(result) {
@@ -235,7 +333,7 @@ async function openProcedure(productDir, procedure) {
   await showProcedure();
 }
 
-function renderResult(result, renderedMedia) {
+function renderResult(result, renderedMedia, presentation) {
   const unpublished = result.status !== "PUBLISHED";
   const card = element("article", `result-card${unpublished ? " unpublished" : ""}`);
   const topLine = element("div", "card-topline");
@@ -247,7 +345,40 @@ function renderResult(result, renderedMedia) {
     ? `Step ${result.step_number} of ${readableName(result.procedure)}`
     : (result.type === "PROCEDURE" ? readableName(result.procedure) : readableName(result.predicate));
   card.append(element("h2", "predicate", heading));
-  card.append(element("p", "answer", result.display_text || result.answer));
+
+  const unseenMedia = (result.media || []).filter((media) => {
+    if (renderedMedia.has(media.id)) return false;
+    renderedMedia.add(media.id);
+    return true;
+  });
+  // The presentation plan's primary modality leads inside the media panel.
+  const primaryModality = presentation &&
+    ["image", "video"].includes(presentation.primary_modality)
+    ? presentation.primary_modality : "video";
+  const orderedMedia = [...unseenMedia].sort((left, right) =>
+    Number(mediaModality(right) === primaryModality) -
+    Number(mediaModality(left) === primaryModality));
+
+  // Two fixed zones: the media panel (walkthrough video or its placeholder,
+  // then supporting media) beside the always-available text panel.
+  const columns = element("div", "card-columns");
+  const mediaPanel = element("div", "card-media");
+  const textPanel = element("div", "card-body");
+  columns.append(mediaPanel, textPanel);
+
+  const hasGeneratedWalkthrough = unseenMedia.some(isGeneratedProcedureVideo);
+  if (result.video_job && !unseenMedia.some((media) => mediaModality(media) === "video")) {
+    mediaPanel.append(element("h3", "panel-title", "Generated walkthrough"));
+    mediaPanel.append(renderVideoSlot(result.video_job));
+  } else if (unseenMedia.length) {
+    mediaPanel.append(element("h3", "panel-title", hasGeneratedWalkthrough
+      ? "Generated walkthrough"
+      : "Evidence-linked media"));
+  }
+  orderedMedia.forEach((media) => mediaPanel.append(renderMedia(media)));
+  if (!mediaPanel.childElementCount) card.classList.add("no-media");
+
+  textPanel.append(element("p", "answer", result.display_text || result.answer));
 
   if (result.steps && result.steps.length) {
     const stepsBox = element("ol", "procedure-steps");
@@ -265,41 +396,30 @@ function renderResult(result, renderedMedia) {
       }
       stepsBox.append(item);
     });
-    card.append(stepsBox);
+    textPanel.append(stepsBox);
   }
 
   if (result.type === "STEP" && result.procedure) {
     const procedureButton = element("button", "procedure-link", "View full ordered procedure");
     procedureButton.type = "button";
     procedureButton.addEventListener("click", () => openProcedure(result.product_dir, result.procedure));
-    card.append(procedureButton);
+    textPanel.append(procedureButton);
   }
 
   if (result.citations.length) {
     const citations = element("div", "citations");
     citations.append(element("h3", "", "Source evidence"));
     result.citations.forEach((citation) => citations.append(renderCitation(citation)));
-    card.append(citations);
+    textPanel.append(citations);
   }
 
-  const unseenMedia = (result.media || []).filter((media) => {
-    if (renderedMedia.has(media.id)) return false;
-    renderedMedia.add(media.id);
-    return true;
-  });
-  if (unseenMedia.length) {
-    const mediaSection = element("div", "media-section");
-    mediaSection.append(element("h3", "", "Evidence-linked media"));
-    unseenMedia.forEach((media) => mediaSection.append(renderMedia(media)));
-    card.append(mediaSection);
-  }
-
-  card.append(renderClaimDetails(result));
+  textPanel.append(renderClaimDetails(result));
   if (reviewModeToggle.checked && unpublished && !result.claim_id.startsWith("procedure:")) {
-    card.append(reviewControls(result.product_dir, result.claim_id, result.tier));
+    textPanel.append(reviewControls(result.product_dir, result.claim_id, result.tier));
   }
   const feedback = renderFeedback(result);
-  if (feedback) card.append(feedback);
+  if (feedback) textPanel.append(feedback);
+  card.append(columns);
   return card;
 }
 
@@ -343,7 +463,25 @@ function renderClarification(clarify) {
   clarifyBox.hidden = false;
 }
 
+function resultsForDisplay(payload) {
+  const results = [...payload.results];
+  const mixedConnectionQuestion = /\bwir+ed\b/i.test(currentQuestion) &&
+    /\bbluetooth\b/i.test(currentQuestion);
+  if (mixedConnectionQuestion && results.some((result) =>
+    result.procedure === "connect_wired_or_bluetooth_device")) {
+    return results.filter((result) =>
+      result.procedure === "connect_wired_or_bluetooth_device");
+  }
+  const proceduralQuestion = /\b(how do i|how to|show me how|steps? to)\b/i.test(currentQuestion);
+  if (proceduralQuestion && results.some((result) => result.type === "PROCEDURE")) {
+    results.sort((left, right) =>
+      Number(right.type === "PROCEDURE") - Number(left.type === "PROCEDURE"));
+  }
+  return results;
+}
+
 function renderPayload(payload) {
+  stopVideoPolls();
   resultsRegion.replaceChildren();
   clarifyBox.hidden = true;
   emptyState.hidden = true;
@@ -363,7 +501,8 @@ function renderPayload(payload) {
     emptyState.hidden = false;
   } else {
     const renderedMedia = new Set();
-    payload.results.forEach((result) => resultsRegion.append(renderResult(result, renderedMedia)));
+    resultsForDisplay(payload).forEach((result) =>
+      resultsRegion.append(renderResult(result, renderedMedia, payload.presentation)));
   }
   renderNotServed(payload.not_served, !publishedOnlyToggle.checked);
 }
@@ -502,6 +641,7 @@ function enterSearchLayout() {
 async function runSearch() {
   if (!questionInput.value.trim()) return;
   enterSearchLayout();
+  stopVideoPolls();
   errorBox.hidden = true;
   notServedBox.hidden = true;
   resultsRegion.replaceChildren();

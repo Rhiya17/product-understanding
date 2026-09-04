@@ -1,0 +1,20 @@
+{
+  "attempt": 2,
+  "product": "macbook",
+  "rendered_at": "2026-08-30T01:16:41.204891+00:00",
+  "render": "poc8/out/gate1/attempt-2/macbook.png",
+  "render_sha256": "59a977a699d80817f63827cfa234fcdba45f8858c56e18faee73f713f93fda99",
+  "official_image": "source-vault/apple-macbook-air-13-m3/images/guide-right-side-headphone-jack.png",
+  "official_image_sha256": "b8680a9cd16337fb3fc0f1d717afe90bad1dd441f9526f876413bfe575f50006",
+  "camera": {
+    "direction": [
+      0.0,
+      1.0,
+      0.02
+    ],
+    "lens_mm": 85.0
+  },
+  "watermark": "INTERNAL ONLY \u2014 TWIN RENDER",
+  "internal_only": true,
+  "approved_by": null
+}

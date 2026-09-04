@@ -1,0 +1,136 @@
+{
+  "stage": "B",
+  "generated_at": "2026-08-30T01:16:41.211367+00:00",
+  "blender_version": "5.2.0 LTS",
+  "products": [
+    {
+      "product": "bose",
+      "product_id": "bose-qc-ultra-headphones",
+      "measured_at": "2026-08-30T01:16:36.666047+00:00",
+      "source_glb": "poc-3d-static-twin/catalog-scans/bose-qc-ultra-headphones/pbr_model-zTFUED2CgtA628PGPOxHI_model.glb",
+      "source_glb_sha256": "604df8832e8c74ef040e5d7dd9d8c7acb07db08e9382208ad87b5e3a2630686c",
+      "source_mesh_analysis": "poc-3d-static-twin/catalog-scans/bose-qc-ultra-headphones/mesh-analysis.json",
+      "mesh_object_count": 1,
+      "committed_axis_aligned_extents_m_xyz": [
+        0.11063956469297409,
+        0.25115787982940674,
+        0.25
+      ],
+      "fresh_import_extents_m_xyz": [
+        0.11063956469297409,
+        0.25115787982940674,
+        0.25
+      ],
+      "fresh_vs_committed_error_percent_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_extents_m_xyz": [
+        0.04500880092382431,
+        0.15999460220336914,
+        0.20500339567661285
+      ],
+      "target_axis_semantics_xyz": [
+        "depth/thickness",
+        "width",
+        "height"
+      ],
+      "dimension_claim_ids_xyz": [
+        "claim_bqcu2_spec_headphone_weight_1",
+        "claim_bqcu2_spec_headphone_weight_1",
+        "claim_bqcu2_spec_headphone_weight_1"
+      ],
+      "scale_factors_xyz": [
+        0.4068056643009186,
+        0.6370279788970947,
+        0.8200135827064514
+      ],
+      "post_repair_extents_m_xyz": [
+        0.04500879719853401,
+        0.15999460220336914,
+        0.20500338077545166
+      ],
+      "post_repair_error_percent_xyz": [
+        8.276804140520932e-06,
+        0.0,
+        7.268738717554622e-06
+      ],
+      "worst_axis_error_percent": 8.276804140520932e-06,
+      "dimension_gate": "PASS",
+      "dimension_source_note": "Manufacturer product-details quote: Headphone 1.772 in H x 6.299 in W x 8.071 in D; mapped to scan X thickness, Y width, Z wearing height from observed orientation.",
+      "repaired_blend": "poc8/bose-repaired.blend",
+      "repaired_blend_sha256": "235b36ebf65a4d6e5dea14a352f85bca7a0898addfbf9ba8ca444eac52b453b5",
+      "internal_only": true,
+      "approved_by": null
+    },
+    {
+      "product": "macbook",
+      "product_id": "apple-macbook-air-13-m3",
+      "measured_at": "2026-08-30T01:16:39.173539+00:00",
+      "source_glb": "poc-3d-static-twin/catalog-scans/apple-macbook-air-13-m3/pbr_model-wTBg81hlp4aYRYEHUDwqP_model.glb",
+      "source_glb_sha256": "33e1b5c60298c66f8d9e017c24c010456c86373e1cb8b009fa0bf83796e3bb75",
+      "source_mesh_analysis": "poc-3d-static-twin/catalog-scans/apple-macbook-air-13-m3/mesh-analysis.json",
+      "mesh_object_count": 1,
+      "committed_axis_aligned_extents_m_xyz": [
+        6.243679046630859,
+        2.4333465099334717,
+        1.0
+      ],
+      "fresh_import_extents_m_xyz": [
+        6.243679046630859,
+        2.4333465099334717,
+        1.0
+      ],
+      "fresh_vs_committed_error_percent_xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "target_extents_m_xyz": [
+        0.30410000681877136,
+        0.2150000035762787,
+        0.011300000362098217
+      ],
+      "target_axis_semantics_xyz": [
+        "width",
+        "depth",
+        "closed height"
+      ],
+      "dimension_claim_ids_xyz": [
+        "claim_mba_spec_width",
+        "claim_mba_spec_depth",
+        "claim_mba_spec_height"
+      ],
+      "scale_factors_xyz": [
+        0.04870525747537613,
+        0.08835569024085999,
+        0.011300000362098217
+      ],
+      "post_repair_extents_m_xyz": [
+        0.30410000681877136,
+        0.2150000035762787,
+        0.011299999430775642
+      ],
+      "post_repair_error_percent_xyz": [
+        0.0,
+        0.0,
+        8.24179243161146e-06
+      ],
+      "worst_axis_error_percent": 8.24179243161146e-06,
+      "dimension_gate": "PASS",
+      "dimension_source_note": "Manufacturer claims 30.41 cm width, 21.5 cm depth, 1.13 cm closed height. The scan appears open/ambiguous, so Z scaling is an explicitly recorded state mismatch required by the work order.",
+      "repaired_blend": "poc8/macbook-repaired.blend",
+      "repaired_blend_sha256": "f4e384a4070bd3d52b176c2a88780efcf3082ebae38bb632d0430829f310e76d",
+      "internal_only": true,
+      "approved_by": null
+    }
+  ],
+  "dimension_gate_all_pass": true,
+  "identity_gate_status": "FAIL",
+  "gate1_status": "FAIL",
+  "next_step": "STOP-AND-REPORT: one or both twins need a new scan; no connection scene may be authored from these twins.",
+  "internal_only": true,
+  "approved_by": null,
+  "gate1_verdict": "poc8/out/gate1/gate1-verdict.json"
+}

@@ -52,6 +52,8 @@ SYNONYMS = {
     "expire": "expiration", "expires": "expiration", "expiry": "expiration",
     "looks": "dimensions", "look": "dimensions", "appearance": "dimensions",
     "pairing": "pair", "paired": "pair",
+    "wirred": "wired", "wireed": "wired", "cable": "wired",
+    "cabled": "wired", "cables": "wired",
 }
 
 PREDICATE_LABELS = {
@@ -61,6 +63,18 @@ PREDICATE_LABELS = {
     "product_dimensions": "Product dimensions",
     "procedure_step": "Procedure step",
 }
+
+PROCEDURE_SUMMARIES = {
+    "connect_wired_or_bluetooth_device": (
+        "Wired and Bluetooth are different connection methods. "
+        "Choose the cable or wireless path below."
+    ),
+}
+
+
+def canonical_procedure_id(value):
+    """Expose a stable procedure ID for append-only verified revisions."""
+    return re.sub(r"_verified_\d{8}$", "", str(value or ""))
 
 SOURCE_TYPE_LABELS = {
     "MANUAL_PDF": "owner's manual",
@@ -387,7 +401,7 @@ def search(question, packs_root=PACKS_ROOT, vault_root=VAULT_ROOT,
                 "claim_id": claim["claim_id"],
                 "tier": claim.get("consequence_ceiling"),
                 "type": claim.get("type"),
-                "procedure": (obj.get("procedure")
+                "procedure": (canonical_procedure_id(obj.get("procedure"))
                               if claim.get("type") == "STEP" else None),
                 "predicate": claim.get("predicate"),
                 "answer": display_text(claim),
@@ -401,9 +415,38 @@ def search(question, packs_root=PACKS_ROOT, vault_root=VAULT_ROOT,
                     **sources.get(binding.get("source_id"), {}),
                 } for binding in claim.get("source_bindings", [])],
             })
-        results.extend(compose_procedures(
+        product_results = compose_procedures(
             product_rows, product, claims, dispositions, alarms, wanted,
-            sources))
+            sources)
+        if "wired" not in set(all_tokens):
+            product_results = [
+                row for row in product_results
+                if row.get("procedure") !=
+                "connect_wired_or_bluetooth_device"
+            ]
+        # A direct "how do I" request with a complete procedure should lead
+        # with that procedure, not a same-keyword specification such as
+        # "Bluetooth version". Keep standalone STEP matches as useful
+        # fallbacks when the procedure cannot be composed.
+        procedural_question = bool(re.search(
+            r"\b(how do i|how to|show me how|steps? to)\b", question.lower()))
+        if procedural_question and any(
+                row.get("type") == "PROCEDURE" for row in product_results):
+            product_results = [
+                row for row in product_results
+                if row.get("type") in {"PROCEDURE", "STEP"}
+            ]
+        mixed_connection_question = {"wired", "bluetooth"}.issubset(
+            set(all_tokens))
+        if mixed_connection_question and any(
+                row.get("procedure") == "connect_wired_or_bluetooth_device"
+                for row in product_results):
+            product_results = [
+                row for row in product_results
+                if row.get("procedure") ==
+                "connect_wired_or_bluetooth_device"
+            ]
+        results.extend(product_results)
     results.sort(key=lambda row: (-row["score"], row["claim_id"]))
     return results[:top], hidden
 
@@ -432,7 +475,8 @@ def compose_procedures(rows, product, claims, dispositions, alarms, wanted,
         for claim in claims:
             obj = claim.get("object") if isinstance(claim.get("object"),
                                                     dict) else {}
-            if claim.get("type") != "STEP" or obj.get("procedure") != procedure:
+            if (claim.get("type") != "STEP"
+                    or canonical_procedure_id(obj.get("procedure")) != procedure):
                 continue
             status = claim_status(claim["claim_id"], dispositions, alarms)
             if status not in wanted:
@@ -454,6 +498,9 @@ def compose_procedures(rows, product, claims, dispositions, alarms, wanted,
         tiers = [step["tier"] for step in steps if step["tier"]]
         statuses = {step["status"] for step in steps}
         absorbed.update(member["claim_id"] for member in members)
+        summary = PROCEDURE_SUMMARIES.get(
+            procedure,
+            f"{readable_label(procedure)} has {len(steps)} documented steps.")
         composed.append({
             # Rank the assembled procedure above its own fragments.
             "score": max(member["score"] for member in members) + 1.0,
@@ -466,8 +513,8 @@ def compose_procedures(rows, product, claims, dispositions, alarms, wanted,
             "type": "PROCEDURE",
             "procedure": procedure,
             "predicate": procedure,
-            "answer": f"{readable_label(procedure)} has {len(steps)} documented steps.",
-            "display_text": f"{readable_label(procedure)} has {len(steps)} documented steps.",
+            "answer": summary,
+            "display_text": summary,
             "raw_answer": f"{len(steps)} documented steps",
             "steps": steps,
             "citations": [],

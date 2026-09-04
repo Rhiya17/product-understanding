@@ -3,13 +3,16 @@ import json
 import os
 import struct
 import threading
+import time
 from contextlib import contextmanager
 from pathlib import Path
+from types import SimpleNamespace
 from urllib.error import HTTPError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 from app import server
+from app.video_jobs import VideoJobManager
 
 
 FIXTURE_PDF = Path(__file__).resolve().parent / "fixtures" / "manual-fixture.pdf"
@@ -215,13 +218,17 @@ def build_fixture(tmp_path, approve_media=False, include_derived=False):
 
 @contextmanager
 def running_server(tmp_path, approve_media=False, yield_roots=False,
-                   reviewer=None, feedback_path=None, include_derived=False):
+                   reviewer=None, feedback_path=None, include_derived=False,
+                   luna_planner=None, video_jobs=None):
     packs, vault = build_fixture(
         tmp_path, approve_media=approve_media,
         include_derived=include_derived)
+    if video_jobs is not None:
+        video_jobs = video_jobs(packs)
     httpd = server.create_server(
         0, packs, vault, tmp_path / "page-cache", reviewer=reviewer,
-        feedback_path=feedback_path)
+        feedback_path=feedback_path, luna_planner=luna_planner,
+        video_jobs=video_jobs)
     thread = threading.Thread(target=httpd.serve_forever, daemon=True)
     thread.start()
     try:
@@ -499,20 +506,16 @@ def test_page_image_route_refuses_tampered_pdf(tmp_path):
             raise AssertionError("tampered PDF unexpectedly rendered")
 
 
-def test_default_serving_includes_labeled_candidates_mvp_exception(tmp_path):
-    # Owner decision 2026-08-27 (MVP exception): with no preview param, the
-    # API serves CANDIDATE facts so the demo answers before the review pass.
-    # TODO: when the owner review pass promotes the catalog, revert the
-    # server default to published-only and update this test.
+def test_default_serving_is_published_only(tmp_path):
     with running_server(tmp_path) as base_url:
         _, payload = get_json(base_url, "/api/answer", {
             "q": "acme widget noise and weight", "top": 20,
         })
     statuses = {row["claim_id"]: row["status"] for row in payload["results"]}
-    assert statuses.get("claim_prod_acme_noise") == "CANDIDATE"
-    assert "CANDIDATE" in statuses.values() and "PUBLISHED" in statuses.values()
-    # The rejected claim (claims[2] in the fixture) must stay out even now.
-    assert all(row["status"] != "REJECTED" for row in payload["results"])
+    assert statuses.get("claim_prod_acme_weight") == "PUBLISHED"
+    assert "claim_prod_acme_noise" not in statuses
+    assert set(statuses.values()) == {"PUBLISHED"}
+    assert payload["not_served"]["CANDIDATE"] >= 1
 
 
 def test_owner_review_api_appends_approve_and_reject_and_survives_restart(tmp_path):
@@ -672,3 +675,227 @@ def test_tied_category_requires_clarification_but_named_product_does_not(tmp_pat
     assert {row["product_dir"] for row in named["results"]} == {
         "acme-widget-9000",
     }
+
+
+def test_real_macbook_pairing_question_returns_generated_walkthrough(tmp_path):
+    httpd = server.create_server(0, cache_root=tmp_path / "cache")
+    thread = threading.Thread(target=httpd.serve_forever, daemon=True)
+    thread.start()
+    try:
+        base_url = f"http://127.0.0.1:{httpd.server_port}"
+        _, payload = get_json(base_url, "/api/answer", {
+            "q": "How do I pair a Bluetooth device with the MacBook Air?",
+            "preview": 1,
+            "product": "apple-macbook-air-13-m3",
+            "top": 10,
+        })
+        result = payload["results"][0]
+        assert result["type"] == "PROCEDURE"
+        assert result["procedure"] == "pair_bluetooth_device"
+        assert [step["step_number"] for step in result["steps"]] == [1, 2, 3]
+        generated = next(
+            media for media in result["media"]
+            if media.get("asset_type") == "PROCEDURE_VIDEO_MP4")
+        assert generated["kind"] == "DERIVED_ASSET"
+        assert generated["poster_url"]
+        with urlopen(f"{base_url}{generated['url']}", timeout=3) as response:
+            assert response.headers["Content-Type"] == "video/mp4"
+            assert b"ftyp" in response.read(64)
+        with urlopen(f"{base_url}{generated['poster_url']}", timeout=3) as response:
+            assert response.headers["Content-Type"] == "image/png"
+            assert response.read(8) == b"\x89PNG\r\n\x1a\n"
+    finally:
+        httpd.shutdown()
+        httpd.server_close()
+        thread.join(timeout=2)
+
+
+def test_mixed_wired_bluetooth_question_gets_distinct_routing_video(tmp_path):
+    httpd = server.create_server(0, cache_root=tmp_path / "cache")
+    thread = threading.Thread(target=httpd.serve_forever, daemon=True)
+    thread.start()
+    try:
+        base_url = f"http://127.0.0.1:{httpd.server_port}"
+        for spelling in ("wired", "wirred"):
+            _, payload = get_json(base_url, "/api/answer", {
+                "q": (f"How do I connect a {spelling} Bluetooth device "
+                      "with the MacBook Air?"),
+                "preview": 1,
+                "product": "apple-macbook-air-13-m3",
+                "top": 10,
+            })
+            assert len(payload["results"]) == 1
+            result = payload["results"][0]
+            assert result["procedure"] == "connect_wired_or_bluetooth_device"
+            assert result["display_text"].startswith(
+                "Wired and Bluetooth are different connection methods.")
+            generated = result["media"][0]
+            assert generated["label"] == (
+                "Generated wired versus Bluetooth connection walkthrough")
+            assert "wired_vs_bluetooth" in generated["id"]
+    finally:
+        httpd.shutdown()
+        httpd.server_close()
+        thread.join(timeout=2)
+
+
+def test_luna_routes_to_documented_procedure_then_composes_eligible_media(
+        tmp_path):
+    class ScriptedResponses:
+        def __init__(self):
+            self.calls = []
+
+        def create(self, **kwargs):
+            self.calls.append(kwargs)
+            usage = SimpleNamespace(
+                input_tokens=10, output_tokens=5, total_tokens=15)
+            if "tools" in kwargs:
+                return SimpleNamespace(
+                    id="resp_intent",
+                    usage=usage,
+                    output=[SimpleNamespace(
+                        type="function_call",
+                        name="show_procedure",
+                        call_id="call_intent",
+                        arguments=json.dumps({
+                            "product_id": "acme-widget-9000",
+                            "normalized_question": "Show calibration.",
+                            "requested_modalities": ["image"],
+                            "excluded_modalities": ["video"],
+                            "reason_code": "EXACT_PROCEDURE",
+                            "confidence": 0.95,
+                            "procedure_id": "calibrate_widget",
+                        }),
+                    )],
+                )
+            return SimpleNamespace(
+                id="resp_composition",
+                usage=usage,
+                output_text=json.dumps({
+                    "primary_modality": "image",
+                    "supplemental_modalities": ["text"],
+                    "asset_ids": ["mb_prod_acme_manual_page"],
+                    "reason_code": "STEPS_BENEFIT_FROM_MANUAL_IMAGE",
+                    "confidence": 0.92,
+                }),
+            )
+
+    responses = ScriptedResponses()
+    planner = server.LunaPlanner(
+        client=SimpleNamespace(responses=responses))
+    with running_server(tmp_path, luna_planner=planner) as base_url:
+        _, payload = get_json(base_url, "/api/answer", {
+            "q": "Please guide me through it visually, without video.",
+            "product": "acme-widget-9000",
+            "preview": 1,
+            "top": 10,
+        })
+
+    assert len(responses.calls) == 2
+    assert payload["planning"]["requested_tool"] == "show_procedure"
+    assert payload["planning"]["executed_tool"] == "show_procedure"
+    assert payload["planning"]["intent"]["status"] == "luna"
+    assert payload["planning"]["composition"]["status"] == "luna"
+    assert payload["presentation"]["primary_modality"] == "image"
+    assert payload["results"][0]["procedure"] == "calibrate_widget"
+    assert [media["id"] for media in payload["results"][0]["media"]] == [
+        "mb_prod_acme_manual_page",
+    ]
+
+
+def _fake_video_generator(calls=None):
+    def generate(product_label, procedure, steps, output, poster,
+                 reference_image=None, product_dir=None):
+        if calls is not None:
+            calls.append(procedure)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_bytes(b"fake generated mp4")
+        poster.write_bytes(b"fake generated poster")
+    return generate
+
+
+def _poll_video_status(base_url, poll_url, timeout=5.0):
+    deadline = time.monotonic() + timeout
+    while time.monotonic() < deadline:
+        with urlopen(f"{base_url}{poll_url}", timeout=2) as response:
+            payload = json.loads(response.read())
+        if payload["state"] in {"ready", "failed"}:
+            return payload
+        time.sleep(0.05)
+    raise AssertionError(f"video job never finished: {payload}")
+
+
+def test_procedure_answer_enqueues_video_and_serves_it_when_ready(tmp_path):
+    factory = lambda packs: VideoJobManager(  # noqa: E731
+        packs, generator=_fake_video_generator())
+    with running_server(tmp_path, video_jobs=factory) as base_url:
+        _, payload = get_json(base_url, "/api/answer", {
+            "q": "acme calibration panel button", "preview": 1, "top": 10,
+        })
+        procedure_row = next(row for row in payload["results"]
+                             if row["type"] == "PROCEDURE")
+        job = procedure_row["video_job"]
+        assert job["state"] in {"queued", "running", "ready"}
+        assert job["poll_url"].startswith("/api/video-status?job=")
+
+        status = _poll_video_status(base_url, job["poll_url"])
+        assert status["state"] == "ready"
+        media = status["media"]
+        assert media["kind"] == "DERIVED_ASSET"
+        assert media["asset_type"] == "PROCEDURE_VIDEO_MP4"
+        assert media["awaiting_approval"] is True
+        assert media["watermark"].startswith("INTERNAL ONLY")
+        assert media["poster_url"]
+        with urlopen(f"{base_url}{media['url']}", timeout=2) as response:
+            assert response.read() == b"fake generated mp4"
+        with urlopen(f"{base_url}{media['poster_url']}", timeout=2) as response:
+            assert response.read() == b"fake generated poster"
+
+        # A repeat question reuses the finished job and now carries the
+        # bound video directly, so no placeholder is attached.
+        _, repeat = get_json(base_url, "/api/answer", {
+            "q": "acme calibration panel button", "preview": 1, "top": 10,
+        })
+        repeat_row = next(row for row in repeat["results"]
+                          if row["type"] == "PROCEDURE")
+        assert "video_job" not in repeat_row
+        assert any(item["asset_type"] == "PROCEDURE_VIDEO_MP4"
+                   for item in repeat_row["media"])
+
+
+def test_published_only_mode_never_enqueues_video_generation(tmp_path):
+    calls = []
+    factory = lambda packs: VideoJobManager(  # noqa: E731
+        packs, generator=_fake_video_generator(calls))
+    with running_server(tmp_path, video_jobs=factory) as base_url:
+        _, payload = get_json(base_url, "/api/answer", {
+            "q": "acme calibration panel button", "preview": 0, "top": 10,
+        })
+    assert calls == []
+    assert all("video_job" not in row for row in payload["results"])
+
+
+def test_video_status_validates_job_parameter(tmp_path):
+    with running_server(tmp_path) as base_url:
+        try:
+            get_json(base_url, "/api/video-status", {"job": "vidjob_unknown"})
+            raise AssertionError("expected 404")
+        except HTTPError as error:
+            assert error.code == 404
+        try:
+            get_json(base_url, "/api/video-status", {"job": ""})
+            raise AssertionError("expected 400")
+        except HTTPError as error:
+            assert error.code == 400
+
+
+def test_grounded_default_attaches_no_video_job_without_keyframes(tmp_path,
+                                                                  monkeypatch):
+    monkeypatch.delenv("SHOWME_VIDEO_RENDERER", raising=False)
+    with running_server(tmp_path) as base_url:
+        _, payload = get_json(base_url, "/api/answer", {
+            "q": "acme calibration panel button", "preview": 1, "top": 10,
+        })
+    procedure_row = next(row for row in payload["results"]
+                         if row["type"] == "PROCEDURE")
+    assert "video_job" not in procedure_row

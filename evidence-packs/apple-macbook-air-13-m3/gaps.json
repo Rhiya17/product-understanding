@@ -20,15 +20,11 @@
       "claim_mba_spec_microphone_array",
       "claim_mba_spec_spatial_audio"
     ],
-    "bt_pairing_steps": []
+    "bt_pairing_steps": [
+      "claim_mba_step_bluetooth_pairing_1",
+      "claim_mba_step_bluetooth_pairing_2",
+      "claim_mba_step_bluetooth_pairing_3"
+    ]
   },
-  "gaps": [
-    {
-      "gap_id": "gap_bt_pairing_1",
-      "kind": "SOURCE_MISSING",
-      "waives": ["checklist:bt_pairing_steps"],
-      "reason": "The Bluetooth pairing guide source (src_bluetooth_pairing_guide, 'Connect Bluetooth devices to your Mac', support.apple.com/guide/mac-help/blth1004/mac) has local_path null — no local capture exists. No other vault capture contains the pairing steps: ports-guide.md and videos/video-sources.md record only the guide URL, and essentials-guide-note.md is an availability note. video-sources.md also confirms Apple published no official pairing video. Writing STEP claims against a URL-only source would be unverifiable; recorded as a gap instead.",
-      "closes_when": "A verbatim capture of https://support.apple.com/guide/mac-help/blth1004/mac (or the MacBook Air guide 'Connect accessories' page) is added to source-vault/apple-macbook-air-13-m3/manuals/ and registered in manifest.json with a local_path."
-    }
-  ]
+  "gaps": []
 }

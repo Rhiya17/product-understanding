@@ -1,0 +1,42 @@
+{
+  "stage": "B / Gate 1",
+  "completed_at": "2026-08-30T01:43:22.861593+00:00",
+  "dimension_gate": "PASS",
+  "products": {
+    "bose": [
+      {
+        "attempt": 1,
+        "request_id": "01a05055-8157-7112-86f4-c9668708bfe0",
+        "verdict": "pass",
+        "verdict_reason": "The render accurately represents the product\u2019s geometry and identity without major deviations in proportion or structure. All key form elements are present and plausible, satisfying Stage B gate requirements for deterministic digital twin validation.",
+        "verdict_path": "poc8/out/gate1/attempt-1/bose/verdict.json"
+      }
+    ],
+    "macbook": [
+      {
+        "attempt": 1,
+        "request_id": "01a05055-a957-7ae1-bccf-f664632df1f1",
+        "verdict": "fail",
+        "verdict_reason": "The rendered object fails to represent a recognizable MacBook Air due to severe geometric distortions, implausible proportions, and missing/invented major parts. It does not meet the Stage B gate criteria for product geometry fidelity.",
+        "verdict_path": "poc8/out/gate1/attempt-1/macbook/verdict.json"
+      },
+      {
+        "attempt": 2,
+        "request_id": "01a05055-c962-7523-9135-a4bac2573e43",
+        "verdict": "fail",
+        "verdict_reason": "The rendered object fails to establish recognizable identity as the same product/model family due to incorrect orientation, implausible proportions, and missing/invented major components. This is the second and final attempt; strict Stage B gate criteria are not met.",
+        "verdict_path": "poc8/out/gate1/attempt-2/macbook/verdict.json"
+      }
+    ]
+  },
+  "product_identity_pass": {
+    "bose": true,
+    "macbook": false
+  },
+  "identity_gate": "FAIL",
+  "gate1_status": "FAIL",
+  "next_step": "STOP-AND-REPORT: one or both twins need a new scan; no connection scene may be authored from these twins.",
+  "external_spend_usd": 0.69,
+  "internal_only": true,
+  "approved_by": null
+}

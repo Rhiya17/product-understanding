@@ -1,0 +1,61 @@
+{
+  "product": "macbook",
+  "product_id": "apple-macbook-air-13-m3",
+  "measured_at": "2026-08-30T01:42:45.026851+00:00",
+  "source_glb": "poc8/twins/macbook-rescan/pbr_model-TYR9ezEFU98NLKKOoVhVk_model.glb",
+  "source_glb_sha256": "88df8120ef819c8e5ddd1c6cfc664251232a0ce580ffe176029136a9b2ca001b",
+  "source_mesh_analysis": "poc8/twins/macbook-rescan/mesh-analysis.json",
+  "mesh_object_count": 1,
+  "committed_axis_aligned_extents_m_xyz": [
+    0.5679555535316467,
+    0.7857913970947266,
+    0.5
+  ],
+  "fresh_import_extents_m_xyz": [
+    0.5679555535316467,
+    0.7857913970947266,
+    0.5
+  ],
+  "fresh_vs_committed_error_percent_xyz": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "target_extents_m_xyz": [
+    0.2150000035762787,
+    0.30410000681877136,
+    0.1913899928331375
+  ],
+  "target_axis_semantics_xyz": [
+    "depth",
+    "width",
+    "open standing height (INFERRED)"
+  ],
+  "dimension_claim_ids_xyz": [
+    "claim_mba_spec_depth",
+    "claim_mba_spec_width",
+    "INFERRED"
+  ],
+  "scale_factors_xyz": [
+    0.37855076789855957,
+    0.38699838519096375,
+    0.382779985666275
+  ],
+  "post_repair_extents_m_xyz": [
+    0.2150000035762787,
+    0.304099977016449,
+    0.19138997793197632
+  ],
+  "post_repair_error_percent_xyz": [
+    0.0,
+    9.800171561803361e-06,
+    7.78575774692628e-06
+  ],
+  "worst_axis_error_percent": 9.800171561803361e-06,
+  "dimension_gate": "PASS",
+  "dimension_source_note": "OPEN-state re-scan (poc8/twins/macbook-rescan, request 01a0-... see twins/macbook-rescan/request.json; owner-approved 2026-08-29). X depth = 21.5 cm (claim_mba_spec_depth), Y width = 30.41 cm (claim_mba_spec_width). Z is the OPEN standing height, which no claim documents: scaled by the mean of the X/Y claim-derived factors (0.38278) to preserve the scanned proportion -> 0.19139 m. Recorded INFERRED.",
+  "repaired_blend": "poc8/macbook-repaired.blend",
+  "repaired_blend_sha256": "d24f77ed75679cf54cfd0fbc07d603a0efab865b3623f11cfd36a726a11caefc",
+  "internal_only": true,
+  "approved_by": null
+}

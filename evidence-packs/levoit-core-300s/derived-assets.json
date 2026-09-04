@@ -14,7 +14,7 @@
       "geometry_local_path": "poc-3d-static-twin/photo-projection/levoit/levoit-photo-projected.blend",
       "geometry_sha256": "1aed9466d1070d1f6356becbb603fbaab49fea64da5f99b9cb32c1392091d297",
       "geometry_claim_ids": [
-        "claim_c300s_spec_dimensions"
+        "claim_c300s_spec_dimensions_repair_20260829"
       ],
       "camera_gate": {
         "minimum_iou": 0.862217,
@@ -48,7 +48,7 @@
         "poc-3d-static-twin/photo-projection/register_asset.py"
       ],
       "license_status": "OPEN_MANUFACTURER_IMAGERY_REUSE_REVIEW",
-      "rights_note": "Manufacturer imagery cleared for internal research only; reuse rights review OPEN \u2014 do not ship",
+      "rights_note": "Manufacturer imagery cleared for internal research only; reuse rights review OPEN — do not ship",
       "tripo_texture_ancestry": false,
       "approved_by": null,
       "internal_only": true,

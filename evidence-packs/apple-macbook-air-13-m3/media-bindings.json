@@ -3,9 +3,9 @@
     {
       "binding_id": "mb_mba_left_ports",
       "claim_ids": [
-        "claim_mba_part_magsafe_port",
+        "claim_mba_part_magsafe_port_repair_20260829",
         "claim_mba_part_thunderbolt_ports",
-        "claim_mba_step_charge_1"
+        "claim_mba_step_charge_1_repair_20260829"
       ],
       "source_id": "src_img_guide_left_side",
       "kind": "IMAGE",
@@ -76,6 +76,38 @@
       "start_seconds": null,
       "end_seconds": null,
       "rationale": "The open photo-projected turntable visualizes the recorded enclosure dimensions with provenance-tracked manufacturer imagery.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_mba_generated_bluetooth_pairing_walkthrough",
+      "claim_ids": [
+        "claim_mba_step_bluetooth_pairing_1",
+        "claim_mba_step_bluetooth_pairing_2",
+        "claim_mba_step_bluetooth_pairing_3"
+      ],
+      "source_id": "derived_mba_bluetooth_pairing_walkthrough_20260828",
+      "kind": "DERIVED_ASSET",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The generated walkthrough visualizes the three captured Apple Support pairing steps in order with an explicit illustrative-UI label.",
+      "proposed_by": "agent",
+      "approved_by": null
+    },
+    {
+      "binding_id": "mb_mba_generated_wired_vs_bluetooth_walkthrough",
+      "claim_ids": [
+        "claim_mba_step_connection_method_1_repair_20260829",
+        "claim_mba_step_connection_method_2_repair_20260829",
+        "claim_mba_step_connection_method_3_repair_20260829"
+      ],
+      "source_id": "derived_mba_wired_vs_bluetooth_walkthrough_20260828",
+      "kind": "DERIVED_ASSET",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "The generated walkthrough distinguishes the cable and Bluetooth paths, then visualizes the documented MacBook Air ports and wireless branch.",
       "proposed_by": "agent",
       "approved_by": null
     }

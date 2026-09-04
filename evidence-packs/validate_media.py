@@ -192,12 +192,41 @@ def validate_pack(pack_dir, product_vault):
                 actual_hash = hashlib.sha256(candidate.read_bytes()).hexdigest()
                 if actual_hash != expected_hash:
                     errors.append(f"{label}: derived asset SHA-256 does not match")
+            poster_path = asset.get("poster_local_path")
+            poster_hash = asset.get("poster_sha256")
+            if (poster_path is None) != (poster_hash is None):
+                errors.append(
+                    f"{label}: derived poster path and SHA-256 must be provided together")
+            elif poster_path is not None:
+                poster_candidate = (repo_root / poster_path).resolve()
+                if (repo_root not in poster_candidate.parents
+                        or not poster_candidate.is_file()):
+                    errors.append(
+                        f"{label}: registered derived poster does not exist or escapes the repository")
+                elif (not isinstance(poster_hash, str)
+                      or not SHA256_RE.fullmatch(poster_hash)):
+                    errors.append(
+                        f"{label}: derived poster requires a lowercase SHA-256")
+                elif hashlib.sha256(
+                        poster_candidate.read_bytes()).hexdigest() != poster_hash:
+                    errors.append(
+                        f"{label}: derived poster SHA-256 does not match")
             asset_approved_by = asset.get("approved_by")
             if asset_approved_by is not None and (
                     not isinstance(asset_approved_by, str)
                     or not EMAIL_RE.fullmatch(asset_approved_by)
                     or asset_approved_by.lower() == "agent"):
                 errors.append(f"{label}: derived approved_by must be null or an owner email")
+            
+            request_id = asset.get("request_id")
+            if isinstance(request_id, str) and re.search(r"(?i)mock|fake|test|dummy", request_id):
+                errors.append(f"{label}: derived asset request_id matches mock pattern")
+                
+            verification_local_path = asset.get("verification_local_path")
+            if isinstance(verification_local_path, str):
+                verif_candidate = (repo_root / verification_local_path).resolve()
+                if not verif_candidate.is_file():
+                    errors.append(f"{label}: derived asset verification_local_path does not exist")
         elif source is not None and kind in ALLOWED_KINDS:
             source_type = source.get("type")
             if kind == "IMAGE":

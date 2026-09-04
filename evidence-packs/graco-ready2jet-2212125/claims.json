@@ -3051,5 +3051,244 @@
     "extractor": "evidence-pack-agent-v2",
     "extracted_at": "2026-08-24",
     "extraction_notes": "This instruction is present as text on page 27 but is unnumbered in the manual (it sits beside the labeled diagram); numbered 3 here to keep the procedure sequence contiguous. Not diagram-only: the action, including 'Repeat on other side.', is stated in text."
+  },
+  {
+    "claim_id": "claim_r2j_part_belly_bar_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "PART_LOCATION",
+    "predicate": "belly_bar_location",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "part": "belly_bar",
+      "location_description": "Attaches to the belly bar mounts.",
+      "diagram_binding": {
+        "source_id": "src_r2j_manual_v1",
+        "page": 16,
+        "bounding_box": null,
+        "coordinate_system": "normalized",
+        "annotation_status": "PENDING"
+      }
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_manual_v1",
+        "page": 16,
+        "quote": "Attach child’s belly bar onto belly bar mounts."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_r2j_part_belly_bar. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_r2j_part_thumb_switch_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "PART_LOCATION",
+    "predicate": "thumb_switch_location",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "part": "thumb_switch",
+      "location_description": "Shown as control (a) in the stroller folding diagram and slid before the handle lever is squeezed.",
+      "diagram_binding": {
+        "source_id": "src_r2j_manual_v1",
+        "page": 34,
+        "bounding_box": null,
+        "coordinate_system": "normalized",
+        "annotation_status": "PENDING"
+      }
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_manual_v1",
+        "page": 34,
+        "quote": "To fold stroller: (a) slide thumb switch; (b) squeeze handle lever"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_r2j_part_thumb_switch. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_r2j_part_handle_lever_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "PART_LOCATION",
+    "predicate": "handle_lever_location",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "part": "handle_lever",
+      "location_description": "Shown as control (b) in the stroller folding diagram and squeezed after the thumb switch is slid.",
+      "diagram_binding": {
+        "source_id": "src_r2j_manual_v1",
+        "page": 34,
+        "bounding_box": null,
+        "coordinate_system": "normalized",
+        "annotation_status": "PENDING"
+      }
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_manual_v1",
+        "page": 34,
+        "quote": "To fold stroller: (a) slide thumb switch; (b) squeeze handle lever"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_r2j_part_handle_lever. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_r2j_limit_cup_holder_weight_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "LIMIT",
+    "predicate": "maximum_cup_holder_weight",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "applies_to": "cup holder",
+      "rule": "Do not place more than 1 lb (0.45 kg) in the cup holder.",
+      "value": 1,
+      "unit": "lb"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_manual_v1",
+        "page": 4,
+        "quote": "Do not place more than 10 lb (4.5 kg) in the stroller storage basket, 1 lb (.45 kg) in the cup holder."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_r2j_limit_cup_holder_weight. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_r2j_warning_zip_tie_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "WARNING",
+    "predicate": "zip_tie_disposal",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "hazard_type": "general_safety",
+      "description": "Remove and immediately discard the zip tie."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_manual_v1",
+        "page": 10,
+        "quote": "Remove and IMMEDIATELY discard the zip tie."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_r2j_warning_zip_tie. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_r2j_compat_graco_infant_car_seats_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_infant_car_seats",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "Graco infant car seats",
+      "qualifier": "most",
+      "verification": "Call Graco customer service 1-800-345-4109 or scan the in-manual code for compatibility."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_manual_v1",
+        "page": 5,
+        "quote": "TO AVOID INJURY TO YOUR CHILD: THIS PRODUCT IS COMPATIBLE WITH MOST GRACO® INFANT CAR SEATS."
+      },
+      {
+        "source_id": "src_r2j_manual_v1",
+        "page": 5,
+        "quote": "For additional questions or for more information on compatibility please call Graco’s customer service number: 1-800-345-4109 or scan for compatibility."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_r2j_compat_graco_infant_car_seats. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_r2j_care_wet_drying_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "CARE",
+    "predicate": "drying_after_wet",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "condition": "if the stroller becomes wet",
+      "method": "open the canopy and allow the stroller to dry thoroughly before storing"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_manual_v1",
+        "page": 36,
+        "quote": "IF STROLLER BECOMES WET, open canopy and allow to dry thoroughly before storing."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_r2j_care_wet_drying. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
   }
 ]

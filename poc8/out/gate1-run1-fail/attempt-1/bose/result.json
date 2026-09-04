@@ -1,0 +1,6 @@
+{
+  "output": "{\n  \"recognizable_same_product\": {\n    \"answer\": \"yes\",\n    \"evidence\": \"The render shows over-ear headphones with a padded headband, two asymmetric earcups, and visible control buttons on the side of one earcup, consistent with the Bose QuietComfort Ultra Headphones (2nd Gen) in Image 1. The overall silhouette, earcup shape, and headband curvature match.\"\n  },\n  \"major_proportions_plausible\": {\n    \"answer\": \"yes\",\n    \"evidence\": \"The headband width, earcup size relative to the headband, and yoke connection angles appear proportionally consistent with Image 1. No gross scaling or distortion is evident in the rendered geometry.\"\n  },\n  \"missing_or_invented_major_parts\": {\n    \"answer\": \"no\",\n    \"evidence\": \"All major structural components (headband, earcups, yokes, control buttons) are present and correctly placed. The cable is intentionally excluded per instructions. No extraneous or invented parts are visible.\"\n  },\n  \"verdict\": \"pass\",\n  \"verdict_reason\": \"The render accurately represents the product\u2019s geometry and recognizable identity. Major proportions are plausible, and no critical parts are missing or invented. It meets Stage B gate criteria for a deterministic digital twin.\"\n}",
+  "reasoning": null,
+  "partial": false,
+  "error": null
+}

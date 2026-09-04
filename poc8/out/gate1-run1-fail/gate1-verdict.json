@@ -1,0 +1,42 @@
+{
+  "stage": "B / Gate 1",
+  "completed_at": "2026-08-30T01:18:47.993838+00:00",
+  "dimension_gate": "PASS",
+  "products": {
+    "bose": [
+      {
+        "attempt": 1,
+        "request_id": "01a0503f-08f6-79f3-bddd-bbb973f6549b",
+        "verdict": "pass",
+        "verdict_reason": "The render accurately represents the product\u2019s geometry and recognizable identity. Major proportions are plausible, and no critical parts are missing or invented. It meets Stage B gate criteria for a deterministic digital twin.",
+        "verdict_path": "poc8/out/gate1/attempt-1/bose/verdict.json"
+      }
+    ],
+    "macbook": [
+      {
+        "attempt": 1,
+        "request_id": "01a0503f-3192-75e3-8f43-5294798062bd",
+        "verdict": "fail",
+        "verdict_reason": "The render fails to replicate the recognizable identity and major proportions of the MacBook Air 13-inch M3. Critical identifying features are missing, and non-existent structural elements are invented, violating Stage B gate requirements for geometric fidelity.",
+        "verdict_path": "poc8/out/gate1/attempt-1/macbook/verdict.json"
+      },
+      {
+        "attempt": 2,
+        "request_id": "01a0503f-4baf-7a10-b1ef-51e5a1a6bb98",
+        "verdict": "fail",
+        "verdict_reason": "The render fails to establish recognizable identity as the same product due to missing key features (3.5 mm jack), implausible proportions from exposed internals, and presence of invented/missing major parts. This is the final attempt; strict gate criteria are not met.",
+        "verdict_path": "poc8/out/gate1/attempt-2/macbook/verdict.json"
+      }
+    ]
+  },
+  "product_identity_pass": {
+    "bose": true,
+    "macbook": false
+  },
+  "identity_gate": "FAIL",
+  "gate1_status": "FAIL",
+  "next_step": "STOP-AND-REPORT: one or both twins need a new scan; no connection scene may be authored from these twins.",
+  "external_spend_usd": 0.03,
+  "internal_only": true,
+  "approved_by": null
+}

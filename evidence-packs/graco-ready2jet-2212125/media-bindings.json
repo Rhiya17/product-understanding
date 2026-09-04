@@ -87,6 +87,26 @@
       "rationale": "Manual page 35 contains the final security check and carry instruction with authentic illustrations.",
       "proposed_by": "agent",
       "approved_by": null
+    },
+    {
+      "binding_id": "mb_generated_fold_stroller_walkthrough",
+      "claim_ids": [
+        "claim_r2j_step_fold_1",
+        "claim_r2j_step_fold_2",
+        "claim_r2j_step_fold_3",
+        "claim_r2j_step_fold_4",
+        "claim_r2j_step_fold_5",
+        "claim_r2j_step_fold_6",
+        "claim_r2j_step_fold_7"
+      ],
+      "source_id": "derived_generated_fold_stroller_walkthrough",
+      "kind": "DERIVED_ASSET",
+      "page": null,
+      "start_seconds": null,
+      "end_seconds": null,
+      "rationale": "Generated walkthrough visualizes the documented fold stroller steps in order; pending owner review.",
+      "proposed_by": "agent",
+      "approved_by": null
     }
   ]
 }

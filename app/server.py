@@ -25,6 +25,13 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from system import answer  # noqa: E402
+from system.luna_planner import (  # noqa: E402
+    LunaPlanner,
+    apply_presentation,
+    deterministic_presentation,
+    media_modality,
+)
+from app.video_jobs import VideoJobManager  # noqa: E402
 
 
 _HASH_CACHE = {}
@@ -83,10 +90,15 @@ def _media_url(product_dir, local_path):
     return f"/media/{product}/{relative}"
 
 
-def _derived_media_url(product_dir, asset_id, pending=False):
+def _derived_media_url(product_dir, asset_id, pending=False, poster=False):
     url = "/derived-media/{}/{}".format(
         quote(product_dir, safe=""), quote(asset_id, safe=""))
-    return f"{url}?preview=1" if pending else url
+    query = []
+    if pending:
+        query.append("preview=1")
+    if poster:
+        query.append("poster=1")
+    return f"{url}?{'&'.join(query)}" if query else url
 
 
 def _derived_assets(packs_root, product_dir):
@@ -133,6 +145,7 @@ def _media_index(packs_root, vault_root, preview):
                 "id": binding.get("binding_id"),
                 "kind": kind,
                 "url": media_url,
+                "asset_type": (asset or {}).get("type"),
                 "page": binding.get("page"),
                 "start_seconds": binding.get("start_seconds"),
                 "end_seconds": binding.get("end_seconds"),
@@ -145,6 +158,11 @@ def _media_index(packs_root, vault_root, preview):
                 "provenance": (asset or {}).get("provider"),
                 "watermark": (asset or {}).get("watermark"),
             }
+            if kind == "DERIVED_ASSET" and (asset or {}).get(
+                    "poster_local_path"):
+                media["poster_url"] = _derived_media_url(
+                    product_dir, asset.get("asset_id"),
+                    pending=not approved, poster=True)
             for claim_id in binding.get("claim_ids", []):
                 index.setdefault(claim_id, []).append(media)
     for media_items in index.values():
@@ -301,7 +319,10 @@ def _procedure_groups(packs_root, product_dir):
                 or not isinstance(obj.get("procedure"), str)
                 or not isinstance(obj.get("step_number"), int)):
             continue
-        groups.setdefault(obj["procedure"], []).append((claim, status))
+        if status == "REJECTED":
+            continue
+        procedure = answer.canonical_procedure_id(obj["procedure"])
+        groups.setdefault(procedure, []).append((claim, status))
     for steps in groups.values():
         steps.sort(key=lambda item: (item[0]["object"]["step_number"],
                                      item[0].get("claim_id", "")))
@@ -384,6 +405,166 @@ def procedure_payload(packs_root, product_dir, procedure, preview=False):
     }
 
 
+def _planner_scope(question, catalog, product_dir, packs_root, preview):
+    """Build the request-scoped product/procedure allowlist for Luna."""
+    if product_dir:
+        scoped = [product for product in catalog
+                  if product.get("dir") == product_dir]
+    else:
+        scoped = answer.detect_products(answer.tokenize(question), catalog)
+    products = [{
+        "id": product.get("dir"),
+        "brand": product.get("brand"),
+        "model": product.get("model"),
+        "category": product.get("category"),
+    } for product in scoped]
+    procedures = {
+        product["id"]: [item["name"] for item in discover_procedures(
+            packs_root, product["id"], preview)]
+        for product in products if product.get("id")
+    }
+    return products, procedures
+
+
+def _direct_procedure_result(packs_root, vault_root, product_dir, procedure,
+                             preview):
+    """Retrieve a validated procedure ID without relying on lexical scoring."""
+    product = next((item for item in answer.load_catalog(vault_root)
+                    if item.get("dir") == product_dir), None)
+    grouped_steps = _procedure_groups(packs_root, product_dir).get(procedure)
+    if product is None or grouped_steps is None:
+        return None
+    wanted = answer.PREVIEW_STATUSES if preview else answer.SERVABLE_DEFAULT
+    sources = answer.source_details(vault_root, product)
+    steps = []
+    for claim, status in grouped_steps:
+        if status not in wanted:
+            continue
+        obj = claim.get("object") if isinstance(claim.get("object"), dict) else {}
+        steps.append({
+            "step_number": obj.get("step_number"),
+            "action": obj.get("action"),
+            "claim_id": claim.get("claim_id"),
+            "status": status,
+            "tier": claim.get("consequence_ceiling"),
+            "citations": [{
+                "source_id": binding.get("source_id"),
+                "quote": binding.get("quote", ""),
+                **sources.get(binding.get("source_id"), {}),
+            } for binding in claim.get("source_bindings", [])],
+        })
+    if not steps:
+        return None
+    steps.sort(key=lambda step: (step["step_number"] is None,
+                                 step["step_number"]))
+    statuses = {step["status"] for step in steps}
+    tiers = [step["tier"] for step in steps if step.get("tier")]
+    summary = answer.PROCEDURE_SUMMARIES.get(
+        procedure,
+        f"{answer.readable_label(procedure)} has {len(steps)} documented steps.")
+    return {
+        "score": 1.0,
+        "status": ("PUBLISHED" if statuses == {"PUBLISHED"}
+                   else "CANDIDATE"),
+        "product": f"{product.get('brand', '')} {product.get('model', '')}".strip(),
+        "product_dir": product_dir,
+        "claim_id": f"procedure:{procedure}",
+        "tier": max(tiers) if tiers else None,
+        "type": "PROCEDURE",
+        "procedure": procedure,
+        "predicate": procedure,
+        "answer": summary,
+        "display_text": summary,
+        "raw_answer": f"{len(steps)} documented steps",
+        "steps": steps,
+        "citations": [],
+    }
+
+
+def _retrieve_for_plan(question, intent_outcome, packs_root, vault_root,
+                       product_dir, preview, top):
+    """Execute only validated local tools; fall back to lexical retrieval."""
+    plan = intent_outcome.get("plan") if intent_outcome.get("ok") else None
+    executed_tool = "search_evidence"
+    tool_fallback_reason = None
+    if plan and plan.get("tool") == "show_procedure":
+        executed_tool = "show_procedure"
+        procedure = plan["procedure_id"]
+        direct = _direct_procedure_result(
+            packs_root, vault_root, plan["product_id"], procedure, preview)
+        if direct:
+            return [direct], {
+                "SUSPENDED": 0, "CANDIDATE": 0, "REJECTED": 0,
+            }, executed_tool, None
+        executed_tool = "search_evidence"
+        tool_fallback_reason = "procedure_not_retrieved"
+    elif plan and plan.get("tool") == "report_unsupported_question":
+        # Luna cannot establish that evidence is absent. Search once before
+        # the server reports the question as unsupported.
+        tool_fallback_reason = "unsupported_requires_evidence_check"
+
+    routed_product = (plan.get("product_id") if plan else None) or product_dir
+    results, not_served = answer.search(
+        question,
+        packs_root=packs_root,
+        vault_root=vault_root,
+        product_dir=routed_product,
+        preview=preview,
+        top=top,
+    )
+    return results, not_served, executed_tool, tool_fallback_reason
+
+
+def _attach_video_jobs(results, video_jobs, preview):
+    """Queue walkthrough generation for the top procedure lacking a video.
+
+    Only in preview mode: a freshly generated asset is unapproved, so under a
+    published-only policy the finished video could never be served anyway.
+    """
+    if video_jobs is None or not preview:
+        return
+    for result in results:
+        if result.get("type") != "PROCEDURE" or not result.get("steps"):
+            continue
+        if any(media_modality(media) == "video"
+               for media in result.get("media", [])):
+            continue
+        if not video_jobs.can_generate(result.get("product_dir"),
+                                       result.get("procedure")):
+            # No grounded keyframes registered: the honest text+image
+            # answer stands, with no placeholder promising a video.
+            continue
+        steps = [{
+            "step_number": step.get("step_number"),
+            "action": step.get("action") or "",
+            "claim_id": step.get("claim_id"),
+        } for step in result["steps"]]
+        job = video_jobs.ensure(
+            result.get("product_dir"), result.get("product"),
+            result.get("procedure"), steps)
+        result["video_job"] = {
+            "job_id": job["job_id"],
+            "state": job["state"],
+            "poll_url": "/api/video-status?job=" + quote(
+                job["job_id"], safe=""),
+        }
+        return
+
+
+def _attach_eligible_media(results, media_by_claim):
+    for result in results:
+        member_ids = ([step["claim_id"] for step in result.get("steps", [])]
+                      or [result["claim_id"]])
+        seen, media = set(), []
+        for member_id in member_ids:
+            for item in media_by_claim.get(member_id, []):
+                if item["id"] not in seen:
+                    seen.add(item["id"])
+                    media.append(item)
+        result["media"] = media
+    return results
+
+
 def render_pdf_page(pdf_path, page_number, cache_root, expected_hash):
     """Render one entire PDF page at 144 DPI and return its cache path."""
     pdf_path = Path(pdf_path).resolve()
@@ -425,12 +606,16 @@ def render_pdf_page(pdf_path, page_number, cache_root, expected_hash):
 
 
 def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
-                 reviewer=None, feedback_path=None):
+                 reviewer=None, feedback_path=None, luna_planner=None,
+                 video_jobs=None):
     """Build a request handler bound to explicit content roots."""
     packs_root = Path(packs_root).resolve()
     vault_root = Path(vault_root).resolve()
     cache_root = Path(cache_root).resolve()
     feedback_path = Path(feedback_path or APP_ROOT / "feedback.jsonl").resolve()
+    luna_planner = luna_planner or LunaPlanner()
+    video_jobs = video_jobs or VideoJobManager(
+        packs_root, vault_root=vault_root)
 
     class AnswerHandler(BaseHTTPRequestHandler):
         server_version = "ShowMeAnswer/0"
@@ -538,11 +723,7 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
             })
 
         def _preview_value(self, query):
-            # MVP exception (owner decision 2026-08-27): when the client does
-            # not specify, serve labeled CANDIDATE/SUSPENDED facts too.
-            # TODO: revert the default to "0" (published-only) once the owner
-            # review pass promotes the catalog in reviews.json.
-            preview_value = query.get("preview", ["1"])[0]
+            preview_value = query.get("preview", ["0"])[0]
             if preview_value not in {"0", "1"}:
                 self._send_json(400, {"error": "preview must be 0 or 1"})
                 return None
@@ -626,12 +807,19 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
             if not bindings or (not approved and not preview):
                 self._send_json(404, {"error": "Derived media not found"})
                 return
+            poster = query.get("poster", ["0"])[0] == "1"
+            local_path = (asset.get("poster_local_path") if poster
+                          else asset.get("local_path"))
+            expected_hash = (asset.get("poster_sha256") if poster
+                             else asset.get("sha256"))
+            if not local_path:
+                self._send_json(404, {"error": "Derived media not found"})
+                return
             repo_root = packs_root.parent.resolve()
-            candidate = (repo_root / asset["local_path"]).resolve()
+            candidate = (repo_root / local_path).resolve()
             if repo_root not in candidate.parents or not candidate.is_file():
                 self._send_json(404, {"error": "Derived media not found"})
                 return
-            expected_hash = asset.get("sha256")
             if (not isinstance(expected_hash, str)
                     or not _verified_hash(candidate, expected_hash)):
                 self._send_json(500, {"error": "Media integrity check failed"})
@@ -772,27 +960,54 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
                 self._send_json(400, {"error": "top must be between 1 and 100"})
                 return
 
-            results, not_served = answer.search(
-                question,
-                packs_root=packs_root,
-                vault_root=vault_root,
-                product_dir=product_dir,
-                preview=preview,
-                top=top,
-            )
-            media_by_claim = _media_index(
-                packs_root, vault_root, preview)
-            for result in results:
-                member_ids = ([step["claim_id"]
-                               for step in result.get("steps", [])]
-                              or [result["claim_id"]])
-                seen, media = set(), []
-                for member_id in member_ids:
-                    for item in media_by_claim.get(member_id, []):
-                        if item["id"] not in seen:
-                            seen.add(item["id"])
-                            media.append(item)
-                result["media"] = media
+            planner_products, procedures_by_product = _planner_scope(
+                question, catalog, product_dir, packs_root, preview)
+            intent_outcome = luna_planner.plan_intent(
+                question, planner_products, procedures_by_product)
+            intent_plan = (intent_outcome.get("plan")
+                           if intent_outcome.get("ok") else None)
+            if (intent_plan
+                    and intent_plan.get("tool") == "ask_clarification"):
+                self._send_json(200, {
+                    "question": question,
+                    "mode": "clarify",
+                    "clarify": {
+                        "prompt": intent_plan["clarification_question"],
+                        "candidates": [],
+                    },
+                    "results": [],
+                    "not_served": {"SUSPENDED": 0, "CANDIDATE": 0,
+                                   "REJECTED": 0},
+                    "gap": None,
+                    "planning": {
+                        "intent": intent_outcome["metadata"],
+                        "composition": None,
+                        "requested_tool": intent_plan["tool"],
+                        "executed_tool": "ask_clarification",
+                        "tool_fallback_reason": None,
+                    },
+                    "presentation": None,
+                })
+                return
+
+            results, not_served, executed_tool, tool_fallback_reason = (
+                _retrieve_for_plan(
+                    question, intent_outcome, packs_root, vault_root,
+                    product_dir, preview, top))
+            _attach_eligible_media(
+                results, _media_index(packs_root, vault_root, preview))
+            _attach_video_jobs(results, video_jobs, preview)
+            composition_outcome = luna_planner.compose_response(
+                question, intent_outcome, results)
+            if composition_outcome.get("ok"):
+                presentation = composition_outcome["plan"]
+                apply_presentation(results, presentation)
+            else:
+                presentation = deterministic_presentation(
+                    results,
+                    composition_outcome["metadata"].get("reason")
+                    or "composition_fallback",
+                )
             if product_dir:
                 gap_products = [product for product in catalog
                                 if product.get("dir") == product_dir]
@@ -807,7 +1022,42 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
                 "results": results,
                 "not_served": not_served,
                 "gap": gap,
+                "planning": {
+                    "intent": intent_outcome["metadata"],
+                    "composition": composition_outcome["metadata"],
+                    "requested_tool": (intent_plan or {}).get("tool"),
+                    "executed_tool": executed_tool,
+                    "tool_fallback_reason": tool_fallback_reason,
+                },
+                "presentation": presentation,
             })
+
+        def _serve_video_status(self, query):
+            job_id = query.get("job", [""])[0].strip()
+            if not job_id:
+                self._send_json(400, {"error": "job must not be empty"})
+                return
+            job = video_jobs.status(job_id)
+            if job is None:
+                self._send_json(404, {"error": "Unknown video job"})
+                return
+            payload = {
+                "job_id": job["job_id"],
+                "state": job["state"],
+                "product_dir": job["product_dir"],
+                "procedure": job["procedure"],
+                "media": None,
+            }
+            if job["state"] == "ready" and job.get("binding_id"):
+                media_by_claim = _media_index(
+                    packs_root, vault_root, preview=True)
+                payload["media"] = next(
+                    (item
+                     for claim_id in job["claim_ids"]
+                     for item in media_by_claim.get(claim_id, [])
+                     if item.get("id") == job["binding_id"]),
+                    None)
+            self._send_json(200, payload)
 
         def _record_review(self):
             payload = self._read_json_body()
@@ -886,6 +1136,9 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
                     self._serve_products()
                 elif parsed.path == "/api/review-config":
                     self._serve_review_config()
+                elif parsed.path == "/api/video-status":
+                    self._serve_video_status(
+                        parse_qs(parsed.query, keep_blank_values=True))
                 elif parsed.path == "/api/procedures":
                     self._serve_procedures(
                         parse_qs(parsed.query, keep_blank_values=True))
@@ -933,7 +1186,8 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
 
 
 def create_server(port=8765, packs_root=None, vault_root=None, cache_root=None,
-                  reviewer=None, feedback_path=None):
+                  reviewer=None, feedback_path=None, luna_planner=None,
+                  video_jobs=None):
     """Create the app server. Passing port 0 lets the OS choose a test port."""
     handler = make_handler(
         packs_root or REPO_ROOT / "evidence-packs",
@@ -941,6 +1195,8 @@ def create_server(port=8765, packs_root=None, vault_root=None, cache_root=None,
         cache_root or DEFAULT_CACHE_ROOT,
         reviewer,
         feedback_path,
+        luna_planner,
+        video_jobs,
     )
     return ThreadingHTTPServer(("127.0.0.1", port), handler)
 
@@ -959,12 +1215,30 @@ def main(argv=None):
     if args.reviewer and not _EMAIL_RE.fullmatch(args.reviewer):
         parser.error("--reviewer must be a valid email address")
 
+    luna_planner = LunaPlanner()
     server = create_server(
-        args.port, args.packs_root, args.vault_root, reviewer=args.reviewer)
+        args.port, args.packs_root, args.vault_root, reviewer=args.reviewer,
+        luna_planner=luna_planner)
     print(f"Answer app listening on http://localhost:{server.server_port}")
     print("Owner review writes: " + (
         f"enabled as {args.reviewer}" if args.reviewer else
         "disabled (start with --reviewer owner@example.com)"))
+    luna_status = luna_planner.status
+    print("Luna planning: " + (
+        f"enabled ({luna_status['model']})" if luna_status["enabled"] else
+        f"deterministic fallback ({luna_status['reason']})"))
+    from app.video_jobs import fal_credentials_present, renderer_mode
+    mode = renderer_mode()
+    descriptions = {
+        "keyframe": ("grounded keyframe pipeline (Seedance interpolation + "
+                     "VLM verification); procedures without registered "
+                     "keyframes get no video"),
+        "fal": "EXPERIMENTAL direct fal.ai generation (ungrounded)",
+        "deterministic": "deterministic slide renderer (offline fallback)",
+    }
+    note = ("" if mode == "deterministic" or fal_credentials_present()
+            else " — FAL_KEY missing, generation jobs will fail")
+    print(f"Video generation: {descriptions[mode]}{note}")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

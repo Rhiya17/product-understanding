@@ -71,6 +71,762 @@
       "claim_id": "claim_c300s_spec_filter_model_300s",
       "disposition": "REJECTED_FOR_SERVING",
       "rationale": "Original revision retired under the latest-revision-only policy (2026-08-24). CAVEAT recorded at review time: owners of original Core 300S units need Core 300-RF, not Core 300-P-RF — if the answer system ever serves owned-device support for older units, this decision must be revisited."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_power_supply_20260829004613571147_77546913",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_power_supply",
+      "claim_id": "claim_c300s_spec_power_supply",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_standby_power_20260829004613586508_7649b1ca",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_standby_power",
+      "claim_id": "claim_c300s_spec_standby_power",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_wifi_band_20260829004613602510_e57c0c82",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_wifi_band",
+      "claim_id": "claim_c300s_spec_wifi_band",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_voice_control_20260829004613618287_ae42b2ee",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_voice_control",
+      "claim_id": "claim_c300s_spec_voice_control",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_package_contents_20260829004613632795_a3b44498",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_package_contents",
+      "claim_id": "claim_c300s_spec_package_contents",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_model_name_20260829004613648632_a5d4fe93",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_model_name",
+      "claim_id": "claim_c300s_spec_model_name",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_filtration_stages_20260829004613664816_fac92e42",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_filtration_stages",
+      "claim_id": "claim_c300s_spec_filtration_stages",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_limit_humidity_20260829004613681585_022834ae",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_limit_humidity",
+      "claim_id": "claim_c300s_limit_humidity",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_reset_filter_1_20260829004613698439_abd5c81b",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_reset_filter_1",
+      "claim_id": "claim_c300s_step_reset_filter_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_reset_filter_2_20260829004613715138_887da966",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_reset_filter_2",
+      "claim_id": "claim_c300s_step_reset_filter_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_reset_filter_3_20260829004613731149_1412393e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_reset_filter_3",
+      "claim_id": "claim_c300s_step_reset_filter_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_reset_filter_4_20260829004613747396_aa81107c",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_reset_filter_4",
+      "claim_id": "claim_c300s_step_reset_filter_4",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_app_setup_1_20260829004613763419_71a6eb5a",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_app_setup_1",
+      "claim_id": "claim_c300s_step_app_setup_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_app_setup_2_20260829004613779288_f4a16ab7",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_app_setup_2",
+      "claim_id": "claim_c300s_step_app_setup_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_app_setup_3_20260829004613795616_797a7665",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_app_setup_3",
+      "claim_id": "claim_c300s_step_app_setup_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_wifi_reset_1_20260829004613811873_6f320053",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_wifi_reset_1",
+      "claim_id": "claim_c300s_step_wifi_reset_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_care_storage_20260829004613828001_29ee3f76",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_care_storage",
+      "claim_id": "claim_c300s_care_storage",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_policy_warranty_20260829004613844570_698dc126",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_policy_warranty",
+      "claim_id": "claim_c300s_policy_warranty",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner approved in Codex chat on 2026-08-28 after all deterministic spot-audit samples passed for batch_levoit-core-300s_20260826; source evidence matched the structured claims and verifier results were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_care_housing_cleaning_20260829011303698692_dcdb287c",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_care_housing_cleaning",
+      "claim_id": "claim_c300s_care_housing_cleaning",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_limit_room_size_20260829011303713571_09ac4bb7",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_limit_room_size",
+      "claim_id": "claim_c300s_limit_room_size",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_part_airsight_sensor_20260829011303726062_ebaf0acd",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_part_airsight_sensor",
+      "claim_id": "claim_c300s_part_airsight_sensor",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_part_filter_cover_20260829011303738783_d9464edf",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_part_filter_cover",
+      "claim_id": "claim_c300s_part_filter_cover",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_cadr_20260829011303751810_69ccc682",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_cadr",
+      "claim_id": "claim_c300s_spec_cadr",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner confirmed rejection in Codex chat on 2026-08-28 under the latest-revision-only policy: the CADR claim is tied to the older Core 300S revision and is absent from the current Core 300S-P manual."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_coverage_20260829011303765545_53c3a5c0",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_coverage",
+      "claim_id": "claim_c300s_spec_coverage",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_dimensions_20260829011303778121_7d10c9f8",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_dimensions",
+      "claim_id": "claim_c300s_spec_dimensions",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_operating_conditions_20260829011303789966_7d08dc3e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_operating_conditions",
+      "claim_id": "claim_c300s_spec_operating_conditions",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_weight_300s_20260829011303802151_a5019006",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_weight_300s",
+      "claim_id": "claim_c300s_spec_weight_300s",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_weight_300sp_20260829011303815285_082862da",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_weight_300sp",
+      "claim_id": "claim_c300s_spec_weight_300sp",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_state_standby_20260829011303828499_5562430b",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_state_standby",
+      "claim_id": "claim_c300s_state_standby",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_initial_setup_4_20260829011303841753_20a047a4",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_initial_setup_4",
+      "claim_id": "claim_c300s_step_initial_setup_4",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_aq_indicator_20260829011545515232_15c72e4b",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_aq_indicator",
+      "claim_id": "claim_c300s_spec_aq_indicator",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after direct visual inspection of the official manual confirmed the visual binding and the textual bindings were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_part_filter_reset_button_20260829011545528973_f530dbc2",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_part_filter_reset_button",
+      "claim_id": "claim_c300s_part_filter_reset_button",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after direct visual inspection of the official manual confirmed the visual binding and the textual bindings were ENTAILED."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_replace_filter_1_20260829022111979792_d8b6f1db",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_replace_filter_1",
+      "claim_id": "claim_c300s_step_replace_filter_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_replace_filter_2_20260829022111993144_90268a70",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_replace_filter_2",
+      "claim_id": "claim_c300s_step_replace_filter_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_replace_filter_3_20260829022112004904_03479869",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_replace_filter_3",
+      "claim_id": "claim_c300s_step_replace_filter_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_replace_filter_4_20260829022112015468_68ecf7d2",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_replace_filter_4",
+      "claim_id": "claim_c300s_step_replace_filter_4",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_replace_filter_5_20260829022112025396_15e98db2",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_replace_filter_5",
+      "claim_id": "claim_c300s_step_replace_filter_5",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_replace_filter_6_20260829022112036491_71eda80f",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_replace_filter_6",
+      "claim_id": "claim_c300s_step_replace_filter_6",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_initial_setup_1_20260829022112049725_83963bf5",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_initial_setup_1",
+      "claim_id": "claim_c300s_step_initial_setup_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_initial_setup_2_20260829022112060124_655d2abe",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_initial_setup_2",
+      "claim_id": "claim_c300s_step_initial_setup_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_warning_plastic_wrap_20260829022112071554_c6195363",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_warning_plastic_wrap",
+      "claim_id": "claim_c300s_warning_plastic_wrap",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_warning_water_20260829022112082054_3eb7a200",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_warning_water",
+      "claim_id": "claim_c300s_warning_water",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_warning_oxygen_20260829022112093586_dabec523",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_warning_oxygen",
+      "claim_id": "claim_c300s_warning_oxygen",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_warning_combustible_20260829022112106022_5ca01de1",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_warning_combustible",
+      "claim_id": "claim_c300s_warning_combustible",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_warning_dimmer_20260829022112117300_f9d4920f",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_warning_dimmer",
+      "claim_id": "claim_c300s_warning_dimmer",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_warning_unplug_before_maintenance_20260829022112130694_7b085347",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_warning_unplug_before_maintenance",
+      "claim_id": "claim_c300s_warning_unplug_before_maintenance",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_compat_filter_models_20260829022112143682_3cc0ff4d",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_compat_filter_models",
+      "claim_id": "claim_c300s_compat_filter_models",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after review confirmed the claim matches authoritative manual/source evidence."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_initial_setup_3_20260829022112211014_928d4108",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_initial_setup_3",
+      "claim_id": "claim_c300s_step_initial_setup_3",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the current object adds details not fully supported by its cited bindings; correct the bindings/object and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_care_prefilter_cleaning_20260829022112223324_06f11dd5",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_care_prefilter_cleaning",
+      "claim_id": "claim_c300s_care_prefilter_cleaning",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the current object adds details not fully supported by its cited bindings; correct the bindings/object and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_care_sensor_cleaning_20260829022112235070_5235b811",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_care_sensor_cleaning",
+      "claim_id": "claim_c300s_care_sensor_cleaning",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the current object adds details not fully supported by its cited bindings; correct the bindings/object and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_care_filter_lifespan_20260829022112247598_350faa91",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_care_filter_lifespan",
+      "claim_id": "claim_c300s_care_filter_lifespan",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the current object adds details not fully supported by its cited bindings; correct the bindings/object and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_care_filter_lifespan_20260830003704165767_8c31452d",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_care_filter_lifespan",
+      "claim_id": "claim_c300s_care_filter_lifespan",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_care_filter_lifespan_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_care_housing_cleaning_20260830003704174586_4bc6e56b",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_care_housing_cleaning",
+      "claim_id": "claim_c300s_care_housing_cleaning",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_care_housing_cleaning_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_care_prefilter_cleaning_20260830003704178187_9b27dfe4",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_care_prefilter_cleaning",
+      "claim_id": "claim_c300s_care_prefilter_cleaning",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_care_prefilter_cleaning_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_care_sensor_cleaning_20260830003704180969_c9c8bda8",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_care_sensor_cleaning",
+      "claim_id": "claim_c300s_care_sensor_cleaning",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_care_sensor_cleaning_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_limit_room_size_20260830003704183444_213c45f0",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_limit_room_size",
+      "claim_id": "claim_c300s_limit_room_size",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_limit_room_size_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_part_airsight_sensor_20260830003704187355_c2f517f3",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_part_airsight_sensor",
+      "claim_id": "claim_c300s_part_airsight_sensor",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_part_airsight_sensor_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_part_filter_cover_20260830003704191509_fad1ba8b",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_part_filter_cover",
+      "claim_id": "claim_c300s_part_filter_cover",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_part_filter_cover_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_coverage_20260830003704194698_154151f3",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_coverage",
+      "claim_id": "claim_c300s_spec_coverage",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_spec_coverage_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_dimensions_20260830003704197419_830d4771",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_dimensions",
+      "claim_id": "claim_c300s_spec_dimensions",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_spec_dimensions_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_operating_conditions_20260830003704200016_2854c6c7",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_operating_conditions",
+      "claim_id": "claim_c300s_spec_operating_conditions",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_spec_operating_conditions_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_weight_300sp_20260830003704203188_9908dcf1",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_weight_300sp",
+      "claim_id": "claim_c300s_spec_weight_300sp",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_spec_weight_300sp_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_state_standby_20260830003704208099_1592cebd",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_state_standby",
+      "claim_id": "claim_c300s_state_standby",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_state_standby_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_initial_setup_1_20260830003704212726_86c3ed24",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_initial_setup_1",
+      "claim_id": "claim_c300s_step_initial_setup_1",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_step_initial_setup_1_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_initial_setup_2_20260830003704215663_d4e22f8d",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_initial_setup_2",
+      "claim_id": "claim_c300s_step_initial_setup_2",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_step_initial_setup_2_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_initial_setup_3_20260830003704218484_27158f98",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_initial_setup_3",
+      "claim_id": "claim_c300s_step_initial_setup_3",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_step_initial_setup_3_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_initial_setup_4_20260830003704223261_1d8817f2",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_initial_setup_4",
+      "claim_id": "claim_c300s_step_initial_setup_4",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_c300s_step_initial_setup_4_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_weight_300s_20260830003704689146_5cbc4b1a",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_weight_300s",
+      "claim_id": "claim_c300s_spec_weight_300s",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable Core 300S weight record because it belongs to an obsolete product revision; the current Core 300S-P revision is represented separately."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_care_filter_lifespan_repair_20260829_20260830003705242440_c35e507e",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_care_filter_lifespan_repair_20260829",
+      "claim_id": "claim_c300s_care_filter_lifespan_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_care_housing_cleaning_repair_20260829_20260830003705245580_96feb22a",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_care_housing_cleaning_repair_20260829",
+      "claim_id": "claim_c300s_care_housing_cleaning_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_care_prefilter_cleaning_repair_20260829_20260830003705248609_61fcf105",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_care_prefilter_cleaning_repair_20260829",
+      "claim_id": "claim_c300s_care_prefilter_cleaning_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_care_sensor_cleaning_repair_20260829_20260830003705251556_3961d4e6",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_care_sensor_cleaning_repair_20260829",
+      "claim_id": "claim_c300s_care_sensor_cleaning_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_limit_room_size_repair_20260829_20260830003705255572_b5177167",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_limit_room_size_repair_20260829",
+      "claim_id": "claim_c300s_limit_room_size_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_part_airsight_sensor_repair_20260829_20260830003705259452_6fd6c7fe",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_part_airsight_sensor_repair_20260829",
+      "claim_id": "claim_c300s_part_airsight_sensor_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_part_filter_cover_repair_20260829_20260830003705263194_0c087a7f",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_part_filter_cover_repair_20260829",
+      "claim_id": "claim_c300s_part_filter_cover_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_coverage_repair_20260829_20260830003705267438_51e61161",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_coverage_repair_20260829",
+      "claim_id": "claim_c300s_spec_coverage_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_dimensions_repair_20260829_20260830003705272571_d1f945ee",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_dimensions_repair_20260829",
+      "claim_id": "claim_c300s_spec_dimensions_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_operating_conditions_repair_20260829_20260830003705276435_0eadbdd9",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_operating_conditions_repair_20260829",
+      "claim_id": "claim_c300s_spec_operating_conditions_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_spec_weight_300sp_repair_20260829_20260830003705280287_7629f9b1",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_spec_weight_300sp_repair_20260829",
+      "claim_id": "claim_c300s_spec_weight_300sp_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_state_standby_repair_20260829_20260830003705283685_8029a991",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_state_standby_repair_20260829",
+      "claim_id": "claim_c300s_state_standby_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_initial_setup_1_repair_20260829_20260830003705288732_cc9c3cfb",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_initial_setup_1_repair_20260829",
+      "claim_id": "claim_c300s_step_initial_setup_1_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_initial_setup_2_repair_20260829_20260830003705292970_79f35748",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_initial_setup_2_repair_20260829",
+      "claim_id": "claim_c300s_step_initial_setup_2_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_initial_setup_3_repair_20260829_20260830003705297097_c90f73ea",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_initial_setup_3_repair_20260829",
+      "claim_id": "claim_c300s_step_initial_setup_3_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_c300s_step_initial_setup_4_repair_20260829_20260830003705300594_406b69bf",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_c300s_step_initial_setup_4_repair_20260829",
+      "claim_id": "claim_c300s_step_initial_setup_4_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
     }
   ]
 }

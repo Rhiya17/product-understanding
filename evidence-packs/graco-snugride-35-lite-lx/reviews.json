@@ -17,6 +17,2022 @@
       "claim_id": "claim_srl_limit_max_weight_legacy_img",
       "disposition": "REJECTED_FOR_SERVING",
       "rationale": "The 35 lb figure comes from a legacy official gallery image predating the product rename (35 Lite LX -> Lite LX, limit changed 35->30 lb). Kept as CANDIDATE record documenting live conflicting official sources; must never be served as an answer. Closes only if Graco corrects or removes the gallery image (see gap_legacy_manual_1). TRANSCRIPTION VERIFIED by human review 2026-08-24: the quoted overlay text is actually present on the image — the extraction read it correctly; the rejection is about which source wins, not about extraction accuracy."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_model_number_20260829004952222769_9aacd191",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_model_number",
+      "claim_id": "claim_srl_spec_model_number",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after the value was verified against the live official Graco product specifications page."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_dimensions_20260829004952235673_062ccd50",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_dimensions",
+      "claim_id": "claim_srl_spec_dimensions",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after the value was verified against the live official Graco product specifications page."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_weight_with_base_20260829004952249033_0448ba6b",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_weight_with_base",
+      "claim_id": "claim_srl_spec_weight_with_base",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after the value was verified against the live official Graco product specifications page."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_carrier_weight_20260829004952263455_c13091a4",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_carrier_weight",
+      "claim_id": "claim_srl_spec_carrier_weight",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the official Graco page conflicts internally: marketing copy says 7.2 lb while the specification table says 7.5 lb. Resolve the authoritative value before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_min_weight_20260829023051397603_7c1ef681",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_min_weight",
+      "claim_id": "claim_srl_limit_min_weight",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_max_height_20260829023051412450_32fea41f",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_max_height",
+      "claim_id": "claim_srl_limit_max_height",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_head_clearance_20260829023051428510_aaf27458",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_head_clearance",
+      "claim_id": "claim_srl_limit_head_clearance",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_body_support_max_weight_20260829023051442777_0767a36a",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_body_support_max_weight",
+      "claim_id": "claim_srl_limit_body_support_max_weight",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_expiration_7yr_20260829023051459417_4f02a010",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_expiration_7yr",
+      "claim_id": "claim_srl_limit_expiration_7yr",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_base_80pct_20260829023051476221_834c3139",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_base_80pct",
+      "claim_id": "claim_srl_limit_base_80pct",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_harness_type_20260829023051491687_fddd5d14",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_harness_type",
+      "claim_id": "claim_srl_spec_harness_type",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_base_features_20260829023051508050_2dda9d3e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_base_features",
+      "claim_id": "claim_srl_spec_base_features",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_install_methods_20260829023051523625_6d764fa0",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_install_methods",
+      "claim_id": "claim_srl_spec_install_methods",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_fmvss213_20260829023051540302_d41de625",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_fmvss213",
+      "claim_id": "claim_srl_spec_fmvss213",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_aircraft_certified_20260829023051558641_358fa5ad",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_aircraft_certified",
+      "claim_id": "claim_srl_spec_aircraft_certified",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_base_recline_positions_20260829023051573656_bc25950e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_base_recline_positions",
+      "claim_id": "claim_srl_spec_base_recline_positions",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_handle_positions_20260829023051591624_50e6479b",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_handle_positions",
+      "claim_id": "claim_srl_spec_handle_positions",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_part_harness_release_lever_20260829023051606948_c6ba2819",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_part_harness_release_lever",
+      "claim_id": "claim_srl_part_harness_release_lever",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_part_rearfacing_belt_path_20260829023051625721_2cd2f50e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_part_rearfacing_belt_path",
+      "claim_id": "claim_srl_part_rearfacing_belt_path",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_modes_20260829023051641271_aeeb18a7",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_modes",
+      "claim_id": "claim_srl_compat_stroller_modes",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_duoglider_20260829023051657354_94df376b",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_duoglider",
+      "claim_id": "claim_srl_compat_stroller_duoglider",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_fastaction_se_20_20260829023051673010_f8012b4e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_fastaction_se_20",
+      "claim_id": "claim_srl_compat_stroller_fastaction_se_20",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_fastaction_fold_jogger_20260829023051688802_71e0b729",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_fastaction_fold_jogger",
+      "claim_id": "claim_srl_compat_stroller_fastaction_fold_jogger",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_fastaction_jogger_lx_20260829023051705974_17a1792d",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_fastaction_jogger_lx",
+      "claim_id": "claim_srl_compat_stroller_fastaction_jogger_lx",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_gomax_20260829023051724068_f17916e6",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_gomax",
+      "claim_id": "claim_srl_compat_stroller_gomax",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_graco_merge_20260829023051808778_f79e0502",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_graco_merge",
+      "claim_id": "claim_srl_compat_stroller_graco_merge",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_graco_premier_merge_20260829023051821422_a2494273",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_graco_premier_merge",
+      "claim_id": "claim_srl_compat_stroller_graco_premier_merge",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_outpace_lx_20260829023051833624_8630a9d9",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_outpace_lx",
+      "claim_id": "claim_srl_compat_stroller_outpace_lx",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_ready2grow_20_20260829023051845724_c130a9cf",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_ready2grow_20",
+      "claim_id": "claim_srl_compat_stroller_ready2grow_20",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_ready2grow_lx_20_20260829023051857601_471bc53e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_ready2grow_lx_20",
+      "claim_id": "claim_srl_compat_stroller_ready2grow_lx_20",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_ready2jet_20260829023051871148_38abdac8",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_ready2jet",
+      "claim_id": "claim_srl_compat_stroller_ready2jet",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_ready2roll_wagon_20260829023051885797_1da1bc01",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_ready2roll_wagon",
+      "claim_id": "claim_srl_compat_stroller_ready2roll_wagon",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_snugrider_elite_20260829023051908867_e0afac67",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_snugrider_elite",
+      "claim_id": "claim_srl_compat_stroller_snugrider_elite",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_verb_20260829023051932464_ba7ba251",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_verb",
+      "claim_id": "claim_srl_compat_stroller_verb",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_gomax_20260829023051950550_39f0ac6b",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_gomax",
+      "claim_id": "claim_srl_compat_base_gomax",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_graco_premier_20260829023051967432_39d602db",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_graco_premier",
+      "claim_id": "claim_srl_compat_base_graco_premier",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_snuglock_load_leg_20260829023051983229_c796de8d",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_snuglock_load_leg",
+      "claim_id": "claim_srl_compat_base_snuglock_load_leg",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_snugride_lite_20260829023051999402_ea8f258c",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_snugride_lite",
+      "claim_id": "claim_srl_compat_base_snugride_lite",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_snugride_snugfit_20260829023052017875_9d22bbc2",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_snugride_snugfit",
+      "claim_id": "claim_srl_compat_base_snugride_snugfit",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_snugride_snuglock_20260829023052032564_459d6478",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_snugride_snuglock",
+      "claim_id": "claim_srl_compat_base_snugride_snuglock",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_click_connect_requirement_20260829023052048547_28211c0b",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_click_connect_requirement",
+      "claim_id": "claim_srl_compat_click_connect_requirement",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_1_20260829023052066312_19f13388",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_1",
+      "claim_id": "claim_srl_step_latch_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_2_20260829023052084071_e8c78583",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_2",
+      "claim_id": "claim_srl_step_latch_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_3_20260829023052101855_ed48d9a6",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_3",
+      "claim_id": "claim_srl_step_latch_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_4_20260829023052119535_75a7e8db",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_4",
+      "claim_id": "claim_srl_step_latch_4",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_5_20260829023052134107_871bfd9e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_5",
+      "claim_id": "claim_srl_step_latch_5",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_6_20260829023052151140_5578e89f",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_6",
+      "claim_id": "claim_srl_step_latch_6",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_7_20260829023052168366_9ba0422a",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_7",
+      "claim_id": "claim_srl_step_latch_7",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_8_20260829023052186567_50378d7a",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_8",
+      "claim_id": "claim_srl_step_latch_8",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_9_20260829023052202825_6676a560",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_9",
+      "claim_id": "claim_srl_step_latch_9",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_10_20260829023052220215_03bcb99a",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_10",
+      "claim_id": "claim_srl_step_latch_10",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_1_20260829023052238718_375d9841",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_1",
+      "claim_id": "claim_srl_step_beltbase_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_2_20260829023052258714_55983434",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_2",
+      "claim_id": "claim_srl_step_beltbase_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_3_20260829023052275355_a2280a9e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_3",
+      "claim_id": "claim_srl_step_beltbase_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_4_20260829023052293453_9dbaadae",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_4",
+      "claim_id": "claim_srl_step_beltbase_4",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_5_20260829023052309882_5c390117",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_5",
+      "claim_id": "claim_srl_step_beltbase_5",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_6_20260829023052325597_6cad2324",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_6",
+      "claim_id": "claim_srl_step_beltbase_6",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_7_20260829023052343655_ec59f5f9",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_7",
+      "claim_id": "claim_srl_step_beltbase_7",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_8_20260829023052360798_5b12d80a",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_8",
+      "claim_id": "claim_srl_step_beltbase_8",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_9_20260829023052377154_a4286e87",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_9",
+      "claim_id": "claim_srl_step_beltbase_9",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_1_20260829023052394352_42b0b8ec",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_1",
+      "claim_id": "claim_srl_step_baseless_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_2_20260829023052411582_2c1462d0",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_2",
+      "claim_id": "claim_srl_step_baseless_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_3_20260829023052430006_446c7ce3",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_3",
+      "claim_id": "claim_srl_step_baseless_3",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_4_20260829023052451068_7c3dde0f",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_4",
+      "claim_id": "claim_srl_step_baseless_4",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_5_20260829023052470072_edfd50ef",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_5",
+      "claim_id": "claim_srl_step_baseless_5",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_6_20260829023052486331_7580fc7e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_6",
+      "claim_id": "claim_srl_step_baseless_6",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_secure_1_20260829023052507171_609a415a",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_secure_1",
+      "claim_id": "claim_srl_step_secure_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_secure_2_20260829023052525808_c6b9d789",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_secure_2",
+      "claim_id": "claim_srl_step_secure_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_secure_3_20260829023052543164_692adc3f",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_secure_3",
+      "claim_id": "claim_srl_step_secure_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_secure_4_20260829023052560501_379c47b6",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_secure_4",
+      "claim_id": "claim_srl_step_secure_4",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_secure_5_20260829023052575933_32c4d810",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_secure_5",
+      "claim_id": "claim_srl_step_secure_5",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_secure_6_20260829023052592743_7edb495b",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_secure_6",
+      "claim_id": "claim_srl_step_secure_6",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_secure_7_20260829023052608585_74687cae",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_secure_7",
+      "claim_id": "claim_srl_step_secure_7",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_removechild_1_20260829023052626434_79189e09",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_removechild_1",
+      "claim_id": "claim_srl_step_removechild_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_removechild_2_20260829023052642014_e1858ff3",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_removechild_2",
+      "claim_id": "claim_srl_step_removechild_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_removechild_3_20260829023052657712_c6aaec1b",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_removechild_3",
+      "claim_id": "claim_srl_step_removechild_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_airbag_20260829023052674800_e806ef79",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_airbag",
+      "claim_id": "claim_srl_warning_airbag",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_crash_replace_20260829023052691044_17ded450",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_crash_replace",
+      "claim_id": "claim_srl_warning_crash_replace",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_unattended_20260829023052708020_970a273b",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_unattended",
+      "claim_id": "claim_srl_warning_unattended",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_no_dual_install_20260829023052723152_c5916142",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_no_dual_install",
+      "claim_id": "claim_srl_warning_no_dual_install",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_bulky_clothing_20260829023052740787_f23d7498",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_bulky_clothing",
+      "claim_id": "claim_srl_warning_bulky_clothing",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_suffocation_soft_surface_20260829023052755596_a10ab33c",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_suffocation_soft_surface",
+      "claim_id": "claim_srl_warning_suffocation_soft_surface",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_fall_elevated_20260829023052771449_35a12fa8",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_fall_elevated",
+      "claim_id": "claim_srl_warning_fall_elevated",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_strings_cords_20260829023052787643_98cdafbb",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_strings_cords",
+      "claim_id": "claim_srl_warning_strings_cords",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_other_strollers_20260829023052804723_289d0462",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_other_strollers",
+      "claim_id": "claim_srl_warning_other_strollers",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_care_seat_pad_20260829023052819807_dfd50be9",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_care_seat_pad",
+      "claim_id": "claim_srl_care_seat_pad",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_care_buckle_20260829023052835026_1a11a23b",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_care_buckle",
+      "claim_id": "claim_srl_care_buckle",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_care_harness_20260829023052852170_ef9dea37",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_care_harness",
+      "claim_id": "claim_srl_care_harness",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_harnessfit_1_20260829023052868838_149afa57",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_harnessfit_1",
+      "claim_id": "claim_srl_step_harnessfit_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_harnessfit_2_20260829023052883161_4dd2ce2e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_harnessfit_2",
+      "claim_id": "claim_srl_step_harnessfit_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_harnessfit_3_20260829023052899786_9ecde92d",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_harnessfit_3",
+      "claim_id": "claim_srl_step_harnessfit_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_harnessfit_4_20260829023052914444_5d6f074a",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_harnessfit_4",
+      "claim_id": "claim_srl_step_harnessfit_4",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_harnessfit_5_20260829023052933317_b4ad9370",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_harnessfit_5",
+      "claim_id": "claim_srl_step_harnessfit_5",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_harnessfit_6_20260829023052948394_d2439ab5",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_harnessfit_6",
+      "claim_id": "claim_srl_step_harnessfit_6",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_harnessfit_7_20260829023052963444_7c98104c",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_harnessfit_7",
+      "claim_id": "claim_srl_step_harnessfit_7",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_harnessfit_8_20260829023052978069_4e3116bf",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_harnessfit_8",
+      "claim_id": "claim_srl_step_harnessfit_8",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_harnessfit_9_20260829023052994545_59a50dbe",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_harnessfit_9",
+      "claim_id": "claim_srl_step_harnessfit_9",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_harnessfit_10_20260829023053015896_46aac028",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_harnessfit_10",
+      "claim_id": "claim_srl_step_harnessfit_10",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_harnessfit_11_20260829023053031274_87b2f432",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_harnessfit_11",
+      "claim_id": "claim_srl_step_harnessfit_11",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_harnessfit_12_20260829023053048951_381e2736",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_harnessfit_12",
+      "claim_id": "claim_srl_step_harnessfit_12",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_bucklefit_1_20260829023053063785_7d0d2b45",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_bucklefit_1",
+      "claim_id": "claim_srl_step_bucklefit_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_bucklefit_2_20260829023053081277_41701cb1",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_bucklefit_2",
+      "claim_id": "claim_srl_step_bucklefit_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_bucklefit_3_20260829023053099301_c50aa630",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_bucklefit_3",
+      "claim_id": "claim_srl_step_bucklefit_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_bucklefit_4_20260829023053113827_15b33bb3",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_bucklefit_4",
+      "claim_id": "claim_srl_step_bucklefit_4",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_shortenbuckle_1_20260829023053129517_837e9c7c",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_shortenbuckle_1",
+      "claim_id": "claim_srl_step_shortenbuckle_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review checked this C2/C3 claim against the complete relevant manufacturer-manual or official-spec page and its exact citation union supports the claim."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_harness_strap_height_20260829023053145498_0fbf3dc0",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_harness_strap_height",
+      "claim_id": "claim_srl_limit_harness_strap_height",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner instructed completion in Codex chat on 2026-08-28; expert review found the current immutable claim-to-quote union incomplete or verifier-alarmed. Re-extract the complete adjacent manufacturer text and reverify before serving."
+    },
+    {
+      "review_id": "rev_app_claim_srl_care_buckle_20260830003704283480_91ff8999",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_care_buckle",
+      "claim_id": "claim_srl_care_buckle",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_care_buckle_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_gomax_20260830003704290870_621024d3",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_gomax",
+      "claim_id": "claim_srl_compat_base_gomax",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_base_gomax_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_graco_premier_20260830003704294719_e84aca20",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_graco_premier",
+      "claim_id": "claim_srl_compat_base_graco_premier",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_base_graco_premier_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_snuglock_load_leg_20260830003704298045_60c7c8f8",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_snuglock_load_leg",
+      "claim_id": "claim_srl_compat_base_snuglock_load_leg",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_base_snuglock_load_leg_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_snugride_lite_20260830003704300977_88992e35",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_snugride_lite",
+      "claim_id": "claim_srl_compat_base_snugride_lite",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_base_snugride_lite_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_snugride_snugfit_20260830003704305152_ce4eaa67",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_snugride_snugfit",
+      "claim_id": "claim_srl_compat_base_snugride_snugfit",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_base_snugride_snugfit_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_snugride_snuglock_20260830003704308607_e6d068fe",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_snugride_snuglock",
+      "claim_id": "claim_srl_compat_base_snugride_snuglock",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_base_snugride_snuglock_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_click_connect_requirement_20260830003704311546_d6a87bf2",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_click_connect_requirement",
+      "claim_id": "claim_srl_compat_click_connect_requirement",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_click_connect_requirement_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_duoglider_20260830003704314357_dca46b22",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_duoglider",
+      "claim_id": "claim_srl_compat_stroller_duoglider",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_duoglider_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_fastaction_fold_jogger_20260830003704317288_dbd71ab4",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_fastaction_fold_jogger",
+      "claim_id": "claim_srl_compat_stroller_fastaction_fold_jogger",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_fastaction_fold_jogger_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_fastaction_jogger_lx_20260830003704321017_528d7d06",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_fastaction_jogger_lx",
+      "claim_id": "claim_srl_compat_stroller_fastaction_jogger_lx",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_fastaction_jogger_lx_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_fastaction_se_20_20260830003704324652_57a4fbd9",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_fastaction_se_20",
+      "claim_id": "claim_srl_compat_stroller_fastaction_se_20",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_fastaction_se_20_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_gomax_20260830003704328259_1a7b59fc",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_gomax",
+      "claim_id": "claim_srl_compat_stroller_gomax",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_gomax_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_graco_merge_20260830003704333938_947a2c2b",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_graco_merge",
+      "claim_id": "claim_srl_compat_stroller_graco_merge",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_graco_merge_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_graco_premier_merge_20260830003704340371_f7dbb327",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_graco_premier_merge",
+      "claim_id": "claim_srl_compat_stroller_graco_premier_merge",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_graco_premier_merge_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_modes_20260830003704345890_c60dcbee",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_modes",
+      "claim_id": "claim_srl_compat_stroller_modes",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_modes_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_outpace_lx_20260830003704409605_6f771da6",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_outpace_lx",
+      "claim_id": "claim_srl_compat_stroller_outpace_lx",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_outpace_lx_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_ready2grow_20_20260830003704414526_82e1f73c",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_ready2grow_20",
+      "claim_id": "claim_srl_compat_stroller_ready2grow_20",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_ready2grow_20_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_ready2grow_lx_20_20260830003704418789_eff99560",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_ready2grow_lx_20",
+      "claim_id": "claim_srl_compat_stroller_ready2grow_lx_20",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_ready2grow_lx_20_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_ready2jet_20260830003704425239_437a377a",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_ready2jet",
+      "claim_id": "claim_srl_compat_stroller_ready2jet",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_ready2jet_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_ready2roll_wagon_20260830003704429944_90a9fa8a",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_ready2roll_wagon",
+      "claim_id": "claim_srl_compat_stroller_ready2roll_wagon",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_ready2roll_wagon_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_snugrider_elite_20260830003704434166_25325260",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_snugrider_elite",
+      "claim_id": "claim_srl_compat_stroller_snugrider_elite",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_snugrider_elite_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_verb_20260830003704440171_26a0b136",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_verb",
+      "claim_id": "claim_srl_compat_stroller_verb",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_compat_stroller_verb_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_body_support_max_weight_20260830003704445084_9a37af72",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_body_support_max_weight",
+      "claim_id": "claim_srl_limit_body_support_max_weight",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_limit_body_support_max_weight_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_expiration_7yr_20260830003704451777_e07c31f8",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_expiration_7yr",
+      "claim_id": "claim_srl_limit_expiration_7yr",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_limit_expiration_7yr_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_harness_strap_height_20260830003704460150_2f4b635a",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_harness_strap_height",
+      "claim_id": "claim_srl_limit_harness_strap_height",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_limit_harness_strap_height_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_max_height_20260830003704467117_b7a9a2ed",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_max_height",
+      "claim_id": "claim_srl_limit_max_height",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_limit_max_height_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_part_harness_release_lever_20260830003704473612_5b428c91",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_part_harness_release_lever",
+      "claim_id": "claim_srl_part_harness_release_lever",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_part_harness_release_lever_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_part_rearfacing_belt_path_20260830003704477900_7b069f67",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_part_rearfacing_belt_path",
+      "claim_id": "claim_srl_part_rearfacing_belt_path",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_part_rearfacing_belt_path_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_aircraft_certified_20260830003704481878_0620cd9d",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_aircraft_certified",
+      "claim_id": "claim_srl_spec_aircraft_certified",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_spec_aircraft_certified_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_carrier_weight_20260830003704486155_f3782e5c",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_carrier_weight",
+      "claim_id": "claim_srl_spec_carrier_weight",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_spec_carrier_weight_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_1_20260830003704492778_28affc34",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_1",
+      "claim_id": "claim_srl_step_baseless_1",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_baseless_1_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_2_20260830003704499565_b13cb6a1",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_2",
+      "claim_id": "claim_srl_step_baseless_2",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_baseless_2_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_3_20260830003704543000_7cd0d06b",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_3",
+      "claim_id": "claim_srl_step_baseless_3",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_baseless_3_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_4_20260830003704551985_fa74a37b",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_4",
+      "claim_id": "claim_srl_step_baseless_4",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_baseless_4_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_5_20260830003704558358_24d90cb7",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_5",
+      "claim_id": "claim_srl_step_baseless_5",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_baseless_5_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_6_20260830003704563143_ae3c8447",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_6",
+      "claim_id": "claim_srl_step_baseless_6",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_baseless_6_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_1_20260830003704567860_f8cd68d7",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_1",
+      "claim_id": "claim_srl_step_beltbase_1",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_beltbase_1_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_2_20260830003704574263_4452a75e",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_2",
+      "claim_id": "claim_srl_step_beltbase_2",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_beltbase_2_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_3_20260830003704579162_7db3ad10",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_3",
+      "claim_id": "claim_srl_step_beltbase_3",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_beltbase_3_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_4_20260830003704583952_77809c27",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_4",
+      "claim_id": "claim_srl_step_beltbase_4",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_beltbase_4_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_5_20260830003704590641_29e7483f",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_5",
+      "claim_id": "claim_srl_step_beltbase_5",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_beltbase_5_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_6_20260830003704595747_86ce9d1d",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_6",
+      "claim_id": "claim_srl_step_beltbase_6",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_beltbase_6_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_7_20260830003704600548_bc1ba13e",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_7",
+      "claim_id": "claim_srl_step_beltbase_7",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_beltbase_7_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_8_20260830003704604928_4b67b295",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_8",
+      "claim_id": "claim_srl_step_beltbase_8",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_beltbase_8_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_9_20260830003704609008_f8712de5",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_9",
+      "claim_id": "claim_srl_step_beltbase_9",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_beltbase_9_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_1_20260830003704612631_ad696f02",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_1",
+      "claim_id": "claim_srl_step_latch_1",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_latch_1_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_10_20260830003704616977_679c5234",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_10",
+      "claim_id": "claim_srl_step_latch_10",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_latch_10_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_2_20260830003704624119_752a0665",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_2",
+      "claim_id": "claim_srl_step_latch_2",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_latch_2_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_3_20260830003704629646_df2f7831",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_3",
+      "claim_id": "claim_srl_step_latch_3",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_latch_3_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_4_20260830003704634872_ea416633",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_4",
+      "claim_id": "claim_srl_step_latch_4",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_latch_4_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_5_20260830003704641314_86d54a89",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_5",
+      "claim_id": "claim_srl_step_latch_5",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_latch_5_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_6_20260830003704646392_ac5df2dc",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_6",
+      "claim_id": "claim_srl_step_latch_6",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_latch_6_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_7_20260830003704651206_f78c5f9b",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_7",
+      "claim_id": "claim_srl_step_latch_7",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_latch_7_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_8_20260830003704657347_8c9db3ab",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_8",
+      "claim_id": "claim_srl_step_latch_8",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_latch_8_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_9_20260830003704662906_04733b4c",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_9",
+      "claim_id": "claim_srl_step_latch_9",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_step_latch_9_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_airbag_20260830003704672466_047ddcb9",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_airbag",
+      "claim_id": "claim_srl_warning_airbag",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_warning_airbag_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_bulky_clothing_20260830003704677681_d093a74f",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_bulky_clothing",
+      "claim_id": "claim_srl_warning_bulky_clothing",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_warning_bulky_clothing_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_strings_cords_20260830003704682855_29e223d3",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_strings_cords",
+      "claim_id": "claim_srl_warning_strings_cords",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_srl_warning_strings_cords_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_srl_care_buckle_repair_20260829_20260830003704847763_0c848448",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_care_buckle_repair_20260829",
+      "claim_id": "claim_srl_care_buckle_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_gomax_repair_20260829_20260830003704854247_88f43c84",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_gomax_repair_20260829",
+      "claim_id": "claim_srl_compat_base_gomax_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_graco_premier_repair_20260829_20260830003704860699_f47a2809",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_graco_premier_repair_20260829",
+      "claim_id": "claim_srl_compat_base_graco_premier_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_snuglock_load_leg_repair_20260829_20260830003704866520_8a37e9a3",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_snuglock_load_leg_repair_20260829",
+      "claim_id": "claim_srl_compat_base_snuglock_load_leg_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_snugride_lite_repair_20260829_20260830003704874271_8d49b331",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_snugride_lite_repair_20260829",
+      "claim_id": "claim_srl_compat_base_snugride_lite_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_snugride_snugfit_repair_20260829_20260830003704880114_08ecce18",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_snugride_snugfit_repair_20260829",
+      "claim_id": "claim_srl_compat_base_snugride_snugfit_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_base_snugride_snuglock_repair_20260829_20260830003704886682_4f01f703",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_base_snugride_snuglock_repair_20260829",
+      "claim_id": "claim_srl_compat_base_snugride_snuglock_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_click_connect_requirement_repair_20260829_20260830003704893786_3037f999",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_click_connect_requirement_repair_20260829",
+      "claim_id": "claim_srl_compat_click_connect_requirement_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_duoglider_repair_20260829_20260830003704899381_91b00c3b",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_duoglider_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_duoglider_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_fastaction_fold_jogger_repair_20260829_20260830003704907103_53aed267",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_fastaction_fold_jogger_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_fastaction_fold_jogger_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_fastaction_jogger_lx_repair_20260829_20260830003704913035_4a464423",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_fastaction_jogger_lx_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_fastaction_jogger_lx_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_fastaction_se_20_repair_20260829_20260830003704918372_8447bd71",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_fastaction_se_20_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_fastaction_se_20_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_gomax_repair_20260829_20260830003704925550_e7ce40c6",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_gomax_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_gomax_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_graco_merge_repair_20260829_20260830003704931183_b432f8f0",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_graco_merge_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_graco_merge_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_graco_premier_merge_repair_20260829_20260830003704938041_4f8c47ae",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_graco_premier_merge_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_graco_premier_merge_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_modes_repair_20260829_20260830003704944391_7f8d2cf8",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_modes_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_modes_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_outpace_lx_repair_20260829_20260830003704949920_ce9704fe",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_outpace_lx_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_outpace_lx_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_ready2grow_20_repair_20260829_20260830003704957024_a2fb2070",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_ready2grow_20_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_ready2grow_20_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_ready2grow_lx_20_repair_20260829_20260830003704962804_0c6a91fb",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_ready2grow_lx_20_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_ready2grow_lx_20_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_ready2jet_repair_20260829_20260830003704968396_ef8d7db5",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_ready2jet_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_ready2jet_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_ready2roll_wagon_repair_20260829_20260830003704975866_e4619688",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_ready2roll_wagon_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_ready2roll_wagon_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_snugrider_elite_repair_20260829_20260830003704981672_fa9ede66",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_snugrider_elite_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_snugrider_elite_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_compat_stroller_verb_repair_20260829_20260830003704988349_2980d13b",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_compat_stroller_verb_repair_20260829",
+      "claim_id": "claim_srl_compat_stroller_verb_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_body_support_max_weight_repair_20260829_20260830003704994962_2e440937",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_body_support_max_weight_repair_20260829",
+      "claim_id": "claim_srl_limit_body_support_max_weight_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_expiration_7yr_repair_20260829_20260830003705000672_414e3372",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_expiration_7yr_repair_20260829",
+      "claim_id": "claim_srl_limit_expiration_7yr_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_harness_strap_height_repair_20260829_20260830003705008607_44aa81c7",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_harness_strap_height_repair_20260829",
+      "claim_id": "claim_srl_limit_harness_strap_height_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_limit_max_height_repair_20260829_20260830003705015399_f566e337",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_limit_max_height_repair_20260829",
+      "claim_id": "claim_srl_limit_max_height_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_part_harness_release_lever_repair_20260829_20260830003705023002_e640f016",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_part_harness_release_lever_repair_20260829",
+      "claim_id": "claim_srl_part_harness_release_lever_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_part_rearfacing_belt_path_repair_20260829_20260830003705029128_381984c8",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_part_rearfacing_belt_path_repair_20260829",
+      "claim_id": "claim_srl_part_rearfacing_belt_path_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_aircraft_certified_repair_20260829_20260830003705034921_3a0a303f",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_aircraft_certified_repair_20260829",
+      "claim_id": "claim_srl_spec_aircraft_certified_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_spec_carrier_weight_repair_20260829_20260830003705042927_165a4134",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_spec_carrier_weight_repair_20260829",
+      "claim_id": "claim_srl_spec_carrier_weight_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_1_repair_20260829_20260830003705049517_2ff56779",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_1_repair_20260829",
+      "claim_id": "claim_srl_step_baseless_1_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_2_repair_20260829_20260830003705057979_580b444a",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_2_repair_20260829",
+      "claim_id": "claim_srl_step_baseless_2_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_3_repair_20260829_20260830003705064467_d446a4f1",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_3_repair_20260829",
+      "claim_id": "claim_srl_step_baseless_3_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_4_repair_20260829_20260830003705072206_495dbd94",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_4_repair_20260829",
+      "claim_id": "claim_srl_step_baseless_4_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_5_repair_20260829_20260830003705078682_aaf29368",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_5_repair_20260829",
+      "claim_id": "claim_srl_step_baseless_5_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_baseless_6_repair_20260829_20260830003705084736_93a001e8",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_baseless_6_repair_20260829",
+      "claim_id": "claim_srl_step_baseless_6_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_1_repair_20260829_20260830003705093263_1f200a30",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_1_repair_20260829",
+      "claim_id": "claim_srl_step_beltbase_1_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_2_repair_20260829_20260830003705099469_e3496858",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_2_repair_20260829",
+      "claim_id": "claim_srl_step_beltbase_2_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_3_repair_20260829_20260830003705107556_a7bc98bb",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_3_repair_20260829",
+      "claim_id": "claim_srl_step_beltbase_3_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_4_repair_20260829_20260830003705113959_c7df36a9",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_4_repair_20260829",
+      "claim_id": "claim_srl_step_beltbase_4_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_5_repair_20260829_20260830003705121382_0402e164",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_5_repair_20260829",
+      "claim_id": "claim_srl_step_beltbase_5_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_6_repair_20260829_20260830003705128576_5a967385",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_6_repair_20260829",
+      "claim_id": "claim_srl_step_beltbase_6_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_7_repair_20260829_20260830003705134779_712bff23",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_7_repair_20260829",
+      "claim_id": "claim_srl_step_beltbase_7_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_8_repair_20260829_20260830003705143007_d3a06aa8",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_8_repair_20260829",
+      "claim_id": "claim_srl_step_beltbase_8_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_beltbase_9_repair_20260829_20260830003705149486_293f15e2",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_beltbase_9_repair_20260829",
+      "claim_id": "claim_srl_step_beltbase_9_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_10_repair_20260829_20260830003705156980_7015305f",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_10_repair_20260829",
+      "claim_id": "claim_srl_step_latch_10_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_1_repair_20260829_20260830003705163989_5165664a",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_1_repair_20260829",
+      "claim_id": "claim_srl_step_latch_1_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_2_repair_20260829_20260830003705171782_2b5fc6cd",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_2_repair_20260829",
+      "claim_id": "claim_srl_step_latch_2_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_3_repair_20260829_20260830003705178462_d1e4f390",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_3_repair_20260829",
+      "claim_id": "claim_srl_step_latch_3_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_4_repair_20260829_20260830003705185211_fa11e0eb",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_4_repair_20260829",
+      "claim_id": "claim_srl_step_latch_4_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_5_repair_20260829_20260830003705193689_66317cbc",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_5_repair_20260829",
+      "claim_id": "claim_srl_step_latch_5_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_6_repair_20260829_20260830003705200574_7c4a7e07",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_6_repair_20260829",
+      "claim_id": "claim_srl_step_latch_6_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_7_repair_20260829_20260830003705208762_799034d4",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_7_repair_20260829",
+      "claim_id": "claim_srl_step_latch_7_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_8_repair_20260829_20260830003705215084_c8ccdaaf",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_8_repair_20260829",
+      "claim_id": "claim_srl_step_latch_8_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_step_latch_9_repair_20260829_20260830003705221199_04ff5a07",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_step_latch_9_repair_20260829",
+      "claim_id": "claim_srl_step_latch_9_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_airbag_repair_20260829_20260830003705226833_71b209b3",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_airbag_repair_20260829",
+      "claim_id": "claim_srl_warning_airbag_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_bulky_clothing_repair_20260829_20260830003705232030_8e9ae346",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_bulky_clothing_repair_20260829",
+      "claim_id": "claim_srl_warning_bulky_clothing_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_srl_warning_strings_cords_repair_20260829_20260830003705237818_24b65fab",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_srl_warning_strings_cords_repair_20260829",
+      "claim_id": "claim_srl_warning_strings_cords_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
     }
   ]
 }

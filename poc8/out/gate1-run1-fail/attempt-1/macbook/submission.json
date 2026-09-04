@@ -1,0 +1,30 @@
+{
+  "prepared_at": "2026-08-30T01:18:33.840617+00:00",
+  "endpoint": "fal-ai/any-llm/vision",
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "arguments": {
+    "model": "qwen/qwen3-vl-235b-a22b-instruct",
+    "prompt": "You are the strict Stage B gate for a product digital twin.\nImage 1 is an authoritative official product image. Image 2 is an INTERNAL-ONLY\ndeterministic render of a repaired Tripo3D scan. Judge the PRODUCT GEOMETRY and\nrecognizable identity, not background, lighting, watermark, camera crop, or\nthe render's missing presentation props. The official image establishes the right-side profile of the Apple MacBook Air 13-inch M3: a thin two-slab aluminum laptop with the single 3.5 mm jack on that right side. Reject detached debris, invented fins/callouts, extra ports, impossible stacking, or a shape that is not a credible MacBook Air. This is the first fixed-camera attempt.\n\nFail if the rendered object is not recognizably the same product/model family,\nif major proportions are implausible relative to Image 1, or if major parts are\nmissing/invented. Answer JSON only:\n{\n  \"recognizable_same_product\": {\"answer\":\"yes|no|unsure\",\"evidence\":\"...\"},\n  \"major_proportions_plausible\": {\"answer\":\"yes|no|unsure\",\"evidence\":\"...\"},\n  \"missing_or_invented_major_parts\": {\"answer\":\"yes|no|unsure\",\"evidence\":\"...\"},\n  \"verdict\":\"pass|fail\",\n  \"verdict_reason\":\"...\"\n}",
+    "image_urls": [
+      "https://v3b.fal.media/files/b/0aa85a17/jTRB5K13AIxNmayp5H4y5_guide-right-side-headphone-jack.png",
+      "https://v3b.fal.media/files/b/0aa85a17/y1Z4ohAoNpdL-dlgAsupX_macbook.png"
+    ],
+    "temperature": 0,
+    "max_tokens": 700
+  },
+  "inputs": [
+    {
+      "role": "official_ground_truth",
+      "path": "source-vault/apple-macbook-air-13-m3/images/guide-right-side-headphone-jack.png",
+      "sha256": "b8680a9cd16337fb3fc0f1d717afe90bad1dd441f9526f876413bfe575f50006"
+    },
+    {
+      "role": "repaired_twin_render",
+      "path": "poc8/out/gate1/attempt-1/macbook.png",
+      "sha256": "257ebf0a566fac9d31fd51dedb15b058953dcdb9e1279b8b423df7199ef1959d"
+    }
+  ],
+  "estimated_cost_usd": 0.01,
+  "internal_only": true,
+  "approved_by": null
+}

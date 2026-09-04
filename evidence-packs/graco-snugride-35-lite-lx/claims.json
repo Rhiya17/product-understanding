@@ -3504,5 +3504,2262 @@
     "extractor": "evidence-pack-agent-v2",
     "extracted_at": "2026-08-24",
     "extraction_notes": "Stated as the check in 4-A step 6 and repeated in step 10 ('At or Just Below the Child’s Shoulders'); slot selection detail (upper vs lower loops) is in claim_srl_step_harnessfit_11/12."
+  },
+  {
+    "claim_id": "claim_srl_limit_max_height_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "LIMIT",
+    "predicate": "maximum_child_height",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "rule": "For rear-facing use, child height must be 32 in (81 cm) or less.",
+      "value": 32,
+      "unit": "in"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 22,
+        "region": null,
+        "quote": "Rear-Facing: 4-30 lb (1.8- 13.6 kg) 32” (81 cm) or less"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_limit_max_height. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_limit_body_support_max_weight_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "LIMIT",
+    "predicate": "body_support_maximum_child_weight",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "rule": "The body support can only be used for infants 12 lb (5 kg) or less.",
+      "value": 12,
+      "unit": "lb"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 72,
+        "region": null,
+        "quote": "The body support can ONLY be used for infants 12 lb (5 kg) or less."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_limit_body_support_max_weight. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_limit_expiration_7yr_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "LIMIT",
+    "predicate": "useful_life_years",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 7,
+      "unit": "years",
+      "rule": "Stop using and discard the car seat 7 years after date of manufacture; date label is on back of car seat."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 10,
+        "region": null,
+        "quote": "STOP using this car seat and throw it away 7 years after the date of manufacture."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 10,
+        "quote": "Look for date of manufacture label on back of the car seat."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_limit_expiration_7yr. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_spec_carrier_weight_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "carrier_weight_without_base",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "status": "source_conflict",
+      "specification_table_lb": 7.5,
+      "marketing_copy_lb": 7.2,
+      "rule": "The current Graco product page conflicts internally; do not present a single carrier-only weight without qualification."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_pdp_specs_page",
+        "page": null,
+        "quote": "| Carrier weight without base | 7.5 lb (spec table); marketing copy says \"weighs just 7.2 lb\" |"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_spec_carrier_weight. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_spec_aircraft_certified_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "SPEC",
+    "predicate": "aircraft_certification",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "certified": true,
+      "restriction": "Use only on forward-facing aircraft seats; follow vehicle installation instructions (sections 3-C, 3-D, 6-D lap belt installation)."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 10,
+        "region": null,
+        "quote": "This child restraint is certified for use in aircraft. Use only on forward-facing aircraft seats."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 10,
+        "quote": "Follow the instructions for vehicle installation. See sections 3-C, 3-D and 6-D Lap Belt Installation."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_spec_aircraft_certified. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_part_harness_release_lever_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "PART_LOCATION",
+    "predicate": "harness_release_lever_location",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "part": "harness_release_lever",
+      "location_description": "Under the seat pad.",
+      "diagram_binding": {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 14,
+        "bounding_box": null,
+        "coordinate_system": "normalized",
+        "annotation_status": "PENDING"
+      }
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 14,
+        "region": null,
+        "quote": "H  Harness Release Lever (Under Pad)"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_part_harness_release_lever. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_part_rearfacing_belt_path_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "PART_LOCATION",
+    "predicate": "rear_facing_belt_path_location",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "part": "rear_facing_belt_path",
+      "location_description": "Rear-facing belt path on the carrier when it is used without the base.",
+      "diagram_binding": {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 14,
+        "bounding_box": null,
+        "coordinate_system": "normalized",
+        "annotation_status": "PENDING"
+      }
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 14,
+        "region": null,
+        "quote": "E  Rear-Facing Belt Path (When Used Without Base)"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_part_rearfacing_belt_path. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_modes_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_modes",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "Graco Modes Strollers",
+      "counterpart_name": "Graco Modes Strollers",
+      "counterpart_type": "stroller",
+      "compatible": true,
+      "qualifier": "With the exception of Modes 3 Lite DLX & Modes 3 Lite Platinum (criteria key *)"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "Graco® Modes® Strollers ✓ ✓"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "* With the exception of Modes 3 Lite DLX & Modes 3 Lite Platinum"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_modes. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_duoglider_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_duoglider",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "DuoGlider",
+      "counterpart_name": "DuoGlider",
+      "counterpart_type": "stroller",
+      "compatible": true,
+      "qualifier": "Can only be used with the rear seat (criteria key +)"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "DuoGlider ✓ ✓"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "+Can only be used with the rear seat"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_duoglider. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_fastaction_se_20_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_fastaction_se_20",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "FastAction SE 2.0",
+      "counterpart_name": "FastAction SE 2.0",
+      "counterpart_type": "stroller",
+      "compatible": true
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "FastAction SE 2.0 ✓ ✓"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_fastaction_se_20. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_fastaction_fold_jogger_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_fastaction_fold_jogger",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "FastAction Fold Jogger",
+      "counterpart_name": "FastAction Fold Jogger",
+      "counterpart_type": "stroller",
+      "compatible": true
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "FastAction Fold Jogger ✓ ✓"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_fastaction_fold_jogger. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_fastaction_jogger_lx_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_fastaction_jogger_lx",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "FastAction Jogger LX",
+      "counterpart_name": "FastAction Jogger LX",
+      "counterpart_type": "stroller",
+      "compatible": true
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "FastAction Jogger LX ✓ ✓"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_fastaction_jogger_lx. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_gomax_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_gomax",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "GoMax",
+      "counterpart_name": "GoMax",
+      "counterpart_type": "stroller",
+      "compatible": true
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "GoMax ✓ ✓"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_gomax. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_graco_merge_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_graco_merge",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "Graco Merge",
+      "counterpart_name": "Graco Merge",
+      "counterpart_type": "stroller",
+      "compatible": true
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "Graco Merge ✓ ✓"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_graco_merge. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_graco_premier_merge_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_graco_premier_merge",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "Graco Premier Merge",
+      "counterpart_name": "Graco Premier Merge",
+      "counterpart_type": "stroller",
+      "compatible": true
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "Graco Premier Merge ✓ -"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_graco_premier_merge. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_outpace_lx_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_outpace_lx",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "Outpace LX",
+      "counterpart_name": "Outpace LX",
+      "counterpart_type": "stroller",
+      "compatible": true
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "Outpace® LX ✓ -"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_outpace_lx. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_ready2grow_20_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_ready2grow_20",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "Ready2Grow 2.0",
+      "counterpart_name": "Ready2Grow 2.0",
+      "counterpart_type": "stroller",
+      "compatible": true,
+      "qualifier": "Can only be used with the rear seat (criteria key +)"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "Ready2Grow 2.0 ✓ ✓"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "+Can only be used with the rear seat"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_ready2grow_20. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_ready2grow_lx_20_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_ready2grow_lx_20",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "Ready2Grow LX 2.0",
+      "counterpart_name": "Ready2Grow LX 2.0",
+      "counterpart_type": "stroller",
+      "compatible": true,
+      "qualifier": "Can only be used with the rear seat (criteria key +)"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "Ready2Grow LX 2.0 ✓ ✓"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "+Can only be used with the rear seat"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_ready2grow_lx_20. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_ready2jet_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_ready2jet",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": "Ready2Jet models produced 2025 & later only",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "prod_graco_ready2jet",
+      "counterpart_name": "Ready2Jet",
+      "counterpart_type": "stroller",
+      "compatible": true,
+      "qualifier": "Only with models produced in 2025 & later"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "Ready2Jet® ✓ ✓ (Only with models produced in 2025 & later)"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_ready2jet. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_ready2roll_wagon_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_ready2roll_wagon",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "Ready2Roll Wagon",
+      "counterpart_name": "Ready2Roll Wagon",
+      "counterpart_type": "stroller",
+      "compatible": true
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "Ready2Roll Wagon ✓ ✓"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_ready2roll_wagon. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_snugrider_elite_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_snugrider_elite",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "SnugRider Elite",
+      "counterpart_name": "SnugRider Elite",
+      "counterpart_type": "stroller",
+      "compatible": true
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "SnugRider® Elite ✓ ✓"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_snugrider_elite. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_stroller_verb_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_verb",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "Verb",
+      "counterpart_name": "Verb",
+      "counterpart_type": "stroller",
+      "compatible": true
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "Graco® Strollers & Infant Car Seats Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 1,
+        "region": null,
+        "quote": "Verb® ✓ ✓"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_stroller_verb. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_base_gomax_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "incompatible_with_gomax_base",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "GoMax Infant Car Seat Base",
+      "counterpart_name": "GoMax Infant Car Seat Base",
+      "counterpart_type": "infant_car_seat_base",
+      "compatible": false
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "quote": "Graco® Infant Car Seats & Base Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "region": null,
+        "quote": "GoMax Infant Car Seat Base - ✓"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_base_gomax. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_base_graco_premier_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_graco_premier_base",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "Graco Premier Infant Car Seat Bases",
+      "counterpart_name": "Graco Premier Infant Car Seat Bases",
+      "counterpart_type": "infant_car_seat_base",
+      "compatible": true,
+      "qualifier": "Graco Premier car seats are sold with bases that are not sold separately (criteria key *)"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "quote": "Graco® Infant Car Seats & Base Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "region": null,
+        "quote": "Graco Premier Infant Car Seat Bases* ✓"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "region": null,
+        "quote": "*Graco® Premier car seats are sold with bases that are not sold separately."
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_base_graco_premier. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_base_snuglock_load_leg_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_snuglock_load_leg_base",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "SnugLock Infant Car Seat Base ft. Load Leg Technology",
+      "counterpart_name": "SnugLock Infant Car Seat Base ft. Load Leg Technology",
+      "counterpart_type": "infant_car_seat_base",
+      "compatible": true
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "quote": "Graco® Infant Car Seats & Base Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "region": null,
+        "quote": "SnugLock® Infant Car Seat Base ft. Load Leg Technology ✓"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_base_snuglock_load_leg. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_base_snugride_lite_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_snugride_lite_base",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "SnugRide Lite Infant Car Seat Base",
+      "counterpart_name": "SnugRide Lite Infant Car Seat Base",
+      "counterpart_type": "infant_car_seat_base",
+      "compatible": true
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "quote": "Graco® Infant Car Seats & Base Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "region": null,
+        "quote": "SnugRide® Lite Infant Car Seat Base ✓"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_base_snugride_lite. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_base_snugride_snugfit_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_snugride_snugfit_base",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "SnugRide SnugFit Infant Car Seat Base",
+      "counterpart_name": "SnugRide SnugFit Infant Car Seat Base",
+      "counterpart_type": "infant_car_seat_base",
+      "compatible": true
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "quote": "Graco® Infant Car Seats & Base Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "region": null,
+        "quote": "SnugRide® SnugFit Infant Car Seat Base ✓"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_base_snugride_snugfit. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_base_snugride_snuglock_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_with_snugride_snuglock_base",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "SnugRide SnugLock Infant Car Seat Base",
+      "counterpart_name": "SnugRide SnugLock Infant Car Seat Base",
+      "counterpart_type": "infant_car_seat_base",
+      "compatible": true
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "quote": "Graco® Infant Car Seats & Base Compatibility List"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "quote": "SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)"
+      },
+      {
+        "source_id": "src_compatibility_chart_apr2026",
+        "page": 3,
+        "region": null,
+        "quote": "SnugRide® SnugLock® Infant Car Seat Base ✓"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_base_snugride_snuglock. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_compat_click_connect_requirement_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "stroller_system_requirement",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "compatible": true,
+      "counterpart": "strollers in the Graco Click Connect travel system",
+      "counterpart_type": "stroller_system",
+      "restriction": "Use only with strollers that are part of the Graco Click Connect travel system; never use with another manufacturer's stroller."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 60,
+        "quote": "USE ONLY WITH STROLLERS THAT ARE PART OF THE GRACO CLICK CONNECT TRAVEL SYSTEM."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 60,
+        "quote": "NEVER use a Graco infant carrier with any other manufacturer’s strollers. This can result in serious injury or death."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_compat_click_connect_requirement. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_latch_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_lower_anchor_verified_20260829",
+      "step_number": 1,
+      "action": "Remove the lower anchor attachment connectors from their storage position."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 24,
+        "region": null,
+        "quote": "1. Remove Lower Anchor Attachment Connectors from Storage Location Unhook the Lower anchor attachment connectors and remove from storage position."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_latch_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_latch_2_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_lower_anchor_verified_20260829",
+      "step_number": 2,
+      "action": "Make sure the lower anchor attachment strap is in the rear-facing belt path, marked with a blue label."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 24,
+        "region": null,
+        "quote": "2. Make Sure Lower Anchor Attachment Strap is in the Rear- Facing Belt Path, Marked With a Blue Label"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_latch_2. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_latch_3_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_lower_anchor_verified_20260829",
+      "step_number": 3,
+      "action": "Extend the lower anchor attachment strap to its maximum length by pressing the gray button and pulling on the strap."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 25,
+        "region": null,
+        "quote": "3. Extend the Lower Anchor Attachment Strap Extend the Lower anchor attachment strap to its maximum length by pressing the gray button and pulling on the strap."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_latch_3. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_latch_4_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_lower_anchor_verified_20260829",
+      "step_number": 4,
+      "action": "Place the base flat on the vehicle back seat, push it back until it touches the vehicle seat back, and center it between the lower anchors."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 25,
+        "region": null,
+        "quote": "4. Place Base in Back Seat of the Vehicle Place the base flat on the vehicle seat. Push it back until the front of the base touches the vehicle seat back. Center the base between the lower Lower anchor attachment anchors."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_latch_4. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_latch_5_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_lower_anchor_verified_20260829",
+      "step_number": 5,
+      "action": "Check the level indicator; the vehicle must be level with the ground."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 26,
+        "region": null,
+        "quote": "5. Check the Level Indicator Vehicle MUST be level with the ground."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_latch_5. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_latch_6_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_lower_anchor_verified_20260829",
+      "step_number": 6,
+      "action": "Connect the lower anchor attachment connectors to the vehicle's lower anchors; the strap should lie flat and not be twisted, and hooks must not be attached upside down."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 28,
+        "region": null,
+        "quote": "6. Connect Lower Anchor Attachment Connectors to the Vehicle’s Lower Anchor Attachment Anchors Lower anchor attachment strap should lay as flat as possible and not be twisted."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 28,
+        "quote": "Do not attach the hook upside down."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_latch_6. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_latch_7_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_lower_anchor_verified_20260829",
+      "step_number": 7,
+      "action": "Press down firmly in the center of the base while tightening the lower anchor attachment strap."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 29,
+        "region": null,
+        "quote": "7. Tighten the Lower Anchor Attachment Strap Press down firmly in the center of the base while tightening the Lower anchor attachment strap."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_latch_7. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_latch_8_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_lower_anchor_verified_20260829",
+      "step_number": 8,
+      "action": "Test for tightness: push and pull the base at the strap side to side and front to back; it must move less than 1 in (2.5 cm)."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 29,
+        "region": null,
+        "quote": "8. Test For Tightness Grab the sides of the base where the Lower anchor attachment strap is and push and pull the base from side to side and front to back."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 29,
+        "quote": "If the base moves less than 1” (2.5 cm), it is tight enough."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_latch_8. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_latch_9_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_lower_anchor_verified_20260829",
+      "step_number": 9,
+      "action": "Place the car seat into the base and push down on the front of the car seat and handle until it clicks; pull up on the front corners to confirm attachment."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 30,
+        "region": null,
+        "quote": "9. Attach Car Seat to Base Place car seat into the base. Push down on the front of the car seat and handle until you hear a “click”."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 30,
+        "quote": "Test to make sure the car seat is attached by pulling up on the front corners of car seat."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_latch_9. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_latch_10_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_lower_anchor_verified_20260829",
+      "step_number": 10,
+      "action": "Re-check the level indicator with the child in the restraint; the vehicle must be level with the ground."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 31,
+        "region": null,
+        "quote": "10. Check the Level Indicator Vehicle MUST be level with the ground. Check the level indicator with child in the child restraint."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_latch_10. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_beltbase_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_seat_belt_verified_20260829",
+      "step_number": 1,
+      "action": "Store the lower anchor attachment connectors on the plastic bars on the sides of the base and remove the slack."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 33,
+        "region": null,
+        "quote": "1. Store Lower Anchor Attachment Connectors Attach the Lower anchor attachment connectors to the plastic bars on sides of base as shown. Remove the slack."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_beltbase_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_beltbase_2_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_seat_belt_verified_20260829",
+      "step_number": 2,
+      "action": "Place the base flat on the vehicle back seat and push it back until the front of the base touches the vehicle seat back."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 33,
+        "region": null,
+        "quote": "2. Place Base in Back Seat of the Vehicle Place the base flat on the vehicle seat. Push it back until the front of the base touches the vehicle seat back."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_beltbase_2. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_beltbase_3_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_seat_belt_verified_20260829",
+      "step_number": 3,
+      "action": "Check the level indicator; the vehicle must be level with the ground."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 34,
+        "region": null,
+        "quote": "3. Check the Level Indicator Vehicle MUST be level with the ground."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_beltbase_3. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_beltbase_4_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_seat_belt_verified_20260829",
+      "step_number": 4,
+      "action": "Thread the vehicle seat belt through the rear-facing belt path (marked with a blue label) and buckle it; the belt should lie flat and not be twisted."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 36,
+        "region": null,
+        "quote": "4. Route the Vehicle Seat Belt Thread vehicle seat belt through the rear-facing belt path (marked with a blue label) and buckle it. The seat belt should lay as flat as possible and not be twisted."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_beltbase_4. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_beltbase_5_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_seat_belt_verified_20260829",
+      "step_number": 5,
+      "action": "Lock the vehicle seat belt: slowly pull the shoulder belt all the way out, let it retract, then pull to confirm it is locked."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 37,
+        "region": null,
+        "quote": "5. Lock the Vehicle Seat Belt In most vehicles today, slowly pull the shoulder belt all the way out and then let it go back in. You will hear a “clicking” sound."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 37,
+        "quote": "Slowly pull out on the belt and it should be locked. If not, review your car’s owner manual and section 6-D."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_beltbase_5. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_beltbase_6_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_seat_belt_verified_20260829",
+      "step_number": 6,
+      "action": "Press down firmly in the center of the base and pull on the shoulder belt to tighten while feeding the slack back into the retractor."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 37,
+        "region": null,
+        "quote": "6. Tighten the Vehicle Seat Belt Press down firmly in the center of the base. Pull on the shoulder belt to tighten while feeding the slack back in the retractor."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_beltbase_6. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_beltbase_7_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_seat_belt_verified_20260829",
+      "step_number": 7,
+      "action": "Test for tightness: push and pull the base at the seat belt side to side and front to back; it must move less than 1 in (2.5 cm)."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 38,
+        "region": null,
+        "quote": "7. Test For Tightness Grab the sides of the base where the seat belt is and push and pull the base from side to side and front to back."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 38,
+        "quote": "If the base moves less than 1” (2.5 cm), it is tight enough."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_beltbase_7. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_beltbase_8_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_seat_belt_verified_20260829",
+      "step_number": 8,
+      "action": "Place the car seat into the base and push down on the front of the car seat and handle until it clicks; pull up on the front corners to confirm attachment."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 38,
+        "region": null,
+        "quote": "8. Attach Car Seat to Base Place car seat into the base. Push down on the front of the car seat and handle until you hear a “click”."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 38,
+        "quote": "Test to make sure the car seat is attached by pulling up on the front corners of car seat."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_beltbase_8. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_beltbase_9_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_base_seat_belt_verified_20260829",
+      "step_number": 9,
+      "action": "Re-check the level indicator with the child in the restraint; the vehicle must be level with the ground."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 39,
+        "region": null,
+        "quote": "9. Check the Level Indicator Vehicle MUST be level with the ground. Check the level indicator with child in the child restraint."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_beltbase_9. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_baseless_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_carrier_seat_belt_verified_20260829",
+      "step_number": 1,
+      "action": "Place the car seat on the vehicle back seat and push it back until the front of the car seat touches the vehicle seat back."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 41,
+        "region": null,
+        "quote": "1. Place Car Seat in Back Seat of the Vehicle Place the car seat on the vehicle seat. Push it back until the front of the car seat touches the vehicle seat back."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_baseless_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_baseless_2_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_carrier_seat_belt_verified_20260829",
+      "step_number": 2,
+      "action": "Thread the vehicle seat belt through the rear-facing belt path (marked with a blue label) and buckle it; the belt should not be twisted."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 42,
+        "region": null,
+        "quote": "2. Route the Vehicle Seat Belt Thread vehicle seat belt through the rear-facing belt path (marked with a blue label) and buckle it. The seat belt should not be twisted."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_baseless_2. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_baseless_3_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_carrier_seat_belt_verified_20260829",
+      "step_number": 3,
+      "action": "Lock the vehicle seat belt: slowly pull the shoulder belt all the way out, let it retract, then pull to confirm it is locked."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 42,
+        "region": null,
+        "quote": "3. Lock the Vehicle Seat Belt In most vehicles today, slowly pull the shoulder belt all the way out and then let it go back in. You will hear a “clicking” sound."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 42,
+        "quote": "Slowly pull out on the belt and it should be locked. If not, review your car’s owner manual and section 6-D."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_baseless_3. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_baseless_4_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_carrier_seat_belt_verified_20260829",
+      "step_number": 4,
+      "action": "Lay a forearm across the car seat at the belt path and push down; pull on the shoulder belt to tighten while feeding the slack back into the retractor."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 42,
+        "region": null,
+        "quote": "4. Tighten the Vehicle Seat Belt Lay your forearm across the car seat at the belt path and push down. Pull on the shoulder belt to tighten while feeding the slack back in the retractor."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_baseless_4. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_baseless_5_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_carrier_seat_belt_verified_20260829",
+      "step_number": 5,
+      "action": "Test for tightness: push and pull the car seat at the seat belt side to side and front to back; it must move less than 1 in (2.5 cm)."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 43,
+        "region": null,
+        "quote": "5. Test For Tightness Grab the sides of the car seat where the seat belt is and push and pull the car seat from side to side and front to back."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 43,
+        "quote": "If the car seat moves less than 1” (2.5 cm), it is tight enough."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_baseless_5. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_step_baseless_6_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "install_carrier_seat_belt_verified_20260829",
+      "step_number": 6,
+      "action": "Check the rear-facing level line: the red level line on the side of the seat must be level with the ground, checked with the child in the restraint."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 44,
+        "region": null,
+        "quote": "6. Check the Rear Facing Level Line The red level line on the side of the seat MUST BE LEVEL with the ground."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 44,
+        "quote": "Check the level line with child in the child restraint when making sure the line is level with the ground."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_step_baseless_6. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_warning_airbag_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "WARNING",
+    "predicate": "prohibits_active_front_airbag_position",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "hazard_type": "airbag_hazard",
+      "description": "NEVER place this child restraint rear-facing in a vehicle seating location that has an active front air bag. An inflating air bag can hit the child and car seat with great force and cause serious injury or death."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 11,
+        "region": null,
+        "quote": "NEVER PLACE THIS CHILD RESTRAINT REAR-FACING IN A VEHICLE SEATING LOCATION THAT HAS AN ACTIVE FRONT AIR BAG."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 11,
+        "quote": "If an air bag inflates, it can hit the child and car seat with great force and cause serious injury or death to your child."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_warning_airbag. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_warning_bulky_clothing_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "WARNING",
+    "predicate": "prohibits_bulky_clothing_under_harness",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "hazard_type": "harness_fit_hazard",
+      "description": "In cold weather do not put snowsuits or bulky garments on the child in the car seat; bulky clothing prevents proper harness tightening. Buckle the child first, then place a blanket over them or the coat on backwards."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 47,
+        "region": null,
+        "quote": "WARNING! In cold weather do not put snowsuits or bulky garments on your child when placing them in the car seat. Bulky clothing can prevent the harness straps from being tightened properly."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 47,
+        "quote": "To keep child warm, buckle your child in the car seat and place a blanket around the child or place the child’s coat on backwards after buckling in."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_warning_bulky_clothing. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_warning_strings_cords_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "WARNING",
+    "predicate": "requires_keeping_strings_away",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "hazard_type": "strangulation_hazard",
+      "description": "Keep strings and cords away from the child; they can cause strangulation. Do not place the carrier near windows with blind or drape cords, hang strings on the carrier, or attach strings to toys."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 59,
+        "region": null,
+        "quote": "KEEP STRINGS AND CORDS AWAY FROM CHILD. Strings and cords can cause strangulation. DO NOT place carrier near windows where cords from blinds or drapes can strangle a child."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 59,
+        "quote": "DO NOT hang strings on or over the carrier. DO NOT attach strings to toys."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_warning_strings_cords. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_care_buckle_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "CARE",
+    "predicate": "buckle_cleaning",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "method": "agitate_in_warm_water",
+      "instructions": [
+        "place in a cup of warm water and gently agitate",
+        "press the red button several times while in the water",
+        "air dry",
+        "repeat until it fastens with a click"
+      ],
+      "restrictions": [
+        "do not submerge the buckle strap",
+        "no soaps, household detergents, or lubricants"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 77,
+        "region": null,
+        "quote": "To clean, place in a cup of warm water and gently agitate the buckle. Press the red button several times while in the water."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 77,
+        "region": null,
+        "quote": "DO NOT SUBMERGE THE BUCKLE STRAP . DO NOT USE SOAPS, HOUSEHOLD DETERGENTS or LUBRICANTS."
+      },
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 78,
+        "quote": "Shake out excess water and allow to air dry. Repeat steps as needed until it fastens with a click."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_care_buckle. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_srl_limit_harness_strap_height_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "LIMIT",
+    "predicate": "harness_strap_height",
+    "subject": "prod_graco_snugride_lite_lx",
+    "applicability": {
+      "sku": "2110186",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "at or just below the child's shoulders",
+      "unit": null,
+      "rule": "Harness straps must be at or just below the child’s shoulders."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_snugride_manual_en_v1",
+        "page": 48,
+        "region": null,
+        "quote": "Harness Straps MUST BE AT OR JUST BELOW the Child’s Shoulders"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_srl_limit_harness_strap_height. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
   }
 ]

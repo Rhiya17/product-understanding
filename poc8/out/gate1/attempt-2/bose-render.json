@@ -1,0 +1,20 @@
+{
+  "attempt": 2,
+  "product": "bose",
+  "rendered_at": "2026-08-30T01:42:44.734353+00:00",
+  "render": "poc8/out/gate1/attempt-2/bose.png",
+  "render_sha256": "9cfd78f994280f8883ba837e26f1417589e18cccba2def7783a8a8f3650facb1",
+  "official_image": "source-vault/bose-qc-ultra-headphones/images/black-earcup-controls-wired-35mm.png",
+  "official_image_sha256": "3805cc02fd26c24a2f1898068b2beaa5ca85a471ed65847676fffa4d61b86f67",
+  "camera": {
+    "direction": [
+      1.0,
+      0.0,
+      0.05
+    ],
+    "lens_mm": 70.0
+  },
+  "watermark": "INTERNAL ONLY \u2014 TWIN RENDER",
+  "internal_only": true,
+  "approved_by": null
+}

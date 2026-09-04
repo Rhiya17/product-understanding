@@ -7,11 +7,31 @@
     "type": "SPEC",
     "predicate": "height_closed",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": 0.44, "unit": "in", "metric_value": 1.13, "metric_unit": "cm"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 0.44,
+      "unit": "in",
+      "metric_value": 1.13,
+      "metric_unit": "cm"
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Size and Weight", "quote": "Height: 0.44 inch (1.13 cm)"},
-      {"source_id": "src_specs_summary", "page": null, "region": "Dimensions and weight", "quote": "| Height (closed) | 0.44 in (1.13 cm) |"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Size and Weight",
+        "quote": "Height: 0.44 inch (1.13 cm)"
+      },
+      {
+        "source_id": "src_specs_summary",
+        "page": null,
+        "region": "Dimensions and weight",
+        "quote": "| Height (closed) | 0.44 in (1.13 cm) |"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -25,11 +45,31 @@
     "type": "SPEC",
     "predicate": "width",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": 11.97, "unit": "in", "metric_value": 30.41, "metric_unit": "cm"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 11.97,
+      "unit": "in",
+      "metric_value": 30.41,
+      "metric_unit": "cm"
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Size and Weight", "quote": "Width: 11.97 inches (30.41 cm)"},
-      {"source_id": "src_specs_summary", "page": null, "region": "Dimensions and weight", "quote": "| Width | 11.97 in (30.41 cm) |"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Size and Weight",
+        "quote": "Width: 11.97 inches (30.41 cm)"
+      },
+      {
+        "source_id": "src_specs_summary",
+        "page": null,
+        "region": "Dimensions and weight",
+        "quote": "| Width | 11.97 in (30.41 cm) |"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -43,11 +83,31 @@
     "type": "SPEC",
     "predicate": "depth",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": 8.46, "unit": "in", "metric_value": 21.5, "metric_unit": "cm"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 8.46,
+      "unit": "in",
+      "metric_value": 21.5,
+      "metric_unit": "cm"
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Size and Weight", "quote": "Depth: 8.46 inches (21.5 cm)"},
-      {"source_id": "src_specs_summary", "page": null, "region": "Dimensions and weight", "quote": "| Depth | 8.46 in (21.5 cm) |"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Size and Weight",
+        "quote": "Depth: 8.46 inches (21.5 cm)"
+      },
+      {
+        "source_id": "src_specs_summary",
+        "page": null,
+        "region": "Dimensions and weight",
+        "quote": "| Depth | 8.46 in (21.5 cm) |"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -61,11 +121,32 @@
     "type": "SPEC",
     "predicate": "product_weight",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": 2.7, "unit": "lb", "metric_value": 1.24, "metric_unit": "kg", "note": "varies by configuration"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 2.7,
+      "unit": "lb",
+      "metric_value": 1.24,
+      "metric_unit": "kg",
+      "note": "varies by configuration"
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Size and Weight", "quote": "Weight: 2.7 pounds (1.24 kg) (varies by configuration)"},
-      {"source_id": "src_specs_summary", "page": null, "region": "Dimensions and weight", "quote": "| Weight | 2.7 lb (1.24 kg), varies by configuration |"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Size and Weight",
+        "quote": "Weight: 2.7 pounds (1.24 kg) (varies by configuration)"
+      },
+      {
+        "source_id": "src_specs_summary",
+        "page": null,
+        "region": "Dimensions and weight",
+        "quote": "| Weight | 2.7 lb (1.24 kg), varies by configuration |"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -79,11 +160,29 @@
     "type": "SPEC",
     "predicate": "bluetooth_version",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": "5.3", "standard": "Bluetooth"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "5.3",
+      "standard": "Bluetooth"
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Wireless (M3)", "quote": "Bluetooth 5.3"},
-      {"source_id": "src_specs_summary", "page": null, "region": "Wireless", "quote": "Bluetooth 5.3"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Wireless (M3)",
+        "quote": "Bluetooth 5.3"
+      },
+      {
+        "source_id": "src_specs_summary",
+        "page": null,
+        "region": "Wireless",
+        "quote": "Bluetooth 5.3"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -97,11 +196,29 @@
     "type": "SPEC",
     "predicate": "wifi_standard",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": "Wi-Fi 6E", "standard": "802.11ax"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "Wi-Fi 6E",
+      "standard": "802.11ax"
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Wireless (M3)", "quote": "Wi-Fi 6E (802.11ax)"},
-      {"source_id": "src_specs_summary", "page": null, "region": "Wireless", "quote": "Wi-Fi 6E (802.11ax)"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Wireless (M3)",
+        "quote": "Wi-Fi 6E (802.11ax)"
+      },
+      {
+        "source_id": "src_specs_summary",
+        "page": null,
+        "region": "Wireless",
+        "quote": "Wi-Fi 6E (802.11ax)"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -115,11 +232,33 @@
     "type": "SPEC",
     "predicate": "available_colors",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"values": ["Silver", "Starlight", "Space Gray", "Midnight"]},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "values": [
+        "Silver",
+        "Starlight",
+        "Space Gray",
+        "Midnight"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Finish", "quote": "Silver, Starlight, Space Gray, Midnight"},
-      {"source_id": "src_identify_page", "page": null, "region": "MacBook Air (13-inch, M3, 2024)", "quote": "**Colors**: Silver, Starlight, Space Gray, Midnight"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Finish",
+        "quote": "Silver, Starlight, Space Gray, Midnight"
+      },
+      {
+        "source_id": "src_identify_page",
+        "page": null,
+        "region": "MacBook Air (13-inch, M3, 2024)",
+        "quote": "**Colors**: Silver, Starlight, Space Gray, Midnight"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -133,11 +272,28 @@
     "type": "SPEC",
     "predicate": "model_identifier",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": "Mac15,12"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "Mac15,12"
+    },
     "source_bindings": [
-      {"source_id": "src_identify_page", "page": null, "region": "MacBook Air (13-inch, M3, 2024)", "quote": "**Model Identifier**: `Mac15,12`"},
-      {"source_id": "src_specs_summary", "page": null, "region": "header", "quote": "Model identifier: **Mac15,12**"}
+      {
+        "source_id": "src_identify_page",
+        "page": null,
+        "region": "MacBook Air (13-inch, M3, 2024)",
+        "quote": "**Model Identifier**: `Mac15,12`"
+      },
+      {
+        "source_id": "src_specs_summary",
+        "page": null,
+        "region": "header",
+        "quote": "Model identifier: **Mac15,12**"
+      }
     ],
     "authority": "MANUFACTURER_SUPPORT_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -151,11 +307,29 @@
     "type": "SPEC",
     "predicate": "speaker_system",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": "four-speaker sound system", "detail": "two tweeters, two woofers"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "four-speaker sound system",
+      "detail": "two tweeters, two woofers"
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Audio (hardware)", "quote": "Four-speaker sound system"},
-      {"source_id": "src_ports_guide_tour", "page": null, "region": "Feature descriptions (guide text)", "quote": "the 13-inch MacBook Air has a four-speaker sound system (two tweeters, two woofers)"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Audio (hardware)",
+        "quote": "Four-speaker sound system"
+      },
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Feature descriptions (guide text)",
+        "quote": "the 13-inch MacBook Air has a four-speaker sound system (two tweeters, two woofers)"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -169,10 +343,30 @@
     "type": "SPEC",
     "predicate": "audio_playback_formats",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"values": ["AAC", "MP3", "Apple Lossless", "FLAC", "Dolby Digital", "Dolby Digital Plus", "Dolby Atmos"]},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "values": [
+        "AAC",
+        "MP3",
+        "Apple Lossless",
+        "FLAC",
+        "Dolby Digital",
+        "Dolby Digital Plus",
+        "Dolby Atmos"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Audio Playback (supported formats)", "quote": "AAC, MP3, Apple Lossless, FLAC, Dolby Digital, Dolby Digital Plus, Dolby Atmos"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Audio Playback (supported formats)",
+        "quote": "AAC, MP3, Apple Lossless, FLAC, Dolby Digital, Dolby Digital Plus, Dolby Atmos"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -186,11 +380,29 @@
     "type": "SPEC",
     "predicate": "headphone_jack_high_impedance_support",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": true, "description": "3.5 mm headphone jack with advanced support for high-impedance headphones"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": true,
+      "description": "3.5 mm headphone jack with advanced support for high-impedance headphones"
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Audio (hardware)", "quote": "3.5 mm headphone jack with advanced support for high-impedance headphones"},
-      {"source_id": "src_ports_guide_tour", "page": null, "region": "Feature descriptions (guide text)", "quote": "supports high-impedance headphones without a separate DAC or amplifier"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Audio (hardware)",
+        "quote": "3.5 mm headphone jack with advanced support for high-impedance headphones"
+      },
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Feature descriptions (guide text)",
+        "quote": "supports high-impedance headphones without a separate DAC or amplifier"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -204,10 +416,27 @@
     "type": "SPEC",
     "predicate": "microphone_array",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": "three-mic array", "features": ["directional beamforming", "Voice Isolation", "Wide Spectrum"]},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "three-mic array",
+      "features": [
+        "directional beamforming",
+        "Voice Isolation",
+        "Wide Spectrum"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Audio (hardware)", "quote": "Three-mic array with directional beamforming; Voice Isolation and Wide Spectrum mic modes"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Audio (hardware)",
+        "quote": "Three-mic array with directional beamforming; Voice Isolation and Wide Spectrum mic modes"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -221,10 +450,23 @@
     "type": "SPEC",
     "predicate": "spatial_audio_support",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": true, "condition": "when playing music or video with Dolby Atmos on built-in speakers"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": true,
+      "condition": "when playing music or video with Dolby Atmos on built-in speakers"
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Audio (hardware)", "quote": "Spatial Audio when playing music/video with Dolby Atmos on built-in speakers"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Audio (hardware)",
+        "quote": "Spatial Audio when playing music/video with Dolby Atmos on built-in speakers"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -238,10 +480,25 @@
     "type": "SPEC",
     "predicate": "display_type",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": "Liquid Retina display", "diagonal_in": 13.6, "backlight": "LED", "panel": "IPS"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "Liquid Retina display",
+      "diagonal_in": 13.6,
+      "backlight": "LED",
+      "panel": "IPS"
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Display", "quote": "Liquid Retina display, 13.6-inch diagonal, LED-backlit with IPS technology"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Display",
+        "quote": "Liquid Retina display, 13.6-inch diagonal, LED-backlit with IPS technology"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -255,10 +512,24 @@
     "type": "SPEC",
     "predicate": "display_resolution",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"width_px": 2560, "height_px": 1664, "ppi": 224},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "width_px": 2560,
+      "height_px": 1664,
+      "ppi": 224
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Display", "quote": "2560-by-1664 native resolution at 224 ppi"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Display",
+        "quote": "2560-by-1664 native resolution at 224 ppi"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -272,10 +543,24 @@
     "type": "SPEC",
     "predicate": "battery_capacity",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": 52.6, "unit": "Wh", "chemistry": "lithium-polymer"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 52.6,
+      "unit": "Wh",
+      "chemistry": "lithium-polymer"
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Battery and Power", "quote": "52.6-watt-hour lithium-polymer battery"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Battery and Power",
+        "quote": "52.6-watt-hour lithium-polymer battery"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -289,10 +574,23 @@
     "type": "SPEC",
     "predicate": "battery_life",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"movie_playback_hours": 18, "wireless_web_hours": 15},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "movie_playback_hours": 18,
+      "wireless_web_hours": 15
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Battery and Power", "quote": "Up to 18 hours Apple TV app movie playback; up to 15 hours wireless web"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Battery and Power",
+        "quote": "Up to 18 hours Apple TV app movie playback; up to 15 hours wireless web"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -306,11 +604,29 @@
     "type": "SPEC",
     "predicate": "fast_charge_support",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": true, "requires": "70W USB-C Power Adapter (optional)"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": true,
+      "requires": "70W USB-C Power Adapter (optional)"
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Battery and Power", "quote": "USB-C to MagSafe 3 Cable; fast-charge capable with 70W USB-C Power Adapter"},
-      {"source_id": "src_ports_guide_tour", "page": null, "region": "Feature descriptions (guide text)", "quote": "Fast charge up to 50 percent in around 30 minutes with the optional 70W USB-C Power Adapter."}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Battery and Power",
+        "quote": "USB-C to MagSafe 3 Cable; fast-charge capable with 70W USB-C Power Adapter"
+      },
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Feature descriptions (guide text)",
+        "quote": "Fast charge up to 50 percent in around 30 minutes with the optional 70W USB-C Power Adapter."
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -324,10 +640,25 @@
     "type": "SPEC",
     "predicate": "cpu_configuration",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"chip": "Apple M3", "cpu_cores": 8, "performance_cores": 4, "efficiency_cores": 4},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "chip": "Apple M3",
+      "cpu_cores": 8,
+      "performance_cores": 4,
+      "efficiency_cores": 4
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Chip — Apple M3", "quote": "8-core CPU (4 performance + 4 efficiency cores)"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Chip — Apple M3",
+        "quote": "8-core CPU (4 performance + 4 efficiency cores)"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -341,10 +672,22 @@
     "type": "SPEC",
     "predicate": "camera",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": "1080p FaceTime HD camera"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "1080p FaceTime HD camera"
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Camera", "quote": "1080p FaceTime HD camera; advanced image signal processor with computational video"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Camera",
+        "quote": "1080p FaceTime HD camera; advanced image signal processor with computational video"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -358,10 +701,28 @@
     "type": "SPEC",
     "predicate": "thunderbolt_port_capabilities",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"count": 2, "capabilities": ["charging", "DisplayPort", "Thunderbolt 3 (up to 40Gb/s)", "USB 4 (up to 40Gb/s)"]},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "count": 2,
+      "capabilities": [
+        "charging",
+        "DisplayPort",
+        "Thunderbolt 3 (up to 40Gb/s)",
+        "USB 4 (up to 40Gb/s)"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Charging and Expansion (ports)", "quote": "Two Thunderbolt / USB 4 ports supporting: charging, DisplayPort, Thunderbolt 3 (up to 40Gb/s), USB 4 (up to 40Gb/s)"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Charging and Expansion (ports)",
+        "quote": "Two Thunderbolt / USB 4 ports supporting: charging, DisplayPort, Thunderbolt 3 (up to 40Gb/s), USB 4 (up to 40Gb/s)"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -375,10 +736,26 @@
     "type": "SPEC",
     "predicate": "memory_options",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"base_gb": 16, "configurable_gb": [24], "also_listed_base_gb": 8},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "base_gb": 16,
+      "configurable_gb": [
+        24
+      ],
+      "also_listed_base_gb": 8
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Memory", "quote": "16GB unified memory (configurable to 24GB); 8GB base configuration also listed (configurable to 16GB or 24GB)"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Memory",
+        "quote": "16GB unified memory (configurable to 24GB); 8GB base configuration also listed (configurable to 16GB or 24GB)"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -393,10 +770,27 @@
     "type": "SPEC",
     "predicate": "storage_options",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"base": "256GB SSD", "configurable": ["512GB", "1TB", "2TB"]},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "base": "256GB SSD",
+      "configurable": [
+        "512GB",
+        "1TB",
+        "2TB"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Storage", "quote": "256GB SSD; configurable to 512GB, 1TB, or 2TB"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Storage",
+        "quote": "256GB SSD; configurable to 512GB, 1TB, or 2TB"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -410,10 +804,23 @@
     "type": "SPEC",
     "predicate": "newest_compatible_os",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": "macOS Tahoe 26", "as_of": "2026-08-20"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "macOS Tahoe 26",
+      "as_of": "2026-08-20"
+    },
     "source_bindings": [
-      {"source_id": "src_identify_page", "page": null, "region": "MacBook Air (13-inch, M3, 2024)", "quote": "**Newest compatible operating system** (as of retrieval): macOS Tahoe 26"}
+      {
+        "source_id": "src_identify_page",
+        "page": null,
+        "region": "MacBook Air (13-inch, M3, 2024)",
+        "quote": "**Newest compatible operating system** (as of retrieval): macOS Tahoe 26"
+      }
     ],
     "authority": "MANUFACTURER_SUPPORT_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -427,10 +834,26 @@
     "type": "SPEC",
     "predicate": "box_contents",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"values": ["13-inch MacBook Air", "30W USB-C Power Adapter (8-core GPU config) or 35W Dual USB-C Port Compact Power Adapter (10-core GPU + 512GB config)", "USB-C to MagSafe 3 Cable (2 m)"]},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "values": [
+        "13-inch MacBook Air",
+        "30W USB-C Power Adapter (8-core GPU config) or 35W Dual USB-C Port Compact Power Adapter (10-core GPU + 512GB config)",
+        "USB-C to MagSafe 3 Cable (2 m)"
+      ]
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "In the Box", "quote": "13-inch MacBook Air; 30W USB-C Power Adapter (8-core GPU) or 35W Dual USB-C Port Compact Power Adapter (10-core GPU + 512GB); USB-C to MagSafe 3 Cable (2 m)"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "In the Box",
+        "quote": "13-inch MacBook Air; 30W USB-C Power Adapter (8-core GPU) or 35W Dual USB-C Port Compact Power Adapter (10-core GPU + 512GB); USB-C to MagSafe 3 Cable (2 m)"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -444,10 +867,25 @@
     "type": "SPEC",
     "predicate": "operating_temperature_range",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"min_f": 50, "max_f": 95, "min_c": 10, "max_c": 35},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "min_f": 50,
+      "max_f": 95,
+      "min_c": 10,
+      "max_c": 35
+    },
     "source_bindings": [
-      {"source_id": "src_tech_specs_page", "page": null, "region": "Operating Requirements", "quote": "Operating temperature: 50° to 95° F (10° to 35° C)"}
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Operating Requirements",
+        "quote": "Operating temperature: 50° to 95° F (10° to 35° C)"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -461,10 +899,25 @@
     "type": "SPEC",
     "predicate": "launch_price_us",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
-    "object": {"value": 1099, "unit": "USD", "orders_date": "2024-03-04", "availability_date": "2024-03-08"},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 1099,
+      "unit": "USD",
+      "orders_date": "2024-03-04",
+      "availability_date": "2024-03-08"
+    },
     "source_bindings": [
-      {"source_id": "src_specs_summary", "page": null, "region": "header", "quote": "Introduced: March 4, 2024 (orders), available March 8, 2024; launch price $1,099 US"}
+      {
+        "source_id": "src_specs_summary",
+        "page": null,
+        "region": "header",
+        "quote": "Introduced: March 4, 2024 (orders), available March 8, 2024; launch price $1,099 US"
+      }
     ],
     "authority": "MANUFACTURER_SPEC_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -479,7 +932,12 @@
     "type": "PART_LOCATION",
     "predicate": "magsafe_3_port_location",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
     "object": {
       "part": "magsafe_3_port",
       "side": "LEFT",
@@ -493,8 +951,18 @@
       }
     },
     "source_bindings": [
-      {"source_id": "src_ports_guide_tour", "page": null, "region": "Port layout (which side is which) — LEFT side", "quote": "1x MagSafe 3 charging port (front-most position toward hinge end of left edge)"},
-      {"source_id": "src_specs_summary", "page": null, "region": "Ports (with sides — from the official MacBook Air guide)", "quote": "| MagSafe 3 charging port | 1 | Left |"}
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Port layout (which side is which) — LEFT side",
+        "quote": "1x MagSafe 3 charging port (front-most position toward hinge end of left edge)"
+      },
+      {
+        "source_id": "src_specs_summary",
+        "page": null,
+        "region": "Ports (with sides — from the official MacBook Air guide)",
+        "quote": "| MagSafe 3 charging port | 1 | Left |"
+      }
     ],
     "authority": "MANUFACTURER_SUPPORT_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -508,7 +976,12 @@
     "type": "PART_LOCATION",
     "predicate": "thunderbolt_ports_location",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
     "object": {
       "part": "thunderbolt_usb4_ports",
       "count": 2,
@@ -523,8 +996,18 @@
       }
     },
     "source_bindings": [
-      {"source_id": "src_ports_guide_tour", "page": null, "region": "Port layout (which side is which) — LEFT side", "quote": "2x Thunderbolt / USB 4 ports (both on the left side, next to MagSafe)"},
-      {"source_id": "src_specs_summary", "page": null, "region": "Ports (with sides — from the official MacBook Air guide)", "quote": "| Thunderbolt / USB 4 (Thunderbolt 3 40Gb/s, USB 4 40Gb/s, DisplayPort, charging) | 2 | Left |"}
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Port layout (which side is which) — LEFT side",
+        "quote": "2x Thunderbolt / USB 4 ports (both on the left side, next to MagSafe)"
+      },
+      {
+        "source_id": "src_specs_summary",
+        "page": null,
+        "region": "Ports (with sides — from the official MacBook Air guide)",
+        "quote": "| Thunderbolt / USB 4 (Thunderbolt 3 40Gb/s, USB 4 40Gb/s, DisplayPort, charging) | 2 | Left |"
+      }
     ],
     "authority": "MANUFACTURER_SUPPORT_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -538,7 +1021,12 @@
     "type": "PART_LOCATION",
     "predicate": "headphone_jack_location",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
     "object": {
       "part": "headphone_jack_3_5mm",
       "side": "RIGHT",
@@ -552,8 +1040,18 @@
       }
     },
     "source_bindings": [
-      {"source_id": "src_ports_guide_tour", "page": null, "region": "Port layout (which side is which) — RIGHT side", "quote": "1x 3.5 mm headphone jack (the only port on the right side)"},
-      {"source_id": "src_specs_summary", "page": null, "region": "Ports (with sides — from the official MacBook Air guide)", "quote": "| 3.5 mm headphone jack (high-impedance headphone support) | 1 | Right |"}
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Port layout (which side is which) — RIGHT side",
+        "quote": "1x 3.5 mm headphone jack (the only port on the right side)"
+      },
+      {
+        "source_id": "src_specs_summary",
+        "page": null,
+        "region": "Ports (with sides — from the official MacBook Air guide)",
+        "quote": "| 3.5 mm headphone jack (high-impedance headphone support) | 1 | Right |"
+      }
     ],
     "authority": "MANUFACTURER_SUPPORT_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -567,7 +1065,12 @@
     "type": "PART_LOCATION",
     "predicate": "touch_id_location",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
     "object": {
       "part": "touch_id_power_button",
       "side": null,
@@ -581,7 +1084,12 @@
       }
     },
     "source_bindings": [
-      {"source_id": "src_ports_guide_tour", "page": null, "region": "Feature descriptions (guide text)", "quote": "**Touch ID (power button)**: top-right of keyboard"}
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Feature descriptions (guide text)",
+        "quote": "**Touch ID (power button)**: top-right of keyboard"
+      }
     ],
     "authority": "MANUFACTURER_SUPPORT_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -595,15 +1103,28 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
     "object": {
       "procedure": "charge_via_magsafe",
       "step_number": 1,
       "action": "Plug the included USB-C Power Adapter into the MagSafe 3 port; the indicator light glows amber while charging is needed and green when fully charged.",
-      "target_parts": ["magsafe_3_port", "usb_c_power_adapter"]
+      "target_parts": [
+        "magsafe_3_port",
+        "usb_c_power_adapter"
+      ]
     },
     "source_bindings": [
-      {"source_id": "src_ports_guide_tour", "page": null, "region": "Feature descriptions (guide text) — MagSafe 3 port", "quote": "Plug in the included USB-C Power Adapter. Indicator light glows amber when charging is needed, green when fully charged."}
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Feature descriptions (guide text) — MagSafe 3 port",
+        "quote": "Plug in the included USB-C Power Adapter. Indicator light glows amber when charging is needed, green when fully charged."
+      }
     ],
     "authority": "MANUFACTURER_SUPPORT_PAGE",
     "extractor": "evidence-pack-agent-v2",
@@ -618,19 +1139,574 @@
     "type": "STEP",
     "predicate": "procedure_step",
     "subject": "prod_apple_macbook_air_13_m3",
-    "applicability": {"sku": null, "revision": null, "market": "US", "state": null},
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
     "object": {
       "procedure": "power_on",
       "step_number": 1,
       "action": "Press the Touch ID (power button) at the top-right of the keyboard to turn the laptop on.",
-      "target_parts": ["touch_id_power_button"]
+      "target_parts": [
+        "touch_id_power_button"
+      ]
     },
     "source_bindings": [
-      {"source_id": "src_ports_guide_tour", "page": null, "region": "Feature descriptions (guide text) — Touch ID", "quote": "top-right of keyboard; press to turn on; authenticate and Apple Pay after setup"}
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Feature descriptions (guide text) — Touch ID",
+        "quote": "top-right of keyboard; press to turn on; authenticate and Apple Pay after setup"
+      }
     ],
     "authority": "MANUFACTURER_SUPPORT_PAGE",
     "extractor": "evidence-pack-agent-v2",
     "extracted_at": "2026-08-24",
     "extraction_notes": "Single-step procedure: the guide states power-on as one action."
+  },
+  {
+    "claim_id": "claim_mba_step_bluetooth_pairing_1",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_apple_macbook_air_13_m3",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": "macOS with System Settings"
+    },
+    "object": {
+      "procedure": "pair_bluetooth_device",
+      "step_number": 1,
+      "action": "Turn on the Bluetooth device and make it discoverable, following the device manufacturer's instructions.",
+      "target_parts": [
+        "bluetooth_accessory"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_bluetooth_pairing_guide",
+        "page": null,
+        "region": "Connect a Bluetooth device — step 1",
+        "quote": "Make sure the device is turned on and discoverable (see the device's documentation for details)."
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "showme-grounded-procedure-v1",
+    "extracted_at": "2026-08-28"
+  },
+  {
+    "claim_id": "claim_mba_step_bluetooth_pairing_2",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_apple_macbook_air_13_m3",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": "macOS with System Settings"
+    },
+    "object": {
+      "procedure": "pair_bluetooth_device",
+      "step_number": 2,
+      "action": "On the Mac, choose Apple menu > System Settings, then click Bluetooth in the sidebar.",
+      "target_parts": [
+        "apple_menu",
+        "system_settings",
+        "bluetooth_sidebar"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_bluetooth_pairing_guide",
+        "page": null,
+        "region": "Connect a Bluetooth device — step 2",
+        "quote": "On your Mac, choose Apple menu > System Settings, then click Bluetooth in the sidebar."
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "showme-grounded-procedure-v1",
+    "extracted_at": "2026-08-28"
+  },
+  {
+    "claim_id": "claim_mba_step_bluetooth_pairing_3",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_apple_macbook_air_13_m3",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": "macOS with System Settings"
+    },
+    "object": {
+      "procedure": "pair_bluetooth_device",
+      "step_number": 3,
+      "action": "Hold the pointer over the device, click Connect, then click Accept or enter the displayed numbers if prompted.",
+      "target_parts": [
+        "bluetooth_device_list",
+        "connect_button"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_bluetooth_pairing_guide",
+        "page": null,
+        "region": "Connect a Bluetooth device — step 3",
+        "quote": "Hold the pointer over the device in the list, then click Connect. If asked, click Accept (or enter a series of numbers, then press Enter)."
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "showme-grounded-procedure-v1",
+    "extracted_at": "2026-08-28"
+  },
+  {
+    "claim_id": "claim_mba_step_connection_method_1",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_apple_macbook_air_13_m3",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "connect_wired_or_bluetooth_device",
+      "step_number": 1,
+      "action": "Choose one connection path: use a compatible cable and physical port for a wired device, or use Bluetooth pairing for a wireless device.",
+      "target_parts": [
+        "physical_port",
+        "bluetooth_settings"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Feature descriptions — 3.5 mm headphone jack",
+        "quote": "Stereo headphones or external speakers; supports high-impedance headphones without a separate DAC or amplifier."
+      },
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Wireless connectivity",
+        "quote": "To pair Bluetooth accessories, Apple documents the process in the macOS User Guide"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "showme-grounded-procedure-v1",
+    "extracted_at": "2026-08-28",
+    "extraction_notes": "Routing synthesis: the source separately documents physical-port connections and Bluetooth pairing; the step makes the mutually exclusive path choice explicit."
+  },
+  {
+    "claim_id": "claim_mba_step_connection_method_2",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_apple_macbook_air_13_m3",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": "wired path"
+    },
+    "object": {
+      "procedure": "connect_wired_or_bluetooth_device",
+      "step_number": 2,
+      "action": "For 3.5 mm headphones or speakers, use the headphone jack on the right; for a compatible USB-C or Thunderbolt accessory, use either Thunderbolt / USB 4 port on the left and follow the device documentation.",
+      "target_parts": [
+        "headphone_jack_3_5mm",
+        "thunderbolt_usb4_ports"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Port layout — LEFT side",
+        "quote": "The left side view of a MacBook Air with callouts to the MagSafe 3 and Thunderbolt / USB 4 ports"
+      },
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Port layout — RIGHT side",
+        "quote": "The right side view of a MacBook Air with a callout to the 3.5 mm headphone jack"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "showme-grounded-procedure-v1",
+    "extracted_at": "2026-08-28"
+  },
+  {
+    "claim_id": "claim_mba_step_connection_method_3",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_apple_macbook_air_13_m3",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": "wireless path"
+    },
+    "object": {
+      "procedure": "connect_wired_or_bluetooth_device",
+      "step_number": 3,
+      "action": "If there is no cable and the intended path is wireless, open System Settings > Bluetooth, choose the discoverable device, and click Connect.",
+      "target_parts": [
+        "bluetooth_settings",
+        "connect_button"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_bluetooth_pairing_guide",
+        "page": null,
+        "region": "Connect a Bluetooth device — steps 2–3",
+        "quote": "On your Mac, choose Apple menu > System Settings, then click Bluetooth in the sidebar. Hold the pointer over the device in the list, then click Connect."
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "showme-grounded-procedure-v1",
+    "extracted_at": "2026-08-28"
+  },
+  {
+    "claim_id": "claim_mba_spec_fast_charge_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "fast_charge_support",
+    "subject": "prod_apple_macbook_air_13_m3",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "capability": "Fast charge up to 50 percent in around 30 minutes",
+      "adapter": "optional 70W USB-C Power Adapter"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Battery and Power",
+        "quote": "USB-C to MagSafe 3 Cable; fast-charge capable with 70W USB-C Power Adapter"
+      },
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Feature descriptions (guide text)",
+        "quote": "Fast charge up to 50 percent in around 30 minutes with the optional 70W USB-C Power Adapter."
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_mba_spec_fast_charge. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_mba_spec_memory_options_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "memory_options",
+    "subject": "prod_apple_macbook_air_13_m3",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "configurations": [
+        {
+          "memory_gb": 16,
+          "configurable_to_gb": [
+            24
+          ]
+        },
+        {
+          "memory_gb": 8,
+          "configurable_to_gb": [
+            16,
+            24
+          ]
+        }
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_tech_specs_page",
+        "page": null,
+        "region": "Memory",
+        "quote": "16GB unified memory (configurable to 24GB); 8GB base configuration also listed (configurable to 16GB or 24GB)"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_mba_spec_memory_options. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_mba_spec_newest_compatible_os_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "newest_compatible_os",
+    "subject": "prod_apple_macbook_air_13_m3",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "macOS Tahoe 26"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_identify_page",
+        "page": null,
+        "region": "MacBook Air (13-inch, M3, 2024)",
+        "quote": "**Newest compatible operating system** (as of retrieval): macOS Tahoe 26"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_mba_spec_newest_compatible_os. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_mba_part_magsafe_port_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "PART_LOCATION",
+    "predicate": "magsafe_3_port_location",
+    "subject": "prod_apple_macbook_air_13_m3",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "part": "magsafe_3_port",
+      "side": "LEFT",
+      "location_description": "One MagSafe 3 charging port on the left side of the laptop, in the front-most position toward the hinge end of the left edge.",
+      "diagram_binding": {
+        "source_id": "src_img_guide_left_side",
+        "page": null,
+        "bounding_box": null,
+        "coordinate_system": "normalized",
+        "annotation_status": "PENDING"
+      }
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Port layout (which side is which) — LEFT side",
+        "quote": "1x MagSafe 3 charging port (front-most position toward hinge end of left edge)"
+      },
+      {
+        "source_id": "src_specs_summary",
+        "page": null,
+        "region": "Ports (with sides — from the official MacBook Air guide)",
+        "quote": "| MagSafe 3 charging port | 1 | Left |"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_mba_part_magsafe_port. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_mba_step_charge_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_apple_macbook_air_13_m3",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "charge_via_magsafe_verified_20260829",
+      "step_number": 1,
+      "action": "Plug in the included USB-C Power Adapter; the indicator light glows amber when charging is needed and green when fully charged.",
+      "target_parts": [
+        "magsafe_3_port",
+        "usb_c_power_adapter"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Feature descriptions (guide text) — MagSafe 3 port",
+        "quote": "Plug in the included USB-C Power Adapter. Indicator light glows amber when charging is needed, green when fully charged."
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_mba_step_charge_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_mba_step_connection_method_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_apple_macbook_air_13_m3",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "connect_wired_or_bluetooth_device_verified_20260829",
+      "step_number": 1,
+      "action": "Choose one connection path: use a compatible cable and physical port for a wired device, or use Bluetooth pairing for a wireless device.",
+      "target_parts": [
+        "physical_port",
+        "bluetooth_settings"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Feature descriptions — 3.5 mm headphone jack",
+        "quote": "Stereo headphones or external speakers; supports high-impedance headphones without a separate DAC or amplifier."
+      },
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "region": "Wireless connectivity",
+        "quote": "To pair Bluetooth accessories, Apple documents the process in the macOS User Guide"
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_mba_step_connection_method_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_mba_step_connection_method_2_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_apple_macbook_air_13_m3",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": "wired path"
+    },
+    "object": {
+      "procedure": "connect_wired_or_bluetooth_device_verified_20260829",
+      "step_number": 2,
+      "action": "Connect stereo headphones or external speakers to the 3.5 mm headphone jack on the right side; use either Thunderbolt / USB 4 port on the left for compatible USB-C or Thunderbolt accessories.",
+      "target_parts": [
+        "headphone_jack_3_5mm",
+        "thunderbolt_usb4_ports"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "quote": "1x 3.5 mm headphone jack (the only port on the right side)"
+      },
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "quote": "2x Thunderbolt / USB 4 ports (both on the left side, next to MagSafe)"
+      },
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "quote": "**Thunderbolt / USB 4 ports**: Charge the computer, transfer data at Thunderbolt 3 or USB 4 speeds (up to 40 Gbit/s), charge devices, connect a display or projector."
+      },
+      {
+        "source_id": "src_ports_guide_tour",
+        "page": null,
+        "quote": "**3.5 mm headphone jack**: Stereo headphones or external speakers; supports high-impedance headphones without a separate DAC or amplifier."
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_mba_step_connection_method_2. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_mba_step_connection_method_3_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_apple_macbook_air_13_m3",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": "wireless path"
+    },
+    "object": {
+      "procedure": "connect_wired_or_bluetooth_device_verified_20260829",
+      "step_number": 3,
+      "action": "If there is no cable and the intended path is wireless, open System Settings > Bluetooth, choose the discoverable device, and click Connect.",
+      "target_parts": [
+        "bluetooth_settings",
+        "connect_button"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_bluetooth_pairing_guide",
+        "page": null,
+        "region": "Connect a Bluetooth device — steps 2–3",
+        "quote": "On your Mac, choose Apple menu > System Settings, then click Bluetooth in the sidebar. Hold the pointer over the device in the list, then click Connect."
+      }
+    ],
+    "authority": "MANUFACTURER_SUPPORT_PAGE",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_mba_step_connection_method_3. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
   }
 ]

@@ -4,7 +4,7 @@
       "binding_id": "mb_bqcu2_controls_image",
       "claim_ids": [
         "claim_bqcu2_part_controls_1",
-        "claim_bqcu2_part_aux_port_1",
+        "claim_bqcu2_part_aux_port_1_repair_20260829",
         "claim_bqcu2_step_aux_1",
         "claim_bqcu2_step_clearlist_1"
       ],
@@ -36,9 +36,9 @@
     {
       "binding_id": "mb_bqcu2_pairing_video",
       "claim_ids": [
-        "claim_bqcu2_step_pairing_1",
-        "claim_bqcu2_step_pairing_2",
-        "claim_bqcu2_step_pairing_3"
+        "claim_bqcu2_step_pairing_1_repair_20260829",
+        "claim_bqcu2_step_pairing_2_repair_20260829",
+        "claim_bqcu2_step_pairing_3_repair_20260829"
       ],
       "source_id": "src_video_unboxing_setup",
       "kind": "VIDEO_URL",
@@ -66,7 +66,7 @@
     {
       "binding_id": "mb_bqcu2_pairing_page_27",
       "claim_ids": [
-        "claim_bqcu2_step_pairing_1"
+        "claim_bqcu2_step_pairing_1_repair_20260829"
       ],
       "source_id": "src_owners_guide_en",
       "kind": "PDF_PAGE",
@@ -80,8 +80,8 @@
     {
       "binding_id": "mb_bqcu2_pairing_page_28",
       "claim_ids": [
-        "claim_bqcu2_step_pairing_2",
-        "claim_bqcu2_step_pairing_3"
+        "claim_bqcu2_step_pairing_2_repair_20260829",
+        "claim_bqcu2_step_pairing_3_repair_20260829"
       ],
       "source_id": "src_owners_guide_en",
       "kind": "PDF_PAGE",

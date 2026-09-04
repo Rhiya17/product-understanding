@@ -1,0 +1,65 @@
+{
+  "procedure": "fold_stroller",
+  "product_dir": "graco-ready2jet-2212125",
+  "pipeline": "keyframe-pinned segments, per-segment VLM verification, stitched on all-pass",
+  "segments": [
+    {
+      "segment_id": "seg1",
+      "endpoint": "bytedance/seedance-2.0/image-to-video",
+      "request_id": "01a04b17-29bf-7d91-965c-6150857ca698",
+      "seed": 42001,
+      "start_path": "poc-seedance-keyframe-fold/references/openfold-canvas.png",
+      "end_path": "poc-seedance-keyframe-fold/references/midfold-canvas.png",
+      "verification_model": "qwen/qwen3-vl-235b-a22b-instruct",
+      "verdict": {
+        "same_product": {
+          "answer": "yes",
+          "evidence": "All frames show the same black stroller with identical frame, wheels, seat fabric, cup holder, and handlebar. No drift in shape, color, material, or parts is visible."
+        },
+        "reaches_end_state": {
+          "answer": "yes",
+          "evidence": "The final frames (7-10) match the END keyframe: the stroller is fully collapsed with the seat folded down and the frame compacted. The orientation and configuration are identical to Image 2."
+        },
+        "invented_or_vanishing_parts": {
+          "answer": "no",
+          "evidence": "No parts appear or disappear during the sequence. All components present in the START keyframe remain throughout and are correctly reconfigured in the END state without addition or omission."
+        },
+        "camera_and_object_orientation_fixed": {
+          "answer": "yes",
+          "evidence": "The camera angle and distance remain constant across all frames. The stroller’s position relative to the frame edges does not shift; only its internal structure changes via folding."
+        },
+        "verdict": "pass",
+        "verdict_reason": "The product identity is preserved, the end state is reached exactly as shown in the END keyframe, no parts are invented or vanish, and the camera and object orientation remain fixed throughout."
+      }
+    },
+    {
+      "segment_id": "seg2",
+      "endpoint": "bytedance/seedance-2.0/image-to-video",
+      "request_id": "01a04b18-dc25-7b53-96b1-4084e726c287",
+      "seed": 42001,
+      "start_path": "poc-seedance-keyframe-fold/references/midfold-canvas.png",
+      "end_path": "poc-seedance-keyframe-fold/references/closedfold-canvas.png",
+      "verification_model": "qwen/qwen3-vl-235b-a22b-instruct",
+      "verdict": {
+        "same_product": {
+          "answer": "yes",
+          "evidence": "All frames show the same black stroller with identical frame structure, wheel design, handlebar shape, and seat fabric. No drift in color, material, or parts is visible."
+        },
+        "reaches_end_state": {
+          "answer": "yes",
+          "evidence": "The sequence begins at the start state (partially folded) and ends at the fully folded end state shown in Image 2. The transition is continuous and matches the target pose."
+        },
+        "invented_or_vanishing_parts": {
+          "answer": "no",
+          "evidence": "No parts appear or disappear during the folding sequence. All structural components, wheels, and fabric remain consistent across all frames."
+        },
+        "camera_and_object_orientation_fixed": {
+          "answer": "yes",
+          "evidence": "The camera angle and distance remain constant throughout all frames. The stroller’s orientation relative to the frame does not change; only its internal folding mechanism moves."
+        },
+        "verdict": "pass",
+        "verdict_reason": "The product identity is preserved, the end state is reached without invented or vanishing parts, and camera/object orientation is fixed. All verification criteria are met."
+      }
+    }
+  ]
+}

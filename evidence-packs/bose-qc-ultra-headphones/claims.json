@@ -2010,5 +2010,620 @@
     "extractor": "evidence-pack-agent-v2",
     "extracted_at": "2026-08-24",
     "extraction_notes": "CONFLICT: contradicts claim_bqcu2_bluetooth_range_1 — the owner's guide says 30 ft (9 m); the support specifications article says up to 33 feet (10 m). Likely 9 m vs 10 m rounding across documents; recorded per protocol, reviewer decides."
+  },
+  {
+    "claim_id": "claim_bqcu2_full_charge_time_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "full_charge_time",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 3,
+      "unit": "hours",
+      "qualifier": "up to; charging is slower while headphones are in use"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 36,
+        "quote": "Allow up to 3 hours to fully charge the headphones."
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 36,
+        "quote": "NOTE: Charging is slower when the headphones are in use."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_full_charge_time_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_bluetooth_device_name_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "SPEC",
+    "predicate": "bluetooth_device_name",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "BOSE QC ULTRA 2 HP",
+      "qualifier": "default name; replaced by any name set in the Bose app"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 28,
+        "quote": "If you didn’t name your headphones, the default name appears. BOSE QC ULTRA 2 HP"
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 28,
+        "quote": "NOTE: Look for the name you entered for your headphones in the Bose app."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_bluetooth_device_name_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_aptx_adaptive_codec_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "bluetooth_codec_aptx_adaptive",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "codec": "aptX Adaptive",
+      "condition": "when connected to a Snapdragon Sound-certified device"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 32,
+        "quote": "Once you connect the headphones, your device will  automatically stream audio using the aptX  Adaptive Bluetooth codec."
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 32,
+        "quote": "T o experience Snapdragon Sound, you need a Snapdragon Sound-certified device, such as a compatible Android device."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_aptx_adaptive_codec_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_part_serial_number_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "PART_LOCATION",
+    "predicate": "serial_number_location",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "part": "serial_number_marking",
+      "location_description": "The serial number is inside the left earcup, under the inner fabric (ear cushion and fabric must be peeled back to view it).",
+      "diagram_binding": {
+        "source_id": "src_owners_guide_en",
+        "page": 45,
+        "bounding_box": null,
+        "coordinate_system": "normalized",
+        "annotation_status": "PENDING"
+      }
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 45,
+        "quote": "The serial number is located inside the left earcup."
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 45,
+        "quote": "The serial number and regulatory markings are located inside the earcups under the inner fabric."
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 45,
+        "quote": "On the earcup, gently pull one area of the cushion away from the earcup until all tabs around the inside rim of the earcup release."
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 45,
+        "quote": "Grab the upper edge of the fabric and gently peel it away until the information is displayed."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_part_serial_number_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_warning_vehicle_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "WARNING",
+    "predicate": "vehicle_operation_use",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "hazard_type": "situational_awareness",
+      "description": "Use while operating a vehicle is not recommended and may be prohibited by law in some locations; stop use immediately if the headphones interfere with attentiveness or hearing alarms and warning signals."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_safety_instructions_ml",
+        "page": 1,
+        "quote": "Use of this product while operating a vehicle is not recommended and may be prohibited by law in some locations. Use caution and follow applicable laws regarding headphone use while operating a vehicle."
+      },
+      {
+        "source_id": "src_safety_instructions_ml",
+        "page": 1,
+        "quote": "Stop using your headphones immediately if they interfere with your ability to remain attentive or if they interfere with your ability to hear surrounding sounds, including alarms and warning signals, while operating a vehicle."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_warning_vehicle_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_care_firmware_update_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "CARE",
+    "predicate": "firmware_update_method",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "instruction": "Updates begin automatically when connected to the Bose app and an update is available; updates can also be run from the Bose updater website (btu.Bose.com)."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 44,
+        "quote": "The headphones begin updating automatically when connected to the Bose app and an update is available."
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 44,
+        "quote": "You can also update the headphones using the Bose updater website. On your computer, visit: btu.Bose.com and follow the on-screen instructions."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_care_firmware_update_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_state_default_power_on_mode_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STATE",
+    "predicate": "default_power_on_mode",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "Quiet mode",
+      "qualifier": "after settings are changed, the headphones power on with the last settings used"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 22,
+        "quote": "By default, the headphones power on in Quiet mode."
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 22,
+        "quote": "NOTE: The headphones power on with the last settings used."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_state_default_power_on_mode_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_state_lay_flat_disconnect_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STATE",
+    "predicate": "lay_flat_disconnect_behavior",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "behavior": "Headphones disconnect 3 seconds after being removed from the head with earcups laid flat or stored in the case; in any other orientation they disconnect after 10 minutes."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 16,
+        "quote": "The headphones disconnect from your devices after 3 seconds when they are removed from your head with the earcups laid flat or when they are stored in the case."
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 16,
+        "quote": "If they are removed from your head and left in any other orientation, they disconnect from your devices after 10 minutes."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_state_lay_flat_disconnect_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_state_auto_sleep_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STATE",
+    "predicate": "auto_sleep_behavior",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "behavior": "Headphones automatically sleep after 20 minutes disconnected with earcups laid flat, or 10 minutes in any other orientation; wake by putting them on or pressing the Bluetooth/Power button."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 16,
+        "quote": "After the headphones are disconnected for 20 minutes with the earcups laid flat or 10 minutes in any other orientation, the headphones automatically sleep to conserve battery."
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 16,
+        "quote": "T o wake the headphones, place them on your head or press and release the Bluetooth/Power button."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_state_auto_sleep_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_compat_fast_pair_android_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "COMPATIBILITY",
+    "predicate": "fast_pair_android_requirement",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "Android devices",
+      "feature": "Google Fast Pair",
+      "requirement": "Android 6.0 or higher, with Bluetooth and Location features enabled"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 31,
+        "quote": "T o use Fast Pair, you need an Android device running Android 6.0 or higher."
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 31,
+        "quote": "Your Android device must have the Bluetooth and Location features enabled."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_compat_fast_pair_android_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_compat_bose_speakers_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "COMPATIBILITY",
+    "predicate": "simplesync_bose_speaker_compatibility",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "Bose Smart Speakers and Bose Smart Soundbars",
+      "feature": "SimpleSync",
+      "notes_list": [
+        "Bose Smart Ultra Soundbar",
+        "Bose Smart Soundbar",
+        "Bose Portable Smart Speaker/Bose Portable Home Speaker"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 39,
+        "quote": "You can connect the headphones to any Bose Smart Speaker or  Bose Smart Soundbar."
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 39,
+        "quote": "Using SimpleSync technology, you can connect the headphones to a Bose Smart Soundbar or Bose Smart Speaker for a personal listening experience."
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 39,
+        "quote": "Popular compatible products include:"
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 39,
+        "quote": "Bose Smart Ultra Soundbar"
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 39,
+        "quote": "Bose Smart Soundbar"
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 39,
+        "quote": "Bose Portable Smart Speaker/Bose Portable Home Speaker"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_compat_bose_speakers_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_bluetooth_range_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "bluetooth_range",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 30,
+      "unit": "ft",
+      "value_metric": 9,
+      "unit_metric": "m",
+      "condition": "devices are within range and powered on"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 28,
+        "quote": "The devices must be within range (30 ft or 9 m) and powered on."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_bluetooth_range_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_part_aux_port_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "PART_LOCATION",
+    "predicate": "aux_port_location",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "part": "aux_audio_port",
+      "location_description": "The 2.5 mm AUX audio port is shown in the page 13 controls diagram on the earcup with the USB-C port and status light.",
+      "diagram_binding": {
+        "source_id": "src_owners_guide_en",
+        "page": 13,
+        "bounding_box": null,
+        "coordinate_system": "normalized",
+        "annotation_status": "PENDING"
+      }
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 13,
+        "quote": "2.5 mm AUX audio port"
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 13,
+        "quote": "USB-C® port"
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 13,
+        "quote": "Status light"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_part_aux_port_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_step_pairing_1_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "bluetooth_pairing_verified_20260829",
+      "step_number": 1,
+      "action": "With the headphones powered on, press and hold the Bluetooth/Power button; after the power off tone and two white blinks, continue holding until the status light pulses blue (pairing mode).",
+      "target_parts": [
+        "bluetooth_power_button",
+        "status_light"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 27,
+        "quote": "With the headphones powered on, press and hold the Bluetooth/Power button. You hear the power off tone and the status light blinks white twice. Continue  holding until the status light pulses blue."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_step_pairing_1. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_step_pairing_2_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "bluetooth_pairing_verified_20260829",
+      "step_number": 2,
+      "action": "On the source device, enable the Bluetooth feature.",
+      "target_parts": []
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 28,
+        "quote": "On your device, enable the Bluetooth feature."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_step_pairing_2. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_step_pairing_3_repair_20260829",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "bluetooth_pairing_verified_20260829",
+      "step_number": 3,
+      "action": "Select the headphones (default name BOSE QC ULTRA 2 HP, or the name set in the Bose app) from the device's list of available products.",
+      "target_parts": []
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 28,
+        "quote": "Select the headphones from the list of available products."
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 28,
+        "quote": "NOTE: Look for the name you entered for your headphones in the Bose app. If you didn’t name your headphones, the default name appears."
+      },
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 28,
+        "quote": "BOSE QC ULTRA 2 HP"
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "codex-expert-repair-v1",
+    "extracted_at": "2026-08-29",
+    "extraction_notes": "Append-only repair superseding claim_bqcu2_step_pairing_3. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
   }
 ]

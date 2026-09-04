@@ -2,7 +2,7 @@
   "model": "qwen/qwen3-vl-235b-a22b-instruct",
   "prompt_version": "v2",
   "date": "2026-08-26",
-  "status": "COMPLETE",
+  "status": "PARTIAL",
   "run_metadata": {
     "endpoint": "openrouter/router/openai/v1/chat/completions",
     "verification_scope": "CLAIM_QUOTE_UNION",
@@ -853,5 +853,6 @@
       "note": "Claim A specifies a weight range of 4-30 lb for rear-facing use, while Claim B states 4-35 lb, possibly referring to a broader usage context such as forward-facing or overall product range; the height limit (32 in) is consistent, suggesting the difference may reflect distinct usage modes or revisions.",
       "context_sha256": "5e90bd6a2ee200bdbb501fae0628070fd2976a8347c9af9afa2bd83fb9ae0466"
     }
-  ]
+  ],
+  "reason": "Claims appended by the 2026-08-29 unpublished repair pass have complete exact-source and human review but no new independent verifier verdict because FAL_KEY is unavailable; all earlier verifier verdict entries remain unchanged."
 }

@@ -1,0 +1,110 @@
+{
+  "workorder": "docs/workorders/workorder-poc8-connection-scene.md",
+  "blender_version": "5.2.0 LTS",
+  "watermark": "INTERNAL ONLY — TWIN RENDER",
+  "internal_only": true,
+  "approved_by": null,
+  "external_spend_ceiling_usd": 10.0,
+  "fps": 24,
+  "shot_frames": 96,
+  "render": {
+    "width": 1280,
+    "height": 720,
+    "samples": 32
+  },
+  "products": {
+    "bose": {
+      "product_id": "bose-qc-ultra-headphones",
+      "glb": "poc-3d-static-twin/catalog-scans/bose-qc-ultra-headphones/pbr_model-zTFUED2CgtA628PGPOxHI_model.glb",
+      "mesh_analysis": "poc-3d-static-twin/catalog-scans/bose-qc-ultra-headphones/mesh-analysis.json",
+      "official_image": "source-vault/bose-qc-ultra-headphones/images/black-earcup-controls-wired-35mm.png",
+      "target_extents_m_xyz": [
+        0.0450088,
+        0.1599946,
+        0.2050034
+      ],
+      "target_axis_semantics_xyz": [
+        "depth/thickness",
+        "width",
+        "height"
+      ],
+      "dimension_claim_ids_xyz": [
+        "src_specs_curated_v1",
+        "src_specs_curated_v1",
+        "src_specs_curated_v1"
+      ],
+      "dimension_source_note": "The Bose pack has no dimension claims; targets cite the vault spec source src_specs_curated_v1 (specs/specs.md, 'Weight & dimensions'): \"Headphones: 1.772\" H x 6.299\" W x 8.071\" D (product page)\" = 0.04501 x 0.16000 x 0.20500 m. Axis mapping to scan X thickness / Y width / Z wearing height is INFERRED from the observed scan orientation. Provenance corrected 2026-08-29; previous citation of the weight claim was an error.",
+      "camera_attempts": [
+        {
+          "direction": [
+            -1.0,
+            0.0,
+            0.08
+          ],
+          "lens_mm": 58.0
+        },
+        {
+          "direction": [
+            1.0,
+            0.0,
+            0.05
+          ],
+          "lens_mm": 70.0
+        }
+      ]
+    },
+    "macbook": {
+      "product_id": "apple-macbook-air-13-m3",
+      "glb": "poc8/twins/macbook-rescan/pbr_model-TYR9ezEFU98NLKKOoVhVk_model.glb",
+      "mesh_analysis": "poc8/twins/macbook-rescan/mesh-analysis.json",
+      "official_image": "poc8/inputs/macbook-right-side-open.png",
+      "target_extents_m_xyz": [
+        0.215,
+        0.3041,
+        0.19139
+      ],
+      "target_axis_semantics_xyz": [
+        "depth",
+        "width",
+        "open standing height (INFERRED)"
+      ],
+      "dimension_claim_ids_xyz": [
+        "claim_mba_spec_depth",
+        "claim_mba_spec_width",
+        "INFERRED"
+      ],
+      "dimension_source_note": "OPEN-state re-scan (poc8/twins/macbook-rescan, request 01a0-... see twins/macbook-rescan/request.json; owner-approved 2026-08-29). X depth = 21.5 cm (claim_mba_spec_depth), Y width = 30.41 cm (claim_mba_spec_width). Z is the OPEN standing height, which no claim documents: scaled by the mean of the X/Y claim-derived factors (0.38278) to preserve the scanned proportion -> 0.19139 m. Recorded INFERRED.",
+      "camera_attempts": [
+        {
+          "direction": [
+            0.0,
+            1.0,
+            0.06
+          ],
+          "lens_mm": 58.0
+        },
+        {
+          "direction": [
+            0.0,
+            -1.0,
+            0.06
+          ],
+          "lens_mm": 58.0
+        }
+      ]
+    }
+  },
+  "connector": {
+    "cable_color": "black",
+    "cable_color_evidence": "src_img_black_controls",
+    "cable_spec_claim": "claim_bqcu2_aux_cable_spec_1",
+    "end_a_mm": 2.5,
+    "end_b_mm": 3.5,
+    "inferred": [
+      "cable sheath diameter 2.2 mm",
+      "plug barrel length 18 mm",
+      "plug grip dimensions and knurl-free finish",
+      "cable slack path and bend radius"
+    ]
+  }
+}

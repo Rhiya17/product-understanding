@@ -1,0 +1,46 @@
+{
+  "schema_version": 2,
+  "product_id": "prod_bose_qc_ultra_headphones",
+  "notes": "Curated keyframe plans.",
+  "procedures": [
+    {
+      "procedure": "connect_aux_cable",
+      "aspect_ratio": "16:9",
+      "resolution": "720p",
+      "states": [
+        {
+          "state_id": "s0",
+          "description": "headphones and Mac separate, cable loose",
+          "claim_ids": []
+        },
+        {
+          "state_id": "s1",
+          "description": "2.5 mm end seated in LEFT earcup port",
+          "claim_ids": ["claim_bqcu2_step_aux_1"],
+          "evidence_source_id": "src_img_black_controls"
+        },
+        {
+          "state_id": "s2",
+          "description": "3.5 mm end seated in the Mac jack",
+          "claim_ids": ["claim_bqcu2_step_aux_2"]
+        }
+      ],
+      "segments": [
+        {
+          "segment_id": "seg1",
+          "start_state": "s0",
+          "end_state": "s1",
+          "motion_prompt": "Show the 2.5mm end of the cable being plugged into the left earcup.",
+          "duration_seconds": 4
+        },
+        {
+          "segment_id": "seg2",
+          "start_state": "s1",
+          "end_state": "s2",
+          "motion_prompt": "Show the 3.5mm end of the cable being plugged into the Mac jack.",
+          "duration_seconds": 4
+        }
+      ]
+    }
+  ]
+}

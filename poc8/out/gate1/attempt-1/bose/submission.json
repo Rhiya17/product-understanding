@@ -1,0 +1,30 @@
+{
+  "prepared_at": "2026-08-30T01:42:55.802292+00:00",
+  "endpoint": "fal-ai/any-llm/vision",
+  "model": "qwen/qwen3-vl-235b-a22b-instruct",
+  "arguments": {
+    "model": "qwen/qwen3-vl-235b-a22b-instruct",
+    "prompt": "You are the strict Stage B gate for a product digital twin.\nImage 1 is an authoritative official product image. Image 2 is an INTERNAL-ONLY\ndeterministic render of a repaired Tripo3D scan. Judge the PRODUCT GEOMETRY and\nrecognizable identity, not background, lighting, watermark, camera crop, or\nthe render's missing presentation props. The official image shows the Bose QuietComfort Ultra Headphones (2nd Gen), including the padded headband, two asymmetric earcups/cushions, metal yokes, and visible control/port layout. The render need not include the cable already present in the official image. This is the first fixed-camera attempt.\n\nFail if the rendered object is not recognizably the same product/model family,\nif major proportions are implausible relative to Image 1, or if major parts are\nmissing/invented. Answer JSON only:\n{\n  \"recognizable_same_product\": {\"answer\":\"yes|no|unsure\",\"evidence\":\"...\"},\n  \"major_proportions_plausible\": {\"answer\":\"yes|no|unsure\",\"evidence\":\"...\"},\n  \"missing_or_invented_major_parts\": {\"answer\":\"yes|no|unsure\",\"evidence\":\"...\"},\n  \"verdict\":\"pass|fail\",\n  \"verdict_reason\":\"...\"\n}",
+    "image_urls": [
+      "https://v3b.fal.media/files/b/0aa85a16/a70rIExJXY9Wb8axQa92u_black-earcup-controls-wired-35mm.png",
+      "https://v3b.fal.media/files/b/0aa85aa9/sNJcKyC--6psDfAEyFT5s_bose.png"
+    ],
+    "temperature": 0,
+    "max_tokens": 700
+  },
+  "inputs": [
+    {
+      "role": "official_ground_truth",
+      "path": "source-vault/bose-qc-ultra-headphones/images/black-earcup-controls-wired-35mm.png",
+      "sha256": "3805cc02fd26c24a2f1898068b2beaa5ca85a471ed65847676fffa4d61b86f67"
+    },
+    {
+      "role": "repaired_twin_render",
+      "path": "poc8/out/gate1/attempt-1/bose.png",
+      "sha256": "b27b2d7eb74d79529cda48d3b06595ad16564d713d68f67badf1cf5ffceabcba"
+    }
+  ],
+  "estimated_cost_usd": 0.01,
+  "internal_only": true,
+  "approved_by": null
+}

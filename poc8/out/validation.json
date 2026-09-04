@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "validated_terminal_state": "POC8 correctly stopped at failed Gate 1",
+  "gate1": "FAIL",
+  "dimension_gate": "PASS",
+  "bose_identity": "PASS",
+  "macbook_identity": "FAIL_AFTER_TWO_ATTEMPTS",
+  "request_ids": [
+    "01a05055-8157-7112-86f4-c9668708bfe0",
+    "01a05055-a957-7ae1-bccf-f664632df1f1",
+    "01a05055-c962-7523-9135-a4bac2573e43"
+  ],
+  "spend_usd": 0.69,
+  "spend_ceiling_usd": 10.0,
+  "downstream_artifacts_absent": true,
+  "registration_absent": true,
+  "internal_only": true,
+  "approved_by": null
+}

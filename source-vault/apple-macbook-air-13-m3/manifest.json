@@ -243,13 +243,35 @@
     {
       "source_id": "src_bluetooth_pairing_guide",
       "type": "SUPPORT_PAGE",
-      "local_path": null,
-      "origin_url": "https://support.apple.com/guide/mac-help/blth1004/mac",
-      "sha256": null,
-      "acquired_at": "2026-08-20",
+      "local_path": "manuals/bluetooth-pairing-guide.md",
+      "origin_url": "https://support.apple.com/guide/mac-help/connect-a-wireless-accessory-blth1004/mac",
+      "sha256": "df4c0227fa2272d980720d41d68a7906ddc37b6e6f4d93f644e2e933cd6cf24a",
+      "acquired_at": "2026-08-28",
       "authority": "MANUFACTURER",
       "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
-      "notes": "'Connect Bluetooth devices to your Mac' — Apple's official Bluetooth pairing documentation (HTML guide; no official video exists)."
+      "notes": "Verbatim task-step capture from Apple's current 'Connect a Bluetooth device with your Mac' guide. Apple publishes the procedure as a web guide rather than a dedicated generic-pairing video."
+    },
+    {
+      "source_id": "src_img_store_open_side_profiles",
+      "type": "IMAGE",
+      "local_path": "images/store-open-side-profiles-midnight.jpg",
+      "origin_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba13-m3-midnight-gallery3-202402?wid=2400&fmt=jpeg&qlt=95",
+      "sha256": "c345c4212c24de5db6970756fdbdaedd29338223c5fe88baa3c2bd100e737bb8",
+      "acquired_at": "2026-08-29",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Apple Store gallery image (asset mba13-m3-midnight-gallery3-202402), Midnight, OPEN state: two units back-to-back showing the true RIGHT side (3.5 mm jack visible, left half of frame) and true LEFT side (MagSafe + 2 Thunderbolt, right half of frame). JPEG 2400x1844, visually verified. CGI render. Captured for the POC8 Tripo re-scan (docs/workorders/workorder-poc8-connection-scene.md)."
+    },
+    {
+      "source_id": "src_img_store_closed_side_ports",
+      "type": "IMAGE",
+      "local_path": "images/store-closed-side-ports-midnight.jpg",
+      "origin_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba13-m3-midnight-gallery6-202402?wid=2400&fmt=jpeg&qlt=95",
+      "sha256": "17567d8c48c6026d1b52ee867881663cf445faf86b5aaf312a8010a5910b5443",
+      "acquired_at": "2026-08-29",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Apple Store gallery image (asset mba13-m3-midnight-gallery6-202402), Midnight, CLOSED state side close-ups: MagSafe + Thunderbolt (top), 3.5 mm headphone jack (bottom). JPEG 2400x1844, visually verified. CGI render. Strong evidence anchor for jack geometry in POC8 verification."
     }
   ],
   "spin_360": {
@@ -264,7 +286,7 @@
   "collection_gaps": [
     "No classic user manual PDF exists for MacBook Air; MacBook Air Essentials is web/Apple Books only. Substituted: markdown captures of the guide's key hardware page (M3-era archived URL) plus the official Product Environmental Report PDF.",
     "The M3-specific apple.com product page has been superseded by the M4 lineup at apple.com/macbook-air; no live M3 marketing page remains, so product-page video URLs specific to the M3 could not be recorded. Newsroom article (still live) substituted for launch-era marketing content.",
-    "Apple has published no official YouTube how-to for pairing generic Bluetooth accessories on a Mac (Apple Support channel searched: 'bluetooth mac', 'connect bluetooth', 'macbook air'). Official HTML guide URL recorded instead.",
+    "Apple has published no official YouTube how-to for pairing generic Bluetooth accessories on a Mac (Apple Support channel searched: 'bluetooth mac', 'connect bluetooth', 'macbook air'). A local, hash-verified capture of the official web-guide steps is registered instead.",
     "Store gallery side-view photos of the M3 Air (ports visible in marketing render) were not retrievable — gallery asset URL patterns 404 (3 patterns tried). Official guide port diagrams (left/right side with callouts) substituted; they show port positions authoritatively.",
     "Newsroom hero images depict both 13-inch and 15-inch models together; Apple did not publish 13-inch-only newsroom shots for M3.",
     "Tech specs page (en-us/118551) has been updated by Apple since launch (base memory now listed as 16GB; footnotes reference 2025/2026 software); launch-day base config (8GB) noted in tech-specs.md."

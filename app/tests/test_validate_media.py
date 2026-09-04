@@ -188,3 +188,40 @@ def test_derived_asset_lane_requires_provenance_watermark_and_matching_hash(tmp_
     }), encoding="utf-8")
     errors = validate_media.validate_pack(pack, vault)
     assert any("INTERNAL ONLY watermark" in error for error in errors)
+
+
+def test_derived_asset_mock_tripwires(tmp_path):
+    _, _, pack, vault, document = build_media_fixture(tmp_path)
+    derived_bytes = b"mock derived"
+    derived_file = tmp_path / "derived" / "widget-mock.mp4"
+    derived_file.parent.mkdir()
+    derived_file.write_bytes(derived_bytes)
+    
+    # Missing verification_local_path file
+    asset = {
+        "asset_id": "derived_widget_mock",
+        "type": "PROCEDURE_VIDEO_MP4",
+        "label": "Mock generated widget",
+        "watermark": "INTERNAL ONLY — MOCK",
+        "local_path": "derived/widget-mock.mp4",
+        "sha256": hashlib.sha256(derived_bytes).hexdigest(),
+        "provider": "mock generator",
+        "approved_by": None,
+        "internal_only": True,
+        "request_id": "mock_req_123",
+        "verification_local_path": "derived/does-not-exist.json"
+    }
+    
+    (pack / "derived-assets.json").write_text(json.dumps({
+        "schema_version": 1, "product_id": "widget",
+        "assets": [asset],
+    }), encoding="utf-8")
+    document["bindings"].append(binding(
+        "mb_widget_derived_mock", ["claim_widget_one"],
+        "derived_widget_mock", "DERIVED_ASSET"))
+    (pack / "media-bindings.json").write_text(
+        json.dumps(document), encoding="utf-8")
+        
+    errors = validate_media.validate_pack(pack, vault)
+    assert any("request_id matches mock pattern" in error for error in errors)
+    assert any("verification_local_path does not exist" in error for error in errors)

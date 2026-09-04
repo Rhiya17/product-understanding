@@ -1,0 +1,33 @@
+{
+  "artifact": "poc8/out/gate1/contact-sheet.png",
+  "sha256": "c62ae758d4c6a87624979af4dc52aaba7f30260e362351fca1d6f5a04c339fbc",
+  "inputs": [
+    {
+      "path": "source-vault/bose-qc-ultra-headphones/images/black-earcup-controls-wired-35mm.png",
+      "sha256": "3805cc02fd26c24a2f1898068b2beaa5ca85a471ed65847676fffa4d61b86f67"
+    },
+    {
+      "path": "poc8/out/gate1/attempt-1/bose.png",
+      "sha256": "b27b2d7eb74d79529cda48d3b06595ad16564d713d68f67badf1cf5ffceabcba"
+    },
+    {
+      "path": "source-vault/apple-macbook-air-13-m3/images/guide-right-side-headphone-jack.png",
+      "sha256": "b8680a9cd16337fb3fc0f1d717afe90bad1dd441f9526f876413bfe575f50006"
+    },
+    {
+      "path": "poc8/out/gate1/attempt-1/macbook.png",
+      "sha256": "33f5bac554ba2f5101e919ea4b42e0e097dd55115e46a36b6440052178bd1393"
+    },
+    {
+      "path": "source-vault/apple-macbook-air-13-m3/images/guide-right-side-headphone-jack.png",
+      "sha256": "b8680a9cd16337fb3fc0f1d717afe90bad1dd441f9526f876413bfe575f50006"
+    },
+    {
+      "path": "poc8/out/gate1/attempt-2/macbook.png",
+      "sha256": "6dd9aaf429baff5423da733713f45892709c24c40147c007f566d40deca7f286"
+    }
+  ],
+  "watermark": "POC 8 - GATE 1 - INTERNAL ONLY",
+  "internal_only": true,
+  "approved_by": null
+}

@@ -92,7 +92,7 @@
     {
       "binding_id": "mb_c300s_derived_turntable",
       "claim_ids": [
-        "claim_c300s_spec_dimensions"
+        "claim_c300s_spec_dimensions_repair_20260829"
       ],
       "source_id": "derived_levoit_levoit_turntable_20260827",
       "kind": "DERIVED_ASSET",

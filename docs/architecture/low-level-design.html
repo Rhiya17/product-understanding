@@ -108,10 +108,10 @@
 <div class="layout">
 
 <nav class="toc" aria-label="Table of contents">
-  <div class="toc-title">ShowMe LLD v0.7</div>
+  <div class="toc-title">ShowMe LLD v0.8</div>
   <a href="#scope">1 · What this system does</a>
   <a href="#vocab">2 · Words you need</a>
-  <a href="#rules">3 · The ten unbreakable rules</a>
+  <a href="#rules">3 · The eleven unbreakable rules</a>
   <div class="toc-title">The machine</div>
   <a href="#big-map">4 · The big map</a>
   <a href="#answer-pipeline">5 · Answering, step by step</a>
@@ -144,8 +144,8 @@
   <h1>ShowMe — Low-Level Design</h1>
   <p class="subtitle">How ShowMe answers product questions with text, pictures, and video — and why (with one deliberate, labeled MVP exception) it never shows you something it hasn’t verified.</p>
   <div class="meta-chips">
-    <span class="chip"><strong>Version</strong> 0.7</span>
-    <span class="chip"><strong>Date</strong> 2026-08-20</span>
+    <span class="chip"><strong>Version</strong> 0.8</span>
+    <span class="chip"><strong>Date</strong> 2026-08-28</span>
     <span class="chip"><strong>Status</strong> Draft for implementation review</span>
     <span class="chip"><strong>Scope</strong> P0 — Text, Image &amp; Video answers</span>
     <span class="chip">Full contract: <a href="./low-level-design.md">low-level-design.md</a></span>
@@ -205,7 +205,7 @@
 
 <!-- ============================== 3 RULES ============================== -->
 <section id="rules">
-  <div class="sec-head"><span class="sec-num">3</span><h2>The ten unbreakable rules</h2></div>
+  <div class="sec-head"><span class="sec-num">3</span><h2>The eleven unbreakable rules</h2></div>
   <p class="sec-sub">Maps to LLD §1.2 — non-negotiable implementation rules. Every component below exists to enforce one or more of these.</p>
 
   <div class="cards">
@@ -229,6 +229,8 @@
       <p>Every publish, stale, retire, and delete transition flows to everything that depends on it. A corrected manual invalidates the claims and assets built on it.</p></div>
     <div class="card"><h4><span class="num">10</span>Real video first, untouched</h4>
       <p>Existing video may be returned as-is or trimmed when it completely answers the question. Painting overlays onto source footage is not the primary strategy.</p></div>
+    <div class="card"><h4><span class="num">11</span>Models plan; evidence proves</h4>
+      <p>Online language models may interpret intent, select allowlisted tools, and propose a presentation. They cannot establish product facts, grant lifecycle eligibility, or bypass the Delivery Gate.</p></div>
   </div>
 
   <div class="plain"><span class="tag">MVP exception (LLD §1.3)</span>
@@ -275,13 +277,13 @@
       <rect x="255" y="30" width="440" height="180" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-opacity="0.6"/>
       <text x="475" y="54" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent)" letter-spacing="1">ONLINE ANSWER SYSTEM — seconds</text>
       <rect x="270" y="72" width="96" height="52" rx="7" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.5"/>
-      <text x="318" y="93" text-anchor="middle" font-size="12" fill="currentColor">Understand</text>
-      <text x="318" y="109" text-anchor="middle" font-size="12" fill="currentColor">the question</text>
+      <text x="318" y="93" text-anchor="middle" font-size="12" fill="currentColor">Luna intent +</text>
+      <text x="318" y="109" text-anchor="middle" font-size="12" fill="currentColor">tool planning</text>
       <rect x="376" y="72" width="96" height="52" rx="7" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.5"/>
       <text x="424" y="93" text-anchor="middle" font-size="12" fill="currentColor">Gather proven</text>
       <text x="424" y="109" text-anchor="middle" font-size="12" fill="currentColor">facts &amp; media</text>
       <rect x="482" y="72" width="96" height="52" rx="7" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.5"/>
-      <text x="530" y="93" text-anchor="middle" font-size="12" fill="currentColor">Check at the</text>
+      <text x="530" y="93" text-anchor="middle" font-size="12" fill="currentColor">Luna compose +</text>
       <text x="530" y="109" text-anchor="middle" font-size="12" fill="currentColor">Delivery Gate</text>
       <rect x="588" y="72" width="92" height="52" rx="7" fill="var(--panel)" stroke="currentColor" stroke-opacity="0.5"/>
       <text x="634" y="93" text-anchor="middle" font-size="12" fill="currentColor">Reply +</text>
@@ -359,7 +361,7 @@
   <p>The boxes above are <em>logical</em> boundaries. P0 packs them into a few deployables and only splits further for a concrete reason (independent scaling, security isolation, latency isolation, team ownership):</p>
   <div class="tablewrap"><table>
     <tr><th>Deployable</th><th>What lives inside</th><th>Scaling</th></tr>
-    <tr><td><code>showme-api</code></td><td>The entire online path: gateway, coordinator, identity, policy scan, planner, completeness validator, route planner, evidence query, derivation, retrieval, IR builder, Delivery Gate, eligibility resolver, realizer, session API</td><td>Stateless, horizontal; session data external</td></tr>
+    <tr><td><code>showme-api</code></td><td>The entire online path: gateway, coordinator, identity, policy scan, Luna intent/tool planner, completeness validator, route planner, evidence query, derivation, retrieval, Luna response-composition planner, IR builder, Delivery Gate, eligibility resolver, realizer, session API</td><td>Stateless, horizontal; session data external</td></tr>
     <tr><td><code>showme-worker</code></td><td>Source processing, extraction, media analysis, asset preparation, verification automation, lifecycle propagation, deletion jobs</td><td>Queue-driven pools per workload class</td></tr>
     <tr><td><code>showme-ops</code></td><td>Claim review, conflict resolution, coverage review, asset approval, staleness/recall review</td><td>Internal authenticated web app</td></tr>
     <tr><td><code>showme-notify</code></td><td>Deferred-answer notifications and status updates</td><td>Event-driven; may start as a module of <code>showme-api</code></td></tr>
@@ -485,12 +487,12 @@
     <div class="card"><h4><span class="num">1</span>Front door — API Gateway</h4><p>Checks who you are, what you may access, request size and rate limits; assigns <code>request_id</code>, <code>trace_id</code>, idempotency key; rejects unsafe file types. Nothing inside runs if this fails.</p></div>
     <div class="card"><h4><span class="num">2</span>Safety scan — Raw Request Policy Scan</h4><p>Reads the <em>raw</em> question before anything else and answers: which domains does this touch (e.g. child restraints)? What is the minimum risk floor? What identity details are mandatory? What warnings must appear? A planner can’t “forget” a hazard it never got to hide.</p></div>
     <div class="card"><h4><span class="num">3</span>Which product? — Identity Resolver</h4><p>Pins down product, SKU, revision, market to the confidence the risk floor demands. Explicit selection beats visual similarity; look-alike siblings are never substituted. Unclear → ask the user, don’t guess.</p></div>
-    <div class="card"><h4><span class="num">4</span>Split into claims — Claim Planner</h4><p>Turns “Can I use these headphones with this laptop, where’s the port, and show me how?” into three separate claims (compatibility, part location, procedure) with dependencies. It decides <em>what to check</em>, never <em>what is true</em>.</p></div>
+    <div class="card"><h4><span class="num">4</span>Understand intent + choose a tool — Luna Planner</h4><p>Turns “Can I use these headphones with this laptop, where’s the port, and show me how?” into material claims and selects one request-scoped, allowlisted tool. Its output is validated; it decides <em>what to check</em>, never <em>what is true</em>.</p></div>
     <div class="card"><h4><span class="num">5</span>Anything missed? — Completeness Validator</h4><p>An independent double-checker with two layers: deterministic rules (every quantity, negation, condition, and safety phrase must map to a claim) plus a separately-configured semantic pass. Neither can waive the other’s failure; disagreement on a C2/C3 obligation forces a clarification or the stricter route.</p></div>
     <div class="card"><h4><span class="num">6</span>How strict? — Consequence Policy Engine</h4><p>Deterministic, versioned. <code>effective = max(raw floor, per-claim floor, planner request)</code> — the level can be raised, never lowered. It dictates required validation states, warnings, human-approval needs, and allowed answer modes.</p></div>
-    <div class="card"><h4><span class="num">7</span>Route each claim — Route Planner</h4><p>Picks the best format <em>per claim</em> using the route table below — and defines the honest fallback when the ideal media doesn’t exist yet.</p></div>
+    <div class="card"><h4><span class="num">7</span>Retrieve candidates — Route Planner</h4><p>Selects evidence and eligible media candidate routes per claim. It retrieves broadly enough for a later request-specific presentation decision instead of forcing a modality from keywords alone.</p></div>
     <div class="card"><h4><span class="num">8</span>Fetch the proof — Evidence + Retrieval + Derivation</h4><p>Evidence Query returns only servable claim versions with exact source bindings. Asset Retrieval filters by identity, lifecycle, rights, and freshness <em>before</em> ranking by relevance. The Deterministic Derivation Service may compute new values — but only with an allow-listed formula over published operands, with units, uncertainty, and the formula version recorded. It never estimates an unknown fact.</p></div>
-    <div class="card"><h4><span class="num">9</span>Build typed answer — Answer IR Builder</h4><p>Assembles per-claim results into structured data: operators, values, certainty, sources, warnings, media bindings. <code>response_state</code> is a closed enum: <code>ANSWERED · PARTIAL · CLARIFICATION · DEFERRED · UNSUPPORTED · ESCALATION · TEMPORARY_FAILURE</code>.</p></div>
+    <div class="card"><h4><span class="num">9</span>Compose + build typed answer</h4><p>A second Luna call chooses text, image, video, or a useful combination from the supported results and eligible asset IDs. The coordinator validates the plan, then the Answer IR Builder records it in typed data.</p></div>
     <div class="card"><h4><span class="num">10</span>Delivery Gate</h4><p>The final inspector. Big enough to get its own section — <a href="#delivery-gate">§6</a>.</p></div>
     <div class="card"><h4><span class="num">11</span>Careful writer — Controlled Realizer</h4><p>Turns the <em>gated</em> IR into sentences. Prose may improve readability but may not add product claims. High-consequence answers use constrained templates; critical warnings are always in text, never only in audio/motion/color; every video comes with a transcript or equivalent step list. Streaming only ever starts from an already-gated IR.</p></div>
     <div class="card"><h4><span class="num">12</span>Send + receipt — Answer Manifest</h4><p>The realized response (or its hash) plus every pinned version — claims, assets, policies, planner, gate, schema — is durably written before the user gets the answer. Every answer is auditable forever.</p></div>
@@ -501,11 +503,11 @@
 
   <h3>The route table: which format for which claim</h3>
 
-  <div class="plain"><span class="tag">Video-first for actions (decision 2026-08-20)</span>
-    “Least complex format first” applies only to pure facts. Anything the user has to <em>do</em> — a physical or on-screen
-    action, however small — targets <strong>video</strong> as its ideal format, even when a single sentence would technically answer
-    (“plug into the headphone jack” is a video; “how much does it weigh” is not). The text/step equivalent always ships
-    alongside, and evidence requirements are unchanged — this changes what we aim to show, not what we’re allowed to show.
+  <div class="plain"><span class="tag">Post-retrieval composition (decision 2026-08-28)</span>
+    Intent type is evidence for presentation, not a rigid result. Motion, sequence, timing, and state change make video a strong
+    candidate; location and orientation make an image a strong candidate; direct facts make text a strong candidate. A second,
+    separately prompted Luna call chooses the smallest useful presentation after supported text and eligible media are known.
+    It may combine modalities only when each adds value, and every selected ID is validated by the coordinator.
   </div>
 
   <div class="plain"><span class="tag">Ask before we generate (LLD §5.16)</span>
@@ -518,14 +520,14 @@
   </div>
 
   <div class="tablewrap"><table>
-    <tr><th>You asked about…</th><th>Ideal answer</th><th>Only if we have…</th><th>If we don’t</th></tr>
+    <tr><th>You asked about…</th><th>Candidate emphasis</th><th>Only if we have…</th><th>If we don’t</th></tr>
     <tr><td>A direct fact</td><td>Text</td><td>A published applicable claim</td><td>“Unsupported” or clarify</td></tr>
     <tr><td>A calculation</td><td>Text / hybrid</td><td>Published operands + approved formula</td><td>Ask for missing inputs, or unsupported</td></tr>
     <tr><td>Where a part is</td><td>Exact photo + callout</td><td>Location claim + eligible observed photo</td><td>Text location now; if a manual diagram proves the spot, defer a diagram-grounded visual; otherwise clarify</td></tr>
     <tr><td>Appearance / state</td><td>Exact or purpose-built visual</td><td>Published appearance claims at required fidelity</td><td>Text now; defer a new visual if useful</td></tr>
-    <tr><td>Discrete ordered steps</td><td>Verified video (video-first); step cards serve immediately</td><td>Published ordered steps + part locations; video also needs Lane D evidence</td><td>Steps/text now; defer the video</td></tr>
+    <tr><td>Discrete ordered steps</td><td>Step sequence + eligible video candidates</td><td>Published ordered steps + part locations; video also needs Lane D evidence</td><td>Steps/text now; defer video when it adds material value</td></tr>
     <tr><td>Continuous physical action</td><td>Verified video</td><td>Steps <em>plus</em> evidence for every depicted action, direction, control, state change</td><td>Illustrated steps now; defer the video</td></tr>
-    <tr><td>On-screen / digital steps</td><td>Screen video (video-first); steps serve immediately</td><td>Steps + matching software/firmware/UI state</td><td>Text/steps now; defer video</td></tr>
+    <tr><td>On-screen / digital steps</td><td>Step sequence + eligible screen-video candidates</td><td>Steps + matching software/firmware/UI state</td><td>Text/steps now; defer video when it adds material value</td></tr>
     <tr><td>A visual transition</td><td>Labeled transition clip</td><td>Validated endpoints; label mandatory</td><td>Static endpoint images</td></tr>
     <tr><td>Compatibility</td><td>Text / hybrid</td><td>Published compatibility claim for the exact identities</td><td>Clarify or unsupported</td></tr>
     <tr><td>A comparison</td><td>Text / table</td><td>Comparable claims under matched conditions</td><td>Partial comparison, gaps shown</td></tr>
@@ -1172,6 +1174,8 @@
     <li>Everything authenticated and authorized; tenant ID on every data-access path.</li>
     <li>Parsers and media decoders run sandboxed; source content is <em>data</em>, never planner instructions (prompt-injection defense at the boundary).</li>
     <li>Remote URL fetches are allow-listed and SSRF-protected; provider responses are untrusted candidate data.</li>
+    <li>Local Luna access reads <code>OPENAI_API_KEY</code> from the server process environment; deployed access uses a server-side secret manager or workload identity. Keys never enter browser code, query parameters, source files, or committed <code>.env</code> files.</li>
+    <li>Missing Luna credentials select an explicit deterministic-fallback mode; they do not crash startup or weaken serving policy.</li>
     <li>Secrets never live in job payloads or logs; delivery uses expiring signed URLs where required.</li>
     <li>Audit logs cover publishing, approvals, gate decisions, rights denials, and deletion.</li>
   </ul>
@@ -1192,7 +1196,8 @@
   <div class="tablewrap"><table>
     <tr><th>What broke</th><th>What the system must do</th></tr>
     <tr><td>Can’t resolve identity</td><td>Ask a focused clarifying question; never retrieve sibling-product assets</td></tr>
-    <tr><td>Planner times out</td><td>Safe clarification, or a deterministic fast-path fact if one applies</td></tr>
+    <tr><td>Intent planner times out, fails, or selects an invalid tool</td><td>Record the reason; use the deterministic retrieval fallback or a safe clarification</td></tr>
+    <tr><td>Response composer times out, fails, or selects an invalid asset</td><td>Keep supported claims and apply the deterministic presentation fallback using only eligible assets</td></tr>
     <tr><td>Policy service down</td><td>Fail closed to stricter consequence handling</td></tr>
     <tr><td>Claim store down</td><td>Temporary failure — never answer from an unverified cache</td></tr>
     <tr><td>Search index down</td><td>Exact registry lookup; otherwise text-only / temporary fallback</td></tr>
@@ -1207,7 +1212,7 @@
     <tr><td>Grace period expires mid-revalidation</td><td>Quarantine the version and its dependents before further delivery</td></tr>
     <tr><td>Queues saturate</td><td>Prioritize user-requested work; suspend speculative preparation</td></tr>
   </table></div>
-  <p>All failures emit structured reason codes with trace context. Observability (LLD §14) ties it together: shared IDs (<code>trace_id</code>, <code>answer_id</code>, claim/asset versions, policy versions) across online and offline work; metrics on latency by stage, gate pass/repair/fail rates, retrieval eligibility rejections, verification pass rates, cost per published asset, invalidation propagation time; and structured logs with reason codes — never raw user media, never hidden chain-of-thought.</p>
+  <p>All failures emit structured reason codes with trace context. Observability (LLD §14) ties it together: shared IDs (<code>trace_id</code>, <code>answer_id</code>, claim/asset versions, policy versions) across online and offline work; metrics on Luna tool-selection accuracy, modality composition, invalid IDs, fallback rates, latency, token use, gate pass/repair/fail rates, retrieval eligibility rejections, verification pass rates, cost per published asset, and invalidation propagation time; and structured logs with reason codes — never API keys, raw user media, or hidden chain-of-thought.</p>
 </section>
 
 <!-- ============================== 18 PERFORMANCE ============================== -->
@@ -1219,7 +1224,7 @@
     <tr><th>Moment</th><th>Target</th><th>Note</th></tr>
     <tr><td>Request acknowledged</td><td>&lt; 300 ms</td><td>Client-visible state change</td></tr>
     <tr><td>Exact deterministic fact</td><td>&lt; 1.5 s p95</td><td>Fast-path-eligible requests only (§5); includes auth → gate → realization</td></tr>
-    <tr><td>Standard retrieved answer</td><td>&lt; 5 s p95</td><td>Full planner + mixed-format retrieval</td></tr>
+    <tr><td>Standard retrieved answer</td><td>&lt; 5 s p95</td><td>Up to two Luna turns + tool execution + mixed-format retrieval</td></tr>
     <tr><td>Gate batch eligibility read</td><td>&lt; 25 ms p95</td><td>Up to 25 pinned versions, same region; provisional budget</td></tr>
     <tr><td>Media playback starts</td><td>&lt; 2 s p95</td><td>Published, CDN-hosted assets</td></tr>
     <tr><td>Deferred job acknowledged</td><td>&lt; 2 s p95</td><td>Preparation time is not part of this</td></tr>
@@ -1243,6 +1248,8 @@
     <li>A generated candidate can never be retrieved; a stale asset is rejected <em>after</em> retrieval but <em>before</em> delivery.</li>
     <li>A transition clip is never accepted as an instruction; realization can’t invert a typed conclusion.</li>
     <li>A planner omission is caught by the completeness validator — and the semantic layer cannot waive a deterministic failure.</li>
+    <li>An invented tool, procedure, claim, or asset ID is rejected and triggers the deterministic fallback.</li>
+    <li>An explicit “no video” request is honored when an eligible text/image answer remains possible.</li>
     <li>An exhausted video budget produces a verified illustrated fallback and an honest terminal status.</li>
     <li>“The other latch”, when ambiguous, causes a clarification instead of an arbitrary pick.</li>
     <li>A C3 request gets the deterministic floor and human-approved content only.</li>
@@ -1321,10 +1328,10 @@
   <p><code>answer-orchestration-lld.md</code> · <code>claim-and-evidence-lld.md</code> · <code>asset-factory-and-verification-lld.md</code> · <code>content-ops-lld.md</code> · <code>workflow-and-invalidation-lld.md</code> · <code>security-rights-privacy-lld.md</code> · <code>geometry-and-fit-lld.md</code> (before Phase 5). Each must include APIs, schemas, algorithms or decision tables, state transitions, failure behavior, observability, tests, and runbooks.</p>
 
   <h3>Open implementation decisions</h3>
-  <p>Primary relational/graph technology · queue/workflow engine · search &amp; vector stack · OCR/processing libraries · model/provider choices for extraction, planning, media analysis, and generation · tenant/catalog model for launch · identity confidence thresholds · source-authority precedence · the exact consequence-floor table · reviewer qualification and dual-review rules · notification channels · initial product-identification input modes · purpose-built video presentation policy (narration, callouts, motion alone) · languages/localization · retention and residency values · final SLO/RPO/RTO and cost ceilings.</p>
+  <p>Primary relational/graph technology · queue/workflow engine · search &amp; vector stack · OCR/processing libraries · model/provider choices for extraction, media analysis, and generation (online intent and response composition are initially resolved to <code>gpt-5.6-luna</code> with independent prompts/schemas) · tenant/catalog model for launch · identity confidence thresholds · source-authority precedence · the exact consequence-floor table · reviewer qualification and dual-review rules · notification channels · initial product-identification input modes · purpose-built video presentation policy (narration, callouts, motion alone) · languages/localization · retention and residency values · final SLO/RPO/RTO and cost ceilings.</p>
   <p>These choices may change the technology — they may not change the component contracts in this document.</p>
 
-  <p class="backtotop"><a href="#scope">↑ Back to top</a> · Full normative text: <a href="./low-level-design.md">low-level-design.md</a> (v0.7, 2026-08-20)</p>
+  <p class="backtotop"><a href="#scope">↑ Back to top</a> · Full normative text: <a href="./low-level-design.md">low-level-design.md</a> (v0.8, 2026-08-28)</p>
 </section>
 
 </main>

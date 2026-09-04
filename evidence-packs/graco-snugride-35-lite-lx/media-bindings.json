@@ -3,16 +3,16 @@
     {
       "binding_id": "mb_srl_latch_install_video",
       "claim_ids": [
-        "claim_srl_step_latch_1",
-        "claim_srl_step_latch_2",
-        "claim_srl_step_latch_3",
-        "claim_srl_step_latch_4",
-        "claim_srl_step_latch_5",
-        "claim_srl_step_latch_6",
-        "claim_srl_step_latch_7",
-        "claim_srl_step_latch_8",
-        "claim_srl_step_latch_9",
-        "claim_srl_step_latch_10"
+        "claim_srl_step_latch_1_repair_20260829",
+        "claim_srl_step_latch_2_repair_20260829",
+        "claim_srl_step_latch_3_repair_20260829",
+        "claim_srl_step_latch_4_repair_20260829",
+        "claim_srl_step_latch_5_repair_20260829",
+        "claim_srl_step_latch_6_repair_20260829",
+        "claim_srl_step_latch_7_repair_20260829",
+        "claim_srl_step_latch_8_repair_20260829",
+        "claim_srl_step_latch_9_repair_20260829",
+        "claim_srl_step_latch_10_repair_20260829"
       ],
       "source_id": "src_video_install_latch",
       "kind": "VIDEO_URL",
@@ -26,12 +26,12 @@
     {
       "binding_id": "mb_srl_baseless_install_video",
       "claim_ids": [
-        "claim_srl_step_baseless_1",
-        "claim_srl_step_baseless_2",
-        "claim_srl_step_baseless_3",
-        "claim_srl_step_baseless_4",
-        "claim_srl_step_baseless_5",
-        "claim_srl_step_baseless_6"
+        "claim_srl_step_baseless_1_repair_20260829",
+        "claim_srl_step_baseless_2_repair_20260829",
+        "claim_srl_step_baseless_3_repair_20260829",
+        "claim_srl_step_baseless_4_repair_20260829",
+        "claim_srl_step_baseless_5_repair_20260829",
+        "claim_srl_step_baseless_6_repair_20260829"
       ],
       "source_id": "src_video_install_seatbelt",
       "kind": "VIDEO_URL",
@@ -66,8 +66,8 @@
       "binding_id": "mb_srl_base_context_image",
       "claim_ids": [
         "claim_srl_spec_base_features",
-        "claim_srl_step_latch_4",
-        "claim_srl_step_latch_5"
+        "claim_srl_step_latch_4_repair_20260829",
+        "claim_srl_step_latch_5_repair_20260829"
       ],
       "source_id": "src_img_base_alone",
       "kind": "IMAGE",

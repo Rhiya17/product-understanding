@@ -1,0 +1,499 @@
+{
+  "reviews": [
+    {
+      "review_id": "rev_app_claim_mba_part_magsafe_port_20260829011303441963_c7b4be51",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_part_magsafe_port",
+      "claim_id": "claim_mba_part_magsafe_port",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_fast_charge_20260829011303457012_b9c07522",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_fast_charge",
+      "claim_id": "claim_mba_spec_fast_charge",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_memory_options_20260829011303470282_eb8d60d9",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_memory_options",
+      "claim_id": "claim_mba_spec_memory_options",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_newest_compatible_os_20260829011303482860_dde9355c",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_newest_compatible_os",
+      "claim_id": "claim_mba_spec_newest_compatible_os",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_charge_1_20260829011303511777_3dbd25f0",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_charge_1",
+      "claim_id": "claim_mba_step_charge_1",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the active MEANING_CHANGED verifier alarm identifies unsupported, omitted, or structurally ambiguous semantics. Correct the claim and reverify it before serving."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_height_20260829011545094639_a8a189e3",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_height",
+      "claim_id": "claim_mba_spec_height",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_width_20260829011545106481_26032aeb",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_width",
+      "claim_id": "claim_mba_spec_width",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_depth_20260829011545118655_2fc473eb",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_depth",
+      "claim_id": "claim_mba_spec_depth",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_weight_20260829011545130170_0f0b00f3",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_weight",
+      "claim_id": "claim_mba_spec_weight",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_bluetooth_version_20260829011545142049_1bb799f8",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_bluetooth_version",
+      "claim_id": "claim_mba_spec_bluetooth_version",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_wifi_standard_20260829011545154126_07aede61",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_wifi_standard",
+      "claim_id": "claim_mba_spec_wifi_standard",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_colors_20260829011545165095_1010cdb8",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_colors",
+      "claim_id": "claim_mba_spec_colors",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_model_identifier_20260829011545176982_31f145e8",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_model_identifier",
+      "claim_id": "claim_mba_spec_model_identifier",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_speaker_system_20260829011545188291_77c883bd",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_speaker_system",
+      "claim_id": "claim_mba_spec_speaker_system",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_audio_playback_formats_20260829011545199371_b85fb418",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_audio_playback_formats",
+      "claim_id": "claim_mba_spec_audio_playback_formats",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_headphone_jack_impedance_20260829011545210565_eac43d30",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_headphone_jack_impedance",
+      "claim_id": "claim_mba_spec_headphone_jack_impedance",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_microphone_array_20260829011545222410_af23c71c",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_microphone_array",
+      "claim_id": "claim_mba_spec_microphone_array",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_spatial_audio_20260829011545234382_2691147c",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_spatial_audio",
+      "claim_id": "claim_mba_spec_spatial_audio",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_display_type_20260829011545246224_ea67e7d1",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_display_type",
+      "claim_id": "claim_mba_spec_display_type",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_display_resolution_20260829011545259151_6fcb835d",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_display_resolution",
+      "claim_id": "claim_mba_spec_display_resolution",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_battery_capacity_20260829011545272246_498acf34",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_battery_capacity",
+      "claim_id": "claim_mba_spec_battery_capacity",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_battery_life_20260829011545285961_cc222d35",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_battery_life",
+      "claim_id": "claim_mba_spec_battery_life",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_cpu_20260829011545298477_8014cd71",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_cpu",
+      "claim_id": "claim_mba_spec_cpu",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_camera_20260829011545310698_4662dca8",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_camera",
+      "claim_id": "claim_mba_spec_camera",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_thunderbolt_capabilities_20260829011545322821_7aac4c87",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_thunderbolt_capabilities",
+      "claim_id": "claim_mba_spec_thunderbolt_capabilities",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_storage_options_20260829011545335907_646b1a63",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_storage_options",
+      "claim_id": "claim_mba_spec_storage_options",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_box_contents_20260829011545349479_3d34f21d",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_box_contents",
+      "claim_id": "claim_mba_spec_box_contents",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_operating_temperature_20260829011545362264_30929a07",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_operating_temperature",
+      "claim_id": "claim_mba_spec_operating_temperature",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_launch_price_20260829011545374009_2489a977",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_launch_price",
+      "claim_id": "claim_mba_spec_launch_price",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after the launch price and dates were verified against the live official Apple Newsroom announcement."
+    },
+    {
+      "review_id": "rev_app_claim_mba_part_thunderbolt_ports_20260829011545385856_b49197dc",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_part_thunderbolt_ports",
+      "claim_id": "claim_mba_part_thunderbolt_ports",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_part_headphone_jack_20260829011545397545_d8a867a1",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_part_headphone_jack",
+      "claim_id": "claim_mba_part_headphone_jack",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_part_touch_id_20260829011545410258_8906e46c",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_part_touch_id",
+      "claim_id": "claim_mba_part_touch_id",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_power_on_1_20260829011545422296_53205714",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_power_on_1",
+      "claim_id": "claim_mba_step_power_on_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_bluetooth_pairing_1_20260829011545435670_2b509047",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_bluetooth_pairing_1",
+      "claim_id": "claim_mba_step_bluetooth_pairing_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_bluetooth_pairing_2_20260829011545448569_4874402e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_bluetooth_pairing_2",
+      "claim_id": "claim_mba_step_bluetooth_pairing_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_bluetooth_pairing_3_20260829011545460729_b7cb90e9",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_bluetooth_pairing_3",
+      "claim_id": "claim_mba_step_bluetooth_pairing_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_connection_method_1_20260829011545473670_011e7037",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_connection_method_1",
+      "claim_id": "claim_mba_step_connection_method_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_connection_method_2_20260829011545487146_56cc589f",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_connection_method_2",
+      "claim_id": "claim_mba_step_connection_method_2",
+      "disposition": "NEEDS_REWORK",
+      "rationale": "Owner confirmed rework in Codex chat on 2026-08-28 because the wired-accessory procedure adds instructions that are not fully supported by its current source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_connection_method_3_20260829011545501377_a23bd31e",
+      "date": "2026-08-29",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_connection_method_3",
+      "claim_id": "claim_mba_step_connection_method_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner individually approved in Codex chat on 2026-08-28 after manual review confirmed the structured claim matches its captured official Apple source bindings."
+    },
+    {
+      "review_id": "rev_app_claim_mba_part_magsafe_port_20260830003704227129_7f42a5b3",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_part_magsafe_port",
+      "claim_id": "claim_mba_part_magsafe_port",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_mba_part_magsafe_port_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_fast_charge_20260830003704232511_ea657f9e",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_fast_charge",
+      "claim_id": "claim_mba_spec_fast_charge",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_mba_spec_fast_charge_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_memory_options_20260830003704236067_49d9c021",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_memory_options",
+      "claim_id": "claim_mba_spec_memory_options",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_mba_spec_memory_options_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_newest_compatible_os_20260830003704240087_4022a845",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_newest_compatible_os",
+      "claim_id": "claim_mba_spec_newest_compatible_os",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_mba_spec_newest_compatible_os_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_charge_1_20260830003704242622_2f585957",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_charge_1",
+      "claim_id": "claim_mba_step_charge_1",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_mba_step_charge_1_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_connection_method_1_20260830003704245582_d86116f8",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_connection_method_1",
+      "claim_id": "claim_mba_step_connection_method_1",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_mba_step_connection_method_1_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_connection_method_2_20260830003704248372_2030c2a8",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_connection_method_2",
+      "claim_id": "claim_mba_step_connection_method_2",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_mba_step_connection_method_2_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_connection_method_3_20260830003704250823_3699385f",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_connection_method_3",
+      "claim_id": "claim_mba_step_connection_method_3",
+      "disposition": "REJECTED_FOR_SERVING",
+      "rationale": "Owner-directed unpublished repair pass on 2026-08-29: retire this immutable record in favor of corrected append-only replacement claim_mba_step_connection_method_3_repair_20260829. The original remains preserved for audit history."
+    },
+    {
+      "review_id": "rev_app_claim_mba_part_magsafe_port_repair_20260829_20260830003704692516_da954e88",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_part_magsafe_port_repair_20260829",
+      "claim_id": "claim_mba_part_magsafe_port_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_fast_charge_repair_20260829_20260830003704695521_8b2d3830",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_fast_charge_repair_20260829",
+      "claim_id": "claim_mba_spec_fast_charge_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_memory_options_repair_20260829_20260830003704698500_6ebb0386",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_memory_options_repair_20260829",
+      "claim_id": "claim_mba_spec_memory_options_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_mba_spec_newest_compatible_os_repair_20260829_20260830003704701475_c0986266",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_spec_newest_compatible_os_repair_20260829",
+      "claim_id": "claim_mba_spec_newest_compatible_os_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_charge_1_repair_20260829_20260830003704705939_bf195519",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_charge_1_repair_20260829",
+      "claim_id": "claim_mba_step_charge_1_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_connection_method_1_repair_20260829_20260830003704708895_4d63c097",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_connection_method_1_repair_20260829",
+      "claim_id": "claim_mba_step_connection_method_1_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_connection_method_2_repair_20260829_20260830003704712291_b33a5e9d",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_connection_method_2_repair_20260829",
+      "claim_id": "claim_mba_step_connection_method_2_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_app_claim_mba_step_connection_method_3_repair_20260829_20260830003704718662_1e673955",
+      "date": "2026-08-30",
+      "reviewer": "ramya.episkey17@gmail.com",
+      "scope": "app_review:claim_mba_step_connection_method_3_repair_20260829",
+      "claim_id": "claim_mba_step_connection_method_3_repair_20260829",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    }
+  ]
+}

@@ -120,3 +120,26 @@ are never served. The tool reads `claims.json`, `reviews.json`, and
 Current repository note: the Bose curated video index is registered as
 `src_video_index`; the hardened vault validator is expected to pass all five
 packs.
+
+## Luna-assisted answer app
+
+The local app uses two independently versioned `gpt-5.6-luna` turns: an
+intent/tool planner before local evidence retrieval and a response-composition
+planner after retrieval. The server validates every selected tool, procedure,
+and media ID. Luna cannot create product facts or make an unpublished asset
+eligible.
+
+Create an OpenAI API Platform project key and expose it only to the server
+process. Do not put the key in source files, browser code, command arguments,
+or a committed `.env` file.
+
+```bash
+export OPENAI_API_KEY="your-project-key"
+python3 app/server.py --reviewer owner@example.com
+```
+
+Without `OPENAI_API_KEY`, the same command starts normally and reports
+`Luna planning: deterministic fallback (credentials_missing)`. Set
+`SHOWME_LUNA_ENABLED=0` to force that mode. `SHOWME_LUNA_MODEL` and
+`SHOWME_LUNA_TIMEOUT_SECONDS` provide explicit server-side overrides; the
+defaults are `gpt-5.6-luna` and four seconds per turn.
