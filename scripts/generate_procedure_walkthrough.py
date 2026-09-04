@@ -21,8 +21,15 @@ SCRIPTS_DIR = Path(__file__).resolve().parent
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
-from generate_bluetooth_pairing_video import (  # noqa: E402
-    FPS, HEIGHT, WIDTH, FONTS, font, mix, pill, text,
+from generate_bluetooth_pairing_video import (
+    FONTS,
+    FPS,
+    HEIGHT,
+    WIDTH,
+    font,
+    mix,
+    pill,
+    text,
 )
 
 INTRO_SECONDS = 3.0

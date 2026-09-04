@@ -7,12 +7,16 @@ from pathlib import Path
 
 import cv2
 import numpy as np
-from PIL import Image, ImageDraw
-
 from generate_bluetooth_pairing_video import (
-    FPS, HEIGHT, WIDTH, cursor, font, mix, pill, text,
+    FPS,
+    HEIGHT,
+    WIDTH,
+    cursor,
+    font,
+    mix,
+    pill,
 )
-
+from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = (

@@ -14,7 +14,6 @@ import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
-
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = (
     ROOT / "generated-assets/apple-macbook-air-13-m3/"
