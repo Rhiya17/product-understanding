@@ -1,0 +1,32 @@
+[
+  {
+    "frame": 1,
+    "identical_pixels": true,
+    "mean_difference": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "frame": 95,
+    "identical_pixels": true,
+    "mean_difference": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "frame": 145,
+    "identical_pixels": true,
+    "mean_difference": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+]

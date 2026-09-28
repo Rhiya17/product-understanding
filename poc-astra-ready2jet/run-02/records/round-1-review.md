@@ -1,0 +1,6 @@
+# Round 1 review
+Accepted checkpoint: round-1/ready2jet.blend; source snapshot round-1/scripts.
+Saved baseline and current script rebuild are pixel-identical at 1,95,145 (640 square / 16 samples). All baseline reference hashes verified. Fresh process open/render succeeds with bpy 5.0.1 CPU after sandbox escalation.
+Canopy now has a separate front visor and supported bow profile, instead of a hemisphere. Same topology gathers through preparation and folds with upper handle. Removed the visibly unsupported rear lining flap by rebuilding that identifier as the attached interior liner. Back/seat pillow volumes added; rim trim now one rounded three-lobe inset per side instead of three decorative loops.
+Open/prepared/middle/late/folded + rear inspected. Stable rigid dimensions and unchanged action. No new conspicuous detachment of canopy/seat. Basket upper edge attachment sits too far behind the rear tube; correct in round 2. Seat perimeter seams are obscured by the old Solidify normal/offset convention; correct the modifier direction before polishing. Basket transparency/material still requires round 2.
+Initial photo camera used excessive distance and made the stroller too small; corrected distance identically for baseline/candidate and rerendered both. Initial images are superseded; geometry was not rescaled.

@@ -1,0 +1,112 @@
+{
+  "identity": "Kingston-reference reconstruction; exact SKU applicability unresolved",
+  "labels": {
+    "DOCUMENTED": "source states fact; exact SKU applicability qualified",
+    "OBSERVED": "visible feature/motion at named region/frame",
+    "INFERRED": "geometric dimension, 3D axis, linkage or fabric motion proposed here",
+    "UNKNOWN": "unestablished hidden production details"
+  },
+  "part_groups": [
+    {
+      "objects": "FRAME_*, HUB_main_*",
+      "observed": "Front/rear members and main side hub visible in view-03, original sequence, video 1166-1206",
+      "inferred": "All dimensions, lateral symmetry, true hub depth and 3D axes; no hidden linkage modeled"
+    },
+    {
+      "objects": "HANDLE_*, HUB_split_*",
+      "observed": "Tan grip and split handle; doubles back in video 1180/1186; upright compact grip in folded-01",
+      "inferred": "Tube centerlines, pivot positions, angular ranges and coupling"
+    },
+    {
+      "objects": "WHEEL_*, CASTER_*",
+      "observed": "Four wheels, three-spoke appearance, caster forks from view-03 and folded-01",
+      "inferred": "Tread/rim profiles, spacing, exact swivel angle; casters start pre-aligned, no preparation rolling simulation"
+    },
+    {
+      "objects": "BELLY_*",
+      "observed": "U-shaped belly bar becomes highest carry arch, folded-01 and video1206",
+      "documented": "Carry by belly bar: manual p35",
+      "inferred": "Cross section, dimensions, fixed-to-hub attachment"
+    },
+    {
+      "objects": "FABRIC_*, SEAM_*, HARNESS_*, CANOPY_*",
+      "observed": "Gray upholstery, black side panels, harness, canopy ribs and basket from view-01, view-03, folded-01",
+      "inferred": "Custom soft envelopes and pose shape keys; no cloth/contact simulation; rear lining minimally approximated"
+    },
+    {
+      "objects": "CUP_*",
+      "observed": "One-sided hollow cup holder in side/folded photos",
+      "documented": "Rotation is optional compact-fold tip p34",
+      "inferred": "Position, shape, rotation of 18 degrees"
+    },
+    {
+      "objects": "CONTROL_*",
+      "documented": "Thumb switch on top, squeeze lever below; manual p34 arrows/order",
+      "observed": "Video1127-1153 partly occluded controls",
+      "inferred": "8 mm lateral slide and 7 mm squeeze are illustrative",
+      "unknown": "Cable travel, exact latch engagement and internal forces"
+    },
+    {
+      "objects": "BRAKE_*",
+      "documented": "Unlock before fold, manual p33",
+      "inferred": "Simple rear pedal exterior, assumed unlocked at start; no brake animation"
+    }
+  ],
+  "joints": [
+    {
+      "name": "RIG_support",
+      "axis": "Y, through rear-wheel centers",
+      "range_degrees": [
+        0,
+        -24
+      ],
+      "status": "INFERRED support motion",
+      "basis": "Rear wheels remain on floor; source video fixed wide shot; no old lift/translation copied",
+      "limits": "No balance/force/operator simulation"
+    },
+    {
+      "name": "RIG_front",
+      "axis": "Y at [.035,0,.49] m",
+      "range_degrees": [
+        0,
+        44
+      ],
+      "status": "OBSERVED convergence; INFERRED exact axis/range"
+    },
+    {
+      "name": "RIG_lower_handle",
+      "axis": "Y at [.035,0,.49] m",
+      "range_degrees": [
+        0,
+        -108
+      ],
+      "status": "OBSERVED backward/downward doubling; INFERRED exact axis/range"
+    },
+    {
+      "name": "RIG_upper_handle",
+      "axis": "Y at [-.18,0,.77] m in open rest pose",
+      "range_degrees": [
+        0,
+        158
+      ],
+      "status": "OBSERVED near-vertical folded upper tube; INFERRED exact coupling"
+    },
+    {
+      "name": "RIG_seat",
+      "axis": "Y at [.045,0,.465] m in open rest pose",
+      "range_degrees": [
+        0,
+        88
+      ],
+      "status": "INFERRED seat pivot; rotation delayed to agree better with source middle/late poses"
+    }
+  ],
+  "patent": "US20220169297A1 is only a prior mechanism hypothesis. No hidden patent internals imported or asserted to be this production SKU.",
+  "known_geometry_limits": [
+    "Canopy shape and gathered/rear fabric remain simplified",
+    "Seat padding, side wings and mesh basket do not reproduce the source surface detail",
+    "Wheel decoration and molded joints remain approximate",
+    "No unseen geometry validated"
+  ],
+  "rig_editing": "Named empties have baked, editable transform keys. RIG_support stage properties are animated readouts; edit source EVENTS table and rebuild to change coordinated motion."
+}

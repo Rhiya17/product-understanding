@@ -1,0 +1,23 @@
+{
+  "recorded_start_utc": "2026-09-18T16:03:47+00:00",
+  "completed_utc": "2026-09-18T16:35:50.007808+00:00",
+  "elapsed_authoring_review_render_minutes": 32.05013013333333,
+  "authoring_active_seconds": "UNKNOWN; authoring/review overlapped rendering; elapsed window measured, activity not separately metered",
+  "main_render_seconds": 412.9236087799072,
+  "rear_render_seconds": 391.8408405780792,
+  "final_render_process_elapsed_seconds": {
+    "main": 413.8181381225586,
+    "rear": 392.637953042984
+  },
+  "bulk_render_wall_minutes_approximately": 6.89696896870931,
+  "all_saved_frame_timing_sum_seconds": 882.005517244339,
+  "sum_caveat": "Per-process frame wall times overlap; do not add to task elapsed. Earlier overwritten smoke timing is not included.",
+  "main_frames": 193,
+  "rear_frames": 193,
+  "median_main_frame_seconds": 2.1336450576782227,
+  "median_rear_frame_seconds": 1.9648621082305908,
+  "model_token_usage": "UNKNOWN",
+  "session_charge": "UNKNOWN",
+  "external_paid_generation_jobs": 0,
+  "review": "Assistant sampled-frame self-review only; no full visual playback review or independent reviewer."
+}

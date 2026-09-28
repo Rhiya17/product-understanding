@@ -1,0 +1,5 @@
+00:00.380  blend            | Read blend: "/Users/ramyamanchikanti/workplace/product-understanding/poc-astra-ready2jet/run-02/baseline/ready2jet.blend"
+00:01.805  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/poc-astra-ready2jet/run-02/baseline/reproduction/Camera_Reference-0001.png'
+00:02.877  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/poc-astra-ready2jet/run-02/baseline/reproduction/Camera_Reference-0095.png'
+00:03.908  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/poc-astra-ready2jet/run-02/baseline/reproduction/Camera_Reference-0145.png'
+{"mode": "reproduce", "elapsed_seconds": 3.530911922454834, "output": "/Users/ramyamanchikanti/workplace/product-understanding/poc-astra-ready2jet/run-02/baseline/reproduction"}

@@ -1,0 +1,21 @@
+{
+  "sampled_original_frames": [
+    1,
+    19,
+    37,
+    61,
+    79,
+    95,
+    105,
+    110,
+    145,
+    193
+  ],
+  "streams": [
+    "fold-main.mp4",
+    "fold-rear-right.mp4"
+  ],
+  "method": "FFmpeg decode of final encoded files; visual inspection of contact sheet and selected full frames",
+  "normal_speed_playback": false,
+  "limit": "Sampled frames cannot establish absence of temporal flicker or all inter-frame defects"
+}

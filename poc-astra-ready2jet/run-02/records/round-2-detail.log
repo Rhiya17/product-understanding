@@ -1,0 +1,4 @@
+00:00.246  blend            | Read blend: "/Users/ramyamanchikanti/workplace/product-understanding/poc-astra-ready2jet/run-02/round-2/ready2jet.blend"
+00:05.723  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/poc-astra-ready2jet/run-02/round-2/detail/Camera_Material-0001.png'
+00:10.124  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/poc-astra-ready2jet/run-02/round-2/detail/Camera_Material-0145.png'
+{"mode": "render", "seconds": 9.883915901184082, "blender": "5.0.1", "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]", "platform": "macOS-26.6.2-arm64-arm-64bit", "engine": "CYCLES", "device": "CPU", "render_size": [960, 960], "samples": 48, "color_management": {"transform": "AgX", "look": "AgX - Medium High Contrast", "exposure": -0.30000001192092896}, "external_images": []}

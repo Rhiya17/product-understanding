@@ -1,0 +1,58 @@
+{
+  "main": {
+    "frames": [
+      {
+        "frame": 1,
+        "seconds": 4.474685192108154
+      },
+      {
+        "frame": 95,
+        "seconds": 3.7172348499298096
+      },
+      {
+        "frame": 145,
+        "seconds": 2.5561330318450928
+      }
+    ],
+    "mean_seconds": 3.582684357961019,
+    "estimated_193_frame_seconds": 691.4580810864767,
+    "native_render": [
+      1280,
+      720
+    ],
+    "encoded_canvas": [
+      1280,
+      720
+    ],
+    "samples": 24
+  },
+  "rear": {
+    "frames": [
+      {
+        "frame": 1,
+        "seconds": 2.6641578674316406
+      },
+      {
+        "frame": 95,
+        "seconds": 2.4241740703582764
+      },
+      {
+        "frame": 145,
+        "seconds": 2.334137201309204
+      }
+    ],
+    "mean_seconds": 2.474156379699707,
+    "estimated_193_frame_seconds": 477.51218128204346,
+    "native_render": [
+      1280,
+      720
+    ],
+    "encoded_canvas": [
+      1280,
+      720
+    ],
+    "samples": 20
+  },
+  "estimate_note": "Main benchmark overlapped comparison rendering; rear completed afterward. Approx. 19.5 process-minutes total; concurrent contention can increase each process time. Retain all 193 frames.",
+  "launch_epoch": 1789752138.074833
+}

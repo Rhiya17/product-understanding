@@ -1,0 +1,36 @@
+{
+  "recorded_utc": "2026-09-18T18:35:36.864882+00:00",
+  "status": "prepared_waiting_for_login",
+  "input": "/Users/ramyamanchikanti/workplace/product-understanding/poc-astra-ready2jet/run-03-reactor/input/fold-clean-720.mp4",
+  "sha256": "695e6accec1f0a98e75772431fbb5beafa552e3b6088cfdee29918ffabf6db67",
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 720,
+        "height": 720,
+        "r_frame_rate": "24/1",
+        "nb_frames": "193",
+        "nb_read_frames": "193"
+      }
+    ],
+    "format": {
+      "duration": "8.041667",
+      "size": "504331"
+    }
+  },
+  "full_decode": "passed",
+  "crop": {
+    "x": 114,
+    "y": 0,
+    "width": 720,
+    "height": 720
+  },
+  "source_frames": "run-02/final/frames-main/Camera_Reference-0001.png through Camera_Reference-0193.png",
+  "uploaded": false,
+  "generation_started": false,
+  "generation_output": null,
+  "cost": "UNKNOWN; no session started"
+}

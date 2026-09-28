@@ -1,0 +1,62 @@
+[
+  {
+    "file": "fold-main.mp4",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "24/1",
+          "nb_frames": "193"
+        }
+      ],
+      "format": {
+        "duration": "8.041667"
+      }
+    },
+    "full_stream_decode": "passed; not a visual playback review"
+  },
+  {
+    "file": "fold-rear-right.mp4",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "24/1",
+          "nb_frames": "193"
+        }
+      ],
+      "format": {
+        "duration": "8.041667"
+      }
+    },
+    "full_stream_decode": "passed; not a visual playback review"
+  },
+  {
+    "file": "release-control-source-panel.mp4",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "24/1",
+          "nb_frames": "72"
+        }
+      ],
+      "format": {
+        "duration": "3.000000"
+      }
+    },
+    "full_stream_decode": "passed; not a visual playback review"
+  }
+]

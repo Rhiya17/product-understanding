@@ -1,0 +1,206 @@
+{
+  "hashes": [
+    {
+      "path": "poc-astra-ready2jet/run-01/final/ready2jet.blend",
+      "sha256": "09cc1c7ae5d8095b36c87263d59994a1c5f4312c276c36a652eda19797e2a724",
+      "sha256_end": "09cc1c7ae5d8095b36c87263d59994a1c5f4312c276c36a652eda19797e2a724",
+      "unchanged": true
+    },
+    {
+      "path": "poc-astra-ready2jet/run-01/scripts/curate_references.py",
+      "sha256": "2682f6cf80eb109a757cee6b19ab1eefb3ccf5575ae539f8d0de63dbb933c899",
+      "sha256_end": "2682f6cf80eb109a757cee6b19ab1eefb3ccf5575ae539f8d0de63dbb933c899",
+      "unchanged": true
+    },
+    {
+      "path": "poc-astra-ready2jet/run-01/scripts/compose_media.py",
+      "sha256": "f1a8aade00c7d975ef265dde8d551c10789724503ed813fc3861a65c726fc767",
+      "sha256_end": "f1a8aade00c7d975ef265dde8d551c10789724503ed813fc3861a65c726fc767",
+      "unchanged": true
+    },
+    {
+      "path": "poc-astra-ready2jet/run-01/scripts/rig.py",
+      "sha256": "c61fc2eb4ecee14e35ecb417b6e2703111a82d8a9447e2f4a4f7fb84bc13d052",
+      "sha256_end": "c61fc2eb4ecee14e35ecb417b6e2703111a82d8a9447e2f4a4f7fb84bc13d052",
+      "unchanged": true
+    },
+    {
+      "path": "poc-astra-ready2jet/run-01/scripts/geometry.py",
+      "sha256": "f98c6202ab14f88becf4654b0e1bc72d593f86abc566f25bbd2c055f1daf6b40",
+      "sha256_end": "f98c6202ab14f88becf4654b0e1bc72d593f86abc566f25bbd2c055f1daf6b40",
+      "unchanged": true
+    },
+    {
+      "path": "poc-astra-ready2jet/run-01/scripts/blender_run.py",
+      "sha256": "09c237c49d026674501bca1c5d6f81ea68b2ff81d5a7453aa165978049cf9ed8",
+      "sha256_end": "09c237c49d026674501bca1c5d6f81ea68b2ff81d5a7453aa165978049cf9ed8",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/manuals/graco-ready2jet-manual.pdf",
+      "sha256": "224558e74a2dc2eb95cbb730d807152dfc5b8bcdf748fe3de267b3348b959105",
+      "sha256_end": "224558e74a2dc2eb95cbb730d807152dfc5b8bcdf748fe3de267b3348b959105",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/official-fold-sequence.png",
+      "sha256": "7640d335525423aa0f6d4a40ab806fdcbb47b358374925d31c649c29b6c097c6",
+      "sha256_end": "7640d335525423aa0f6d4a40ab806fdcbb47b358374925d31c649c29b6c097c6",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/official-open-and-folded.png",
+      "sha256": "65e80435bc25ea36221eec2f4ab35268a944f506a040c88a14387ab6658868b9",
+      "sha256_end": "65e80435bc25ea36221eec2f4ab35268a944f506a040c88a14387ab6658868b9",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/official-lifestyle.png",
+      "sha256": "5d802ac6b1b22e7159ed42028fe9fed827cd6b5196cedc9f05e12ffe6263c091",
+      "sha256_end": "5d802ac6b1b22e7159ed42028fe9fed827cd6b5196cedc9f05e12ffe6263c091",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/view-01-front-3q.png",
+      "sha256": "2480f81d2987d6c4b7026c6fd024772066b5307d4568d3740ca435c2dafed8c9",
+      "sha256_end": "2480f81d2987d6c4b7026c6fd024772066b5307d4568d3740ca435c2dafed8c9",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/view-02-top-3q.png",
+      "sha256": "bf47113925b2d303f60e1df3b9c281352b07133158927a3d329d0f27579f4663",
+      "sha256_end": "bf47113925b2d303f60e1df3b9c281352b07133158927a3d329d0f27579f4663",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/view-03-undercarriage.png",
+      "sha256": "495bf3a519573f68e6128af566c18ad5bb0f6068f3280285adc9baef63aa4891",
+      "sha256_end": "495bf3a519573f68e6128af566c18ad5bb0f6068f3280285adc9baef63aa4891",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/view-04-side-profile.png",
+      "sha256": "16d1a8f8e277b00d2be1e421b345236453bae40e02b96023ca8e3a5240cd272a",
+      "sha256_end": "16d1a8f8e277b00d2be1e421b345236453bae40e02b96023ca8e3a5240cd272a",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/folded-01-side.png",
+      "sha256": "d039fe3fcc3bc464fb059a5e7bebac7136ec45a157714d28a9cc1a427525f42d",
+      "sha256_end": "d039fe3fcc3bc464fb059a5e7bebac7136ec45a157714d28a9cc1a427525f42d",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/videos/official-fold-video.mp4",
+      "sha256": "9b1af25362a0b78187c6a4ced7228abcbbf5886e3617356277958392233af0fa",
+      "sha256_end": "9b1af25362a0b78187c6a4ced7228abcbbf5886e3617356277958392233af0fa",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-0488-16.283s.png",
+      "sha256": "67a7c18cf0943eece07a463feb80de239a7b5bc247a2b65adbb9451832af8b55",
+      "sha256_end": "67a7c18cf0943eece07a463feb80de239a7b5bc247a2b65adbb9451832af8b55",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-0611-20.387s.png",
+      "sha256": "8f4f2253fda1419e1445c38c9813727349f1270e95b0a14e4b8671bfff544c21",
+      "sha256_end": "8f4f2253fda1419e1445c38c9813727349f1270e95b0a14e4b8671bfff544c21",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-0731-24.391s.png",
+      "sha256": "7bec03fadc7cd250d2ee94a2246eae28597c2f5f7f38cb247b983e6a057fb8af",
+      "sha256_end": "7bec03fadc7cd250d2ee94a2246eae28597c2f5f7f38cb247b983e6a057fb8af",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1127-37.604s.png",
+      "sha256": "59bf0577eac16de409e5c554893ff8956a3a747c50091fc777f782e1eeca4aff",
+      "sha256_end": "59bf0577eac16de409e5c554893ff8956a3a747c50091fc777f782e1eeca4aff",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1153-38.472s.png",
+      "sha256": "eb606737df46adb24acede10da8dd2c1a1360d1630032620954cd17c3be30064",
+      "sha256_end": "eb606737df46adb24acede10da8dd2c1a1360d1630032620954cd17c3be30064",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1166-38.906s.png",
+      "sha256": "c18789a34d039f6327d91e0006a839c194c1a014e239bde307e5582aa5926b3b",
+      "sha256_end": "c18789a34d039f6327d91e0006a839c194c1a014e239bde307e5582aa5926b3b",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1173-39.139s.png",
+      "sha256": "1d2fcf69a2945453823f2714b9f400f4707d448aafc25b0a2d14e6d8a23dba22",
+      "sha256_end": "1d2fcf69a2945453823f2714b9f400f4707d448aafc25b0a2d14e6d8a23dba22",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1180-39.373s.png",
+      "sha256": "d71049f09854b1706b4b7debab40cc1014888d55e7668de7f6784370e5d02459",
+      "sha256_end": "d71049f09854b1706b4b7debab40cc1014888d55e7668de7f6784370e5d02459",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1186-39.573s.png",
+      "sha256": "30910ae7cc128afef3136e8ce88416c639328a3e185f1a870f0ddc94ded61a66",
+      "sha256_end": "30910ae7cc128afef3136e8ce88416c639328a3e185f1a870f0ddc94ded61a66",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1193-39.806s.png",
+      "sha256": "4daa3accc6e032807b050674e33e510f84434a80b2d4d55ad614a1db06caec74",
+      "sha256_end": "4daa3accc6e032807b050674e33e510f84434a80b2d4d55ad614a1db06caec74",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1206-40.240s.png",
+      "sha256": "7ebd2b5d8de744849123b73754242012f4c18ce6f54ef81eba408dc9273be92b",
+      "sha256_end": "7ebd2b5d8de744849123b73754242012f4c18ce6f54ef81eba408dc9273be92b",
+      "unchanged": true
+    },
+    {
+      "path": "poc-higgsfield-one-hand-fold/references/manual-fold-page-33.png",
+      "sha256": "ee96a4388ee68eba4f94e1385953ccb890ed07b220dfc32520ac4b5dfbcd2efa",
+      "sha256_end": "ee96a4388ee68eba4f94e1385953ccb890ed07b220dfc32520ac4b5dfbcd2efa",
+      "unchanged": true
+    },
+    {
+      "path": "poc-higgsfield-one-hand-fold/references/manual-fold-page-34.png",
+      "sha256": "e19db159911b6a8a573db66d9f264214a8199ad382e3a011c594c4dc26711fde",
+      "sha256_end": "e19db159911b6a8a573db66d9f264214a8199ad382e3a011c594c4dc26711fde",
+      "unchanged": true
+    },
+    {
+      "path": "poc-higgsfield-one-hand-fold/references/manual-fold-page-35.png",
+      "sha256": "78c8f5a0d569d99f09b27d765b14d6b84980b512a241e22745be25b3f114d5f1",
+      "sha256_end": "78c8f5a0d569d99f09b27d765b14d6b84980b512a241e22745be25b3f114d5f1",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/inputs/images/view-01-front-3q.png",
+      "sha256": "2480f81d2987d6c4b7026c6fd024772066b5307d4568d3740ca435c2dafed8c9",
+      "sha256_end": "2480f81d2987d6c4b7026c6fd024772066b5307d4568d3740ca435c2dafed8c9",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/inputs/images/view-03-undercarriage.png",
+      "sha256": "495bf3a519573f68e6128af566c18ad5bb0f6068f3280285adc9baef63aa4891",
+      "sha256_end": "495bf3a519573f68e6128af566c18ad5bb0f6068f3280285adc9baef63aa4891",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/inputs/folded-state/folded-01-side.png",
+      "sha256": "d039fe3fcc3bc464fb059a5e7bebac7136ec45a157714d28a9cc1a427525f42d",
+      "sha256_end": "d039fe3fcc3bc464fb059a5e7bebac7136ec45a157714d28a9cc1a427525f42d",
+      "unchanged": true
+    }
+  ],
+  "all_selected_hashes_unchanged": true,
+  "outside_run_files_modified_since_start": [],
+  "scope": "Metadata scan of project files excluding .git, node_modules, .next, .venv, __pycache__. Not full-repository content hashing.",
+  "git_status_end": "?? Ramya-Manchikanti-Resume-2026-v2.pdf\n?? docs/planning/showme-code-review-2026-09-11.md\n?? docs/planning/showme-resume-metrics-plan.md\n?? docs/planning/world-labs-gowthami-meeting-prep-2026-09-12.md\n?? docs/pocs/astra-blender-execution-prompt.txt\n?? docs/pocs/astra-blender-realism-execution-prompt.txt\n?? docs/pocs/astra-blender-stroller-poc-plan.md\n?? poc-astra-ready2jet/\n?? poc-astra-scene/\n"
+}

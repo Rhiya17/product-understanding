@@ -1,0 +1,22 @@
+{
+  "assets": "All materials procedurally authored locally in scripts/realism.py; no external textures",
+  "gray_and_trim": {
+    "mapping": "RestMetric UV meters along rest centerlines, keyed surfaces preserve vertex correspondence",
+    "weave_pitch_m": 0.00065,
+    "micro_bump_distance_m": 0.00013,
+    "roughness": 0.86,
+    "sheen_weight": 0.18
+  },
+  "basket_mesh": {
+    "repeat_m": 0.003,
+    "mapping": "RestMetric UV",
+    "coverage": "Two intersecting sinusoidal yarn bands threshold .80; transparent holes"
+  },
+  "molded_plastic_roughness": 0.34,
+  "frame_satin_roughness": 0.43,
+  "frame_metallic": 0.22,
+  "rubber_roughness": 0.86,
+  "tan_grip_roughness": 0.48,
+  "evidence": "All numerical parameters INFERRED. Photographs cannot establish fiber species, alloy, coating, roughness or physical elasticity.",
+  "limits": "Weave compresses with surface; this is attached mapping, not a strain-preserving textile simulation. Mesh averages at small display sizes."
+}

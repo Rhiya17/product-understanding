@@ -1,0 +1,7 @@
+00:00.239  blend            | Read blend: "/Users/ramyamanchikanti/workplace/product-understanding/poc-astra-ready2jet/run-02/final/ready2jet.blend"
+/Users/ramyamanchikanti/workplace/product-understanding/poc-astra-ready2jet/run-02/scripts/realism_run.py:26: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new('Neutral geometry override');m.use_nodes=True;b=m.node_tree.nodes['Principled BSDF'];b.inputs['Base Color'].default_value=(.30,.32,.34,1);b.inputs['Roughness'].default_value=.8;s.view_layers[0].material_override=m
+00:01.927  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/poc-astra-ready2jet/run-02/final/clay/Camera_Photo-0001.png'
+00:03.839  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/poc-astra-ready2jet/run-02/final/clay/Camera_Photo-0095.png'
+00:05.542  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/poc-astra-ready2jet/run-02/final/clay/Camera_Photo-0145.png'
+{"mode": "render", "seconds": 5.308532953262329, "blender": "5.0.1", "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]", "platform": "macOS-26.6.2-arm64-arm-64bit", "engine": "CYCLES", "device": "CPU", "render_size": [640, 640], "samples": 16, "color_management": {"transform": "AgX", "look": "AgX - Medium High Contrast", "exposure": -0.30000001192092896}, "external_images": []}

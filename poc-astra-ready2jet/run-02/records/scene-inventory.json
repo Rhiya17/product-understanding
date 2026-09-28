@@ -1,0 +1,1435 @@
+{
+  "cameras": [
+    {
+      "name": "Camera_Reference",
+      "type": "ORTHO",
+      "location": [
+        2.299999952316284,
+        -3.700000047683716,
+        2.0
+      ],
+      "rotation_euler": [
+        1.2495007514953613,
+        1.8492686493232213e-08,
+        0.5561662316322327
+      ],
+      "lens_mm": 50.0,
+      "sensor_width_mm": 36.0,
+      "ortho_scale": 1.350000023841858,
+      "shift_x": 0.0
+    },
+    {
+      "name": "Camera_Side",
+      "type": "ORTHO",
+      "location": [
+        0.0,
+        -4.0,
+        0.949999988079071
+      ],
+      "rotation_euler": [
+        1.4711276292800903,
+        -0.0,
+        0.0
+      ],
+      "lens_mm": 50.0,
+      "sensor_width_mm": 36.0,
+      "ortho_scale": 1.350000023841858,
+      "shift_x": 0.0
+    },
+    {
+      "name": "Camera_RearRight",
+      "type": "ORTHO",
+      "location": [
+        -2.5,
+        -3.200000047683716,
+        1.75
+      ],
+      "rotation_euler": [
+        1.2834646701812744,
+        1.0790310867037078e-08,
+        -0.6632030606269836
+      ],
+      "lens_mm": 50.0,
+      "sensor_width_mm": 36.0,
+      "ortho_scale": 1.350000023841858,
+      "shift_x": 0.0
+    },
+    {
+      "name": "Camera_Hero",
+      "type": "ORTHO",
+      "location": [
+        2.4000000953674316,
+        -3.799999952316284,
+        2.299999952316284
+      ],
+      "rotation_euler": [
+        1.1994874477386475,
+        8.400339623904074e-08,
+        0.5633164644241333
+      ],
+      "lens_mm": 50.0,
+      "sensor_width_mm": 36.0,
+      "ortho_scale": 1.2799999713897705,
+      "shift_x": 0.0
+    },
+    {
+      "name": "Camera_Control",
+      "type": "ORTHO",
+      "location": [
+        -1.2999999523162842,
+        -1.5,
+        1.649999976158142
+      ],
+      "rotation_euler": [
+        1.2506346702575684,
+        -1.030401648449697e-07,
+        -0.5810475945472717
+      ],
+      "lens_mm": 50.0,
+      "sensor_width_mm": 36.0,
+      "ortho_scale": 0.2800000011920929,
+      "shift_x": 0.0
+    },
+    {
+      "name": "Camera_Photo",
+      "type": "PERSP",
+      "location": [
+        2.0999999046325684,
+        2.047499895095825,
+        1.4429999589920044
+      ],
+      "rotation_euler": [
+        1.2724689245224,
+        -9.348601537340073e-08,
+        2.342348337173462
+      ],
+      "lens_mm": 78.0,
+      "sensor_width_mm": 36.0,
+      "ortho_scale": 6.0,
+      "shift_x": 0.0
+    },
+    {
+      "name": "Camera_Material",
+      "type": "PERSP",
+      "location": [
+        1.399999976158142,
+        2.4000000953674316,
+        1.3799999952316284
+      ],
+      "rotation_euler": [
+        1.2971127033233643,
+        -3.6755771759544587e-08,
+        2.613518238067627
+      ],
+      "lens_mm": 95.0,
+      "sensor_width_mm": 36.0,
+      "ortho_scale": 6.0,
+      "shift_x": 0.0
+    },
+    {
+      "name": "Camera_SeatDetail",
+      "type": "PERSP",
+      "location": [
+        0.8199999928474426,
+        1.0199999809265137,
+        1.0299999713897705
+      ],
+      "rotation_euler": [
+        1.1642640829086304,
+        2.1521453064110574e-08,
+        2.520416259765625
+      ],
+      "lens_mm": 100.0,
+      "sensor_width_mm": 36.0,
+      "ortho_scale": 6.0,
+      "shift_x": 0.0
+    },
+    {
+      "name": "Camera_BasketDetail",
+      "type": "PERSP",
+      "location": [
+        0.8999999761581421,
+        1.100000023841858,
+        0.7300000190734863
+      ],
+      "rotation_euler": [
+        1.2311242818832397,
+        -6.756769721505407e-08,
+        2.4613330364227295
+      ],
+      "lens_mm": 110.0,
+      "sensor_width_mm": 36.0,
+      "ortho_scale": 6.0,
+      "shift_x": 0.0
+    },
+    {
+      "name": "Camera_GripDetail",
+      "type": "PERSP",
+      "location": [
+        0.03999999910593033,
+        0.6299999952316284,
+        1.309999942779541
+      ],
+      "rotation_euler": [
+        1.24105966091156,
+        1.0923599802481476e-08,
+        2.646705150604248
+      ],
+      "lens_mm": 95.0,
+      "sensor_width_mm": 36.0,
+      "ortho_scale": 6.0,
+      "shift_x": 0.0
+    }
+  ],
+  "rig_sample_checks": [
+    {
+      "frame": 1,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    },
+    {
+      "frame": 19,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    },
+    {
+      "frame": 49,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    },
+    {
+      "frame": 61,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    },
+    {
+      "frame": 73,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    },
+    {
+      "frame": 79,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    },
+    {
+      "frame": 89,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    },
+    {
+      "frame": 95,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    },
+    {
+      "frame": 100,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    },
+    {
+      "frame": 105,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    },
+    {
+      "frame": 110,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    },
+    {
+      "frame": 116,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    },
+    {
+      "frame": 137,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    },
+    {
+      "frame": 145,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    },
+    {
+      "frame": 193,
+      "all_rig_scales_unchanged": true,
+      "rig_visibility_unchanged": true
+    }
+  ],
+  "photo_landmarks": {
+    "front_wheel_R": {
+      "world_xyz": [
+        0.28,
+        -0.205,
+        0.068
+      ],
+      "photo_normalized_uv_top_left": [
+        0.2624158561229706,
+        0.8224827796220779
+      ]
+    },
+    "front_wheel_L": {
+      "world_xyz": [
+        0.28,
+        0.205,
+        0.068
+      ],
+      "photo_normalized_uv_top_left": [
+        0.46104344725608826,
+        0.91632129997015
+      ]
+    },
+    "rear_wheel_R": {
+      "world_xyz": [
+        -0.22,
+        -0.238,
+        0.074
+      ],
+      "photo_normalized_uv_top_left": [
+        0.48724281787872314,
+        0.7165611982345581
+      ]
+    },
+    "rear_wheel_L": {
+      "world_xyz": [
+        -0.22,
+        0.238,
+        0.074
+      ],
+      "photo_normalized_uv_top_left": [
+        0.7171565890312195,
+        0.8041364997625351
+      ]
+    },
+    "main_hub_L": {
+      "world_xyz": [
+        0.035,
+        0.211,
+        0.49
+      ],
+      "photo_normalized_uv_top_left": [
+        0.591569185256958,
+        0.5738281905651093
+      ]
+    },
+    "handle_corner_L": {
+      "world_xyz": [
+        -0.304,
+        0.17,
+        1.065
+      ],
+      "photo_normalized_uv_top_left": [
+        0.7378243803977966,
+        0.11845391988754272
+      ]
+    },
+    "handle_corner_R": {
+      "world_xyz": [
+        -0.304,
+        -0.17,
+        1.065
+      ],
+      "photo_normalized_uv_top_left": [
+        0.5579923987388611,
+        0.09851807355880737
+      ]
+    }
+  },
+  "soft_parts": [
+    {
+      "part": "FABRIC_backrest",
+      "kind": "back",
+      "basis_vertices": 1485,
+      "key_counts": [
+        1485,
+        1485,
+        1485,
+        1485,
+        1485,
+        1485,
+        1485,
+        1485,
+        1485,
+        1485,
+        1485
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "FABRIC_seat_cushion",
+      "kind": "seat",
+      "basis_vertices": 1485,
+      "key_counts": [
+        1485,
+        1485,
+        1485,
+        1485,
+        1485,
+        1485,
+        1485,
+        1485,
+        1485,
+        1485,
+        1485
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "FABRIC_canopy",
+      "kind": "canopy",
+      "basis_vertices": 2989,
+      "key_counts": [
+        2989,
+        2989,
+        2989,
+        2989,
+        2989,
+        2989,
+        2989,
+        2989,
+        2989,
+        2989,
+        2989
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "FABRIC_basket_floor",
+      "kind": "basketfloor",
+      "basis_vertices": 651,
+      "key_counts": [
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "FABRIC_basket_side_-1",
+      "kind": "basketside",
+      "basis_vertices": 651,
+      "key_counts": [
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "FABRIC_back_bolster_-1",
+      "kind": "bolster",
+      "basis_vertices": 161,
+      "key_counts": [
+        161,
+        161,
+        161,
+        161,
+        161,
+        161,
+        161,
+        161,
+        161,
+        161,
+        161
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "FABRIC_side_wing_-1",
+      "kind": "sidewing",
+      "basis_vertices": 279,
+      "key_counts": [
+        279,
+        279,
+        279,
+        279,
+        279,
+        279,
+        279,
+        279,
+        279,
+        279,
+        279
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "FABRIC_basket_side_1",
+      "kind": "basketside",
+      "basis_vertices": 651,
+      "key_counts": [
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651,
+        651
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "FABRIC_back_bolster_1",
+      "kind": "bolster",
+      "basis_vertices": 161,
+      "key_counts": [
+        161,
+        161,
+        161,
+        161,
+        161,
+        161,
+        161,
+        161,
+        161,
+        161,
+        161
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "FABRIC_side_wing_1",
+      "kind": "sidewing",
+      "basis_vertices": 279,
+      "key_counts": [
+        279,
+        279,
+        279,
+        279,
+        279,
+        279,
+        279,
+        279,
+        279,
+        279,
+        279
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "HARNESS_shoulder_-1",
+      "kind": "strap",
+      "basis_vertices": 57,
+      "key_counts": [
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "HARNESS_pad_-1",
+      "kind": "harnesspad",
+      "basis_vertices": 273,
+      "key_counts": [
+        273,
+        273,
+        273,
+        273,
+        273,
+        273,
+        273,
+        273,
+        273,
+        273,
+        273
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "FABRIC_basket_binding_-1",
+      "kind": "basketbinding",
+      "basis_vertices": 51,
+      "key_counts": [
+        51,
+        51,
+        51,
+        51,
+        51,
+        51,
+        51,
+        51,
+        51,
+        51,
+        51
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "SEAM_back_-1",
+      "kind": "backseam",
+      "basis_vertices": 69,
+      "key_counts": [
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "HARNESS_shoulder_1",
+      "kind": "strap",
+      "basis_vertices": 57,
+      "key_counts": [
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "HARNESS_pad_1",
+      "kind": "harnesspad",
+      "basis_vertices": 273,
+      "key_counts": [
+        273,
+        273,
+        273,
+        273,
+        273,
+        273,
+        273,
+        273,
+        273,
+        273,
+        273
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "FABRIC_basket_binding_1",
+      "kind": "basketbinding",
+      "basis_vertices": 51,
+      "key_counts": [
+        51,
+        51,
+        51,
+        51,
+        51,
+        51,
+        51,
+        51,
+        51,
+        51,
+        51
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "SEAM_back_1",
+      "kind": "backseam",
+      "basis_vertices": 69,
+      "key_counts": [
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69,
+        69
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "CANOPY_piping_0.07",
+      "kind": "canopyseam",
+      "basis_vertices": 147,
+      "key_counts": [
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "CANOPY_piping_0.55",
+      "kind": "canopyseam",
+      "basis_vertices": 147,
+      "key_counts": [
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "CANOPY_piping_0.99",
+      "kind": "canopyseam",
+      "basis_vertices": 147,
+      "key_counts": [
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "CANOPY_gathered_lining",
+      "kind": "canopylining",
+      "basis_vertices": 1517,
+      "key_counts": [
+        1517,
+        1517,
+        1517,
+        1517,
+        1517,
+        1517,
+        1517,
+        1517,
+        1517,
+        1517,
+        1517
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "SEAT_seam_0.65",
+      "kind": "seatseam",
+      "basis_vertices": 99,
+      "key_counts": [
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "SEAT_seam_0.94",
+      "kind": "seatseam",
+      "basis_vertices": 99,
+      "key_counts": [
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "CANOPY_side_binding_-1",
+      "kind": "canopyedge",
+      "basis_vertices": 183,
+      "key_counts": [
+        183,
+        183,
+        183,
+        183,
+        183,
+        183,
+        183,
+        183,
+        183,
+        183,
+        183
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "SEAT_edge_binding_-1",
+      "kind": "seatedge",
+      "basis_vertices": 135,
+      "key_counts": [
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "BACK_edge_binding_-1",
+      "kind": "backbinding",
+      "basis_vertices": 135,
+      "key_counts": [
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "CANOPY_side_binding_1",
+      "kind": "canopyedge",
+      "basis_vertices": 183,
+      "key_counts": [
+        183,
+        183,
+        183,
+        183,
+        183,
+        183,
+        183,
+        183,
+        183,
+        183,
+        183
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "SEAT_edge_binding_1",
+      "kind": "seatedge",
+      "basis_vertices": 135,
+      "key_counts": [
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "BACK_edge_binding_1",
+      "kind": "backbinding",
+      "basis_vertices": 135,
+      "key_counts": [
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135,
+        135
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "FABRIC_basket_front",
+      "kind": "basketfront",
+      "basis_vertices": 493,
+      "key_counts": [
+        493,
+        493,
+        493,
+        493,
+        493,
+        493,
+        493,
+        493,
+        493,
+        493,
+        493
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "FABRIC_basket_rear",
+      "kind": "basketrear",
+      "basis_vertices": 493,
+      "key_counts": [
+        493,
+        493,
+        493,
+        493,
+        493,
+        493,
+        493,
+        493,
+        493,
+        493,
+        493
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    },
+    {
+      "part": "CANOPY_visor_hem",
+      "kind": "canopyseam",
+      "basis_vertices": 147,
+      "key_counts": [
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147,
+        147
+      ],
+      "all_correspond": true,
+      "parent": null,
+      "uv_layers": [
+        "RestMetric"
+      ],
+      "modifiers": [
+        [
+          "Soft surface subdivision",
+          "SUBSURF"
+        ],
+        [
+          "Material thickness",
+          "SOLIDIFY"
+        ]
+      ]
+    }
+  ],
+  "object_count": 224,
+  "external_images": [],
+  "simulation_caches": "None: deterministic shape keys",
+  "limitations": "Small inspection record; no collision, material strain or physics validator"
+}

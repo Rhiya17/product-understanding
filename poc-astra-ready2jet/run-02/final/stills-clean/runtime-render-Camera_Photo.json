@@ -1,0 +1,22 @@
+{
+  "start_epoch": 1789752264.8117309,
+  "end_epoch": 1789752378.504521,
+  "mode": "render",
+  "seconds": 113.692791223526,
+  "blender": "5.0.1",
+  "python": "3.11.4 (v3.11.4:d2340ef257, Jun  6 2023, 19:15:51) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "engine": "CYCLES",
+  "device": "CPU",
+  "render_size": [
+    1600,
+    1600
+  ],
+  "samples": 96,
+  "color_management": {
+    "transform": "AgX",
+    "look": "AgX - Medium High Contrast",
+    "exposure": 0.0
+  },
+  "external_images": []
+}

@@ -1,0 +1,104 @@
+{
+  "selected_source_hashes": [
+    {
+      "path": "source-vault/graco-ready2jet-2212125/manuals/graco-ready2jet-manual.pdf",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/official-fold-sequence.png",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/official-open-and-folded.png",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/official-lifestyle.png",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/view-01-front-3q.png",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/view-02-top-3q.png",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/view-03-undercarriage.png",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/view-04-side-profile.png",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/images/folded-01-side.png",
+      "unchanged": true
+    },
+    {
+      "path": "source-vault/graco-ready2jet-2212125/videos/official-fold-video.mp4",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-0488-16.283s.png",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-0611-20.387s.png",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-0731-24.391s.png",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1127-37.604s.png",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1153-38.472s.png",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1166-38.906s.png",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1173-39.139s.png",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1180-39.373s.png",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1186-39.573s.png",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1193-39.806s.png",
+      "unchanged": true
+    },
+    {
+      "path": "poc-3d-static-twin/evaluation/fold-study-frames/frame-1206-40.240s.png",
+      "unchanged": true
+    },
+    {
+      "path": "poc-higgsfield-one-hand-fold/references/manual-fold-page-33.png",
+      "unchanged": true
+    },
+    {
+      "path": "poc-higgsfield-one-hand-fold/references/manual-fold-page-34.png",
+      "unchanged": true
+    },
+    {
+      "path": "poc-higgsfield-one-hand-fold/references/manual-fold-page-35.png",
+      "unchanged": true
+    }
+  ],
+  "all_selected_sources_unchanged": true,
+  "prior_artifact_files_modified_since_run_checkpoint": [],
+  "tracked_git_diff_paths": [],
+  "scope": "Cryptographic check for selected source files; timestamp scan for prior artifact directories; no claim of a historical full-repository hash baseline."
+}

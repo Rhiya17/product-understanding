@@ -1,0 +1,96 @@
+"""Sampled external motion hypothesis; rigid members retain constant local geometry.
+No force, latch, cable or hidden production-linkage simulation is claimed.
+"""
+import math,bpy
+from mathutils import Vector
+from math import sin,cos,pi
+from geometry import HUB, HINGE, REAR
+EVENTS=[(73,1166,0,0,0,0),(84.2,1173,-1,0,-18,30),(95.4,1180,-4,8,-48,65),(105,1186,-12,22,-75,94),(116.2,1193,-24,44,-108,134),(137,1206,-24,44,-108,134)]
+def clamp(x):return max(0,min(1,x))
+def smooth(x):x=clamp(x);return x*x*(3-2*x)
+def interp(frame,col):
+ if frame<=EVENTS[0][0]:return EVENTS[0][col]
+ for a,b in zip(EVENTS,EVENTS[1:]):
+  if frame<=b[0]:t=(frame-a[0])/(b[0]-a[0]);return a[col]*(1-t)+b[col]*t
+ return EVENTS[-1][col]
+def world(name,point):
+ o=bpy.data.objects[name];return o.matrix_world@o.matrix_parent_inverse.inverted()@Vector(point) if False else o.matrix_world@Vector(point)
+def moved(name,p):
+ # Original geometry uses parent inverse matrices to retain open world coordinates.
+ o=bpy.data.objects[name];rest={'RIG_support':REAR,'RIG_front':HUB,'RIG_lower_handle':HUB,'RIG_upper_handle':HINGE,'RIG_seat':(.045,0,.465)}[name]
+ return o.matrix_world@Vector(tuple(p[i]-rest[i] for i in range(3)))
+def back(u,v,f):
+ a=moved('RIG_upper_handle',(-.278,0,.989));b=moved('RIG_support',(.045,0,.465));q=a.lerp(b,u)
+ q.z-=sin(pi*u)*(.025+.265*f*f)
+ q.x+=sin(pi*u)*(.022-.020*f)
+ q.y=(v*2-1)*(.158+.008*sin(pi*u));q.z+=.012*(2*v-1)**2
+ return q
+def soft_coords(o,frame):
+ kind=o['soft_kind'];nu=o['nu'];nv=o['nv'];f=clamp((interp(frame,4))/-108);prep=smooth((frame-7)/30);sgn=o.get('sign',1);vs=[]
+ for i in range(nu+1):
+  u=i/nu
+  for j in range(nv+1):
+   v=j/nv
+   if kind in ['back','bolster','strap']:
+    vv=v if kind=='back' else ((.03+v*.075) if sgn<0 else (.895+v*.075)) if kind=='bolster' else (.32+v*.065 if sgn<0 else .615+v*.065)
+    uu=u if kind!='strap' else .16+u*.73
+    q=back(uu,vv,f)
+    if kind=='bolster':q.x+=.018*sin(pi*v);q.z+=.005
+    if kind=='strap':q.x+=.013;q.z+=.011
+   elif kind=='seat':
+    x=.045+.225*u;z=.468-.054*u+.015*sin(pi*u)*sin(pi*v)
+    q=moved('RIG_seat',(x,(v*2-1)*(.161-.012*u),z))
+   elif kind=='canopy':
+    # Fan shell around transverse mounting line. Preparation gathers ribs.
+    angle=(-.36+(1-prep)*1.68*u+.13*prep*u)
+    width=.19*sin(pi*v);yy=-.194*cos(pi*v)
+    rr=.25+.014*sin(u*3*pi)*(1-prep)+.015*sin(u*10*pi)*prep
+    x=-.19+rr*sin(angle)*sin(pi*v);z=.827+rr*cos(angle)*sin(pi*v)
+    # side tips sit at mounts; top/crown remains behind fold controls
+    q=moved('RIG_upper_handle',(x,yy,z))
+   elif kind=='basketfloor':
+    a=moved('RIG_support',(-.21,(v*2-1)*.177,.135));b=moved('RIG_front',(.243,(v*2-1)*.177,.185));q=a.lerp(b,u);q.z-=.035*sin(pi*u)*sin(pi*v)
+   elif kind=='basketside':
+    bottomA=moved('RIG_support',(-.20,sgn*.177,.145))
+    bottomB=moved('RIG_front',(.245,sgn*.177,.18));a=bottomA.lerp(bottomB,u)
+    topA=moved('RIG_support',(-.13,sgn*.184,.30))
+    topB=moved('RIG_front',(.18,sgn*.184,.28));b=topA.lerp(topB,u);q=a.lerp(b,v)
+   vs.append(q)
+ return vs
+def pose(frame):
+ root=bpy.data.objects['RIG_support'];root.rotation_euler[1]=math.radians(interp(frame,2));root['source_time']=interp(frame,1)*1001/30000
+ root['frame_collapse']=clamp((frame-73)/(116.2-73));root['canopy_fold']=smooth((frame-7)/30);root['thumb_slide']=smooth((frame-43)/12);root['lever_squeeze']=smooth((frame-58)/12)
+ bpy.data.objects['RIG_front'].rotation_euler[1]=math.radians(interp(frame,3))
+ bpy.data.objects['RIG_lower_handle'].rotation_euler[1]=math.radians(interp(frame,4))
+ bpy.data.objects['RIG_upper_handle'].rotation_euler[1]=math.radians(interp(frame,5))
+ bpy.data.objects['RIG_seat'].rotation_euler[1]=math.radians(88*clamp(-interp(frame,4)/108))
+ bpy.data.objects['RIG_thumb'].location.y=-.008*root['thumb_slide']
+ bpy.data.objects['RIG_lever'].location.z=1.047+.007*root['lever_squeeze']
+ bpy.data.objects['RIG_cup'].rotation_euler[0]=math.radians(-18*smooth((frame-15)/22))
+ bpy.context.view_layer.update()
+def bake():
+ s=bpy.context.scene
+ rigs=[o for o in s.objects if o.name.startswith('RIG_')]
+ for f in range(1,194):
+  pose(f)
+  for o in rigs:
+   o.keyframe_insert('rotation_euler',frame=f);o.keyframe_insert('location',frame=f)
+  for k in ['canopy_fold','thumb_slide','lever_squeeze','frame_collapse','source_time']:
+   bpy.data.objects['RIG_support'].keyframe_insert(data_path=f'["{k}"]',frame=f)
+ times=[1,7,19,37,73,84.2,95.4,105,116.2,137,193]
+ for o in [o for o in s.objects if o.get('soft_kind')]:
+  pose(1);coords=soft_coords(o,1)
+  for v,co in zip(o.data.vertices,coords):v.co=co
+  o.shape_key_add(name='Basis')
+  for t in times[1:]:
+   pose(t);key=o.shape_key_add(name=f'pose_{t:06.1f}')
+   for v,co in zip(key.data,soft_coords(o,t)):v.co=co
+   for other in times:key.value=1. if other==t else 0.;key.keyframe_insert('value',frame=other)
+ # Linear interpolation avoids easing artifacts between observed samples.
+ for action in bpy.data.actions:
+  for layer in action.layers:
+   for strip in layer.strips:
+    for bag in strip.channelbags:
+     for fc in bag.fcurves:
+      for k in fc.keyframe_points:k.interpolation='LINEAR'
+ pose(1);s.frame_set(1)

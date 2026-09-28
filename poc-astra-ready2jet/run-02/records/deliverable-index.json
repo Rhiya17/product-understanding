@@ -1,0 +1,207 @@
+[
+  {
+    "path": "README.md",
+    "bytes": 6550,
+    "sha256": "d193d4ebc46ffe8f16bb4014938d50f5fd177d00e034be51323d94c81d8fb53c"
+  },
+  {
+    "path": "report.md",
+    "bytes": 10397,
+    "sha256": "c4a1ec49f5acb4db1c988b848efda1716b50d005fb58b1a437304a04afc154b6"
+  },
+  {
+    "path": "input-manifest.json",
+    "bytes": 20867,
+    "sha256": "a25329df679f46b76865a9cef5b61a0e4a5daa5b83c38e3de581f9a12a3388eb"
+  },
+  {
+    "path": "part-joint-evidence.json",
+    "bytes": 5239,
+    "sha256": "522f38d8e31b80a55934a46f234080ecec9cc6fcd948dc838322d483b479bff4"
+  },
+  {
+    "path": "action-event-map.json",
+    "bytes": 3281,
+    "sha256": "2f2573b4473421ec23500642df3043a15816e7c372f5048e4892a3f5d4fd8a8e"
+  },
+  {
+    "path": "scripts/deliver_media.py",
+    "bytes": 8233,
+    "sha256": "426db2fb0157e69c8709f966bad224a432983951e3d9dad2d6177d1cd38cff9b"
+  },
+  {
+    "path": "scripts/curate_references.py",
+    "bytes": 6477,
+    "sha256": "2682f6cf80eb109a757cee6b19ab1eefb3ccf5575ae539f8d0de63dbb933c899"
+  },
+  {
+    "path": "scripts/compose_media.py",
+    "bytes": 9814,
+    "sha256": "f1a8aade00c7d975ef265dde8d551c10789724503ed813fc3861a65c726fc767"
+  },
+  {
+    "path": "scripts/realism.py",
+    "bytes": 12551,
+    "sha256": "1be7ada9b5ad87aa0dd706f0f527595ecaf5104179e1c489fd4bf26631b1944f"
+  },
+  {
+    "path": "scripts/rig.py",
+    "bytes": 6187,
+    "sha256": "c61fc2eb4ecee14e35ecb417b6e2703111a82d8a9447e2f4a4f7fb84bc13d052"
+  },
+  {
+    "path": "scripts/geometry.py",
+    "bytes": 13237,
+    "sha256": "f98c6202ab14f88becf4654b0e1bc72d593f86abc566f25bbd2c055f1daf6b40"
+  },
+  {
+    "path": "scripts/scene_record.py",
+    "bytes": 2326,
+    "sha256": "08a50aac0dfc47c3fc23133c6fba9901e71d2e1a0b67735879c7148cbe8d4ac8"
+  },
+  {
+    "path": "scripts/finish_records.py",
+    "bytes": 5011,
+    "sha256": "aa65d4627850cc0eec43d1cae73e10d2e351c2a1b79fdf7c9e51e9cd1fe35a76"
+  },
+  {
+    "path": "scripts/realism_run.py",
+    "bytes": 4274,
+    "sha256": "3c966c77d4dd03edc4ea6fccd5c2f740544f61452848deb46bb738dd60e8136e"
+  },
+  {
+    "path": "scripts/blender_run.py",
+    "bytes": 4327,
+    "sha256": "09c237c49d026674501bca1c5d6f81ea68b2ff81d5a7453aa165978049cf9ed8"
+  },
+  {
+    "path": "final/rear-presentation-0145.jpg",
+    "bytes": 107606,
+    "sha256": "091113342d9811018ec669b59219b482664405519f119d615098a9255dd6f848"
+  },
+  {
+    "path": "final/open-appearance-comparison.jpg",
+    "bytes": 226472,
+    "sha256": "66db1aeaeae063ac3bec54cd4a89d01fd2c298cf1e18e37f40bf081969052694"
+  },
+  {
+    "path": "final/material-detail-sheet.jpg",
+    "bytes": 522792,
+    "sha256": "4b2130fcbbd2b5d5388f3ae782769e334377b1530b9dd4efac9baff2ebf44956"
+  },
+  {
+    "path": "final/folded-product.jpg",
+    "bytes": 277698,
+    "sha256": "4c4814b8ebf9b544d10864c0eade0b652dcc6724651f41ab170b6ed9b427d2c2"
+  },
+  {
+    "path": "final/fold-rear-right.mp4",
+    "bytes": 601889,
+    "sha256": "bd5dba51de1fd82c530d6f6ac2c4d18b5709bbff81c9b75c98efdd41d1f5e4e0"
+  },
+  {
+    "path": "final/main-presentation-0145.jpg",
+    "bytes": 105530,
+    "sha256": "6a2076b3b2ce54db68d9938cd3711e50b9d45faa72f91340bdd05a1c7360ff1b"
+  },
+  {
+    "path": "final/side-diagnostic.jpg",
+    "bytes": 149388,
+    "sha256": "bd9bfda0ce624fbcc8dfc69c83fb47c10ad46616a79981b3d4d164b7bd98b724"
+  },
+  {
+    "path": "final/release-control-source-panel.png",
+    "bytes": 99122,
+    "sha256": "3b5ae468c76acfa2339fc87092710995ae89d714541f3e8a0ba82bc81e37bfc7"
+  },
+  {
+    "path": "final/main-sampled-animation-review.jpg",
+    "bytes": 319929,
+    "sha256": "9515ef5eca6c490e67f7f13c86086f00b473be3fab0c37657ca6b7b672e951fa"
+  },
+  {
+    "path": "final/main-presentation-0095.jpg",
+    "bytes": 118160,
+    "sha256": "f4d11673b4883b5b8938b7e29b80e68dcf80435d18df8ad890828884dd675316"
+  },
+  {
+    "path": "final/rear-sampled-animation-review.jpg",
+    "bytes": 311252,
+    "sha256": "4a0c92b2cdff59432e37a3933d5bee0ede700921eb1721e46d7221c2fff73988"
+  },
+  {
+    "path": "final/encoded-motion-review.jpg",
+    "bytes": 315442,
+    "sha256": "e2d1c25f78d0e3fc68ea87ed8c0c05d7726190981659b9223bed50f139f9083b"
+  },
+  {
+    "path": "final/geometry-before-after.jpg",
+    "bytes": 280172,
+    "sha256": "6c303f3406a6180468c22373319d53f463a4885b743762c15fc4192e21667995"
+  },
+  {
+    "path": "final/runtime-build-Camera_Photo.json",
+    "bytes": 479,
+    "sha256": "e2939cee42d75352e3a29db46554a0e4feab2df6a597a058f63b27b856f971b4"
+  },
+  {
+    "path": "final/rear-presentation-0095.jpg",
+    "bytes": 118345,
+    "sha256": "752e9934896614510e6c0fb08164797a7a1433f85d96898c38a15e1eac5e84d5"
+  },
+  {
+    "path": "final/fold-main-preview.gif",
+    "bytes": 2539507,
+    "sha256": "3fde98198a9f02bab13e09e416a70c55a20b2105883c34657fe7fbb3771172eb"
+  },
+  {
+    "path": "final/open-mid-folded-comparison.jpg",
+    "bytes": 289217,
+    "sha256": "e1c8ac86ad8a22fcecdfd60440a0dab97bf422efd30d2ce7d2a853a6dcb01d41"
+  },
+  {
+    "path": "final/fold-main.mp4",
+    "bytes": 602469,
+    "sha256": "38b140de3dc0d785f666eddb15b5f8e420300afaf6869712cd8dafee07849d42"
+  },
+  {
+    "path": "final/main-presentation-0061.jpg",
+    "bytes": 128214,
+    "sha256": "899c5d962587beb925808868d460fbd65f9c6aee1f9c1c976fb86778a05a2955"
+  },
+  {
+    "path": "final/ready2jet.blend",
+    "bytes": 1139108,
+    "sha256": "7d10ba8fd5ef8aaa2934dc9a8fd89c8b6bebec17e067e707e4645c503af28253"
+  },
+  {
+    "path": "final/rear-presentation-0061.jpg",
+    "bytes": 123896,
+    "sha256": "f84c340335b47700b350a5b474ad60ba6fb425948c69d879f77855dc329f3130"
+  },
+  {
+    "path": "final/main-presentation-0001.jpg",
+    "bytes": 120393,
+    "sha256": "3e161f18d428356dceacca6192d445c63586dcdcc78b1afe40dfb3f290d25f43"
+  },
+  {
+    "path": "final/before-after.jpg",
+    "bytes": 151907,
+    "sha256": "d61cdd3b835d00068809f3c41d8a4e0af730972383011024cf931100c4865573"
+  },
+  {
+    "path": "final/release-control-source-panel.mp4",
+    "bytes": 52180,
+    "sha256": "d145d78b8fef0d7fcaeeee5ec15d5a0d33097045f63694c816e454ca4fdd9e8a"
+  },
+  {
+    "path": "final/rear-presentation-0001.jpg",
+    "bytes": 120791,
+    "sha256": "d11fe64dffb91e67f9a53a3d3835e078c3dcda0699a64195aef5b5687e1d2f26"
+  },
+  {
+    "path": "final/open-product.jpg",
+    "bytes": 343764,
+    "sha256": "f502ed07ed5b0411deabb327d5aa7000ecfa39b1ba67d373439ef5971f0f20c5"
+  }
+]

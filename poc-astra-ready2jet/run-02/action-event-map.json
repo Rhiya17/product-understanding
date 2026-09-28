@@ -1,0 +1,117 @@
+{
+  "fps": 24,
+  "frame_start": 1,
+  "frame_end": 193,
+  "duration_seconds": 8.041666666666666,
+  "source_video_fps": "30000/1001",
+  "source_frames_zero_based": true,
+  "continuous_fold_mapping": "For presentation frames 73..137.064: source_seconds = 1166*1001/30000 + (presentation_frame-73)/48. Source events use rounded presentation frame positions; timing error <= 0.01 s at sampled integer frames.",
+  "fold_retime": "2x slow motion; preparation and release retimed independently because source shots are discontinuous; final held pose",
+  "events": [
+    {
+      "frames": [
+        1,
+        37
+      ],
+      "event": "Empty; brakes assumed unlocked; canopy gathers; cup rotates; casters start aligned",
+      "source": "manual p33 and tips p34; video488,611,731",
+      "labels": [
+        "DOCUMENTED procedure",
+        "INFERRED travel/timing"
+      ]
+    },
+    {
+      "frames": [
+        43,
+        55
+      ],
+      "event": "Thumb switch slides",
+      "source": "manual p34 a; video1127-1153 obscured",
+      "labels": [
+        "DOCUMENTED direction/order",
+        "INFERRED 8mm travel"
+      ]
+    },
+    {
+      "frames": [
+        58,
+        70
+      ],
+      "event": "Handle lever squeezes",
+      "source": "manual p34 b; video1127-1153 obscured",
+      "labels": [
+        "DOCUMENTED direction/order",
+        "INFERRED 7mm travel"
+      ]
+    },
+    {
+      "frames": [
+        73,
+        137
+      ],
+      "event": "Frame collapses and settles",
+      "source": "video1166-1206",
+      "labels": [
+        "OBSERVED gross motion",
+        "INFERRED axes/kinematic fit/soft deformation"
+      ]
+    },
+    {
+      "frames": [
+        138,
+        193
+      ],
+      "event": "Secure/carry text panel, final hold",
+      "source": "manual p35",
+      "labels": [
+        "DOCUMENTED procedure",
+        "UNKNOWN physical latch state; no carry simulated"
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "source_frame": 1166,
+      "source_seconds": 38.90553333333333,
+      "presentation_frame_exact": 73.0
+    },
+    {
+      "source_frame": 1173,
+      "source_seconds": 39.1391,
+      "presentation_frame_exact": 84.2112
+    },
+    {
+      "source_frame": 1180,
+      "source_seconds": 39.37266666666667,
+      "presentation_frame_exact": 95.4224
+    },
+    {
+      "source_frame": 1186,
+      "source_seconds": 39.57286666666667,
+      "presentation_frame_exact": 105.032
+    },
+    {
+      "source_frame": 1193,
+      "source_seconds": 39.80643333333333,
+      "presentation_frame_exact": 116.2432
+    },
+    {
+      "source_frame": 1206,
+      "source_seconds": 40.2402,
+      "presentation_frame_exact": 137.064
+    }
+  ],
+  "coverage_limits": [
+    "No human hand rig",
+    "No car-seat removal simulation; starts empty",
+    "No brake actuation; starts unlocked",
+    "No hidden latch engagement, clicking audio, forces or springs",
+    "Secure/carry communicated by source-backed text; not physically executed"
+  ],
+  "run02_changes": {
+    "rig_events": "UNCHANGED, including corrected final seat timing",
+    "soft_surfaces": "Regenerated topology, full corresponding shape keys and attached hems",
+    "simulation": "None; INFERRED controlled deformation",
+    "source_speed_mapping": "Inherited unchanged for all parts and cameras"
+  }
+}

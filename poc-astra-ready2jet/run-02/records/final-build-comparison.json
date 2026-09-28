@@ -1,0 +1,43 @@
+[
+  {
+    "frame": 1,
+    "identical_pixels": true,
+    "mean_abs_RGB_difference": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "frame": 95,
+    "identical_pixels": true,
+    "mean_abs_RGB_difference": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "frame": 145,
+    "identical_pixels": true,
+    "mean_abs_RGB_difference": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "camera": "Camera_Material",
+    "frame": 1,
+    "identical_pixels": true,
+    "mean_abs_RGB_difference": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+]

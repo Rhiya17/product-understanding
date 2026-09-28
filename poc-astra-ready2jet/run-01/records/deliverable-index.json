@@ -1,0 +1,92 @@
+[
+  {
+    "path": "final/ready2jet.blend",
+    "bytes": 444785,
+    "sha256": "09cc1c7ae5d8095b36c87263d59994a1c5f4312c276c36a652eda19797e2a724"
+  },
+  {
+    "path": "final/fold-main.mp4",
+    "bytes": 498347,
+    "sha256": "0ccb5b164b83569e0e9381b6e17e4d631e3e688fe63588a65a96f93ba6b89bd4"
+  },
+  {
+    "path": "final/fold-rear-right.mp4",
+    "bytes": 458838,
+    "sha256": "7e96dd8be7258b123440c2e73e0e4703d17c58d88392e01dc032970f1ea69e76"
+  },
+  {
+    "path": "final/release-control-source-panel.mp4",
+    "bytes": 52180,
+    "sha256": "d145d78b8fef0d7fcaeeee5ec15d5a0d33097045f63694c816e454ca4fdd9e8a"
+  },
+  {
+    "path": "final/fold-main-preview.gif",
+    "bytes": 2410983,
+    "sha256": "811e066b795524af95d7e72052cf5a65435249e8b5c6c78dffd6c3335fae5704"
+  },
+  {
+    "path": "final/open-mid-folded-comparison.jpg",
+    "bytes": 298315,
+    "sha256": "ebc7ffdc9e5031c944548f34a13540b02a6c5102286966017374fb82577b071a"
+  },
+  {
+    "path": "final/open-appearance-comparison.jpg",
+    "bytes": 162551,
+    "sha256": "641332ca16c46794264d610ba5ce0dfbf2b438780cbdd485f60b69b2085f236a"
+  },
+  {
+    "path": "final/open-mid-folded-clay.jpg",
+    "bytes": 71063,
+    "sha256": "b704b7699262a92bfdb4155519efed9075181edd7f100ff6cd579bc1e4951b1d"
+  },
+  {
+    "path": "input-manifest.json",
+    "bytes": 18279,
+    "sha256": "f2fac87d8d66ba49bfbbd3e91ab129021ae977e3229273e45c0b0caecb817c8b"
+  },
+  {
+    "path": "part-joint-evidence.json",
+    "bytes": 4472,
+    "sha256": "27ccf0dd26447abd4ca968c6af5a0b77f5c496c8f81eb5c3fe2b2c8251377a1a"
+  },
+  {
+    "path": "action-event-map.json",
+    "bytes": 2956,
+    "sha256": "26d867d514fbf8077c7cdb1ed83ba286ecca8babf98754d538e16cd34f6f5b12"
+  },
+  {
+    "path": "README.md",
+    "bytes": 5463,
+    "sha256": "2273a7d11397760d2c37958c4c9b1ea99454dc639c7ee620223e02d656665419"
+  },
+  {
+    "path": "report.md",
+    "bytes": 9900,
+    "sha256": "e79e894323418fa1bc4a2eb092544160297e8f7bbd829a720aa5b5d556b46c86"
+  },
+  {
+    "path": "scripts/blender_run.py",
+    "bytes": 4327,
+    "sha256": "09c237c49d026674501bca1c5d6f81ea68b2ff81d5a7453aa165978049cf9ed8"
+  },
+  {
+    "path": "scripts/geometry.py",
+    "bytes": 13237,
+    "sha256": "f98c6202ab14f88becf4654b0e1bc72d593f86abc566f25bbd2c055f1daf6b40"
+  },
+  {
+    "path": "scripts/rig.py",
+    "bytes": 6187,
+    "sha256": "c61fc2eb4ecee14e35ecb417b6e2703111a82d8a9447e2f4a4f7fb84bc13d052"
+  },
+  {
+    "path": "scripts/compose_media.py",
+    "bytes": 9814,
+    "sha256": "f1a8aade00c7d975ef265dde8d551c10789724503ed813fc3861a65c726fc767"
+  },
+  {
+    "path": "scripts/curate_references.py",
+    "bytes": 6477,
+    "sha256": "2682f6cf80eb109a757cee6b19ab1eefb3ccf5575ae539f8d0de63dbb933c899"
+  }
+]

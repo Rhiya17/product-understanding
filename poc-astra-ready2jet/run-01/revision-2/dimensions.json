@@ -1,0 +1,142 @@
+[
+  {
+    "frame": 1,
+    "min_xyz": [
+      -0.34049999713897705,
+      -0.26600000262260437,
+      0.0
+    ],
+    "max_xyz": [
+      0.3479999899864197,
+      0.26600000262260437,
+      1.1029999256134033
+    ],
+    "dimensions_DWH": [
+      0.6884999871253967,
+      0.5320000052452087,
+      1.1029999256134033
+    ],
+    "extremal_min_parts": [
+      "CONTROL_center_housing",
+      "WHEEL_rear_R_spoke_-1_0",
+      "WHEEL_rear_R_rubber_tire"
+    ],
+    "extremal_max_parts": [
+      "WHEEL_front_R_rubber_tire",
+      "WHEEL_rear_L_spoke_1_0",
+      "CONTROL_thumb_slider"
+    ]
+  },
+  {
+    "frame": 73,
+    "min_xyz": [
+      -0.34049999713897705,
+      -0.26600000262260437,
+      0.0
+    ],
+    "max_xyz": [
+      0.3479999899864197,
+      0.26600000262260437,
+      1.1029999256134033
+    ],
+    "dimensions_DWH": [
+      0.6884999871253967,
+      0.5320000052452087,
+      1.1029999256134033
+    ],
+    "extremal_min_parts": [
+      "CONTROL_center_housing",
+      "WHEEL_rear_R_spoke_-1_0",
+      "WHEEL_rear_R_rubber_tire"
+    ],
+    "extremal_max_parts": [
+      "WHEEL_front_R_rubber_tire",
+      "WHEEL_rear_L_spoke_1_0",
+      "CONTROL_thumb_slider"
+    ]
+  },
+  {
+    "frame": 95,
+    "min_xyz": [
+      -0.42719295620918274,
+      -0.26600000262260437,
+      7.245945744216442e-05
+    ],
+    "max_xyz": [
+      0.29042884707450867,
+      0.26600000262260437,
+      0.8322616815567017
+    ],
+    "dimensions_DWH": [
+      0.7176218032836914,
+      0.5320000052452087,
+      0.8321892220992595
+    ],
+    "extremal_min_parts": [
+      "CANOPY_gathered_lining",
+      "WHEEL_rear_R_spoke_-1_0",
+      "WHEEL_rear_R_rubber_tire"
+    ],
+    "extremal_max_parts": [
+      "WHEEL_front_R_rubber_tire",
+      "WHEEL_rear_L_spoke_1_0",
+      "CONTROL_thumb_slider"
+    ]
+  },
+  {
+    "frame": 105,
+    "min_xyz": [
+      -0.470309317111969,
+      -0.26600000262260437,
+      8.282950147986412e-06
+    ],
+    "max_xyz": [
+      0.17885026335716248,
+      0.26600000262260437,
+      0.7644316554069519
+    ],
+    "dimensions_DWH": [
+      0.6491595804691315,
+      0.5320000052452087,
+      0.7644233724568039
+    ],
+    "extremal_min_parts": [
+      "CONTROL_center_housing",
+      "WHEEL_rear_R_spoke_-1_0",
+      "WHEEL_rear_R_rubber_tire"
+    ],
+    "extremal_max_parts": [
+      "WHEEL_front_R_rubber_tire",
+      "WHEEL_rear_L_spoke_1_0",
+      "BELLY_carry_bar"
+    ]
+  },
+  {
+    "frame": 145,
+    "min_xyz": [
+      -0.37029340863227844,
+      -0.26600000262260437,
+      3.312528133392334e-05
+    ],
+    "max_xyz": [
+      0.008846655488014221,
+      0.26600000262260437,
+      0.8007851839065552
+    ],
+    "dimensions_DWH": [
+      0.37914006412029266,
+      0.5320000052452087,
+      0.8007520586252213
+    ],
+    "extremal_min_parts": [
+      "CONTROL_center_housing",
+      "WHEEL_rear_R_spoke_-1_0",
+      "WHEEL_rear_R_rubber_tire"
+    ],
+    "extremal_max_parts": [
+      "FRAME_foot_U",
+      "WHEEL_rear_L_spoke_1_0",
+      "BELLY_carry_bar"
+    ]
+  }
+]

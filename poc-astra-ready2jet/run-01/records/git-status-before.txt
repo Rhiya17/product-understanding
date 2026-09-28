@@ -1,0 +1,8 @@
+?? Ramya-Manchikanti-Resume-2026-v2.pdf
+?? docs/planning/showme-code-review-2026-09-11.md
+?? docs/planning/showme-resume-metrics-plan.md
+?? docs/planning/world-labs-gowthami-meeting-prep-2026-09-12.md
+?? docs/pocs/astra-blender-execution-prompt.txt
+?? docs/pocs/astra-blender-stroller-poc-plan.md
+?? poc-astra-ready2jet/
+?? poc-astra-scene/

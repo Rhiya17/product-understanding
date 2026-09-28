@@ -1,0 +1,72 @@
+[
+  {
+    "frame": 1166,
+    "seconds": 38.90553333333333,
+    "pixels_identical": false,
+    "mean_absolute_RGB_difference_8bit": [
+      1.12171875,
+      1.5648683449074074,
+      0.6279504243827161
+    ],
+    "maximum_RGB_difference_8bit": 7,
+    "finding": "Same frame geometry/timestamp confirmed visually; small decoder color conversion difference (OpenCV historical vs FFmpeg current). Use fresh original-decoded frames for comparisons.",
+    "fresh_frame_path": "references/original-frame-1166.png",
+    "fresh_frame_sha256": "194c26e3bb284580001cff0f1f5cb75d658b47bfd0fffc2219b750c547a4e193"
+  },
+  {
+    "frame": 1173,
+    "seconds": 39.1391,
+    "pixels_identical": false,
+    "mean_absolute_RGB_difference_8bit": [
+      1.121048900462963,
+      1.5629726080246913,
+      0.6254253472222222
+    ],
+    "maximum_RGB_difference_8bit": 7,
+    "finding": "Same frame geometry/timestamp confirmed visually; small decoder color conversion difference (OpenCV historical vs FFmpeg current). Use fresh original-decoded frames for comparisons.",
+    "fresh_frame_path": "references/original-frame-1173.png",
+    "fresh_frame_sha256": "c85ce7c657dc488deaacfdffe68921f88abef5052d11a4a5c1f61853998b739e"
+  },
+  {
+    "frame": 1180,
+    "seconds": 39.37266666666667,
+    "pixels_identical": false,
+    "mean_absolute_RGB_difference_8bit": [
+      1.1287422839506174,
+      1.577016300154321,
+      0.623759162808642
+    ],
+    "maximum_RGB_difference_8bit": 7,
+    "finding": "Same frame geometry/timestamp confirmed visually; small decoder color conversion difference (OpenCV historical vs FFmpeg current). Use fresh original-decoded frames for comparisons.",
+    "fresh_frame_path": "references/original-frame-1180.png",
+    "fresh_frame_sha256": "ccf1e7edc13f5ab58ef8933d1af25196e5c829d91606f40b2cc28b214b16a2ac"
+  },
+  {
+    "frame": 1186,
+    "seconds": 39.57286666666667,
+    "pixels_identical": false,
+    "mean_absolute_RGB_difference_8bit": [
+      1.1521223958333333,
+      1.6204036458333333,
+      0.6227300347222222
+    ],
+    "maximum_RGB_difference_8bit": 6,
+    "finding": "Same frame geometry/timestamp confirmed visually; small decoder color conversion difference (OpenCV historical vs FFmpeg current). Use fresh original-decoded frames for comparisons.",
+    "fresh_frame_path": "references/original-frame-1186.png",
+    "fresh_frame_sha256": "cb338509cee0425eb3f5b9aef87964807797dac274f3c6e760c0fc8e347c32ca"
+  },
+  {
+    "frame": 1206,
+    "seconds": 40.2402,
+    "pixels_identical": false,
+    "mean_absolute_RGB_difference_8bit": [
+      1.159021026234568,
+      1.6468002507716049,
+      0.6362885802469136
+    ],
+    "maximum_RGB_difference_8bit": 6,
+    "finding": "Same frame geometry/timestamp confirmed visually; small decoder color conversion difference (OpenCV historical vs FFmpeg current). Use fresh original-decoded frames for comparisons.",
+    "fresh_frame_path": "references/original-frame-1206.png",
+    "fresh_frame_sha256": "78144603e92f9a194bda8f6953471e85690eabba594f1568346ed127c1e71edf"
+  }
+]

@@ -1,0 +1,141 @@
+{
+  "start_epoch": 1789751429.976081,
+  "end_epoch": 1789753183.2527518,
+  "elapsed_wall_seconds": 1753.2766709327698,
+  "animations": {
+    "main": {
+      "sum_frame_render_seconds": 974.2922859191895,
+      "process_wall_seconds": 976.1494801044464,
+      "frame_count": 193,
+      "native_render_size": [
+        1280,
+        720
+      ],
+      "start_epoch": 1789752141.56559,
+      "end_epoch": 1789753117.7150688
+    },
+    "rear": {
+      "sum_frame_render_seconds": 936.9395997524261,
+      "process_wall_seconds": 938.9677228927612,
+      "frame_count": 193,
+      "native_render_size": [
+        1280,
+        720
+      ],
+      "start_epoch": 1789752145.1029792,
+      "end_epoch": 1789753084.0707011
+    }
+  },
+  "animation_span_wall_seconds": 976.1494789123535,
+  "animation_overlap_seconds": 938.9677219390869,
+  "saved_frame_timing_sum_seconds": 2260.4502108097076,
+  "timing_files": [
+    {
+      "path": "round-1/clay/Camera_Photo-timing.json",
+      "seconds": 2.6694388389587402
+    },
+    {
+      "path": "round-1/rear/Camera_RearRight-timing.json",
+      "seconds": 4.683359622955322
+    },
+    {
+      "path": "round-1/check/Camera_Photo-timing.json",
+      "seconds": 5.35206151008606
+    },
+    {
+      "path": "baseline-rebuild/check/Camera_Reference-timing.json",
+      "seconds": 3.0951974391937256
+    },
+    {
+      "path": "baseline/reproduction/Camera_Reference-timing.json",
+      "seconds": 3.34586501121521
+    },
+    {
+      "path": "baseline/clay/Camera_Photo-timing.json",
+      "seconds": 4.911400079727173
+    },
+    {
+      "path": "baseline/photo/Camera_Photo-timing.json",
+      "seconds": 5.407073259353638
+    },
+    {
+      "path": "verification/detail/Camera_Material-timing.json",
+      "seconds": 11.535552024841309
+    },
+    {
+      "path": "verification/check/Camera_Photo-timing.json",
+      "seconds": 14.931207656860352
+    },
+    {
+      "path": "final/benchmark-rear/Camera_RearRight-timing.json",
+      "seconds": 7.422469139099121
+    },
+    {
+      "path": "final/benchmark-main/Camera_Reference-timing.json",
+      "seconds": 10.748053073883057
+    },
+    {
+      "path": "final/details/Camera_GripDetail-timing.json",
+      "seconds": 10.655158042907715
+    },
+    {
+      "path": "final/details/Camera_Material-timing.json",
+      "seconds": 32.65256977081299
+    },
+    {
+      "path": "final/details/Camera_SeatDetail-timing.json",
+      "seconds": 15.351801872253418
+    },
+    {
+      "path": "final/details/Camera_BasketDetail-timing.json",
+      "seconds": 19.60873293876648
+    },
+    {
+      "path": "final/side/Camera_Side-timing.json",
+      "seconds": 14.332332611083984
+    },
+    {
+      "path": "final/reproduction/Camera_Photo-timing.json",
+      "seconds": 6.036370038986206
+    },
+    {
+      "path": "final/clay/Camera_Photo-timing.json",
+      "seconds": 5.208410978317261
+    },
+    {
+      "path": "final/frames-main/Camera_Reference-timing.json",
+      "seconds": 974.2922859191895
+    },
+    {
+      "path": "final/frames-rear/Camera_RearRight-timing.json",
+      "seconds": 936.9395997524261
+    },
+    {
+      "path": "final/stills-clean/Camera_Photo-timing.json",
+      "seconds": 113.62254309654236
+    },
+    {
+      "path": "round-2/detail/Camera_Material-timing.json",
+      "seconds": 9.796610116958618
+    },
+    {
+      "path": "round-2/rear/Camera_RearRight-timing.json",
+      "seconds": 11.840039014816284
+    },
+    {
+      "path": "round-2/check/Camera_Photo-timing.json",
+      "seconds": 7.9641923904418945
+    },
+    {
+      "path": "round-3/rear/Camera_RearRight-timing.json",
+      "seconds": 14.27711009979248
+    },
+    {
+      "path": "round-3/check/Camera_Photo-timing.json",
+      "seconds": 13.770776510238647
+    }
+  ],
+  "accounting_limits": "Authoring, rendering and other renders overlap. Sum of frame time is not elapsed time. Superseded preview timings overwritten during camera correction are not included. Initial prompt/context reading preceded preservation-start.",
+  "token_usage": "UNKNOWN",
+  "session_cost": "UNKNOWN"
+}
