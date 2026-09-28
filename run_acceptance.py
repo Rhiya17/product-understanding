@@ -6,8 +6,15 @@ import requests
 import subprocess
 from pathlib import Path
 
-# Load env
-os.environ["FAL_KEY"] = "c06d5a26-a1b8-4bee-a9b3-dec02f2828aa:891ad6242172679e5cb31d9017e6b90d"
+# Paid live check. The FAL credential comes from the environment, never from
+# this file, and the run needs an owner-approved manifest recorded through
+# system/spend_guard.py. Its spend is not metered per call, so it stays
+# disabled until it is routed through SpendGuard.reserve().
+# NOTE: /api/chat below does not exist in app/server.py (the route is
+# /api/answer); this script is stale and kept only for history.
+if "--i-have-an-approved-manifest" not in sys.argv or not os.environ.get("FAL_KEY"):
+    sys.exit("run_acceptance.py is a paid live check and is disabled: it needs "
+             "FAL_KEY in the environment and an owner-approved spend manifest.")
 if "SHOWME_VIDEO_RENDERER" in os.environ:
     del os.environ["SHOWME_VIDEO_RENDERER"]
 

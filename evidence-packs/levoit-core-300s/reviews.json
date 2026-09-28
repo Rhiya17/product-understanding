@@ -827,6 +827,33 @@
       "claim_id": "claim_c300s_step_initial_setup_4_repair_20260829",
       "disposition": "APPROVED_FOR_PUBLISH",
       "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_delegated_claim_c300s_step_reset_filter_early_1_20260924013753",
+      "date": "2026-09-23",
+      "reviewer": "delegated-agent:claude-opus-5.5",
+      "scope": "p1_gap_closure:claim_c300s_step_reset_filter_early_1",
+      "claim_id": "claim_c300s_step_reset_filter_early_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Delegated owner review (owner instruction 2026-09-23: 'you make the call like me'). Quote checked as a full span on the cited page of the hash-pinned source; icon meanings on Levoit p13 checked on a rendered page image. Agent review, not human verification. Proposal: prop_gap02_early_reset_step_1."
+    },
+    {
+      "review_id": "rev_delegated_claim_c300s_step_reset_filter_early_2_20260924013753",
+      "date": "2026-09-23",
+      "reviewer": "delegated-agent:claude-opus-5.5",
+      "scope": "p1_gap_closure:claim_c300s_step_reset_filter_early_2",
+      "claim_id": "claim_c300s_step_reset_filter_early_2",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Delegated owner review (owner instruction 2026-09-23: 'you make the call like me'). Quote checked as a full span on the cited page of the hash-pinned source; icon meanings on Levoit p13 checked on a rendered page image. Agent review, not human verification. Proposal: prop_gap02_early_reset_step_2."
+    },
+    {
+      "review_id": "rev_delegated_claim_c300s_step_reset_filter_early_3_20260924013753",
+      "date": "2026-09-23",
+      "reviewer": "delegated-agent:claude-opus-5.5",
+      "scope": "p1_gap_closure:claim_c300s_step_reset_filter_early_3",
+      "claim_id": "claim_c300s_step_reset_filter_early_3",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Delegated owner review (owner instruction 2026-09-23: 'you make the call like me'). Quote checked as a full span on the cited page of the hash-pinned source; icon meanings on Levoit p13 checked on a rendered page image. Agent review, not human verification. Proposal: prop_gap02_early_reset_step_3."
     }
   ]
 }

@@ -872,6 +872,42 @@
       "claim_id": "claim_bqcu2_warning_vehicle_1_repair_20260829",
       "disposition": "APPROVED_FOR_PUBLISH",
       "rationale": "Owner-directed publication on 2026-08-29 after expert review confirmed this append-only repair against complete authoritative manufacturer evidence and the repository exact-quote/procedure validator. Independent verifier rerun was unavailable because FAL_KEY is not configured; prior verdicts are unchanged."
+    },
+    {
+      "review_id": "rev_delegated_claim_bqcu2_aux_requires_power_on_1_20260924013753",
+      "date": "2026-09-23",
+      "reviewer": "delegated-agent:claude-opus-5.5",
+      "scope": "p1_gap_closure:claim_bqcu2_aux_requires_power_on_1",
+      "claim_id": "claim_bqcu2_aux_requires_power_on_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Delegated owner review (owner instruction 2026-09-23: 'you make the call like me'). Quote checked as a full span on the cited page of the hash-pinned source; icon meanings on Levoit p13 checked on a rendered page image. Agent review, not human verification. Proposal: prop_gap01_aux_powered_on."
+    },
+    {
+      "review_id": "rev_delegated_claim_bqcu2_aux_depleted_battery_1_20260924013753",
+      "date": "2026-09-23",
+      "reviewer": "delegated-agent:claude-opus-5.5",
+      "scope": "p1_gap_closure:claim_bqcu2_aux_depleted_battery_1",
+      "claim_id": "claim_bqcu2_aux_depleted_battery_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Delegated owner review (owner instruction 2026-09-23: 'you make the call like me'). Quote checked as a full span on the cited page of the hash-pinned source; icon meanings on Levoit p13 checked on a rendered page image. Agent review, not human verification. Proposal: prop_gap01_aux_depleted_battery."
+    },
+    {
+      "review_id": "rev_delegated_claim_bqcu2_aux_controls_disabled_1_20260924013753",
+      "date": "2026-09-23",
+      "reviewer": "delegated-agent:claude-opus-5.5",
+      "scope": "p1_gap_closure:claim_bqcu2_aux_controls_disabled_1",
+      "claim_id": "claim_bqcu2_aux_controls_disabled_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Delegated owner review (owner instruction 2026-09-23: 'you make the call like me'). Quote checked as a full span on the cited page of the hash-pinned source; icon meanings on Levoit p13 checked on a rendered page image. Agent review, not human verification. Proposal: prop_gap01_aux_controls_on_source."
+    },
+    {
+      "review_id": "rev_delegated_claim_bqcu2_aux_bluetooth_mic_disabled_1_20260924013753",
+      "date": "2026-09-23",
+      "reviewer": "delegated-agent:claude-opus-5.5",
+      "scope": "p1_gap_closure:claim_bqcu2_aux_bluetooth_mic_disabled_1",
+      "claim_id": "claim_bqcu2_aux_bluetooth_mic_disabled_1",
+      "disposition": "APPROVED_FOR_PUBLISH",
+      "rationale": "Delegated owner review (owner instruction 2026-09-23: 'you make the call like me'). Quote checked as a full span on the cited page of the hash-pinned source; icon meanings on Levoit p13 checked on a rendered page image. Agent review, not human verification. Proposal: prop_gap01_aux_bluetooth_mic_disabled."
     }
   ]
 }

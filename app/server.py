@@ -25,6 +25,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from system import answer  # noqa: E402
+from system.answer_engine import AnswerEngine  # noqa: E402
 from system.luna_planner import (  # noqa: E402
     LunaPlanner,
     apply_presentation,
@@ -32,6 +33,9 @@ from system.luna_planner import (  # noqa: E402
     media_modality,
 )
 from app.video_jobs import VideoJobManager  # noqa: E402
+from app import dev_media  # noqa: E402
+from app.pipeline import service as video_service  # noqa: E402
+from app.pipeline.store import Store as VideoStore  # noqa: E402
 
 
 _HASH_CACHE = {}
@@ -605,9 +609,33 @@ def render_pdf_page(pdf_path, page_number, cache_root, expected_hash):
     return output_path
 
 
+def resolve_answer_engine(answer_engine=None):
+    """The customer answer path: "v2" (default) or "legacy" (reversible flag)."""
+    mode = (answer_engine or os.environ.get("SHOWME_ANSWER_ENGINE") or "v2").lower()
+    if mode not in {"v2", "legacy"}:
+        raise ValueError(f"unknown answer engine {mode!r}")
+    return mode
+
+
+def parse_answer_context(raw, known_products):
+    """Accept only the fields a follow-up needs; ignore anything else."""
+    if not raw:
+        return None
+    try:
+        value = json.loads(raw)
+    except (TypeError, ValueError):
+        return None
+    if not isinstance(value, dict) or value.get("product_dir") not in known_products:
+        return None
+    context = {"product_dir": value["product_dir"]}
+    if isinstance(value.get("procedure_id"), str) and re.fullmatch(r"[a-z0-9_]{1,80}", value["procedure_id"]):
+        context["procedure_id"] = value["procedure_id"]
+    return context
+
+
 def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
                  reviewer=None, feedback_path=None, luna_planner=None,
-                 video_jobs=None):
+                 video_jobs=None, answer_engine=None, video_store=None):
     """Build a request handler bound to explicit content roots."""
     packs_root = Path(packs_root).resolve()
     vault_root = Path(vault_root).resolve()
@@ -616,13 +644,34 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
     luna_planner = luna_planner or LunaPlanner()
     video_jobs = video_jobs or VideoJobManager(
         packs_root, vault_root=vault_root)
+    engine_mode = resolve_answer_engine(answer_engine)
+    engine = (AnswerEngine(packs_root, vault_root) if engine_mode == "v2" else None)
+    video_store = video_store or VideoStore()
+    video_store.import_scene_assets()
 
     class AnswerHandler(BaseHTTPRequestHandler):
         server_version = "ShowMeAnswer/0"
 
+        def _visitor(self):
+            """Anonymous persistent visitor id (cookie) that owns saved video requests."""
+            if getattr(self, "_visitor_id", None):
+                return self._visitor_id
+            match = re.search(r"(?:^|;\s*)showme_visitor=(v_[0-9a-f]{24})\b",
+                              self.headers.get("Cookie", ""))
+            if match:
+                self._visitor_id = match.group(1)
+            else:
+                self._visitor_id = "v_" + uuid.uuid4().hex[:24]
+                self._set_visitor_cookie = True
+            return self._visitor_id
+
         def _send_json(self, status, payload):
             body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
             self.send_response(status)
+            if getattr(self, "_set_visitor_cookie", False):
+                self.send_header("Set-Cookie", f"showme_visitor={self._visitor_id}; Path=/; "
+                                 "Max-Age=31536000; HttpOnly; SameSite=Lax")
+                self._set_visitor_cookie = False
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.send_header("Content-Length", str(len(body)))
             self.send_header("Cache-Control", "no-store")
@@ -930,6 +979,31 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
                 return
             product_dir = product_dir or None
 
+            if engine is not None and not preview:
+                # Customer path. Owner preview stays on the legacy tools until
+                # P2 adds an authenticated owner workspace.
+                known = {item["dir"] for item in _catalog_products(vault_root)}
+                context = parse_answer_context(
+                    query.get("context", [""])[0], known)
+                document = engine.answer(question, product_dir, context).to_dict()
+                video = video_service.video_for_document(
+                    video_store, document, question, self._visitor(), context)
+                document["video"] = video
+                if video and (video["assets"] or video["state"] == "requested"):
+                    document["visual"]["message"] = None
+                self._send_json(200, {
+                    "question": question,
+                    "mode": ("clarify" if document["status"] == "needs_input"
+                             else "answer"),
+                    "engine": document["engine"],
+                    "answer_document": document,
+                    "results": [],
+                    "not_served": {"SUSPENDED": 0, "CANDIDATE": 0, "REJECTED": 0},
+                    "gap": None,
+                    "presentation": None,
+                })
+                return
+
             catalog = answer.load_catalog(vault_root)
             if product_dir is None:
                 candidates = answer.clarification_candidates(question, catalog)
@@ -1127,10 +1201,79 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
                 return
             self._send_json(201, {"feedback": record})
 
+        def _serve_my_videos(self):
+            rows = video_store.requests_for(self._visitor())
+            items = [video_service.request_payload(row, video_store) for row in rows]
+            self._send_json(200, {"requests": items,
+                                  "unread": sum(1 for i in items if not i["seen"]),
+                                  "active": sum(1 for i in items if i["state"] in
+                                                ("queued", "rendering", "checking"))})
+
+        def _create_video_request(self):
+            payload = self._read_json_body()
+            if payload is None:
+                return
+            product_dir = str(payload.get("product_dir", ""))
+            procedure_id = str(payload.get("procedure_id", ""))
+            view = str(payload.get("view", "main"))
+            if view not in ("main", "rear", "side", "front"):
+                self._send_json(400, {"error": "Unknown view"})
+                return
+            product = engine.products().get(product_dir) if engine else None
+            procedure = product.procedures.get(procedure_id) if product else None
+            if procedure is None:
+                self._send_json(404, {"error": "Unknown product procedure"})
+                return
+            if not all(product.eligible(step["claim_id"]) for step in procedure["steps"]):
+                self._send_json(409, {"error": "This procedure isn't fully verified, "
+                                               "so we can't make a video of it yet."})
+                return
+            from system.answer_engine import readable_procedure
+            row = video_store.create_request(
+                self._visitor(), product_dir, product.name, procedure_id,
+                readable_procedure(procedure_id), view,
+                str(payload.get("question", ""))[:300] or readable_procedure(procedure_id))
+            full = video_store.open_request_for(self._visitor(), product_dir, procedure_id, view,
+                                                row.get("variant", ""))
+            self._send_json(201, {"request": video_service.request_payload(full or row,
+                                                                         video_store)})
+
+        def _update_my_videos(self, action):
+            payload = self._read_json_body()
+            if payload is None:
+                return
+            request_id = payload.get("id")
+            if action == "seen":
+                video_store.mark_seen(self._visitor(), request_id)
+                self._send_json(200, {"ok": True})
+                return
+            row = video_store.retry_request(self._visitor(), str(request_id or ""))
+            if row is None:
+                self._send_json(409, {"error": "This request can't be retried."})
+                return
+            self._send_json(200, {"request": video_service.request_payload(row, video_store)})
+
+        def _serve_video(self, path):
+            parts = path.removeprefix("/video/").split("/")
+            asset = video_store.asset(parts[0])
+            if not video_store.servable(asset):
+                self._send_json(404, {"error": "Video not found"})
+                return
+            target = Path(asset["poster"] if parts[1:] == ["poster"] else asset["path"]) \
+                if (parts[1:] in ([], ["poster"])) else None
+            if target is None or not target.is_file():
+                self._send_json(404, {"error": "Video not found"})
+                return
+            self._send_file(target, cache_control="private, max-age=3600")
+
         def do_GET(self):  # noqa: N802
             parsed = urlparse(self.path)
             try:
-                if parsed.path == "/api/answer":
+                if parsed.path == "/api/my-videos":
+                    self._serve_my_videos()
+                elif parsed.path.startswith("/video/"):
+                    self._serve_video(parsed.path)
+                elif parsed.path == "/api/answer":
                     self._serve_answer(parse_qs(parsed.query, keep_blank_values=True))
                 elif parsed.path == "/api/products":
                     self._serve_products()
@@ -1149,6 +1292,12 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
                     self._serve_page_image(
                         parsed.path,
                         parse_qs(parsed.query, keep_blank_values=True))
+                elif parsed.path.startswith("/dev-media/") and dev_media.enabled():
+                    clip = dev_media.path_for(parsed.path.removeprefix("/dev-media/"))
+                    if clip is None or not clip.exists():
+                        self._send_json(404, {"error": "Media not found"})
+                    else:
+                        self._send_file(clip, cache_control="no-cache")
                 elif parsed.path.startswith("/derived-media/"):
                     self._serve_derived_media(
                         parsed.path,
@@ -1169,6 +1318,12 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
             try:
                 if parsed.path == "/api/reviews":
                     self._record_review()
+                elif parsed.path == "/api/video-requests":
+                    self._create_video_request()
+                elif parsed.path == "/api/my-videos/seen":
+                    self._update_my_videos("seen")
+                elif parsed.path == "/api/my-videos/retry":
+                    self._update_my_videos("retry")
                 elif parsed.path == "/api/feedback":
                     self._record_feedback()
                 else:
@@ -1187,7 +1342,7 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
 
 def create_server(port=8765, packs_root=None, vault_root=None, cache_root=None,
                   reviewer=None, feedback_path=None, luna_planner=None,
-                  video_jobs=None):
+                  video_jobs=None, answer_engine=None, video_store=None):
     """Create the app server. Passing port 0 lets the OS choose a test port."""
     handler = make_handler(
         packs_root or REPO_ROOT / "evidence-packs",
@@ -1197,6 +1352,8 @@ def create_server(port=8765, packs_root=None, vault_root=None, cache_root=None,
         feedback_path,
         luna_planner,
         video_jobs,
+        answer_engine,
+        video_store,
     )
     return ThreadingHTTPServer(("127.0.0.1", port), handler)
 
@@ -1210,7 +1367,12 @@ def main(argv=None):
                         default=REPO_ROOT / "source-vault")
     parser.add_argument("--reviewer",
                         help="owner email used for append-only review records")
+    parser.add_argument("--no-worker", action="store_true",
+                        help="don't start the render worker (run python -m app.worker yourself)")
     args = parser.parse_args(argv)
+
+    from app.pipeline.config import load_local_settings
+    load_local_settings()
 
     if args.reviewer and not _EMAIL_RE.fullmatch(args.reviewer):
         parser.error("--reviewer must be a valid email address")
@@ -1223,6 +1385,8 @@ def main(argv=None):
     print("Owner review writes: " + (
         f"enabled as {args.reviewer}" if args.reviewer else
         "disabled (start with --reviewer owner@example.com)"))
+    print(f"Answer engine: {resolve_answer_engine()} "
+          "(set SHOWME_ANSWER_ENGINE=legacy to revert)")
     luna_status = luna_planner.status
     print("Luna planning: " + (
         f"enabled ({luna_status['model']})" if luna_status["enabled"] else
@@ -1238,13 +1402,33 @@ def main(argv=None):
     }
     note = ("" if mode == "deterministic" or fal_credentials_present()
             else " — FAL_KEY missing, generation jobs will fail")
-    print(f"Video generation: {descriptions[mode]}{note}")
+    from app.pipeline import authoring
+    if resolve_answer_engine() == "v2" and authoring.enabled():
+        problem = authoring.readiness(VideoStore())
+        print("Video generation: Astra → Blender → bounded Claude critic" +
+              (f" — {problem}" if problem else " — configured"))
+    else:
+        print(f"Video generation: {descriptions[mode]}{note}")
+    import signal
+
+    def stop_on_sigterm(*_):
+        raise KeyboardInterrupt
+
+    signal.signal(signal.SIGTERM, stop_on_sigterm)
+    worker = None
+    if not args.no_worker:
+        import subprocess
+        worker = subprocess.Popen([sys.executable, "-m", "app.worker"], cwd=str(REPO_ROOT))
+        print(f"Render worker: started (pid {worker.pid}); saved requests in "
+              f"{VideoStore().root}")
     try:
         server.serve_forever()
     except KeyboardInterrupt:
         pass
     finally:
         server.server_close()
+        if worker is not None:
+            worker.terminate()
     return 0
 
 

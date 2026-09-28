@@ -219,16 +219,21 @@ def make_generator(packs_root):
         return candidate
 
     def generate(product_label, procedure, steps, output, poster,
-                 reference_image=None, product_dir=None):
+                 reference_image=None, product_dir=None, entry=None, fal=None, tier=None):
+        """`entry`, `fal` and `tier` let the render worker pass a drafted plan,
+        a metered fal client and a cheaper tier; defaults keep the old path."""
         if not os.environ.get("FAL_KEY") and os.environ.get("FAL_API_KEY"):
             os.environ["FAL_KEY"] = os.environ["FAL_API_KEY"]
-        import fal_client
+        if fal is None:
+            import fal_client
+        else:
+            fal_client = fal
 
-        entry = registry_entry(packs_root, product_dir, procedure)
+        entry = entry or registry_entry(packs_root, product_dir, procedure)
         if entry is None:
             raise KeyframesMissingError(
                 f"No registered keyframes for {product_dir}:{procedure}")
-        tier = os.environ.get("SHOWME_VIDEO_SEEDANCE_TIER", "quality")
+        tier = tier or os.environ.get("SHOWME_VIDEO_SEEDANCE_TIER", "quality")
         endpoint = SEEDANCE_ENDPOINTS.get(tier, SEEDANCE_ENDPOINTS["quality"])
         vlm_model = os.environ.get("SHOWME_VIDEO_VLM_MODEL", DEFAULT_VLM_MODEL)
         seed = int(os.environ.get("SHOWME_VIDEO_SEED", DEFAULT_SEED))

@@ -1,0 +1,355 @@
+ASTRA EXECUTION PROMPT — READY2JET VISUAL REALISM PASS
+
+Act as a product visualization artist and Blender technical artist. Improve the visual realism of the existing editable Graco Ready2Jet POC while preserving its ability to fold as one consistent model.
+
+Execute the work. Produce actual files, inspect actual renders, and deliver the improved scene and media. This is a bounded internal research experiment, not a request for another plan.
+
+“Realism” in this assignment means a more convincing photographic appearance: better product shape, upholstery construction, material response, lighting, and visible fabric behavior. It does not mean integration with a product named RealSim, a new rigid-body physics platform, or validation of the hidden production mechanism.
+
+PROJECT
+/Users/ramyamanchikanti/workplace/product-understanding
+
+BASELINE — PRESERVE UNCHANGED
+poc-astra-ready2jet/run-01/
+
+OUTPUT
+Create poc-astra-ready2jet/run-02/.
+If run-02 already exists, inspect it. Resume only if it is a compatible unfinished realism pass; otherwise create the next unused numbered run. Preserve every earlier run. Put all new scene files, scripts, references, textures, comparisons, records, and media inside the selected output run. Use temporary storage for disposable caches.
+
+1. OBJECTIVE AND PRIORITIES
+
+Make the stroller look substantially closer to the Kingston manufacturer photographs, using the current editable scene as the starting point. Preserve useful articulation and correct visible errors when evidence supports a change.
+
+Priorities, in order:
+1. Recognizable product proportions and accurate visible silhouettes.
+2. Believable canopy, seat, padding, side panels, and folded fabric volume.
+3. Consistent geometry and attachments throughout the folding action.
+4. Distinct, plausible fabric, grip, rubber, plastic, and frame finishes.
+5. Reference-compatible photography and clean final rendering.
+
+The reviewed baseline suggests these initial priorities: the canopy reads as a smooth helmet rather than a constructed fabric canopy; the seat/backrest lack convincing upholstery volume; basket fabric and wheel accents look simplified. Confirm these against the full-resolution references after checking camera alignment. Treat them as correction hypotheses, not permission to invent a different stroller.
+
+Use three levels of detail in order: silhouette and proportions; panel construction, padding and attachments; material microstructure. Increasing samples or adding texture cannot correct the first two.
+
+The existing result is a partial illustrative reconstruction. Its mesh dimensions, inferred joints, fabric shapes, and camera estimates are starting hypotheses, not physical truth. Preserve what works without freezing known mistakes.
+
+2. SCOPE AND BOUNDARIES
+
+- Reuse and improve run-01's final scene and current scripts. This assignment explicitly permits that reuse; it does not repeat the first experiment's fresh-build requirement.
+- The saved run-01/final/ready2jet.blend defines the delivered visual baseline. Current run-01/scripts/ are the intended editable implementation; verify that rebuilding them reproduces that baseline. The earlier revision-3 snapshot predates the final seat-timing correction and must not silently replace it.
+- Do not import Tripo/Meshy assets or any hidden scaffold from older experiments.
+- Keep source-vault/, evidence-packs/, application code, original prompts, and all historical runs unchanged.
+- Do not execute a baseline script until its output paths have been audited and redirected to the new run. Account for .blend backups, render outputs, composition helpers, texture bakes, simulation caches, and FFmpeg overwrite flags.
+- Do not edit the user's open Blender session. Use an isolated file/process.
+- Use the installed Blender/Cycles workflow where practical. No generative-image/video provider, purchase, paid API job, cloud render, publishing, application integration, or approval-record modification is authorized by this prompt.
+- Procedural materials and existing permitted local resources are the default. Record provenance for any additional asset. Do not assume that internal reference-viewing rights authorize redistributing or baking a manufacturer photograph into a texture.
+- Do not expand the work into a human character, hand rig, room scene, car-seat simulation, product configurator, or complete instructional film.
+- Use lightweight renders, measurements, and reproduction checks. Building a general evaluation platform, automated collision validator, or deliberate-defect benchmark is outside scope.
+- Work autonomously within this scope. Ask only for required environment permissions or a decision that genuinely prevents progress. Missing rear detail alone is not a blocker.
+- This is normal Astra session usage. Report unknown usage/cost as UNKNOWN, not zero or free.
+- Follow current system/developer instructions and actual runtime permissions. Historical work orders are context, not additional assignments.
+
+3. READ THE NECESSARY CONTEXT
+
+First read these run-01 files:
+- README.md
+- report.md
+- input-manifest.json
+- part-joint-evidence.json
+- action-event-map.json
+- final/reproduction/dimensions.json
+- smoke/runtime.json
+- records/deliverable-index.json
+
+Use the runtime record as context, then verify the current environment.
+
+Inspect these images before editing:
+- final/open-appearance-comparison.jpg
+- final/open-mid-folded-comparison.jpg
+- final/five-stage-comparison.jpg
+- final/main-sampled-animation-review.jpg
+- final/rear-sampled-animation-review.jpg
+- references/reference-contact-sheet.jpg
+
+Inspect the main and rear clips when playback is available. If tools only expose sampled frames, record that limit.
+
+Read these current implementation files before changing their relevant parts:
+- scripts/blender_run.py
+- scripts/geometry.py
+- scripts/rig.py
+- scripts/compose_media.py
+
+Read additional source/manual/claim material only when needed for a concrete decision. Do not read the entire repository before producing a useful new render.
+
+4. PRESERVE THE BASELINE AND REPRODUCE IT
+
+A. Create the selected new run directory and make a working copy of the required scripts/scene there. Audit every write path before running copied code.
+B. Record hashes of the baseline scene and scripts that will be used, and of the selected source references. Existing recorded hashes may be reused after verification. A full-repository hashing system is unnecessary.
+C. Verify the available bpy environment or Blender executable, renderer, device, image tools, and encoder.
+
+The prior working environment was:
+- /private/tmp/astra-blender-venv/bin/python
+- Python 3.11.4, bpy/Blender 5.0.1
+- Cycles on CPU
+- FFmpeg 8.0.1 with libx264
+- Bundled Python with Pillow 12.3.0
+
+These are leads, not guarantees. In the previous run, bpy import crashed inside the sandbox and worked after normal permission escalation. Do not assume that earlier command approvals cover new scripts or directories.
+
+D. Open the copied baseline in a fresh process and render an extended-canopy open pose, a middle fold pose, and the settled folded pose. Save these reproductions inside the new run and inspect them before editing.
+E. Separately rebuild the copied current scripts into a scratch subdirectory of the new run. The baseline README uses build --revision 3; the entry point defaults to revision 0, which omits delivered detail. Never run that command against run-01. Compare the rebuild with the saved baseline at the same poses and render settings. If they differ visibly, resolve or explicitly explain the difference before refining geometry. Do not overwrite the copied baseline with a rebuild.
+F. Establish one reproducible authoring path. Changes must survive the supplied build/update commands; a manual .blend edit that a later build silently discards is not a complete implementation. A scripted update to the copied baseline is acceptable if its dependency and command are supplied.
+G. If the runtime has changed or reproduction fails, use a small isolated save/reopen/render smoke scene to diagnose it. Avoid repeating setup work already confirmed in this run.
+
+Useful baseline conventions:
+- Meters; X forward, Y left, Z up.
+- Named RIG_* empties have baked transform animation.
+- RIG_support stage properties are animated readouts, not interactive driver controls. Editing a readout alone does not change the coordinated action.
+- Geometry and soft-envelope changes may require editing the construction/rig functions and rebaking the action/shape keys.
+- Frame 1: open, canopy extended.
+- Frame 73: prepared, canopy folded, immediately before frame collapse.
+- Around frame 95: middle collapse.
+- Around frame 105: late collapse.
+- Frame 145: settled folded hold.
+- Full delivered action: frames 1–193 at 24 fps.
+
+Do not mistake a successful file open for successful reproduction. Inspect geometry, material assignments, camera, and pose. Check the active scene/view layer, material overrides, normals, thickness, transparency, texture dependencies, color management, and denoising when appearance is unexpected. Diagnose the actual cause before compensating with lighting or stronger textures.
+
+5. ESTABLISH A SMALL, STATE-CORRECT REFERENCE SET
+
+Use the original source images listed by run-01's manifest, not only the small comparison-sheet thumbnails.
+
+Primary visual evidence:
+- poc-3d-static-twin/inputs/images/view-01-front-3q.png: Kingston appearance, open, canopy extended.
+- poc-3d-static-twin/inputs/images/view-03-undercarriage.png: frame, basket, caster, and wheel detail.
+- poc-3d-static-twin/inputs/folded-state/folded-01-side.png: folded package and fabric layering.
+- Original official video and the verified frames already recorded in run-01.
+- Original marketing sequence when needed to interpret the edited side image.
+
+Maintain these restrictions:
+- Kingston appearance is provisional: “Kingston-reference reconstruction; exact SKU applicability unresolved.” The input pack and vault have different SKU identifiers.
+- Keep canopy/recline/product states explicit. An extended-canopy photo and a prepared-fold video frame are not the same target state.
+- Exclude the unresolved top-view variant from binding shape/material decisions.
+- Use only visibly supported regions of the edited side image. Do not infer hidden construction from person-removal edits.
+- The retired video title-card duplicate is not independent validation. Preserve existing source-role and local-only restrictions.
+- Exclude graco_stroller_folding/ from mechanism evidence.
+- Any patent association remains a hypothesis about mechanism topology.
+- Manufacturer-source restrictions remain internal research.
+
+Keep a compact reference manifest, inheriting verified run-01 entries where appropriate. Record any changed evidence use or new texture/material source.
+
+Use the same evidence labels throughout:
+DOCUMENTED: an applicable source states the fact.
+OBSERVED: the feature or motion is visible in the specified source region/frame.
+INFERRED: proposed dimensions, material properties, construction, attachments, or deformation.
+UNKNOWN: unavailable evidence cannot establish it.
+
+Do not promote visual plausibility into a claim of measured material properties, exact SKU applicability, or validated mechanical behavior.
+
+6. SET UP COMPARISONS BEFORE REFINEMENT
+
+Create a short mismatch list tied to source regions. Select the three most important corrections. For each, record: observed mismatch, proposed cause, intended change, and the views/poses that will demonstrate improvement. Example: “canopy crown and front edge form a dome; revise panel curvature and visor profile; compare the extended open photo, side view, and prepared-fold frame.” Separate camera errors from geometry errors and uncertain evidence.
+
+Maintain two comparison modes:
+
+A. Controlled before/after
+Use identical camera, product state, framing, lighting, exposure, and color management for baseline and candidate renders. Include clay or neutral-material comparisons when evaluating geometry. Save any baseline rerenders only inside the new run.
+
+B. Reference photography match
+Fit a camera to a selected source photograph or continuous video shot before judging geometry. All cameras created by the current baseline script are ORTHO; a camera named Camera_Reference is not evidence that it matches the source.
+
+Check front/rear orientation and handedness first. Use several visible rigid landmarks, such as wheel centers, frame hubs, and handle corners, to estimate camera elevation, azimuth, framing, and perspective. Use perspective where warranted; retain orthographic approximation only with an explicit rationale. Do not claim an exact focal length from an uncalibrated image or distort the stroller to compensate for an incorrect projection. Record camera settings, selected landmarks, and remaining ambiguity. A practical fit is sufficient; do not build a calibration platform.
+
+If you improve the baseline camera estimate, rerender both baseline and candidate under the new estimate. Retain the original camera definition as a reusable diagnostic view. Do not attribute a camera or lighting change to a geometry improvement.
+
+Use the same camera across all poses from one continuous fixed-camera source shot. If source camera motion is visible, document and account for it consistently. Do not refit each pose to conceal errors. Diagnostic cameras without matching source views demonstrate coherence, not independent reference accuracy.
+
+First useful milestone:
+- A reproduced baseline.
+- A focused mismatch list.
+- One candidate geometry improvement shown beside the baseline and source.
+- Open/middle/folded checks of that same candidate.
+
+Keep the baseline and candidate at the same scale and placement in comparison panels. Uniform resizing of a source image for display is acceptable; document crops and never stretch its aspect ratio. Beauty lighting and presentation cameras belong in separate, labeled renders.
+
+7. REFINE THE LARGE FORMS FIRST
+
+Work in a few focused passes. Choose techniques based on the evidence; do not force every component into one primitive or modifier recipe.
+
+Before changing soft-part topology, inspect its deformation contract. The current soft_grid meshes depend on soft_kind, nu/nv, vertex ordering, and rig.py's generated coordinates/shape keys. Rigid parts use parent transforms and parent-inverse matrices, while several soft surfaces receive coordinates already transformed into world space. Reparenting those surfaces without converting coordinates can apply motion twice.
+
+You may replace the simplified fabric construction. If topology changes, regenerate compatible Basis geometry, all affected shape keys/deformation data, UVs, and attached details together. Verify vertex counts and correspondence; never assume old keys fit a new mesh. Check modifier order, rest state, object scale, and thickness before rebaking. Preserve logical part identity without preserving a poor mesh recipe. Do not blindly apply transforms to animated objects.
+
+Canopy:
+- Match the crown, front overhang/visor, side profile, panel divisions, visible bows, and attachment locations.
+- Give panels convincing curvature and transitions rather than one uniformly smooth dome.
+- Preserve distinct extended and gathered states, connected by coherent deformation.
+- Avoid unexplained rear flaps, sharp corrugations, detached edges, or fabric that passes through the handle.
+
+Seat and backrest:
+- Match recline, width, depth, calf-support profile, and the relationship to frame and belly bar.
+- Model the visible thickness and compression of upholstery, rounded sewn edges, and separate side wings.
+- Make padding look supported by the underlying seat structure. Avoid an inflated slab or a thin sheet with a uniformly rounded edge.
+- Keep harness straps, pads, and buckle positioned consistently with the seat in every pose.
+
+Basket:
+- Match the opening, sag, side shape, edge binding, and attachment locations.
+- Make the mesh and solid fabric regions visually legible.
+- The folded basket should gather plausibly around its attachments instead of remaining a rigid tray.
+
+Frame, wheels, grip, and molded parts:
+- Refine observable tube paths and cross sections, transition pieces, side hubs, forks, wheel/spoke forms, and tread/rim proportions. Verify the actual rim and accent shapes rather than elaborating the baseline's decorative silver loops.
+- Improve seams between assembled parts, supported fasteners, grip shape, and the control housing where references support them.
+- Preserve separate moving assemblies and stable part identifiers. If a component is replaced during construction, document its mapping to the previous identifier.
+- Avoid speculative mechanical detail on unseen surfaces.
+
+After each substantive geometry change, inspect open, middle, late if relevant, and folded poses. Correct new collisions, detached details, or envelope changes before investing in surface detail.
+
+Geometry gate: save neutral-material comparisons that show the priority silhouette/volume corrections in compatible reference states, plus coherent side/rear and intermediate-fold views. The canopy must read as connected panels, the seat as supported upholstery, and the basket as suspended fabric. Resolve major new intersections or detachments before final surface polish. If evidence is insufficient or a correction fails, retain the best checkpoint and record the limitation.
+
+8. ADD FABRIC CONSTRUCTION AND MATERIAL RESPONSE
+
+Fabric construction:
+- Add visible seams, piping, hems, panel boundaries, and attachment-driven folds at appropriate scale.
+- Attach these details to the deforming surfaces so they remain aligned during folding.
+- Use coherent fabric orientation/UVs or another validated mapping method, with a plausible physical weave scale across panels. Check stretching, sliding, and scale changes through the fold. The basket currently uses Generated coordinates: these are based on undeformed positions, so do not assume they inherently slide during animation. Their per-object normalization can still produce inconsistent physical pattern scale; inspect the actual result and replace the mapping only where necessary.
+- Prioritize broad folds and compression before tiny wrinkles or individual stitch detail.
+- Avoid decorative wrinkles unrelated to supports, gravity, or compression.
+
+Materials:
+- Upholstery/canopy: plausible woven structure, subtle color variation, appropriate roughness and restrained fiber sheen. Generic noise is not sufficient evidence of a woven appearance.
+- Grip: reference-supported tan color, fine grain and seam detail, with plausible roughness.
+- Tires: matte rubber with controlled tread detail and subdued reflection.
+- Molded plastic: distinguish its finish from rubber and frame surfaces.
+- Frame and wheel accents: use plausible finishes guided by the photographs; do not label a material as a specific alloy/coating unless supported.
+
+Use physically plausible shader values as hypotheses; photos do not establish exact roughness, fiber type, alloy, or other physical properties. Inspect close-ups under neutral lighting and at final display scale. The basket must retain visible mesh/solid regions without disappearing, looking like an opaque sheet, or flickering. Fine detail should remain subtle; avoid excessive bump, moire, glossy cloth, and denoising that erases the weave. Use geometry for silhouette-changing hems/padding and shading for detail too small to justify geometry.
+
+Prefer procedural textures or already permitted local materials. If texture images are used, pack them or use portable relative paths, and record their source. Do not use a projected product photograph as a substitute for coherent geometry across views.
+
+Keep geometry, material, and lighting improvements distinguishable in the comparison record. Do not obscure remaining shape differences with dark lighting, blur, or shallow depth of field.
+
+Material gate: under the same neutral lighting, cloth, grip, tire, molded plastic, and frame must be visually distinguishable, with stable surface detail in open and folded states. A glossy hero image alone does not satisfy this gate.
+
+9. IMPROVE VISIBLE FABRIC MOTION WITHOUT EXPANDING THE MECHANICS SCOPE
+
+The existing kinematic action is a useful starting point. Preserve the release-before-collapse sequence and inspect visible trajectories against the original timestamps. Change the rig only when evidence or a visible defect justifies it, and document the reason.
+
+For soft parts, choose a practical approach:
+- Refined shape keys/deformation controls are acceptable when they give stable, credible motion.
+- Cloth simulation is optional. Allow one bounded feasibility test on a single canopy or basket region, after its geometry and attachments are correct. Define pins, rest shape, collision proxies, thickness, and supported cache/export behavior. Inspect a representative transition before expanding its use.
+- Invalidate and rebake affected caches after mesh, pin, collision, rest-state, or timing changes. Keep required final caches inside the output run, with portable paths and frame ranges; temporary caches must not be the final scene's only dependency.
+- Reject the simulation if it introduces popping, penetration, unstable thickness, detached pins, unreproducible caches, or impractical render/bake cost. Preserve the best stable deformation and label it INFERRED. Do not turn this pass into open-ended cloth troubleshooting.
+
+Full rigid-body dynamics, mass estimation, spring/cable reconstruction, and force validation are outside this visual-realism pass.
+
+Throughout the action:
+- Rigid members retain constant dimensions.
+- The same model persists; do not hide parts, switch models, or replace entire silhouettes by pose.
+- Padding and fabric may deform, but attachments and thickness must remain plausible.
+- Seams and material patterns follow their surfaces.
+- Wheels, feet/supports, and the floor have coherent contact relationships.
+- No floating controls, detached trim, fabric explosions, conspicuous frame penetration, or abrupt popping is acceptable without correction or a clearly reported partial result.
+
+Preserve the source-time/presentation-time distinction. The baseline continuous fold is shown at 2x slow motion, with separately retimed preparation/release and a final hold. Keep that mapping unless there is a specific reason to revise it. Record any new mapping once for the whole shot; do not choose different source times for different parts.
+
+If using simulated cloth for the continuous fold, drive the rigid motion at source speed, bake a supported representation, then retime cloth and rigid parts together for presentation. Simulating directly over a slowed timeline changes gravity/inertia behavior and is not equivalent. Preparation timing remains illustrative where the source has separate shots. If consistent retiming cannot be reproduced with the available tools, prefer controlled deformation over an unverified simulation claim.
+
+Keep the existing procedure coverage: empty stroller, brakes assumed unlocked, canopy preparation, cup/wheel tip treatment, thumb switch before squeeze lever, frame collapse, and source-backed secure/carry panels. The existing qualified control source panel may be reused. Do not invent latch engagement, clicks, exact control travel, operator forces, or a claim that the final pose is physically stable.
+
+Motion gate: inspect the same model through preparation, release, early/middle/late collapse, and final hold from main and rear views, including frames between the authored deformation keys. Endpoints alone cannot reveal interpolation defects. No new conspicuous detachment, material sliding, rigid-part scaling, or silhouette swap may be accepted as a realism improvement.
+
+10. MATCH PHOTOGRAPHY AND RENDER ECONOMICALLY
+
+After large-form and material checks, refine the photography:
+- Match the chosen reference's general camera perspective, product framing, soft illumination, and shadow direction.
+- Tune broad light sources and reflections to reveal curvature and material differences.
+- Check black surfaces for retained detail, fabric for believable response, and wheels for grounded contact shadows.
+- Use consistent color management and record it. Do not paint shadows into materials to force one-camera agreement.
+- Keep the product readable and mostly in focus for comparisons. An optional presentation shot may use restrained photographic effects, clearly separate from comparison renders.
+
+Use roughly 512–768 px previews for iteration. Inspect both full-product images and a few close crops of canopy, seat, and wheel/grip materials.
+
+Benchmark representative open, middle, and folded frames using the candidate's actual geometry, textures, transparency, and caches before choosing final settings. Do not extrapolate unchanged cost from run-01's simpler scene. Record seconds per frame and estimate the two full clips before launching them. Aim for:
+- At least one convincing open product still, about 1600 px on the long edge if local rendering cost permits.
+- A useful folded still and a rear/side diagnostic view.
+- A clear main fold clip at 24 fps, at least 720p; use 1080p only if the benchmark supports it.
+- A synchronized rear-right diagnostic clip covering the same action.
+
+Render at the claimed native resolution. Record both the render size and encoded canvas size; enlarging a small product render onto a 1280x720 canvas does not add product detail. Make the product prominent, preserve enough fixed framing for its entire motion, and keep captions/source panels from crowding it. The existing comparison-heavy layout need not become the final presentation layout. Avoid camera motion or refocusing that hides defects.
+
+Retain complete action coverage. Lower samples or resolution transparently if necessary. Do not spend a high-quality full-animation render on a scene with unresolved major shape or motion defects. A qualified diagnostic render is preferable in that case.
+
+11. BOUND ITERATION AND REVIEW
+
+Allow up to three substantive refinement rounds. Each round should have a clear correction hypothesis, comparison renders, an open/middle/folded review, and a short record of what improved or failed. Routine implementation/runtime fixes do not each count as a new modeling round.
+
+Suggested order:
+Round 1: reproduce, fit comparison cameras, correct priority forms/attachments, and check the fold.
+Round 2: resolve remaining structural defects, add fabric construction/materials, and recheck the fold.
+Round 3: correct the most important remaining cross-view/motion issues and finalize photography.
+
+The gates control progression; the suggested round numbers do not authorize polishing a broken model. Keep a best-known checkpoint after every accepted round. If the third round regresses quality, deliver the better checkpoint and explain the rejected changes. If major mismatches remain, deliver a partial result with diagnostic evidence. Do not rename endless further modeling rounds as routine fixes.
+
+Perform these practical checks:
+
+A. Shape and appearance
+Compare source, baseline, and candidate in compatible states and camera conditions. Inspect whole-product silhouette and the canopy, seat, basket, handle, wheels, and folded package. Identify improvements separately from remaining differences. Do not invent perceptual scores or arbitrary pass percentages.
+
+B. Motion
+Review the complete encoded main and rear clips at normal speed when the environment permits. Inspect extra frames or slow playback around suspect transitions. Contact sheets supplement playback. If only sampled-frame inspection is available, state that explicitly; successful decoding is not visual playback review.
+
+C. Reproduction
+Open the final .blend in a fresh process. Reproduce open, middle, and folded poses and a material close-up. Confirm portable materials/textures and any required animation caches. Exercise the supplied authoring commands into a separate verification directory, then check that the resulting scene matches the delivered scene at those poses. Document any required copied-baseline dependency. Clearly distinguish commands actually exercised from untested alternatives.
+
+D. Envelope and preservation
+Record basic world-space product D/W/H in open and folded states using evaluated geometry, excluding studio objects. Compare with run-01 only where the same state and axis conventions apply. Explain changes introduced by better padding or surfaces rather than silently forcing the old envelope.
+
+Baseline values for orientation, to be checked against its record:
+- Open D/W/H: about 68.85 / 53.20 / 110.30 cm.
+- Folded D/W/H: about 31.26 / 53.20 / 77.16 cm.
+- Recorded folded reference: 29.21 / 52.07 / 76.20 cm, INFERRED.
+
+Neither preservation of baseline dimensions nor agreement with the inferred target establishes real-world fit or mechanical accuracy.
+
+Recheck the selected source/baseline hashes at completion and inspect changes outside the new run. Preserve prior artifacts; report any limitation in what was checked.
+
+12. DELIVERABLES AND FINAL REPORT
+
+Keep the file structure practical. Required outputs:
+- Editable final .blend with named components and reusable cameras.
+- Working construction, rig/deformation, material, and render code. These may remain combined where simpler; do not refactor only for appearance.
+- Portable textures and baked caches when required, with provenance and reproduction instructions.
+- Source/baseline/candidate open-appearance comparison.
+- Open/middle/folded comparison and rear/side diagnostic evidence from the same model.
+- Open and folded product stills; a small material-detail sheet or equivalent close-ups.
+- Main folding MP4 and synchronized rear-right MP4 when the action remains usable.
+- Existing qualified release-control source panel or an updated equivalent if needed.
+- README with actual runtime versions, render device/settings, file locations, and tested reproduction commands.
+- Compact updated reference/evidence/action records, plus a short report containing revision decisions and practical-check results.
+
+Watermark presentation media INTERNAL RESEARCH. Keep clean comparison source renders separately. If MP4 encoding fails, provide a viewable GIF and frame sequence, with the limitation stated. An optional turntable or additional beauty shot comes only after required outputs are complete.
+
+The report must distinguish:
+- What visibly improved in shape, fabric, materials, and photography.
+- What changed in the folding action or dimensions, and why.
+- What still looks incorrect, is inferred, or cannot be judged.
+- Whether review included actual playback or only sampled frames.
+- Measured elapsed time and render time, including overlap; usage/cost if available, otherwise UNKNOWN.
+
+Use one clear final outcome:
+- Successful visual-realism improvement: controlled comparisons show improvement in the priority visible forms and material construction; motion and reproduction gates pass; no major new defect offsets the gain. State remaining reference/mechanism limits and any lack of full playback review. This outcome does not establish photorealism or mechanical accuracy.
+- Partial realism improvement, naming the unresolved visual/motion problems.
+- Failed at a specific stage, with useful diagnostic artifacts preserved.
+
+In the final response, display the strongest before/after comparison and the improved animation, and link the scene, scripts/commands, and report. Describe what actually improved without claiming photorealism, independent validation, exact hidden mechanics, or causal superiority of Astra unless the evidence establishes that specific claim.
+
+Begin by preserving and reproducing the final run-01 baseline. Then correct the most visible canopy/seat differences, checking the same model through its fold before progressing to materials and final photography.
+
+TECHNICAL REFERENCES — CONSULT ONLY WHEN RELEVANT
+
+Use documentation matching the verified Blender runtime for implementation details. These official references informed this prompt's deformation and mapping requirements:
+- Shape-key workflow: https://docs.blender.org/manual/en/5.0/animation/shape_keys/workflow.html
+- Texture coordinates, including Generated coordinates: https://docs.blender.org/manual/en/5.0/render/shader_nodes/input/texture_coordinate.html
+- Cloth pinning/rest shape: https://docs.blender.org/manual/en/5.0/physics/cloth/settings/shape.html
+- Cloth cache behavior: https://docs.blender.org/manual/en/5.0/physics/cloth/settings/cache.html

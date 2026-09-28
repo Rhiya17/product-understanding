@@ -569,3 +569,73 @@ footer {
 .procedure-step-line { margin-bottom: 0.55rem; line-height: 1.45; }
 .badge.inline, .status-chip.inline { margin-left: 0.5rem; font-size: 0.62rem; vertical-align: 0.1em; }
 .step-quote { font-size: 0.78rem; color: var(--muted, #777); margin-top: 0.15rem; }
+
+/* Answer document (engine v2): one direct answer, then supporting detail. */
+.answer-doc {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  margin-top: 1.25rem;
+  max-width: 46rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+.answer-product { color: var(--muted); font-size: 0.9rem; font-weight: 650; margin: 0 0 0.35rem; }
+.answer-headline { font-family: Georgia, "Times New Roman", serif; font-size: 1.55rem; line-height: 1.25; margin: 0 0 0.75rem; }
+.direct-answer { font-size: 1.15rem; font-weight: 700; line-height: 1.55; margin: 0 0 1.25rem; }
+.status-unsupported .direct-answer, .status-partial .direct-answer { color: var(--amber); }
+.answer-visual-note { background: #edece6; border-radius: 10px; color: #4f5d55; font-size: 0.92rem; margin: 0 0 1.25rem; padding: 0.7rem 0.9rem; }
+.answer-doc h3 { font-size: 0.95rem; margin: 0 0 0.5rem; }
+.answer-list { line-height: 1.55; margin: 0; padding-left: 1.4rem; }
+.answer-list li { margin-bottom: 0.55rem; }
+.answer-steps { margin: 0 0 1.1rem; }
+.answer-steps .answer-list li { font-size: 1.05rem; }
+.answer-item.unverified { color: var(--amber); font-style: italic; }
+.answer-callout { border-left: 4px solid var(--line); border-radius: 0 10px 10px 0; margin: 0 0 1.1rem; padding: 0.75rem 1rem; }
+.answer-callout .answer-list { padding-left: 1.1rem; }
+.answer-callout.prerequisites { background: var(--green-pale); border-color: var(--green); }
+.answer-callout.warnings { background: var(--amber-pale); border-color: var(--amber); }
+.answer-callout.notes { background: #eef3f7; border-color: var(--blue); }
+.answer-subprocedure { border-top: 1px solid var(--line); margin: 0 0 1.1rem; padding-top: 0.9rem; }
+.answer-condition { color: var(--muted); font-size: 0.9rem; margin: 0 0 0.5rem; }
+.answer-fact { margin: 0 0 1.1rem; }
+.answer-fact .answer-list { list-style: none; padding-left: 0; }
+.answer-citation-line { color: var(--muted); font-size: 0.92rem; margin: 0 0 1.1rem; }
+.source-markers { display: inline-flex; gap: 0.2rem; vertical-align: super; }
+.source-marker {
+  background: var(--green-pale);
+  border: 0;
+  border-radius: 999px;
+  color: var(--green);
+  cursor: pointer;
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
+  min-height: 1.35rem;
+  min-width: 1.35rem;
+  padding: 0.15rem 0.35rem;
+}
+.source-marker:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.answer-sources { border-top: 1px solid var(--line); margin-top: 1.25rem; padding-top: 0.9rem; }
+.answer-sources summary { cursor: pointer; font-weight: 750; min-height: 44px; display: flex; align-items: center; }
+.source-list { padding-left: 1.4rem; }
+.source-entry { border-radius: 8px; margin: 0.6rem 0; padding: 0.35rem 0.5rem; transition: background 0.4s; }
+.source-entry blockquote { color: var(--ink); font-size: 0.9rem; margin: 0.25rem 0 0; }
+.source-highlight { background: var(--amber-pale); }
+.clarify-note { color: var(--muted); margin: -0.25rem 0 0.75rem; }
+@media (prefers-reduced-motion: reduce) {
+  .source-entry { transition: none; }
+}
+
+/* Owner-only tools stay hidden for customers even where a layout sets display. */
+.owner-controls[hidden] { display: none !important; }
+
+/* Dev-only video preview (SHOWME_DEV_MEDIA=1). */
+.dev-player { margin: 0.25rem 0 1.25rem; }
+.dev-badge { color: var(--amber); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; margin: 0 0 0.45rem; }
+.dev-video { aspect-ratio: 16 / 9; background: #111; border-radius: 12px; display: block; width: 100%; }
+.dev-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
+.dev-tab { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; cursor: pointer; font-weight: 700; min-height: 44px; padding: 0 1rem; }
+.dev-tab[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.dev-caption { color: var(--muted); font-size: 0.85rem; line-height: 1.45; margin: 0.55rem 0 0; }
+.chapter-jump { background: none; border: 1px solid var(--line); border-radius: 999px; color: var(--green); cursor: pointer; font-size: 0.75rem; font-weight: 750; margin-left: 0.4rem; padding: 0.1rem 0.5rem; }

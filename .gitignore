@@ -18,3 +18,19 @@ poc8/inputs/*.png
 
 # scratch files
 tmp_*
+
+# Local pinned Python environment (see scripts/doctor.py)
+.venv/
+
+# Local video pipeline state (SQLite, rendered assets)
+var/
+
+# Personal / internal docs kept local only
+Ramya-Manchikanti-Resume*.pdf
+docs/workorders/
+docs/planning/
+
+# Slide decks and slide build folders
+.showme-slides-*/
+outputs/showme/
+*.pptx

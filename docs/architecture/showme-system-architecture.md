@@ -110,6 +110,37 @@ flowchart TD
     QUALITY -- "Partial evidence" --> PLAUS["Illustrated step sequence or labeled<br/>non-instructional transition —<br/>plausible motion is never served as instruction"]
 ```
 
+### 4.1 Where Claude works in the video pipeline (added 2026-09-27)
+
+When a customer asks for a video and no 3D scene exists, a background worker makes it. Judgment that used to be done by hand (which devices the question involves, which official photo shows each step, where to crop, what motion to generate, whether the result answers the question) is done by Claude inside the pipeline. Rules stay in code.
+
+```
+Saved request (question + verified steps)
+   │
+   ▼
+Director (Claude, vision)     reads the question, every verified step and quote, the cited
+                              manual pages, and official photos of every product the question
+                              names; returns a shot plan (photo, crop, motion, must-see list)
+   │                          and lists any step it cannot show, with a reason
+   ▼
+Plan validation (code)        every step shot or listed; only official photos of named
+                              products; crops near 16:9; spend reserved before each call
+   ▼
+Executor (FAL Seedance)       animates each official photo; reverses "undo" shots so the
+                              last frame is the real photo; stitches; caches clips
+   ▼
+Critic (Claude, vision)       checks frames against the question, the steps, the official
+                              photos and the manual pages: every step visible, right devices,
+                              nothing invented
+   ▼
+Acceptance (code)             re-checks the Critic's verdict; on failure, one re-plan with the
+                              Critic's notes, otherwise "we couldn't make this video"
+   ▼
+My Videos                     published with its caveat, including any step not shown
+```
+
+Claude may only point at verified step claims, hash-checked manual pages and official vault photos. Unverified claim text is never passed to it. Each round's plan and review is saved next to the video for audit. Code: `app/pipeline/director.py`, `app/pipeline/generative.py`, `app/worker.py`.
+
 ---
 
 ## 5. Data Backbone & Storage

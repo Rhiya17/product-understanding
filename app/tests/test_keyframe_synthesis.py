@@ -27,6 +27,17 @@ class MockFalClient:
                 return {"images": [{"url": "https://mock.com/img.png"}]}
         return Handle(endpoint, self.verdicts)
 
+@pytest.fixture(autouse=True)
+def offline_downloads(monkeypatch):
+    """Serve generated-image downloads locally; the mock URLs are not real."""
+    import io
+
+    def fake_urlopen(url, timeout=None):
+        return io.BytesIO(b"\x89PNG\r\n\x1a\n fake image bytes for " + url.encode())
+
+    monkeypatch.setattr(keyframe_synthesis.urllib.request, "urlopen", fake_urlopen)
+
+
 def make_env(tmp_path):
     packs = tmp_path / "packs"
     vault = tmp_path / "source-vault"

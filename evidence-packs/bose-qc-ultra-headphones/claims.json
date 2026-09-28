@@ -2625,5 +2625,129 @@
     "extractor": "codex-expert-repair-v1",
     "extracted_at": "2026-08-29",
     "extraction_notes": "Append-only repair superseding claim_bqcu2_step_pairing_3. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_bqcu2_aux_requires_power_on_1",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STATE",
+    "predicate": "aux_requires_power_on",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "connect_aux_cable",
+      "role": "prerequisite",
+      "description": "The headphones must be powered on to use the audio cable."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 33,
+        "quote": "The headphones must be powered on for you to use the audio cable."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "claude-p1-gap-closure-v1",
+    "extracted_at": "2026-09-23",
+    "extraction_notes": "Closes launch evidence gap; accepted proposal prop_gap01_aux_powered_on."
+  },
+  {
+    "claim_id": "claim_bqcu2_aux_depleted_battery_1",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STATE",
+    "predicate": "aux_depleted_battery_external_power",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "connect_aux_cable",
+      "role": "prerequisite",
+      "description": "If the battery is depleted, connect the USB cable to an external power source, then power on the headphones."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 33,
+        "quote": "If the battery is depleted, use the USB cable to connect to an external power source, then power on the headphones (see page 33)."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "claude-p1-gap-closure-v1",
+    "extracted_at": "2026-09-23",
+    "extraction_notes": "Closes launch evidence gap; accepted proposal prop_gap01_aux_depleted_battery."
+  },
+  {
+    "claim_id": "claim_bqcu2_aux_controls_disabled_1",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STATE",
+    "predicate": "aux_controls_disabled",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "connect_aux_cable",
+      "role": "restriction",
+      "description": "Phone-call and media-playback controls on the headphones are disabled; use the controls on the source device."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 33,
+        "quote": "Phone calls and media playback controls are disabled and must be controlled on your source device."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "claude-p1-gap-closure-v1",
+    "extracted_at": "2026-09-23",
+    "extraction_notes": "Closes launch evidence gap; accepted proposal prop_gap01_aux_controls_on_source."
+  },
+  {
+    "claim_id": "claim_bqcu2_aux_bluetooth_mic_disabled_1",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STATE",
+    "predicate": "aux_bluetooth_and_mic_disabled",
+    "subject": "prod_bose_qc_ultra_headphones",
+    "applicability": {
+      "sku": "QCUH2-HEADPHONEARN",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "procedure": "connect_aux_cable",
+      "role": "restriction",
+      "description": "Bluetooth and the earcup microphones for voice pick-up are disabled while the cable is in use."
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_owners_guide_en",
+        "page": 33,
+        "quote": "Bluetooth connection and microphone voice pick-up on the earcups are disabled."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "claude-p1-gap-closure-v1",
+    "extracted_at": "2026-09-23",
+    "extraction_notes": "Closes launch evidence gap; accepted proposal prop_gap01_aux_bluetooth_mic_disabled."
   }
 ]

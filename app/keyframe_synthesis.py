@@ -47,7 +47,10 @@ def synthesize_and_verify_state(state, procedure, packs_root, product_dir, fal_c
             if prov_path.is_file():
                 prov_path.unlink()
     claim_ids = state.get("claim_ids", [])
-    ev_images = evidence_images(packs_root, vault_root, product_dir, claim_ids)
+    # Reference photos may come from other claims than the ones this state
+    # must satisfy (e.g. a "before" state edited from the "after" photo).
+    ev_images = evidence_images(packs_root, vault_root, product_dir,
+                                state.get("reference_claim_ids", claim_ids))
     
     assertions = []
     try:
@@ -77,7 +80,14 @@ def synthesize_and_verify_state(state, procedure, packs_root, product_dir, fal_c
     
     # Base prompt
     prompt = f"Product demonstration. State description: {state.get('description', '')}. no other objects, no text, no logo changes, keep both products exactly as in the reference images."
-    
+    if state.get("edit_prompt"):
+        # An explicit photo edit (e.g. undo an action) replaces the keep-as-is prompt.
+        prompt = state["edit_prompt"]
+        # Edit one real photo; rendered manual pages (page-*.png) are line drawings.
+        photos = [ev for ev in ev_images
+                  if not Path(str(ev.get("local_path", ""))).name.startswith("page-")]
+        ev_images = photos[:1] or ev_images[:1]
+
     image_urls = []
     source_ids = []
     for ev in ev_images[:4]:  # max 4 images

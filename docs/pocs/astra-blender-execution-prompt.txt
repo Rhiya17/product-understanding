@@ -1,0 +1,195 @@
+Build a faithful, editable Graco Ready2Jet stroller in Blender and test whether the same model can reproduce its observed folding motion.
+
+Execute the work. Produce actual files and inspect actual renders. This is a bounded internal research POC, not a request for another plan or for manufacturing CAD.
+
+PROJECT
+/Users/ramyamanchikanti/workplace/product-understanding
+
+OUTPUT
+Create poc-astra-ready2jet/ inside that project. If it already contains work, inspect it and resume a compatible run or create a new numbered run. Keep previous results. Confine new project files to this directory; use temporary storage for disposable render caches.
+
+SUCCESS
+Deliver a recognizable Kingston-reference stroller, an editable .blend, reproducible construction/rig/render scripts, reference comparisons, and a short folding demonstration when supported by the checks below. Explain what improved over the existing twin and what remains uncertain.
+
+PRIORITIES
+1. Product identity and shape.
+2. Agreement with observable motion, including intermediate and folded poses.
+3. Separate moving assemblies and reusable camera views.
+4. Materials and presentation.
+
+Choose the modeling techniques yourself. Curves, custom meshes, modifiers, constraints, shape keys, and procedural materials are available options, not a required recipe. Do not settle for a generic stroller made of crude primitives. Equally, do not spend the run decorating inaccurate geometry.
+
+BOUNDARIES
+- Build a fresh candidate scene without importing Tripo/Meshy meshes, textures, or the old scene's hidden scaffold. No generative-image or video provider is needed.
+- Reuse generic helpers if useful; independently justify product-specific geometry and motion from references. Prior code and reports are baselines, not physical truth.
+- Preserve source-vault/, evidence-packs/, application code, existing scenes, and historical outputs. Do not execute old scripts that overwrite their own outputs. Do not run unrelated acceptance/provider scripts.
+- No purchases, new paid API jobs, cloud renders, publishing, app integration, or approval-record changes. Normal usage of this Astra session is expected; do not describe it as free.
+- Continue routine work without stage-by-stage permission questions. Request only genuinely required environment permissions or missing decisions. Missing rear detail alone is not a blocker.
+- Work within the current runtime's tool and permission constraints. Do not assume capabilities because another demo had them.
+- Historical work orders are context, not new assignments. This prompt defines this experiment's scope, subject to system/developer instructions and applicable environment constraints.
+
+1. READ THE MINIMUM RELEVANT CONTEXT
+
+First read these files, relative to the project root:
+- poc-3d-static-twin/inputs/source-manifest.json
+- source-vault/graco-ready2jet-2212125/manifest.json
+- poc-3d-static-twin/twin/report.md
+- poc-3d-static-twin/twin/verification/dimension-check.json
+- poc-3d-static-twin/evaluation/fold-kinematics.md
+- poc-astra-scene/README.md
+
+Inspect:
+- poc-3d-static-twin/twin/verification/fold-pose-contact-sheet.png
+- poc-higgsfield-one-hand-fold/references/manual-fold-page-33.png
+- poc-higgsfield-one-hand-fold/references/manual-fold-page-34.png
+- poc-higgsfield-one-hand-fold/references/manual-fold-page-35.png
+
+Then read only the additional material needed for a concrete modeling or evaluation decision:
+- evidence-packs/graco-ready2jet-2212125/claims.json
+- poc-3d-static-twin/twin/joint-evidence.json
+- poc-3d-static-twin/twin/action-spec.json
+- poc-3d-static-twin/twin/build_twin_geometry.py
+- poc-3d-static-twin/twin/rig_twin.py
+- docs/pocs/ready2jet-patent-evidence.md
+- docs/workorders/report-photo-projection.md
+- docs/planning/showme-code-review-2026-09-11.md
+
+Do not read the entire repository before making a first useful render. Do not import the old POC plan's full workload or time estimate into this task.
+
+2. CURATE REFERENCES AND RECORD UNCERTAINTY
+
+Locate relevant photographs, the original manual PDF, the official fold video, and existing extracted frames under:
+- source-vault/graco-ready2jet-2212125/
+- poc-3d-static-twin/inputs/
+- poc-3d-static-twin/evaluation/fold-study-frames/
+
+Verify that selected files exist and match their recorded hashes when hashes are available. Missing historical artifacts are limitations, not permission to invent replacements. Verify page numbers and frame timestamps against the originals where possible.
+
+Known issues to check:
+- The input manifest identifies the gray/tan Kingston references as SKU 2209064; the vault folder identifies 2212125. Treat Kingston as the provisional visual target. Document manual applicability separately from appearance identity. If unresolved, use the label “Kingston-reference reconstruction; exact SKU applicability unresolved.”
+- Photos show different canopy/recline states. Assign every reference to a state. Exclude unresolved variant images from binding measurements.
+- The side-view image includes person-removal editing. Use only visibly supported regions for reference measurements; record edited regions as uncertain. Compare with the original source when available.
+- The retired title-card held-out duplicates an input. It is not independent validation. Honor existing source-role restrictions.
+- Exclude graco_stroller_folding/ from mechanism evidence: it concerns a seat-strap/FastAction fold.
+- The matched patent is a mechanism hypothesis, not proof of the exact production linkage.
+
+Create a compact input-manifest.json and reference contact sheet. Record path, hash, view, state, variant confidence, original/derived status, evidence use, and exclusions. Keep manufacturer-source restrictions from the existing records; this task is internal research.
+
+Use four evidence labels:
+DOCUMENTED: an applicable source states the fact.
+OBSERVED: a feature or motion is visible in a specified source region/frame.
+INFERRED: a proposed geometric value or mechanism not directly established.
+UNKNOWN: available evidence cannot establish it.
+
+A visible hinge may be OBSERVED while its 3D axis, depth, and angle range remain INFERRED. Label those separately.
+
+3. VERIFY THE TOOLCHAIN
+
+Discover the actual local Blender executable or bpy environment. Older records mention different versions and machines; confirm the runtime instead of trusting those labels.
+
+Use an isolated smoke scene to build a mesh, save a .blend, reopen it, and render a PNG. Inspect the PNG. Record the working command, versions, and render device. Prefer installed dependencies. If setup is missing, report the specific requirement and use the normal permission mechanism where necessary.
+
+Do not edit a user's open Blender scene. Run in a separate process or isolated file.
+
+4. PREPARE PRACTICAL REFERENCE COMPARISONS
+
+Select a few usable reference views and five observable fold stages: open/prepared, early, middle, late, and settled folded. Record source times and note visible features such as wheel centers, hubs, handle pivot/grip, and belly bar. Identify occluded or edited regions rather than treating them as ground truth.
+
+Prepare side-by-side reference/render comparisons with compatible product states, camera angles, and framing. Use a consistent camera within each continuous source shot. Do not change the camera independently at each pose to hide geometry errors. If the source camera moves, choose a stable segment or disclose that limitation.
+
+Use these comparisons to guide modeling. They are reference-fit checks, not independent validation. An image already used for modeling does not become unseen evidence by calling it held-out.
+
+Do not build a test suite, custom scoring framework, silhouette-mask pipeline, automated collision validator, or deliberate-defect benchmark for this first POC. Existing lightweight measurement helpers may be reused if immediately useful, but creating evaluation infrastructure must not displace modeling and animation.
+
+5. BUILD COARSE GEOMETRY AND TEST FOLD FEASIBILITY TOGETHER
+
+Create named assemblies for the frame members, split handle, controls, hubs, four wheels/casters, seat/backrest, foot support, canopy, basket, belly bar, and cup holder, subject to the selected reference evidence.
+
+Use meters and document axes. Model separately moving parts separately. Preserve clear hierarchy and stable part identifiers.
+
+Before detailed modeling, pose the SAME coarse assembly in open, middle, and folded configurations. Check handle placement, frame relationships, wheel convergence, and final compactness. This early articulation test is required: do not perfect an open-state sculpture and discover afterward that it cannot fold.
+
+The old model's folded depth was about 63% above an inferred reference. Use that as a known baseline deficiency, not proof that the reference number is exact.
+
+Correct large geometry/pivot mistakes now. Do not shrink rigid members, swap meshes, hide parts, or copy unsupported old translations to force a fit. Unobserved rear geometry should be minimally plausible and labeled INFERRED.
+
+Save an early open/mid/folded clay-render comparison sheet and editable scene. This is the first milestone even if later stages fail.
+
+6. REFINE SHAPE AND OBSERVABLE MOTION
+
+Iterate toward recognizable Kingston proportions, tube paths, wheel design, seat/recline, canopy states, handle, belly bar, and control locations. Use both geometry-only and basic product-color renders to assess shape and identity.
+
+Create an evidence-mapped kinematic rig with named stage parameters. Fit visible motion trajectories, not only endpoints. Keep rigid dimensions constant. Use constrained fabric deformation as needed; exact cloth physics is not required, and inferred fabric motion must remain labeled.
+
+Separate source-time motion from presentation-time retiming. Compare motion against original timestamps within continuous shots, using a declared mapping. Do not independently choose a flattering timestamp for each landmark or pose. Record any retiming used in the final demonstration.
+
+Assess ground/support motion against the source. Neither unexplained levitation nor forcing every wheel to remain grounded is acceptable. Operator-supported movement can be approximated and disclosed without constructing a human character.
+
+7. KEEP PROCEDURE COVERAGE SEPARATE FROM MECHANISM ACCURACY
+
+Check the applicable manual sequence and current claim records:
+- Remove infant car seat if present: state that the modeled stroller starts empty.
+- Unlock brakes and fold canopy: account for preparation.
+- Optional compact-fold tips: cup-holder rotation and wheel orientation.
+- Slide thumb switch, then squeeze handle lever: show supported location and direction in a close-up.
+- Frame collapse: fit observed video motion; identify it as visual evidence rather than an extra verbatim manual step.
+- Check secure and carry by belly bar: account for these in source-backed text or panels when they are not animated.
+
+Do not invent hidden latch engagement, clicking sounds, forces, or internal spring dynamics. If exact control travel is obscured, use a labeled illustrative movement or manual panel; do not claim exact travel validation.
+
+The core deliverable is a mechanical motion illustration. Do not expand scope into a human hand rig, car-seat removal simulation, or complete instructional film. Text/panels communicate omitted steps but do not prove physical execution.
+
+8. CHECK THE RESULT WITHOUT BUILDING A TEST SUITE
+
+Perform three practical checks:
+
+A. REFERENCE COMPARISON
+Inspect side-by-side open, intermediate, and folded renders against the selected manufacturer references. Compare proportions, handle and seat placement, wheel positions, folding direction, controls, and final compactness. Record specific differences and uncertainty in the report.
+
+B. ANIMATION REVIEW
+Watch the complete encoded animation at normal speed and inspect slow playback or extra frames around suspect motion. Look for incorrect movement, disappearing parts, rigid members stretching, obvious intersections, implausible fabric deformation, unexplained floating, and release/fold sequence errors. Fix visible defects and review again. Use contact sheets as supporting evidence, not a substitute for reviewing the motion. If the available tools only permit sampled-frame inspection, say so and do not claim full playback review.
+
+C. FILE REPRODUCTION
+Open the final .blend in a fresh process and reproduce the open, middle, and folded poses. Confirm that the animation and exported media are usable and that supplied scripts have working reproduction commands.
+
+Also record basic open and folded width/depth/height using Blender's available measurements. Compare with the recorded references and previous result only where axis/state conventions agree. Folded dimensions remain inferred; agreement does not prove real-world fit. Do not impose arbitrary numerical pass thresholds or build a measurement system for this first experiment.
+
+Report what looks correct, what differs, and what cannot be judged. A successful render or agreement with your own rig does not establish real mechanism accuracy. Missing rear evidence may permit a qualified illustrative result. A major observed shape or motion contradiction requires correction or a clearly labeled partial/failure result.
+
+9. BOUND ITERATION AND RENDERING
+
+Initially allow three substantive geometry/motion revision rounds, each including comparison renders and a logged correction. Fix routine code/runtime errors without counting each fix as a modeling round.
+
+After those rounds, if a major mismatch persists, deliver the best scene and diagnostic evidence rather than enter an open-ended refinement loop. Do not spend high-quality render time on a failed geometry solution. If major checks pass earlier, proceed without using all rounds.
+
+Use roughly 512–768 pixel previews. Benchmark a few frames before final encoding; aim for a clear 720p, 24 fps main demonstration. A roughly 6–10 second presentation is a target, not a requirement to alter natural timing. Label slow motion or holds. Report measured rendering cost/time and lower samples or resolution transparently if necessary; never remove action coverage to save rendering time.
+
+Required final media when motion is usable:
+- Main folding clip.
+- Short synchronized release-control close-up, or source panel if its motion is unsupported.
+- Short rear-right diagnostic clip from the same action.
+- Open/mid/folded comparison sheet.
+
+An open turntable is optional after the required outputs are complete. Use MP4 where the local encoder works; otherwise provide a viewable GIF plus frame sequence and explain the limitation. Watermark presentation media INTERNAL RESEARCH. Keep clean measurement renders separate so overlays do not affect metrics.
+
+10. DELIVER AND REPORT
+
+Keep the artifact structure practical. Required records may be combined where that improves clarity:
+- README with exact reproduction commands and actual runtime versions.
+- Input manifest, evidence notes, and reference contact sheet.
+- Geometry, rig, and render scripts with their parameters; no custom test or evaluation scripts required.
+- Editable .blend with textures packed or supplied with portable paths.
+- Part/joint evidence and action/event mapping.
+- Revision comparisons and final media; record the practical checks in the report, with no separate evaluation.json required.
+- Short report with actual elapsed authoring/render time, review input, and usage if available. Missing usage data is unknown, not zero.
+
+Open the final .blend in a fresh process and reproduce selected poses. Check media existence, duration, dimensions, and playback. Check that source files and prior artifacts were not overwritten. These are practical output checks; do not create a test suite or run unrelated app/network tests.
+
+In your final response, display the best comparisons and animation and link the scene, scripts, and report. Lead with one outcome:
+- Successful internal reference-fit POC, with independent/hidden-mechanism limits.
+- Partial illustrative result, naming failed or unknown checks.
+- Failed at a specific stage, with diagnostic artifacts.
+
+Explain whether shape and folded compactness improved under comparable measurements. Do not claim causal superiority of Astra over another model from this single assisted run. Do not call self-review independent validation. Camera consistency does not establish accuracy of unseen surfaces.
+
+Begin by checking references and the runtime, then produce the early open/mid/folded clay comparison. Continue autonomously according to the above criteria. Save useful partial outputs if a binding blocker prevents completion.

@@ -14,6 +14,7 @@ import hashlib
 import json
 import os
 import re
+import ssl
 import sys
 import tempfile
 import urllib.request
@@ -234,6 +235,15 @@ def provider_arguments(prompt, model_id=MODEL_ID):
     }
 
 
+def _tls_context():
+    """python.org builds ship without system CA certificates; use certifi's."""
+    try:
+        import certifi
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return ssl.create_default_context()
+
+
 def call_provider(arguments):
     """The sole fal.ai call site. Tests inject a callable with this signature.
 
@@ -257,7 +267,8 @@ def call_provider(arguments):
             },
             method="POST",
         )
-        with urllib.request.urlopen(request, timeout=180) as response:  # noqa: S310
+        with urllib.request.urlopen(request, timeout=180,  # noqa: S310
+                                    context=_tls_context()) as response:
             return json.loads(response.read().decode("utf-8"))
     except Exception as exc:  # noqa: BLE001
         # Never include the provider's message: it may echo credentials or input.
@@ -508,10 +519,32 @@ def verify_pack(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
     if cache_changed:
         atomic_write_json(cache_path, cache)
 
-    if len(records) == total:
+    # Every fresh verdict is also appended to the durable receipt ledger, so
+    # alarm history survives later rewrites of verdicts.json.
+    from system import evidence_status
+    for claim in claims:
+        result = claim_results.get(claim["claim_id"])
+        if result is not None:
+            evidence_status.append_receipt(pack_dir, {
+                "kind": "semantic_check", "claim_id": claim["claim_id"],
+                "claim_digest": evidence_status.claim_digest(claim),
+                "result": result["verdict"], "note": result["note"],
+                "model": model_id, "prompt_version": PROMPT_VERSION,
+                "run": f"verify_pack:{date}",
+                "receipt_id": f"rcpt_{sha256_text(claim['claim_id'] + date + result['verdict'])[:16]}"})
+
+    # A failed or partial run never erases earlier verdicts (and so never
+    # clears an alarm): claims without a fresh verdict keep their prior ones.
+    fresh_count = len(records)
+    carried = [entry for entry in original_conflicts.get("verdicts", [])
+               if entry.get("claim_id") not in claim_results
+               and entry.get("claim_id") in {c["claim_id"] for c in claims}]
+    records.extend(carried)
+
+    if fresh_count == total:
         status = "COMPLETE"
         reason = None
-    elif records:
+    elif fresh_count:
         status = "PARTIAL"
         reason = ("Serving-model attestation failed; subsequent claims were not "
                   "verified." if attestation_failed else
@@ -521,6 +554,10 @@ def verify_pack(pack_dir, vault_root=VAULT_ROOT, cache_path=CACHE_PATH,
         reason = ("Serving-model attestation failed; no claims were accepted."
                   if attestation_failed else
                   "Provider verification was unavailable; no bindings were verified.")
+
+    if carried and reason:
+        reason += (f" Earlier verdicts for {len({e['claim_id'] for e in carried})} "
+                   "claim(s) without a fresh result were kept.")
 
     document = {
         "model": model_id,
@@ -755,6 +792,71 @@ def combine_exit_codes(codes):
         if code in codes:
             return code
     return EXIT_OK
+
+
+def worst_case_cost(prompt):
+    """Conservative bound for one claim: two attempts at the maximum output,
+    input counted at 3 characters per token, times 3 for unknown router markup."""
+    input_tokens = max(1, len(prompt) // 3)
+    per_attempt = (input_tokens * INPUT_USD_PER_MILLION_TOKENS
+                   + 250 * OUTPUT_USD_PER_MILLION_TOKENS) / 1_000_000
+    return per_attempt * 2 * 3
+
+
+def verify_claims_to_receipts(pack_dir, claim_ids, run, run_id,
+                              provider=call_provider, model_id=MODEL_ID):
+    """Verify named claims and append version-bound receipts.
+
+    ``run`` is a spend_guard.RunAuthorization; each claim reserves its worst
+    case before the provider call. Never rewrites verdicts.json. A provider
+    or attestation failure is recorded as its own receipt kind and stops the
+    run with unknown billing; it never changes a claim's alarm state.
+    """
+    from system import evidence_status
+    from system.spend_guard import SpendRefused
+
+    pack_dir = Path(pack_dir)
+    claims = {c["claim_id"]: c for c in load_json(pack_dir / "claims.json", [])}
+    summary = {"verified": 0, "results": {}, "stopped": None}
+    for claim_id in claim_ids:
+        claim = claims[claim_id]
+        prompt = build_prompt(claim)
+        try:
+            reservation = run.reserve(worst_case_cost(prompt), claim_id)
+        except SpendRefused as exc:
+            summary["stopped"] = str(exc)
+            break
+        base = {"claim_id": claim_id,
+                "claim_digest": evidence_status.claim_digest(claim),
+                "model": model_id, "prompt_version": PROMPT_VERSION,
+                "run": run_id, "approval_id": run.approval_id,
+                "receipt_id": f"rcpt_{run_id}_{claim_id}"}
+        try:
+            (result, serving_model, usage_cost, malformed,
+             calls) = _invoke_for_verdict(prompt, provider, model_id=model_id)
+        except (ProviderFailure, ModelAttestationFailure) as exc:
+            run.settle(reservation, None, type(exc).__name__)
+            evidence_status.append_receipt(pack_dir, {
+                **base, "kind": "provider_failure", "result": type(exc).__name__})
+            summary["stopped"] = f"{type(exc).__name__} on {claim_id}"
+            break
+        # A missing provider cost is counted at the reserved worst case.
+        actual = usage_cost if usage_cost > 0 else run_reserved(run, reservation)
+        run.settle(reservation, actual, "malformed" if malformed else "ok")
+        evidence_status.append_receipt(pack_dir, {
+            **base, "kind": "semantic_check", "result": result["verdict"],
+            "note": result["note"], "serving_model": serving_model,
+            "provider_calls": calls, "usage_usd": usage_cost})
+        summary["verified"] += 1
+        summary["results"][claim_id] = result["verdict"]
+    return summary
+
+
+def run_reserved(run, reservation_id):
+    for entry in reversed(run.guard._run_events(run.approval_id)):
+        if entry.get("reservation_id") == reservation_id and entry["event"] == "reserve":
+            return entry["worst_case_usd"]
+    return None
 
 
 def parse_args(argv=None):

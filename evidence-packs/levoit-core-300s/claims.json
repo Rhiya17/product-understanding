@@ -2635,5 +2635,115 @@
     "extractor": "codex-expert-repair-v1",
     "extracted_at": "2026-08-29",
     "extraction_notes": "Append-only repair superseding claim_c300s_state_standby. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_c300s_step_reset_filter_early_1",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null,
+      "condition": "Filter was changed before the Check Filter Indicator lit up"
+    },
+    "object": {
+      "procedure": "reset_check_filter_indicator_early",
+      "step_number": 1,
+      "action": "Press and hold the Sleep Mode button for 3 seconds.",
+      "target_parts": [
+        "sleep_mode_button"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "quote": "B. The filter was changed before lit up. 1. Press and hold for 3 seconds."
+      },
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 6,
+        "quote": "Reset the Check Filter Indicator by pressing and holding the Sleep Mode button for 3 seconds."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "claude-p1-gap-closure-v1",
+    "extracted_at": "2026-09-23",
+    "extraction_notes": "Closes launch evidence gap; accepted proposal prop_gap02_early_reset_step_1. Page 6 quote names the Sleep Mode button (the p13 icon does not survive text extraction)."
+  },
+  {
+    "claim_id": "claim_c300s_step_reset_filter_early_2",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null,
+      "condition": "Filter was changed before the Check Filter Indicator lit up"
+    },
+    "object": {
+      "procedure": "reset_check_filter_indicator_early",
+      "step_number": 2,
+      "action": "The Check Filter Indicator flashes for 3 seconds.",
+      "target_parts": [
+        "check_filter_indicator"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "quote": "2. The will flash for 3 seconds."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "claude-p1-gap-closure-v1",
+    "extracted_at": "2026-09-23",
+    "extraction_notes": "Closes launch evidence gap; accepted proposal prop_gap02_early_reset_step_2."
+  },
+  {
+    "claim_id": "claim_c300s_step_reset_filter_early_3",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "STEP",
+    "predicate": "procedure_step",
+    "subject": "prod_levoit_core_300s",
+    "applicability": {
+      "sku": "HEAPAPLVSUS0073 / HEAPAPLVSUS0073A",
+      "revision": "Core 300S series / Core 300S-P series",
+      "market": "US",
+      "state": null,
+      "condition": "Filter was changed before the Check Filter Indicator lit up"
+    },
+    "object": {
+      "procedure": "reset_check_filter_indicator_early",
+      "step_number": 3,
+      "action": "Confirm the Check Filter Indicator turns off, indicating a successful reset.",
+      "target_parts": [
+        "check_filter_indicator"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_manual_core300sp_us",
+        "page": 13,
+        "quote": "3. will turn off when successfully reset."
+      }
+    ],
+    "authority": "MANUFACTURER_MANUAL",
+    "extractor": "claude-p1-gap-closure-v1",
+    "extracted_at": "2026-09-23",
+    "extraction_notes": "Closes launch evidence gap; accepted proposal prop_gap02_early_reset_step_3."
   }
 ]

@@ -225,10 +225,12 @@ def running_server(tmp_path, approve_media=False, yield_roots=False,
         include_derived=include_derived)
     if video_jobs is not None:
         video_jobs = video_jobs(packs)
+    # These tests cover the legacy card path, kept behind
+    # SHOWME_ANSWER_ENGINE=legacy; the v2 engine has its own tests.
     httpd = server.create_server(
         0, packs, vault, tmp_path / "page-cache", reviewer=reviewer,
         feedback_path=feedback_path, luna_planner=luna_planner,
-        video_jobs=video_jobs)
+        video_jobs=video_jobs, answer_engine="legacy")
     thread = threading.Thread(target=httpd.serve_forever, daemon=True)
     thread.start()
     try:
@@ -244,7 +246,7 @@ def running_server(tmp_path, approve_media=False, yield_roots=False,
 def serving_roots(packs, vault, tmp_path, reviewer=None, feedback_path=None):
     httpd = server.create_server(
         0, packs, vault, tmp_path / "restart-cache", reviewer=reviewer,
-        feedback_path=feedback_path)
+        feedback_path=feedback_path, answer_engine="legacy")
     thread = threading.Thread(target=httpd.serve_forever, daemon=True)
     thread.start()
     try:
