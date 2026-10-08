@@ -1,0 +1,30 @@
+scene.py:21: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+scene.py:31: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+scene.py:58: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+scene.py:749: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world.use_nodes = True
+00:03.432  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0001.png'
+00:04.149  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0016.png'
+00:04.881  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0032.png'
+00:05.598  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0033.png'
+00:06.321  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0051.png'
+00:07.046  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0060.png'
+00:07.777  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0088.png'
+00:08.496  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0089.png'
+00:09.218  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0101.png'
+00:09.980  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0151.png'
+00:10.699  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0183.png'
+00:11.424  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0202.png'
+00:12.155  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0252.png'
+00:12.862  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0278.png'
+00:13.607  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0279.png'
+00:14.356  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0302.png'
+00:15.129  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0315.png'
+00:15.898  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0352.png'
+Info: Saved as "scene.blend"
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

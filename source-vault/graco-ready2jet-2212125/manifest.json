@@ -14,7 +14,7 @@
       "source_id": "src_r2j_manual_v1",
       "type": "MANUAL_PDF",
       "local_path": "manuals/graco-ready2jet-manual.pdf",
-      "origin_url": null,
+      "origin_url": "https://newellbrands.imgix.net/baef6d42-74d8-3238-a241-b88c8b8bfb18/baef6d42-74d8-3238-a241-b88c8b8bfb18.pdf",
       "sha256": "224558e74a2dc2eb95cbb730d807152dfc5b8bcdf748fe3de267b3348b959105",
       "acquired_at": "2026-07-22",
       "authority": "MANUFACTURER",
@@ -25,7 +25,7 @@
       "source_id": "src_r2j_fold_sequence_v1",
       "type": "IMAGE",
       "local_path": "images/official-fold-sequence.png",
-      "origin_url": null,
+      "origin_url": "https://newellbrands.imgix.net/13f546fb-a043-300c-82ce-43db1392fe58/13f546fb-a043-300c-82ce-43db1392fe58.jpg?auto=format,compress&w=1188",
       "sha256": "7640d335525423aa0f6d4a40ab806fdcbb47b358374925d31c649c29b6c097c6",
       "acquired_at": "2026-07-22",
       "authority": "MANUFACTURER",
@@ -36,7 +36,7 @@
       "source_id": "src_r2j_open_folded_v1",
       "type": "IMAGE",
       "local_path": "images/official-open-and-folded.png",
-      "origin_url": null,
+      "origin_url": "https://newellbrands.imgix.net/fb46b241-5862-3370-8ed0-718387b02157/fb46b241-5862-3370-8ed0-718387b02157.jpg?auto=format,compress&w=1188",
       "sha256": "65e80435bc25ea36221eec2f4ab35268a944f506a040c88a14387ab6658868b9",
       "acquired_at": "2026-07-22",
       "authority": "MANUFACTURER",
@@ -47,7 +47,7 @@
       "source_id": "src_r2j_lifestyle_v1",
       "type": "IMAGE",
       "local_path": "images/official-lifestyle.png",
-      "origin_url": null,
+      "origin_url": "https://newellbrands.imgix.net/c780a677-e024-3087-83ab-29ce2c3d80c4/c780a677-e024-3087-83ab-29ce2c3d80c4.jpg?auto=format,compress&w=1188",
       "sha256": "5d802ac6b1b22e7159ed42028fe9fed827cd6b5196cedc9f05e12ffe6263c091",
       "acquired_at": "2026-07-22",
       "authority": "MANUFACTURER",
@@ -58,7 +58,7 @@
       "source_id": "src_r2j_view_front3q_v1",
       "type": "IMAGE",
       "local_path": "images/view-01-front-3q.png",
-      "origin_url": null,
+      "origin_url": "unknown:local-poc-acquisition",
       "sha256": "2480f81d2987d6c4b7026c6fd024772066b5307d4568d3740ca435c2dafed8c9",
       "acquired_at": "2026-08-11",
       "authority": "MANUFACTURER",
@@ -69,18 +69,18 @@
       "source_id": "src_r2j_view_top3q_v1",
       "type": "IMAGE",
       "local_path": "images/view-02-top-3q.png",
-      "origin_url": null,
+      "origin_url": "unknown:local-poc-acquisition",
       "sha256": "bf47113925b2d303f60e1df3b9c281352b07133158927a3d329d0f27579f4663",
       "acquired_at": "2026-08-11",
-      "authority": "MANUFACTURER",
-      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
-      "notes": "Curated PDP gallery view (top three-quarter), POC 5 input set."
+      "authority": "CUSTOMER_PHOTO",
+      "rights_note": "Third-party customer photo of unknown authorship; internal research use; generate_from NOT cleared",
+      "notes": "Real-world customer photo (outdoor driveway, used stroller), not a manufacturer studio image. User-curated 2026-08-13 as curated_7/04_top_down_seat_and_canopy.png (see poc-3d-static-twin/inputs/source-manifest.json); original URL unknown. Shows the open stroller from an elevated front three-quarter angle. Authority corrected from MANUFACTURER on 2026-10-07 after owner review."
     },
     {
       "source_id": "src_r2j_view_undercarriage_v1",
       "type": "IMAGE",
       "local_path": "images/view-03-undercarriage.png",
-      "origin_url": null,
+      "origin_url": "unknown:local-poc-acquisition",
       "sha256": "495bf3a519573f68e6128af566c18ad5bb0f6068f3280285adc9baef63aa4891",
       "acquired_at": "2026-08-11",
       "authority": "MANUFACTURER",
@@ -91,7 +91,7 @@
       "source_id": "src_r2j_view_side_v1",
       "type": "IMAGE",
       "local_path": "images/view-04-side-profile.png",
-      "origin_url": null,
+      "origin_url": "https://newellbrands.imgix.net/13f546fb-a043-300c-82ce-43db1392fe58/13f546fb-a043-300c-82ce-43db1392fe58.jpg",
       "sha256": "16d1a8f8e277b00d2be1e421b345236453bae40e02b96023ca8e3a5240cd272a",
       "acquired_at": "2026-08-11",
       "authority": "MANUFACTURER",
@@ -102,7 +102,7 @@
       "source_id": "src_r2j_folded_side_v1",
       "type": "IMAGE",
       "local_path": "images/folded-01-side.png",
-      "origin_url": null,
+      "origin_url": "unknown:local-poc-acquisition",
       "sha256": "d039fe3fcc3bc464fb059a5e7bebac7136ec45a157714d28a9cc1a427525f42d",
       "acquired_at": "2026-08-11",
       "authority": "MANUFACTURER",
@@ -113,12 +113,112 @@
       "source_id": "src_r2j_fold_video_v1",
       "type": "VIDEO",
       "local_path": "videos/official-fold-video.mp4",
-      "origin_url": null,
+      "origin_url": "unknown:local-poc-acquisition",
       "sha256": "9b1af25362a0b78187c6a4ced7228abcbbf5886e3617356277958392233af0fa",
       "acquired_at": "2026-08-11",
       "authority": "MANUFACTURER",
       "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
       "notes": "Official fold demonstration video; source of the WAN VACE control clip. Known coverage gap per POC review: does not clearly show the thumb-switch actuation."
+    },
+    {
+      "source_id": "src_r2j_specs_pdp_v1",
+      "type": "SPEC_PAGE",
+      "local_path": "specs/specs.md",
+      "origin_url": "https://www.gracobaby.com/shop/strollers/compact-lightweight-strollers/ready2jet-stroller/SAP_2212125.html",
+      "sha256": "f2554a2b30158a53c6c4b5b88336bae3ee0576c52362cb2dbe05a0bfeb5b8b11",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER_SPEC_PAGE",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Spec transcription of the gracobaby.com PDP for model 2212125 (Splatter Art), read in a browser 2026-10-07: weight 13.2 lb, Width 20.5 in / Height 43 in / Depth 27 in (open), child up to 50 lb, $189.99. PDP gives NO folded dimensions; specs.md also records folded dims from Graco Consumer Care answers on Target Q&A (30 H x 11.5 D x 20.5 W in) and conflicting retailer tables (Target 30.98 x 19.52 x 11.06 in; Amazon 'Less than 43.5*12.0*8.0'), unreconciled."
+    },
+    {
+      "source_id": "src_r2j_img_pdp_open_folded_inset_v1",
+      "type": "IMAGE",
+      "local_path": "images/pdp-2212125-open-with-folded-inset-splatter-art.png",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/boem0079_6eq00slp_2212125_ready2jet_stroller_atf1?wid=2000&hei=2000&fmt=png-alpha&qlt=100",
+      "sha256": "b5bc75ab486875abbd7d3590d18e1df17df30e28d03a39c7b84a27afab7c31e9",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "PDP gallery image 1 for 2212125 (exact SKU, Splatter Art): open stroller front 3/4 with self-standing folded stroller inset (side view, small). 2000x2000 PNG via Scene7. No person."
+    },
+    {
+      "source_id": "src_r2j_img_pdp_fold_sequence_hires_v1",
+      "type": "IMAGE",
+      "local_path": "images/pdp-fold-sequence-side-3panel-hires.png",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/baby0465_gr_2209064_ready2jet_stroller_atf_2?wid=2000&hei=2000&fmt=png-alpha&qlt=100",
+      "sha256": "b5ea49e8e779131c36298c036768fc30e23489e3c712d98b904f3d0c39a0330d",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared; contains a person — unusable as generation input (provider likeness filters)",
+      "notes": "PDP gallery image 2 on the 2212125 page (asset named for 2209064; shared across colorways): open / mid-fold / folded self-standing, pure side view, gray (Kingston-style) fabric. Higher-res 2000x2000 version of the scene in official-fold-sequence.png. Contains a person."
+    },
+    {
+      "source_id": "src_r2j_img_pdp_folded_carried_side_v1",
+      "type": "IMAGE",
+      "local_path": "images/pdp-folded-carried-by-belly-bar-side.png",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/baby0465_gr_2209064_ready2jet_stroller_atf_5?wid=2000&hei=2000&fmt=png-alpha&qlt=100",
+      "sha256": "bb281a63a06a93cb9fb31ada870b2324f55959d85a4c337aca94b6414587c58c",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared; contains a person — unusable as generation input (provider likeness filters)",
+      "notes": "PDP gallery image 5 on the 2212125 page: folded stroller carried by the belly bar, side/front 3/4, lifestyle scene. Shows folded wheel cluster and handle. Contains people."
+    },
+    {
+      "source_id": "src_r2j_img_pdp_folded_front3q_kingston_v1",
+      "type": "IMAGE",
+      "local_path": "images/pdp-2209064-folded-self-standing-front-3q-kingston.png",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/baby_2209064_glbl99_6eq00_ready2jet_atf_6?wid=2000&hei=2000&fmt=png-alpha&qlt=100",
+      "sha256": "fc9814e5349c63d6ea287db81e359d5699824f483bd3199a86af52e2a556a1b6",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared",
+      "notes": "Kingston (2209064) PDP gallery image 'A real space saver / Self-standing compact fold': clean studio shot of the folded self-standing stroller from front 3/4, large in frame, cyan background. Best official folded-shape reference found. Colorway differs from 2212125 (same chassis). No person."
+    },
+    {
+      "source_id": "src_r2j_img_pdp_folded_carried_rear3q_kingston_v1",
+      "type": "IMAGE",
+      "local_path": "images/pdp-2209064-folded-carried-rear-3q-kingston.png",
+      "origin_url": "https://s7d1.scene7.com/is/image/NewellBrands/baby_2209064_glbl99_6eq00_ready2jet_atf_3?wid=2000&hei=2000&fmt=png-alpha&qlt=100",
+      "sha256": "8c129bbb3c15d056baf7f69629a9d55d540072892af3f12c57f6b8594a14474e",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared; contains a person — unusable as generation input (provider likeness filters)",
+      "notes": "Kingston (2209064) PDP gallery image 'Ultra lightweight': folded stroller carried, rear 3/4 view showing the folded back/seat side and wheels. Contains people."
+    },
+    {
+      "source_id": "src_r2j_video_pdp_marketing_v1",
+      "type": "VIDEO",
+      "local_path": "videos/pdp-ready2jet-marketing-video-37s.mp4",
+      "origin_url": "https://s7d1.scene7.com/is/content/NewellBrands/100_v5_final__ready2jet_stroller",
+      "sha256": "613ce8bd0c406bd0bf3a3bc5ed0202987f1017881910167175d5306ff68accc8",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer copyright; internal research use; generate_from NOT cleared; contains a person — unusable as generation input (provider likeness filters)",
+      "notes": "Official PDP video (Kingston page gallery), 36.8 s, 1920x1080, 23.976 fps, 65 MB. Different from official-fold-video.mp4 (61 s). Includes a 'Compact fold saves space' shot of the folded stroller being loaded into a car's rear cargo area (~t=21-24 s), plus one-hand fold shots. Contains people.",
+      "storage": "local_only"
+    },
+    {
+      "source_id": "src_r2j_target_pdp_v1",
+      "type": "RETAILER_PAGE",
+      "local_path": null,
+      "origin_url": "https://www.target.com/p/graco-ready2jet-compact-stroller-splatter-art/-/A-92331730",
+      "sha256": null,
+      "acquired_at": "2026-10-07",
+      "authority": "RETAILER",
+      "rights_note": "Retailer page; URL record only; not downloaded",
+      "notes": "Target TCIN 92331730 (Splatter Art). Spec table: 'Dimensions (Collapsed): 30.98 Inches (H) x 19.52 Inches (W) x 11.06 Inches (D)'. Q&A answers by the 'Graco Consumer Care' account (2025-03-21, 2025-11-24, 2026-08-12) give folded '30 in H x 11.5 in D x 20.5 in W'. Brand-authored but retailer-hosted; quotes in specs/specs.md."
+    },
+    {
+      "source_id": "src_r2j_amazon_pdp_v1",
+      "type": "RETAILER_PAGE",
+      "local_path": null,
+      "origin_url": "https://www.amazon.com/dp/B0D2LXK44T",
+      "sha256": null,
+      "acquired_at": "2026-10-07",
+      "authority": "RETAILER",
+      "rights_note": "Retailer page; URL record only; not downloaded",
+      "notes": "Amazon listing (Kingston, Model Number 2209064). 'Folded Size Less than 43.5*12.0*8.0 Inches'; 'Item Dimensions L x W x H 27\"L x 20.5\"W x 43\"H'. No 360/spin viewer."
     }
   ],
   "derivatives_elsewhere_in_repo": [
@@ -127,14 +227,22 @@
     "poc-wanvace-control-video/references/fold-control-clip.mp4 (trimmed control clip)"
   ],
   "spin_360": {
-    "present": null,
+    "present": false,
     "type": null,
-    "checked_at": [],
-    "notes": "Not yet verified — Decision 8 action item (D8a)."
+    "checked_at": [
+      "https://www.gracobaby.com/shop/strollers/compact-lightweight-strollers/ready2jet-stroller/SAP_2212125.html",
+      "https://www.gracobaby.com/shop/strollers/compact-lightweight-strollers/ready2jet-stroller/SAP_2209064.html",
+      "https://www.amazon.com/dp/B0D2LXK44T"
+    ],
+    "notes": "Checked 2026-10-07. Graco PDP gallery is a flat image carousel plus one Scene7 video; only 'spin'/'360' strings in the DOM are CSS loading-spinner keyframes. Amazon page HTML has no spin/360 markers."
   },
   "collection_gaps": [
-    "origin_url fields for pre-existing assets need backfilling from POC acquisition records",
+    "no official manufacturer (gracobaby.com) source states FOLDED dimensions; best available are Graco Consumer Care answers on Target Q&A (30 H x 11.5 D x 20.5 W in), which conflict with Target's spec table (30.98 H x 19.52 W x 11.06 D in) and Amazon ('Less than 43.5*12.0*8.0'); unresolved — see specs/specs.md",
+    "no official dimension graphic (arrows/numbers) exists in either the 2212125 or 2209064 PDP gallery",
+    "identity: vault id is 2212125 (Splatter Art) but several images are Kingston 2209064 (same chassis, different colorway): view-01/02/03, folded-01-side (per docs/pocs/ready2jet-reference-image-curation.md) and the new pdp-2209064-* files. Lilac Mod = 2212123, Geo Pop = 2212124. These are colorways, not hardware revisions; 2212125 PDP is current ('NEW' badge) and links the same manual NWL0001636434D 12/24",
+    "view-02-top-3q.png is labelled authority MANUFACTURER in this manifest, but poc-3d-static-twin/inputs/source-manifest.json describes it as a 'real-world phone photo' (likely a customer photo); needs human review. RESOLVED 2026-10-07: owner reviewed; relabelled authority CUSTOMER_PHOTO",
+    "origin_url unknown (set to unknown:local-poc-acquisition) for view-01/02/03, folded-01-side and official-fold-video; fold-sequence/open-folded/lifestyle URLs are recorded in poc-higgsfield-one-hand-fold/evidence.json but the vault PNGs are conversions, so their hashes are not byte-reproducible from those URLs; the manual's imgix URL was re-downloaded 2026-10-07 and its sha256 matches",
     "no official image shows the thumb switch and handle lever at macro detail (Decision 2 buy-and-capture exists to close this)",
-    "360 spin availability unchecked (D8a)"
+    "PDP box contents not listed; manual parts list (PDF page 10) is pictorial"
   ]
 }

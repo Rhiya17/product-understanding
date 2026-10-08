@@ -1,0 +1,27 @@
+[
+  {
+    "provider": "OpenAI",
+    "reported_local_date": "2026-10-07",
+    "amount_usd": null,
+    "note": "User confirmed adding credits; amount not explicitly stated."
+  },
+  {
+    "provider": "Anthropic",
+    "reported_local_date": "2026-10-07",
+    "amount_usd": 20,
+    "note": "User confirmed adding $20 after the Anthropic billing request. Deposit, not usage cost."
+  },
+  {
+    "provider": "OpenAI",
+    "reported_local_date": "2026-10-07",
+    "amount_usd": 20,
+    "note": "User confirmed an additional $20 OpenAI top-up after raising today\u2019s per-video cap. Deposit, not usage cost; separate from the earlier unspecified top-up."
+  },
+  {
+    "provider": "OpenAI",
+    "provider_inferred_from_context": true,
+    "reported_local_date": "2026-10-08",
+    "amount_usd": 10,
+    "note": "User: Added 10$ more. Provider inferred from recent OpenAI billing discussion. Deposit, not usage cost or a change to the approved workflow budget."
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "job_id": "job_4929d25b5404",
+  "reason": "User rejected vehicle identity, phantom cargo seating and unreadable dimension labels. Requires new visual review.",
+  "requests": [
+    {
+      "id": "req_0900f65e4537",
+      "visitor": "v_2ad9009e1f08413f9153c515",
+      "product_dir": "graco-ready2jet-2212125",
+      "product_name": "Graco Ready2Jet",
+      "procedure_id": "fit_tesla_model_y_trunk",
+      "procedure_label": "Graco Ready2Jet in a Tesla Model Y trunk",
+      "view": "main",
+      "question": "Will the Ready2Jet stroller fit in my Tesla Model Y trunk?",
+      "state": "ready",
+      "message": null,
+      "job_id": "job_4929d25b5404",
+      "asset_id": "vid_9b76d2fe04fc",
+      "seen": 1,
+      "created_at": "2026-10-08T01:33:09+00:00",
+      "updated_at": "2026-10-08T02:48:51+00:00",
+      "variant": "astra-blender-v2-edbba4026800f525bc48a56a"
+    },
+    {
+      "id": "req_ba364046a3d7",
+      "visitor": "v_19d1ff3cb5604b929e71bdd6",
+      "product_dir": "graco-ready2jet-2212125",
+      "product_name": "Graco Ready2Jet",
+      "procedure_id": "fit_tesla_model_y_trunk",
+      "procedure_label": "Graco Ready2Jet in a Tesla Model Y trunk",
+      "view": "main",
+      "question": "Will the Ready2Jet stroller fit in my Tesla Model Y trunk?",
+      "state": "ready",
+      "message": null,
+      "job_id": "job_4929d25b5404",
+      "asset_id": "vid_9b76d2fe04fc",
+      "seen": 0,
+      "created_at": "2026-10-08T01:34:36+00:00",
+      "updated_at": "2026-10-08T02:48:51+00:00",
+      "variant": "astra-blender-v2-edbba4026800f525bc48a56a"
+    }
+  ]
+}

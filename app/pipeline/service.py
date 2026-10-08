@@ -6,7 +6,8 @@ Rules:
 - An explicit video/view request with no clip saves a request: rendered by
   the worker when a saved scene supports it, otherwise recorded honestly as
   needing a new scene. We never claim a video exists before it is checked.
-- Without an explicit request we only offer the button; nothing is queued.
+- Website question submissions opt into automatic generation for procedures.
+- Read-only answer lookups retain the offer behavior unless video is requested.
 """
 import re
 
@@ -63,7 +64,7 @@ def request_payload(row, store=None):
     return payload
 
 
-def video_for_document(store, document, question, visitor, context=None):
+def video_for_document(store, document, question, visitor, context=None, *, auto_generate=False):
     """Return the `video` section for an answer document (or None)."""
     from app.pipeline import library
     curated = library.matching_assets(store, document, question)
@@ -78,11 +79,16 @@ def video_for_document(store, document, question, visitor, context=None):
     product_dir = product.get("product_dir")
     if not procedure_id or not product_dir:
         return None
+    from system import fit_answer
+    if fit_answer.is_fit_procedure(procedure_id) and (coverage.get("fit") or {}).get(
+            "verdict") not in fit_answer.VIDEO_VERDICTS:
+        # No calculated placement to demonstrate; the text explains why.
+        return None
     interpretation = document.get("interpretation") or {}
     explicit_view = requested_view(question) if interpretation.get("kind") == "view" \
         or (document.get("visual") or {}).get("requested") else None
     view = explicit_view or "main"
-    wants_video = bool((document.get("visual") or {}).get("requested"))
+    wants_video = auto_generate or bool((document.get("visual") or {}).get("requested"))
 
     scene = scenes.scene_for(product_dir, procedure_id)
     variant = store.variant_for(product_dir, procedure_id, question)
@@ -113,7 +119,12 @@ def video_for_document(store, document, question, visitor, context=None):
         return base | {"state": "ready" if ordered else "offer",
                        "offer": {"view": view, "renderable": can_make}}
 
-    request = existing if existing and existing["state"] not in ("failed", "needs_scene") else store.create_request(
+    # A fresh submission can resume a failed attempt using its saved draft.
+    # Polling My Videos never enters this path or starts paid retries.
+    if existing and existing["state"] == "failed":
+        request = store.retry_request(visitor, existing["id"]) or existing
+        return base | {"state": "requested", "request": request_payload(request, store)}
+    request = existing if existing and existing["state"] != "needs_scene" else store.create_request(
         visitor, product_dir, product.get("name", product_dir), procedure_id,
         base["procedure_label"], view, question)
     return base | {"state": "requested", "request": request_payload(request, store)}

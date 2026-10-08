@@ -41,8 +41,12 @@ ALLOWED_STATUS = ["CANDIDATE"]
 ALLOWED_CEILINGS = ["C0", "C1", "C2", "C3"]
 ALLOWED_TYPES = ["LIMIT", "SPEC", "STEP", "WARNING", "PART_LOCATION",
                  "COMPATIBILITY", "CARE", "POLICY", "STATE"]
+# THIRD_PARTY_MEASUREMENT (2026-10-07): independent test-organisation or
+# reviewer tape measurements, needed where a manufacturer publishes none
+# (e.g. Tesla Model Y trunk dimensions). They rank below manufacturer sources
+# in the automatic conflict rules (system/auto_publish.py).
 ALLOWED_AUTHORITIES = ["MANUFACTURER_MANUAL", "MANUFACTURER_SPEC_PAGE",
-                       "MANUFACTURER_SUPPORT_PAGE"]
+                       "MANUFACTURER_SUPPORT_PAGE", "THIRD_PARTY_MEASUREMENT"]
 ALLOWED_GAP_KINDS = ["SOURCE_MISSING", "NOT_EXTRACTED", "UNDERIVABLE"]
 ALLOWED_DISPOSITIONS = ["APPROVED_FOR_PUBLISH", "REJECTED_FOR_SERVING",
                         "NEEDS_RECHECK", "NEEDS_REWORK"]

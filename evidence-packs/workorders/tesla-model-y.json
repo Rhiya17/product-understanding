@@ -1,0 +1,56 @@
+{
+  "workorder_id": "wo_extract_tesla_my_v1",
+  "product_dir": "tesla-model-y",
+  "product_id": "prod_tesla_model_y",
+  "source": "Orchestrator work order 2026-10-07 for the 'Can I fit a Ready2Jet stroller in a Tesla Model Y trunk?' use case; follows evidence-packs/workorders/extraction-agent-brief.md (v2).",
+  "expected_total": {
+    "min": 45,
+    "max": 230
+  },
+  "required_types": {
+    "SPEC": 12,
+    "LIMIT": 3,
+    "STEP": 8,
+    "WARNING": 4
+  },
+  "required_conflicts": [],
+  "checklist": [
+    {
+      "id": "exterior_dimensions",
+      "desc": "Exterior dimensions per trim (Model Y / Premium / Performance; Model Y L excluded): overall length, width with/without mirrors, height, wheelbase, rear overhang, ground clearance laden/unladen, track."
+    },
+    {
+      "id": "interior_dimensions",
+      "desc": "Interior head/leg/shoulder/hip room per trim and row (second-row shoulder and hip room bound the cabin width ahead of the cargo area)."
+    },
+    {
+      "id": "cargo_volumes",
+      "desc": "Cargo volumes per trim: frunk, behind second row, second row folded, 7-seat variants; plus third-party measured volumes (ADAC/OeAMTC) as separate claims with their own method."
+    },
+    {
+      "id": "load_limits",
+      "desc": "Rear trunk upper-floor and lower-compartment load limits; frunk load limits by variant; vehicle loading limits relevant to cargo."
+    },
+    {
+      "id": "trunk_linear_measurements",
+      "desc": "Every linear rear-trunk measurement in the vault, one claim per measurement, each bound to its exact quote: 12365auto (2025 Long Range AWD) opening 1190 mm / 1140 mm, depth 1060 mm, floor-to-top 680 mm; d1ev 108.5 cm depth and its 'same as legacy' statement; OeAMTC/ADAC 68 cm load lip and flush floor; Collision Repair datum distances only if quotable from a text source. Legacy-body (2020-24) measurements are NOT extracted as 2025+ facts; if extracted at all they must carry object.body = 'legacy_2020_2024'."
+    },
+    {
+      "id": "liftgate_operation",
+      "desc": "Opening/closing the power liftgate and adjusting/saving liftgate opening height, as STEP claims; max opening height statements (record the 8 ft vs 7.5 ft CONFLICT as a conflict pair)."
+    },
+    {
+      "id": "rear_seat_folding",
+      "desc": "Folding and raising the second-row seats: release-strap method and power-fold method (switches on seats, touchscreen, left trunk wall) as STEP claims, with the trim each applies to."
+    },
+    {
+      "id": "cargo_safety_warnings",
+      "desc": "All trunk/liftgate/frunk/seat-folding/cargo-loading WARNING and CAUTION statements, each a WARNING claim at C3 (e.g. liftgate obstruction, loads blocking seat latching, unsecured cargo)."
+    },
+    {
+      "id": "trim_identity",
+      "desc": "Trim/configuration facts that change cargo geometry: which trims are 5- vs 7-seat, power-fold vs strap seats, parcel shelf inclusion, separate floor-liner styles (shop pages), so answers can be scoped to an exact configuration."
+    }
+  ],
+  "revision_note": "Initial contract 2026-10-07. Third-party measurements are in scope because Tesla publishes no linear trunk dimensions for the 2025+ body; each such claim must cite its third-party source_id and state the measured vehicle in object fields. | max raised 170 -> 230 on 2026-10-07: 213 claims incl. 60 never-skippable procedure steps."
+}

@@ -1,6 +1,7 @@
 const form = document.querySelector("#answer-form");
 const questionInput = document.querySelector("#question");
 const productSelect = document.querySelector("#product");
+let inferredProduct = false;
 // Published-only is the safe default. Preview remains an explicit opt-in for
 // future owner review work.
 const publishedOnlyToggle = document.querySelector("#published-only");
@@ -71,7 +72,7 @@ const SHOWCASE = {
   "graco-snugride-35-lite-lx": { image: "images/front-3q-seat-in-base.jpg", questions: ["What is the max child weight?", "How do I install the base with lower anchors?"] },
 };
 const catalogRegion = document.querySelector("#product-cards");
-const heroMedia = document.querySelector("#hero-media");
+
 
 function productImageUrl(productDir) {
   const entry = SHOWCASE[productDir];
@@ -96,6 +97,7 @@ function renderCatalog(products) {
       button.type = "button";
       button.addEventListener("click", async () => {
         productSelect.value = product.dir;
+        inferredProduct = false;
         answerContext = null;
         questionInput.value = question;
         await runSearch();
@@ -105,30 +107,6 @@ function renderCatalog(products) {
     card.append(image, body);
     catalogRegion.append(card);
   });
-}
-
-function renderHeroMedia() {
-  const showPhoto = () => {
-    heroMedia.replaceChildren();
-    const image = element("img");
-    image.src = productImageUrl("graco-ready2jet-2212125");
-    image.alt = "Graco Ready2Jet stroller";
-    const caption = element("figcaption");
-    caption.append(element("span", "", "Manufacturer photo"), document.createTextNode("Graco Ready2Jet"));
-    heroMedia.append(image, caption);
-  };
-  const video = element("video");
-  video.muted = true;
-  video.loop = true;
-  video.playsInline = true;
-  video.autoplay = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  video.setAttribute("aria-label", "Ready2Jet fold demonstration");
-  video.addEventListener("error", showPhoto, { once: true });
-  video.src = "/dev-media/r2j-fold-main";
-  const caption = element("figcaption");
-  caption.append(element("span", "", "Dev preview · unverified render"), document.createTextNode("How the Ready2Jet folds"));
-  heroMedia.append(video, caption);
-  heroMedia.hidden = false;
 }
 
 let procedureSteps = [];
@@ -527,6 +505,7 @@ function renderClarification(clarify) {
     button.type = "button";
     button.addEventListener("click", async () => {
       productSelect.value = candidate.product_dir;
+      inferredProduct = false;
       await loadProcedures();
       await runSearch();
     });
@@ -620,6 +599,7 @@ function renderDocumentClarification(documentPayload) {
     button.addEventListener("click", async () => {
       if (option.product_dir) {
         productSelect.value = option.product_dir;
+        inferredProduct = false;
       } else if (documentPayload.interpretation.kind === "view" && documentPayload.product) {
         answerContext = { product_dir: documentPayload.product.product_dir, procedure_id: option.value };
       } else if (option.value) {
@@ -655,7 +635,17 @@ function renderDevPlayer(clips) {
   const select = (clip) => {
     active = clip;
     video.src = clip.url;
-    caption.textContent = `${clip.label}. ${clip.caveat}`;
+    // Keep renderer names and authoring notes in provenance, not customer copy.
+    // Only summarize the authoring pipeline's known technical caption format;
+    // other captions (including fit limitations and research warnings) stay intact.
+    const authoringPrefix = "3D illustration made with Astra and Blender; automatically checked against product references.";
+    if ((clip.caveat || "").startsWith(authoringPrefix)) {
+      const title = clip.label.replace(/ \(Astra \+ Blender\)/g, "");
+      const customerNotes = clip.caveat.slice(authoringPrefix.length).split("Simplified details:")[0].trim();
+      caption.textContent = `${title}. AI-generated demonstration. Some visual details are simplified.${customerNotes ? ` ${customerNotes}` : ""}`;
+    } else {
+      caption.textContent = `${clip.label}. ${clip.caveat || ""}`;
+    }
     tabs.querySelectorAll("button").forEach((button) =>
       button.setAttribute("aria-pressed", String(button.dataset.id === clip.id)));
   };
@@ -714,10 +704,13 @@ function renderAnswerDocument(documentPayload) {
   const player = devClips.length ? renderDevPlayer(devClips) : null;
   if (player && video) addViewRequests(player, video);
   const photoUrl = documentPayload.product ? productImageUrl(documentPayload.product.product_dir) : null;
-  if (player || photoUrl) {
+  const videoStatus = video ? renderVideoStatus(video) : null;
+  if (player || videoStatus || photoUrl) {
     const media = element("div", "answer-media");
     if (player) {
       media.append(player);
+    } else if (videoStatus) {
+      media.append(videoStatus);
     } else {
       const figure = element("figure", "product-photo");
       const image = element("img");
@@ -740,8 +733,7 @@ function renderAnswerDocument(documentPayload) {
   if (!player && documentPayload.visual && documentPayload.visual.message) {
     append(element("p", "answer-visual-note", documentPayload.visual.message));
   }
-  const videoStatus = video ? renderVideoStatus(video) : null;
-  if (videoStatus) append(videoStatus);
+  if (player && videoStatus) append(videoStatus);
   documentPayload.blocks.forEach((block) => {
     if (block.kind === "verdict") {
       const cite = element("p", "answer-citation-line", "From the manual: ");
@@ -786,6 +778,12 @@ function renderPayload(payload) {
   clarifyBox.hidden = true;
   emptyState.hidden = true;
   if (payload.answer_document) {
+    const productDir = payload.answer_document.product?.product_dir;
+    if (productDir) {
+      inferredProduct = inferredProduct || !productSelect.value;
+      productSelect.value = productDir;
+      syncWorld(productDir);
+    }
     renderAnswerDocument(payload.answer_document);
     return;
   }
@@ -940,11 +938,16 @@ function enterSearchLayout() {
   const wasCompact = document.body.classList.contains("has-searched");
   const previousScroll = window.scrollY;
   document.body.classList.add("has-searched");
+  document.querySelector("#back-to-world").hidden = false;
+  document.querySelector("#catalog").hidden = true;
+  questionInput.placeholder = "Ask a follow-up about this product…";
   requestAnimationFrame(() => window.scrollTo(0, wasCompact ? previousScroll : 0));
 }
 
 async function runSearch() {
   if (!questionInput.value.trim()) return;
+  if (submitButton.disabled) return;
+  syncWorld(productSelect.value);
   enterSearchLayout();
   stopVideoPolls();
   errorBox.hidden = true;
@@ -953,9 +956,15 @@ async function runSearch() {
   emptyState.hidden = true;
   clarifyBox.hidden = true;
   submitButton.disabled = true;
-  submitButton.textContent = "Searching…";
+  submitButton.setAttribute("aria-label", "Finding your answer");
+  form.classList.add("is-searching");
+  document.querySelector("#search-status").hidden = false;
+  document.querySelector("#answer-region").setAttribute("aria-busy", "true");
   currentQuestion = questionInput.value.trim();
-  const query = new URLSearchParams({ q: currentQuestion, preview: publishedOnlyToggle.checked ? "0" : "1", product: productSelect.value, top: "10" });
+  // An inferred product is conversation context, not a user-selected filter.
+  // A newly named product must be able to replace it on the next question.
+  const query = new URLSearchParams({ q: currentQuestion, preview: publishedOnlyToggle.checked ? "0" : "1", product: inferredProduct ? "" : productSelect.value, top: "10" });
+  query.set("generate", "1");
   if (answerContext) query.set("context", JSON.stringify(answerContext));
 
   try {
@@ -964,6 +973,7 @@ async function runSearch() {
     if (!response.ok) throw new Error(payload.error || "The answer request failed.");
     currentPayload = payload;
     renderPayload(payload);
+    if (payload.answer_document?.video?.state === "requested") refreshMyVideos();
     const unanswered = payload.answer_document ? payload.answer_document.status === "unsupported" : !payload.results.length;
     if (unanswered && payload.mode !== "clarify" && logMissesToggle.checked) await logMiss(currentQuestion);
   } catch (error) {
@@ -971,7 +981,10 @@ async function runSearch() {
     errorBox.hidden = false;
   } finally {
     submitButton.disabled = false;
-    submitButton.textContent = "Find answer";
+    submitButton.setAttribute("aria-label", "Find answer");
+    form.classList.remove("is-searching");
+    document.querySelector("#search-status").hidden = true;
+    document.querySelector("#answer-region").setAttribute("aria-busy", "false");
   }
 }
 
@@ -984,7 +997,9 @@ reviewModeToggle.addEventListener("change", () => {
   if (currentPayload) renderPayload(currentPayload);
 });
 productSelect.addEventListener("change", () => {
+  inferredProduct = false;
   answerContext = null;
+  syncWorld(productSelect.value);
   renderExamples();
   loadProcedures();
 });
@@ -1083,6 +1098,11 @@ function addViewRequests(player, video) {
 
 function renderRequestCard(request) {
   const card = element("div", `video-request state-${request.state}`);
+  card.dataset.requestId = request.id;
+  card.dataset.requestState = JSON.stringify([request.state, request.stage, request.progress, request.message]);
+  if (["queued", "rendering", "checking"].includes(request.state)) {
+    card.append(element("h3", "video-progress-heading", "Your video is being created"));
+  }
   card.append(element("p", "video-request-title", `${request.procedure_label} · ${request.view_label}`));
   card.append(element("p", "video-request-state", requestProgressText(request)));
   if (request.message) card.append(element("p", "video-request-message", request.message));
@@ -1126,7 +1146,7 @@ function updateBadge() {
 function renderMyVideos() {
   myVideosList.replaceChildren();
   if (!myVideosState.requests.length) {
-    myVideosList.append(element("li", "my-videos-empty", "No video requests yet. Ask how to do something and choose “Make a video”."));
+    myVideosList.append(element("li", "my-videos-empty", "No video requests yet. Ask a product question to get started."));
     return;
   }
   myVideosState.requests.forEach((request) => {
@@ -1162,6 +1182,45 @@ function watchRequest(request) {
   if (!request.seen) postJson("/api/my-videos/seen", { id: request.id }).then(refreshMyVideos).catch(() => {});
 }
 
+function updateActiveVideoRequests(requests) {
+  const byId = new Map(requests.map((request) => [request.id, request]));
+  document.querySelectorAll("#results .video-request[data-request-id]").forEach((card) => {
+    const request = byId.get(card.dataset.requestId);
+    if (!request) return;
+    const state = JSON.stringify([request.state, request.stage, request.progress, request.message]);
+    if (state === card.dataset.requestState) return;
+    if (request.state === "ready" && request.asset) {
+      const article = card.closest(".answer-doc");
+      if (article) {
+        const player = renderDevPlayer([request.asset]);
+        let media = article.querySelector(".answer-media");
+        if (!media) {
+          media = element("div", "answer-media");
+          article.prepend(media);
+          article.classList.remove("no-media");
+        }
+        media.querySelectorAll("video").forEach((video) => video.pause());
+        media.replaceChildren(player);
+        const body = article.querySelector(".answer-body");
+        if (body) {
+          body.querySelectorAll(".answer-steps li[data-claim]").forEach((row) => {
+            row.querySelectorAll(".chapter-jump").forEach((button) => button.remove());
+            const seconds = player.chapterFor(row.dataset.claim);
+            if (seconds === undefined) return;
+            const jump = element("button", "chapter-jump", `▶ ${formatTime(seconds)}`);
+            jump.type = "button";
+            jump.setAttribute("aria-label", "Play this step in the video");
+            jump.addEventListener("click", () => player.seekTo(row.dataset.claim));
+            row.append(jump);
+          });
+          player.trackSteps(body);
+        }
+      }
+    }
+    card.replaceWith(renderRequestCard(request));
+  });
+}
+
 async function refreshMyVideos() {
   try {
     const response = await fetch("/api/my-videos");
@@ -1169,6 +1228,7 @@ async function refreshMyVideos() {
     const previous = new Map(myVideosState.requests.map((r) => [r.id, r.state]));
     myVideosState = await response.json();
     updateBadge();
+    updateActiveVideoRequests(myVideosState.requests);
     if (!myVideosPanel.hidden) renderMyVideos();
     const justFinished = myVideosState.requests.filter((r) => r.state === "ready" && previous.has(r.id) && previous.get(r.id) !== "ready");
     if (justFinished.length) showToast(`Your video is ready: ${justFinished[0].procedure_label} · ${justFinished[0].view_label}`);
@@ -1198,7 +1258,94 @@ function openMyVideos() {
 myVideosButton.addEventListener("click", openMyVideos);
 document.querySelector("#my-videos-close").addEventListener("click", () => { myVideosPanel.hidden = true; });
 
-loadProducts();
+const productsReady = loadProducts();
 loadReviewConfig();
-renderHeroMedia();
+
 refreshMyVideos();
+
+
+// The world is decorative; every example still uses the sourced answer pipeline.
+const WORLD_EXPERIENCES = {
+  fold: { product: "graco-ready2jet-2212125", question: "How do I fold it?" },
+  fit: { product: "graco-ready2jet-2212125", question: "Will the Ready2Jet stroller fit in my Tesla Model Y trunk?" },
+  controls: { product: "graco-ready2jet-2212125", question: "How do I operate the Ready2Jet stroller brakes?" },
+  headphones: { product: "bose-qc-ultra-headphones", question: "How do I connect headphones to mac with an analog audio cable?" },
+  filter: { product: "levoit-core-300s", question: "How do I replace the filter in my Levoit Core 300S?" },
+};
+
+function syncWorld(productDir) {
+  const listening = ["bose-qc-ultra-headphones", "apple-macbook-air-13-m3"].includes(productDir);
+  document.body.dataset.world = listening ? "listening" : "stroller";
+  document.querySelector("#scene-caption").textContent = listening
+    ? "Featured world · Connected listening" : "Featured world · Travel stroller";
+}
+
+async function exploreExperience(key) {
+  if (submitButton.disabled) return;
+  const experience = WORLD_EXPERIENCES[key];
+  if (!experience) return;
+  await productsReady;
+  productSelect.value = experience.product;
+  inferredProduct = false;
+  answerContext = null;
+  questionInput.value = experience.question;
+  document.querySelectorAll(".experience-card").forEach((card) => {
+    const active = card.dataset.experience === key;
+    card.classList.toggle("is-active", active);
+    card.setAttribute("aria-pressed", String(active));
+  });
+  await runSearch();
+}
+
+document.querySelectorAll("[data-experience]").forEach((button) => {
+  button.addEventListener("click", () => exploreExperience(button.dataset.experience));
+});
+
+function returnToWorld() {
+  if (submitButton.disabled) return;
+  document.body.classList.remove("has-searched");
+  document.querySelector("#back-to-world").hidden = true;
+  document.querySelector("#catalog").hidden = true;
+  document.querySelectorAll("#results video, #procedure-region video").forEach((video) => video.pause());
+  stopVideoPolls();
+  resultsRegion.replaceChildren();
+  [emptyState, clarifyBox, errorBox, notServedBox, procedureRegion].forEach((node) => { node.hidden = true; });
+  answerContext = null;
+  questionInput.value = "";
+  questionInput.placeholder = "Ask a question about a product…";
+  productSelect.value = "";
+  inferredProduct = false;
+  syncWorld("");
+  document.querySelectorAll(".experience-card").forEach((card) => {
+    const active = card.dataset.experience === "fold";
+    card.classList.toggle("is-active", active);
+    card.setAttribute("aria-pressed", String(active));
+  });
+}
+
+document.querySelector("#back-to-world").addEventListener("click", () => {
+  returnToWorld();
+  questionInput.focus({ preventScroll: true });
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+document.querySelectorAll("[data-open-catalog]").forEach((button) => {
+  button.addEventListener("click", () => {
+    if (submitButton.disabled) return;
+    returnToWorld();
+    const catalog = document.querySelector("#catalog");
+    catalog.hidden = false;
+    catalog.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
+document.querySelector("#close-catalog").addEventListener("click", () => {
+  document.querySelector("#catalog").hidden = true;
+  document.querySelector(".explore-link").focus();
+});
+document.querySelectorAll("[data-home-section]").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (submitButton.disabled) return;
+    returnToWorld();
+    document.getElementById(link.dataset.homeSection).scrollIntoView({ behavior: "smooth" });
+  });
+});

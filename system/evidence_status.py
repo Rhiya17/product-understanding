@@ -2,7 +2,10 @@
 
 A claim can be served only when all of these hold for its current version:
 
-1. Its latest review disposition is APPROVED_FOR_PUBLISH.
+1. Its latest review disposition is APPROVED_FOR_PUBLISH, or, when no human
+   disposition exists, the latest automatic policy decision for its current
+   digest is AUTO_APPROVED (system/auto_publish.py). A human disposition always
+   takes precedence over an automatic one.
 2. No semantic alarm is outstanding. An alarm (a MEANING_CHANGED verdict in
    the legacy verdicts file or the receipt ledger) persists until a later
    ENTAILED recheck of the same claim digest and an explicit resolution
@@ -30,6 +33,7 @@ PACKS_ROOT = REPO_ROOT / "evidence-packs"
 VAULT_ROOT = REPO_ROOT / "source-vault"
 TEXT_CACHE_DIR = REPO_ROOT / "system" / "cache" / "source-text"
 RECEIPTS_FILE = "verification-receipts.jsonl"
+AUTO_DECISIONS_FILE = "auto-publish-decisions.jsonl"
 
 VISUAL_SOURCE_TYPES = {"IMAGE", "VIDEO", "VIDEO_URL"}
 AUTHENTICATED = {"found_on_cited_page", "found_in_text_source"}
@@ -177,6 +181,15 @@ class PackEvidence:
                 load_json(self.pack_dir / "verdicts.json", {}), "verdicts")
             if entry.get("verdict") == "MEANING_CHANGED"}
         self.receipts = read_receipts(self.pack_dir)
+        self.auto_decisions = {}
+        auto_path = self.pack_dir / AUTO_DECISIONS_FILE
+        if auto_path.exists():
+            for line in auto_path.read_text(encoding="utf-8").splitlines():
+                if not line.strip():
+                    continue
+                record = json.loads(line)
+                if record.get("kind") == "auto_decision":
+                    self.auto_decisions[(record["claim_id"], record["claim_digest"])] = record
         manifest = load_json(self.vault_dir / "manifest.json", {})
         self.sources = {s.get("source_id"): s for s in manifest.get("sources", [])}
         self._source_state = {}
@@ -263,6 +276,16 @@ class PackEvidence:
         return usable[-1] if usable else None
 
     # Decision ----------------------------------------------------------
+    def approval_basis(self, claim_id, digest):
+        """'human' or 'auto:<policy>' when publication is authorized, else None."""
+        disposition = self.dispositions.get(claim_id)
+        if disposition is not None:
+            return "human" if disposition == "APPROVED_FOR_PUBLISH" else None
+        record = self.auto_decisions.get((claim_id, digest))
+        if record and record.get("decision") == "AUTO_APPROVED":
+            return "auto:" + str(record.get("policy"))
+        return None
+
     def decision(self, claim_id):
         if claim_id in self._decisions:
             return self._decisions[claim_id]
@@ -273,7 +296,8 @@ class PackEvidence:
             return result
         digest = claim_digest(claim)
         reasons = []
-        if self.dispositions.get(claim_id) != "APPROVED_FOR_PUBLISH":
+        approval = self.approval_basis(claim_id, digest)
+        if approval is None:
             reasons.append("not_approved")
         if self.alarm_outstanding(claim_id, digest):
             reasons.append("unresolved_alarm")
@@ -297,7 +321,7 @@ class PackEvidence:
         elif receipt.get("kind") == "semantic_check" and receipt.get("result") != "ENTAILED":
             reasons.append(f"verifier_{receipt.get('result', 'unknown').lower()}")
         result = {"eligible": not reasons, "reasons": reasons, "bindings": bindings,
-                  "claim_digest": digest,
+                  "claim_digest": digest, "approval_basis": approval,
                   "receipt_id": receipt.get("receipt_id") if receipt else None}
         self._decisions[claim_id] = result
         return result

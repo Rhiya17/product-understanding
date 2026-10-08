@@ -109,6 +109,21 @@ def test_cosmetic_feedback_does_not_trigger_repair(tmp_path):
     assert len(calls) == 2
 
 
+def test_linked_reset_steps_must_be_reviewed_and_can_trigger_repair(tmp_path):
+    brief = dict(BRIEF, steps=[dict(STEPS[0], supporting_procedures=[{
+        'procedure_id': 'reset', 'steps': [{'claim_id': 'reset_power'}, {'claim_id': 'reset_off'}]}])])
+    with pytest.raises(a.AuthoringError, match='every instruction'):
+        a.actionable_defects(result(), brief, [(0, Path('preview.png'))])
+    review = a.Critique(reviewed_claim_ids=['step1', 'reset_power', 'reset_off'],
+                       defects=[defect(claim_id='reset_power')], missing_evidence=[])
+    assert a.actionable_defects(review, brief, [(0, Path('preview.png'))])[0]['claim_id'] == 'reset_power'
+    author, calls = author_sequence([proposal(), proposal(True), proposal(), proposal(True)])
+    reviews = iter([review, review.model_copy(update={'defects': []})])
+    _, _, metrics = a.create_candidate(brief, tmp_path, author, lambda *args: next(reviews), builder)
+    assert metrics['critic_repairs'] == 1
+    assert calls[2][2]['defects'][0]['claim_id'] == 'reset_power'
+
+
 @pytest.mark.parametrize("changes", [{"reference_id": "invented"}, {"seconds": 5},
                                       {"claim_id": "fake"}, {"repair": ""}])
 def test_unsupported_feedback_cannot_rewrite_or_publish(changes):
@@ -405,7 +420,8 @@ def test_critic_repair_cannot_skip_rebuild(tmp_path, monkeypatch):
     assert len(reviews) == 1
 
 
-def test_website_request_through_worker_to_playback(tmp_path, monkeypatch):
+@pytest.mark.parametrize('via_question', [False, True])
+def test_website_request_through_worker_to_playback(tmp_path, monkeypatch, via_question):
     import json
     import threading
     import urllib.request
@@ -421,11 +437,17 @@ def test_website_request_through_worker_to_playback(tmp_path, monkeypatch):
             "product_dir": "bose-qc-ultra-headphones", "procedure_id": "connect_aux_cable",
             "view": "main", "question": "Connect the cable to my Mac"}).encode(),
             headers={"Content-Type": "application/json"}, method="POST")
+        if via_question:
+            from urllib.parse import urlencode
+            req = urllib.request.Request(base + '/api/answer?' + urlencode({
+                'q': 'How do I replace the filter in my Levoit Core 300S?', 'generate': '1'}))
         with urllib.request.urlopen(req) as response:
             cookie = response.headers["Set-Cookie"].split(";")[0]
-            created = json.load(response)["request"]
-        assert created["kind"] == "author" and created["state"] == "queued"
+            body = json.load(response)
+            created = body['answer_document']['video']['request'] if via_question else body['request']
+        assert created["state"] == "queued"
         job = store.claim_job()
+        assert job['kind'] == 'author'
         def generate(s, j, steps, name, **kwargs):
             s.update_job_stage(j["id"], "refining", .3)
             path = tmp_path / "video.mp4"; path.write_bytes(b"fake-mp4-stream")
@@ -469,3 +491,263 @@ def test_provider_quota_failure_explained_without_retry(tmp_path, monkeypatch, c
     assert done['state'] == 'failed'
     assert ('API account' in done['message']) == (code != 'rate_limit_exceeded')
     assert store.claim_job() is None
+
+
+def test_zero_exit_blender_error_is_actionable_build_feedback(tmp_path, monkeypatch):
+    def failed_build(work, timeout):
+        (work / 'blender.log').write_text(
+            'Traceback:\n  File "scene.py", line 17\n'
+            'TypeError: BLENDER_EEVEE_NEXT is not a supported engine\n')
+    monkeypatch.setattr(a, 'blender_run', failed_build)
+    with pytest.raises(ValueError, match='BLENDER_EEVEE_NEXT'):
+        a.build_preview(proposal(), tmp_path / 'build')
+
+
+def test_anthropic_credit_failure_names_the_review_provider(tmp_path, monkeypatch):
+    import anthropic
+    import httpx
+    monkeypatch.setattr(a, 'readiness', lambda _: None)
+    monkeypatch.setattr(a, 'version_for', lambda *args: 'astra-test')
+    monkeypatch.setattr(worker, 'procedure_steps', lambda *args: (STEPS, 'Product'))
+    store = Store(tmp_path)
+    request = store.create_request('a', 'product', 'Product', 'connect', 'Connect', 'main', 'q')
+    job = store.claim_job()
+    def fail(*args, **kwargs):
+        raise anthropic.BadRequestError('Your credit balance is too low', response=httpx.Response(
+            400, request=httpx.Request('POST', 'https://api.anthropic.com/v1/messages')), body=None)
+    assert worker.process_authoring(store, job, fail) == 'failed'
+    assert 'Anthropic API credits' in store.request('a', request['id'])['message']
+    assert store.claim_job() is None
+
+
+def test_failed_code_seed_still_requires_author_build_self_check_and_review(tmp_path):
+    seed = dict(proposal=proposal(), feedback='Fix the saved build error against current evidence.')
+    author, calls = author_sequence([proposal(True), proposal(), proposal(True)])
+    reviews = []
+    a.create_candidate(BRIEF, tmp_path, author,
+                       lambda *args: reviews.append(args) or result(), builder, seed=seed)
+    # A premature ready response cannot skip the new build or its self-check.
+    assert len(calls) == 3
+    assert calls[0][1] == seed['proposal']
+    assert 'must build and view' in calls[1][2]
+    assert calls[2][3]
+    assert len(reviews) == 1
+
+
+def test_failed_seed_is_never_a_reviewed_checkpoint(tmp_path):
+    import json
+    store = Store(tmp_path)
+    old_work = store.root / 'work' / 'job_abc' / 'authoring'
+    old_work.mkdir(parents=True)
+    brief = dict(question='connect', products=['product'], view='main', steps=STEPS,
+                 version='old-evidence', references=[])
+    (old_work / 'brief.json').write_text(json.dumps(brief))
+    (old_work / 'astra-1.json').write_text(proposal().model_dump_json())
+    current = brief | {'version': 'new-evidence'}
+    seed = a.failed_proposal_seed(store, {'resume_from': 'job_abc'}, current)
+    assert seed['proposal'] == proposal()
+    assert 'CURRENT evidence' in seed['feedback']
+    assert 'reviewed' not in seed
+    assert a.failed_proposal_seed(store, {'resume_from': 'job_abc'},
+                                  current | {'products': ['other-product']}) is None
+
+
+def test_retry_after_evidence_change_updates_request_identity(tmp_path, monkeypatch):
+    monkeypatch.setattr(a, 'readiness', lambda _: None)
+    monkeypatch.setattr(a, 'version_for', lambda *args: 'astra-old')
+    store = Store(tmp_path)
+    first = store.create_request('visitor', 'product', 'Product', 'brake', 'Brake', 'main', 'q')
+    store.fail_job(first['job_id'], 'build error', retry=False)
+    monkeypatch.setattr(a, 'version_for', lambda *args: 'astra-new')
+    retried = store.retry_request('visitor', first['id'])
+    assert retried['variant'] == 'astra-new'
+    assert retried['job_id'] != first['job_id']
+    assert store.job(retried['job_id'])['resume_from'] == first['job_id']
+    assert store.open_request_for('visitor', 'product', 'brake', 'main', 'astra-new')['id'] == first['id']
+
+
+def test_seed_survives_credit_failure_and_keeps_visual_review(tmp_path, monkeypatch):
+    import json
+    store = Store(tmp_path)
+    brief = dict(question='brakes', products=['product'], view='main', steps=STEPS)
+    for job_id in ('job_abc', 'job_def'):
+        work = store.root / 'work' / job_id / 'authoring'
+        work.mkdir(parents=True)
+        (work / 'brief.json').write_text(json.dumps(brief))
+    draft = store.root / 'work' / 'job_abc' / 'authoring'
+    (draft / 'astra-1.json').write_text(proposal().model_dump_json())
+    (draft / 'critic-1.json').write_text(json.dumps({'defects': ['Pedals must visibly move']}))
+    monkeypatch.setattr(store, 'job', lambda job_id: {'resume_from': 'job_abc'})
+    seed = a.failed_proposal_seed(store, {'resume_from': 'job_def'}, brief)
+    assert seed['source_job'] == 'job_abc'
+    assert 'Pedals must visibly move' in seed['feedback']
+    (draft / 'astra-1.json').unlink()
+    assert a.failed_proposal_seed(store, {'resume_from': 'job_def'}, brief) is None
+
+@pytest.mark.parametrize('statuses, succeeds', [(['incomplete', 'completed'], True), (['incomplete', 'incomplete'], False), (['completed-invalid'], False)])
+def test_author_saves_and_accounts_before_parsing(tmp_path, monkeypatch, statuses, succeeds):
+    import json
+    from types import SimpleNamespace
+    import openai
+    calls, settled, reserved = [], [], []
+    remaining = iter(statuses)
+    def create(**kwargs):
+        calls.append(kwargs)
+        status = next(remaining)
+        usage = SimpleNamespace(input_tokens=100, output_tokens=200,
+                                input_tokens_details=SimpleNamespace(cached_tokens=0),
+                                model_dump=lambda: {'input_tokens': 100, 'output_tokens': 200})
+        return SimpleNamespace(status=status.split('-')[0], model=a.MODEL, id=f'resp_{len(calls)}',
+                               incomplete_details=SimpleNamespace(reason='max_output_tokens'), usage=usage,
+                               output_text=proposal().model_dump_json() if status == 'completed' else '{"python":"cut',
+                               model_dump=lambda **_: {'status': status, 'usage': usage.model_dump()})
+    monkeypatch.setattr(openai, 'OpenAI', lambda **_: SimpleNamespace(responses=SimpleNamespace(
+        create=create, input_tokens=SimpleNamespace(count=lambda **_: SimpleNamespace(input_tokens=100)))))
+    budget = SimpleNamespace(reserve=lambda *args: reserved.append(args) or len(reserved),
+                             settle=lambda *args: settled.append(args))
+    author = a.Astra(budget, 'job', tmp_path)
+    if succeeds:
+        assert author({'references': [], 'steps': STEPS}) == proposal()
+        assert [c['max_output_tokens'] for c in calls] == [20000, 30000]
+    else:
+        with pytest.raises(a.AuthoringError, match='response'):
+            author({'references': [], 'steps': STEPS})
+    assert all(c['background'] is True and c['store'] is False for c in calls)
+    assert len(calls) == len(settled) == len(reserved) == len(statuses)
+    assert len(json.loads((tmp_path / 'astra-usage.json').read_text())) == len(statuses)
+    assert len(list(tmp_path.glob('astra-*-response.json'))) == len(statuses)
+
+
+def test_fit_review_cannot_pass_without_visual_checks():
+    brief = dict(BRIEF, fit={'object': {}})
+    with pytest.raises(a.AuthoringError, match='omitted required'):
+        a.actionable_defects(result(), brief, [(0, Path('frame.png'))])
+
+
+def test_fit_review_requires_grounded_readability_and_layout_checks():
+    brief = dict(BRIEF, fit={'object': {}})
+    checks = [a.VisualCheck(criterion=k, passed=True, reference_id='manual:p3', seconds=0,
+                            observation='Visible comparison to supplied reference') for k in sorted(a.FIT_VISUAL_CRITERIA)]
+    review = result().model_copy(update={'visual_checks': checks})
+    assert a.actionable_defects(review, brief, [(0, Path('frame.png'))]) == []
+    checks[0].passed = False
+    with pytest.raises(a.AuthoringError, match='failed without'):
+        a.actionable_defects(review, brief, [(0, Path('frame.png'))])
+
+@pytest.mark.parametrize('phase', ['token_count', 'scene_generation'])
+@pytest.mark.parametrize('timeout_type', ['ConnectTimeout', 'ReadTimeout', 'WriteTimeout', 'PoolTimeout'])
+def test_author_timeout_diagnostics(tmp_path, monkeypatch, phase, timeout_type):
+    import json
+    import httpx
+    import openai
+    from types import SimpleNamespace
+    reserved, settled = [], []
+    def fail(**kwargs):
+        try:
+            raise getattr(httpx, timeout_type)('secret-payload-must-not-be-logged')
+        except httpx.TimeoutException as cause:
+            raise openai.APITimeoutError(request=httpx.Request('POST', 'https://api.openai.com/v1/responses')) from cause
+    count = fail if phase == 'token_count' else lambda **_: SimpleNamespace(input_tokens=100)
+    monkeypatch.setattr(openai, 'OpenAI', lambda **_: SimpleNamespace(responses=SimpleNamespace(
+        create=fail, input_tokens=SimpleNamespace(count=count))))
+    budget = SimpleNamespace(reserve=lambda *args: reserved.append(args) or 'reservation',
+                             settle=lambda *args: settled.append(args))
+    with pytest.raises(openai.APITimeoutError):
+        a.Astra(budget, 'test-job', tmp_path)({'references': [], 'steps': STEPS})
+    raw = (tmp_path / f'astra-1-{phase}-diagnostics.json').read_text()
+    record = json.loads(raw)
+    assert record['phase'] == phase and record['status'] == 'failed'
+    assert record['timeout_kind'] == timeout_type
+    assert record['elapsed_seconds'] >= 0
+    assert record['exception_chain'][0]['type'] == 'APITimeoutError'
+    assert record['exception_chain'][0]['traceback']
+    assert 'secret-payload' not in raw
+    assert len(reserved) == (phase == 'scene_generation')
+    assert not settled  # A timeout does not prove the provider charged nothing.
+
+
+def test_api_diagnostics_records_request_id(tmp_path):
+    import httpx
+    import openai
+    import json
+    response = httpx.Response(429, headers={'x-request-id': 'req_test'},
+                              request=httpx.Request('POST', 'https://api.openai.com/v1/responses'))
+    with pytest.raises(openai.RateLimitError):
+        with a.api_diagnostics(tmp_path / 'astra-1', 'scene_generation', 'job'):
+            raise openai.RateLimitError('private message', response=response, body=None)
+    data = json.loads((tmp_path / 'astra-1-scene_generation-diagnostics.json').read_text())
+    assert data['request_id'] == 'req_test'
+    assert data['status_code'] == 429
+
+
+def test_seed_crosses_setup_failure_without_brief(tmp_path, monkeypatch):
+    import json
+    store = Store(tmp_path)
+    brief = dict(question='brakes', products=['product'], view='main', steps=STEPS)
+    draft = store.root / 'work' / 'job_abc' / 'authoring'
+    draft.mkdir(parents=True)
+    (draft / 'brief.json').write_text(json.dumps(brief))
+    (draft / 'astra-1.json').write_text(proposal().model_dump_json())
+    monkeypatch.setattr(store, 'job', lambda jid: {'resume_from': 'job_abc'} if jid == 'job_def' else None)
+    seed = a.failed_proposal_seed(store, {'resume_from': 'job_def'}, brief)
+    assert seed['source_job'] == 'job_abc'
+    assert a.failed_proposal_seed(store, {'resume_from': 'job_def'}, dict(brief, question='different')) is None
+    monkeypatch.setattr(store, 'job', lambda jid: {'resume_from': 'job_def'})
+    assert a.failed_proposal_seed(store, {'resume_from': 'job_def'}, brief) is None
+
+
+def test_background_poll_reuses_id_after_timeout(tmp_path, monkeypatch):
+    import json, httpx, openai
+    from types import SimpleNamespace
+    monkeypatch.setattr(a.time, 'sleep', lambda _: None)
+    ids = []
+    def retrieve(response_id):
+        saved = json.loads((tmp_path / 'astra-1-background.json').read_text())
+        assert saved['response_id'] == response_id == 'resp_one'
+        ids.append(response_id)
+        if len(ids) == 1:
+            raise openai.APITimeoutError(request=httpx.Request('GET', 'https://api.openai.com'))
+        return SimpleNamespace(id=response_id, status='completed')
+    client = SimpleNamespace(responses=SimpleNamespace(retrieve=retrieve))
+    result = a.await_background_response(client, SimpleNamespace(id='resp_one', status='queued'),
+                                          tmp_path / 'astra-1', 'job', 'reservation')
+    assert result.status == 'completed'
+    assert ids == ['resp_one', 'resp_one']
+
+
+def test_background_poll_deadline_cancels(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+    monkeypatch.setattr(a, 'BACKGROUND_TIMEOUT', 0)
+    calls = []
+    def cancel(rid):
+        calls.append(rid)
+        return SimpleNamespace(id=rid, status='cancelled')
+    client = SimpleNamespace(responses=SimpleNamespace(cancel=cancel))
+    result = a.await_background_response(client, SimpleNamespace(id='resp_one', status='queued'),
+                                          tmp_path / 'astra-1', 'job', 'reservation')
+    assert result.status == 'cancelled' and calls == ['resp_one']
+
+
+def test_background_poll_failures_are_bounded(tmp_path, monkeypatch):
+    import httpx, openai, json
+    from types import SimpleNamespace
+    monkeypatch.setattr(a.time, 'sleep', lambda _: None)
+    calls = []
+    def retrieve(rid):
+        calls.append(rid)
+        raise openai.APITimeoutError(request=httpx.Request('GET', 'https://api.openai.com'))
+    client = SimpleNamespace(responses=SimpleNamespace(retrieve=retrieve))
+    with pytest.raises(openai.APITimeoutError):
+        a.await_background_response(client, SimpleNamespace(id='resp_one', status='queued'),
+                                    tmp_path / 'astra-1', 'job', 'reservation')
+    assert calls == ['resp_one'] * 3
+    assert json.loads((tmp_path / 'astra-1-background.json').read_text())['response_id'] == 'resp_one'
+
+
+def test_ready_contract_ignores_only_coverage_explanation():
+    before = proposal()
+    after = before.model_copy(deep=True)
+    after.coverage[0].explanation = 'Same animation, reworded description.'
+    assert a.ready_contract(before) == a.ready_contract(after)
+    after.coverage[0].end_frame += 1
+    assert a.ready_contract(before) != a.ready_contract(after)

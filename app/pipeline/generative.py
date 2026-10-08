@@ -9,6 +9,7 @@ reserves its worst-case price first and is refused past the owner's per-video or
 total budget. FAL does not report actual cost, so reservations count as spent.
 """
 import json
+import datetime as dt
 import os
 import subprocess
 import uuid
@@ -73,8 +74,11 @@ class Budget:
                               and e.get("approval_id") == entry["approval_id"]
                               for e in spend_guard._read_jsonl(spend_guard.DEFAULT_APPROVALS))
                 if not revoked:
+                    per_video = float(manifest["per_video_cap_usd"])
+                    if manifest.get("temporary_per_video_until") and dt.datetime.now(dt.timezone.utc) >= dt.datetime.fromisoformat(manifest["temporary_per_video_until"]):
+                        per_video = float(manifest["per_video_cap_after_expiry_usd"])
                     return {"approval_id": entry["approval_id"], "run_id": manifest["run_id"],
-                            "per_video": float(manifest["per_video_cap_usd"]),
+                            "per_video": per_video,
                             "total": float(manifest["cap_usd"])}
         return None
 
@@ -114,7 +118,8 @@ class Budget:
             db.execute("INSERT INTO spend (id, job_id, label, amount, at) VALUES (?,?,?,?,?)",
                        (reservation, job_id, label, amount, now()))
         spend_guard._append_jsonl(spend_guard.DEFAULT_LEDGER, {
-            "event": "reserve", "at": now(), "approval_id": self.config["approval_id"],
+            "event": "reserve", "reservation_id": reservation, "at": now(),
+            "approval_id": self.config["approval_id"],
             "run_id": self.config["run_id"], "category": "video_generation", "label": label,
             "worst_case_usd": round(amount, 4), "job_id": job_id,
             "note": "counted at worst case until settled"})

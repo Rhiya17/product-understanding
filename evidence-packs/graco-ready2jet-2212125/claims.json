@@ -3290,5 +3290,902 @@
     "extractor": "codex-expert-repair-v1",
     "extracted_at": "2026-08-29",
     "extraction_notes": "Append-only repair superseding claim_r2j_care_wet_drying. Corrected after owner-directed expert review of the complete authoritative source context; the protected original claim remains immutable."
+  },
+  {
+    "claim_id": "claim_r2j_spec_product_weight",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "product_weight",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 13.2,
+      "unit": "lb",
+      "authority_note": "Manufacturer (gracobaby.com PDP for 2212125), transcribed in specs.md"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Stroller Weight:\n13.2 lb"
+      },
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Weighing just 13.2 lb—less than two gallons of milk—this compact stroller is fully-featured and ultra lightweight!"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "The same PDP Specifications block also prints 'Product Weight: 13.2 in lb' (stray 'in', page typo); the Kingston 2209064 page prints 'Product Weight: 13.2 lb'. Retailers (Target, Amazon, Walmart) state the same 13.2 figure, so no conflict."
+  },
+  {
+    "claim_id": "claim_r2j_spec_self_standing_fold",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "self_standing_fold",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": true,
+      "detail": "Folds compactly and stands on its own when folded.",
+      "authority_note": "Manufacturer (gracobaby.com PDP for 2212125), transcribed in specs.md"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Self-standing compact fold and ultra-lightweight at 13.2 lb, making this fully featured stroller easy to store and transport"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07"
+  },
+  {
+    "claim_id": "claim_r2j_spec_open_dimensions_pdp",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "SPEC",
+    "predicate": "open_dimensions",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "width": 20.5,
+      "height": 43,
+      "depth": 27,
+      "unit": "in",
+      "authority_note": "Manufacturer (gracobaby.com PDP for 2212125), transcribed in specs.md"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Product Width:\n20.5 in"
+      },
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Product Height:\n43 in"
+      },
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Product Depth:\n27 in"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "Ceiling raised from the §5 default C0 to C2: dimensions are what a fit answer (trunk, closet, doorway) depends on. The PDP does not label these values 'open'; they are treated as open dimensions because they match the Graco Consumer Care open figures (claim_r2j_spec_open_dimensions_gcc) — reviewer to confirm."
+  },
+  {
+    "claim_id": "claim_r2j_spec_open_dimensions_gcc",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "SPEC",
+    "predicate": "open_dimensions",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "width": 20.5,
+      "height": 43,
+      "depth": 27,
+      "unit": "in",
+      "authority_note": "Graco Consumer Care (brand account) answer on the Target.com Q&A for TCIN 92331730; brand-authored but retailer-hosted, not on a manufacturer domain",
+      "answered_at": "2025-07-28"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "the stroller’s dimensions are: 20.5\" W x 43\" H x 27\" D."
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "Ceiling raised from C0 to C2 (fit answers depend on dimensions). Agrees with claim_r2j_spec_open_dimensions_pdp. The answer does not itself say 'open'; specs.md classifies it as the open dimensions because it matches the PDP."
+  },
+  {
+    "claim_id": "claim_r2j_spec_folded_dimensions_gcc",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "SPEC",
+    "predicate": "folded_dimensions",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "height": 30,
+      "width": 20.5,
+      "depth": 11.5,
+      "unit": "in",
+      "authority_note": "Graco Consumer Care (brand account) answer on the Target.com Q&A for TCIN 92331730; brand-authored but retailer-hosted, not on a manufacturer domain",
+      "answered_at": [
+        "2025-03-21",
+        "2025-11-24",
+        "2026-08-12"
+      ]
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "The folded dimensions of this stroller are height 30in depth 11.5in and width 20.5in."
+      },
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "The Ready2Jet Compact Stroller folded dimensions are 30 in H x 11.5 in D x 20.5 in W."
+      },
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "The Ready2Jet Stroller measures 30\" H x 11.5\" D x 20.5\" W when folded"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "CONFLICT: contradicts claim_r2j_spec_folded_dimensions_target and claim_r2j_spec_folded_dimensions_amazon. Ceiling raised from C0 to C2: a folded-fit answer (overhead bin, trunk) depends on this. Three brand answers, consistent with each other. AMBIGUITY: the 2025-11-24 answer replies to 'What are the dimensions folded up without the belly bar?' but does not say whether the belly bar is on or off for these numbers. No gracobaby.com page states folded dimensions."
+  },
+  {
+    "claim_id": "claim_r2j_spec_folded_dimensions_target",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "SPEC",
+    "predicate": "folded_dimensions",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "height": 30.98,
+      "width": 19.52,
+      "depth": 11.06,
+      "unit": "in",
+      "authority_note": "Target.com specifications table (retailer data, not brand-authored)"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Dimensions (Collapsed): 30.98 Inches (H) x 19.52 Inches (W) x 11.06 Inches (D)"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "CONFLICT: contradicts claim_r2j_spec_folded_dimensions_gcc and claim_r2j_spec_folded_dimensions_amazon. Ceiling raised from C0 to C2 (fit answers). Retailer data with known errors: the same table says 'Product Configuration: Double' for this single stroller, and its 'Dimensions (Overall): 23.9 x 18 x 11.9 in' is smaller than both the collapsed and the open figures (meaning unclear, not extracted as a claim)."
+  },
+  {
+    "claim_id": "claim_r2j_spec_folded_dimensions_amazon",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "SPEC",
+    "predicate": "folded_dimensions",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "stated": "Less than 43.5*12.0*8.0",
+      "values": [
+        43.5,
+        12.0,
+        8.0
+      ],
+      "axes": null,
+      "qualifier": "upper bound ('Less than')",
+      "unit": "in",
+      "authority_note": "Amazon.com product details for B0D2LXK44T, Kingston 2209064 (retailer data, not brand-authored)"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Folded Size Less than 43.5*12.0*8.0 Inches"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "CONFLICT: contradicts claim_r2j_spec_folded_dimensions_gcc and claim_r2j_spec_folded_dimensions_target. Ceiling raised from C0 to C2 (fit answers). Axes are NOT labelled in the source; values recorded in the stated order without assigning height/width/depth. Listing is the Kingston colorway (model 2209064), same chassis per specs.md."
+  },
+  {
+    "claim_id": "claim_r2j_spec_handle_height",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C2",
+    "type": "SPEC",
+    "predicate": "handle_height",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 39,
+      "unit": "in",
+      "authority_note": "Graco Consumer Care (brand account) answer on the Target.com Q&A for TCIN 92331730; brand-authored but retailer-hosted, not on a manufacturer domain",
+      "answered_at": "2026-04-06"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "The height of the handle is 39\""
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "Ceiling raised from C0 to C2 (dimension used in fit/ergonomics answers). Answer does not say whether measured open or at which point; open overall height is 43 in."
+  },
+  {
+    "claim_id": "claim_r2j_spec_belly_bar_removable",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "SPEC",
+    "predicate": "belly_bar_removable",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": true,
+      "detail": "Belly bar is removable and doubles as a carry handle.",
+      "authority_note": "Manufacturer (gracobaby.com PDP for 2212125), transcribed in specs.md"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Removable belly bar doubles as a carry handle"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "C1 (everyday reversible accessory operation). The manual warns the belly bar is not a restraint (claim_r2j_warning_belly_bar_not_restraint). No source states whether the folded dimensions in claim_r2j_spec_folded_dimensions_gcc are with or without the belly bar."
+  },
+  {
+    "claim_id": "claim_r2j_spec_belly_bar_carry_folded",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C1",
+    "type": "SPEC",
+    "predicate": "belly_bar_carry_when_folded",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": true,
+      "detail": "Belly bar is used to carry the folded stroller; it can be removed when storing.",
+      "authority_note": "Graco Consumer Care (brand account) answer on the Target.com Q&A for TCIN 92331730; brand-authored but retailer-hosted, not on a manufacturer domain",
+      "answered_at": "2026-08-12"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "The belly bar for the Ready2Jet stroller is used to carry the stroller when folded. It can be removed when storing."
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "C1 (everyday reversible operation). 'It can be removed when storing' implies a storage footprint without the belly bar, but no source gives that footprint."
+  },
+  {
+    "claim_id": "claim_r2j_limit_max_weight_pdp",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "LIMIT",
+    "predicate": "maximum_child_weight",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 50,
+      "unit": "lb",
+      "authority_note": "Manufacturer (gracobaby.com PDP for 2212125), transcribed in specs.md"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Stroller holds child up to 50 lb for years of comfortable strolling"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "Agrees with the manual (claim_r2j_limit_max_weight, 50 lb); Target's table also says 'Holds up to: 50 Pounds' and Walmart 'Max Weight 50 lb'. Conflicts only with the Canadian listing claim_r2j_limit_max_weight_wellca. The PDP gives no child height limit; the manual's 45 in limit is claim_r2j_limit_max_height."
+  },
+  {
+    "claim_id": "claim_r2j_limit_max_weight_wellca",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "LIMIT",
+    "predicate": "maximum_child_weight",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "CA",
+      "state": null
+    },
+    "object": {
+      "value": 45,
+      "unit": "lb",
+      "value_metric": 20.4,
+      "unit_metric": "kg",
+      "authority_note": "well.ca listing, Kingston (Canadian retailer data, not brand-authored)"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "up to 20.4 kg (45 lb)"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "CONFLICT: contradicts claim_r2j_limit_max_weight (manual, 50 lb) and claim_r2j_limit_max_weight_pdp (PDP, 50 lb). Not resolved: well.ca is a Canadian retailer listing (Kingston colorway, model number not stated), so a market-specific limit is possible but unconfirmed. The protected manual claim cannot carry the reciprocal note (append-only top-up)."
+  },
+  {
+    "claim_id": "claim_r2j_compat_snugride_pdp",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_infant_car_seats",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "Graco SnugRide infant car seats",
+      "qualifier": "all",
+      "authority_note": "Manufacturer (gracobaby.com PDP for 2212125), transcribed in specs.md"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Accepts all Graco® SnugRide® infant car seats to become a travel system"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "Scope differs from the manual's 'COMPATIBLE WITH MOST GRACO® INFANT CAR SEATS' (claim_r2j_compat_graco_infant_car_seats): the PDP says all SnugRide seats, the manual says most Graco seats. Not flagged as a CONFLICT (different scopes, not contradictory values); reviewer should check."
+  },
+  {
+    "claim_id": "claim_r2j_compat_chart_snugride_families",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_infant_car_seats",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "SnugRide Infant Car Seats (includes SnugRide Lite family, SnugRide Snugfit & SnugRide Snuglock families)",
+      "chart": "Stroller, Infant Car Seat and Base Compatibility (APR 2026)",
+      "authority_note": "Graco compatibility chart PDF (APR 2026) linked from the PDP, as transcribed in specs.md; the PDF itself is held in the SnugRide vault, not this one"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "\"SnugRide® Infant Car Seats (includes SnugRide® Lite family, SnugRide® Snugfit® & SnugRide® Snuglock® families)\" column"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "Bound to specs.md's transcription of the chart row for 'Ready2Jet®' (a check in this column). The chart PDF is not in this product's vault; a reviewer may cross-check it at source-vault/graco-snugride-35-lite-lx/specs/graco-stroller-carseat-base-compatibility-apr2026.pdf."
+  },
+  {
+    "claim_id": "claim_r2j_compat_chart_gomax",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C3",
+    "type": "COMPATIBILITY",
+    "predicate": "compatible_infant_car_seats",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": "Only with models produced in 2025 & later",
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "counterpart": "GoMax Infant Car Seat",
+      "qualifier": "Only with models produced in 2025 & later",
+      "chart": "Stroller, Infant Car Seat and Base Compatibility (APR 2026)",
+      "authority_note": "Graco compatibility chart PDF (APR 2026) linked from the PDP, as transcribed in specs.md; the PDF itself is held in the SnugRide vault, not this one"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "a check in the \"GoMax Infant Car Seat\" column, annotated \"(Only with models produced in 2025 & later)\""
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "AMBIGUITY: the chart annotation does not say whether '2025 & later' refers to Ready2Jet stroller models or GoMax seat models; recorded in applicability.revision per work order §6.2 convention, reviewer to confirm. Bound to the specs.md transcription of the chart, not the PDF."
+  },
+  {
+    "claim_id": "claim_r2j_spec_color",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "color",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "Splatter Art",
+      "authority_note": "Manufacturer (gracobaby.com PDP for 2212125), transcribed in specs.md"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Color:\nSplatter Art"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07"
+  },
+  {
+    "claim_id": "claim_r2j_spec_colorways_offered",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "colorways_offered",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": null,
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": [
+        "Geo Pop",
+        "Splatter Art",
+        "Lilac Mod",
+        "Kingston"
+      ],
+      "authority_note": "Manufacturer (gracobaby.com PDP for 2212125), transcribed in specs.md"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Geo Pop, Splatter Art, Lilac Mod, Kingston"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "From the PDP swatch assets. Kingston = model 2209064 (claim_r2j_spec_model_number_kingston); Lilac Mod 2212123 and Geo Pop 2212124 come only from search-result titles in specs.md and were not extracted."
+  },
+  {
+    "claim_id": "claim_r2j_spec_model_number",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "model_number",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "2212125",
+      "authority_note": "Manufacturer (gracobaby.com PDP for 2212125), transcribed in specs.md"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Model#:\n2212125"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07"
+  },
+  {
+    "claim_id": "claim_r2j_spec_model_number_kingston",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "colorway_model_number",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2209064",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "2209064",
+      "colorway": "Kingston",
+      "authority_note": "gracobaby.com PDP for 2209064, as recorded in specs.md"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "2209064 = Kingston"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "Identity finding: same product name and chassis, different fabric; specs.md reports the 2209064 Specifications block shows the same weight and dimensions. Used to scope the Amazon and well.ca claims."
+  },
+  {
+    "claim_id": "claim_r2j_spec_box_contents_target",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "box_contents",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": [
+        "Removable belly bar (doubles as carry handle)",
+        "leatherette handle",
+        "UV 50 canopy",
+        "storage basket",
+        "parent cup holder"
+      ],
+      "authority_note": "Target.com specifications table (retailer data, not brand-authored)"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Includes: Removable belly bar that doubles as a carry handle, leatherette handle, UV 50 canopy, storage basket, parent cup holder"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "Retailer list; the PDP has no box-contents list and the manual's parts list (page 10) is pictorial. Amazon's list (claim_r2j_spec_box_contents_amazon) is shorter; omission, not contradiction, so not flagged CONFLICT."
+  },
+  {
+    "claim_id": "claim_r2j_spec_box_contents_amazon",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "box_contents",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2209064",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": [
+        "Stroller with removable belly bar",
+        "parent cup holder",
+        "UV 50 canopy"
+      ],
+      "authority_note": "Amazon.com product details for B0D2LXK44T, Kingston 2209064 (retailer data, not brand-authored)"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Included Components Stroller with removable belly bar, parent cup holder, and UV 50 canopy"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "Kingston colorway (2209064). Shorter than the Target list (claim_r2j_spec_box_contents_target); not flagged CONFLICT."
+  },
+  {
+    "claim_id": "claim_r2j_spec_included_parent_cup_holder",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "included_accessories",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": [
+        "parent cup holder",
+        "leatherette stroller handle"
+      ],
+      "authority_note": "Manufacturer (gracobaby.com PDP for 2212125), transcribed in specs.md"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Parents will love the included parent cup holder and stylish leatherette stroller handle."
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "Manufacturer feature text naming included items; not a complete box-contents list."
+  },
+  {
+    "claim_id": "claim_r2j_spec_price_pdp",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "list_price",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 189.99,
+      "unit": "USD",
+      "as_of": "2026-10-07",
+      "authority_note": "Manufacturer (gracobaby.com PDP for 2212125), transcribed in specs.md"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "$189.99"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "Time-varying; as displayed on the PDP when read 2026-10-07. The same PDP lists the travel system bundle separately at $319.99 (not extracted)."
+  },
+  {
+    "claim_id": "claim_r2j_spec_front_wheel_diameter",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "front_wheel_diameter",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 6.5,
+      "unit": "in",
+      "authority_note": "Target.com specifications table (retailer data, not brand-authored)"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Front Wheel Diameter: 6.5 Inches"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "Retailer data only; that table has known errors (see claim_r2j_spec_folded_dimensions_target)."
+  },
+  {
+    "claim_id": "claim_r2j_spec_rear_wheel_diameter",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "rear_wheel_diameter",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": 7.5,
+      "unit": "in",
+      "authority_note": "Target.com specifications table (retailer data, not brand-authored)"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "Rear Wheel Diameter: 7.5 Inches"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "Retailer data only; that table has known errors (see claim_r2j_spec_folded_dimensions_target)."
+  },
+  {
+    "claim_id": "claim_r2j_spec_upc",
+    "version": 1,
+    "status": "CANDIDATE",
+    "consequence_ceiling": "C0",
+    "type": "SPEC",
+    "predicate": "upc",
+    "subject": "prod_graco_ready2jet",
+    "applicability": {
+      "sku": "2212125",
+      "revision": null,
+      "market": "US",
+      "state": null
+    },
+    "object": {
+      "value": "047406189564",
+      "authority_note": "Target.com specifications table (retailer data, not brand-authored)"
+    },
+    "source_bindings": [
+      {
+        "source_id": "src_r2j_specs_pdp_v1",
+        "page": null,
+        "region": null,
+        "quote": "UPC: 047406189564"
+      }
+    ],
+    "authority": "MANUFACTURER_SPEC_PAGE",
+    "extractor": "evidence-pack-agent-v2",
+    "extracted_at": "2026-10-07",
+    "extraction_notes": "Retailer data (Target, Splatter Art listing)."
   }
 ]

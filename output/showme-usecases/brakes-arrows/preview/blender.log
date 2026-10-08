@@ -1,0 +1,23 @@
+scene.py:18: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+scene.py:403: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world.use_nodes = True
+scene.py:447: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  material.use_nodes = True
+00:01.209  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/preview/preview-0001.png'
+00:01.840  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/preview/preview-0042.png'
+00:02.648  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/preview/preview-0079.png'
+00:03.435  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/preview/preview-0083.png'
+00:04.235  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/preview/preview-0124.png'
+00:05.023  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/preview/preview-0126.png'
+00:05.818  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/preview/preview-0165.png'
+00:06.595  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/preview/preview-0174.png'
+00:07.391  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/preview/preview-0175.png'
+00:08.214  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/preview/preview-0206.png'
+00:09.003  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/preview/preview-0231.png'
+00:09.802  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/preview/preview-0247.png'
+00:10.577  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/preview/preview-0288.png'
+Info: Saved as "scene.blend"
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

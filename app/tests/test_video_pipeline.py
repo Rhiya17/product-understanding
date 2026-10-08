@@ -148,6 +148,33 @@ def test_facts_and_unrequested_misses_queue_nothing(store, monkeypatch, tmp_path
     assert store.claim_job() is None
 
 
+def test_plain_website_question_queues_once_and_resumes_saved_work(store):
+    first = service.video_for_document(store, fold_document(), 'How do I fold it?',
+                                       'v_a', auto_generate=True)
+    assert first['state'] == 'requested'
+    request_id = first['request']['id']
+    first_job = store.request('v_a', request_id)['job_id']
+    assert first_job
+    again = service.video_for_document(store, fold_document(), 'How do I fold it?',
+                                       'v_a', auto_generate=True)
+    assert again['request']['id'] == request_id
+    assert store.request('v_a', request_id)['job_id'] == first_job
+    store.fail_job(first_job, 'recoverable build failure', retry=False)
+    retried = service.video_for_document(store, fold_document(), 'How do I fold it?',
+                                         'v_a', auto_generate=True)
+    assert retried['request']['id'] == request_id
+    next_job = store.request('v_a', request_id)['job_id']
+    assert next_job != first_job
+    assert store.job(next_job)['resume_from'] == first_job
+
+
+def test_automatic_generation_does_not_invent_a_procedure(store):
+    fact = {'status': 'ready', 'product': {'product_dir': R2J}, 'coverage': None}
+    assert service.video_for_document(store, fact, 'How heavy is it?', 'v_a',
+                                      auto_generate=True) is None
+    assert store.claim_job() is None
+
+
 def test_my_videos_are_private_to_the_visitor(monkeypatch):
     from app.server import create_server
     monkeypatch.setenv("SHOWME_SERVE_RESEARCH_MEDIA", "1")
@@ -325,6 +352,37 @@ def test_director_gets_the_manual_pages_its_steps_cite():
     steps, _ = procedure_steps(BOSE, "connect_aux_cable")
     pages = {(s, p) for s, p, _ in director.manual_page_images(BOSE, steps)}
     assert ("src_owners_guide_en", 33) in pages and ("src_owners_guide_en", 13) in pages
+
+
+def test_filter_video_includes_referenced_reset_page_and_conditional_instructions():
+    from app.worker import procedure_steps
+    from app.pipeline import director
+    steps, _ = procedure_steps("levoit-core-300s", "replace_filter")
+    reset = steps[-1]
+    assert len(steps) == 6
+    assert reset["claim_id"] == "claim_c300s_step_replace_filter_6"
+    assert {p["procedure_id"] for p in reset["supporting_procedures"]} == {
+        "reset_check_filter_indicator", "reset_check_filter_indicator_early"}
+    instructions = [s for p in reset["supporting_procedures"] for s in p["steps"]]
+    assert all(s["condition"] and s["quotes"] for s in instructions)
+    assert any("3 seconds" in s["text"] and "Sleep Mode" in s["text"] for s in instructions)
+    pages = {(s, p) for s, p, _ in director.manual_page_images("levoit-core-300s", steps)}
+    assert ("src_manual_core300sp_us", 13) in pages
+    assert ("src_manual_core300sp_us", 14) in pages
+
+
+def test_required_video_manual_pages_are_never_silently_truncated(monkeypatch):
+    from app.pipeline import director
+    monkeypatch.setattr(director, "MAX_MANUAL_PAGES", 1)
+    steps = [{"required_manual_pages": [("src_owners_guide_en", 13), ("src_owners_guide_en", 33)]}]
+    with pytest.raises(ValueError, match="Required manual evidence exceeds"):
+        director.manual_page_images(BOSE, steps)
+
+
+def test_required_video_manual_reference_must_exist():
+    from app.pipeline import director
+    with pytest.raises(ValueError, match="Required manual reference is unavailable"):
+        director.manual_page_images(BOSE, [{"required_manual_pages": [("not-a-source", 1)]}])
 
 
 def test_critic_pass_is_rechecked_against_every_claimed_step():
@@ -526,3 +584,33 @@ def test_persisted_local_setting_reuses_existing_fold_video(store, monkeypatch, 
     monkeypatch.setenv('SHOWME_SERVE_RESEARCH_MEDIA', '0')
     load_local_settings(config)
     assert not store.assets_for(R2J, FOLD)
+
+
+def test_shared_failed_job_retry_updates_all_visitors(store):
+    first = store.create_request('v_a', R2J, 'Ready2Jet', FOLD, 'Fold', 'side', 'q')
+    second = store.create_request('v_b', R2J, 'Ready2Jet', FOLD, 'Fold', 'side', 'q')
+    unrelated = store.create_request('v_c', R2J, 'Ready2Jet', FOLD, 'Fold', 'front', 'q')
+    assert first['job_id'] == second['job_id']
+    store.fail_job(first['job_id'], 'truncated', retry=False)
+    retried = store.retry_request('v_b', second['id'])
+    original = store.request('v_a', first['id'])
+    assert original['job_id'] == retried['job_id'] != first['job_id']
+    assert original['state'] == 'queued' and original['message'] is None
+    store.update_job_stage(retried['job_id'], 'refining', .1)
+    assert store.request('v_a', first['id'])['state'] == 'rendering'
+    assert store.request('v_c', unrelated['id'])['job_id'] == unrelated['job_id']
+    assert store.request('v_a', second['id']) is None
+
+@pytest.mark.parametrize('until, expected', [('2099-10-08T00:00:00-07:00', 10.0), ('2000-10-08T00:00:00-07:00', 5.0)])
+def test_temporary_video_cap_expires(store, monkeypatch, tmp_path, until, expected):
+    import json
+    from app.pipeline import generative
+    from system import spend_guard
+    budget_manifest(monkeypatch, tmp_path)
+    path = generative.BUDGET_MANIFEST
+    manifest = json.loads(path.read_text())
+    manifest.update(per_video_cap_usd=10.0, temporary_per_video_until=until,
+                    per_video_cap_after_expiry_usd=5.0)
+    path.write_text(json.dumps(manifest))
+    spend_guard.record_owner_approval(manifest, 'test owner', approvals_path=spend_guard.DEFAULT_APPROVALS)
+    assert generative.Budget(store).config['per_video'] == expected

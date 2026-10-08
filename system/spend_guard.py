@@ -27,7 +27,7 @@ CATEGORY_CEILINGS_USD = {
     "answer_verifier": 5.0,
     "astra_authoring": 30.0,
     "onboarding": 10.0,
-    "video_generation": 50.0,
+    "video_generation": 100.0,  # Owner approved $100 total in chat on 2026-10-07.
 }
 PER_RUN_CEILINGS_USD = {"astra_authoring": 15.0}
 TOTAL_CEILING_USD = 45.0
@@ -145,11 +145,17 @@ class SpendGuard:
         """Spend counted against limits: settled actuals plus open or unknown
         reservations at their reserved worst case."""
         reservations = {}
-        for entry in _read_jsonl(self.ledger_path):
+        for index, entry in enumerate(_read_jsonl(self.ledger_path)):
             if entry["event"] == "reserve":
-                reservations[entry["reservation_id"]] = dict(entry)
+                # Older app-side video reservations carry no reservation_id;
+                # they can never be paired with a settlement, so they stay
+                # counted at their worst case (conservative).
+                key = entry.get("reservation_id") or f"unpaired:{index}"
+                reservations[key] = dict(entry)
             elif entry["event"] == "settle":
-                row = reservations[entry["reservation_id"]]
+                row = reservations.get(entry.get("reservation_id"))
+                if row is None:
+                    continue
                 if entry.get("actual_usd") is not None:
                     row["counted"] = float(entry["actual_usd"])
                 row["settled"] = True

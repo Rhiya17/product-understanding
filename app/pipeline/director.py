@@ -27,7 +27,7 @@ from app.pipeline.store import REPO_ROOT
 MODEL = "claude-opus-5"
 MAX_TOKENS = 10000
 MAX_SHOTS = 3
-MAX_MANUAL_PAGES = 4
+MAX_MANUAL_PAGES = 6
 CROP_ASPECT = (1.3, 2.0)          # the generated frame is 16:9; wider crops get black bars
 MAX_PHOTOS_PER_PRODUCT = 24      # the right photo is often not among the first few
 CRITIC_FRAMES = 12
@@ -152,15 +152,23 @@ def manual_page_images(product_dir, steps):
     vault = REPO_ROOT / "source-vault" / product_dir
     sources = {s["source_id"]: s for s in json.loads((vault / "manifest.json").read_text())["sources"]}
     pages, seen = [], set()
-    for step in steps:
-        for source_id, page in step.get("manual_pages", []):
-            source = sources.get(source_id)
-            if (source_id, page) in seen or not source or not str(source.get("local_path", "")).endswith(".pdf"):
-                continue
-            seen.add((source_id, page))
-            path = render_pdf_page(vault / source["local_path"], page,
-                                   REPO_ROOT / "app" / "cache" / "pdf-pages", source.get("sha256"))
-            pages.append((source_id, page, path))
+    required = list(dict.fromkeys(tuple(page) for step in steps
+                                  for page in step.get("required_manual_pages", [])))
+    if len(required) > MAX_MANUAL_PAGES:
+        raise ValueError("Required manual evidence exceeds the video reference limit")
+    ordered = required + [page for step in steps for page in step.get("manual_pages", [])]
+    for source_id, page in ordered:
+        source = sources.get(source_id)
+        if (source_id, page) in seen:
+            continue
+        if not source or not str(source.get("local_path", "")).endswith(".pdf"):
+            if (source_id, page) in required:
+                raise ValueError(f"Required manual reference is unavailable: {source_id}, page {page}")
+            continue
+        seen.add((source_id, page))
+        path = render_pdf_page(vault / source["local_path"], page,
+                               REPO_ROOT / "app" / "cache" / "pdf-pages", source.get("sha256"))
+        pages.append((source_id, page, path))
     return pages[:MAX_MANUAL_PAGES]
 
 

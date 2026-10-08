@@ -130,7 +130,7 @@ def check_video(video, scene):
 
 def procedure_steps(product_dir, procedure_id):
     """Verified steps (text + claim id) and product name, from the answer engine."""
-    from system.answer_engine import AnswerEngine
+    from system.answer_engine import AnswerEngine, linked_procedures, tokens, ACTION_TOKENS
     engine = AnswerEngine(REPO_ROOT / "evidence-packs", REPO_ROOT / "source-vault")
     product = engine.products().get(product_dir)
     procedure = product.procedures.get(procedure_id) if product else None
@@ -149,19 +149,62 @@ def procedure_steps(product_dir, procedure_id):
                 pages.append((obj["diagram_binding"]["source_id"], obj["diagram_binding"]["page"]))
             part_pages.setdefault(obj["part"], []).extend(p for p in pages if p[0] and p[1])
     steps = []
+    linked = linked_procedures(product, procedure)
     for step in procedure["steps"]:
         obj = step.get("object") or {}
         parts = obj.get("target_parts") or []
         pages = [(b.get("source_id"), b.get("page")) for b in step.get("source_bindings", [])
                  if b.get("page")]
+        required_pages = list(pages)
         for part in parts:
             pages += part_pages.get(part, [])
-        steps.append({"claim_id": step["claim_id"], "text": obj.get("action", ""),
+        # A step such as "Reset the indicator (see page 13)" is not a complete
+        # visual brief by itself. Carry its verified, conditional subprocedure
+        # and cited pages into the same parent step, retaining chapter identity.
+        supporting = []
+        words = tokens(obj.get("action", ""))
+        for other in linked:
+            core = other["id_terms"] - {"early", "tips"}
+            if not words or words[0] not in core & ACTION_TOKENS or not core <= set(words):
+                continue
+            if not all(product.eligible(s["claim_id"]) for s in other["steps"]):
+                raise RenderError("a required supporting procedure is no longer fully verified")
+            instructions = []
+            for child in other["steps"]:
+                bindings = child.get("source_bindings", [])
+                pages.extend((b["source_id"], b["page"]) for b in bindings if b.get("page"))
+                required_pages.extend((b["source_id"], b["page"]) for b in bindings if b.get("page"))
+                instructions.append({"claim_id": child["claim_id"],
+                                     "text": child["object"].get("action", ""),
+                                     "condition": (child.get("applicability") or {}).get("condition"),
+                                     "quotes": [b["quote"] for b in bindings if b.get("quote")]})
+            supporting.append({"procedure_id": other["id"], "steps": instructions})
+        entry = {"claim_id": step["claim_id"], "text": obj.get("action", ""),
                       "parts": parts,
                       "quote": next((b.get("quote") for b in step.get("source_bindings", [])
                                      if b.get("quote")), ""),
-                      "manual_pages": sorted(set(pages), key=lambda p: (p[0], p[1]))})
+                      "manual_pages": sorted(set(pages), key=lambda p: (p[0], p[1]))}
+        if supporting:
+            entry["supporting_procedures"] = supporting
+            entry["required_manual_pages"] = sorted(set(required_pages))
+        steps.append(entry)
     return steps, product.name
+
+
+def job_steps(job, question=""):
+    """(steps, product_name, fit) for a job: manual procedure steps, or for a
+    cargo-fit job the brief assembled from the verified fit calculation."""
+    from system import fit_answer
+    if fit_answer.is_fit_procedure(job["procedure_id"]):
+        from app.pipeline import fit_brief
+        try:
+            fit = fit_brief.build(job["product_dir"],
+                                  fit_brief.space_for_procedure(job["procedure_id"]))
+        except fit_brief.FitBriefError as exc:
+            raise RenderError(str(exc)) from None
+        return fit["steps"], fit["product_name"], fit
+    steps, product_name = procedure_steps(job["product_dir"], job["procedure_id"])
+    return steps, product_name, None
 
 
 def process_generation(store, job, generate=None):
@@ -170,6 +213,10 @@ def process_generation(store, job, generate=None):
     out_dir = store.root / "assets" / job["id"]
     out_dir.mkdir(parents=True, exist_ok=True)
     try:
+        from system import fit_answer
+        if fit_answer.is_fit_procedure(job["procedure_id"]):
+            raise RenderError("Fit videos are made by the Blender authoring pipeline, which "
+                              "measures the scene; the image-to-video path cannot.")
         steps, product_name = procedure_steps(job["product_dir"], job["procedure_id"])
         store.update_job_stage(job["id"], "rendering", 0.1)
         chain, previous = [], job.get("resume_from")
@@ -246,21 +293,27 @@ def process_authoring(store, job, generate=None):
     from app.pipeline import authoring
     generate = generate or authoring.generate
     try:
-        steps, product_name = procedure_steps(job["product_dir"], job["procedure_id"])
+        steps, product_name, fit = job_steps(job, store.question_for_job(job["id"]))
+        kwargs = {"fit": fit} if fit else {}
         asset = generate(store, job, steps, product_name,
                          progress=lambda stage, fraction: store.update_job_stage(
-                             job["id"], stage, fraction))
+                             job["id"], stage, fraction), **kwargs)
         store.complete_job(job["id"], asset)
         return "succeeded"
     except Exception as exc:  # A paid job is never automatically replayed.
-        message = str(exc) if isinstance(exc, authoring.AuthoringError) else (
+        message = str(exc) if isinstance(exc, (authoring.AuthoringError, RenderError)) else (
             "Video creation stopped. The written instructions are still available.")
         import openai
+        import anthropic
         if isinstance(exc, openai.APIStatusError) and getattr(exc, "code", None) in (
                 "credit_balance_exhausted", "insufficient_quota"):
             message = ("Video creation is unavailable because the OpenAI API account has "
                        "no available credits or quota. Add API credits or resolve the account's "
                        "billing limit, then retry. The written instructions are still available.")
+        elif isinstance(exc, anthropic.BadRequestError) and 'credit balance' in str(exc).lower():
+            message = ("The scene is saved, but its independent review needs Anthropic API "
+                       "credits. Add credits to the Anthropic account, then submit the question "
+                       "again to resume. The written instructions are still available.")
         return store.fail_job(job["id"], f"{type(exc).__name__}: {exc}"[:500],
                               retry=False, message=message)
 

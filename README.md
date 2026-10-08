@@ -48,22 +48,50 @@ customer demonstrations. Set the flag to `0` when those previews should be hidde
 
 ## Check that it works
 
-1. Click **How do I fold it?** on the Ready2Jet card.
+1. Click **Fold it** or **Try a demo** on the homepage.
 2. Confirm that seven written steps and the existing **Main view** video appear.
 3. Play the video, switch to **Rear view**, or use a step's play button.
 4. Existing main/rear clips should play immediately without API keys, Blender,
    FFmpeg, or a new render job.
 
-The homepage's decorative preview has a separate development switch. A product
-photo there is normal and does not mean answer videos are broken. To also enable
-that preview, start on macOS/Linux with:
+The homepage uses a cinematic, illustrative world with interactive question chips
+and example cards. **Explore** opens the product catalog; **Back to exploring**
+returns from an answer. Headphone and Mac questions use a matching listening
+scene. The artwork is decorative: answers, manufacturer photos, and videos still
+come from the existing evidence pipeline. Car-fit questions cannot establish a
+fit when the source material lacks the required dimensions.
+
+Homepage artwork needs no development-media flag. Artwork provenance and
+generation prompts are in `app/static/images/README.md`.
+
+The five example questions cover Ready2Jet folding, Model Y trunk fit, Ready2Jet
+brakes, headphones connected to a Mac, and Core 300S filter replacement. To check
+which answers currently have playable videos, run:
 
 ```sh
-SHOWME_DEV_MEDIA=1 .venv/bin/python app/server.py --port 8765
+.venv/bin/python scripts/check_video_usecases.py --base-url http://127.0.0.1:8765
 ```
 
-`SHOWME_DEV_MEDIA` currently must be set in the process environment; the local
-settings loader does not read it from `.env`.
+This read-only check asks each question and verifies partial MP4 playback. It does
+not generate videos or spend API credits. Add `--require-all` to fail the check
+when any scenario lacks a playable video. New videos appear in the active answer
+and in **My Videos** after generation and review finish.
+
+Submitting an actionable procedure question in the website automatically reuses
+an existing video or requests generation; no second "Make a video" click is
+needed. Repeated submissions share an active job. After a failure, submitting
+again resumes saved work when generation is available. Build errors and supported
+visual defects enter the bounded automatic repair loop. Missing evidence, depleted
+credits, and exhausted repair budgets remain explicit failures, never success.
+Programmatic read-only answer checks omit `generate=1`.
+
+To reconcile recorded API spending across video generation and evidence
+verification, run `.venv/bin/python scripts/report_api_spend.py`. It reports
+per-provider totals, today's Los Angeles subtotal, and individual calls. Settled
+cost estimates and unreconciled reservations are separate; deposits are not
+counted as spending. External tools or agents without local usage records must
+be reconciled separately against provider billing. A working snapshot is kept at
+`output/api-costs/latest.json`.
 
 ## What your friend must configure locally
 

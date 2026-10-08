@@ -66,10 +66,19 @@ def main() -> int:
             listed_paths.add(pathlib.Path(lp).as_posix())
             f = pdir / lp
             if not f.exists():
+                if src.get("storage") == "local_only":
+                    # Large media deliberately kept out of Git (.gitignore);
+                    # its hash is still checked wherever the file is present.
+                    print(f"{pdir.name}: local-only file not present: {lp}")
+                    continue
                 failures.append(f"{pdir.name}: manifest references missing file {lp}")
                 continue
             digest = hashlib.sha256(f.read_bytes()).hexdigest()
-            if src.get("sha256") and digest != src["sha256"]:
+            if not src.get("sha256"):
+                # Rule 2: every local file should be hash-pinned, or later edits go
+                # unseen. Older packs predate this check, so it warns, not fails.
+                print(f"WARNING {pdir.name}/{lp}: no sha256 recorded")
+            elif digest != src["sha256"]:
                 failures.append(f"{pdir.name}/{lp}: sha256 mismatch")
             if f.suffix.lower() == ".pdf":
                 if PdfReader is None:

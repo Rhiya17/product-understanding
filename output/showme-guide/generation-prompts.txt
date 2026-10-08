@@ -1,0 +1,38 @@
+ShowMe virtual guide: two connected experience states.
+Built-in image-generation tool, with user reference and prior concept.
+Still-image concepts, not a working app or actual video. Generated product imagery is illustrative.
+
+STATE 1
+Use case: ui-mockup. Generate a finished high fidelity ShowMe immersive desktop homepage, landscape 16:10 edge-to-edge screenshot, no outer frame. Combine the two reference images: first supplies the friendly clearly virtual human store assistant, second supplies warm photorealistic twilight world and polished desktop composition. This is STATE 1: CUSTOMER ASKS THE GUIDE. One coherent screen, not comparison collage.
+
+Retain cinematic modern driveway/open pavilion at dusk with warm interior lighting, dark navy shadows, rose twilight skyline, reflective pavement. Premium beige compact stroller center-right foreground, graphite SUV with open trunk in right background, soft warm selection ring on pavement under stroller. Exquisite grounded physical realism, no generic white webpage.
+
+Key change: the human is the primary conversational interface. Place a friendly female VIRTUAL PRODUCT GUIDE at left-center, waist-up or three-quarter standing, with clear natural facial expression, tasteful white shirt, subtle translucent blue-violet luminous contours on her silhouette and sleeves inspired by the first reference. Make her visibly a sophisticated digital guide but human and approachable, not opaque ordinary shopper, not a robot, not sci-fi armor. She faces viewer with one open conversational hand and other hand gently indicates stroller. Keep her face and hands unobscured. Preserve roomy composition for a conversation surface directly beside and BELOW her outstretched hand on left, so it obviously belongs to this assistant, NOT a generic search engine at top. Small label beside her 'ShowMe guide · AI'.
+
+Top nav ShowMe wordmark and violet-blue loop mark, 'Explore products' 'How it works' 'My demos'.
+Upper center-left above guide, concise strong headline white and violet:
+'Ask a product anything.'
+'See it in the real world.'
+Smaller line 'Your virtual product guide. Ask, watch, and explore.'
+Avoid giant marketing paragraphs.
+
+In the left conversational area visually tethered to guide with a tiny speech tail, elegant dark translucent panel with hairline periwinkle border, legible white sentence 'What would you like to know about this product?'
+Immediately BELOW in same conversation surface one large input containing 'How do I fold this stroller?' with small microphone icon and bright violet-blue circular send arrow at right. Below small suggested questions 'Show me the controls' and 'Will it fit in my car?'. Conversation surface narrow enough that stroller remains unobstructed.
+Under stroller discreet label 'Travel stroller' and 'Change product' link.
+
+Bottom narrow integrated product selection filmstrip, small photographic cutouts/thumbnails, clearly a product switcher rather than four unrelated action cards: beige stroller selected, black headphones, silver laptop, white coffee machine. Heading 'Start with any product'; labels 'Stroller' 'Headphones' 'Laptop' 'Coffee machine', plus small 'Find your product →'. These establish universality but do not dominate. No shopping cart, prices, ratings. Tiny bottom footer 'Ask naturally • Watch a demonstration • Keep exploring'. Tiny 'Experience concept'.
+Best-in-class premium UI typography, breathtaking photorealistic backdrop, legibility and usability, around 60% scene and 40% interface. Output one complete desktop homepage state. No extra video panel yet, this is the inviting before state. Do not put any arbitrary text, misspellings, or fake result claims.
+
+STATE 2
+Use case: ui-mockup / precise-object-edit. The reference is the approved visual direction for ShowMe. Generate its NEXT INTERACTION STATE as a finished landscape 16:10 desktop homepage screenshot. Preserve EXACT SAME ShowMe logo, same female virtual guide identity/face/clothing, same beige stroller design, same twilight driveway world with open graphite SUV trunk, warm gold light and subtle purple/blue UI. No frame or collage. This is STATE 2: THE GUIDE ANSWERS WITH A REAL DEMONSTRATION VIDEO INSIDE THE WORLD.
+
+Recompose intentionally to prioritize answer video. Keep top navigation 'ShowMe' 'Explore products' 'How it works' 'My demos'. The big marketing headline now collapses to a modest top-left line 'Ask. Watch. Understand.' Under it a quiet context line 'Travel stroller · How do I fold it?'.
+Move same virtual guide to left 25 percent of screen at natural scale, clearly visible face and upper body, subtle luminous translucent sleeve edges as before. She gestures toward the video, warmly helpful. Label 'ShowMe guide · AI'. Small speech bubble attached to her, legible exact copy 'Sure — here’s how it folds.' Her face and hands are not obscured.
+
+MAIN VIDEO: a large rectangular 16:9 cinematic video surface occupies center-right from roughly x=32% to 93%, y=20% to 74%. It feels like a crisp screen opened in the world, subtle fine violet edge, depth and contact glow on pavement, but the actual content inside is FULLY OPAQUE, PHOTOREALISTIC REAL FOOTAGE, NOT holographic, NOT blue-tinted. It shows a waist-down real person in cream casual trousers and a cream long-sleeve top with their hands near the handle of the SAME beige stroller, a clear full-object view at the beginning of a folding demonstration on a bright natural driveway. One coherent stroller fully visible inside video, no collage or impossible geometry, no fake action arrows, no mechanical instructions invented. A dark small title at top of video reads 'How to fold your stroller'. A proper dark playback bar along its bottom shows pause icon, timeline, volume, captions, expand. Do not fabricate exact timestamps or step counts. Just to right below video 'View steps' 'Sources' and top right visible close X. World background remains visible all around video; same actual hero stroller remains visible at small scale in far right foreground or near lower-right, not blocking video. Do not introduce a second woman beside guide in outer world; real person's body is only inside video.
+
+Immediately BELOW video, on same aligned center-right width: two concise follow-up suggestion pills 'Show me from behind' and 'Zoom in on the handle'; a wide dark translucent text input reads 'Ask her a follow-up…' with microphone left and violet-blue send right. The guide, demo, and input feel connected as one conversation. No conventional chat message history or dashboard sidebar.
+
+Bottom-left small subdued product selector thumbnails stroller selected, headphones, laptop, coffee machine with tiny label 'Explore another product'. Keep these secondary, reduced from previous state, allowing video to own screen. Small 'Back to exploring' text link at upper left. Tiny 'Experience concept' bottom right.
+
+The design must communicate immediately: the virtual store assistant understood my question and showed me a REAL demonstration, while I stay in the same immersive environment. Premium coherent photorealism, immaculate legible typography, useful polished controls, no excess paragraph copy, no meaningless badges, no claim of verified exact product instruction in this concept. Preserve warm grounded world and inviting AI guide from reference.

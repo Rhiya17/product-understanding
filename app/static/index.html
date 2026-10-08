@@ -3,18 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ShowMe</title>
+  <title>ProductWorld — See it before you buy it</title>
   <link rel="stylesheet" href="/static/styles.css">
   <link rel="stylesheet" href="/static/design.css">
+  <link rel="stylesheet" href="/static/world.css">
+  <link rel="preload" href="/static/images/driveway-world.jpg" as="image">
+  <meta name="theme-color" content="#090b13">
 </head>
-<body>
+<body data-world="stroller">
+  <a class="skip-link" href="#answer-form">Skip to your question</a>
+  <div class="world-backdrop" aria-hidden="true">
+    <div class="world-scene world-scene-stroller"></div>
+    <div class="world-scene world-scene-listening"></div>
+  </div>
   <header class="topbar">
-    <a class="wordmark" href="/" aria-label="ShowMe home"><span class="wordmark-mark" aria-hidden="true"></span>ShowMe</a>
+    <a class="wordmark" href="/" aria-label="ProductWorld home"><span class="wordmark-mark" aria-hidden="true"></span>ProductWorld</a>
+    <nav class="primary-nav" aria-label="Main navigation">
+      <button type="button" data-open-catalog>Explore</button>
+      <a href="#experiences" data-home-section="experiences">Examples</a>
+      <a href="#how-it-works" data-home-section="how-it-works">How it works</a>
+    </nav>
     <div class="topbar-actions">
-      <p class="topbar-note">Local dev build</p>
       <button id="my-videos-button" class="my-videos-button" type="button" aria-controls="my-videos">
         My Videos <span id="my-videos-badge" class="badge-count" hidden>0</span>
       </button>
+      <button class="demo-button" type="button" data-experience="fold">Demo <span aria-hidden="true">↗</span></button>
     </div>
   </header>
 
@@ -30,21 +43,29 @@
     </section>
 
     <section class="hero" aria-labelledby="page-title">
+      <button id="back-to-world" class="back-to-world" type="button" hidden>← Back to exploring</button>
       <div class="hero-copy">
-        <p class="eyebrow">Answers from the manufacturer's own manuals</p>
-        <h1 id="page-title">Ask how it works.<br>See it done.</h1>
-        <p class="intro">Step-by-step answers with the exact source for every fact, and a demonstration when one exists.</p>
+        <p class="eyebrow">A more visual internet for physical products</p>
+        <h1 id="page-title">Stop guessing whether<br>a product will work for you.<br><span>See it before you buy it.</span></h1>
+        <p class="intro">Turn your product questions into visual answers<br>with AI world models.</p>
       </div>
 
       <form id="answer-form" class="ask">
         <label class="question-label" for="question">Your question</label>
         <div class="question-row">
+          <span class="ask-spark" aria-hidden="true">✦</span>
           <input id="question" name="q" type="search"
-                 placeholder="How do I fold the Ready2Jet stroller?"
+                 placeholder="Ask a question about a product…"
                  autocomplete="off" required>
-          <button type="submit">Find answer</button>
+          <button type="submit" aria-label="Find answer"><span class="submit-icon" aria-hidden="true">→</span><span class="sr-only">Find answer</span></button>
         </div>
 
+        <div id="world-suggestions" class="world-suggestions" aria-label="Questions to explore">
+          <button type="button" data-experience="fold">Can you fold this stroller?</button>
+          <button type="button" data-experience="fit">Will it fit in a Tesla Model Y?</button>
+          <button type="button" data-experience="controls">Show me the brakes</button>
+        </div>
+        <p class="followup-hint">Ask a follow-up. Keep exploring.</p>
         <div class="filters">
           <label for="product">Product</label>
           <select id="product" name="product">
@@ -80,7 +101,10 @@
         </div>
       </form>
 
-      <figure id="hero-media" class="hero-media" hidden></figure>
+      <div class="scene-invitation">
+        <button id="scene-invitation" type="button" data-experience="fit">Will it fit in a Tesla Model Y?<br><small>Explore how it fits.</small> <span aria-hidden="true">↗</span></button>
+      </div>
+      <p class="scene-caption"><span class="scene-dot" aria-hidden="true"></span><span id="scene-caption">Featured world · Travel stroller</span><small>Illustrative scene</small></p>
 
       <div id="preview-warning" class="preview-warning" hidden>
         Preview mode may include unpublished facts. Any such facts are clearly labeled.
@@ -88,12 +112,49 @@
       <div id="review-mode-note" class="review-mode-note" hidden></div>
     </section>
 
-    <section id="catalog" class="catalog" aria-labelledby="catalog-title">
-      <h2 id="catalog-title">Products you can ask about</h2>
+    <section id="how-it-works" class="world-features" aria-label="How ProductWorld works">
+      <div><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg></span><p><strong>Grounded in your product data</strong><span>Specs, manuals, photos, videos and more.</span></p></div>
+      <div><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 4 12 8-12 8V4Z"/></svg></span><p><strong>Real-world simulations</strong><span>Grounded in verified product specifications.</span></p></div>
+      <div><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7H7a5 5 0 0 0 0 10h2m6-10h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg></span><p><strong>Multi-modal answers</strong><span>Videos, visual demonstrations and text.</span></p></div>
+      <div><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8 8 0 0 1-8 8H7l-4 2 1.5-5A8 8 0 1 1 21 11.5Z"/></svg></span><p><strong>Explore with confidence</strong><span>For shoppers, product owners and brands.</span></p></div>
+    </section>
+
+    <section id="experiences" class="experiences" aria-labelledby="experiences-title">
+      <div class="section-heading">
+        <h2 id="experiences-title">A question becomes an experience.</h2>
+        <button type="button" class="explore-link" data-open-catalog>Explore more products <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="experience-cards">
+        <button class="experience-card is-active" type="button" data-experience="fold" aria-pressed="true">
+          <span class="experience-image experience-fold"></span><span class="play-icon" aria-hidden="true">▶</span>
+          <span class="experience-title">Fold this stroller <span aria-hidden="true">↗</span></span>
+        </button>
+        <button class="experience-card" type="button" data-experience="fit" aria-pressed="false">
+          <span class="experience-image experience-fit"></span><span class="play-icon" aria-hidden="true">↗</span>
+          <span class="experience-title">Fit in a Tesla Model Y <span aria-hidden="true">↗</span></span>
+        </button>
+        <button class="experience-card" type="button" data-experience="controls" aria-pressed="false">
+          <span class="experience-image experience-controls"></span><span class="play-icon" aria-hidden="true">↗</span>
+          <span class="experience-title">Operate the brakes <span aria-hidden="true">↗</span></span>
+        </button>
+        <button class="experience-card" type="button" data-experience="headphones" aria-pressed="false">
+          <span class="experience-image experience-headphones"></span><span class="play-icon" aria-hidden="true">▶</span>
+          <span class="experience-title">Connect my headphones <span aria-hidden="true">↗</span></span>
+        </button>
+        <button class="experience-card" type="button" data-experience="filter" aria-pressed="false">
+          <span class="experience-image experience-filter"></span><span class="play-icon" aria-hidden="true">↗</span>
+          <span class="experience-title">Replace the air filter <span aria-hidden="true">↗</span></span>
+        </button>
+      </div>
+    </section>
+
+    <section id="catalog" class="catalog" aria-labelledby="catalog-title" hidden>
+      <div class="section-heading"><div><p class="eyebrow">Find your next question</p><h2 id="catalog-title">Products you can explore</h2></div><button id="close-catalog" type="button" class="link-button">Close ×</button></div>
       <div id="product-cards" class="product-cards"></div>
     </section>
 
-    <section id="answer-region" class="answer-region" aria-live="polite">
+    <section id="answer-region" class="answer-region" aria-live="polite" aria-busy="false">
+      <p id="search-status" class="search-status" role="status" hidden>Finding your answer…</p>
       <div id="empty-state" class="empty-state" hidden>
         <p id="empty-message">Answers appear here with the manufacturer source for each fact.</p>
         <div id="example-questions" class="example-questions" aria-label="Example questions"></div>

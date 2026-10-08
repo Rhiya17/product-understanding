@@ -13,7 +13,7 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from system import evidence_status
+from system import evidence_status, fit_answer
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 ENGINE_VERSION = "answer-engine-v2.0"
@@ -48,6 +48,7 @@ PHRASES = [
     (r"\bfrom (the )?(behind|back|rear)\b|\bfrom the side\b|\bother side\b|\banother angle\b|\bdifferent angle\b|\brotate\b|\bturn it around\b", " viewrequest "),
     (r"\bdb\b|\bdecibels?\b", " noise "),
     (r"\b(mac ?book|mac)\b", " macbook "),
+    (r"\b(tesla )?model ?y\b", " teslamodely "),
     (r"\b300s[- ]?p\b|\b-p (version|model|revision)\b|\bheapaplvsus0073a\b", " rev300sp "),
     (r"\bnot (the )?-?p\b|\boriginal (core )?300s\b|\bheapaplvsus0073\b(?!a)", " rev300sorig "),
     (r"\b3\.5 ?mm\b", " 3.5mm "),
@@ -117,6 +118,7 @@ PRODUCT_ALIASES = {
     "bose-qc-ultra-headphones": ({"bose", "quietcomfort", "qc"}, {"headphone"}),
     "apple-macbook-air-13-m3": ({"macbook", "apple"}, set()),
     "levoit-core-300s": ({"levoit", "300s", "rev300sp", "rev300sorig"}, {"purifier"}),
+    "tesla-model-y": ({"tesla", "teslamodely"}, set()),
 }
 FAMILY_LABELS = {"battery_life": "Battery life", "quick_charge": "Quick charge"}
 LABELS = {
@@ -352,7 +354,12 @@ class AnswerEngine:
         if intent.actions and not intent.actions & (procedure["id_terms"] | procedure["step_terms"]):
             return 0
         if intent.actions and not intent.actions & procedure["id_terms"]:
-            score = score * 0.3 - 2
+            control = procedure["id_terms"] - ACTION_TOKENS - PRODUCT_WORDS
+            named_control = (control and not procedure["id_terms"] & ACTION_TOKENS
+                             and control <= intent.parts and not intent.attributes
+                             and (intent.kind == "how_to" or intent.video_requested))
+            if not named_control:
+                score = score * 0.3 - 2
         # Qualifiers in the procedure name the question didn't ask for
         # ("tips", "early") make it a worse match than the plain procedure.
         score -= len(procedure["id_terms"] - intent.terms - PRODUCT_WORDS)
@@ -435,6 +442,9 @@ class AnswerEngine:
             primary = context["product_dir"]
         doc = AnswerDocument(question, intent)
 
+        fit = fit_answer.is_fit_question(question, set(detected) | {primary})
+        if fit:
+            return fit_answer.answer(doc, self, *fit).finish()
         if intent.view_request:
             return self._view(doc, intent, primary, context).finish()
         if primary is None:
@@ -528,6 +538,16 @@ class AnswerEngine:
 
         if intent.kind == "yes_no":
             if self._yes_no(doc, intent, product, procedure, facts):
+                return
+        # Some procedures are named for their control, not an action ("brake").
+        # A request to operate that control needs its complete procedure, not
+        # the first incidental mention of it in another procedure such as folding.
+        if procedure and not intent.attributes and (
+                intent.kind == "how_to" or intent.video_requested):
+            control = procedure["id_terms"] - ACTION_TOKENS - PRODUCT_WORDS
+            if control and not procedure["id_terms"] & ACTION_TOKENS and control <= intent.parts and (
+                    not intent.actions or intent.actions & procedure["step_terms"]):
+                doc.add_procedure(product, procedure, self, secondary)
                 return
         # "Open the buckle": the asked action on the asked part is one step
         # inside a procedure that is about something else.

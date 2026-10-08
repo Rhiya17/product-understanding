@@ -1,0 +1,45 @@
+Generated with the built-in image-generation tool.
+Future homepage concept; product imagery and example playback timing are illustrative.
+
+Use case: ui-mockup.
+Create a beautifully finished high fidelity ShowMe HOMEPAGE visual concept. Single tall desktop webpage screenshot approximately 1440 wide x 1900 high, crisp readable text, polished professional art direction. This is a universal physical-product understanding assistant, NOT stroller ecommerce, NOT a manual library. The defining idea: choose any physical product, ask a question, WATCH a focused visual answer, ask follow-ups that update the same demonstration. Clarity in first 3 seconds is paramount. Feature a stroller prominently but clearly include multiple other products. This is a new design, don't copy any previous scene.
+
+VISUAL SYSTEM: warm ivory architectural background, near-black editorial type, vivid cobalt-blue action accents, warm natural daylight, subtle physical depth through a continuous curved plaster cyclorama backdrop, exquisite product photography. Contemporary, inviting, smart and human. The world is a single spacious product demonstration studio with useful close-up detail, not fantasy scenery. No neon, paper mountains, floating cards, isometric rooms, glassmorphism, retail prices, shopping carts, buy buttons, or decorative marketing gibberish. Generous spacing but page densely purposeful enough to explain the service. Flat sections separated by fine lines; no card grid.
+
+PAGE TOP:
+Compact navigation on white: ShowMe bold wordmark left, middle 'How it works' and 'Explore products', right blue 'Try ShowMe' button.
+Large left headline in the hero exactly:
+'Ask about any product.
+See how it works.'
+Below clear readable two-line subhead exactly:
+'ShowMe answers your questions with visual demonstrations.
+Ask a follow-up. The explanation changes with you.'
+Below broad grounded search input with magnifier and placeholder 'What product do you want to understand?' and blue 'Find product' button. Secondary text link 'Or try the stroller below'.
+A small friendly sequence beneath: '1 Choose a product   →   2 Ask a question   →   3 Watch and ask again'.
+
+HERO DEMONSTRATION beneath intro across almost full page width, directly integrated in physical ivory studio stage, not a floating video card:
+Section eyebrow 'TRY IT WITH A STROLLER'.
+Main product dominant on right: realistic black Graco Ready2Jet compact travel stroller, fully open, front three-quarter view, entire object visible, soft grounded shadow. Product is empty, no children. Exact model label near product 'Graco Ready2Jet'. Small outlined blue focus ring at handle only, no false instructional annotation. On the left of this same scene a clean conversational demonstration, no message bubbles:
+small label 'YOU ASK'
+large 'How do I fold it?'
+blue rounded-rectangle button with play icon 'Watch the answer'.
+Below small 'Then ask…' and two underlined obvious clickable text choices 'Show me from behind' and 'Zoom in on the handle'.
+Small restrained subtitle 'One product. An explanation you can keep exploring.'
+Bottom of stage realistic simple video playback rail, 'Play' then thin timeline and 'View steps' and 'Sources' at right, with a clearly visible follow-up text input below 'Ask another question about this stroller…' and blue arrow send button. This is the main proof of product experience, large enough to see clearly.
+
+NEXT SECTION:
+Heading 'Your products. Your questions.'
+Subhead 'Pick a product to start exploring.'
+A single horizontal open shelf on white, FOUR product cutout photos clearly separated WITHOUT boxed cards: compact stroller with label 'Strollers' and example 'How does it fold?'; black over-ear headphones labeled 'Headphones' with 'How do I connect them?'; silver open laptop labeled 'Laptops' with 'Where is that port?'; white cylindrical air purifier labeled 'Home appliances' with 'How do I change the filter?'. Stroller selected with a simple cobalt underline. No prices, no reviews, no buy CTA. Small link 'Explore all products →'.
+
+BOTTOM SECTION:
+Heading 'From “what is this?” to “I’ve got it.”'
+Six clear capability labels in a clean two-row three-column typographic layout, each with tiny elegant line icon and concise description, no cards:
+'Set it up' / 'Follow a visual walkthrough.'
+'Find a part' / 'See the exact control or connection.'
+'Learn how it works' / 'Watch an action, step by step.'
+'Connect your devices' / 'See how products work together.'
+'Troubleshoot' / 'Understand what to check next.'
+'Get the facts' / 'Ask about specs, care, and limits.'
+Bottom slim trust line 'Based on product manuals and trusted sources.' plus understated 'Concept design'.
+Use exact text legibly, strong visual hierarchy, physically convincing stroller and other products, and an unmistakable product assistant identity. It must look like a real beautifully designed homepage ready for customer review, not a moodboard or presentation. Render entire page as one coherent image.

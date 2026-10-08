@@ -1,0 +1,580 @@
+00:00.261  blend            | Read blend: "/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/scene.blend"
+00:03.666  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0001.png'
+SHOWME_PROGRESS 1/288
+00:06.775  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0002.png'
+SHOWME_PROGRESS 2/288
+00:09.911  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0003.png'
+SHOWME_PROGRESS 3/288
+00:13.013  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0004.png'
+SHOWME_PROGRESS 4/288
+00:16.236  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0005.png'
+SHOWME_PROGRESS 5/288
+00:19.412  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0006.png'
+SHOWME_PROGRESS 6/288
+00:22.508  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0007.png'
+SHOWME_PROGRESS 7/288
+00:25.618  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0008.png'
+SHOWME_PROGRESS 8/288
+00:28.732  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0009.png'
+SHOWME_PROGRESS 9/288
+00:31.863  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0010.png'
+SHOWME_PROGRESS 10/288
+00:35.006  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0011.png'
+SHOWME_PROGRESS 11/288
+00:38.214  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0012.png'
+SHOWME_PROGRESS 12/288
+00:41.382  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0013.png'
+SHOWME_PROGRESS 13/288
+00:44.549  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0014.png'
+SHOWME_PROGRESS 14/288
+00:47.714  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0015.png'
+SHOWME_PROGRESS 15/288
+00:50.896  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0016.png'
+SHOWME_PROGRESS 16/288
+00:54.075  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0017.png'
+SHOWME_PROGRESS 17/288
+00:57.289  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0018.png'
+SHOWME_PROGRESS 18/288
+01:00.510  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0019.png'
+SHOWME_PROGRESS 19/288
+01:03.735  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0020.png'
+SHOWME_PROGRESS 20/288
+01:06.941  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0021.png'
+SHOWME_PROGRESS 21/288
+01:10.475  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0022.png'
+SHOWME_PROGRESS 22/288
+01:13.735  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0023.png'
+SHOWME_PROGRESS 23/288
+01:16.986  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0024.png'
+SHOWME_PROGRESS 24/288
+01:20.270  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0025.png'
+SHOWME_PROGRESS 25/288
+01:23.543  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0026.png'
+SHOWME_PROGRESS 26/288
+01:26.972  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0027.png'
+SHOWME_PROGRESS 27/288
+01:30.245  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0028.png'
+SHOWME_PROGRESS 28/288
+01:33.538  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0029.png'
+SHOWME_PROGRESS 29/288
+01:36.823  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0030.png'
+SHOWME_PROGRESS 30/288
+01:40.142  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0031.png'
+SHOWME_PROGRESS 31/288
+01:43.456  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0032.png'
+SHOWME_PROGRESS 32/288
+01:46.801  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0033.png'
+SHOWME_PROGRESS 33/288
+01:50.116  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0034.png'
+SHOWME_PROGRESS 34/288
+01:53.446  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0035.png'
+SHOWME_PROGRESS 35/288
+01:56.767  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0036.png'
+SHOWME_PROGRESS 36/288
+02:00.140  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0037.png'
+SHOWME_PROGRESS 37/288
+02:03.483  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0038.png'
+SHOWME_PROGRESS 38/288
+02:06.858  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0039.png'
+SHOWME_PROGRESS 39/288
+02:10.211  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0040.png'
+SHOWME_PROGRESS 40/288
+02:13.576  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0041.png'
+SHOWME_PROGRESS 41/288
+02:16.933  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0042.png'
+SHOWME_PROGRESS 42/288
+02:20.333  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0043.png'
+SHOWME_PROGRESS 43/288
+02:23.721  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0044.png'
+SHOWME_PROGRESS 44/288
+02:27.139  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0045.png'
+SHOWME_PROGRESS 45/288
+02:30.588  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0046.png'
+SHOWME_PROGRESS 46/288
+02:34.104  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0047.png'
+SHOWME_PROGRESS 47/288
+02:37.671  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0048.png'
+SHOWME_PROGRESS 48/288
+02:41.297  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0049.png'
+SHOWME_PROGRESS 49/288
+02:44.974  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0050.png'
+SHOWME_PROGRESS 50/288
+02:48.717  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0051.png'
+SHOWME_PROGRESS 51/288
+02:52.569  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0052.png'
+SHOWME_PROGRESS 52/288
+02:56.452  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0053.png'
+SHOWME_PROGRESS 53/288
+03:00.425  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0054.png'
+SHOWME_PROGRESS 54/288
+03:04.448  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0055.png'
+SHOWME_PROGRESS 55/288
+03:08.570  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0056.png'
+SHOWME_PROGRESS 56/288
+03:12.734  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0057.png'
+SHOWME_PROGRESS 57/288
+03:17.086  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0058.png'
+SHOWME_PROGRESS 58/288
+03:21.512  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0059.png'
+SHOWME_PROGRESS 59/288
+03:26.057  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0060.png'
+SHOWME_PROGRESS 60/288
+03:30.702  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0061.png'
+SHOWME_PROGRESS 61/288
+03:35.516  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0062.png'
+SHOWME_PROGRESS 62/288
+03:40.477  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0063.png'
+SHOWME_PROGRESS 63/288
+03:45.548  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0064.png'
+SHOWME_PROGRESS 64/288
+03:50.746  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0065.png'
+SHOWME_PROGRESS 65/288
+03:55.992  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0066.png'
+SHOWME_PROGRESS 66/288
+04:01.218  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0067.png'
+SHOWME_PROGRESS 67/288
+04:06.354  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0068.png'
+SHOWME_PROGRESS 68/288
+04:11.368  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0069.png'
+SHOWME_PROGRESS 69/288
+04:16.256  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0070.png'
+SHOWME_PROGRESS 70/288
+04:21.074  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0071.png'
+SHOWME_PROGRESS 71/288
+04:25.819  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0072.png'
+SHOWME_PROGRESS 72/288
+04:30.486  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0073.png'
+SHOWME_PROGRESS 73/288
+04:35.046  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0074.png'
+SHOWME_PROGRESS 74/288
+04:39.547  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0075.png'
+SHOWME_PROGRESS 75/288
+04:43.940  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0076.png'
+SHOWME_PROGRESS 76/288
+04:48.299  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0077.png'
+SHOWME_PROGRESS 77/288
+04:52.636  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0078.png'
+SHOWME_PROGRESS 78/288
+04:56.918  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0079.png'
+SHOWME_PROGRESS 79/288
+05:01.196  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0080.png'
+SHOWME_PROGRESS 80/288
+05:05.483  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0081.png'
+SHOWME_PROGRESS 81/288
+05:09.774  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0082.png'
+SHOWME_PROGRESS 82/288
+05:14.059  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0083.png'
+SHOWME_PROGRESS 83/288
+05:18.322  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0084.png'
+SHOWME_PROGRESS 84/288
+05:22.588  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0085.png'
+SHOWME_PROGRESS 85/288
+05:26.876  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0086.png'
+SHOWME_PROGRESS 86/288
+05:31.163  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0087.png'
+SHOWME_PROGRESS 87/288
+05:35.426  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0088.png'
+SHOWME_PROGRESS 88/288
+05:39.703  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0089.png'
+SHOWME_PROGRESS 89/288
+05:43.977  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0090.png'
+SHOWME_PROGRESS 90/288
+05:48.232  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0091.png'
+SHOWME_PROGRESS 91/288
+05:52.502  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0092.png'
+SHOWME_PROGRESS 92/288
+05:56.817  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0093.png'
+SHOWME_PROGRESS 93/288
+06:01.091  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0094.png'
+SHOWME_PROGRESS 94/288
+06:05.410  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0095.png'
+SHOWME_PROGRESS 95/288
+06:09.735  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0096.png'
+SHOWME_PROGRESS 96/288
+06:14.090  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0097.png'
+SHOWME_PROGRESS 97/288
+06:18.489  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0098.png'
+SHOWME_PROGRESS 98/288
+06:22.866  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0099.png'
+SHOWME_PROGRESS 99/288
+06:27.186  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0100.png'
+SHOWME_PROGRESS 100/288
+06:31.460  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0101.png'
+SHOWME_PROGRESS 101/288
+06:35.746  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0102.png'
+SHOWME_PROGRESS 102/288
+06:40.039  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0103.png'
+SHOWME_PROGRESS 103/288
+06:44.284  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0104.png'
+SHOWME_PROGRESS 104/288
+06:48.519  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0105.png'
+SHOWME_PROGRESS 105/288
+06:52.925  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0106.png'
+SHOWME_PROGRESS 106/288
+06:57.357  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0107.png'
+SHOWME_PROGRESS 107/288
+07:01.604  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0108.png'
+SHOWME_PROGRESS 108/288
+07:05.848  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0109.png'
+SHOWME_PROGRESS 109/288
+07:10.111  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0110.png'
+SHOWME_PROGRESS 110/288
+07:14.371  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0111.png'
+SHOWME_PROGRESS 111/288
+07:18.663  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0112.png'
+SHOWME_PROGRESS 112/288
+07:22.986  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0113.png'
+SHOWME_PROGRESS 113/288
+07:27.335  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0114.png'
+SHOWME_PROGRESS 114/288
+07:31.670  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0115.png'
+SHOWME_PROGRESS 115/288
+07:35.963  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0116.png'
+SHOWME_PROGRESS 116/288
+07:40.247  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0117.png'
+SHOWME_PROGRESS 117/288
+07:44.492  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0118.png'
+SHOWME_PROGRESS 118/288
+07:48.731  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0119.png'
+SHOWME_PROGRESS 119/288
+07:52.967  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0120.png'
+SHOWME_PROGRESS 120/288
+07:57.209  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0121.png'
+SHOWME_PROGRESS 121/288
+08:01.407  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0122.png'
+SHOWME_PROGRESS 122/288
+08:05.605  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0123.png'
+SHOWME_PROGRESS 123/288
+08:09.793  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0124.png'
+SHOWME_PROGRESS 124/288
+08:13.989  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0125.png'
+SHOWME_PROGRESS 125/288
+08:18.183  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0126.png'
+SHOWME_PROGRESS 126/288
+08:22.365  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0127.png'
+SHOWME_PROGRESS 127/288
+08:26.536  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0128.png'
+SHOWME_PROGRESS 128/288
+08:30.716  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0129.png'
+SHOWME_PROGRESS 129/288
+08:34.895  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0130.png'
+SHOWME_PROGRESS 130/288
+08:39.143  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0131.png'
+SHOWME_PROGRESS 131/288
+08:43.379  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0132.png'
+SHOWME_PROGRESS 132/288
+08:47.554  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0133.png'
+SHOWME_PROGRESS 133/288
+08:51.717  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0134.png'
+SHOWME_PROGRESS 134/288
+08:55.886  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0135.png'
+SHOWME_PROGRESS 135/288
+09:00.073  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0136.png'
+SHOWME_PROGRESS 136/288
+09:04.238  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0137.png'
+SHOWME_PROGRESS 137/288
+09:08.406  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0138.png'
+SHOWME_PROGRESS 138/288
+09:12.573  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0139.png'
+SHOWME_PROGRESS 139/288
+09:16.730  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0140.png'
+SHOWME_PROGRESS 140/288
+09:20.882  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0141.png'
+SHOWME_PROGRESS 141/288
+09:25.051  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0142.png'
+SHOWME_PROGRESS 142/288
+09:29.266  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0143.png'
+SHOWME_PROGRESS 143/288
+09:33.432  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0144.png'
+SHOWME_PROGRESS 144/288
+09:37.596  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0145.png'
+SHOWME_PROGRESS 145/288
+09:41.827  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0146.png'
+SHOWME_PROGRESS 146/288
+09:46.027  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0147.png'
+SHOWME_PROGRESS 147/288
+09:50.234  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0148.png'
+SHOWME_PROGRESS 148/288
+09:54.461  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0149.png'
+SHOWME_PROGRESS 149/288
+09:58.654  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0150.png'
+SHOWME_PROGRESS 150/288
+10:02.844  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0151.png'
+SHOWME_PROGRESS 151/288
+10:07.026  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0152.png'
+SHOWME_PROGRESS 152/288
+10:11.230  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0153.png'
+SHOWME_PROGRESS 153/288
+10:15.391  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0154.png'
+SHOWME_PROGRESS 154/288
+10:19.561  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0155.png'
+SHOWME_PROGRESS 155/288
+10:23.738  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0156.png'
+SHOWME_PROGRESS 156/288
+10:27.904  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0157.png'
+SHOWME_PROGRESS 157/288
+10:32.086  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0158.png'
+SHOWME_PROGRESS 158/288
+10:36.245  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0159.png'
+SHOWME_PROGRESS 159/288
+10:40.421  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0160.png'
+SHOWME_PROGRESS 160/288
+10:44.584  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0161.png'
+SHOWME_PROGRESS 161/288
+10:48.748  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0162.png'
+SHOWME_PROGRESS 162/288
+10:52.909  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0163.png'
+SHOWME_PROGRESS 163/288
+10:57.072  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0164.png'
+SHOWME_PROGRESS 164/288
+11:01.243  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0165.png'
+SHOWME_PROGRESS 165/288
+11:05.415  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0166.png'
+SHOWME_PROGRESS 166/288
+11:09.585  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0167.png'
+SHOWME_PROGRESS 167/288
+11:13.947  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0168.png'
+SHOWME_PROGRESS 168/288
+11:18.163  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0169.png'
+SHOWME_PROGRESS 169/288
+11:22.376  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0170.png'
+SHOWME_PROGRESS 170/288
+11:26.645  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0171.png'
+SHOWME_PROGRESS 171/288
+11:30.838  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0172.png'
+SHOWME_PROGRESS 172/288
+11:35.026  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0173.png'
+SHOWME_PROGRESS 173/288
+11:39.216  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0174.png'
+SHOWME_PROGRESS 174/288
+11:43.362  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0175.png'
+SHOWME_PROGRESS 175/288
+11:47.508  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0176.png'
+SHOWME_PROGRESS 176/288
+11:51.644  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0177.png'
+SHOWME_PROGRESS 177/288
+11:55.827  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0178.png'
+SHOWME_PROGRESS 178/288
+11:59.979  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0179.png'
+SHOWME_PROGRESS 179/288
+12:04.123  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0180.png'
+SHOWME_PROGRESS 180/288
+12:08.255  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0181.png'
+SHOWME_PROGRESS 181/288
+12:12.403  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0182.png'
+SHOWME_PROGRESS 182/288
+12:16.540  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0183.png'
+SHOWME_PROGRESS 183/288
+12:20.699  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0184.png'
+SHOWME_PROGRESS 184/288
+12:24.844  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0185.png'
+SHOWME_PROGRESS 185/288
+12:28.994  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0186.png'
+SHOWME_PROGRESS 186/288
+12:33.125  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0187.png'
+SHOWME_PROGRESS 187/288
+12:37.262  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0188.png'
+SHOWME_PROGRESS 188/288
+12:41.428  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0189.png'
+SHOWME_PROGRESS 189/288
+12:45.557  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0190.png'
+SHOWME_PROGRESS 190/288
+12:49.734  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0191.png'
+SHOWME_PROGRESS 191/288
+12:53.890  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0192.png'
+SHOWME_PROGRESS 192/288
+12:58.021  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0193.png'
+SHOWME_PROGRESS 193/288
+13:02.172  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0194.png'
+SHOWME_PROGRESS 194/288
+13:06.310  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0195.png'
+SHOWME_PROGRESS 195/288
+13:10.440  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0196.png'
+SHOWME_PROGRESS 196/288
+13:14.567  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0197.png'
+SHOWME_PROGRESS 197/288
+13:18.694  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0198.png'
+SHOWME_PROGRESS 198/288
+13:22.813  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0199.png'
+SHOWME_PROGRESS 199/288
+13:26.944  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0200.png'
+SHOWME_PROGRESS 200/288
+13:31.066  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0201.png'
+SHOWME_PROGRESS 201/288
+13:35.199  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0202.png'
+SHOWME_PROGRESS 202/288
+13:39.336  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0203.png'
+SHOWME_PROGRESS 203/288
+13:43.468  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0204.png'
+SHOWME_PROGRESS 204/288
+13:47.612  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0205.png'
+SHOWME_PROGRESS 205/288
+13:51.739  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0206.png'
+SHOWME_PROGRESS 206/288
+13:55.889  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0207.png'
+SHOWME_PROGRESS 207/288
+14:00.025  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0208.png'
+SHOWME_PROGRESS 208/288
+14:04.165  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0209.png'
+SHOWME_PROGRESS 209/288
+14:08.311  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0210.png'
+SHOWME_PROGRESS 210/288
+14:12.446  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0211.png'
+SHOWME_PROGRESS 211/288
+14:16.576  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0212.png'
+SHOWME_PROGRESS 212/288
+14:20.712  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0213.png'
+SHOWME_PROGRESS 213/288
+14:24.846  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0214.png'
+SHOWME_PROGRESS 214/288
+14:28.972  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0215.png'
+SHOWME_PROGRESS 215/288
+14:33.111  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0216.png'
+SHOWME_PROGRESS 216/288
+14:37.235  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0217.png'
+SHOWME_PROGRESS 217/288
+14:41.377  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0218.png'
+SHOWME_PROGRESS 218/288
+14:45.517  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0219.png'
+SHOWME_PROGRESS 219/288
+14:49.714  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0220.png'
+SHOWME_PROGRESS 220/288
+14:53.910  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0221.png'
+SHOWME_PROGRESS 221/288
+14:58.128  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0222.png'
+SHOWME_PROGRESS 222/288
+15:02.336  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0223.png'
+SHOWME_PROGRESS 223/288
+15:06.540  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0224.png'
+SHOWME_PROGRESS 224/288
+15:10.751  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0225.png'
+SHOWME_PROGRESS 225/288
+15:14.958  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0226.png'
+SHOWME_PROGRESS 226/288
+15:19.164  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0227.png'
+SHOWME_PROGRESS 227/288
+15:23.374  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0228.png'
+SHOWME_PROGRESS 228/288
+15:27.509  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0229.png'
+SHOWME_PROGRESS 229/288
+15:31.639  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0230.png'
+SHOWME_PROGRESS 230/288
+15:35.773  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0231.png'
+SHOWME_PROGRESS 231/288
+15:39.922  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0232.png'
+SHOWME_PROGRESS 232/288
+15:44.058  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0233.png'
+SHOWME_PROGRESS 233/288
+15:48.196  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0234.png'
+SHOWME_PROGRESS 234/288
+15:52.331  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0235.png'
+SHOWME_PROGRESS 235/288
+15:56.464  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0236.png'
+SHOWME_PROGRESS 236/288
+16:00.606  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0237.png'
+SHOWME_PROGRESS 237/288
+16:04.737  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0238.png'
+SHOWME_PROGRESS 238/288
+16:08.863  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0239.png'
+SHOWME_PROGRESS 239/288
+16:13.001  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0240.png'
+SHOWME_PROGRESS 240/288
+16:17.138  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0241.png'
+SHOWME_PROGRESS 241/288
+16:21.274  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0242.png'
+SHOWME_PROGRESS 242/288
+16:25.412  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0243.png'
+SHOWME_PROGRESS 243/288
+16:29.543  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0244.png'
+SHOWME_PROGRESS 244/288
+16:33.669  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0245.png'
+SHOWME_PROGRESS 245/288
+16:37.805  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0246.png'
+SHOWME_PROGRESS 246/288
+16:41.949  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0247.png'
+SHOWME_PROGRESS 247/288
+16:46.079  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0248.png'
+SHOWME_PROGRESS 248/288
+16:50.218  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0249.png'
+SHOWME_PROGRESS 249/288
+16:54.355  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0250.png'
+SHOWME_PROGRESS 250/288
+16:58.489  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0251.png'
+SHOWME_PROGRESS 251/288
+17:02.631  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0252.png'
+SHOWME_PROGRESS 252/288
+17:06.769  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0253.png'
+SHOWME_PROGRESS 253/288
+17:10.910  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0254.png'
+SHOWME_PROGRESS 254/288
+17:15.051  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0255.png'
+SHOWME_PROGRESS 255/288
+17:19.197  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0256.png'
+SHOWME_PROGRESS 256/288
+17:23.333  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0257.png'
+SHOWME_PROGRESS 257/288
+17:27.491  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0258.png'
+SHOWME_PROGRESS 258/288
+17:31.629  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0259.png'
+SHOWME_PROGRESS 259/288
+17:35.761  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0260.png'
+SHOWME_PROGRESS 260/288
+17:39.913  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0261.png'
+SHOWME_PROGRESS 261/288
+17:44.055  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0262.png'
+SHOWME_PROGRESS 262/288
+17:48.206  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0263.png'
+SHOWME_PROGRESS 263/288
+17:52.342  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0264.png'
+SHOWME_PROGRESS 264/288
+17:56.483  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0265.png'
+SHOWME_PROGRESS 265/288
+18:00.636  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0266.png'
+SHOWME_PROGRESS 266/288
+18:04.771  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0267.png'
+SHOWME_PROGRESS 267/288
+18:08.947  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0268.png'
+SHOWME_PROGRESS 268/288
+18:13.089  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0269.png'
+SHOWME_PROGRESS 269/288
+18:17.228  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0270.png'
+SHOWME_PROGRESS 270/288
+18:21.375  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0271.png'
+SHOWME_PROGRESS 271/288
+18:25.512  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0272.png'
+SHOWME_PROGRESS 272/288
+18:29.655  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0273.png'
+SHOWME_PROGRESS 273/288
+18:33.794  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0274.png'
+SHOWME_PROGRESS 274/288
+18:37.931  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0275.png'
+SHOWME_PROGRESS 275/288
+18:42.081  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0276.png'
+SHOWME_PROGRESS 276/288
+18:46.229  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0277.png'
+SHOWME_PROGRESS 277/288
+18:50.368  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0278.png'
+SHOWME_PROGRESS 278/288
+18:54.500  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0279.png'
+SHOWME_PROGRESS 279/288
+18:58.644  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0280.png'
+SHOWME_PROGRESS 280/288
+19:02.791  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0281.png'
+SHOWME_PROGRESS 281/288
+19:06.924  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0282.png'
+SHOWME_PROGRESS 282/288
+19:11.192  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0283.png'
+SHOWME_PROGRESS 283/288
+19:15.324  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0284.png'
+SHOWME_PROGRESS 284/288
+19:19.459  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0285.png'
+SHOWME_PROGRESS 285/288
+19:23.600  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0286.png'
+SHOWME_PROGRESS 286/288
+19:27.734  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0287.png'
+SHOWME_PROGRESS 287/288
+19:31.859  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/spaced-preview/frames/frame-0288.png'
+SHOWME_PROGRESS 288/288
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

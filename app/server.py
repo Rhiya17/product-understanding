@@ -987,7 +987,8 @@ def make_handler(packs_root, vault_root, cache_root=DEFAULT_CACHE_ROOT,
                     query.get("context", [""])[0], known)
                 document = engine.answer(question, product_dir, context).to_dict()
                 video = video_service.video_for_document(
-                    video_store, document, question, self._visitor(), context)
+                    video_store, document, question, self._visitor(), context,
+                    auto_generate=query.get("generate", ["0"])[0] == "1")
                 document["video"] = video
                 if video and (video["assets"] or video["state"] == "requested"):
                     document["visual"]["message"] = None

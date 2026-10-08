@@ -24,13 +24,19 @@ from system import verify_claims as verifier  # noqa: E402
 MANIFEST_DIR = REPO_ROOT / "docs" / "workorders" / "approvals" / "manifests"
 
 
-def claims_needing_receipts():
+def claims_needing_receipts(products=None, candidates=False):
+    """Approved claims lacking a current receipt; with ``candidates`` (for the
+    automatic publishing policy, system/auto_publish.py) also every claim in
+    ``products`` that has no human disposition."""
     selected = []
     for pack_dir in sorted(p.parent for p in (REPO_ROOT / "evidence-packs").glob("*/claims.json")):
+        if products and pack_dir.name not in products:
+            continue
         pack = evidence_status.PackEvidence(pack_dir.name)
         types = verifier.source_types(REPO_ROOT / "source-vault", pack_dir.name)
         for claim_id, claim in pack.claims.items():
-            if pack.dispositions.get(claim_id) != "APPROVED_FOR_PUBLISH":
+            disposition = pack.dispositions.get(claim_id)
+            if disposition != "APPROVED_FOR_PUBLISH" and not (candidates and disposition is None):
                 continue
             if not any(types.get(b.get("source_id")) not in verifier.VISUAL_SOURCE_TYPES
                        for b in claim.get("source_bindings", [])):
@@ -47,11 +53,14 @@ def claims_needing_receipts():
 
 
 def plan(args):
-    selected = claims_needing_receipts()
+    selected = claims_needing_receipts(args.product, args.candidates)
+    purpose = ("Version-bound semantic receipts for candidate claims (automatic "
+               "publishing policy)." if args.candidates else
+               "Version-bound semantic receipts for approved claims (P1 eligibility).")
     manifest = {
         "run_id": args.run_id,
         "category": "answer_verifier",
-        "purpose": "Version-bound semantic receipts for approved claims (P1 eligibility).",
+        "purpose": purpose,
         "provider": "fal.ai OpenRouter route " + verifier.ENDPOINT,
         "model": verifier.MODEL_ID,
         "inputs": {"claims": [{k: s[k] for k in ("product_dir", "claim_id", "claim_digest")}
@@ -109,6 +118,10 @@ def main(argv=None):
     plan_parser = sub.add_parser("plan")
     plan_parser.add_argument("--run-id", required=True)
     plan_parser.add_argument("--cap", type=float, default=1.0)
+    plan_parser.add_argument("--product", action="append",
+                             help="limit to these evidence packs (repeatable)")
+    plan_parser.add_argument("--candidates", action="store_true",
+                             help="include claims without a human disposition")
     plan_parser.set_defaults(func=plan)
     exec_parser = sub.add_parser("execute")
     exec_parser.add_argument("--run-id", required=True)

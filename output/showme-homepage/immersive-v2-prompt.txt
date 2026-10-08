@@ -1,0 +1,33 @@
+Built-in image generation. User supplied two visual references. Future experience concept.
+
+Create a high fidelity finished ShowMe HOMEPAGE design closely guided by the TWO provided reference images. Reference 1: use the actual landscape website in the middle, ignore all black letterboxing. Reference 2: use its immersive world-first scene composition, prominent question input, contextual guide, stroller/car relationship and visual sequence. These are visual references, not images to reproduce unchanged. Replace ProductWorld with ShowMe. Output ONE full-bleed LANDSCAPE desktop website screenshot, approximately 16:10, excellent crisp typography, no device frame, no outer border, no mockup presentation headings. Do not produce a tall scrolling conventional homepage.
+
+Essential composition: The ENTIRE viewport is ONE continuous photorealistic cinematic interactive world. A contemporary home's driveway and open garage at blue hour, warm amber interior light, distant city and soft twilight rose sky. Large beige premium compact stroller is the main hero in center-right foreground, beautiful realistic wheels, fabric, handle and accurate-looking coherent construction. An adult woman in cream casual clothes kneels naturally just behind and to the left of the stroller, hand resting near the handle, a helpful believable human presence. A dark graphite SUV with its trunk OPEN fills background far right, trunk clearly legible, depth and context tell what the product is for. Reflections on slightly wet dark pavement, restrained warm circular floor selection glow under the stroller from references, beautifully cinematic not gratuitously futuristic. Stroller should remain the largest clearest hero subject; no child. A few extremely restrained fine contour traces along the open trunk communicate spatial understanding, never whole-car neon wireframe. Avoid otherworldly holographic human. Mood like reference 1 with the spatial storytelling clarity of reference 2. Dark navy-black left side naturally graded for perfectly readable white text, luminous natural scene to right. This is a living product demonstration environment, NOT a product catalog, showroom shelf, dashboard, architecture advertisement, or white landing page.
+
+Top nav across scene: small elegant violet-blue circular mark plus strong white 'ShowMe' at left; 'Explore' 'Examples' 'How it works' in center; small outlined 'Try a demo' top right. Very polished whitespace.
+
+Left upper-middle typography hierarchy:
+small widely tracked eyebrow 'UNDERSTAND THE PRODUCTS IN YOUR LIFE'
+large bold white headline 'Ask a product anything.'
+next equally large line subtle violet-to-periwinkle 'See it in the real world.'
+Below legible concise copy on two lines:
+'Ask how it works, how to use it, or how it fits your life.
+ShowMe turns your questions into visual answers.'
+Below large dark translucent well-grounded question input about 45% viewport width with crisp border, small voice waveform left, text 'How do I fold this stroller?' and vivid violet-blue circular right arrow send button. Under input three restrained suggestion pills 'Fold it' 'Will it fit in my car?' 'Show me the controls'.
+Under suggestions subtle 'Ask a follow-up. Watch the scene respond.'
+Ensure copy and input have ample separate space and NEVER overlap person or stroller.
+
+In-world subtle compact caption near woman's shoulder: 'Let’s see how it folds.' Rounded charcoal speech annotation, understated, not huge. Tiny model identifier below stroller 'Featured example · Travel stroller'. No price, buy, retail rating, or shopping cart.
+
+BOTTOM QUARTER of same viewport remains visibly part of the scene, over gentle dark gradient:
+small row heading 'A question becomes an experience.' with right side 'Explore more products →'
+Four genuinely photographic landscape example thumbnails in a connected horizontal filmstrip, no giant card layout, elegant 8px corners. First thin violet selected outline. Each image has a small white play icon and readable short caption at bottom. 1 woman folding same beige stroller caption 'Fold this stroller'; 2 same folded stroller beside open car trunk caption 'Explore how it fits'; 3 closeup stroller handle with discreet focus highlight caption 'Find the right control'; 4 black over-ear headphones next to silver laptop caption 'Connect my headphones'. Small arrows between first three scenes tell a progression; fourth clearly another product. Thumbnails must be sufficiently sized, with consistent quality, not placeholder icons.
+
+At very bottom a compact integrated four-column capability footer, elegant small violet line icons and legible white title with muted white explanatory line:
+'Understand any product' / 'Ask about parts, features and care.'
+'See actions clearly' / 'Watch setup, use and next steps.'
+'Explore products together' / 'Understand connections and fit.'
+'Keep asking' / 'Each follow-up changes the view.'
+All within one viewport. Tiny unobtrusive bottom right 'Experience concept'.
+
+Design priority: preserve cinematic scene as 65 percent visual weight; text about 30 percent and UI remaining. Capture the excitement, warm human presence, depth, wide layout and visual examples of supplied references. Minimal yet clear UI, incredible realistic material quality, crisp legible actual specified text, sophisticated violet accents. Do NOT make a beige editorial webpage with separate white sections, plants and product shelves. The central product scene IS the homepage and response surface. Do not add extra slogans, fake result badges, fit measurements or assertions of verified fit. A highly refined world-first homepage for the actual ShowMe visual product question-answering service.

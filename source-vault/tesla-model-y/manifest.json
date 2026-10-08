@@ -1,0 +1,593 @@
+{
+  "product_id": "prod_tesla_model_y",
+  "identity": {
+    "brand": "Tesla",
+    "model": "Model Y",
+    "model_year": "2026 (2025+ refreshed body, internally 'Juniper')",
+    "market": "US",
+    "category": "midsize_suv_ev",
+    "variants_sold_us_2026_10_07": [
+      "Model Y (Standard) RWD",
+      "Model Y (Standard) AWD",
+      "Model Y Premium RWD (5 seats)",
+      "Model Y Premium AWD (5 seats, or 7 seats as an option)",
+      "Model Y Performance AWD"
+    ],
+    "excluded": "Model Y L Premium (6-seat long-wheelbase, 119.7 in wheelbase). Note: tesla.com/modely lists it in the US with a 'LAUNCH' badge, so it is no longer China-only. Excluded per work order.",
+    "naming_note": "The live owner's manual names the base trim 'Model Y'; the Dec-2025 PDF and third parties call it 'Standard'. 'Long Range' was the pre-Oct-2025 name of what is now Premium (ADAC/illumaesthetic use it).",
+    "cargo_geometry_trim_differences": [
+      "Second-row fold: Standard uses manual release straps (4 recline positions); Premium/Performance have power fold with switches on the seats, on both touchscreens, and on the left rear-trunk wall (owner's manual).",
+      "Rear trunk floor: Tesla sells separate floor-liner styles 'Model Y' ($195) and 'Model Y Premium and Performance' ($220), plus '7 Seat Interior', so the upper cargo floor or trim differs between Standard and Premium/Performance. The cause is undocumented.",
+      "Sub-trunk well: one liner style for all 5-seat cars ('5 Seat Interior') vs a separate 7-seat style, so the well is likely shared across 5-seat trims.",
+      "Parcel shelf: included on Premium/Performance, $135 accessory on Standard.",
+      "Volumes: Standard 29.5 cu ft behind row 2 / 70.8 folded; Premium 5-seat and Performance 29.0 / 71.4; Premium 7-seat 27.1 (3rd row folded) / 69.4 / 13.1 behind row 3.",
+      "Ride height affects load-lip height: unladen ground clearance Standard 6.4 in, Premium 6.6 in, Performance 6.0 in.",
+      "Frunk: two variants by tow-eye position (110 lb sealed vs 65 lb unsealed limit); trim mapping not stated."
+    ],
+    "body_caveat": "No official or reputable linear trunk dimensions exist for the 2025+ body beyond ADAC's 68 cm load lip and Tesla's body-in-white datum figure. All floor/width/opening numbers in this vault are from the 2020-2024 body (Tesmanian), recorded as SUBSTITUTION, or are low-confidence.",
+    "body_equivalence": {
+      "markets": [
+        "CN",
+        "EU (Austria)"
+      ],
+      "basis_claims": [
+        "claim_tmy_tpd1ev_body_dimensions_repair_20261007",
+        "claim_tmy_tpadac_body_dimensions",
+        "claim_tmy_ext_all_wheelbase"
+      ],
+      "rule": "Physical body measurements from another market apply to the US 2025+ body only when that market's stated wheelbase, width and height agree with the US owner's manual within 0.5%. CN: 2890/1920/1624 vs US 2890/1920/1621-1624 (0.0%, 0.0%, <=0.2%). EU: 1921/1624 vs 1920/1624 (0.05%, 0.0%).",
+      "recorded_at": "2026-10-07",
+      "recorded_by": "orchestrator (automated evidence rule; not a human review)"
+    }
+  },
+  "sources": [
+    {
+      "source_id": "src_ty_manual_pdf_2025_12",
+      "type": "MANUAL_PDF",
+      "local_path": "manuals/model-y-2025plus-owners-manual-na-sw2025.44.pdf",
+      "origin_url": "https://web.archive.org/web/20260116012308id_/https://www.tesla.com/ownersmanual/modely/en_us/Owners_Manual.pdf",
+      "sha256": "94f38b9ba516b9a4154012de36c30111ca1804d3a54c97eba48a273e8cac1d53",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "Official Tesla '2025+ MODEL Y Owner's Manual', North America, Software version 2025.44, PDF created 2025-12-18, 313 pages, encrypted (print/copy allowed). Obtained from the Wayback Machine capture of the official URL dated 2026-01-16 (served gzip-encoded; decompressed to the real PDF, 10,217,082 bytes) because tesla.com returns 403 to curl. OLDER than the live manual (live = software 2026.32, 16,404,611-byte PDF that loaded in the browser but could not be saved). Covers Standard and Premium (5-Seater) only; the live edition adds Premium 7-seat, Performance and Model Y L. Trunk pages (PDF index): 32-34 Rear Trunk, 40-41 rear seat folding, 220-221 Dimensions/Cargo Volume. Premium laden ground clearance here (5.4 in/138 mm) conflicts with live HTML (4.8 in/122 mm)."
+    },
+    {
+      "source_id": "src_ty_manual_live_html",
+      "type": "MANUAL_HTML_CAPTURE",
+      "local_path": "manuals/owners-manual-live-sections-2026-10-07.md",
+      "origin_url": "https://www.tesla.com/ownersmanual/modely/en_us/",
+      "sha256": "45fccf7099f07b89437e897acb9e3948619b3de13ac67dcbb844484c0dcb8bdf",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Text transcribed from manufacturer page; internal research use",
+      "notes": "Verbatim text of 5 live manual pages (Dimensions, Rear Trunk, Front Trunk storage/limits, rear-seat folding, Vehicle Loading) from the 2025+ North America manual, software 2026.32, read in a browser session. Page URLs inside the file. sha256 recorded 2026-10-07 by the orchestrator (was null)."
+    },
+    {
+      "source_id": "src_ty_spec_page",
+      "type": "SPEC_PAGE",
+      "local_path": "specs/specs.md",
+      "origin_url": "https://www.tesla.com/modely",
+      "sha256": "eb7e703f92d5057d43ac5fa5b7812c67689a5a821dd154461d50aac0afd8c006",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Facts transcribed from manufacturer page; internal research use",
+      "notes": "Transcribed tesla.com/modely spec panels (Model Y RWD/AWD, Premium RWD/AWD), configurator trim list, manual dimension summary, and shop.tesla.com fitment notes showing Standard vs Premium/Performance trunk-liner SKUs. Performance spec panel not captured. sha256 recorded 2026-10-07 by the orchestrator (was null)."
+    },
+    {
+      "source_id": "src_oeamtc_adac_autotest_2025",
+      "type": "THIRD_PARTY_TEST_PDF",
+      "local_path": "specs/oeamtc-adac-autotest-model-y-maximum-range-2025.pdf",
+      "origin_url": "https://www.oeamtc.at/Tesla+Model+Y+Maximum+Range.pdf/87.901.459",
+      "sha256": "efb7f2d04c0d65e8f2adff4b58727413bfa11bdb885ae34b789097d9cc01d6c9",
+      "acquired_at": "2026-10-07",
+      "authority": "THIRD_PARTY_MEASUREMENT",
+      "rights_note": "\u00d6AMTC/ADAC copyright; internal research use; generate_from NOT cleared",
+      "notes": "ADAC Autotest (published by \u00d6AMTC) of the 2025+ facelift 'Tesla Model Y Maximum Range' RWD (220 kW), EU market, PDF created 2026-05-20, 16 pages. Measured: load lip 68 cm above road, lip flush with floor; volumes 420/540/850/1380 L; 105 L under floor; ~80 L frunk; 1888/533 kg empty/payload. No interior dimension drawing. EU car, not US-spec."
+    },
+    {
+      "source_id": "src_ty_trunk_geometry_notes",
+      "type": "GEOMETRY_NOTES",
+      "local_path": "geometry/trunk-geometry.md",
+      "origin_url": null,
+      "sha256": "496f1bf8cc8432551985e59ddba41868906eda712c60e3cd45a5ca973d180978",
+      "acquired_at": "2026-10-07",
+      "authority": "DERIVED_COMPILATION",
+      "rights_note": "Compilation of facts from listed sources; internal research use",
+      "notes": "Dimension table (value, unit, source_id, quote, body measured, confidence), conflicts, shape references, gaps. Main answer to 'what trunk geometry is known'. sha256 recorded 2026-10-07 by the orchestrator (was null)."
+    },
+    {
+      "source_id": "src_ty_3d_candidates_notes",
+      "type": "GEOMETRY_NOTES",
+      "local_path": "geometry/3d-model-candidates.md",
+      "origin_url": null,
+      "sha256": "84caae26141166aa8233442e3d7f7c2dc38a3e5f4e2dcaa17cba23e2465ea22b",
+      "acquired_at": "2026-10-07",
+      "authority": "DERIVED_COMPILATION",
+      "rights_note": "Listing of third-party URLs; nothing downloaded",
+      "notes": "3D model candidates for the 2025+ body (Sketchfab API metadata, TurboSquid, illumaesthetic scan). Nothing downloaded. sha256 recorded 2026-10-07 by the orchestrator (was null)."
+    },
+    {
+      "source_id": "src_brm2025_rear_body_capture",
+      "type": "SERVICE_DOC_FIGURE_CAPTURE",
+      "local_path": "geometry/collision-manual-2025-rear-body-measurements-capture.png",
+      "origin_url": "https://service.tesla.com/docs/BodyRepair/Body_Repair_Procedures/Model_Y_2025/en-us/GUID-FD3F1B0F-B3B9-4D6A-A98B-91F5B947DC84-online-en-US.jpg",
+      "sha256": "9e17e3f76b911a05b08ad35565c0e2d4158ef2539033f158b1a349a51c5cc863",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "SCREEN CAPTURE, not the original bytes: browser zoom capture (1392x783 PNG) of the official 1600x900 JPG 'Figure 4. Rear Body Measurements' from the 2025+ Model Y Collision Repair Procedures, Dimensional Specifications page (https://service.tesla.com/docs/BodyRepair/Body_Repair_Procedures/Model_Y_2025/en-us/GUID-C5797770-FD0F-4A21-90C1-FC4E47976C95.html). service.tesla.com returns 403 to curl and no Wayback copy exists. Shows body-in-white datum distances 1217-1223 mm, 916-926 mm, 795-805 mm. sha256 is of the capture."
+    },
+    {
+      "source_id": "src_brm2025_dimensional_specs_page",
+      "type": "SERVICE_DOC_PAGE",
+      "local_path": null,
+      "origin_url": "https://service.tesla.com/docs/BodyRepair/Body_Repair_Procedures/Model_Y_2025/en-us/GUID-C5797770-FD0F-4A21-90C1-FC4E47976C95.html",
+      "sha256": null,
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "2025+ Model Y Collision Repair 'Dimensional Specifications': 6 figures (under body, side body, under hood, rear body, top, A-pillar), all mm, center-to-center, 'for reference only'. Only the rear body figure is trunk-relevant and was captured. Figure image GUIDs: F89EC2B4, E9462676, AA2786D7, FD3F1B0F (rear body), 32D5E3E2, E141FE3C, FB445B26."
+    },
+    {
+      "source_id": "src_tesmanian_legacy_trunk01",
+      "type": "MEASUREMENT_DIAGRAM",
+      "local_path": "geometry/LEGACY-2020-tesmanian-trunk01-measurement-diagram.jpg",
+      "origin_url": "https://cdn.shopify.com/s/files/1/0173/8204/7844/files/trunk01.jpg",
+      "sha256": "daa4ea4aca857d8e6f871c31b51098e63b7f73b4321b0b327fae2dc70dbb5dd1",
+      "acquired_at": "2026-10-07",
+      "authority": "THIRD_PARTY_MEASUREMENT",
+      "rights_note": "Tesmanian copyright; internal research use; generate_from NOT cleared",
+      "notes": "SUBSTITUTION / LEGACY BODY: Tesmanian article 2020-04-11 (https://www.tesmanian.com/blogs/tesmanian-blog/tesla-model-y-interior-trunk-trunk-well-frunk-and-other-measurements), measured on a 2020 Model Y Performance (2020-2024 body). Photo with lettered arrows; values from the article text: floor width A=94 cm/37 in, seats-up floor length B=108 cm/42.5 in. Not valid for the 2025+ body."
+    },
+    {
+      "source_id": "src_tesmanian_legacy_trunk02",
+      "type": "MEASUREMENT_DIAGRAM",
+      "local_path": "geometry/LEGACY-2020-tesmanian-trunk02-measurement-diagram.jpg",
+      "origin_url": "https://cdn.shopify.com/s/files/1/0173/8204/7844/files/trunk02.jpg",
+      "sha256": "07ab7d6344f65ebc8deae18073bac9a598fa5d6dd0f5c4de36d2dd622b2c2052",
+      "acquired_at": "2026-10-07",
+      "authority": "THIRD_PARTY_MEASUREMENT",
+      "rights_note": "Tesmanian copyright; internal research use; generate_from NOT cleared",
+      "notes": "SUBSTITUTION / LEGACY BODY: Tesmanian article 2020-04-11 (https://www.tesmanian.com/blogs/tesmanian-blog/tesla-model-y-interior-trunk-trunk-well-frunk-and-other-measurements), measured on a 2020 Model Y Performance (2020-2024 body). Photo with lettered arrows; values from the article text: seats-folded floor length A=200 cm/78.7 in, opening height B=70 cm/27.6 in. Not valid for the 2025+ body."
+    },
+    {
+      "source_id": "src_tesmanian_legacy_back",
+      "type": "MEASUREMENT_DIAGRAM",
+      "local_path": "geometry/LEGACY-2020-tesmanian-back-measurement-diagram.jpg",
+      "origin_url": "https://cdn.shopify.com/s/files/1/0173/8204/7844/files/back.jpg",
+      "sha256": "10f9b1d17ea2c2431e61924897820e32957a3c062d8252b5d20c4e444d233a49",
+      "acquired_at": "2026-10-07",
+      "authority": "THIRD_PARTY_MEASUREMENT",
+      "rights_note": "Tesmanian copyright; internal research use; generate_from NOT cleared",
+      "notes": "SUBSTITUTION / LEGACY BODY: Tesmanian article 2020-04-11 (https://www.tesmanian.com/blogs/tesmanian-blog/tesla-model-y-interior-trunk-trunk-well-frunk-and-other-measurements), measured on a 2020 Model Y Performance (2020-2024 body). Photo with lettered arrows; values from the article text: load-lip height from ground A=60 cm/23.6 in. Not valid for the 2025+ body."
+    },
+    {
+      "source_id": "src_tesmanian_legacy_trunkwell",
+      "type": "MEASUREMENT_DIAGRAM",
+      "local_path": "geometry/LEGACY-2020-tesmanian-trunkwell-measurement-diagram.jpg",
+      "origin_url": "https://cdn.shopify.com/s/files/1/0173/8204/7844/files/trunkwell.jpg",
+      "sha256": "52509f081b3f71220d6ce2d79f82ccc175c03854174d510edd49da899e384e6e",
+      "acquired_at": "2026-10-07",
+      "authority": "THIRD_PARTY_MEASUREMENT",
+      "rights_note": "Tesmanian copyright; internal research use; generate_from NOT cleared",
+      "notes": "SUBSTITUTION / LEGACY BODY: Tesmanian article 2020-04-11 (https://www.tesmanian.com/blogs/tesmanian-blog/tesla-model-y-interior-trunk-trunk-well-frunk-and-other-measurements), measured on a 2020 Model Y Performance (2020-2024 body). Photo with lettered arrows; values from the article text: sub-trunk well A=35, B=60, C=80, D=47, E=35 cm. Not valid for the 2025+ body."
+    },
+    {
+      "source_id": "src_tesmanian_legacy_frunk",
+      "type": "MEASUREMENT_DIAGRAM",
+      "local_path": "geometry/LEGACY-2020-tesmanian-frunk-measurement-diagram.jpg",
+      "origin_url": "https://cdn.shopify.com/s/files/1/0173/8204/7844/files/frunk.jpg",
+      "sha256": "25f617ead10cc4301c5c7176d1f9e00645c92ade48c39147ef46a9d299352729",
+      "acquired_at": "2026-10-07",
+      "authority": "THIRD_PARTY_MEASUREMENT",
+      "rights_note": "Tesmanian copyright; internal research use; generate_from NOT cleared",
+      "notes": "SUBSTITUTION / LEGACY BODY: Tesmanian article 2020-04-11 (https://www.tesmanian.com/blogs/tesmanian-blog/tesla-model-y-interior-trunk-trunk-well-frunk-and-other-measurements), measured on a 2020 Model Y Performance (2020-2024 body). Photo with lettered arrows; values from the article text: frunk A=35, B=70, C=43, D=91, E=35 cm. Not valid for the 2025+ body."
+    },
+    {
+      "source_id": "src_shop_trunk_floor_liner_5seat_outline_topdown",
+      "type": "IMAGE",
+      "local_path": "geometry/trunk-floor-liner-5seat-outline-topdown.png",
+      "origin_url": "https://digitalassets-shop.tesla.com/image/upload/v1/content/dam/tesla/CAR_ACCESSORIES/MODEL_Y/INTERIOR/2048569-TS-C_01_2000.png",
+      "sha256": "7a7471e6ecc848df5d2cb42842172731ebdf3955a3fa3bf8a967ac2445909e8e",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "Tesla shop gallery image for 'Model Y All-Weather Rear Trunk + Seatback Liner' (page says compatible with 2025+ Model Y, excluding Model Y L): 5-seat floor liner (trapezoid, notch at latch) + 3-piece seatback liners, top-down, 2000x2000. Unscaled outline. The same gallery is shown for the 'Model Y' ($195) and 'Model Y Premium and Performance' ($220) styles, so which style is pictured is unclear. Part-number prefix 2048569 is shared with older liner images; the body is not independently confirmed."
+    },
+    {
+      "source_id": "src_shop_trunk_floor_liner_7seat_outline_topdown",
+      "type": "IMAGE",
+      "local_path": "geometry/trunk-floor-liner-7seat-outline-topdown.png",
+      "origin_url": "https://digitalassets-shop.tesla.com/image/upload/v1/content/dam/tesla/studio/CAR_ACCESSORIES/MODEL_Y/INTERIOR/2423607-00-A_01_2000.png",
+      "sha256": "bf467fc224ceb3521c77b00ae35fd59c6b22e3d0f318e7beb2ff4315316d4a6b",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "Tesla shop: 7-seat rear trunk liner + 2-piece seatback liners, top-down, 2000x2000. Unscaled outline."
+    },
+    {
+      "source_id": "src_shop_sub_trunk_well_liner_outline",
+      "type": "IMAGE",
+      "local_path": "geometry/sub-trunk-well-liner-outline.png",
+      "origin_url": "https://digitalassets-shop.tesla.com/image/upload/v1/content/dam/tesla/studio/CAR_ACCESSORIES/MODEL_Y/INTERIOR/2325405-00-A_01_2000.png",
+      "sha256": "d8c796c8185bc7cf18cfdba1c9abff5ba063ccf726a3909d808c38571a0d0a69",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "Tesla shop 'Model Y All-Weather Rear Well Liner' ($65, styles: 5 Seat Interior / 7 Seat Interior; compatible 2025+ excl. Model Y L): isolated well liner, 2000x2000. Unscaled plan shape of the sub-trunk well."
+    },
+    {
+      "source_id": "src_img_trunk_open_rear_parcel_shelf_extended_blue",
+      "type": "IMAGE",
+      "local_path": "images/trunk-open-rear-parcel-shelf-extended-blue.png",
+      "origin_url": "https://digitalassets-shop.tesla.com/image/upload/v1/content/dam/tesla/CAR_ACCESSORIES/MODEL_Y/INTERIOR/1935489-99-E_1_2000.png",
+      "sha256": "f96b0b576dc277e832ec8fe5e463a270bd0abb0363b9c6a1c32b8bd13cd1b5b8",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "Tesla shop 'Model Y Parcel Shelf' ($135; 'Included with Model Y Premium and Model Y Performance'): straight-on rear view of a blue 2025+ Model Y (light-bar tail lamp) with liftgate open, parcel shelf extended. Best official view of the trunk aperture shape. 2000x2000. No people."
+    },
+    {
+      "source_id": "src_img_trunk_open_rear_3q_parcel_shelf_blue",
+      "type": "IMAGE",
+      "local_path": "images/trunk-open-rear-3q-parcel-shelf-blue.png",
+      "origin_url": "https://digitalassets-shop.tesla.com/image/upload/v1/content/dam/tesla/CAR_ACCESSORIES/MODEL_Y/INTERIOR/1935489-99-E_2_2000.png",
+      "sha256": "3e72f6a11c5f22043d73cc3d7a9cd41b62385d255b9d3ef1953771357f377528",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "Same shoot: rear three-quarter view into the open trunk, parcel shelf in place, shows side trims and seatbacks. 2000x2000. No people."
+    },
+    {
+      "source_id": "src_img_trunk_open_rear_parcel_shelf_folded_blue",
+      "type": "IMAGE",
+      "local_path": "images/trunk-open-rear-parcel-shelf-folded-blue.png",
+      "origin_url": "https://digitalassets-shop.tesla.com/image/upload/v1/content/dam/tesla/CAR_ACCESSORIES/MODEL_Y/INTERIOR/1935489-99-E_3_2000.png",
+      "sha256": "5299cda3c5a6ff81ee4779dcd725a46629c534eef89f06e13c623755e49511c3",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "Same shoot: rear view, parcel shelf folded against the seatbacks, full cargo floor and side walls visible. 2000x2000. No people."
+    },
+    {
+      "source_id": "src_img_sub_trunk_well_with_liner_installed",
+      "type": "IMAGE",
+      "local_path": "images/sub-trunk-well-with-liner-installed.png",
+      "origin_url": "https://digitalassets-shop.tesla.com/image/upload/v1/content/dam/tesla/studio/CAR_ACCESSORIES/MODEL_Y/INTERIOR/2325405-00-A_02_2000.png",
+      "sha256": "c3c6fa30301ddd0b68f427d0f2a01d5b3260e20b59b5e076ad700cb392749c09",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "Tesla shop rear well liner page: sub-trunk well open with liner installed, side view from the lip. 2000x2000. No people."
+    },
+    {
+      "source_id": "src_img_sub_trunk_well_with_liner_installed_alt",
+      "type": "IMAGE",
+      "local_path": "images/sub-trunk-well-with-liner-installed-alt.png",
+      "origin_url": "https://digitalassets-shop.tesla.com/image/upload/v1/content/dam/tesla/CAR_ACCESSORIES/MODEL_Y/INTERIOR/2048569-WL-A_2_2000.png",
+      "sha256": "3e47e5def7833900dc268b8444516652a59617edbf5b600df9d318a454501109",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "Tesla shop rear well liner page (gallery image 4): sub-trunk well with liner, looking down from the lip. The 2048569 prefix suggests an older shoot; the body is not confirmed. 2000x2000. No people."
+    },
+    {
+      "source_id": "src_img_trunk_liner_5seat_installed_seats_folded",
+      "type": "IMAGE",
+      "local_path": "images/trunk-liner-5seat-installed-seats-folded.png",
+      "origin_url": "https://digitalassets-shop.tesla.com/image/upload/v1/content/dam/tesla/studio/CAR_ACCESSORIES/MODEL_Y/INTERIOR/2048569-TS-C_02_2000.png",
+      "sha256": "58031c3b28d48fea95b13c5372a17880b4668fef1940b465a644b63ac6fcafc5",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "Tesla shop trunk + seatback liner page: liner installed, 5-seat second row folded flat, looking in from the liftgate. Body not independently confirmed (see the outline image note). 2000x2000. No people."
+    },
+    {
+      "source_id": "src_img_trunk_liner_7seat_installed_seats_upright",
+      "type": "IMAGE",
+      "local_path": "images/trunk-liner-7seat-installed-seats-upright.png",
+      "origin_url": "https://digitalassets-shop.tesla.com/image/upload/v1/content/dam/tesla/studio/CAR_ACCESSORIES/MODEL_Y/INTERIOR/2423607-00-A_02_2000.png",
+      "sha256": "4ff6782921eb3d7605d0a8ae5998ced681c2cc8693fb7713ecaca550a285acb3",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "Tesla shop: 7-seat cargo area with liner, third row upright. 2000x2000. No people."
+    },
+    {
+      "source_id": "src_img_trunk_liner_7seat_installed_seats_folded",
+      "type": "IMAGE",
+      "local_path": "images/trunk-liner-7seat-installed-seats-folded.png",
+      "origin_url": "https://digitalassets-shop.tesla.com/image/upload/v1/content/dam/tesla/studio/CAR_ACCESSORIES/MODEL_Y/INTERIOR/2423607-00-A_03_2000.png",
+      "sha256": "d6a83fb5b4359601a5e24fd7501bdd918c8378868d734850e6c170241d0c7539",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "Tesla shop: 7-seat cargo area with liners, second and third rows folded. 2000x2000. No people."
+    },
+    {
+      "source_id": "src_img_model_y_standard_studio_front_3q_white",
+      "type": "IMAGE",
+      "local_path": "images/model-y-standard-studio-front-3q-white.png",
+      "origin_url": "https://digitalassets.tesla.com/tesla-contents/image/upload/Model-Y-Standard-Specs-Desktop-Imperial.png",
+      "sha256": "437f793713ffd3f671e9b647d03d74951183b93e49dd5d746912cb0fc2a1aedb",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "tesla.com/modely 'Model Y Specs' panel art: white Model Y (Standard) studio front three-quarter on transparent background with dimension guide lines (numbers are HTML overlay, not in the image). 1827x668. No people."
+    },
+    {
+      "source_id": "src_img_model_y_premium_studio_front_3q_grey",
+      "type": "IMAGE",
+      "local_path": "images/model-y-premium-studio-front-3q-grey.png",
+      "origin_url": "https://digitalassets.tesla.com/tesla-contents/image/upload/Model-Y-2-Specs-LR-AWD-Desktop-Imperial.png",
+      "sha256": "3b2ee78667a82f020bf9e127ea754c0d551edd69a174d57abd16e68b878f4083",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "tesla.com/modely Premium specs panel art: grey Model Y Premium studio front three-quarter with dimension guide lines. 1218x445. No people."
+    },
+    {
+      "source_id": "src_img_model_y_performance_studio_front_3q_red",
+      "type": "IMAGE",
+      "local_path": "images/model-y-performance-studio-front-3q-red.png",
+      "origin_url": "https://digitalassets.tesla.com/tesla-contents/image/upload/Model-Y-Performance-Specs-Desktop-US-Imperial.png",
+      "sha256": "c4245bc13b7ac30ef081ee2811c707fb26b9a2c7177e7573409af071804a5b02",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "tesla.com/modely Performance specs panel art: red Model Y Performance studio front three-quarter with dimension guide lines. 1218x445. No people."
+    },
+    {
+      "source_id": "src_img_liftgate_open_front_3q_white_outdoor",
+      "type": "IMAGE",
+      "local_path": "images/liftgate-open-front-3q-white-outdoor.jpg",
+      "origin_url": "https://digitalassets.tesla.com/tesla-contents/image/upload/Model-Y-Meet-Carousel-Utility-All-Devices-Dark.jpg",
+      "sha256": "04c2b0093110d2acce595b69809716a6f626f100909362afe3630384a74ffb54",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "tesla.com/modely 'Meet Model Y' Utility card: white 2025+ Model Y with liftgate fully open, roof rack, front three-quarter, outdoors. Shows liftgate swing envelope. 860x1000. CONTAINS A PERSON (paddleboarder, background left)."
+    },
+    {
+      "source_id": "src_img_rear_view_red_charging_people",
+      "type": "IMAGE",
+      "local_path": "images/rear-view-red-charging-people.png",
+      "origin_url": "https://digitalassets.tesla.com/tesla-contents/image/upload/Model-Y-Meet-Carousel-Slide-2-Desktop.png",
+      "sha256": "c39232d45df33b9994e089661f814c6084919c086f763b49fbf4dc3c6c9e20d3",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "tesla.com/modely carousel: straight-on rear view of a red 2025+ Model Y (light-bar tail lamp) while charging. Useful for rear-face proportions. 861x1000. CONTAINS PEOPLE (two adults walking)."
+    },
+    {
+      "source_id": "src_img_side_profile_white_hero_people",
+      "type": "IMAGE",
+      "local_path": "images/side-profile-white-hero-people.jpg",
+      "origin_url": "https://digitalassets.tesla.com/tesla-contents/image/upload/Model-Y-Hero-Desktop-US.jpg",
+      "sha256": "2ffc501ce85baa69db6eabc5645d34ed3b9c62cdaebfda89032c97464c3f0d55",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "tesla.com/modely US hero: white 2025+ Model Y in near side profile at dusk. 3370x1430 (largest official side view found). CONTAINS PEOPLE (crowd in background)."
+    },
+    {
+      "source_id": "src_img_premium_side_3q_silver_motion",
+      "type": "IMAGE",
+      "local_path": "images/premium-side-3q-silver-motion.jpg",
+      "origin_url": "https://digitalassets.tesla.com/tesla-contents/image/upload/Model-Y-Premium-Hero-Desktop-NA.jpg",
+      "sha256": "d7a770387a04dfcf68db71268e6549d9595d63fd81c0fbb6177b04ccc05a9bc9",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "tesla.com/modely Premium hero: silver Model Y Premium, front three-quarter / side, motion-blurred road. 2592x1100. No people."
+    },
+    {
+      "source_id": "src_video_five_seater_tutorial_legacy",
+      "type": "VIDEO_MP4",
+      "local_path": "videos/model-y-five-seater-tutorial-LEGACY-BODY.mp4",
+      "origin_url": "https://digitalassets.tesla.com/tesla-contents/video/upload/Model-Y-Five-Seater_Y_Video.mp4",
+      "sha256": "15ca6ed83cd4563d5c05b81a9b4bc5d62c47f165fd05542c6a20073032cebc6b",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "Manufacturer (Tesla) copyright; internal research use; generate_from NOT cleared",
+      "notes": "Tesla support tutorial 'Five-Seater | Model Y' (page https://www.tesla.com/support/videos/watch/five-seater-model-y), Tesla-hosted MP4, 1920x1080, 64.8 s. Seat folding, center fold, sub-trunk access. LEGACY 2020-2024 interior: use for motion reference only, not 2025+ geometry. CONTAINS PEOPLE (hands, person at liftgate).",
+      "storage": "local_only"
+    },
+    {
+      "source_id": "src_video_sources_list",
+      "type": "VIDEO_URL_LIST",
+      "local_path": "videos/video-sources.md",
+      "origin_url": "https://www.tesla.com/support/videos",
+      "sha256": "28c9cf5d8e87d5f6b925f1406036a8e7127885f0e7c919922653b8e16b1cfcc6",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "Index of official video URLs (Tesla support MP4s and the official Tesla YouTube channel). YouTube not downloaded. sha256 recorded 2026-10-07 by the orchestrator (was null)."
+    },
+    {
+      "source_id": "src_video_yt_iPJDW5EaIzE",
+      "type": "VIDEO_URL",
+      "local_path": "videos/video-sources.md",
+      "origin_url": "https://www.youtube.com/watch?v=iPJDW5EaIzE",
+      "sha256": "28c9cf5d8e87d5f6b925f1406036a8e7127885f0e7c919922653b8e16b1cfcc6",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "Official Tesla YouTube channel (@tesla): 'The New Model Y In 60 Seconds | Tesla'. Found via channel search; not downloaded or reviewed. sha256 recorded 2026-10-07 by the orchestrator (was null)."
+    },
+    {
+      "source_id": "src_video_yt__OiEwIUQzDk",
+      "type": "VIDEO_URL",
+      "local_path": "videos/video-sources.md",
+      "origin_url": "https://www.youtube.com/watch?v=_OiEwIUQzDk",
+      "sha256": "28c9cf5d8e87d5f6b925f1406036a8e7127885f0e7c919922653b8e16b1cfcc6",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "Official Tesla YouTube channel (@tesla): 'Designing The New Model Y | Tesla'. Found via channel search; not downloaded or reviewed. sha256 recorded 2026-10-07 by the orchestrator (was null)."
+    },
+    {
+      "source_id": "src_video_yt_gQ92igDGBHQ",
+      "type": "VIDEO_URL",
+      "local_path": "videos/video-sources.md",
+      "origin_url": "https://www.youtube.com/watch?v=gQ92igDGBHQ",
+      "sha256": "28c9cf5d8e87d5f6b925f1406036a8e7127885f0e7c919922653b8e16b1cfcc6",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "Official Tesla YouTube channel (@tesla): 'Introducing Model Y Standard & Model 3 Standard'. Found via channel search; not downloaded or reviewed. sha256 recorded 2026-10-07 by the orchestrator (was null)."
+    },
+    {
+      "source_id": "src_video_closing_frunk_url",
+      "type": "VIDEO_URL",
+      "local_path": "videos/video-sources.md",
+      "origin_url": "https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto,q_auto:best/Closing-Front-Trunk_3Y_Video.mp4",
+      "sha256": "28c9cf5d8e87d5f6b925f1406036a8e7127885f0e7c919922653b8e16b1cfcc6",
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "Tesla support 'Closing Front Trunk | Model 3 and Model Y'. Footage shows a Model 3, so it was not stored. sha256 recorded 2026-10-07 by the orchestrator (was null)."
+    },
+    {
+      "source_id": "src_adac_test_page_url",
+      "type": "THIRD_PARTY_REVIEW_PAGE",
+      "local_path": null,
+      "origin_url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/tesla/tesla-model-y-test/",
+      "sha256": null,
+      "acquired_at": "2026-10-07",
+      "authority": "THIRD_PARTY_MEASUREMENT",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "ADAC article covering the 2025 facelift test and the Model Y Standard; repeats the 420/850/1380 L and 105 L / ~80 L figures. Which variant the table values belong to is ambiguous on the page, so values are attributed to the \u00d6AMTC PDF (Maximum Range RWD)."
+    },
+    {
+      "source_id": "src_caranddriver_2026_url",
+      "type": "THIRD_PARTY_REVIEW_PAGE",
+      "local_path": null,
+      "origin_url": "https://www.caranddriver.com/tesla/model-y-2026",
+      "sha256": null,
+      "acquired_at": "2026-10-07",
+      "authority": "THIRD_PARTY_MEASUREMENT",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "Car and Driver 2026 Model Y review: carry-on test 7 in cargo area, 19 with 2nd row folded, 1 in frunk; C/D spec boxes list cargo 71/29 ft3. Trim of the carry-on test not identified in the passage read."
+    },
+    {
+      "source_id": "src_autoedgeview_2026_url",
+      "type": "THIRD_PARTY_REVIEW_PAGE",
+      "local_path": null,
+      "origin_url": "https://autoedgeview.com/ev-reviews/tesla-model-y-trunk-cargo-review-2026",
+      "sha256": null,
+      "acquired_at": "2026-10-07",
+      "authority": "COMMUNITY",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "2026-07-30, no author. Claims ~37 in between wheel wells, 31 in deep, 27 in tall for '2026 Juniper', with no method, and quotes legacy volumes. LOW confidence."
+    },
+    {
+      "source_id": "src_basenor_juniper_pages_url",
+      "type": "RETAILER_PAGE",
+      "local_path": null,
+      "origin_url": "https://www.basenor.com/pages/model-y-cargo-comparison-juniper-vs-legacy",
+      "sha256": null,
+      "acquired_at": "2026-10-07",
+      "authority": "RETAILER",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "Accessory maker pages (also /pages/model-y-juniper-dimensions and the 2026-06-01 spec-guide blog). Volumes only, partly legacy figures. Claim: Juniper rear bench slightly deeper than Legacy, so legacy mats leave a gap. No linear trunk dimensions."
+    },
+    {
+      "source_id": "src_tesloid_cargo_mat_url",
+      "type": "RETAILER_PAGE",
+      "local_path": null,
+      "origin_url": "https://tesloid.com/product/model-y-cargo-mats-3d-extreme-performance-5-seater-juniper/",
+      "sha256": null,
+      "acquired_at": "2026-10-07",
+      "authority": "RETAILER",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "Aftermarket cargo mat for 2026+ Premium/Performance 5-seat: 'Not compatible with standard models'. Corroborates the Standard vs Premium cargo difference shown by Tesla's own liner SKUs."
+    },
+    {
+      "source_id": "src_shop_trunk_liner_page_url",
+      "type": "SPEC_PAGE",
+      "local_path": null,
+      "origin_url": "https://shop.tesla.com/product/model-y-all-weather-rear-trunk-_-seatback-liner",
+      "sha256": null,
+      "acquired_at": "2026-10-07",
+      "authority": "MANUFACTURER",
+      "rights_note": "URL reference only; not downloaded",
+      "notes": "Styles: 'Model Y 7 Seat Interior' / 'Model Y' / 'Model Y Premium and Performance'; price $195 (Model Y) vs $220 (Premium and Performance, 7 Seat). 'Compatible with Model Y vehicles produced in 2025+, excluding Model Y L.' Shows the Standard rear trunk floor differs from Premium/Performance."
+    },
+    {
+      "source_id": "src_12365auto_2025_practicality_test",
+      "type": "THIRD_PARTY_REVIEW_PAGE",
+      "local_path": "specs/12365auto-2025-model-y-practicality-test-20250405.html",
+      "origin_url": "https://m.12365auto.com/scbg/20250405/545571-all.shtml",
+      "sha256": "899f60858bf73e52d7fe932cb1c0803b3cab35c663bdfacfa1ac6358caf11b5a",
+      "acquired_at": "2026-10-07",
+      "authority": "THIRD_PARTY_MEASUREMENT",
+      "rights_note": "12365auto (\u8f66\u8d28\u7f51) copyright; internal research use; generate_from NOT cleared",
+      "notes": "\u8f66\u8d28\u7f51 '2025\u6b3e\u7279\u65af\u62c9Model Y\u65e5\u5e38\u5b9e\u7528\u6027\u6d4b\u8bd5\u62a5\u544a' (2025-04-05, author \u5218\u6d0b). Test car: '2025\u6b3e\u7279\u65af\u62c9Model Y \u957f\u7eed\u822a\u5168\u8f6e\u9a71\u52a8 \u9996\u53d1\u7248' (China, 2025+ refreshed body, Long Range AWD Launch Edition). Tester tape-measured the trunk: '\u5f00\u53e3\u957f\u5ea6\u4e3a1190mm\uff1b\u5f00\u53e3\u5bbd\u5ea6\u4e3a1140mm\uff1b\u540e\u5907\u53a2\u8fdb\u6df1\u4e3a1060mm\uff1b\u540e\u5907\u53a2\u5730\u53f0\u4e0e\u9876\u90e8\u7684\u5782\u76f4\u9ad8\u5ea6\u4e3a680mm'. Page is GB18030-encoded. Which axis '\u5f00\u53e3\u957f\u5ea6' vs '\u5f00\u53e3\u5bbd\u5ea6' denotes is not defined on the page; see geometry/trunk-geometry.md \u00a71c."
+    },
+    {
+      "source_id": "src_d1ev_2025_model_y_review",
+      "type": "THIRD_PARTY_REVIEW_PAGE",
+      "local_path": "specs/d1ev-xchuxing-2025-model-y-review-20250124.html",
+      "origin_url": "https://m.d1ev.com/carnews/pingce/261205",
+      "sha256": "f68e6eabb39102d49ba725c6185b83e080999f71ef01989d613af09f00409edb",
+      "acquired_at": "2026-10-07",
+      "authority": "THIRD_PARTY_MEASUREMENT",
+      "rights_note": "\u7b2c\u4e00\u7535\u52a8\u7f51/\u65b0\u51fa\u884c copyright; internal research use; generate_from NOT cleared",
+      "notes": "\u7b2c\u4e00\u7535\u52a8\u7f51 (d1ev) / \u65b0\u51fa\u884c review of the \u7115\u65b0\u7248 (2025+ refreshed) Model Y, 2025-01-24. Reviewer-measured: '\u6839\u636e\u5b9e\u9645\u7684\u6d4b\u91cf\uff0c\u7115\u65b0\u7248 Model Y \u4e0e\u8001\u6b3e\u7684\u7a7a\u95f4\u57fa\u672c\u76f8\u540c\uff0c\u5e38\u89c4\u72b6\u6001\u4e0b\u7eb5\u6df1\u80fd\u591f\u8fbe\u5230 108.5cm\uff0c\u4e0e\u8001\u6b3e\u57fa\u672c\u6ca1\u6709\u53d8\u5316\u3002' Supports reusing legacy-body floor-length figures for the 2025+ body."
+    },
+    {
+      "source_id": "src_12365auto_2025_practicality_test_utf8",
+      "type": "THIRD_PARTY_REVIEW_PAGE",
+      "local_path": "specs/12365auto-2025-model-y-practicality-test-20250405-utf8.html",
+      "origin_url": "https://m.12365auto.com/scbg/20250405/545571-all.shtml",
+      "sha256": "e8d2bc47a598537ae0ad679cbbc2f2483c8ceb0de2412e611d3b8ab636018fd0",
+      "acquired_at": "2026-10-07",
+      "authority": "THIRD_PARTY_MEASUREMENT",
+      "rights_note": "12365auto (\u8f66\u8d28\u7f51) copyright; internal research use; generate_from NOT cleared",
+      "derived_from": "src_12365auto_2025_practicality_test",
+      "notes": "Character-for-character transcoding of src_12365auto_2025_practicality_test from GB18030 to UTF-8 (python bytes.decode('gb18030'), with the meta charset declaration changed to utf-8), so the evidence validator's UTF-8 quote gate can read it. No content changed. Cite this source_id in claims."
+    },
+    {
+      "source_id": "src_user_red_trunk_reference_20261007",
+      "type": "IMAGE",
+      "authority": "USER_PROVIDED",
+      "local_path": "images/user-red-trunk-reference.jpeg",
+      "sha256": "94ba516ada1e8afcdcc943676caa6c2dfd3e9aac92d0b52c647ed44b543d9d0f",
+      "notes": "User supplied visual reference for red paint and trunk appearance. Model year/trim unverified. Not measurement evidence.",
+      "rights_note": "User supplied for this scene correction."
+    }
+  ],
+  "spin_360": {
+    "present": false,
+    "type": null,
+    "checked_at": [
+      "https://www.tesla.com/modely/design#overview",
+      "https://www.tesla.com/modely",
+      "https://www.illumaesthetic.com/products/tesla-model-y-juniper-3d-scan-2025"
+    ],
+    "notes": "tesla.com configurator shows a stepped carousel of fixed server-rendered views (compositor views FRONT34, SIDE, REAR34, RIMCLOSEUP, plus interior), not a drag-to-spin 360. tesla.com/modely has static images and videos only. Tesla sells direct, so there is no major-retailer product page; dealer marketplaces (KBB/Autotrader) show per-listing 360 badges on some used 2026 Model Y listings (search result only, not opened). These are per-car dealer photos, not a product asset. The illumaesthetic scan page has a '360\u00b0 Photos' viewer of its scanned car (third-party, paid product)."
+  },
+  "collection_gaps": [
+    "LIVE MANUAL PDF NOT SAVED: tesla.com/ownersmanual/modely/en_us/Owners_Manual.pdf (software 2026.32, 16,404,611 bytes) loads in the browser, but curl/WebFetch get HTTP 403 (bot protection), and handing bytes from the browser to a local receiver stalled at Chrome's local-network permission (not granted). Stored the newest valid Wayback capture instead (2026-01-16, software 2025.44). The Wayback 2026-02-10 capture is truncated (5 MiB). The newer live text for trunk sections is in manuals/owners-manual-live-sections-2026-10-07.md.",
+    "NO OFFICIAL TRUNK LINEAR DIMENSIONS: Tesla publishes no liftgate opening width/height, floor length, wheel-arch width, interior height, sub-trunk L\u00d7W\u00d7depth, frunk L\u00d7W\u00d7depth, or seatback angle for the 2025+ Model Y (manual, tesla.com, shop, Collision Repair manual checked).",
+    "NO 2025+ THIRD-PARTY TAPE MEASUREMENTS: beyond ADAC's 68 cm load lip, no reputable linear measurements of the 2025+ trunk were found (ADAC/\u00d6AMTC, Car and Driver, Basenor, Tesloid, TMC forum threads, kofferraum.org checked). Legacy 2020 Tesmanian measurements are stored as SUBSTITUTION. teslamotorsclub.com returns 403 to WebFetch; one Juniper comparison thread was read in the browser and had no measurements. Reddit, MotorTrend, Car and Driver are blocked to the search tool's crawler.",
+    "Collision Repair manual figures: service.tesla.com blocks curl and has no Wayback copy; only a screen capture of the rear-body figure was stored (not original bytes). The other 6 figures are not trunk-relevant and are referenced by URL.",
+    "Owner's manual illustrations (live HTML) are served from tesla.com and blocked to curl; they are not stored separately. Equivalent illustrations are inside the vault PDF (pages listed in geometry/trunk-geometry.md). Extracting them would create derivatives, which belong outside the vault (README rule 4).",
+    "tesla.com configurator renders (static-assets.tesla.com/configurator/compositor) return 403 to curl, so no clean studio rear/side/trunk-open renders in a chosen paint were stored. Images come from digitalassets.tesla.com (marketing) and digitalassets-shop.tesla.com (accessory shots).",
+    "Model Y Performance spec panel on tesla.com/modely was not captured: the tab click did not render a Performance panel in the DOM. Performance dimensions come from the owner's manual instead.",
+    "Which body the Tesla shop 5-seat liner gallery images (prefix 2048569) depict is not confirmed. The page says the product fits 2025+, but the same images serve both the Standard and Premium/Performance styles.",
+    "No 2025+ official Tesla-hosted video of trunk/liftgate/seat folding found; the stored Five-Seater tutorial shows the legacy interior. YouTube URLs recorded only.",
+    "Rear subwoofer / audio intrusion into the trunk side wall on Premium vs Standard: not documented in any source checked.",
+    "GVWR/GAWR and occupant+cargo payload not published online; printed on each car's door-pillar labels."
+  ],
+  "curation_log": [
+    {
+      "date": "2026-10-07",
+      "by": "source-collection agent",
+      "action": "Initial collection of source-vault/tesla-model-y/",
+      "reason": "Work order: geometry-faithful Model Y trunk evidence for the Graco Ready2Jet trunk-fit question. Pre-2025 manuals deliberately not collected (vault rule 6). The only legacy-body material kept is the Tesmanian measurement diagrams and the Tesla Five-Seater tutorial, both labeled LEGACY in file names and notes."
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "source": "docs/workorders/evidence-pack-extraction-workorder.md §6.1",
   "expected_total": {
     "min": 40,
-    "max": 110
+    "max": 140
   },
   "required_types": {
     "SPEC": 1,
@@ -62,5 +62,5 @@
       "desc": "Footrest adjustment and cup holder attachment/use. Added 2026-08-24 under the procedures-are-never-skippable policy."
     }
   ],
-  "revision_note": "max raised on 2026-08-24: procedures-are-never-skippable policy — deferred procedures (harness height / footrest, cup holder, 3-point conversion) must be extracted; band ceiling must never cause omission."
+  "revision_note": "max raised on 2026-08-24: procedures-are-never-skippable policy — deferred procedures (harness height / footrest, cup holder, 3-point conversion) must be extracted; band ceiling must never cause omission. | max raised 110 -> 140 on 2026-10-07 by the orchestrator: spec top-up added 26 claims from specs/specs.md (band ceiling must never cause omission)."
 }

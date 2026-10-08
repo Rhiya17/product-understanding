@@ -49,6 +49,17 @@
       "category": "air_purifier",
       "tier_hypothesis": "mid",
       "selection_rationale": "Rigid control product for 3D-twin tool testing (digital-twin plan D1/D8); filter-reset and filter-replacement procedures; app pairing."
+    },
+    {
+      "product_id": "prod_tesla_model_y",
+      "dir": "tesla-model-y",
+      "brand": "Tesla",
+      "model": "Model Y",
+      "model_year": "2026 (2025+ refreshed body)",
+      "category": "midsize_suv_ev",
+      "tier_hypothesis": "mid",
+      "selection_rationale": "Spatial-fit target for 'Can I fit a Ready2Jet stroller in a Tesla Model Y trunk?' (HLD worked example); cross-product fit pair with Ready2Jet.",
+      "identity_notes": "US 2026 lineup: Standard RWD/AWD, Premium RWD/AWD (7-seat option), Performance AWD; Model Y L excluded. Trunk floor trim differs Standard vs Premium/Performance. Tesla publishes no linear trunk opening/floor dimensions for the 2025+ body; vault floor/opening numbers are 2020-24 body stand-ins (SUBSTITUTION). Added 2026-10-07."
     }
   ],
   "compatibility_pairs": [
@@ -59,6 +70,10 @@
     [
       "prod_bose_qc_ultra_headphones",
       "prod_apple_macbook_air_13_m3"
+    ],
+    [
+      "prod_graco_ready2jet",
+      "prod_tesla_model_y"
     ]
   ]
 }

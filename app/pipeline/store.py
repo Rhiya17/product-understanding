@@ -272,6 +272,10 @@ class Store:
         if scene and view in scene["views"]:
             return ("render", scene["scene_version"]), None
         from app.pipeline import authoring
+        from system import fit_answer
+        if fit_answer.is_fit_procedure(procedure_id) and not authoring.enabled():
+            return None, ("Fit videos are built and measured in the Blender authoring pipeline, "
+                          "which is turned off on this server. The written fit check is complete.")
         if authoring.enabled():
             problem = authoring.readiness(self)
             if problem:
@@ -413,12 +417,19 @@ class Store:
                                      row["product_name"], row["question"])
         if not route:
             return None
+        variant = self.variant_for(row["product_dir"], row["procedure_id"], row["question"])
         with self.tx() as db:
             # Continue from the failed attempt: keep its approved clips and plan.
             job_id = self._ensure_job(db, row["product_dir"], row["procedure_id"], row["view"],
                                       route[1], kind=route[0], resume_from=row["job_id"])
-            db.execute("UPDATE requests SET state='queued', job_id=?, message=NULL, seen=1,"
-                       " updated_at=? WHERE id=?", (job_id, now(), request_id))
+            job = db.execute("SELECT state, stage FROM jobs WHERE id=?", (job_id,)).fetchone()
+            state = "queued" if job["state"] == "queued" else (
+                "checking" if job["stage"] in ("encoding", "checking", "reviewing the video") else "rendering")
+            # All visitors waiting on the same failed job must follow its retry.
+            # Keep each visitor's question and request identity private and intact.
+            db.execute("UPDATE requests SET state=?, job_id=?, variant=?, message=NULL, seen=1,"
+                       " updated_at=? WHERE id=? OR (job_id=? AND state IN ('failed','needs_review'))",
+                       (state, job_id, variant, now(), request_id, row["job_id"]))
         return self.request(visitor, request_id)
 
     def request(self, visitor, request_id):

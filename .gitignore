@@ -34,3 +34,7 @@ docs/planning/
 .showme-slides-*/
 outputs/showme/
 *.pptx
+
+# Large source videos collected 2026-10-07: kept locally, out of Git (hashes in each manifest.json)
+source-vault/graco-ready2jet-2212125/videos/pdp-ready2jet-marketing-video-37s.mp4
+source-vault/tesla-model-y/videos/model-y-five-seater-tutorial-LEGACY-BODY.mp4

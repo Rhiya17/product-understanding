@@ -1,0 +1,95 @@
+{
+  "all_five_playable": false,
+  "cases": [
+    {
+      "case": "fold",
+      "question": "How do I fold the Ready2Jet stroller?",
+      "answer_status": "ready",
+      "headline": "Fold stroller \u2014 Graco Ready2Jet",
+      "video_state": "ready",
+      "procedure": "fold_stroller",
+      "assets": [
+        {
+          "id": "vid_6938c972cb5a",
+          "url": "http://127.0.0.1:8766/video/vid_6938c972cb5a",
+          "http_status": 206,
+          "content_type": "video/mp4",
+          "range_playback_ok": true
+        },
+        {
+          "id": "vid_93e4fa81a7b5",
+          "url": "http://127.0.0.1:8766/video/vid_93e4fa81a7b5",
+          "http_status": 206,
+          "content_type": "video/mp4",
+          "range_playback_ok": true
+        },
+        {
+          "id": "vid_febf2b6b751b",
+          "url": "http://127.0.0.1:8766/video/vid_febf2b6b751b",
+          "http_status": 206,
+          "content_type": "video/mp4",
+          "range_playback_ok": true
+        },
+        {
+          "id": "vid_8ae3c7d0aac0",
+          "url": "http://127.0.0.1:8766/video/vid_8ae3c7d0aac0",
+          "http_status": 206,
+          "content_type": "video/mp4",
+          "range_playback_ok": true
+        }
+      ],
+      "playable": true
+    },
+    {
+      "case": "trunk_fit",
+      "question": "Will the Ready2Jet stroller fit in my Tesla Model Y trunk?",
+      "answer_status": "unsupported",
+      "headline": "Will the Ready2Jet stroller fit in my Tesla Model Y trunk?",
+      "video_state": null,
+      "procedure": null,
+      "assets": [],
+      "playable": false,
+      "detail": "Our verified sources for the Graco Ready2Jet don't establish an answer to this question."
+    },
+    {
+      "case": "brakes",
+      "question": "How do I operate the Ready2Jet stroller brakes?",
+      "answer_status": "ready",
+      "headline": "Brake \u2014 Graco Ready2Jet",
+      "video_state": "offer",
+      "procedure": "brake",
+      "assets": [],
+      "playable": false,
+      "detail": "Follow these 2 steps."
+    },
+    {
+      "case": "headphones",
+      "question": "How do I connect QuietComfort headphones to my Mac?",
+      "answer_status": "needs_input",
+      "headline": "",
+      "video_state": "ready",
+      "procedure": null,
+      "assets": [
+        {
+          "id": "vid_e13cad3b79ec",
+          "url": "http://127.0.0.1:8766/video/vid_e13cad3b79ec",
+          "http_status": 206,
+          "content_type": "video/mp4",
+          "range_playback_ok": true
+        }
+      ],
+      "playable": true
+    },
+    {
+      "case": "filter",
+      "question": "How do I replace the filter in my Levoit Core 300S?",
+      "answer_status": "ready",
+      "headline": "Replace filter \u2014 Levoit Core 300S",
+      "video_state": "offer",
+      "procedure": "replace_filter",
+      "assets": [],
+      "playable": false,
+      "detail": "Follow these 6 steps."
+    }
+  ]
+}

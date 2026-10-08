@@ -1,0 +1,1031 @@
+{
+  "steps": [
+    {
+      "claim_id": "fit_step_fold",
+      "parts": [],
+      "text": "Show the Graco Ready2Jet fully folded, standing behind the Tesla Model Y's open trunk. Folded size used: 787 x 521 x 292 mm.",
+      "quote": "The folded dimensions of this stroller are height 30in depth 11.5in and width 20.5in. | The Ready2Jet Compact Stroller folded dimensions are 30 in H x 11.5 in D x 20.5 in W. | The Ready2Jet Stroller measures 30\" H x 11.5\" D x 20.5\" W when folded",
+      "evidence_claim_ids": [
+        "claim_r2j_spec_folded_dimensions_gcc"
+      ],
+      "manual_pages": []
+    },
+    {
+      "claim_id": "fit_step_open",
+      "parts": [],
+      "text": "The Tesla Model Y liftgate is fully open.",
+      "quote": "To open the rear trunk, ensure Model Y is in Park | To open the rear trunk, ensure Model Y is in Park",
+      "evidence_claim_ids": [
+        "claim_tmy_step_open_rear_trunk_1"
+      ],
+      "manual_pages": []
+    },
+    {
+      "claim_id": "fit_step_place",
+      "parts": [],
+      "text": "Lift the folded Graco Ready2Jet, lay it flat and slide it in over the load lip: its 787 mm side runs across the car, 521 mm front-to-back, 292 mm tall. It comes to rest on the floor against the rear seatbacks, centred, with at least 25 mm clear of every surface.",
+      "quote": "",
+      "evidence_claim_ids": [
+        "claim_r2j_spec_folded_dimensions_gcc",
+        "claim_tmy_tp12365_depth",
+        "claim_tmy_tp12365_floor_to_top_repair_20261007",
+        "claim_tmy_tp12365_opening_length",
+        "claim_tmy_tp12365_opening_width",
+        "claim_tmy_tpd1ev_depth"
+      ],
+      "manual_pages": []
+    },
+    {
+      "claim_id": "fit_step_close",
+      "parts": [],
+      "text": "Close the liftgate fully. The stroller stays clear: its top is 292 mm against a 680 mm floor-to-top height.",
+      "quote": "",
+      "evidence_claim_ids": [
+        "claim_tmy_tp12365_floor_to_top_repair_20261007"
+      ],
+      "manual_pages": []
+    }
+  ],
+  "scene": {
+    "kind": "cargo_fit",
+    "verdict": "LIKELY_FITS_UNCONFIRMED",
+    "engine": "fit-engine-v2",
+    "evidence_fingerprint": "909148f4fad88709e7776b8d4da8ace5dd617e6b3b69ab304100196aa784b282",
+    "units": "mm in this brief; build the scene in meters",
+    "frame": "+Z up. +X points from the load lip into the car toward the rear seats. The load lip's inner edge is at x=0; the cargo floor top is the reference height (it is flush with the lip).",
+    "object": {
+      "product_dir": "graco-ready2jet-2212125",
+      "name": "Graco Ready2Jet",
+      "state": "folded",
+      "envelope_mm": {
+        "along_x": 520.7,
+        "lateral": 786.9,
+        "vertical": 292.1
+      },
+      "orientation": {
+        "along_x": "object_folded_width",
+        "lateral": "object_folded_height",
+        "vertical": "object_folded_depth"
+      },
+      "required_object_prefix": "STROLLER_"
+    },
+    "space": {
+      "product_dir": "tesla-model-y",
+      "name": "Tesla Model Y",
+      "measured": {
+        "floor_depth": {
+          "value_mm": 1060.0,
+          "status": "EVIDENCED"
+        },
+        "closed_ceiling_height": {
+          "value_mm": 680.0,
+          "status": "EVIDENCED"
+        },
+        "aperture_min_span": {
+          "value_mm": 1140.0,
+          "status": "EVIDENCED"
+        }
+      },
+      "unverified": {
+        "floor_width_between_arches": {
+          "status": "UNVERIFIED",
+          "illustrative_mm": 887,
+          "disclose": "The floor width between the wheel arches is not verified for this vehicle; it is drawn at an illustrative width, not a measurement."
+        }
+      },
+      "scope": {
+        "object": {
+          "product_dir": "graco-ready2jet-2212125",
+          "state": "folded"
+        },
+        "space": {
+          "product_dir": "tesla-model-y",
+          "space": "rear trunk, second row upright; liftgate closed for the final placement"
+        }
+      }
+    },
+    "placement": {
+      "rest_on": "floor",
+      "against": "rear seatbacks",
+      "lateral": "centred",
+      "clearance_mm": 25,
+      "sensitivity": {
+        "liftgate_trim_intrusion_max_mm_at_upright_seatback": 489.3,
+        "seatback_recline_max_deg_at_zero_trim_intrusion": 57.1,
+        "seatback_recline_max_deg_if_trim_intrusion_50mm": 54.2,
+        "seatback_recline_max_deg_if_trim_intrusion_100mm": 50.8,
+        "seatback_recline_max_deg_if_trim_intrusion_150mm": 46.9
+      }
+    },
+    "required_colliders": {
+      "floor": "FIT_FLOOR",
+      "seatback": "FIT_SEATBACK",
+      "liftgate": "FIT_LIFTGATE",
+      "side_left": "FIT_SIDE_L",
+      "side_right": "FIT_SIDE_R",
+      "ceiling": "FIT_CEILING"
+    },
+    "collider_rules": "Model each collider as a closed mesh with the given name: FIT_FLOOR spans exactly from the load lip (x=0) to the seatback base at the measured floor depth; FIT_CEILING is the closed floor-to-top limit (parcel shelf/headliner underside) at exactly the measured height above the floor top; FIT_SEATBACK is the rear seatbacks; FIT_SIDE_L and FIT_SIDE_R are the side trims/wheel arches; FIT_LIFTGATE is the liftgate, animated from open to fully closed by the last frame. Every visible mesh of the Graco Ready2Jet is named with the prefix STROLLER_.",
+    "disclosure": [
+      "The floor width between the wheel arches is not verified for this vehicle; it is drawn at an illustrative width, not a measurement.",
+      "The fit is not confirmed by every measurement; show it as an illustration of the calculated placement, not as proof."
+    ],
+    "evidence": {
+      "object_folded_height": {
+        "status": "EVIDENCED",
+        "value_mm": 786.9,
+        "claims": [
+          {
+            "claim_id": "claim_r2j_spec_folded_dimensions_gcc",
+            "product_dir": "graco-ready2jet-2212125",
+            "value_mm": 762.0,
+            "quotes": [
+              "The folded dimensions of this stroller are height 30in depth 11.5in and width 20.5in.",
+              "The Ready2Jet Compact Stroller folded dimensions are 30 in H x 11.5 in D x 20.5 in W.",
+              "The Ready2Jet Stroller measures 30\" H x 11.5\" D x 20.5\" W when folded"
+            ],
+            "measured_vehicle": null
+          }
+        ],
+        "note": null
+      },
+      "object_folded_width": {
+        "status": "EVIDENCED",
+        "value_mm": 520.7,
+        "claims": [
+          {
+            "claim_id": "claim_r2j_spec_folded_dimensions_gcc",
+            "product_dir": "graco-ready2jet-2212125",
+            "value_mm": 520.7,
+            "quotes": [
+              "The folded dimensions of this stroller are height 30in depth 11.5in and width 20.5in.",
+              "The Ready2Jet Compact Stroller folded dimensions are 30 in H x 11.5 in D x 20.5 in W.",
+              "The Ready2Jet Stroller measures 30\" H x 11.5\" D x 20.5\" W when folded"
+            ],
+            "measured_vehicle": null
+          }
+        ],
+        "note": null
+      },
+      "object_folded_depth": {
+        "status": "EVIDENCED",
+        "value_mm": 292.1,
+        "claims": [
+          {
+            "claim_id": "claim_r2j_spec_folded_dimensions_gcc",
+            "product_dir": "graco-ready2jet-2212125",
+            "value_mm": 292.1,
+            "quotes": [
+              "The folded dimensions of this stroller are height 30in depth 11.5in and width 20.5in.",
+              "The Ready2Jet Compact Stroller folded dimensions are 30 in H x 11.5 in D x 20.5 in W.",
+              "The Ready2Jet Stroller measures 30\" H x 11.5\" D x 20.5\" W when folded"
+            ],
+            "measured_vehicle": null
+          }
+        ],
+        "note": null
+      },
+      "floor_depth": {
+        "status": "EVIDENCED",
+        "value_mm": 1060.0,
+        "claims": [
+          {
+            "claim_id": "claim_tmy_tp12365_depth",
+            "product_dir": "tesla-model-y",
+            "value_mm": 1060.0,
+            "quotes": [
+              "\u540e\u5907\u53a2\u8fdb\u6df1\u4e3a1060mm"
+            ],
+            "measured_vehicle": "2025\u6b3e\u7279\u65af\u62c9Model Y \u957f\u7eed\u822a\u5168\u8f6e\u9a71\u52a8 \u9996\u53d1\u7248 (China; 2025+ body)"
+          },
+          {
+            "claim_id": "claim_tmy_tpd1ev_depth",
+            "product_dir": "tesla-model-y",
+            "value_mm": 1085.0,
+            "quotes": [
+              "\u5e38\u89c4\u72b6\u6001\u4e0b\u7eb5\u6df1\u80fd\u591f\u8fbe\u5230 108.5cm"
+            ],
+            "measured_vehicle": "\u7115\u65b0\u7248 Model Y (2025+ 'refreshed' body), China; trim not stated; the photographed car had 20-inch wheels"
+          }
+        ],
+        "note": null
+      },
+      "closed_ceiling_height": {
+        "status": "EVIDENCED",
+        "value_mm": 680.0,
+        "claims": [
+          {
+            "claim_id": "claim_tmy_tp12365_floor_to_top_repair_20261007",
+            "product_dir": "tesla-model-y",
+            "value_mm": 680.0,
+            "quotes": [
+              "\u540e\u5907\u53a2\u5730\u53f0\u4e0e\u9876\u90e8\u7684\u5782\u76f4\u9ad8\u5ea6\u4e3a680mm",
+              "\u6d4b\u8bd5\u8f66\u8f86\uff1a2025\u6b3e\u7279\u65af\u62c9Model Y \u957f\u7eed\u822a\u5168\u8f6e\u9a71\u52a8 \u9996\u53d1\u7248",
+              "\u5bf9\u4e8e\u8bc4\u6d4b\u8f66\u540e\u5907\u53a2\u7684\u57fa\u7840\u6570\u503c\uff0c\u6211\u4eec\u4e5f\u8fdb\u884c\u4e86\u5b9e\u6d4b"
+            ],
+            "measured_vehicle": "2025\u6b3e\u7279\u65af\u62c9Model Y \u957f\u7eed\u822a\u5168\u8f6e\u9a71\u52a8 \u9996\u53d1\u7248"
+          }
+        ],
+        "note": null
+      },
+      "aperture_min_span": {
+        "status": "EVIDENCED",
+        "value_mm": 1140.0,
+        "claims": [
+          {
+            "claim_id": "claim_tmy_tp12365_opening_length",
+            "product_dir": "tesla-model-y",
+            "value_mm": 1190.0,
+            "quotes": [
+              "\u5bf9\u4e8e\u8bc4\u6d4b\u8f66\u540e\u5907\u53a2\u7684\u57fa\u7840\u6570\u503c\uff0c\u6211\u4eec\u4e5f\u8fdb\u884c\u4e86\u5b9e\u6d4b\uff0c\u5f00\u53e3\u957f\u5ea6\u4e3a1190mm"
+            ],
+            "measured_vehicle": "2025\u6b3e\u7279\u65af\u62c9Model Y \u957f\u7eed\u822a\u5168\u8f6e\u9a71\u52a8 \u9996\u53d1\u7248 (China; 2025+ body)"
+          },
+          {
+            "claim_id": "claim_tmy_tp12365_opening_width",
+            "product_dir": "tesla-model-y",
+            "value_mm": 1140.0,
+            "quotes": [
+              "\u5f00\u53e3\u5bbd\u5ea6\u4e3a1140mm"
+            ],
+            "measured_vehicle": "2025\u6b3e\u7279\u65af\u62c9Model Y \u957f\u7eed\u822a\u5168\u8f6e\u9a71\u52a8 \u9996\u53d1\u7248 (China; 2025+ body)"
+          }
+        ],
+        "note": null
+      },
+      "floor_width_between_arches": {
+        "status": "UNKNOWN",
+        "value_mm": null,
+        "claims": [],
+        "note": "No claim in the tesla-model-y evidence pack states this measurement."
+      }
+    },
+    "reference_photo_ids": {
+      "graco-ready2jet-2212125": [
+        "src_r2j_img_pdp_folded_front3q_kingston_v1",
+        "src_r2j_open_folded_v1",
+        "src_r2j_folded_side_v1",
+        "src_r2j_img_pdp_open_folded_inset_v1"
+      ],
+      "tesla-model-y": [
+        "src_user_red_trunk_reference_20261007",
+        "src_img_trunk_open_rear_parcel_shelf_extended_blue",
+        "src_img_model_y_standard_studio_front_3q_white",
+        "src_img_model_y_premium_studio_front_3q_grey"
+      ]
+    },
+    "appearance_requirements": {
+      "exterior_paint": "red, not blue",
+      "interior": "Match the user trunk photo: dark charcoal carpet, flat continuous cargo floor, dark side trim and wheel arches, upright seatbacks at the far forward end; no seat cushion in the cargo bay.",
+      "reference_scope": "User photo is an appearance reference only; its model year and trim are unverified. Preserve verified dimensions and their existing uncertainty. Do not derive measurements from this photo.",
+      "visibility": "Light the dark cargo bay so the folded stroller stays distinct. Use opaque high-contrast dimension labels. Avoid tinted transparent bodywork washing out the stroller."
+    }
+  },
+  "checks": {
+    "object_prefix": "STROLLER_",
+    "colliders": {
+      "floor": "FIT_FLOOR",
+      "seatback": "FIT_SEATBACK",
+      "liftgate": "FIT_LIFTGATE",
+      "side_left": "FIT_SIDE_L",
+      "side_right": "FIT_SIDE_R",
+      "ceiling": "FIT_CEILING"
+    },
+    "object_envelope_m": [
+      0.5207,
+      0.7868999999999999,
+      0.2921
+    ],
+    "object_tolerance": 0.06,
+    "space_tolerance": 0.02,
+    "space_targets_m": {
+      "floor_depth": 1.06,
+      "closed_ceiling_height": 0.68
+    },
+    "clearance_m": 0.025
+  },
+  "product_name": "Graco Ready2Jet",
+  "label": "Graco Ready2Jet in a Tesla Model Y trunk \u00b7 3D fit demonstration (Astra + Blender)",
+  "caveat": "3D illustration of a placement calculated from verified measurements; geometry and clearances were checked automatically. Not confirmed: The floor width between the wheel arches is not verified for this vehicle; it is drawn at an illustrative width, not a measurement.",
+  "result": {
+    "engine": "fit-engine-v2",
+    "case": "graco-ready2jet-2212125:tesla-model-y",
+    "question_scope": {
+      "object": {
+        "product_dir": "graco-ready2jet-2212125",
+        "state": "folded"
+      },
+      "space": {
+        "product_dir": "tesla-model-y",
+        "space": "rear trunk, second row upright; liftgate closed for the final placement"
+      }
+    },
+    "clearance_mm": 25,
+    "parameters": {
+      "object_folded_height": {
+        "status": "EVIDENCED",
+        "value_mm": 786.9,
+        "inputs": [
+          {
+            "product_dir": "graco-ready2jet-2212125",
+            "claim_id": "claim_r2j_spec_folded_dimensions_gcc",
+            "claim_digest": "2494ece81e9fc159ffb868d06428e76289f756e7e7104a72f12144bf3809d3eb",
+            "problems": [],
+            "receipt_id": "rcpt_run_autopub_r2j_20261007_claim_r2j_spec_folded_dimensions_gcc",
+            "eligible_to_serve": true,
+            "field": "height",
+            "value_mm": 762.0
+          },
+          {
+            "product_dir": "graco-ready2jet-2212125",
+            "claim_id": "claim_r2j_spec_folded_dimensions_target",
+            "claim_digest": "94aeaa62debd65a59db6473b9773c73659a771b5fbf38e46c89334079b73146c",
+            "problems": [],
+            "receipt_id": "rcpt_run_autopub_r2j_20261007_claim_r2j_spec_folded_dimensions_target",
+            "eligible_to_serve": false,
+            "field": "height",
+            "value_mm": 786.9
+          }
+        ],
+        "combined_with": "max",
+        "n_sources": 2
+      },
+      "object_folded_width": {
+        "status": "EVIDENCED",
+        "value_mm": 520.7,
+        "inputs": [
+          {
+            "product_dir": "graco-ready2jet-2212125",
+            "claim_id": "claim_r2j_spec_folded_dimensions_gcc",
+            "claim_digest": "2494ece81e9fc159ffb868d06428e76289f756e7e7104a72f12144bf3809d3eb",
+            "problems": [],
+            "receipt_id": "rcpt_run_autopub_r2j_20261007_claim_r2j_spec_folded_dimensions_gcc",
+            "eligible_to_serve": true,
+            "field": "width",
+            "value_mm": 520.7
+          },
+          {
+            "product_dir": "graco-ready2jet-2212125",
+            "claim_id": "claim_r2j_spec_folded_dimensions_target",
+            "claim_digest": "94aeaa62debd65a59db6473b9773c73659a771b5fbf38e46c89334079b73146c",
+            "problems": [],
+            "receipt_id": "rcpt_run_autopub_r2j_20261007_claim_r2j_spec_folded_dimensions_target",
+            "eligible_to_serve": false,
+            "field": "width",
+            "value_mm": 495.8
+          }
+        ],
+        "combined_with": "max",
+        "n_sources": 2
+      },
+      "object_folded_depth": {
+        "status": "EVIDENCED",
+        "value_mm": 292.1,
+        "inputs": [
+          {
+            "product_dir": "graco-ready2jet-2212125",
+            "claim_id": "claim_r2j_spec_folded_dimensions_gcc",
+            "claim_digest": "2494ece81e9fc159ffb868d06428e76289f756e7e7104a72f12144bf3809d3eb",
+            "problems": [],
+            "receipt_id": "rcpt_run_autopub_r2j_20261007_claim_r2j_spec_folded_dimensions_gcc",
+            "eligible_to_serve": true,
+            "field": "depth",
+            "value_mm": 292.1
+          },
+          {
+            "product_dir": "graco-ready2jet-2212125",
+            "claim_id": "claim_r2j_spec_folded_dimensions_target",
+            "claim_digest": "94aeaa62debd65a59db6473b9773c73659a771b5fbf38e46c89334079b73146c",
+            "problems": [],
+            "receipt_id": "rcpt_run_autopub_r2j_20261007_claim_r2j_spec_folded_dimensions_target",
+            "eligible_to_serve": false,
+            "field": "depth",
+            "value_mm": 280.9
+          }
+        ],
+        "combined_with": "max",
+        "n_sources": 2
+      },
+      "floor_depth": {
+        "status": "EVIDENCED",
+        "value_mm": 1060.0,
+        "inputs": [
+          {
+            "product_dir": "tesla-model-y",
+            "claim_id": "claim_tmy_tp12365_depth",
+            "claim_digest": "049491ed87e76f53696c6b48a29cf7ec1acdd5c5085ae1ec153391ee8906c093",
+            "problems": [],
+            "receipt_id": "rcpt_run_autopub_tmy_20261007_claim_tmy_tp12365_depth",
+            "eligible_to_serve": true,
+            "field": null,
+            "value_mm": 1060.0
+          },
+          {
+            "product_dir": "tesla-model-y",
+            "claim_id": "claim_tmy_tpd1ev_depth",
+            "claim_digest": "bb92be2b086a8f665bbcc2259e2fcc782cc1d8240a0f00e13d39a127e931f9ab",
+            "problems": [],
+            "receipt_id": "rcpt_run_autopub_tmy_20261007_claim_tmy_tpd1ev_depth",
+            "eligible_to_serve": true,
+            "field": null,
+            "value_mm": 1085.0
+          }
+        ],
+        "combined_with": "min",
+        "n_sources": 2
+      },
+      "closed_ceiling_height": {
+        "status": "EVIDENCED",
+        "value_mm": 680.0,
+        "inputs": [
+          {
+            "product_dir": "tesla-model-y",
+            "claim_id": "claim_tmy_tp12365_floor_to_top",
+            "claim_digest": "6d47e9a915ebc24b673bbd1af2a9fd21519ee65c4e07416c013bf796cfc7c264",
+            "problems": [
+              "independent_verification"
+            ],
+            "receipt_id": "rcpt_run_autopub_tmy_20261007_claim_tmy_tp12365_floor_to_top",
+            "eligible_to_serve": false,
+            "field": null
+          },
+          {
+            "product_dir": "tesla-model-y",
+            "claim_id": "claim_tmy_tp12365_floor_to_top_repair_20261007",
+            "claim_digest": "afe1aea35b351ec484184b81d64ed7cb1c4c7074196e7941c0a7cc3e5d4cf009",
+            "problems": [],
+            "receipt_id": "rcpt_run_autopub_tmy_topup_20261007_claim_tmy_tp12365_floor_to_top_repair_20261007",
+            "eligible_to_serve": true,
+            "field": null,
+            "value_mm": 680.0
+          }
+        ],
+        "combined_with": "min",
+        "n_sources": 1
+      },
+      "aperture_min_span": {
+        "status": "EVIDENCED",
+        "value_mm": 1140.0,
+        "inputs": [
+          {
+            "product_dir": "tesla-model-y",
+            "claim_id": "claim_tmy_tp12365_opening_length",
+            "claim_digest": "7d69bdb2c760fd8f7e2555f3628710f1d0cefccae19da17cc731db99d6880c24",
+            "problems": [],
+            "receipt_id": "rcpt_run_autopub_tmy_20261007_claim_tmy_tp12365_opening_length",
+            "eligible_to_serve": true,
+            "field": null,
+            "value_mm": 1190.0
+          },
+          {
+            "product_dir": "tesla-model-y",
+            "claim_id": "claim_tmy_tp12365_opening_width",
+            "claim_digest": "646c8b2633c7c5f5c8c8b4b3777c0ba8e0f9b730d7ae4bbef592f57f38820388",
+            "problems": [],
+            "receipt_id": "rcpt_run_autopub_tmy_20261007_claim_tmy_tp12365_opening_width",
+            "eligible_to_serve": true,
+            "field": null,
+            "value_mm": 1140.0
+          }
+        ],
+        "combined_with": "min",
+        "n_sources": 2
+      },
+      "floor_width_between_arches": {
+        "status": "UNKNOWN",
+        "value_mm": null,
+        "inputs": [],
+        "note": "No claim in the tesla-model-y evidence pack states this measurement."
+      }
+    },
+    "verdict": "LIKELY_FITS_UNCONFIRMED",
+    "recommended": {
+      "axes_mm": {
+        "along_x": 520.7,
+        "lateral": 786.9,
+        "vertical": 292.1
+      },
+      "verdict": "LIKELY_FITS_UNCONFIRMED",
+      "checks": [
+        {
+          "constraint": "closed_hatch_height",
+          "phase": "final_placement_closed_hatch",
+          "required_mm": 317.1,
+          "available_mm": 680.0,
+          "margin_mm": 362.9,
+          "status": "PASS",
+          "note": "Stroller top plus clearance must stay below the measured floor-to-top height with the liftgate closed."
+        },
+        {
+          "constraint": "floor_width",
+          "phase": "final_placement",
+          "required_mm": 836.9,
+          "available_mm": null,
+          "margin_mm": null,
+          "status": "UNKNOWN",
+          "note": "Lateral extent plus clearance on both sides between the wheel-arch trims."
+        },
+        {
+          "constraint": "floor_depth",
+          "phase": "final_placement",
+          "required_mm": 570.7,
+          "available_mm": 1060.0,
+          "margin_mm": 489.3,
+          "status": "PASS",
+          "note": "Fore-aft extent plus clearance, before liftgate-trim and seatback-recline allowances."
+        },
+        {
+          "constraint": "aperture_lateral",
+          "phase": "insertion_path",
+          "required_mm": 836.9,
+          "available_mm": 1140.0,
+          "margin_mm": 303.1,
+          "status": "PASS",
+          "note": "Lateral extent passing through the open liftgate aperture (smallest measured span; the source does not say which span is horizontal)."
+        },
+        {
+          "constraint": "aperture_vertical",
+          "phase": "insertion_path",
+          "required_mm": 317.1,
+          "available_mm": 680.0,
+          "margin_mm": 362.9,
+          "status": "PASS",
+          "note": "Height while sliding in over the flush load lip."
+        }
+      ],
+      "unknown_constraints": [
+        "floor_width"
+      ],
+      "sensitivity": {
+        "liftgate_trim_intrusion_max_mm_at_upright_seatback": 489.3,
+        "seatback_recline_max_deg_at_zero_trim_intrusion": 57.1,
+        "seatback_recline_max_deg_if_trim_intrusion_50mm": 54.2,
+        "seatback_recline_max_deg_if_trim_intrusion_100mm": 50.8,
+        "seatback_recline_max_deg_if_trim_intrusion_150mm": 46.9
+      },
+      "requirements": {
+        "floor_width_between_arches_min_mm": 836.9,
+        "floor_depth_min_mm": 570.7,
+        "closed_height_min_mm": 317.1
+      },
+      "axes_named": {
+        "along_x": "object_folded_width",
+        "lateral": "object_folded_height",
+        "vertical": "object_folded_depth"
+      }
+    },
+    "orientations": [
+      {
+        "axes_mm": {
+          "along_x": 520.7,
+          "lateral": 786.9,
+          "vertical": 292.1
+        },
+        "verdict": "LIKELY_FITS_UNCONFIRMED",
+        "checks": [
+          {
+            "constraint": "closed_hatch_height",
+            "phase": "final_placement_closed_hatch",
+            "required_mm": 317.1,
+            "available_mm": 680.0,
+            "margin_mm": 362.9,
+            "status": "PASS",
+            "note": "Stroller top plus clearance must stay below the measured floor-to-top height with the liftgate closed."
+          },
+          {
+            "constraint": "floor_width",
+            "phase": "final_placement",
+            "required_mm": 836.9,
+            "available_mm": null,
+            "margin_mm": null,
+            "status": "UNKNOWN",
+            "note": "Lateral extent plus clearance on both sides between the wheel-arch trims."
+          },
+          {
+            "constraint": "floor_depth",
+            "phase": "final_placement",
+            "required_mm": 570.7,
+            "available_mm": 1060.0,
+            "margin_mm": 489.3,
+            "status": "PASS",
+            "note": "Fore-aft extent plus clearance, before liftgate-trim and seatback-recline allowances."
+          },
+          {
+            "constraint": "aperture_lateral",
+            "phase": "insertion_path",
+            "required_mm": 836.9,
+            "available_mm": 1140.0,
+            "margin_mm": 303.1,
+            "status": "PASS",
+            "note": "Lateral extent passing through the open liftgate aperture (smallest measured span; the source does not say which span is horizontal)."
+          },
+          {
+            "constraint": "aperture_vertical",
+            "phase": "insertion_path",
+            "required_mm": 317.1,
+            "available_mm": 680.0,
+            "margin_mm": 362.9,
+            "status": "PASS",
+            "note": "Height while sliding in over the flush load lip."
+          }
+        ],
+        "unknown_constraints": [
+          "floor_width"
+        ],
+        "sensitivity": {
+          "liftgate_trim_intrusion_max_mm_at_upright_seatback": 489.3,
+          "seatback_recline_max_deg_at_zero_trim_intrusion": 57.1,
+          "seatback_recline_max_deg_if_trim_intrusion_50mm": 54.2,
+          "seatback_recline_max_deg_if_trim_intrusion_100mm": 50.8,
+          "seatback_recline_max_deg_if_trim_intrusion_150mm": 46.9
+        },
+        "requirements": {
+          "floor_width_between_arches_min_mm": 836.9,
+          "floor_depth_min_mm": 570.7,
+          "closed_height_min_mm": 317.1
+        },
+        "axes_named": {
+          "along_x": "object_folded_width",
+          "lateral": "object_folded_height",
+          "vertical": "object_folded_depth"
+        }
+      },
+      {
+        "axes_mm": {
+          "along_x": 292.1,
+          "lateral": 786.9,
+          "vertical": 520.7
+        },
+        "verdict": "LIKELY_FITS_UNCONFIRMED",
+        "checks": [
+          {
+            "constraint": "closed_hatch_height",
+            "phase": "final_placement_closed_hatch",
+            "required_mm": 545.7,
+            "available_mm": 680.0,
+            "margin_mm": 134.3,
+            "status": "PASS",
+            "note": "Stroller top plus clearance must stay below the measured floor-to-top height with the liftgate closed."
+          },
+          {
+            "constraint": "floor_width",
+            "phase": "final_placement",
+            "required_mm": 836.9,
+            "available_mm": null,
+            "margin_mm": null,
+            "status": "UNKNOWN",
+            "note": "Lateral extent plus clearance on both sides between the wheel-arch trims."
+          },
+          {
+            "constraint": "floor_depth",
+            "phase": "final_placement",
+            "required_mm": 342.1,
+            "available_mm": 1060.0,
+            "margin_mm": 717.9,
+            "status": "PASS",
+            "note": "Fore-aft extent plus clearance, before liftgate-trim and seatback-recline allowances."
+          },
+          {
+            "constraint": "aperture_lateral",
+            "phase": "insertion_path",
+            "required_mm": 836.9,
+            "available_mm": 1140.0,
+            "margin_mm": 303.1,
+            "status": "PASS",
+            "note": "Lateral extent passing through the open liftgate aperture (smallest measured span; the source does not say which span is horizontal)."
+          },
+          {
+            "constraint": "aperture_vertical",
+            "phase": "insertion_path",
+            "required_mm": 545.7,
+            "available_mm": 680.0,
+            "margin_mm": 134.3,
+            "status": "PASS",
+            "note": "Height while sliding in over the flush load lip."
+          }
+        ],
+        "unknown_constraints": [
+          "floor_width"
+        ],
+        "sensitivity": {
+          "liftgate_trim_intrusion_max_mm_at_upright_seatback": 717.9,
+          "seatback_recline_max_deg_at_zero_trim_intrusion": 52.8,
+          "seatback_recline_max_deg_if_trim_intrusion_50mm": 50.7,
+          "seatback_recline_max_deg_if_trim_intrusion_100mm": 48.6,
+          "seatback_recline_max_deg_if_trim_intrusion_150mm": 46.1
+        },
+        "requirements": {
+          "floor_width_between_arches_min_mm": 836.9,
+          "floor_depth_min_mm": 342.1,
+          "closed_height_min_mm": 545.7
+        },
+        "axes_named": {
+          "along_x": "object_folded_depth",
+          "lateral": "object_folded_height",
+          "vertical": "object_folded_width"
+        }
+      },
+      {
+        "axes_mm": {
+          "along_x": 786.9,
+          "lateral": 520.7,
+          "vertical": 292.1
+        },
+        "verdict": "LIKELY_FITS_UNCONFIRMED",
+        "checks": [
+          {
+            "constraint": "closed_hatch_height",
+            "phase": "final_placement_closed_hatch",
+            "required_mm": 317.1,
+            "available_mm": 680.0,
+            "margin_mm": 362.9,
+            "status": "PASS",
+            "note": "Stroller top plus clearance must stay below the measured floor-to-top height with the liftgate closed."
+          },
+          {
+            "constraint": "floor_width",
+            "phase": "final_placement",
+            "required_mm": 570.7,
+            "available_mm": null,
+            "margin_mm": null,
+            "status": "UNKNOWN",
+            "note": "Lateral extent plus clearance on both sides between the wheel-arch trims."
+          },
+          {
+            "constraint": "floor_depth",
+            "phase": "final_placement",
+            "required_mm": 836.9,
+            "available_mm": 1060.0,
+            "margin_mm": 223.1,
+            "status": "PASS",
+            "note": "Fore-aft extent plus clearance, before liftgate-trim and seatback-recline allowances."
+          },
+          {
+            "constraint": "aperture_lateral",
+            "phase": "insertion_path",
+            "required_mm": 570.7,
+            "available_mm": 1140.0,
+            "margin_mm": 569.3,
+            "status": "PASS",
+            "note": "Lateral extent passing through the open liftgate aperture (smallest measured span; the source does not say which span is horizontal)."
+          },
+          {
+            "constraint": "aperture_vertical",
+            "phase": "insertion_path",
+            "required_mm": 317.1,
+            "available_mm": 680.0,
+            "margin_mm": 362.9,
+            "status": "PASS",
+            "note": "Height while sliding in over the flush load lip."
+          }
+        ],
+        "unknown_constraints": [
+          "floor_width"
+        ],
+        "sensitivity": {
+          "liftgate_trim_intrusion_max_mm_at_upright_seatback": 223.1,
+          "seatback_recline_max_deg_at_zero_trim_intrusion": 35.1,
+          "seatback_recline_max_deg_if_trim_intrusion_50mm": 28.6,
+          "seatback_recline_max_deg_if_trim_intrusion_100mm": 21.2,
+          "seatback_recline_max_deg_if_trim_intrusion_150mm": 13.0
+        },
+        "requirements": {
+          "floor_width_between_arches_min_mm": 570.7,
+          "floor_depth_min_mm": 836.9,
+          "closed_height_min_mm": 317.1
+        },
+        "axes_named": {
+          "along_x": "object_folded_height",
+          "lateral": "object_folded_width",
+          "vertical": "object_folded_depth"
+        }
+      },
+      {
+        "axes_mm": {
+          "along_x": 786.9,
+          "lateral": 292.1,
+          "vertical": 520.7
+        },
+        "verdict": "LIKELY_FITS_UNCONFIRMED",
+        "checks": [
+          {
+            "constraint": "closed_hatch_height",
+            "phase": "final_placement_closed_hatch",
+            "required_mm": 545.7,
+            "available_mm": 680.0,
+            "margin_mm": 134.3,
+            "status": "PASS",
+            "note": "Stroller top plus clearance must stay below the measured floor-to-top height with the liftgate closed."
+          },
+          {
+            "constraint": "floor_width",
+            "phase": "final_placement",
+            "required_mm": 342.1,
+            "available_mm": null,
+            "margin_mm": null,
+            "status": "UNKNOWN",
+            "note": "Lateral extent plus clearance on both sides between the wheel-arch trims."
+          },
+          {
+            "constraint": "floor_depth",
+            "phase": "final_placement",
+            "required_mm": 836.9,
+            "available_mm": 1060.0,
+            "margin_mm": 223.1,
+            "status": "PASS",
+            "note": "Fore-aft extent plus clearance, before liftgate-trim and seatback-recline allowances."
+          },
+          {
+            "constraint": "aperture_lateral",
+            "phase": "insertion_path",
+            "required_mm": 342.1,
+            "available_mm": 1140.0,
+            "margin_mm": 797.9,
+            "status": "PASS",
+            "note": "Lateral extent passing through the open liftgate aperture (smallest measured span; the source does not say which span is horizontal)."
+          },
+          {
+            "constraint": "aperture_vertical",
+            "phase": "insertion_path",
+            "required_mm": 545.7,
+            "available_mm": 680.0,
+            "margin_mm": 134.3,
+            "status": "PASS",
+            "note": "Height while sliding in over the flush load lip."
+          }
+        ],
+        "unknown_constraints": [
+          "floor_width"
+        ],
+        "sensitivity": {
+          "liftgate_trim_intrusion_max_mm_at_upright_seatback": 223.1,
+          "seatback_recline_max_deg_at_zero_trim_intrusion": 22.2,
+          "seatback_recline_max_deg_if_trim_intrusion_50mm": 17.6,
+          "seatback_recline_max_deg_if_trim_intrusion_100mm": 12.7,
+          "seatback_recline_max_deg_if_trim_intrusion_150mm": 7.6
+        },
+        "requirements": {
+          "floor_width_between_arches_min_mm": 342.1,
+          "floor_depth_min_mm": 836.9,
+          "closed_height_min_mm": 545.7
+        },
+        "axes_named": {
+          "along_x": "object_folded_height",
+          "lateral": "object_folded_depth",
+          "vertical": "object_folded_width"
+        }
+      },
+      {
+        "axes_mm": {
+          "along_x": 292.1,
+          "lateral": 520.7,
+          "vertical": 786.9
+        },
+        "verdict": "DOES_NOT_FIT",
+        "checks": [
+          {
+            "constraint": "closed_hatch_height",
+            "phase": "final_placement_closed_hatch",
+            "required_mm": 811.9,
+            "available_mm": 680.0,
+            "margin_mm": -131.9,
+            "status": "FAIL",
+            "note": "Stroller top plus clearance must stay below the measured floor-to-top height with the liftgate closed."
+          },
+          {
+            "constraint": "floor_width",
+            "phase": "final_placement",
+            "required_mm": 570.7,
+            "available_mm": null,
+            "margin_mm": null,
+            "status": "UNKNOWN",
+            "note": "Lateral extent plus clearance on both sides between the wheel-arch trims."
+          },
+          {
+            "constraint": "floor_depth",
+            "phase": "final_placement",
+            "required_mm": 342.1,
+            "available_mm": 1060.0,
+            "margin_mm": 717.9,
+            "status": "PASS",
+            "note": "Fore-aft extent plus clearance, before liftgate-trim and seatback-recline allowances."
+          },
+          {
+            "constraint": "aperture_lateral",
+            "phase": "insertion_path",
+            "required_mm": 570.7,
+            "available_mm": 1140.0,
+            "margin_mm": 569.3,
+            "status": "PASS",
+            "note": "Lateral extent passing through the open liftgate aperture (smallest measured span; the source does not say which span is horizontal)."
+          },
+          {
+            "constraint": "aperture_vertical",
+            "phase": "insertion_path",
+            "required_mm": 811.9,
+            "available_mm": 680.0,
+            "margin_mm": -131.9,
+            "status": "FAIL",
+            "note": "Height while sliding in over the flush load lip."
+          }
+        ],
+        "unknown_constraints": [
+          "floor_width"
+        ],
+        "sensitivity": {
+          "liftgate_trim_intrusion_max_mm_at_upright_seatback": 717.9,
+          "seatback_recline_max_deg_at_zero_trim_intrusion": 41.5,
+          "seatback_recline_max_deg_if_trim_intrusion_50mm": 39.4,
+          "seatback_recline_max_deg_if_trim_intrusion_100mm": 37.3,
+          "seatback_recline_max_deg_if_trim_intrusion_150mm": 35.0
+        },
+        "requirements": {
+          "floor_width_between_arches_min_mm": 570.7,
+          "floor_depth_min_mm": 342.1,
+          "closed_height_min_mm": 811.9
+        },
+        "axes_named": {
+          "along_x": "object_folded_depth",
+          "lateral": "object_folded_width",
+          "vertical": "object_folded_height"
+        }
+      },
+      {
+        "axes_mm": {
+          "along_x": 520.7,
+          "lateral": 292.1,
+          "vertical": 786.9
+        },
+        "verdict": "DOES_NOT_FIT",
+        "checks": [
+          {
+            "constraint": "closed_hatch_height",
+            "phase": "final_placement_closed_hatch",
+            "required_mm": 811.9,
+            "available_mm": 680.0,
+            "margin_mm": -131.9,
+            "status": "FAIL",
+            "note": "Stroller top plus clearance must stay below the measured floor-to-top height with the liftgate closed."
+          },
+          {
+            "constraint": "floor_width",
+            "phase": "final_placement",
+            "required_mm": 342.1,
+            "available_mm": null,
+            "margin_mm": null,
+            "status": "UNKNOWN",
+            "note": "Lateral extent plus clearance on both sides between the wheel-arch trims."
+          },
+          {
+            "constraint": "floor_depth",
+            "phase": "final_placement",
+            "required_mm": 570.7,
+            "available_mm": 1060.0,
+            "margin_mm": 489.3,
+            "status": "PASS",
+            "note": "Fore-aft extent plus clearance, before liftgate-trim and seatback-recline allowances."
+          },
+          {
+            "constraint": "aperture_lateral",
+            "phase": "insertion_path",
+            "required_mm": 342.1,
+            "available_mm": 1140.0,
+            "margin_mm": 797.9,
+            "status": "PASS",
+            "note": "Lateral extent passing through the open liftgate aperture (smallest measured span; the source does not say which span is horizontal)."
+          },
+          {
+            "constraint": "aperture_vertical",
+            "phase": "insertion_path",
+            "required_mm": 811.9,
+            "available_mm": 680.0,
+            "margin_mm": -131.9,
+            "status": "FAIL",
+            "note": "Height while sliding in over the flush load lip."
+          }
+        ],
+        "unknown_constraints": [
+          "floor_width"
+        ],
+        "sensitivity": {
+          "liftgate_trim_intrusion_max_mm_at_upright_seatback": 489.3,
+          "seatback_recline_max_deg_at_zero_trim_intrusion": 31.1,
+          "seatback_recline_max_deg_if_trim_intrusion_50mm": 28.4,
+          "seatback_recline_max_deg_if_trim_intrusion_100mm": 25.6,
+          "seatback_recline_max_deg_if_trim_intrusion_150mm": 22.7
+        },
+        "requirements": {
+          "floor_width_between_arches_min_mm": 342.1,
+          "floor_depth_min_mm": 570.7,
+          "closed_height_min_mm": 811.9
+        },
+        "axes_named": {
+          "along_x": "object_folded_width",
+          "lateral": "object_folded_depth",
+          "vertical": "object_folded_height"
+        }
+      }
+    ],
+    "evidence_fingerprint": "909148f4fad88709e7776b8d4da8ace5dd617e6b3b69ab304100196aa784b282"
+  }
+}

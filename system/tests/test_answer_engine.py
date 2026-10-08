@@ -63,10 +63,14 @@ def test_launch_questions_meet_their_rubric(engine, case):
 
 
 def test_weight_question_never_substitutes_a_component_limit(engine):
+    # Since 2026-10-07 the pack has its own product-weight claim
+    # (claim_r2j_spec_product_weight, 13.2 lb). In this fixture it has no
+    # receipt, so it is not served; a component limit must never stand in.
     document = engine.answer("How much does the Ready2Jet stroller weigh?").to_dict()
     assert document["status"] == "unsupported"
-    assert "own weight" in document["direct_answer"]
-    assert not re.search(r"\d\s*(lb|kg|pound)", document["direct_answer"], re.I)
+    assert not {"claim_r2j_dimension_basket_capacity",
+                "claim_r2j_limit_cup_holder_weight"} & set(claim_ids(document))
+    assert not re.search(r"\b(10|1)\s*(lb|kg|pound)", document["direct_answer"], re.I)
 
 
 def test_positive_control_answers_when_evidence_exists(engine):
@@ -74,6 +78,20 @@ def test_positive_control_answers_when_evidence_exists(engine):
     assert document["status"] == "ready"
     assert "claim_mba_spec_weight" in claim_ids(document)
     assert "2.7" in document["direct_answer"]
+
+
+@pytest.mark.parametrize("question", [
+    "How do I operate the Ready2Jet stroller brakes?",
+    "How do I use the Ready2Jet brakes?",
+    "Show me how to lock the Ready2Jet brakes",
+    "Show me the Ready2Jet brakes",
+])
+def test_control_operation_routes_to_complete_owned_procedure(engine, question):
+    document = engine.answer(question).to_dict()
+    assert document["coverage"]["procedure_id"] == "brake"
+    assert document["status"] == "ready"
+    assert {"claim_r2j_step_brake_1", "claim_r2j_step_brake_2"} <= set(claim_ids(document))
+    assert "claim_r2j_step_fold_2" not in claim_ids(document)
 
 
 def test_negation_and_permission_polarity(engine):

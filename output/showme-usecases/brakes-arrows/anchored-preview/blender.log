@@ -1,0 +1,23 @@
+scene.py:18: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+scene.py:403: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world.use_nodes = True
+scene.py:447: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  material.use_nodes = True
+00:01.244  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/anchored-preview/preview-0001.png'
+00:01.946  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/anchored-preview/preview-0042.png'
+00:02.725  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/anchored-preview/preview-0079.png'
+00:03.492  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/anchored-preview/preview-0083.png'
+00:04.266  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/anchored-preview/preview-0124.png'
+00:05.035  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/anchored-preview/preview-0126.png'
+00:05.814  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/anchored-preview/preview-0165.png'
+00:06.582  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/anchored-preview/preview-0174.png'
+00:07.356  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/anchored-preview/preview-0175.png'
+00:08.125  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/anchored-preview/preview-0206.png'
+00:08.913  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/anchored-preview/preview-0231.png'
+00:09.674  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/anchored-preview/preview-0247.png'
+00:10.459  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/brakes-arrows/anchored-preview/preview-0288.png'
+Info: Saved as "scene.blend"
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

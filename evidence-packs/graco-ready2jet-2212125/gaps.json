@@ -6,7 +6,33 @@
       "claim_r2j_dimension_basket_capacity",
       "claim_r2j_limit_cup_holder_weight",
       "claim_r2j_limit_single_occupant",
-      "claim_r2j_spec_assembly_no_tools"
+      "claim_r2j_spec_assembly_no_tools",
+      "claim_r2j_spec_product_weight",
+      "claim_r2j_spec_self_standing_fold",
+      "claim_r2j_spec_open_dimensions_pdp",
+      "claim_r2j_spec_open_dimensions_gcc",
+      "claim_r2j_spec_folded_dimensions_gcc",
+      "claim_r2j_spec_folded_dimensions_target",
+      "claim_r2j_spec_folded_dimensions_amazon",
+      "claim_r2j_spec_handle_height",
+      "claim_r2j_spec_belly_bar_removable",
+      "claim_r2j_spec_belly_bar_carry_folded",
+      "claim_r2j_limit_max_weight_pdp",
+      "claim_r2j_limit_max_weight_wellca",
+      "claim_r2j_spec_color",
+      "claim_r2j_spec_colorways_offered",
+      "claim_r2j_spec_model_number",
+      "claim_r2j_spec_model_number_kingston",
+      "claim_r2j_spec_box_contents_target",
+      "claim_r2j_spec_box_contents_amazon",
+      "claim_r2j_spec_included_parent_cup_holder",
+      "claim_r2j_spec_price_pdp",
+      "claim_r2j_spec_front_wheel_diameter",
+      "claim_r2j_spec_rear_wheel_diameter",
+      "claim_r2j_spec_upc",
+      "claim_r2j_compat_snugride_pdp",
+      "claim_r2j_compat_chart_snugride_families",
+      "claim_r2j_compat_chart_gomax"
     ],
     "fold_procedure": [
       "claim_r2j_step_fold_1",
@@ -113,8 +139,8 @@
       "gap_id": "gap_specs_1",
       "kind": "SOURCE_MISSING",
       "waives": [],
-      "reason": "The manual (src_r2j_manual_v1), the only text source in this product's vault, states no product empty weight, no open or folded dimensions, no enumerated box contents (the page 10 parts list is diagram-only; the text only says to check that all parts are present), and no warranty terms (page 40 gives only contact channels for warranty information). The single spec-type fact literally stated in the text is 'No tools required.' (page 10), extracted as claim_r2j_spec_assembly_no_tools; it satisfies the SPEC floor but not the intent of the specs_limits checklist item. The remaining core specs cannot be extracted without fabrication.",
-      "closes_when": "docs/workorders/workorder-ready2jet-gap-closure.md Task 1 lands source-vault/graco-ready2jet-2212125/specs/specs.md (official PDP spec transcription: product weight, open/folded dimensions, box contents, warranty), after which SPEC claims for those facts can be extracted."
+      "reason": "The manual (src_r2j_manual_v1), the only text source in this product's vault, states no product empty weight, no open or folded dimensions, no enumerated box contents (the page 10 parts list is diagram-only; the text only says to check that all parts are present), and no warranty terms (page 40 gives only contact channels for warranty information). The single spec-type fact literally stated in the text is 'No tools required.' (page 10), extracted as claim_r2j_spec_assembly_no_tools; it satisfies the SPEC floor but not the intent of the specs_limits checklist item. The remaining core specs cannot be extracted without fabrication. AMENDED 2026-10-07 (spec top-up, evidence-pack-agent-v2): source-vault/graco-ready2jet-2212125/specs/specs.md (src_r2j_specs_pdp_v1) now supplies, and claims now cover: product weight 13.2 lb (claim_r2j_spec_product_weight), open dimensions 20.5 W x 43 H x 27 D in from the PDP and from Graco Consumer Care (claim_r2j_spec_open_dimensions_pdp, claim_r2j_spec_open_dimensions_gcc), the PDP child limit 50 lb (claim_r2j_limit_max_weight_pdp), color/model/price, and retailer box-contents lists. STILL OPEN: (1) no manufacturer-domain folded dimension: the only folded figures are a brand-authored answer hosted on Target Q&A (30 H x 20.5 W x 11.5 D in) and two retailer tables, which disagree and are recorded as unresolved CONFLICT claims (claim_r2j_spec_folded_dimensions_gcc / _target / _amazon); none says whether the belly bar is on or off. (2) No official (manufacturer) box-contents list: the PDP has none and the manual's page 10 parts list is pictorial; only retailer lists (claim_r2j_spec_box_contents_target, claim_r2j_spec_box_contents_amazon) and PDP feature text (claim_r2j_spec_included_parent_cup_holder) exist. (3) Warranty terms: not stated in the PDP transcription, the manual, or any vault source.",
+      "closes_when": "Partially closed 2026-10-07 by specs.md (Task 1/Task 4 of docs/workorders/workorder-ready2jet-gap-closure.md). Fully closes when the vault holds: a manufacturer-domain source stating folded dimensions (with belly-bar state), an official Graco box-contents list (or a measured annotation of the manual page 10 parts diagram), and Graco's warranty terms for this model."
     },
     {
       "gap_id": "gap_fold_visual_1",
@@ -127,8 +153,8 @@
       "gap_id": "gap_compat_chart_1",
       "kind": "SOURCE_MISSING",
       "waives": [],
-      "reason": "The manual states only a generic compatibility claim ('COMPATIBLE WITH MOST GRACO® INFANT CAR SEATS', extracted as claim_r2j_compat_graco_infant_car_seats) and directs users to customer service or a QR code for specifics. No per-model compatibility chart exists in this product's vault, so per-counterpart COMPATIBILITY claims cannot be extracted here.",
-      "closes_when": "The official compatibility chart PDF (held in the SnugRide product's vault per docs/workorders/evidence-pack-extraction-workorder.md §6.2) is cross-referenced during review, or a Ready2Jet-side compatibility source is added to this vault."
+      "reason": "The manual states only a generic compatibility claim ('COMPATIBLE WITH MOST GRACO® INFANT CAR SEATS', extracted as claim_r2j_compat_graco_infant_car_seats) and directs users to customer service or a QR code for specifics. No per-model compatibility chart exists in this product's vault, so per-counterpart COMPATIBILITY claims cannot be extracted here. AMENDED 2026-10-07: specs.md transcribes the Ready2Jet row of the APR 2026 compatibility chart (SnugRide families column and GoMax column with the '(Only with models produced in 2025 & later)' annotation); extracted as claim_r2j_compat_chart_snugride_families and claim_r2j_compat_chart_gomax, bound to the transcription. The chart PDF itself is still not in this product's vault, and the PDP's 'Accepts all Graco® SnugRide® infant car seats' (claim_r2j_compat_snugride_pdp) is broader in scope than the manual's 'MOST GRACO® INFANT CAR SEATS'.",
+      "closes_when": "The official compatibility chart PDF (held in the SnugRide product's vault per docs/workorders/evidence-pack-extraction-workorder.md §6.2) is cross-referenced during review, or a Ready2Jet-side compatibility source is added to this vault. Remaining: a reviewer cross-checks the two chart-transcription claims against the SnugRide-vault PDF, and resolves which models the '2025 & later' annotation qualifies."
     },
     {
       "gap_id": "gap_harness_reconvert_1",

@@ -227,3 +227,149 @@ backing two LIMIT claims — not introduced by this top-up.)
     restraint), matching the existing `secure_child_5pt` steps.
 - **(d) Unverifiable bindings:** 0. All 15 new claims bind to the manual
   PDF with page numbers and passed the literal quote gate.
+
+## Spec top-up (2026-10-07)
+
+Append-only top-up from the new spec transcription
+`source-vault/graco-ready2jet-2212125/specs/specs.md` (manifest source
+`src_r2j_specs_pdp_v1`, authority MANUFACTURER_SPEC_PAGE, sha256 f2554a2b...,
+checked against the file). Closes the core of the "Missing Specifications"
+gap (`gap_specs_1`) and narrows it. Extractor `evidence-pack-agent-v2`; all
+26 new claims are CANDIDATE. No pre-existing claim, verdict, review, binding
+or keyframe file was touched.
+
+### Who said what (read this first)
+
+`authority` is MANUFACTURER_SPEC_PAGE on every new claim, because that is the
+manifest authority of the one cited source file (and the only spec authority
+the validator allows). The page specs.md transcribes, though, mixes different
+authors. So each claim's `object.authority_note` says who actually made the
+statement:
+
+- **Manufacturer (gracobaby.com PDP):** weight, open dimensions, the 50 lb
+  child limit, color, model number, price, feature text.
+- **Graco Consumer Care on Target Q&A:** answers written by the brand's
+  account but hosted on a retailer page. These give the folded and open
+  dimensions and the handle height.
+- **Retailer data (Target table, Amazon, well.ca):** the other folded
+  figures, box-contents lists, wheel sizes, UPC, and the 45 lb Canadian limit.
+
+### What was added (26 claims)
+
+| claim_id | value | tier |
+|---|---|---|
+| claim_r2j_spec_product_weight | 13.2 lb (PDP) | C0 |
+| claim_r2j_spec_self_standing_fold | self-standing fold (PDP) | C0 |
+| claim_r2j_spec_open_dimensions_pdp | 20.5 W x 43 H x 27 D in (PDP, not labelled "open") | C2 |
+| claim_r2j_spec_open_dimensions_gcc | 20.5 W x 43 H x 27 D in (Graco Consumer Care) | C2 |
+| claim_r2j_spec_folded_dimensions_gcc | 30 H x 20.5 W x 11.5 D in (Graco Consumer Care, 3 answers) | C2 |
+| claim_r2j_spec_folded_dimensions_target | 30.98 H x 19.52 W x 11.06 D in (Target table) | C2 |
+| claim_r2j_spec_folded_dimensions_amazon | "Less than 43.5*12.0*8.0" in, axes unlabelled (Amazon, Kingston) | C2 |
+| claim_r2j_spec_handle_height | 39 in (Graco Consumer Care) | C2 |
+| claim_r2j_spec_belly_bar_removable | removable, doubles as carry handle (PDP) | C1 |
+| claim_r2j_spec_belly_bar_carry_folded | carries folded stroller; removable for storing (Graco Consumer Care) | C1 |
+| claim_r2j_limit_max_weight_pdp | child up to 50 lb (PDP) | C3 |
+| claim_r2j_limit_max_weight_wellca | 20.4 kg (45 lb), market CA (well.ca) | C3 |
+| claim_r2j_compat_snugride_pdp | accepts all Graco SnugRide infant car seats (PDP) | C3 |
+| claim_r2j_compat_chart_snugride_families | SnugRide families column checked (chart, via transcription) | C3 |
+| claim_r2j_compat_chart_gomax | GoMax checked, "(Only with models produced in 2025 & later)" | C3 |
+| claim_r2j_spec_color | Splatter Art | C0 |
+| claim_r2j_spec_colorways_offered | Geo Pop, Splatter Art, Lilac Mod, Kingston | C0 |
+| claim_r2j_spec_model_number | 2212125 | C0 |
+| claim_r2j_spec_model_number_kingston | 2209064 = Kingston | C0 |
+| claim_r2j_spec_box_contents_target | belly bar, leatherette handle, UV 50 canopy, basket, parent cup holder (Target) | C0 |
+| claim_r2j_spec_box_contents_amazon | stroller with belly bar, parent cup holder, UV 50 canopy (Amazon) | C0 |
+| claim_r2j_spec_included_parent_cup_holder | included parent cup holder + leatherette handle (PDP feature text) | C0 |
+| claim_r2j_spec_price_pdp | $189.99 as of 2026-10-07 (PDP) | C0 |
+| claim_r2j_spec_front_wheel_diameter | 6.5 in (Target) | C0 |
+| claim_r2j_spec_rear_wheel_diameter | 7.5 in (Target) | C0 |
+| claim_r2j_spec_upc | 047406189564 (Target) | C0 |
+
+### Conflicts recorded (not resolved)
+
+- **Folded dimensions, three-way:** `claim_r2j_spec_folded_dimensions_gcc`
+  (30 x 20.5 x 11.5), `_target` (30.98 x 19.52 x 11.06) and `_amazon` (less
+  than 43.5 x 12.0 x 8.0, axes unlabelled). Each carries `CONFLICT: contradicts`
+  the other two. No manufacturer-domain page gives a folded figure.
+  The Graco Consumer Care answer to "What are the dimensions folded up
+  without the belly bar?" does not say whether the belly bar is on or off.
+- **Child weight limit:** `claim_r2j_limit_max_weight_wellca` (45 lb, Canadian
+  listing) has `CONFLICT: contradicts claim_r2j_limit_max_weight` (manual, 50
+  lb) and `claim_r2j_limit_max_weight_pdp` (PDP, 50 lb). The protected manual
+  claim cannot get the matching note, because the top-up is append-only, and
+  `claim_r2j_limit_max_weight_pdp` agrees with the manual. So the conflict note
+  appears only on the well.ca claim. A reviewer should treat it as a pair with
+  the manual claim. The difference may be market-specific (CA vs US), but no
+  source confirms that.
+- **Scope difference, not flagged as a conflict:** the PDP says "Accepts all
+  Graco® SnugRide® infant car seats"; the manual says "COMPATIBLE WITH MOST
+  GRACO® INFANT CAR SEATS". These are different scopes, not opposite values.
+  The difference is noted on `claim_r2j_compat_snugride_pdp`.
+
+### Gap changes
+
+- `coverage.specs_limits` now also lists all 26 new claim_ids.
+- `gap_specs_1` amended, not deleted. It is now closed for weight, open
+  dimensions, the PDP child limit, color/model/price and retailer box lists.
+  Still open: (1) no folded dimension on a manufacturer domain (the only
+  figures are brand Q&A on Target plus retailer tables, and they conflict);
+  (2) no official box-contents list (the PDP has none, and the manual page 10
+  list is pictorial); (3) no warranty terms anywhere in the vault.
+- `gap_compat_chart_1` amended. The chart's Ready2Jet row is now extracted
+  from the specs.md transcription. The chart PDF is still not in this vault,
+  and it is unclear which models "2025 & later" applies to.
+
+### Final validator output
+
+```
+--- Validating evidence-packs/graco-ready2jet-2212125/claims.json ---
+(7 pre-existing "same quote used by multiple claims" warnings omitted; none involve new claims)
+WARNING: work order: 127 claims > expected maximum 110 — facts may be split too thin
+SUMMARY_JSON: {"cannot_judge": 0, "ceilings": {"C0": 23, "C1": 35, "C2": 12, "C3": 57}, "claims": 127, "errors": 0, "gaps_recorded": 4, "meaning_changed": 7, "product": "graco-ready2jet-2212125", "quotes_verified": 134, "reviews_recorded": 108, "types": {"CARE": 9, "COMPATIBILITY": 5, "LIMIT": 8, "PART_LOCATION": 7, "SPEC": 22, "STEP": 50, "WARNING": 26}, "unverifiable_binary_source": 0, "unverifiable_no_local_file": 0, "verdicts_recorded": 95, "verification_status": "PARTIAL", "warnings": 8, "workorder_enforced": true}
+Validation successful for evidence-packs/graco-ready2jet-2212125/claims.json
+```
+
+The count is above the work order's maximum of 110. Every new claim is one
+distinct stated fact from a distinct statement, so the band should be raised
+rather than claims merged. This is flagged for the orchestrator.
+
+Prefix check: the first 101 claims match `git show HEAD:` exactly when
+compared as canonical JSON. `verify_claim_hashes` against
+`system/baseline-hashes.json` (94 baseline claims) returns no errors.
+
+### Extraction Telemetry (spec top-up)
+
+- **(a) Validator runs to green:** 1 (plus one baseline run before editing).
+- **(b) Validator failures hit, verbatim:** none. The validator only checks
+  the first 60 normalized characters of each quote. So every new quote was
+  also checked in full, after normalization, against specs.md, and all 31
+  bindings matched.
+- **(c) Judgment calls:**
+  - `authority` is MANUFACTURER_SPEC_PAGE for retailer-authored statements,
+    because the validator only allows manufacturer authorities and the
+    manifest classifies the file that way. The real author is in
+    `object.authority_note`. A reviewer may want a RETAILER authority value
+    instead.
+  - Dimension claims (open, folded, handle height) were raised from the §5
+    default C0 to C2, because fit answers depend on them. Belly-bar claims
+    are C1. Compatibility and child limits are C3.
+  - The PDP's unlabelled W/H/D were treated as open dimensions, based on
+    specs.md's match to the Graco Consumer Care open figures.
+  - One claim per source for each set of dimensions, with per-axis values
+    in `object`. The Amazon values are kept in the stated order with
+    `axes: null`, because the source does not label the axes.
+  - well.ca's 45 lb limit was recorded with `market: "CA"` and `sku: null`
+    (no model number is stated).
+  - The GoMax "2025 & later" qualifier went into `applicability.revision`
+    (following the §6.2 convention), even though the chart does not say
+    which models it applies to.
+  - Not extracted: Target "Dimensions (Overall)" 23.9 x 18 x 11.9 in (meaning
+    unclear, possibly the package); Amazon "Maximum Height 43 inches"
+    (unclear whether it is the product or the child); model numbers for
+    Lilac Mod and Geo Pop (from search titles only); the $319.99 travel
+    system bundle. Retailer weight and 50 lb figures that agree with the
+    PDP are mentioned in notes, not given separate claims.
+- **(d) Unverifiable bindings:** 0. All 31 new bindings cite the local
+  markdown file (page null) and passed the quote check. Note that specs.md
+  is itself a browser transcription, so the quotes are verified against the
+  transcription, not the live pages.
