@@ -49,6 +49,18 @@ def _name(product_dir):
     return product_dir
 
 
+def _display_length(mm):
+    """Customer labels only; geometry continues to use the original millimeters."""
+    return f"{mm / 25.4:.1f}".rstrip("0").rstrip(".") + " in (" + \
+        f"{mm / 10:.1f}".rstrip("0").rstrip(".") + " cm)"
+
+
+def _display_size(values):
+    imperial = " x ".join(f"{v / 25.4:.1f}".rstrip("0").rstrip(".") for v in values)
+    metric = " x ".join(f"{v / 10:.1f}".rstrip("0").rstrip(".") for v in values)
+    return f"{imperial} in ({metric} cm)"
+
+
 def _photos(product_dir, role):
     manifest = json.loads((REPO_ROOT / "source-vault" / product_dir / "manifest.json").read_text())
     scored = []
@@ -139,8 +151,8 @@ def build(object_dir, space_dir, packs_root=None, vault_root=None):
     steps = [
         {"claim_id": fit_answer.STEP_IDS[0], "parts": [],
          "text": f"Show the {object_name} fully folded, standing behind the {space_name}'s "
-                 f"open trunk. Folded size used: {axes['lateral']:.0f} x {axes['along_x']:.0f} x "
-                 f"{axes['vertical']:.0f} mm.",
+                 f"open trunk. Folded size used: "
+                 f"{_display_size([axes['lateral'], axes['along_x'], axes['vertical']])}.",
          "quote": " | ".join(q for c in evidence["object_folded_height"]["claims"]
                              for q in c["quotes"]),
          "evidence_claim_ids": object_ids, "manual_pages": []},
@@ -151,15 +163,16 @@ def build(object_dir, space_dir, packs_root=None, vault_root=None):
          "evidence_claim_ids": [c["claim_id"] for c in open_steps[:1]], "manual_pages": []},
         {"claim_id": fit_answer.STEP_IDS[2], "parts": [],
          "text": (f"Lift the folded {object_name}, lay it flat and slide it in over the load lip: "
-                  f"its {axes['lateral']:.0f} mm side runs across the car, "
-                  f"{axes['along_x']:.0f} mm front-to-back, {axes['vertical']:.0f} mm tall. "
+                  f"its {_display_length(axes['lateral'])} side runs across the car, "
+                  f"{_display_length(axes['along_x'])} front-to-back, {_display_length(axes['vertical'])} tall. "
                   f"It comes to rest on the floor against the rear seatbacks, centred, with at "
-                  f"least {margin} mm clear of every surface."),
+                  f"least {_display_length(margin)} clear of every surface."),
          "quote": "", "evidence_claim_ids": sorted({c for v in used.values() for c in v}),
          "manual_pages": []},
         {"claim_id": fit_answer.STEP_IDS[3], "parts": [],
          "text": (f"Close the liftgate fully. The stroller stays clear: its top is "
-                  f"{axes['vertical']:.0f} mm against a {space.get('closed_ceiling_height', {}).get('value_mm', 0):.0f} mm "
+                  f"{_display_length(axes['vertical'])} against a "
+                  f"{_display_length(space.get('closed_ceiling_height', {}).get('value_mm', 0))} "
                   f"floor-to-top height."),
          "quote": "", "evidence_claim_ids": used.get("closed_ceiling_height", []),
          "manual_pages": []},
@@ -168,6 +181,14 @@ def build(object_dir, space_dir, packs_root=None, vault_root=None):
         "kind": "cargo_fit", "verdict": verdict, "engine": result["engine"],
         "evidence_fingerprint": result["evidence_fingerprint"],
         "units": "mm in this brief; build the scene in meters",
+        "display_units": {
+            "primary": "in", "secondary": "cm",
+            "instruction": "All customer-facing dimension labels and captions show inches first, centimeters second. Millimeters are internal calculation inputs only. Display rounding must never change geometry or clearances.",
+            "object_envelope": {axis: _display_length(value) for axis, value in axes.items()},
+            "space_measured": {name: _display_length(value["value_mm"]) for name, value in space.items()},
+            "space_illustrative": {name: _display_length(value["illustrative_mm"]) + " (unverified, illustrative)" for name, value in unknown.items()},
+            "clearance": _display_length(margin),
+        },
         "frame": "+Z up. +X points from the load lip into the car toward the rear seats. "
                  "The load lip's inner edge is at x=0; the cargo floor top is the reference "
                  "height (it is flush with the lip).",
@@ -206,6 +227,7 @@ def build(object_dir, space_dir, packs_root=None, vault_root=None):
             "interior": "Match the user trunk photo: dark charcoal carpet, flat continuous cargo floor, dark side trim and wheel arches, upright seatbacks at the far forward end; no seat cushion in the cargo bay.",
             "reference_scope": "User photo is an appearance reference only; its model year and trim are unverified. Preserve verified dimensions and their existing uncertainty. Do not derive measurements from this photo.",
             "visibility": "Light the dark cargo bay so the folded stroller stays distinct. Use opaque high-contrast dimension labels. Avoid tinted transparent bodywork washing out the stroller.",
+            "framing": "Use a straight rear view focused on the trunk and loading action. Keep the folded stroller fully visible during lifting, placement and the final cutaway. Do not add a full-car beauty shot. Visible rear bodywork and the cargo bay still need to match the references.",
         }
     checks = {
         "object_prefix": OBJECT_PREFIX, "colliders": COLLIDERS,
@@ -216,7 +238,7 @@ def build(object_dir, space_dir, packs_root=None, vault_root=None):
                             if k in ("floor_depth", "closed_ceiling_height")},
         "clearance_m": margin / 1000,
     }
-    label = (f"{object_name} in a {space_name} trunk · 3D fit demonstration (Astra + Blender)")
+    label = (f"{object_name} in a {space_name} trunk · Fit illustration")
     caveat = ("3D illustration of a placement calculated from verified measurements; geometry "
               "and clearances were checked automatically.")
     if verdict != "FITS_CONFIRMED":

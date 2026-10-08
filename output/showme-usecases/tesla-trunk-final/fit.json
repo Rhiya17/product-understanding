@@ -3,7 +3,7 @@
     {
       "claim_id": "fit_step_fold",
       "parts": [],
-      "text": "Show the Graco Ready2Jet fully folded, standing behind the Tesla Model Y's open trunk. Folded size used: 787 x 521 x 292 mm.",
+      "text": "Show the Graco Ready2Jet fully folded, standing behind the Tesla Model Y's open trunk. Folded size used: 31 x 20.5 x 11.5 in (78.7 x 52.1 x 29.2 cm).",
       "quote": "The folded dimensions of this stroller are height 30in depth 11.5in and width 20.5in. | The Ready2Jet Compact Stroller folded dimensions are 30 in H x 11.5 in D x 20.5 in W. | The Ready2Jet Stroller measures 30\" H x 11.5\" D x 20.5\" W when folded",
       "evidence_claim_ids": [
         "claim_r2j_spec_folded_dimensions_gcc"
@@ -23,7 +23,7 @@
     {
       "claim_id": "fit_step_place",
       "parts": [],
-      "text": "Lift the folded Graco Ready2Jet, lay it flat and slide it in over the load lip: its 787 mm side runs across the car, 521 mm front-to-back, 292 mm tall. It comes to rest on the floor against the rear seatbacks, centred, with at least 25 mm clear of every surface.",
+      "text": "Lift the folded Graco Ready2Jet, lay it flat and slide it in over the load lip: its 31 in (78.7 cm) side runs across the car, 20.5 in (52.1 cm) front-to-back, 11.5 in (29.2 cm) tall. It comes to rest on the floor against the rear seatbacks, centred, with at least 1 in (2.5 cm) clear of every surface.",
       "quote": "",
       "evidence_claim_ids": [
         "claim_r2j_spec_folded_dimensions_gcc",
@@ -38,7 +38,7 @@
     {
       "claim_id": "fit_step_close",
       "parts": [],
-      "text": "Close the liftgate fully. The stroller stays clear: its top is 292 mm against a 680 mm floor-to-top height.",
+      "text": "Close the liftgate fully. The stroller stays clear: its top is 11.5 in (29.2 cm) against a 26.8 in (68 cm) floor-to-top height.",
       "quote": "",
       "evidence_claim_ids": [
         "claim_tmy_tp12365_floor_to_top_repair_20261007"
@@ -52,6 +52,25 @@
     "engine": "fit-engine-v2",
     "evidence_fingerprint": "909148f4fad88709e7776b8d4da8ace5dd617e6b3b69ab304100196aa784b282",
     "units": "mm in this brief; build the scene in meters",
+    "display_units": {
+      "primary": "in",
+      "secondary": "cm",
+      "instruction": "All customer-facing dimension labels and captions show inches first, centimeters second. Millimeters are internal calculation inputs only. Display rounding must never change geometry or clearances.",
+      "object_envelope": {
+        "along_x": "20.5 in (52.1 cm)",
+        "lateral": "31 in (78.7 cm)",
+        "vertical": "11.5 in (29.2 cm)"
+      },
+      "space_measured": {
+        "floor_depth": "41.7 in (106 cm)",
+        "closed_ceiling_height": "26.8 in (68 cm)",
+        "aperture_min_span": "44.9 in (114 cm)"
+      },
+      "space_illustrative": {
+        "floor_width_between_arches": "34.9 in (88.7 cm) (unverified, illustrative)"
+      },
+      "clearance": "1 in (2.5 cm)"
+    },
     "frame": "+Z up. +X points from the load lip into the car toward the rear seats. The load lip's inner edge is at x=0; the cargo floor top is the reference height (it is flush with the lip).",
     "object": {
       "product_dir": "graco-ready2jet-2212125",
@@ -278,7 +297,8 @@
       "exterior_paint": "red, not blue",
       "interior": "Match the user trunk photo: dark charcoal carpet, flat continuous cargo floor, dark side trim and wheel arches, upright seatbacks at the far forward end; no seat cushion in the cargo bay.",
       "reference_scope": "User photo is an appearance reference only; its model year and trim are unverified. Preserve verified dimensions and their existing uncertainty. Do not derive measurements from this photo.",
-      "visibility": "Light the dark cargo bay so the folded stroller stays distinct. Use opaque high-contrast dimension labels. Avoid tinted transparent bodywork washing out the stroller."
+      "visibility": "Light the dark cargo bay so the folded stroller stays distinct. Use opaque high-contrast dimension labels. Avoid tinted transparent bodywork washing out the stroller.",
+      "framing": "Use a straight rear view focused on the trunk and loading action. Keep the folded stroller fully visible during lifting, placement and the final cutaway. Do not add a full-car beauty shot. Visible rear bodywork and the cargo bay still need to match the references."
     }
   },
   "checks": {
@@ -305,7 +325,7 @@
     "clearance_m": 0.025
   },
   "product_name": "Graco Ready2Jet",
-  "label": "Graco Ready2Jet in a Tesla Model Y trunk \u00b7 3D fit demonstration (Astra + Blender)",
+  "label": "Graco Ready2Jet in a Tesla Model Y trunk \u00b7 Fit illustration",
   "caveat": "3D illustration of a placement calculated from verified measurements; geometry and clearances were checked automatically. Not confirmed: The floor width between the wheel arches is not verified for this vehicle; it is drawn at an illustrative width, not a measurement.",
   "result": {
     "engine": "fit-engine-v2",

@@ -1,30 +1,708 @@
-scene.py:21: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
-  m.use_nodes = True
-scene.py:31: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
-  m.use_nodes = True
-scene.py:58: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
-  m.use_nodes = True
-scene.py:749: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
-  world.use_nodes = True
-00:03.432  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0001.png'
-00:04.149  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0016.png'
-00:04.881  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0032.png'
-00:05.598  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0033.png'
-00:06.321  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0051.png'
-00:07.046  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0060.png'
-00:07.777  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0088.png'
-00:08.496  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0089.png'
-00:09.218  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0101.png'
-00:09.980  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0151.png'
-00:10.699  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0183.png'
-00:11.424  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0202.png'
-00:12.155  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0252.png'
-00:12.862  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0278.png'
-00:13.607  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0279.png'
-00:14.356  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0302.png'
-00:15.129  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0315.png'
-00:15.898  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/preview-0352.png'
-Info: Saved as "scene.blend"
+00:00.315  blend            | Read blend: "/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/scene.blend"
+00:04.306  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0001.png'
+SHOWME_PROGRESS 1/352
+00:08.019  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0002.png'
+SHOWME_PROGRESS 2/352
+00:11.755  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0003.png'
+SHOWME_PROGRESS 3/352
+00:15.547  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0004.png'
+SHOWME_PROGRESS 4/352
+00:19.384  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0005.png'
+SHOWME_PROGRESS 5/352
+00:23.271  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0006.png'
+SHOWME_PROGRESS 6/352
+00:27.197  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0007.png'
+SHOWME_PROGRESS 7/352
+00:31.134  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0008.png'
+SHOWME_PROGRESS 8/352
+00:35.060  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0009.png'
+SHOWME_PROGRESS 9/352
+00:39.093  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0010.png'
+SHOWME_PROGRESS 10/352
+00:43.086  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0011.png'
+SHOWME_PROGRESS 11/352
+00:47.073  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0012.png'
+SHOWME_PROGRESS 12/352
+00:51.028  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0013.png'
+SHOWME_PROGRESS 13/352
+00:54.928  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0014.png'
+SHOWME_PROGRESS 14/352
+00:58.850  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0015.png'
+SHOWME_PROGRESS 15/352
+01:02.732  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0016.png'
+SHOWME_PROGRESS 16/352
+01:06.625  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0017.png'
+SHOWME_PROGRESS 17/352
+01:10.510  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0018.png'
+SHOWME_PROGRESS 18/352
+01:14.410  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0019.png'
+SHOWME_PROGRESS 19/352
+01:18.286  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0020.png'
+SHOWME_PROGRESS 20/352
+01:22.176  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0021.png'
+SHOWME_PROGRESS 21/352
+01:26.042  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0022.png'
+SHOWME_PROGRESS 22/352
+01:29.927  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0023.png'
+SHOWME_PROGRESS 23/352
+01:33.789  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0024.png'
+SHOWME_PROGRESS 24/352
+01:37.646  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0025.png'
+SHOWME_PROGRESS 25/352
+01:41.518  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0026.png'
+SHOWME_PROGRESS 26/352
+01:45.380  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0027.png'
+SHOWME_PROGRESS 27/352
+01:49.238  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0028.png'
+SHOWME_PROGRESS 28/352
+01:53.094  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0029.png'
+SHOWME_PROGRESS 29/352
+01:56.961  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0030.png'
+SHOWME_PROGRESS 30/352
+02:01.034  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0031.png'
+SHOWME_PROGRESS 31/352
+02:04.819  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0032.png'
+SHOWME_PROGRESS 32/352
+02:08.666  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0033.png'
+SHOWME_PROGRESS 33/352
+02:12.428  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0034.png'
+SHOWME_PROGRESS 34/352
+02:16.174  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0035.png'
+SHOWME_PROGRESS 35/352
+02:19.916  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0036.png'
+SHOWME_PROGRESS 36/352
+02:23.649  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0037.png'
+SHOWME_PROGRESS 37/352
+02:27.406  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0038.png'
+SHOWME_PROGRESS 38/352
+02:31.131  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0039.png'
+SHOWME_PROGRESS 39/352
+02:34.859  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0040.png'
+SHOWME_PROGRESS 40/352
+02:38.613  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0041.png'
+SHOWME_PROGRESS 41/352
+02:42.327  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0042.png'
+SHOWME_PROGRESS 42/352
+02:46.063  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0043.png'
+SHOWME_PROGRESS 43/352
+02:49.792  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0044.png'
+SHOWME_PROGRESS 44/352
+02:53.518  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0045.png'
+SHOWME_PROGRESS 45/352
+02:57.236  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0046.png'
+SHOWME_PROGRESS 46/352
+03:00.965  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0047.png'
+SHOWME_PROGRESS 47/352
+03:04.694  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0048.png'
+SHOWME_PROGRESS 48/352
+03:08.428  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0049.png'
+SHOWME_PROGRESS 49/352
+03:12.180  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0050.png'
+SHOWME_PROGRESS 50/352
+03:15.901  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0051.png'
+SHOWME_PROGRESS 51/352
+03:19.642  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0052.png'
+SHOWME_PROGRESS 52/352
+03:23.388  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0053.png'
+SHOWME_PROGRESS 53/352
+03:27.134  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0054.png'
+SHOWME_PROGRESS 54/352
+03:30.898  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0055.png'
+SHOWME_PROGRESS 55/352
+03:34.651  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0056.png'
+SHOWME_PROGRESS 56/352
+03:38.424  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0057.png'
+SHOWME_PROGRESS 57/352
+03:42.200  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0058.png'
+SHOWME_PROGRESS 58/352
+03:45.966  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0059.png'
+SHOWME_PROGRESS 59/352
+03:50.001  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0060.png'
+SHOWME_PROGRESS 60/352
+03:53.818  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0061.png'
+SHOWME_PROGRESS 61/352
+03:57.643  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0062.png'
+SHOWME_PROGRESS 62/352
+04:01.487  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0063.png'
+SHOWME_PROGRESS 63/352
+04:05.313  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0064.png'
+SHOWME_PROGRESS 64/352
+04:09.156  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0065.png'
+SHOWME_PROGRESS 65/352
+04:13.050  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0066.png'
+SHOWME_PROGRESS 66/352
+04:16.890  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0067.png'
+SHOWME_PROGRESS 67/352
+04:20.754  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0068.png'
+SHOWME_PROGRESS 68/352
+04:24.604  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0069.png'
+SHOWME_PROGRESS 69/352
+04:28.476  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0070.png'
+SHOWME_PROGRESS 70/352
+04:32.369  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0071.png'
+SHOWME_PROGRESS 71/352
+04:36.264  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0072.png'
+SHOWME_PROGRESS 72/352
+04:40.197  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0073.png'
+SHOWME_PROGRESS 73/352
+04:44.139  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0074.png'
+SHOWME_PROGRESS 74/352
+04:48.133  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0075.png'
+SHOWME_PROGRESS 75/352
+04:52.120  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0076.png'
+SHOWME_PROGRESS 76/352
+04:56.050  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0077.png'
+SHOWME_PROGRESS 77/352
+04:59.998  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0078.png'
+SHOWME_PROGRESS 78/352
+05:03.902  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0079.png'
+SHOWME_PROGRESS 79/352
+05:07.796  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0080.png'
+SHOWME_PROGRESS 80/352
+05:11.698  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0081.png'
+SHOWME_PROGRESS 81/352
+05:15.610  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0082.png'
+SHOWME_PROGRESS 82/352
+05:19.505  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0083.png'
+SHOWME_PROGRESS 83/352
+05:23.419  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0084.png'
+SHOWME_PROGRESS 84/352
+05:27.329  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0085.png'
+SHOWME_PROGRESS 85/352
+05:31.208  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0086.png'
+SHOWME_PROGRESS 86/352
+05:35.083  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0087.png'
+SHOWME_PROGRESS 87/352
+05:38.991  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0088.png'
+SHOWME_PROGRESS 88/352
+05:42.840  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0089.png'
+SHOWME_PROGRESS 89/352
+05:46.697  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0090.png'
+SHOWME_PROGRESS 90/352
+05:50.570  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0091.png'
+SHOWME_PROGRESS 91/352
+05:54.433  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0092.png'
+SHOWME_PROGRESS 92/352
+05:58.314  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0093.png'
+SHOWME_PROGRESS 93/352
+06:02.199  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0094.png'
+SHOWME_PROGRESS 94/352
+06:06.057  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0095.png'
+SHOWME_PROGRESS 95/352
+06:09.960  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0096.png'
+SHOWME_PROGRESS 96/352
+06:13.825  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0097.png'
+SHOWME_PROGRESS 97/352
+06:17.688  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0098.png'
+SHOWME_PROGRESS 98/352
+06:21.557  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0099.png'
+SHOWME_PROGRESS 99/352
+06:25.444  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0100.png'
+SHOWME_PROGRESS 100/352
+06:29.311  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0101.png'
+SHOWME_PROGRESS 101/352
+06:33.271  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0102.png'
+SHOWME_PROGRESS 102/352
+06:37.125  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0103.png'
+SHOWME_PROGRESS 103/352
+06:41.026  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0104.png'
+SHOWME_PROGRESS 104/352
+06:44.889  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0105.png'
+SHOWME_PROGRESS 105/352
+06:48.742  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0106.png'
+SHOWME_PROGRESS 106/352
+06:52.607  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0107.png'
+SHOWME_PROGRESS 107/352
+06:56.482  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0108.png'
+SHOWME_PROGRESS 108/352
+07:00.359  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0109.png'
+SHOWME_PROGRESS 109/352
+07:04.211  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0110.png'
+SHOWME_PROGRESS 110/352
+07:08.103  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0111.png'
+SHOWME_PROGRESS 111/352
+07:12.026  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0112.png'
+SHOWME_PROGRESS 112/352
+07:15.931  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0113.png'
+SHOWME_PROGRESS 113/352
+07:19.794  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0114.png'
+SHOWME_PROGRESS 114/352
+07:23.658  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0115.png'
+SHOWME_PROGRESS 115/352
+07:27.504  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0116.png'
+SHOWME_PROGRESS 116/352
+07:31.389  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0117.png'
+SHOWME_PROGRESS 117/352
+07:35.237  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0118.png'
+SHOWME_PROGRESS 118/352
+07:39.101  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0119.png'
+SHOWME_PROGRESS 119/352
+07:42.967  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0120.png'
+SHOWME_PROGRESS 120/352
+07:46.814  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0121.png'
+SHOWME_PROGRESS 121/352
+07:50.670  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0122.png'
+SHOWME_PROGRESS 122/352
+07:54.536  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0123.png'
+SHOWME_PROGRESS 123/352
+07:58.411  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0124.png'
+SHOWME_PROGRESS 124/352
+08:02.261  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0125.png'
+SHOWME_PROGRESS 125/352
+08:06.128  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0126.png'
+SHOWME_PROGRESS 126/352
+08:10.017  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0127.png'
+SHOWME_PROGRESS 127/352
+08:13.875  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0128.png'
+SHOWME_PROGRESS 128/352
+08:17.759  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0129.png'
+SHOWME_PROGRESS 129/352
+08:21.643  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0130.png'
+SHOWME_PROGRESS 130/352
+08:25.517  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0131.png'
+SHOWME_PROGRESS 131/352
+08:29.415  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0132.png'
+SHOWME_PROGRESS 132/352
+08:33.333  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0133.png'
+SHOWME_PROGRESS 133/352
+08:37.240  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0134.png'
+SHOWME_PROGRESS 134/352
+08:41.174  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0135.png'
+SHOWME_PROGRESS 135/352
+08:45.192  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0136.png'
+SHOWME_PROGRESS 136/352
+08:49.259  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0137.png'
+SHOWME_PROGRESS 137/352
+08:53.249  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0138.png'
+SHOWME_PROGRESS 138/352
+08:57.247  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0139.png'
+SHOWME_PROGRESS 139/352
+09:01.272  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0140.png'
+SHOWME_PROGRESS 140/352
+09:05.295  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0141.png'
+SHOWME_PROGRESS 141/352
+09:09.357  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0142.png'
+SHOWME_PROGRESS 142/352
+09:13.423  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0143.png'
+SHOWME_PROGRESS 143/352
+09:17.558  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0144.png'
+SHOWME_PROGRESS 144/352
+09:21.689  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0145.png'
+SHOWME_PROGRESS 145/352
+09:25.813  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0146.png'
+SHOWME_PROGRESS 146/352
+09:29.968  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0147.png'
+SHOWME_PROGRESS 147/352
+09:34.113  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0148.png'
+SHOWME_PROGRESS 148/352
+09:38.284  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0149.png'
+SHOWME_PROGRESS 149/352
+09:42.515  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0150.png'
+SHOWME_PROGRESS 150/352
+09:46.680  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0151.png'
+SHOWME_PROGRESS 151/352
+09:50.874  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0152.png'
+SHOWME_PROGRESS 152/352
+09:55.113  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0153.png'
+SHOWME_PROGRESS 153/352
+09:59.333  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0154.png'
+SHOWME_PROGRESS 154/352
+10:03.558  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0155.png'
+SHOWME_PROGRESS 155/352
+10:07.771  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0156.png'
+SHOWME_PROGRESS 156/352
+10:12.032  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0157.png'
+SHOWME_PROGRESS 157/352
+10:16.281  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0158.png'
+SHOWME_PROGRESS 158/352
+10:20.530  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0159.png'
+SHOWME_PROGRESS 159/352
+10:24.769  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0160.png'
+SHOWME_PROGRESS 160/352
+10:29.052  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0161.png'
+SHOWME_PROGRESS 161/352
+10:33.334  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0162.png'
+SHOWME_PROGRESS 162/352
+10:37.627  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0163.png'
+SHOWME_PROGRESS 163/352
+10:41.926  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0164.png'
+SHOWME_PROGRESS 164/352
+10:46.202  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0165.png'
+SHOWME_PROGRESS 165/352
+10:50.454  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0166.png'
+SHOWME_PROGRESS 166/352
+10:54.719  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0167.png'
+SHOWME_PROGRESS 167/352
+10:58.992  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0168.png'
+SHOWME_PROGRESS 168/352
+11:03.275  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0169.png'
+SHOWME_PROGRESS 169/352
+11:07.557  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0170.png'
+SHOWME_PROGRESS 170/352
+11:11.849  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0171.png'
+SHOWME_PROGRESS 171/352
+11:16.155  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0172.png'
+SHOWME_PROGRESS 172/352
+11:20.552  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0173.png'
+SHOWME_PROGRESS 173/352
+11:24.831  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0174.png'
+SHOWME_PROGRESS 174/352
+11:29.149  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0175.png'
+SHOWME_PROGRESS 175/352
+11:33.646  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0176.png'
+SHOWME_PROGRESS 176/352
+11:38.000  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0177.png'
+SHOWME_PROGRESS 177/352
+11:42.328  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0178.png'
+SHOWME_PROGRESS 178/352
+11:46.193  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0179.png'
+SHOWME_PROGRESS 179/352
+11:50.029  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0180.png'
+SHOWME_PROGRESS 180/352
+11:53.887  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0181.png'
+SHOWME_PROGRESS 181/352
+11:57.771  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0182.png'
+SHOWME_PROGRESS 182/352
+12:01.997  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0183.png'
+SHOWME_PROGRESS 183/352
+12:05.829  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0184.png'
+SHOWME_PROGRESS 184/352
+12:09.685  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0185.png'
+SHOWME_PROGRESS 185/352
+12:13.527  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0186.png'
+SHOWME_PROGRESS 186/352
+12:17.382  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0187.png'
+SHOWME_PROGRESS 187/352
+12:21.216  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0188.png'
+SHOWME_PROGRESS 188/352
+12:25.071  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0189.png'
+SHOWME_PROGRESS 189/352
+12:28.909  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0190.png'
+SHOWME_PROGRESS 190/352
+12:32.775  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0191.png'
+SHOWME_PROGRESS 191/352
+12:36.635  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0192.png'
+SHOWME_PROGRESS 192/352
+12:40.476  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0193.png'
+SHOWME_PROGRESS 193/352
+12:44.309  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0194.png'
+SHOWME_PROGRESS 194/352
+12:48.155  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0195.png'
+SHOWME_PROGRESS 195/352
+12:52.119  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0196.png'
+SHOWME_PROGRESS 196/352
+12:55.973  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0197.png'
+SHOWME_PROGRESS 197/352
+12:59.842  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0198.png'
+SHOWME_PROGRESS 198/352
+13:03.709  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0199.png'
+SHOWME_PROGRESS 199/352
+13:07.575  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0200.png'
+SHOWME_PROGRESS 200/352
+13:11.428  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0201.png'
+SHOWME_PROGRESS 201/352
+13:15.299  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0202.png'
+SHOWME_PROGRESS 202/352
+13:19.169  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0203.png'
+SHOWME_PROGRESS 203/352
+13:23.049  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0204.png'
+SHOWME_PROGRESS 204/352
+13:26.929  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0205.png'
+SHOWME_PROGRESS 205/352
+13:30.825  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0206.png'
+SHOWME_PROGRESS 206/352
+13:34.703  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0207.png'
+SHOWME_PROGRESS 207/352
+13:38.559  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0208.png'
+SHOWME_PROGRESS 208/352
+13:42.467  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0209.png'
+SHOWME_PROGRESS 209/352
+13:46.374  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0210.png'
+SHOWME_PROGRESS 210/352
+13:50.281  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0211.png'
+SHOWME_PROGRESS 211/352
+13:54.255  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0212.png'
+SHOWME_PROGRESS 212/352
+13:58.134  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0213.png'
+SHOWME_PROGRESS 213/352
+14:02.196  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0214.png'
+SHOWME_PROGRESS 214/352
+14:06.117  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0215.png'
+SHOWME_PROGRESS 215/352
+14:10.060  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0216.png'
+SHOWME_PROGRESS 216/352
+14:13.961  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0217.png'
+SHOWME_PROGRESS 217/352
+14:17.878  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0218.png'
+SHOWME_PROGRESS 218/352
+14:21.786  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0219.png'
+SHOWME_PROGRESS 219/352
+14:25.696  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0220.png'
+SHOWME_PROGRESS 220/352
+14:29.607  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0221.png'
+SHOWME_PROGRESS 221/352
+14:33.540  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0222.png'
+SHOWME_PROGRESS 222/352
+14:37.466  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0223.png'
+SHOWME_PROGRESS 223/352
+14:41.433  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0224.png'
+SHOWME_PROGRESS 224/352
+14:45.327  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0225.png'
+SHOWME_PROGRESS 225/352
+14:49.268  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0226.png'
+SHOWME_PROGRESS 226/352
+14:53.204  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0227.png'
+SHOWME_PROGRESS 227/352
+14:57.133  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0228.png'
+SHOWME_PROGRESS 228/352
+15:01.141  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0229.png'
+SHOWME_PROGRESS 229/352
+15:05.128  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0230.png'
+SHOWME_PROGRESS 230/352
+15:09.061  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0231.png'
+SHOWME_PROGRESS 231/352
+15:12.979  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0232.png'
+SHOWME_PROGRESS 232/352
+15:16.928  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0233.png'
+SHOWME_PROGRESS 233/352
+15:20.863  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0234.png'
+SHOWME_PROGRESS 234/352
+15:24.760  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0235.png'
+SHOWME_PROGRESS 235/352
+15:28.680  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0236.png'
+SHOWME_PROGRESS 236/352
+15:32.627  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0237.png'
+SHOWME_PROGRESS 237/352
+15:36.545  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0238.png'
+SHOWME_PROGRESS 238/352
+15:40.511  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0239.png'
+SHOWME_PROGRESS 239/352
+15:44.455  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0240.png'
+SHOWME_PROGRESS 240/352
+15:48.391  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0241.png'
+SHOWME_PROGRESS 241/352
+15:52.324  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0242.png'
+SHOWME_PROGRESS 242/352
+15:56.261  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0243.png'
+SHOWME_PROGRESS 243/352
+16:00.179  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0244.png'
+SHOWME_PROGRESS 244/352
+16:04.116  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0245.png'
+SHOWME_PROGRESS 245/352
+16:08.267  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0246.png'
+SHOWME_PROGRESS 246/352
+16:12.179  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0247.png'
+SHOWME_PROGRESS 247/352
+16:16.114  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0248.png'
+SHOWME_PROGRESS 248/352
+16:20.270  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0249.png'
+SHOWME_PROGRESS 249/352
+16:24.205  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0250.png'
+SHOWME_PROGRESS 250/352
+16:28.149  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0251.png'
+SHOWME_PROGRESS 251/352
+16:32.179  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0252.png'
+SHOWME_PROGRESS 252/352
+16:36.124  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0253.png'
+SHOWME_PROGRESS 253/352
+16:40.213  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0254.png'
+SHOWME_PROGRESS 254/352
+16:44.047  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0255.png'
+SHOWME_PROGRESS 255/352
+16:47.875  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0256.png'
+SHOWME_PROGRESS 256/352
+16:51.699  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0257.png'
+SHOWME_PROGRESS 257/352
+16:55.501  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0258.png'
+SHOWME_PROGRESS 258/352
+16:59.299  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0259.png'
+SHOWME_PROGRESS 259/352
+17:02.924  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0260.png'
+SHOWME_PROGRESS 260/352
+17:06.544  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0261.png'
+SHOWME_PROGRESS 261/352
+17:10.161  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0262.png'
+SHOWME_PROGRESS 262/352
+17:13.780  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0263.png'
+SHOWME_PROGRESS 263/352
+17:17.398  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0264.png'
+SHOWME_PROGRESS 264/352
+17:21.037  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0265.png'
+SHOWME_PROGRESS 265/352
+17:24.663  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0266.png'
+SHOWME_PROGRESS 266/352
+17:28.277  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0267.png'
+SHOWME_PROGRESS 267/352
+17:31.886  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0268.png'
+SHOWME_PROGRESS 268/352
+17:35.489  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0269.png'
+SHOWME_PROGRESS 269/352
+17:39.115  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0270.png'
+SHOWME_PROGRESS 270/352
+17:42.744  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0271.png'
+SHOWME_PROGRESS 271/352
+17:46.363  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0272.png'
+SHOWME_PROGRESS 272/352
+17:49.968  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0273.png'
+SHOWME_PROGRESS 273/352
+17:53.575  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0274.png'
+SHOWME_PROGRESS 274/352
+17:57.193  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0275.png'
+SHOWME_PROGRESS 275/352
+18:00.819  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0276.png'
+SHOWME_PROGRESS 276/352
+18:04.425  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0277.png'
+SHOWME_PROGRESS 277/352
+18:08.040  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0278.png'
+SHOWME_PROGRESS 278/352
+18:11.654  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0279.png'
+SHOWME_PROGRESS 279/352
+18:15.290  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0280.png'
+SHOWME_PROGRESS 280/352
+18:18.896  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0281.png'
+SHOWME_PROGRESS 281/352
+18:22.509  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0282.png'
+SHOWME_PROGRESS 282/352
+18:26.114  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0283.png'
+SHOWME_PROGRESS 283/352
+18:29.736  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0284.png'
+SHOWME_PROGRESS 284/352
+18:33.333  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0285.png'
+SHOWME_PROGRESS 285/352
+18:36.931  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0286.png'
+SHOWME_PROGRESS 286/352
+18:40.549  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0287.png'
+SHOWME_PROGRESS 287/352
+18:44.191  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0288.png'
+SHOWME_PROGRESS 288/352
+18:47.856  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0289.png'
+SHOWME_PROGRESS 289/352
+18:51.547  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0290.png'
+SHOWME_PROGRESS 290/352
+18:55.244  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0291.png'
+SHOWME_PROGRESS 291/352
+18:58.956  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0292.png'
+SHOWME_PROGRESS 292/352
+19:02.710  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0293.png'
+SHOWME_PROGRESS 293/352
+19:06.475  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0294.png'
+SHOWME_PROGRESS 294/352
+19:10.265  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0295.png'
+SHOWME_PROGRESS 295/352
+19:14.087  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0296.png'
+SHOWME_PROGRESS 296/352
+19:17.925  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0297.png'
+SHOWME_PROGRESS 297/352
+19:21.778  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0298.png'
+SHOWME_PROGRESS 298/352
+19:25.652  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0299.png'
+SHOWME_PROGRESS 299/352
+19:29.510  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0300.png'
+SHOWME_PROGRESS 300/352
+19:33.381  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0301.png'
+SHOWME_PROGRESS 301/352
+19:37.258  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0302.png'
+SHOWME_PROGRESS 302/352
+19:41.162  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0303.png'
+SHOWME_PROGRESS 303/352
+19:45.092  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0304.png'
+SHOWME_PROGRESS 304/352
+19:49.019  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0305.png'
+SHOWME_PROGRESS 305/352
+19:52.950  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0306.png'
+SHOWME_PROGRESS 306/352
+19:56.894  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0307.png'
+SHOWME_PROGRESS 307/352
+20:00.830  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0308.png'
+SHOWME_PROGRESS 308/352
+20:04.795  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0309.png'
+SHOWME_PROGRESS 309/352
+20:08.745  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0310.png'
+SHOWME_PROGRESS 310/352
+20:12.699  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0311.png'
+SHOWME_PROGRESS 311/352
+20:16.664  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0312.png'
+SHOWME_PROGRESS 312/352
+20:20.664  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0313.png'
+SHOWME_PROGRESS 313/352
+20:24.633  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0314.png'
+SHOWME_PROGRESS 314/352
+20:28.612  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0315.png'
+SHOWME_PROGRESS 315/352
+20:32.625  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0316.png'
+SHOWME_PROGRESS 316/352
+20:36.636  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0317.png'
+SHOWME_PROGRESS 317/352
+20:40.635  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0318.png'
+SHOWME_PROGRESS 318/352
+20:44.614  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0319.png'
+SHOWME_PROGRESS 319/352
+20:48.604  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0320.png'
+SHOWME_PROGRESS 320/352
+20:52.577  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0321.png'
+SHOWME_PROGRESS 321/352
+20:56.560  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0322.png'
+SHOWME_PROGRESS 322/352
+21:00.552  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0323.png'
+SHOWME_PROGRESS 323/352
+21:04.560  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0324.png'
+SHOWME_PROGRESS 324/352
+21:08.544  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0325.png'
+SHOWME_PROGRESS 325/352
+21:12.533  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0326.png'
+SHOWME_PROGRESS 326/352
+21:16.513  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0327.png'
+SHOWME_PROGRESS 327/352
+21:20.503  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0328.png'
+SHOWME_PROGRESS 328/352
+21:24.502  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0329.png'
+SHOWME_PROGRESS 329/352
+21:28.482  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0330.png'
+SHOWME_PROGRESS 330/352
+21:32.819  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0331.png'
+SHOWME_PROGRESS 331/352
+21:37.121  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0332.png'
+SHOWME_PROGRESS 332/352
+21:41.390  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0333.png'
+SHOWME_PROGRESS 333/352
+21:45.718  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0334.png'
+SHOWME_PROGRESS 334/352
+21:50.032  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0335.png'
+SHOWME_PROGRESS 335/352
+21:54.331  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0336.png'
+SHOWME_PROGRESS 336/352
+21:58.671  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0337.png'
+SHOWME_PROGRESS 337/352
+22:03.087  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0338.png'
+SHOWME_PROGRESS 338/352
+22:07.400  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0339.png'
+SHOWME_PROGRESS 339/352
+22:11.682  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0340.png'
+SHOWME_PROGRESS 340/352
+22:15.970  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0341.png'
+SHOWME_PROGRESS 341/352
+22:20.356  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0342.png'
+SHOWME_PROGRESS 342/352
+22:24.753  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0343.png'
+SHOWME_PROGRESS 343/352
+22:29.122  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0344.png'
+SHOWME_PROGRESS 344/352
+22:33.624  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0345.png'
+SHOWME_PROGRESS 345/352
+22:37.993  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0346.png'
+SHOWME_PROGRESS 346/352
+22:42.385  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0347.png'
+SHOWME_PROGRESS 347/352
+22:46.789  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0348.png'
+SHOWME_PROGRESS 348/352
+22:51.187  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0349.png'
+SHOWME_PROGRESS 349/352
+22:55.396  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0350.png'
+SHOWME_PROGRESS 350/352
+22:59.668  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0351.png'
+SHOWME_PROGRESS 351/352
+23:03.816  render           | Saved: '/Users/ramyamanchikanti/workplace/product-understanding/output/showme-usecases/tesla-trunk-final/preview/frames/frame-0352.png'
+SHOWME_PROGRESS 352/352
 Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
 
 Blender quit

@@ -6,7 +6,7 @@ root=Path('output/showme-usecases/tesla-trunk-final').resolve()
 d=json.loads(Path('output/showme-usecases/tesla-exterior-correction/proposal.json').read_text())
 s=d['python']
 start=s.index('camera_poses = '); end=s.index('\nfor frame,loc,target in camera_poses:',start)
-s=s[:start]+"camera_poses = [(1,(-6.8,-.14,1.65),(-.05,0,-.10)),(126,(-6.8,-.14,1.65),(-.05,0,-.10)),(164,(-4.75,-.06,1.65),(.17,0,.23)),(352,(-4.75,-.06,1.65),(.17,0,.23))]"+s[end:]
+s=s[:start]+"camera_poses = [(1,(-6.8,-.14,1.65),(-.05,0,-.32)),(126,(-6.8,-.14,1.65),(-.05,0,-.32)),(164,(-4.75,-.06,1.65),(.17,0,.23)),(352,(-4.75,-.06,1.65),(.17,0,.23))]"+s[end:]
 s=s.replace("ILLUSTRATIVE: 887 mm arch width - not verified.","Arch width unverified: 34.9 in (88.7 cm) illustrated.")
 s=s.replace("'HUD_Unverified','Arch width unverified: 34.9 in (88.7 cm) illustrated.',-.343,-.171,.0200", "'HUD_Unverified','Arch width unverified: 34.9 in (88.7 cm) illustrated.',-.343,-.171,.0180")
 a=s.index('caption_specs = ');b=s.index('\nfor i,(start,end,body_text)',a)

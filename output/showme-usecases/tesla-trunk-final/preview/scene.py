@@ -779,7 +779,7 @@ camdata.clip_start = .025
 camdata.clip_end = 150
 cam.rotation_mode = 'QUATERNION'
 scene.camera = cam
-camera_poses = [(1,(-6.8,-.14,1.65),(-.05,0,-.10)),(126,(-6.8,-.14,1.65),(-.05,0,-.10)),(164,(-4.75,-.06,1.65),(.17,0,.23)),(352,(-4.75,-.06,1.65),(.17,0,.23))]
+camera_poses = [(1,(-6.8,-.14,1.65),(-.05,0,-.32)),(126,(-6.8,-.14,1.65),(-.05,0,-.32)),(164,(-4.75,-.06,1.65),(.17,0,.23)),(352,(-4.75,-.06,1.65),(.17,0,.23))]
 for frame,loc,target in camera_poses:
     cam.location = loc
     cam.rotation_quaternion = (Vector(target)-cam.location).to_track_quat('-Z','Y')

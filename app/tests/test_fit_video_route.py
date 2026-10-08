@@ -182,6 +182,20 @@ def test_evidence_bundle_uses_the_fit_references(tmp_path):
     assert json.loads((tmp_path / "brief.json").read_text())["fit"]["kind"] == "cargo_fit"
 
 
+def test_display_units_preserve_unrounded_fit_geometry_and_uncertainty():
+    brief = fit_brief.build(R2J, TMY)
+    scene = brief["scene"]
+    display = scene["display_units"]
+    assert display["primary"] == "in" and display["secondary"] == "cm"
+    assert display["object_envelope"]["lateral"] == "31 in (78.7 cm)"
+    assert display["space_measured"]["floor_depth"] == "41.7 in (106 cm)"
+    assert "unverified, illustrative" in display["space_illustrative"]["floor_width_between_arches"]
+    assert " mm" not in " ".join(step["text"] for step in brief["steps"])
+    assert scene["object"]["envelope_mm"]["lateral"] == pytest.approx(786.9)
+    assert brief["checks"]["object_envelope_m"][1] == pytest.approx(.7869)
+    assert brief["checks"]["clearance_m"] == .025
+
+
 SPEC = {"object_prefix": "STROLLER_", "colliders": fit_brief.COLLIDERS,
         "object_envelope_m": [0.52, 0.79, 0.29], "object_tolerance": 0.06,
         "space_tolerance": 0.02, "space_targets_m": {"floor_depth": 1.06,
